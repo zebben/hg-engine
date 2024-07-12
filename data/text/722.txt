@@ -52,7 +52,7 @@ Enables sure getaway\nfrom wild Pokémon.
 Prevents the Pokémon\nfrom losing accuracy.
 Prevents the Attack\nstat from being lowered.
 The Pokémon may\npick up items.
-Pokémon can’t attack\non consecutive turns.
+Loafs around and\npasses through barriers.
 Boosts the Attack stat,\nbut lowers accuracy.
 Contact with the Pokémon\nmay cause infatuation.
 Ups Sp. Atk if another\nPokémon has Minus.

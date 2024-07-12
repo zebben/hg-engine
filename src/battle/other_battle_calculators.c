@@ -1220,7 +1220,8 @@ void ServerHPCalc(void *bw, struct BattleStruct *sp)
 
         if ((sp->battlemon[sp->defence_client].condition2 & STATUS2_SUBSTITUTE)
          && (sp->damage < 0)
-         && (GetBattlerAbility(sp, sp->attack_client) != ABILITY_INFILTRATOR))
+         && (GetBattlerAbility(sp, sp->attack_client) != ABILITY_INFILTRATOR)
+         && (GetBattlerAbility(sp, sp->attack_client) != ABILITY_TRUANT))
         {
             if ((sp->battlemon[sp->defence_client].moveeffect.substituteHp + sp->damage) <= 0)
             {

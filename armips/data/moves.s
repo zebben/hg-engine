@@ -251,10 +251,10 @@ movedata MOVE_SWORDS_DANCE, "Swords Dance"
 movedata MOVE_CUT, "Cut"
     battleeffect MOVE_EFFECT_HIT
     pss SPLIT_PHYSICAL
-    basepower 50
-    type TYPE_NORMAL
-    accuracy 95
-    pp 30
+    basepower 75
+    type TYPE_GRASS
+    accuracy 100
+    pp 15
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
@@ -317,16 +317,16 @@ movedata MOVE_FLY, "Fly"
     pss SPLIT_PHYSICAL
     basepower 90
     type TYPE_FLYING
-    accuracy 95
-    pp 15
+    accuracy 100
+    pp 10
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
-    flags FLAG_HIDE_SHADOW | FLAG_KINGS_ROCK | FLAG_MIRROR_MOVE | FLAG_PROTECT | FLAG_CONTACT
+    flags FLAG_KINGS_ROCK | FLAG_MIRROR_MOVE | FLAG_CONTACT
     appeal 0x06
     contesttype CONTEST_SMART
     terminatedata
-    movedescription MOVE_FLY, "The user soars, then\nstrikes on the second\nturn. It can also be\nused for flying to\nany familiar town."
+    movedescription MOVE_FLY, "The user soars, then\nstrikes on the second\nturn. It can be\nused to travel to\nany familiar town.\nIt hits even if the\nfoe protects itself."
 
 movedata MOVE_BIND, "Bind"
     battleeffect MOVE_EFFECT_BIND_HIT
@@ -3355,7 +3355,7 @@ movedata MOVE_MILK_DRINK, "Milk Drink"
 movedata MOVE_SPARK, "Spark"
     battleeffect MOVE_EFFECT_PARALYZE_HIT
     pss SPLIT_PHYSICAL
-    basepower 65
+    basepower 60
     type TYPE_ELECTRIC
     accuracy 100
     pp 20
@@ -3995,7 +3995,7 @@ movedata MOVE_FUTURE_SIGHT, "Future Sight"
 movedata MOVE_ROCK_SMASH, "Rock Smash"
     battleeffect MOVE_EFFECT_LOWER_DEFENSE_HIT
     pss SPLIT_PHYSICAL
-    basepower 40
+    basepower 80
     type TYPE_FIGHTING
     accuracy 100
     pp 15
@@ -4011,10 +4011,10 @@ movedata MOVE_ROCK_SMASH, "Rock Smash"
 movedata MOVE_WHIRLPOOL, "Whirlpool"
     battleeffect MOVE_EFFECT_WHIRLPOOL
     pss SPLIT_SPECIAL
-    basepower 35
+    basepower 70
     type TYPE_WATER
     accuracy 85
-    pp 15
+    pp 10
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
@@ -6907,10 +6907,10 @@ movedata MOVE_FLASH_CANNON, "Flash Cannon"
 movedata MOVE_ROCK_CLIMB, "Rock Climb"
     battleeffect MOVE_EFFECT_CONFUSE_HIT
     pss SPLIT_PHYSICAL
-    basepower 90
-    type TYPE_NORMAL
+    basepower 80
+    type TYPE_ROCK
     accuracy 85
-    pp 20
+    pp 15
     effectchance 20
     target MOVE_TARGET_SELECTED
     priority 0

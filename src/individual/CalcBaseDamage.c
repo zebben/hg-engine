@@ -788,7 +788,8 @@ int CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 side_cond,
         if (((side_cond & SIDE_STATUS_REFLECT) != 0)
          && (critical == 1)
          && (sp->moveTbl[moveno].effect != MOVE_EFFECT_REMOVE_SCREENS)
-         && (AttackingMon.ability != ABILITY_INFILTRATOR))
+         && (AttackingMon.ability != ABILITY_INFILTRATOR)
+         && (AttackingMon.ability != ABILITY_TRUANT))
         {
             if ((battle_type & BATTLE_TYPE_DOUBLE) && (CheckNumMonsHit(bw, sp, 1, defender) == 2))
             {
@@ -806,7 +807,8 @@ int CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 side_cond,
         if (((side_cond & SIDE_STATUS_LIGHT_SCREEN) != 0)
          && (critical == 1)
          && (sp->moveTbl[moveno].effect != MOVE_EFFECT_REMOVE_SCREENS)
-         && (AttackingMon.ability != ABILITY_INFILTRATOR))
+         && (AttackingMon.ability != ABILITY_INFILTRATOR)
+         && (AttackingMon.ability != ABILITY_TRUANT))
         {
             if ((battle_type & BATTLE_TYPE_DOUBLE) && (CheckNumMonsHit(bw, sp, 1, defender) == 2))
             {
