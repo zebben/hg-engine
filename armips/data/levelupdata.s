@@ -7834,9 +7834,10 @@ levelup SPECIES_VIBRAVA
 
 
 levelup SPECIES_FLYGON
-    learnset MOVE_DRAGON_CLAW, 0
-    learnset MOVE_DRAGON_CLAW, 1
+    learnset MOVE_DRAGON_PULSE, 0
+    learnset MOVE_DRAGON_PULSE, 1
     learnset MOVE_DRAGON_BREATH, 1
+    learnset MOVE_QUIVER_DANCE, 1
     learnset MOVE_DRAGON_DANCE, 1
     learnset MOVE_FEINT, 1
     learnset MOVE_LASER_FOCUS, 1
@@ -7855,18 +7856,21 @@ levelup SPECIES_FLYGON
     learnset MOVE_MUD_SLAP, 8
     learnset MOVE_BULLDOZE, 8
     learnset MOVE_SAND_TOMB, 14
-    learnset MOVE_ROCK_SLIDE, 15
     learnset MOVE_SUPERSONIC, 19
     learnset MOVE_SCREECH, 23
     learnset MOVE_DRAGON_TAIL, 24
     learnset MOVE_U_TURN, 28
-    learnset MOVE_HIGH_HORSEPOWER, 32
+    learnset MOVE_EARTH_POWER, 32
     learnset MOVE_SANDSTORM, 33
-    learnset MOVE_EARTHQUAKE, 38
-    learnset MOVE_DRAGON_DANCE, 43
-    learnset MOVE_LEECH_LIFE, 46
+    learnset MOVE_ROOST, 37
+    learnset MOVE_POWER_GEM, 39
+    learnset MOVE_QUIVER_DANCE, 43
+    learnset MOVE_EXTRASENSORY, 46
+    learnset MOVE_EARTHQUAKE, 51
     learnset MOVE_DRAGON_RUSH, 53
-    learnset MOVE_NIGHT_SLASH, 55
+    learnset MOVE_DARK_PULSE, 55
+    learnset MOVE_BOOMBURST, 57
+    learnset MOVE_THUNDERBOLT, 60
     terminatelearnset
 
 

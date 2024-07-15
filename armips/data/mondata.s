@@ -6945,7 +6945,7 @@ mondata SPECIES_VIBRAVA, "Vibrava"
 
 
 mondata SPECIES_FLYGON, "Flygon"
-    basestats 80, 120, 85, 115, 45, 85
+    basestats 80, 65, 75, 110, 110, 90
     types TYPE_GROUND, TYPE_DRAGON
     catchrate 45
     baseexp 0 // defined in baseexp.s
