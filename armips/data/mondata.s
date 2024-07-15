@@ -26250,7 +26250,7 @@ mondata SPECIES_SINISTEA_ANTIQUE, "-----"
 
 
 mondata SPECIES_POLTEAGEIST_ANTIQUE, "-----"
-    basestats 60, 65, 65, 70, 134, 114
+    basestats 80, 65, 67, 70, 134, 114
     types TYPE_GHOST, TYPE_GHOST
     catchrate 60
     baseexp 178
