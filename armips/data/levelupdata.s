@@ -287,14 +287,18 @@ levelup SPECIES_BEEDRILL
     learnset MOVE_RAGE, 14
     learnset MOVE_PURSUIT, 17
     learnset MOVE_FOCUS_ENERGY, 20
-    learnset MOVE_VENOSHOCK, 23
+    learnset MOVE_VENOSHOCK, 22
+    learnset MOVE_BULLDOZE, 24
     learnset MOVE_ASSURANCE, 26
+    learnset MOVE_AERIAL_ACE, 27
     learnset MOVE_TOXIC_SPIKES, 29
+    learnset MOVE_BUG_BITE, 30
     learnset MOVE_PIN_MISSILE, 32
     learnset MOVE_POISON_JAB, 35
     learnset MOVE_AGILITY, 38
     learnset MOVE_ENDEAVOR, 41
     learnset MOVE_FELL_STINGER, 44
+    learnset MOVE_DRILL_RUN, 47
     learnset MOVE_GUNK_SHOT, 64
     terminatelearnset
 
