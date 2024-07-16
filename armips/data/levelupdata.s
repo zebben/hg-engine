@@ -1147,6 +1147,7 @@ levelup SPECIES_DUGTRIO
     learnset MOVE_EARTH_POWER, 36
     learnset MOVE_EARTHQUAKE, 47
     learnset MOVE_FISSURE, 53
+    learnset MOVE_SWORDS_DANCE, 58
     terminatelearnset
 
 
@@ -3091,6 +3092,7 @@ levelup SPECIES_GYARADOS
     learnset MOVE_DRAGON_RUSH, 46
     learnset MOVE_THRASH, 48
     learnset MOVE_HYPER_BEAM, 52
+    learnset MOVE_WAVE_CRASH, 57
     terminatelearnset
 
 
@@ -4936,7 +4938,6 @@ levelup SPECIES_STEELIX
     learnset MOVE_HEADLONG_RUSH, 55
     learnset MOVE_HEAD_SMASH, 60
     learnset MOVE_WILD_CHARGE, 62
-    learnset MOVE_FLARE_BLITZ, 65
     terminatelearnset
 
 
@@ -9847,6 +9848,7 @@ levelup SPECIES_FLOATZEL
     learnset MOVE_RAZOR_WIND, 41
     learnset MOVE_AQUA_TAIL, 46
     learnset MOVE_AGILITY, 51
+    learnset MOVE_WAVE_CRASH, 55
     learnset MOVE_ICE_HAMMER, 57
     learnset MOVE_HIGH_HORSEPOWER, 63
     terminatelearnset
@@ -17291,12 +17293,15 @@ levelup SPECIES_GOODRA
     learnset MOVE_FLAIL, 23
     learnset MOVE_WATER_PULSE, 25
     learnset MOVE_RAIN_DANCE, 27
+    learnset MOVE_SLUDGE_BOMB, 35
     learnset MOVE_DRAGON_PULSE, 40
     learnset MOVE_BODY_SLAM, 41
     learnset MOVE_CURSE, 43
+    learnset MOVE_GUNK_SHOT, 45
     learnset MOVE_MUDDY_WATER, 48
     learnset MOVE_OUTRAGE, 55
     learnset MOVE_POWER_WHIP, 59
+    learnset MOVE_WAVE_CRASH, 63
     terminatelearnset
 
 
@@ -18292,6 +18297,7 @@ levelup SPECIES_WISHIWASHI
     learnset MOVE_DOUBLE_EDGE, 44
     learnset MOVE_HYDRO_PUMP, 48
     learnset MOVE_U_TURN, 52
+    learnset MOVE_WAVE_CRASH, 60
     terminatelearnset
 
 
@@ -19070,6 +19076,7 @@ levelup SPECIES_BRUXISH
     learnset MOVE_FIRE_FANG, 52
     learnset MOVE_LIQUIDATION, 60
     learnset MOVE_SWORDS_DANCE, 62
+    learnset MOVE_WAVE_CRASH, 65
     terminatelearnset
 
 
@@ -22736,6 +22743,7 @@ levelup SPECIES_WUGTRIO
     learnset MOVE_SUCKER_PUNCH, 42
     learnset MOVE_THROAT_CHOP, 48
     learnset MOVE_LIQUIDATION, 54
+    learnset MOVE_SWORDS_DANCE, 58
     terminatelearnset
 
 levelup SPECIES_BOMBIRDIER
@@ -23011,6 +23019,8 @@ levelup SPECIES_VELUZA
     learnset MOVE_LIQUIDATION, 45
     learnset MOVE_CRUNCH, 50
     learnset MOVE_FINAL_GAMBIT, 55
+    learnset MOVE_SWORDS_DANCE, 60
+    learnset MOVE_WAVE_CRASH, 62
     terminatelearnset
 
 levelup SPECIES_DONDOZO
@@ -25525,6 +25535,7 @@ levelup SPECIES_DIGLETT_ALOLAN
     learnset MOVE_EARTH_POWER, 32
     learnset MOVE_EARTHQUAKE, 39
     learnset MOVE_FISSURE, 43
+    learnset MOVE_SWORDS_DANCE, 58
     terminatelearnset
 
 
@@ -28783,9 +28794,13 @@ levelup SPECIES_WISHIWASHI_SCHOOL
     learnset MOVE_UPROAR, 28
     learnset MOVE_SOAK, 34
     learnset MOVE_AQUA_TAIL, 34
+    learnset MOVE_REST, 40
+    learnset MOVE_SLEEP_TALK, 40
     learnset MOVE_ENDEAVOR, 44
     learnset MOVE_DOUBLE_EDGE, 44
     learnset MOVE_HYDRO_PUMP, 48
+    learnset MOVE_U_TURN, 52
+    learnset MOVE_WAVE_CRASH, 60
     terminatelearnset
 
 
