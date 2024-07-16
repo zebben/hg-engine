@@ -341,7 +341,7 @@ mondata SPECIES_BEEDRILL, "Beedrill"
     basefriendship 70
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_BUG, EGG_GROUP_BUG
-    abilities ABILITY_ADAPTABILITY, ABILITY_NONE
+    abilities ABILITY_ADAPTABILITY, ABILITY_TECHNICIAN
     runchance 0
     colorflip BODY_COLOR_YELLOW, 0
     mondexentry SPECIES_BEEDRILL, "It can take down any opponent with\nits powerful poison stingers.\nIt sometimes attacks in swarms."
@@ -2682,7 +2682,7 @@ mondata SPECIES_MAGMAR, "Magmar"
 
 
 mondata SPECIES_PINSIR, "Pinsir"
-    basestats 65, 155, 100, 105, 35, 70
+    basestats 65, 155, 100, 105, 40, 65
     types TYPE_BUG, TYPE_BUG
     catchrate 45
     baseexp 0 // defined in baseexp.s
@@ -3155,7 +3155,7 @@ mondata SPECIES_DRAGONITE, "Dragonite"
     basefriendship 35
     growthrate GROWTH_SLOW
     egggroups EGG_GROUP_WATER_1, EGG_GROUP_DRAGON
-    abilities ABILITY_MULTISCALE, ABILITY_NONE
+    abilities ABILITY_MULTISCALE, ABILITY_THICK_FAT
     runchance 0
     colorflip BODY_COLOR_BROWN, 0
     mondexentry SPECIES_DRAGONITE, "It is said that this Pokémon constantly\nflies over the immense seas\nand rescues drowning people."
@@ -5885,7 +5885,7 @@ mondata SPECIES_PELIPPER, "Pelipper"
     basefriendship 50
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_WATER_1, EGG_GROUP_FLYING
-    abilities ABILITY_DRIZZLE, ABILITY_NONE
+    abilities ABILITY_DRIZZLE, ABILITY_KEEN_EYE
     runchance 0
     colorflip BODY_COLOR_YELLOW, 0
     mondexentry SPECIES_PELIPPER, "It protects its young in its beak.\nIt bobs on waves, resting on them\non days when the waters are calm."
@@ -6347,7 +6347,7 @@ mondata SPECIES_DELCATTY, "Delcatty"
     basefriendship 70
     growthrate GROWTH_FAST
     egggroups EGG_GROUP_FIELD, EGG_GROUP_FAIRY
-    abilities ABILITY_CUTE_CHARM, ABILITY_NONE
+    abilities ABILITY_WONDER_SKIN, ABILITY_NORMALIZE
     runchance 0
     colorflip BODY_COLOR_PURPLE, 0
     mondexentry SPECIES_DELCATTY, "It dislikes dirty places. It often\nsearches for a comfortable place\nin which to groom itself."
@@ -6956,7 +6956,7 @@ mondata SPECIES_FLYGON, "Flygon"
     basefriendship 50
     growthrate GROWTH_MEDIUM_SLOW
     egggroups EGG_GROUP_BUG, EGG_GROUP_DRAGON
-    abilities ABILITY_LEVITATE, ABILITY_NONE
+    abilities ABILITY_SAND_FORCE, ABILITY_SHED_SKIN
     runchance 0
     colorflip BODY_COLOR_GREEN, 0
     mondexentry SPECIES_FLYGON, "It is nicknamed “The Desert\nSpirit” because the flapping of its\nwings sounds like a woman singing."
@@ -8195,7 +8195,7 @@ mondata SPECIES_TORTERRA, "Torterra"
     basefriendship 70
     growthrate GROWTH_MEDIUM_SLOW
     egggroups EGG_GROUP_MONSTER, EGG_GROUP_GRASS
-    abilities ABILITY_SHELL_ARMOR, ABILITY_NONE
+    abilities ABILITY_SOLID_ROCK, ABILITY_NONE
     runchance 0
     colorflip BODY_COLOR_GREEN, 0
     mondexentry SPECIES_TORTERRA, "Ancient people imagined that\nbeneath the ground, a gigantic\nTORTERRA dwelled."
@@ -9014,7 +9014,7 @@ mondata SPECIES_LOPUNNY, "Lopunny"
     basefriendship 140
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_FIELD, EGG_GROUP_HUMAN_LIKE
-    abilities ABILITY_SCRAPPY, ABILITY_NONE
+    abilities ABILITY_SCRAPPY, ABILITY_LIMBER
     runchance 0
     colorflip BODY_COLOR_BROWN, 0
     mondexentry SPECIES_LOPUNNY, "It sheds its fur twice a year.\nIts winter fur is soft and fluffy."
@@ -9686,7 +9686,7 @@ mondata SPECIES_ABOMASNOW, "Abomasnow"
     basefriendship 50
     growthrate GROWTH_SLOW
     egggroups EGG_GROUP_MONSTER, EGG_GROUP_GRASS
-    abilities ABILITY_SNOW_WARNING, ABILITY_NONE
+    abilities ABILITY_SNOW_WARNING, ABILITY_WATER_ABSORB
     runchance 0
     colorflip BODY_COLOR_WHITE, 0
     mondexentry SPECIES_ABOMASNOW, "It lives a quiet life on mountains that\nare perpetually covered in snow.\nIt hides itself by whipping up blizzards."
@@ -11576,7 +11576,7 @@ mondata SPECIES_EMBOAR, "Emboar"
     basefriendship 70
     growthrate GROWTH_MEDIUM_SLOW
     egggroups EGG_GROUP_FIELD, EGG_GROUP_FIELD
-    abilities ABILITY_BLAZE, ABILITY_NONE
+    abilities ABILITY_MOLD_BREAKER, ABILITY_NONE
     runchance 0
     colorflip BODY_COLOR_RED, 0
     mondexentry SPECIES_EMBOAR, "It has mastered fast and powerful\nfighting moves. It grows a beard of\nfire."
@@ -11639,7 +11639,7 @@ mondata SPECIES_SAMUROTT, "Samurott"
     basefriendship 70
     growthrate GROWTH_MEDIUM_SLOW
     egggroups EGG_GROUP_FIELD, EGG_GROUP_FIELD
-    abilities ABILITY_TORRENT, ABILITY_NONE
+    abilities ABILITY_SHARPNESS, ABILITY_NONE
     runchance 0
     colorflip BODY_COLOR_BLUE, 0
     mondexentry SPECIES_SAMUROTT, "In the time it takes a foe to blink, it\ncan draw and sheathe the seamitars\nattached to its front legs."
@@ -14106,7 +14106,7 @@ mondata SPECIES_MIENSHAO, "Mienshao"
 
 
 mondata SPECIES_DRUDDIGON, "Druddigon"
-    basestats 77, 140, 85, 83, 60, 85
+    basestats 77, 130, 90, 83, 60, 90
     types TYPE_DRAGON, TYPE_DRAGON
     catchrate 45
     baseexp 0 // defined in baseexp.s
@@ -15618,7 +15618,7 @@ mondata SPECIES_CLAUNCHER, "Clauncher"
 
 
 mondata SPECIES_CLAWITZER, "Clawitzer"
-    basestats 80, 70, 75, 100, 130, 75
+    basestats 83, 73, 87, 70, 130, 87
     types TYPE_WATER, TYPE_WATER
     catchrate 55
     baseexp 0 // defined in baseexp.s
@@ -15629,7 +15629,7 @@ mondata SPECIES_CLAWITZER, "Clawitzer"
     basefriendship 50
     growthrate GROWTH_SLOW
     egggroups EGG_GROUP_WATER_1, EGG_GROUP_WATER_3
-    abilities ABILITY_MEGA_LAUNCHER, ABILITY_NONE
+    abilities ABILITY_MEGA_LAUNCHER, ABILITY_SWIFT_SWIM
     runchance 0
     colorflip BODY_COLOR_BLUE, 0
     mondexentry SPECIES_CLAWITZER, "Their enormous claws launch cannonballs\nof water powerful enough to pierce\ntanker hulls."
@@ -15839,7 +15839,7 @@ mondata SPECIES_CARBINK, "Carbink"
     basefriendship 50
     growthrate GROWTH_SLOW
     egggroups EGG_GROUP_FAIRY, EGG_GROUP_MINERAL
-    abilities ABILITY_MAGIC_BOUNCE, ABILITY_NONE
+    abilities ABILITY_MAGIC_BOUNCE, ABILITY_CLEAR_BODY
     runchance 0
     colorflip BODY_COLOR_GRAY, 0
     mondexentry SPECIES_CARBINK, "Born from temperatures and pressures\ndeep underground, it fires beams from\nthe stone in its head."
@@ -15902,7 +15902,7 @@ mondata SPECIES_GOODRA, "Goodra"
     basefriendship 35
     growthrate GROWTH_SLOW
     egggroups EGG_GROUP_DRAGON, EGG_GROUP_DRAGON
-    abilities ABILITY_SAP_SIPPER, ABILITY_HYDRATION
+    abilities ABILITY_POISON_HEAL, ABILITY_HYDRATION
     runchance 0
     colorflip BODY_COLOR_PURPLE, 0
     mondexentry SPECIES_GOODRA, "An amazingly friendly Pokémon, but if\nleft to itself, loneliness overcomes it,\nand it oozes gooey tears."
@@ -16080,7 +16080,7 @@ mondata SPECIES_NOIBAT, "Noibat"
 
 
 mondata SPECIES_NOIVERN, "Noivern"
-    basestats 85, 50, 80, 123, 112, 80
+    basestats 85, 60, 80, 123, 102, 80
     types TYPE_FLYING, TYPE_DRAGON
     catchrate 45
     baseexp 0 // defined in baseexp.s
@@ -17372,7 +17372,7 @@ mondata SPECIES_TURTONATOR, "Turtonator"
     basefriendship 50
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_MONSTER, EGG_GROUP_DRAGON
-    abilities ABILITY_SHELL_ARMOR, ABILITY_NONE
+    abilities ABILITY_IRON_BARBS, ABILITY_MOLD_BREAKER
     runchance 0
     colorflip BODY_COLOR_RED, 0
     mondexentry SPECIES_TURTONATOR, "It gushes fire and poisonous gases from\nits nostrils. Its dung is an explosive\nsubstance."
@@ -19535,7 +19535,7 @@ mondata SPECIES_COPPERAJAH, "Copperajah"
     basefriendship 50
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_FIELD, EGG_GROUP_MINERAL
-    abilities ABILITY_SHEER_FORCE, ABILITY_NONE
+    abilities ABILITY_SHEER_FORCE, ABILITY_HEAVY_METAL
     runchance 0
     colorflip BODY_COLOR_GREEN, 0
     mondexentry SPECIES_COPPERAJAH, "These Pokémon live in herds. Their\ntrunks have incredible grip strength,\nstrong enough to crush giant rocks."
@@ -19976,7 +19976,7 @@ mondata SPECIES_KLEAVOR, "Kleavor"
     basefriendship 70
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_BUG, EGG_GROUP_BUG
-    abilities ABILITY_SHEER_FORCE, ABILITY_NONE
+    abilities ABILITY_SHEER_FORCE, ABILITY_SHARPNESS
     runchance 0
     colorflip BODY_COLOR_BROWN, 0
     mondexentry SPECIES_KLEAVOR, "A violent creature that fells towering trees with its crude axes\nand shields itself with hard stone. If one should chance upon\nthis Pokémon in the wilds, one's only recourse is to flee."
@@ -26703,7 +26703,7 @@ mondata SPECIES_SAMUROTT_HISUIAN, "-----"
     basefriendship 70
     growthrate GROWTH_MEDIUM_SLOW
     egggroups EGG_GROUP_FIELD, EGG_GROUP_FIELD
-    abilities ABILITY_TORRENT, ABILITY_NONE
+    abilities ABILITY_SHARPNESS, ABILITY_NONE
     runchance 0
     colorflip BODY_COLOR_BLUE, 0
 
