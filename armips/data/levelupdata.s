@@ -23735,6 +23735,7 @@ levelup SPECIES_SINISTCHA
     learnset MOVE_HEX, 30
     learnset MOVE_RAGE_POWDER, 36
     learnset MOVE_STRENGTH_SAP, 42
+    learnset MOVE_GIGA_DRAIN, 45
     learnset MOVE_SHADOW_BALL, 48
     learnset MOVE_MEMENTO, 54
     learnset MOVE_LEAF_STORM, 60
@@ -30664,6 +30665,7 @@ levelup SPECIES_SINISTCHA_MASTERPIECE
     learnset MOVE_HEX, 30
     learnset MOVE_RAGE_POWDER, 36
     learnset MOVE_STRENGTH_SAP, 42
+    learnset MOVE_GIGA_DRAIN, 45
     learnset MOVE_SHADOW_BALL, 48
     learnset MOVE_MEMENTO, 54
     learnset MOVE_LEAF_STORM, 60

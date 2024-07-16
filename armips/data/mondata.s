@@ -9003,7 +9003,7 @@ mondata SPECIES_BUNEARY, "Buneary"
 
 
 mondata SPECIES_LOPUNNY, "Lopunny"
-    basestats 65, 100, 84, 135, 50, 96
+    basestats 65, 115, 84, 135, 35, 96
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 60
     baseexp 0 // defined in baseexp.s
@@ -27321,7 +27321,7 @@ mondata SPECIES_POLTCHAGEIST_MASTERPIECE, "-----"
 
 
 mondata SPECIES_SINISTCHA_MASTERPIECE, "-----"
-    basestats 71, 60, 106, 70, 121, 80
+    basestats 71, 58, 106, 85, 130, 80
     types TYPE_GRASS, TYPE_GHOST
     catchrate 60
     baseexp 0 // defined in baseexp.s
