@@ -3233,8 +3233,10 @@ levelup SPECIES_FLAREON
     learnset MOVE_FIRE_SPIN, 30
     learnset MOVE_SCARY_FACE, 37
     learnset MOVE_LAVA_PLUME, 38
+    learnset MOVE_FIRE_LASH, 43
     learnset MOVE_FLARE_BLITZ, 47
     learnset MOVE_LAST_RESORT, 48
+    learnset MOVE_SWORDS_DANCE, 62
     terminatelearnset
 
 
