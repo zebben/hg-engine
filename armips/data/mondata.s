@@ -22464,7 +22464,7 @@ mondata SPECIES_ARCHALUDON, "Archaludon"
 
 
 mondata SPECIES_HYDRAPPLE, "Hydrapple"
-    basestats 106, 80, 110, 44, 120, 80
+    basestats 95, 65, 130, 40, 115, 85
     types TYPE_GRASS, TYPE_DRAGON
     catchrate 10
     baseexp 0 // defined in baseexp.s
@@ -26845,7 +26845,7 @@ mondata SPECIES_DECIDUEYE_HISUIAN, "-----"
 
 
 mondata SPECIES_UNFEZANT_FEMALE, "-----"
-    basestats 80, 115, 80, 93, 65, 55
+    basestats 87, 65, 80, 93, 125, 80
     types TYPE_NORMAL, TYPE_FLYING
     catchrate 45
     baseexp 140
@@ -26879,7 +26879,7 @@ mondata SPECIES_FRILLISH_FEMALE, "-----"
 
 
 mondata SPECIES_JELLICENT_FEMALE, "-----"
-    basestats 100, 60, 70, 60, 85, 105
+    basestats 105, 60, 105, 60, 95, 105
     types TYPE_WATER, TYPE_GHOST
     catchrate 60
     baseexp 109
@@ -26896,7 +26896,7 @@ mondata SPECIES_JELLICENT_FEMALE, "-----"
 
 
 mondata SPECIES_PYROAR_FEMALE, "-----"
-    basestats 86, 68, 72, 106, 109, 66
+    basestats 94, 45, 80, 106, 125, 80
     types TYPE_FIRE, TYPE_NORMAL
     catchrate 65
     baseexp 177
@@ -26907,7 +26907,7 @@ mondata SPECIES_PYROAR_FEMALE, "-----"
     basefriendship 70
     growthrate GROWTH_MEDIUM_SLOW
     egggroups EGG_GROUP_FIELD, EGG_GROUP_FIELD
-    abilities ABILITY_RIVALRY,  ABILITY_UNNERVE
+    abilities ABILITY_INTIMIDATE, ABILITY_FLASH_FIRE
     runchance 0
     colorflip BODY_COLOR_BROWN, 0
 
