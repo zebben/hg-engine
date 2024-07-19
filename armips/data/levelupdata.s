@@ -20668,6 +20668,7 @@ levelup SPECIES_PERRSERKER
     learnset MOVE_GROWL, 1
     learnset MOVE_HONE_CLAWS, 1
     learnset MOVE_SCRATCH, 1
+    learnset MOVE_QUICK_ATTACK, 1
     learnset MOVE_PAY_DAY, 12
     learnset MOVE_METAL_CLAW, 16
     learnset MOVE_TAUNT, 20
@@ -20684,6 +20685,7 @@ levelup SPECIES_PERRSERKER
     learnset MOVE_FIRE_FANG, 52
     learnset MOVE_THUNDER_FANG, 52
     learnset MOVE_SEED_BOMB, 54
+    learnset MOVE_DOUBLE_EDGE, 57
     learnset MOVE_U_TURN, 60
     learnset MOVE_CLOSE_COMBAT, 62
     terminatelearnset
