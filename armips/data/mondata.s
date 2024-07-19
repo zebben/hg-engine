@@ -11,7 +11,7 @@
 
 
 // all the mon personal data.  tm learnsets are specifically in tmlearnset.txt
-// basestats and evyields 2, 2, 2, 2, 2, 2
+// basestats and evyields fields are formated as such:  hp atk def speed spatk spdef
 
 
 mondata SPECIES_NONE, "-----"
