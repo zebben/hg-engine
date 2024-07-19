@@ -7340,7 +7340,7 @@ movedata MOVE_HEAD_SMASH, "Head Smash"
 movedata MOVE_DOUBLE_HIT, "Double Hit"
     battleeffect MOVE_EFFECT_HIT_TWICE
     pss SPLIT_PHYSICAL
-    basepower 35
+    basepower 40
     type TYPE_NORMAL
     accuracy 90
     pp 10
@@ -8508,11 +8508,11 @@ movedata MOVE_ELECTROWEB, "Electroweb"
 movedata MOVE_WILD_CHARGE, "Wild Charge"
     battleeffect MOVE_EFFECT_RECOIL_THIRD
     pss SPLIT_PHYSICAL
-    basepower 90
+    basepower 120
     type TYPE_ELECTRIC
     accuracy 100
     pp 15
-    effectchance 0
+    effectchance 10
     target MOVE_TARGET_SELECTED
     priority 0
     flags FLAG_CONTACT | FLAG_PROTECT | FLAG_MIRROR_MOVE | FLAG_KINGS_ROCK
