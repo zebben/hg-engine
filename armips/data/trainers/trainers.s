@@ -17,8 +17,8 @@ trainerdata 0, "-"
     item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
-    aiflags F_PRIORITIZE_SUPER_EFFECTIVE | F_EVALUATE_ATTACKS | F_EXPERT_ATTACKS | 0
-    battletype DOUBLE_BATTLE
+    aiflags 0
+    battletype SINGLE_BATTLE
     endentry
 
     party 0
@@ -123,29 +123,29 @@ trainerdata 4, "Wade"
         // mon 0
         ivs 0
         abilityslot 0
-        level 2
-        pokemon SPECIES_CATERPIE
+        level 7
+        pokemon SPECIES_SPINARAK
         ballseal 0
 
         // mon 1
         ivs 0
         abilityslot 0
-        level 2
-        pokemon SPECIES_CATERPIE
+        level 7
+        pokemon SPECIES_LEDYBA
         ballseal 0
 
         // mon 2
         ivs 0
         abilityslot 0
-        level 3
-        pokemon SPECIES_WEEDLE
+        level 6
+        pokemon SPECIES_VENIPEDE
         ballseal 0
 
         // mon 3
         ivs 0
         abilityslot 0
-        level 2
-        pokemon SPECIES_CATERPIE
+        level 6
+        pokemon SPECIES_JOLTIK
         ballseal 0
     endparty
 
@@ -250,7 +250,7 @@ trainerdata 7, "Irwin"
 trainerdata 8, "Joey"
     trainermontype TRAINER_DATA_TYPE_NOTHING
     trainerclass CLASS_YOUNGSTER
-    nummons 1
+    nummons 2
     item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
@@ -263,7 +263,14 @@ trainerdata 8, "Joey"
         // mon 0
         ivs 0
         abilityslot 0
-        level 4
+        level 3
+        pokemon SPECIES_RATTATA
+        ballseal 0
+
+        // mon 1
+        ivs 0
+        abilityslot 0
+        level 3
         pokemon SPECIES_RATTATA
         ballseal 0
     endparty
@@ -550,29 +557,29 @@ trainerdata 18, "Justin"
         // mon 0
         ivs 0
         abilityslot 0
-        level 5
-        pokemon SPECIES_MAGIKARP
+        level 9
+        pokemon SPECIES_BASCULIN
         ballseal 0
 
         // mon 1
         ivs 0
         abilityslot 0
-        level 5
-        pokemon SPECIES_MAGIKARP
+        level 9
+        pokemon SPECIES_FINNEON
         ballseal 0
 
         // mon 2
         ivs 0
         abilityslot 0
-        level 15
-        pokemon SPECIES_MAGIKARP
+        level 9
+        pokemon SPECIES_TYMPOLE
         ballseal 0
 
         // mon 3
         ivs 0
         abilityslot 0
-        level 5
-        pokemon SPECIES_MAGIKARP
+        level 7
+        pokemon SPECIES_CLAUNCHER
         ballseal 0
     endparty
 
@@ -615,7 +622,7 @@ trainerdata 20, "Falkner"
     trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
     trainerclass CLASS_LEADER_M
     nummons 2
-    item ITEM_NONE
+    item ITEM_POTION
     item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
@@ -625,27 +632,40 @@ trainerdata 20, "Falkner"
 
     party 20
         // mon 0
-        ivs 50
+        ivs 200
         abilityslot 0
-        level 9
-        pokemon SPECIES_PIDGEY
-        item ITEM_NONE
-        move MOVE_TACKLE
-        move MOVE_SAND_ATTACK
-        move MOVE_NONE
-        move MOVE_NONE
+        level 11
+        pokemon SPECIES_HOOTHOOT
+        item ITEM_LIGHT_CLAY
+        move MOVE_LIGHT_SCREEN
+        move MOVE_REFLECT
+        move MOVE_HYPNOSIS
+        move MOVE_GUST
+        ability ABILITY_KEEN_EYE
+        setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
+        setevs 6, 0, 0, 252, 252, 0 // hp, atk, def, spd, spatk, spdef
+        nature NATURE_TIMID
+        shinylock 0
+        additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
         ballseal 0
 
         // mon 1
-        ivs 50
+        ivs 200
         abilityslot 0
         level 13
-        pokemon SPECIES_PIDGEOTTO
-        item ITEM_NONE
-        move MOVE_TACKLE
+        pokemon SPECIES_MURKROW
+        item ITEM_ORAN_BERRY
+        move MOVE_PECK
         move MOVE_ROOST
+        move MOVE_PURSUIT
+        move MOVE_ASTONISH
         move MOVE_GUST
-        move MOVE_NONE
+        ability ABILITY_INSOMNIA
+        setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
+        setevs 6, 0, 0, 252, 252, 0 // hp, atk, def, spd, spatk, spdef
+        nature NATURE_ADAMANT
+        shinylock 0
+        additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
         ballseal 0
     endparty
 
@@ -804,7 +824,7 @@ trainerdata 25, "Russel"
 trainerdata 26, "Roland"
     trainermontype TRAINER_DATA_TYPE_NOTHING
     trainerclass CLASS_CAMPER
-    nummons 1
+    nummons 2
     item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
@@ -817,8 +837,15 @@ trainerdata 26, "Roland"
         // mon 0
         ivs 0
         abilityslot 32
-        level 9
-        pokemon SPECIES_NIDORAN_M
+        level 12
+        pokemon SPECIES_SANDILE
+        ballseal 0
+
+        // mon 1
+        ivs 0
+        abilityslot 32
+        level 11
+        pokemon SPECIES_BALTOY
         ballseal 0
     endparty
 
@@ -838,8 +865,15 @@ trainerdata 27, "Liz"
         // mon 0
         ivs 0
         abilityslot 32
-        level 8
+        level 11
         pokemon SPECIES_NIDORAN_F
+        ballseal 0
+
+        // mon 1
+        ivs 0
+        abilityslot 32
+        level 11
+        pokemon SPECIES_NIDORAN_M
         ballseal 0
     endparty
 
@@ -904,17 +938,39 @@ trainerdata 29, "Rod"
 
     party 29
         // mon 0
-        ivs 30
+        ivs 200
         abilityslot 0
-        level 7
-        pokemon SPECIES_PIDGEY
+        level 11
+        pokemon SPECIES_PIDOVE
+        item ITEM_NONE
+        move MOVE_PECK
+        move MOVE_QUICK_ATTACK
+        move MOVE_GROWL
+        move MOVE_NONE
+        ability ABILITY_BIG_PECKS
+        setivs 25, 25, 25, 25, 25, 25 // hp, atk, def, spd, spatk, spdef
+        setevs 32, 32, 32, 32, 32, 32 // hp, atk, def, spd, spatk, spdef
+        nature NATURE_SERIOUS
+        shinylock 0
+        additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
         ballseal 0
 
         // mon 1
-        ivs 30
+        ivs 200
         abilityslot 0
-        level 7
-        pokemon SPECIES_PIDGEY
+        level 10
+        pokemon SPECIES_RUFFLET
+        item ITEM_NONE
+        move MOVE_PECK
+        move MOVE_QUICK_ATTACK
+        move MOVE_HONE_CLAWS
+        move MOVE_NONE
+        ability ABILITY_KEEN_EYE
+        setivs 25, 25, 25, 25, 25, 25 // hp, atk, def, spd, spatk, spdef
+        setevs 32, 32, 32, 32, 32, 32 // hp, atk, def, spd, spatk, spdef
+        nature NATURE_SERIOUS
+        shinylock 0
+        additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
         ballseal 0
     endparty
 
@@ -1417,22 +1473,22 @@ trainerdata 43, "Chow"
         // mon 0
         ivs 0
         abilityslot 0
-        level 3
+        level 7
         pokemon SPECIES_BELLSPROUT
         ballseal 0
 
         // mon 1
         ivs 0
         abilityslot 0
-        level 3
-        pokemon SPECIES_BELLSPROUT
+        level 6
+        pokemon SPECIES_PAWMI
         ballseal 0
 
         // mon 2
         ivs 0
         abilityslot 0
-        level 3
-        pokemon SPECIES_BELLSPROUT
+        level 6
+        pokemon SPECIES_BLITZLE
         ballseal 0
     endparty
 
@@ -1537,15 +1593,15 @@ trainerdata 47, "Mikey"
         // mon 0
         ivs 0
         abilityslot 0
-        level 2
-        pokemon SPECIES_PIDGEY
+        level 4
+        pokemon SPECIES_HOOTHOOT
         ballseal 0
 
         // mon 1
         ivs 0
         abilityslot 32
-        level 4
-        pokemon SPECIES_RATTATA
+        level 5
+        pokemon SPECIES_SENTRET
         ballseal 0
     endparty
 
@@ -1593,22 +1649,22 @@ trainerdata 49, "Albert"
         // mon 0
         ivs 0
         abilityslot 0
-        level 6
-        pokemon SPECIES_RATTATA
+        level 10
+        pokemon SPECIES_SKITTY
         ballseal 0
 
         // mon 1
         ivs 0
         abilityslot 0
-        level 8
-        pokemon SPECIES_ZUBAT
+        level 10
+        pokemon SPECIES_LILLIPUP
         ballseal 0
     endparty
 
 trainerdata 50, "Abe"
     trainermontype TRAINER_DATA_TYPE_NOTHING
     trainerclass CLASS_BIRD_KEEPER_1
-    nummons 1
+    nummons 2
     item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
@@ -1619,10 +1675,39 @@ trainerdata 50, "Abe"
 
     party 50
         // mon 0
-        ivs 30
+        ivs 200
         abilityslot 0
         level 9
-        pokemon SPECIES_SPEAROW
+        pokemon SPECIES_SWABLU
+        item ITEM_NONE
+        move MOVE_PECK
+        move MOVE_DRAGON_BREATH
+        move MOVE_DISARMING_VOICE
+        move MOVE_GROWL
+        ability ABILITY_CLOUD_NINE
+        setivs 25, 25, 25, 25, 25, 25 // hp, atk, def, spd, spatk, spdef
+        setevs 32, 32, 32, 32, 32, 32 // hp, atk, def, spd, spatk, spdef
+        nature NATURE_SERIOUS
+        shinylock 0
+        additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
+        ballseal 0
+
+        // mon 1
+        ivs 200
+        abilityslot 0
+        level 10
+        pokemon SPECIES_STARLY
+        item ITEM_NONE
+        move MOVE_PECK
+        move MOVE_QUICK_ATTACK
+        move MOVE_GROWL
+        move MOVE_NONE
+        ability ABILITY_KEEN_EYE
+        setivs 25, 25, 25, 25, 25, 25 // hp, atk, def, spd, spatk, spdef
+        setevs 32, 32, 32, 32, 32, 32 // hp, atk, def, spd, spatk, spdef
+        nature NATURE_SERIOUS
+        shinylock 0
+        additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
         ballseal 0
     endparty
 
@@ -1642,22 +1727,22 @@ trainerdata 51, "Nico"
         // mon 0
         ivs 0
         abilityslot 0
-        level 3
+        level 9
         pokemon SPECIES_BELLSPROUT
         ballseal 0
 
         // mon 1
         ivs 0
         abilityslot 0
-        level 3
-        pokemon SPECIES_BELLSPROUT
+        level 7
+        pokemon SPECIES_CAPSAKID
         ballseal 0
 
         // mon 2
         ivs 0
         abilityslot 0
-        level 3
-        pokemon SPECIES_BELLSPROUT
+        level 8
+        pokemon SPECIES_SMOLIV
         ballseal 0
     endparty
 
@@ -1677,29 +1762,29 @@ trainerdata 52, "Edmond"
         // mon 0
         ivs 0
         abilityslot 0
-        level 3
+        level 7
         pokemon SPECIES_BELLSPROUT
         ballseal 0
 
         // mon 1
         ivs 0
         abilityslot 0
-        level 3
-        pokemon SPECIES_BELLSPROUT
+        level 8
+        pokemon SPECIES_HOPPIP
         ballseal 0
 
         // mon 2
         ivs 0
         abilityslot 0
-        level 3
-        pokemon SPECIES_BELLSPROUT
+        level 8
+        pokemon SPECIES_MARILL
         ballseal 0
     endparty
 
 trainerdata 53, "Jin"
     trainermontype TRAINER_DATA_TYPE_NOTHING
     trainerclass CLASS_SAGE
-    nummons 1
+    nummons 2
     item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
@@ -1712,8 +1797,15 @@ trainerdata 53, "Jin"
         // mon 0
         ivs 0
         abilityslot 0
-        level 6
+        level 8
         pokemon SPECIES_BELLSPROUT
+        ballseal 0
+
+        // mon 1
+        ivs 0
+        abilityslot 0
+        level 10
+        pokemon SPECIES_ZIGZAGOON
         ballseal 0
     endparty
 
@@ -1733,14 +1825,14 @@ trainerdata 54, "Troy"
         // mon 0
         ivs 0
         abilityslot 0
-        level 7
+        level 9
         pokemon SPECIES_BELLSPROUT
         ballseal 0
 
         // mon 1
         ivs 0
         abilityslot 32
-        level 7
+        level 10
         pokemon SPECIES_HOOTHOOT
         ballseal 0
     endparty
@@ -1761,15 +1853,22 @@ trainerdata 55, "Neal"
         // mon 0
         ivs 0
         abilityslot 0
-        level 6
+        level 10
         pokemon SPECIES_BELLSPROUT
+        ballseal 0
+
+        // mon 1
+        ivs 0
+        abilityslot 0
+        level 9
+        pokemon SPECIES_POOCHYENA
         ballseal 0
     endparty
 
 trainerdata 56, "Gordon"
     trainermontype TRAINER_DATA_TYPE_NOTHING
     trainerclass CLASS_YOUNGSTER
-    nummons 1
+    nummons 2
     item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
@@ -1782,15 +1881,22 @@ trainerdata 56, "Gordon"
         // mon 0
         ivs 0
         abilityslot 32
-        level 10
+        level 12
         pokemon SPECIES_WOOPER
+        ballseal 0
+
+        // mon 1
+        ivs 0
+        abilityslot 32
+        level 10
+        pokemon SPECIES_BUIZEL
         ballseal 0
     endparty
 
 trainerdata 57, "Ralph"
     trainermontype TRAINER_DATA_TYPE_NOTHING
     trainerclass CLASS_FISHERMAN
-    nummons 1
+    nummons 2
     item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
@@ -1804,7 +1910,14 @@ trainerdata 57, "Ralph"
         ivs 0
         abilityslot 0
         level 10
-        pokemon SPECIES_GOLDEEN
+        pokemon SPECIES_CLAMPERL
+        ballseal 0
+
+        // mon 1
+        ivs 0
+        abilityslot 0
+        level 10
+        pokemon SPECIES_ARROKUDA
         ballseal 0
     endparty
 
@@ -1880,14 +1993,14 @@ trainerdata 60, "Henry"
         // mon 0
         ivs 0
         abilityslot 0
-        level 8
-        pokemon SPECIES_POLIWAG
+        level 11
+        pokemon SPECIES_REMORAID
         ballseal 0
 
         // mon 1
         ivs 0
         abilityslot 32
-        level 8
+        level 11
         pokemon SPECIES_POLIWAG
         ballseal 0
     endparty
@@ -7857,15 +7970,15 @@ trainerdata 249, "Don"
         // mon 0
         ivs 0
         abilityslot 0
-        level 3
-        pokemon SPECIES_CATERPIE
+        level 6
+        pokemon SPECIES_SEWADDLE
         ballseal 0
 
         // mon 1
         ivs 0
         abilityslot 0
-        level 3
-        pokemon SPECIES_CATERPIE
+        level 6
+        pokemon SPECIES_WURMPLE
         ballseal 0
     endparty
 
@@ -9980,8 +10093,8 @@ trainerdata 289, "Silver"
 trainerdata 290, "Li"
     trainermontype TRAINER_DATA_TYPE_NOTHING
     trainerclass CLASS_ELDER
-    nummons 3
-    item ITEM_NONE
+    nummons 4
+    item ITEM_POTION
     item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
@@ -9993,21 +10106,28 @@ trainerdata 290, "Li"
         // mon 0
         ivs 0
         abilityslot 0
-        level 7
+        level 11
         pokemon SPECIES_BELLSPROUT
         ballseal 0
 
         // mon 1
         ivs 0
         abilityslot 0
-        level 7
-        pokemon SPECIES_BELLSPROUT
+        level 10
+        pokemon SPECIES_TAILLOW
         ballseal 0
 
         // mon 2
         ivs 0
         abilityslot 0
-        level 10
+        level 8
+        pokemon SPECIES_WEEPINBELL
+        ballseal 0
+
+        // mon 3
+        ivs 0
+        abilityslot 0
+        level 11
         pokemon SPECIES_HOOTHOOT
         ballseal 0
     endparty
@@ -12899,22 +13019,22 @@ trainerdata 383, "Peter"
         // mon 0
         ivs 50
         abilityslot 0
-        level 6
-        pokemon SPECIES_PIDGEY
+        level 10
+        pokemon SPECIES_DODUO
         ballseal 0
 
         // mon 1
         ivs 50
         abilityslot 32
-        level 6
-        pokemon SPECIES_PIDGEY
+        level 10
+        pokemon SPECIES_NATU
         ballseal 0
 
         // mon 2
         ivs 50
         abilityslot 0
-        level 8
-        pokemon SPECIES_SPEAROW
+        level 11
+        pokemon SPECIES_TAILLOW
         ballseal 0
     endparty
 
