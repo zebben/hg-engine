@@ -3615,7 +3615,6 @@ levelup SPECIES_MEW
 levelup SPECIES_CHIKORITA
     learnset MOVE_GROWL, 1
     learnset MOVE_TACKLE, 1
-    learnset MOVE_RAZOR_LEAF, 6
     learnset MOVE_ABSORB, 6
     learnset MOVE_POISON_POWDER, 9
     learnset MOVE_SYNTHESIS, 12

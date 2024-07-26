@@ -622,7 +622,7 @@ trainerdata 20, "Falkner"
     trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
     trainerclass CLASS_LEADER_M
     nummons 2
-    item ITEM_POTION
+    item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
@@ -635,13 +635,13 @@ trainerdata 20, "Falkner"
         ivs 200
         abilityslot 0
         level 11
-        pokemon SPECIES_HOOTHOOT
+        pokemon SPECIES_NATU
         item ITEM_LIGHT_CLAY
-        move MOVE_LIGHT_SCREEN
+        move MOVE_ROOST
         move MOVE_REFLECT
         move MOVE_HYPNOSIS
         move MOVE_GUST
-        ability ABILITY_KEEN_EYE
+        ability ABILITY_SYNCHRONIZE
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
         setevs 6, 0, 0, 252, 252, 0 // hp, atk, def, spd, spatk, spdef
         nature NATURE_TIMID
@@ -658,8 +658,7 @@ trainerdata 20, "Falkner"
         move MOVE_PECK
         move MOVE_ROOST
         move MOVE_PURSUIT
-        move MOVE_ASTONISH
-        move MOVE_GUST
+        move MOVE_HAZE
         ability ABILITY_INSOMNIA
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
         setevs 6, 0, 0, 252, 252, 0 // hp, atk, def, spd, spatk, spdef
@@ -1594,7 +1593,7 @@ trainerdata 47, "Mikey"
         ivs 0
         abilityslot 0
         level 4
-        pokemon SPECIES_HOOTHOOT
+        pokemon SPECIES_PIDGEY
         ballseal 0
 
         // mon 1
@@ -16817,7 +16816,7 @@ trainerdata 495, "Boy"
     item ITEM_NONE
     item ITEM_NONE
     aiflags F_PRIORITIZE_SUPER_EFFECTIVE | F_EVALUATE_ATTACKS | F_EXPERT_ATTACKS | 0
-    battletype DOUBLE_BATTLE
+    battletype SINGLE_BATTLE
     endentry
 
     party 495
@@ -16838,7 +16837,7 @@ trainerdata 496, "Boy"
     item ITEM_NONE
     item ITEM_NONE
     aiflags F_PRIORITIZE_SUPER_EFFECTIVE | F_EVALUATE_ATTACKS | F_EXPERT_ATTACKS | 0
-    battletype DOUBLE_BATTLE
+    battletype SINGLE_BATTLE
     endentry
 
     party 496
@@ -16859,7 +16858,7 @@ trainerdata 497, "Boy"
     item ITEM_NONE
     item ITEM_NONE
     aiflags F_PRIORITIZE_SUPER_EFFECTIVE | F_EVALUATE_ATTACKS | F_EXPERT_ATTACKS | 0
-    battletype DOUBLE_BATTLE
+    battletype SINGLE_BATTLE
     endentry
 
     party 497
