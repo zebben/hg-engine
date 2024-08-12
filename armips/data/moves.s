@@ -10683,7 +10683,7 @@ movedata MOVE_DARKEST_LARIAT, "Darkest Lariat"
     movedescription MOVE_DARKEST_LARIAT, "---"
 
 movedata MOVE_SPARKLING_ARIA, "Sparkling Aria"
-    battleeffect MOVE_EFFECT_HIT
+    battleeffect MOVE_EFFECT_HIT // handle in ov12_0224D368
     pss SPLIT_SPECIAL
     basepower 90
     type TYPE_WATER
@@ -14261,7 +14261,6 @@ movedata MOVE_HYPER_DRILL, "Hyper Drill"
     target MOVE_TARGET_SELECTED
     priority 0
     flags FLAG_MIRROR_MOVE | FLAG_KINGS_ROCK | FLAG_CONTACT
-    flags FLAG_MIRROR_MOVE | FLAG_KINGS_ROCK
     appeal 0x00
     contesttype CONTEST_COOL
     terminatedata
