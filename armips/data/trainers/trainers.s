@@ -661,7 +661,7 @@ trainerdata 20, "Falkner"
         move MOVE_HAZE
         ability ABILITY_INSOMNIA
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
-        setevs 6, 0, 0, 252, 252, 0 // hp, atk, def, spd, spatk, spdef
+        setevs 6, 252, 0, 252, 0, 0 // hp, atk, def, spd, spatk, spdef
         nature NATURE_ADAMANT
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
@@ -16379,10 +16379,10 @@ trainerdata 485, "Archer"
     endparty
 
 trainerdata 486, "Proton"
-    trainermontype TRAINER_DATA_TYPE_NOTHING
+    trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
     trainerclass CLASS_EXECUTIVE_1
     nummons 2
-    item ITEM_NONE
+    item ITEM_POTION
     item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
@@ -16392,17 +16392,39 @@ trainerdata 486, "Proton"
 
     party 486
         // mon 0
-        ivs 100
+        ivs 200
         abilityslot 0
-        level 8
-        pokemon SPECIES_ZUBAT
+        level 15
+        pokemon SPECIES_CROAGUNK
+        item ITEM_BLACK_SLUDGE
+        move MOVE_LOW_KICK
+        move MOVE_POISON_STING
+        move MOVE_DIG
+        move MOVE_ASTONISH
+        ability ABILITY_DRY_SKIN
+        setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
+        setevs 6, 252, 0, 252, 0, 0 // hp, atk, def, spd, spatk, spdef
+        nature NATURE_JOLLY
+        shinylock 0
+        additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
         ballseal 0
 
         // mon 1
-        ivs 100
+        ivs 200
         abilityslot 0
-        level 12
-        pokemon SPECIES_KOFFING
+        level 15
+        pokemon SPECIES_SALANDIT
+        item ITEM_BLACK_SLUDGE
+        move MOVE_POISON_GAS
+        move MOVE_EMBER
+        move MOVE_SMOG
+        move MOVE_SCARY_FACE
+        ability ABILITY_CORROSION
+        setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
+        setevs 6, 0, 0, 252, 252, 0 // hp, atk, def, spd, spatk, spdef
+        nature NATURE_MODEST
+        shinylock 0
+        additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
         ballseal 0
     endparty
 
