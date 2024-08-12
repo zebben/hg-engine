@@ -19,7 +19,7 @@ mondata SPECIES_NONE, "-----"
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 0
     baseexp 0
-    evyields 2, 2, 2, 2, 2, 2
+    evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
     genderratio 0
     eggcycles 0
