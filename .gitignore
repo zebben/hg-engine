@@ -88,3 +88,10 @@ tools/swav2swar.exe
 
 *.gbapal
 *.4bpp
+.idea/*
+.idea/git_toolbox_blame.xml
+.idea/git_toolbox_prj.xml
+.idea/hg-engine.iml
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml

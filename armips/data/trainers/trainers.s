@@ -619,7 +619,7 @@ trainerdata 19, "Mickey"
     endparty
 
 trainerdata 20, "Falkner"
-    trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
+    trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES | TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_ABILITY | TRAINER_DATA_TYPE_BALL | TRAINER_DATA_TYPE_IV_EV_SET | TRAINER_DATA_TYPE_NATURE_SET | TRAINER_DATA_TYPE_SHINY_LOCK | TRAINER_DATA_TYPE_ADDITIONAL_FLAGS
     trainerclass CLASS_LEADER_M
     nummons 2
     item ITEM_NONE
@@ -767,7 +767,7 @@ trainerdata 23, "Larry"
         ivs 0
         abilityslot 32
         level 16
-        pokemon SPECIES_AUMAURA
+        pokemon SPECIES_AMAURA
         ballseal 0
     endparty
 
@@ -2028,7 +2028,7 @@ trainerdata 61, "Anthony"
         ivs 0
         abilityslot 0
         level 15
-        pokemon SPEICES_SHIELDON
+        pokemon SPECIES_SHIELDON
         ballseal 0
 
         // mon 1
@@ -10098,7 +10098,7 @@ trainerdata 289, "Silver"
 
 trainerdata 290, "Li"
     trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES | TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_ABILITY | TRAINER_DATA_TYPE_BALL | TRAINER_DATA_TYPE_IV_EV_SET | TRAINER_DATA_TYPE_NATURE_SET | TRAINER_DATA_TYPE_SHINY_LOCK | TRAINER_DATA_TYPE_ADDITIONAL_FLAGS
-    trainerclass CLASS_CLASS_ELDERBIRD_KEEPER_1
+    trainerclass CLASS_ELDER
     nummons 4
     item ITEM_POTION
     item ITEM_NONE
@@ -16379,7 +16379,7 @@ trainerdata 485, "Archer"
     endparty
 
 trainerdata 486, "Proton"
-    trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
+    trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES | TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_ABILITY | TRAINER_DATA_TYPE_BALL | TRAINER_DATA_TYPE_IV_EV_SET | TRAINER_DATA_TYPE_NATURE_SET | TRAINER_DATA_TYPE_SHINY_LOCK | TRAINER_DATA_TYPE_ADDITIONAL_FLAGS
     trainerclass CLASS_EXECUTIVE_1
     nummons 2
     item ITEM_POTION
