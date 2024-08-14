@@ -31,7 +31,7 @@ LEARNSET_TOTAL_MOVES equ 41 // 40+terminate - currently driven by gallade
 BATTLE_MODE_FORCE_SET equ 0
 
 // ALWAYS_HAVE_NATIONAL_DEX defines whether or not the player will always have the national dex unlocked.
-ALWAYS_HAVE_NATIONAL_DEX equ 0
+ALWAYS_HAVE_NATIONAL_DEX equ 1
 
 // ALWAYS_UNCAPPED_FRAME_RATE defines whether or not the frame rate of the game will always be uncapped, including in the overworld.
 ALWAYS_UNCAPPED_FRAME_RATE equ 0
