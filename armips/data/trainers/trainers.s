@@ -297,7 +297,7 @@ trainerdata 9, "Elaine"
     endparty
 
 trainerdata 10, "Amy & Mimi"
-    trainermontype TRAINER_DATA_TYPE_NOTHING
+    trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES | TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_ABILITY | TRAINER_DATA_TYPE_BALL | TRAINER_DATA_TYPE_IV_EV_SET | TRAINER_DATA_TYPE_NATURE_SET | TRAINER_DATA_TYPE_SHINY_LOCK | TRAINER_DATA_TYPE_ADDITIONAL_FLAGS
     trainerclass CLASS_TWINS
     nummons 2
     item ITEM_NONE
@@ -310,17 +310,39 @@ trainerdata 10, "Amy & Mimi"
 
     party 10
         // mon 0
-        ivs 10
-        abilityslot 32
-        level 10
-        pokemon SPECIES_SPINARAK
+        ivs 200
+        abilityslot 0
+        level 16
+        pokemon SPECIES_ANORITH
+        item ITEM_NONE
+        move MOVE_WATER_GUN
+        move MOVE_SMACK_DOWN
+        move MOVE_FURY_CUTTER
+        move MOVE_METAL_CLAW
+        ability MOVE_BATTLE_ARMOR
+        setivs 25, 25, 25, 25, 25, 25 // hp, atk, def, spd, spatk, spdef
+        setevs 32, 32, 32, 32, 32, 32 // hp, atk, def, spd, spatk, spdef
+        nature NATURE_SERIOUS
+        shinylock 0
+        additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
         ballseal 0
 
         // mon 1
-        ivs 10
-        abilityslot 32
-        level 10
-        pokemon SPECIES_LEDYBA
+        ivs 200
+        abilityslot 0
+        level 16
+        pokemon SPECIES_DEWPIDER
+        item ITEM_NONE
+        move MOVE_WATER_GUN
+        move MOVE_BITE
+        move MOVE_INFESTATION
+        move MOVE_AQUA_RING
+        ability ABILITY_WATER_BUBBLE
+        setivs 25, 25, 25, 25, 25, 25 // hp, atk, def, spd, spatk, spdef
+        setevs 32, 32, 32, 32, 32, 32 // hp, atk, def, spd, spatk, spdef
+        nature NATURE_SERIOUS
+        shinylock 0
+        additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
         ballseal 0
     endparty
 
@@ -13234,7 +13256,7 @@ trainerdata 386, "Greg"
     endparty
 
 trainerdata 387, "Amy & Mimi"
-    trainermontype TRAINER_DATA_TYPE_NOTHING
+    trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES | TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_ABILITY | TRAINER_DATA_TYPE_BALL | TRAINER_DATA_TYPE_IV_EV_SET | TRAINER_DATA_TYPE_NATURE_SET | TRAINER_DATA_TYPE_SHINY_LOCK | TRAINER_DATA_TYPE_ADDITIONAL_FLAGS
     trainerclass CLASS_TWINS
     nummons 2
     item ITEM_NONE
@@ -13247,17 +13269,39 @@ trainerdata 387, "Amy & Mimi"
 
     party 387
         // mon 0
-        ivs 10
-        abilityslot 32
-        level 10
-        pokemon SPECIES_LEDYBA
+        ivs 200
+        abilityslot 0
+        level 16
+        pokemon SPECIES_ANORITH
+        item ITEM_NONE
+        move MOVE_WATER_GUN
+        move MOVE_SMACK_DOWN
+        move MOVE_FURY_CUTTER
+        move MOVE_METAL_CLAW
+        ability MOVE_BATTLE_ARMOR
+        setivs 25, 25, 25, 25, 25, 25 // hp, atk, def, spd, spatk, spdef
+        setevs 32, 32, 32, 32, 32, 32 // hp, atk, def, spd, spatk, spdef
+        nature NATURE_SERIOUS
+        shinylock 0
+        additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
         ballseal 0
 
         // mon 1
-        ivs 10
-        abilityslot 32
-        level 10
-        pokemon SPECIES_SPINARAK
+        ivs 200
+        abilityslot 0
+        level 16
+        pokemon SPECIES_DEWPIDER
+        item ITEM_NONE
+        move MOVE_WATER_GUN
+        move MOVE_BITE
+        move MOVE_INFESTATION
+        move MOVE_AQUA_RING
+        ability ABILITY_WATER_BUBBLE
+        setivs 25, 25, 25, 25, 25, 25 // hp, atk, def, spd, spatk, spdef
+        setevs 32, 32, 32, 32, 32, 32 // hp, atk, def, spd, spatk, spdef
+        nature NATURE_SERIOUS
+        shinylock 0
+        additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
         ballseal 0
     endparty
 
