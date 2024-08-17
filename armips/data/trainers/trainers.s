@@ -220,7 +220,7 @@ trainerdata 5, "Victoria"
 trainerdata 6, "Keith"
     trainermontype TRAINER_DATA_TYPE_NOTHING
     trainerclass CLASS_POLICEMAN
-    nummons 1
+    nummons 2
     item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
@@ -233,8 +233,15 @@ trainerdata 6, "Keith"
         // mon 0
         ivs 0
         abilityslot 0
-        level 17
-        pokemon SPECIES_GROWLITHE
+        level 18
+        pokemon SPECIES_LUXIO
+        ballseal 0
+
+        // mon 1
+        ivs 0
+        abilityslot 0
+        level 18
+        pokemon SPECIES_SNUBBULL
         ballseal 0
     endparty
 
@@ -2128,29 +2135,29 @@ trainerdata 62, "Samuel"
         // mon 0
         ivs 0
         abilityslot 32
-        level 7
-        pokemon SPECIES_RATTATA
+        level 16
+        pokemon SPECIES_SLUGMA
         ballseal 0
 
         // mon 1
         ivs 0
         abilityslot 0
-        level 10
-        pokemon SPECIES_SANDSHREW
+        level 16
+        pokemon SPECIES_CHINCHOU
         ballseal 0
 
         // mon 2
         ivs 0
         abilityslot 0
-        level 8
-        pokemon SPECIES_SPEAROW
+        level 16
+        pokemon SPECIES_HOOTHOOT
         ballseal 0
 
         // mon 3
         ivs 0
         abilityslot 0
-        level 8
-        pokemon SPECIES_SPEAROW
+        level 16
+        pokemon SPECIES_WOOPER
         ballseal 0
     endparty
 
@@ -2191,8 +2198,8 @@ trainerdata 64, "Ian"
         // mon 0
         ivs 0
         abilityslot 0
-        level 10
-        pokemon SPECIES_MANKEY
+        level 17
+        pokemon SPECIES_BUNEARY
         move MOVE_FOCUS_ENERGY
         move MOVE_SCRATCH
         move MOVE_LOW_KICK
@@ -2202,11 +2209,11 @@ trainerdata 64, "Ian"
         // mon 1
         ivs 0
         abilityslot 0
-        level 12
-        pokemon SPECIES_DIGLETT
-        move MOVE_ASTONISH
-        move MOVE_GROWL
-        move MOVE_SCRATCH
+        level 17
+        pokemon SPECIES_WOOPER
+        move MOVE_WATER_GUN
+        move MOVE_MUD_SLAP
+        move MOVE_TAIL_WHIP
         move MOVE_SAND_ATTACK
         ballseal 0
     endparty
@@ -2227,29 +2234,29 @@ trainerdata 65, "Gina"
         // mon 0
         ivs 0
         abilityslot 0
-        level 9
-        pokemon SPECIES_HOPPIP
+        level 17
+        pokemon SPECIES_JUMPLUFF
         ballseal 0
 
         // mon 1
         ivs 0
         abilityslot 0
-        level 9
-        pokemon SPECIES_HOPPIP
+        level 17
+        pokemon SPECIES_SUNKERN
         ballseal 0
 
         // mon 2
         ivs 0
         abilityslot 0
-        level 12
-        pokemon SPECIES_BULBASAUR
+        level 17
+        pokemon SPECIES_PHANPY
         ballseal 0
     endparty
 
 trainerdata 66, "Todd"
     trainermontype TRAINER_DATA_TYPE_NOTHING
     trainerclass CLASS_CAMPER
-    nummons 1
+    nummons 2
     item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
@@ -2262,8 +2269,15 @@ trainerdata 66, "Todd"
         // mon 0
         ivs 0
         abilityslot 0
-        level 14
-        pokemon SPECIES_PSYDUCK
+        level 18
+        pokemon SPECIES_PRINPLUP
+        ballseal 0
+
+        // mon 1
+        ivs 0
+        abilityslot 0
+        level 18
+        pokemon SPECIES_KRICKETOT
         ballseal 0
     endparty
 
@@ -7412,15 +7426,15 @@ trainerdata 233, "Eric"
         // mon 0
         ivs 0
         abilityslot 0
-        level 11
-        pokemon SPECIES_GRIMER
+        level 20
+        pokemon SPECIES_SKORUPI
         ballseal 0
 
         // mon 1
         ivs 0
         abilityslot 0
-        level 11
-        pokemon SPECIES_GRIMER
+        level 20
+        pokemon SPECIES_ROTOM
         ballseal 0
     endparty
 
@@ -13499,7 +13513,7 @@ trainerdata 390, "Ray"
 trainerdata 391, "Issac"
     trainermontype TRAINER_DATA_TYPE_MOVES
     trainerclass CLASS_POKE_MANIAC
-    nummons 1
+    nummons 2
     item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
@@ -13512,12 +13526,23 @@ trainerdata 391, "Issac"
         // mon 0
         ivs 0
         abilityslot 0
-        level 12
-        pokemon SPECIES_LICKITUNG
-        move MOVE_LICK
-        move MOVE_SUPERSONIC
-        move MOVE_CUT
-        move MOVE_NONE
+        level 19
+        pokemon SPECIES_CHEWTLE
+        move MOVE_WATER_GUN
+        move MOVE_BITE
+        move MOVE_HEADBUTT
+        move MOVE_PROTECT
+        ballseal 0
+
+        // mon 1
+        ivs 0
+        abilityslot 0
+        level 19
+        pokemon SPECIES_CHEWTLE
+        move MOVE_WATER_GUN
+        move MOVE_BITE
+        move MOVE_HEADBUTT
+        move MOVE_PROTECT
         ballseal 0
     endparty
 
@@ -13537,14 +13562,14 @@ trainerdata 392, "Donald"
         // mon 0
         ivs 0
         abilityslot 32
-        level 11
+        level 19
         pokemon SPECIES_SLOWPOKE
         ballseal 0
 
         // mon 1
         ivs 0
         abilityslot 32
-        level 11
+        level 19
         pokemon SPECIES_SLOWPOKE
         ballseal 0
     endparty
@@ -13565,29 +13590,29 @@ trainerdata 393, "Teru"
         // mon 0
         ivs 0
         abilityslot 0
-        level 7
-        pokemon SPECIES_MAGNEMITE
+        level 18
+        pokemon SPECIES_BRONZOR
         ballseal 0
 
         // mon 1
         ivs 0
         abilityslot 0
-        level 11
-        pokemon SPECIES_VOLTORB
+        level 17
+        pokemon SPECIES_HONEDGE
         ballseal 0
 
         // mon 2
         ivs 0
         abilityslot 32
-        level 7
-        pokemon SPECIES_MAGNEMITE
+        level 18
+        pokemon SPECIES_CUFANT
         ballseal 0
 
         // mon 3
         ivs 0
         abilityslot 0
-        level 9
-        pokemon SPECIES_MAGNEMITE
+        level 17
+        pokemon SPECIES_HELIOPTILE
         ballseal 0
     endparty
 
@@ -14112,6 +14137,7 @@ trainerdata 409, "Brandon"
         abilityslot 0
         level 13
         pokemon SPECIES_SNUBBULL
+        item ITEM_SITRUS_BERRY
         ballseal 0
 
         // mon 1
@@ -14119,6 +14145,7 @@ trainerdata 409, "Brandon"
         abilityslot 0
         level 13
         pokemon SPECIES_MAREEP
+        item ITEM_SITRUS_BERRY
         ballseal 0
     endparty
 
