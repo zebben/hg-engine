@@ -196,24 +196,36 @@ trainerdata 5, "Victoria"
 
     party 5
         // mon 0
-        ivs 10
+        ivs 50
         abilityslot 32
-        level 9
-        pokemon SPECIES_SENTRET
+        level 19
+        pokemon SPECIES_FURFROU
+        move MOVE_HEADBUTT
+        move MOVE_BABY_DOLL_EYES
+        move MOVE_BITE
+        move MOVE_CHARM
         ballseal 0
 
         // mon 1
-        ivs 10
+        ivs 150
         abilityslot 32
-        level 13
-        pokemon SPECIES_SENTRET
+        level 20
+        move MOVE_HEADBUTT
+        move MOVE_SOFT_BOILED
+        move MOVE_HELPING_HAND
+        move MOVE_COPYCAT
+        pokemon SPECIES_CHANSEY
         ballseal 0
 
         // mon 2
-        ivs 10
+        ivs 150
         abilityslot 32
-        level 16
+        level 20
         pokemon SPECIES_SENTRET
+        move MOVE_HEADBUTT
+        move MOVE_FAKE_OUT
+        move MOVE_DIG
+        move MOVE_HELPING_HAND
         ballseal 0
     endparty
 
@@ -765,16 +777,16 @@ trainerdata 21, "Bugsy"
         ivs 200
         abilityslot 32
         level 18
-        pokemon SPECIES_YANMA
+        pokemon SPECIES_CHARJABUG
         item ITEM_LEFTOVERS
         move MOVE_U_TURN
-        move MOVE_BUG_BUZZ
-        move MOVE_AIR_CUTTER
-        move MOVE_SWORDS_DANCE
-        ability ABILITY_SPEED_BOOST
+        move MOVE_BUG_BITE
+        move MOVE_SPARK
+        move MOVE_BITE
+        ability ABILITY_BATTERY
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
-        setevs 6, 0, 0, 252,252, 0 // hp, atk, def, spd, spatk, spdef
-        nature NATURE_TIMID
+        setevs 252, 252, 6, 0, 0, 0 // hp, atk, def, spd, spatk, spdef
+        nature NATURE_ADAMANT
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
         ballseal 0
@@ -801,7 +813,7 @@ trainerdata 21, "Bugsy"
 trainerdata 22, "Carrie"
     trainermontype TRAINER_DATA_TYPE_MOVES
     trainerclass CLASS_LASS
-    nummons 1
+    nummons 2
     item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
@@ -812,14 +824,25 @@ trainerdata 22, "Carrie"
 
     party 22
         // mon 0
-        ivs 10
+        ivs 150
         abilityslot 0
-        level 17
-        pokemon SPECIES_SNUBBULL
+        level 21
+        pokemon SPECIES_TEDDIURSA
         move MOVE_SCARY_FACE
-        move MOVE_CHARM
+        move MOVE_SCRATCH
         move MOVE_BITE
         move MOVE_LICK
+        ballseal 0
+
+        // mon 1
+        ivs 150
+        abilityslot 0
+        level 22
+        pokemon SPECIES_STANTLER
+        move MOVE_STOMP
+        move MOVE_HYPNOSIS
+        move MOVE_ASTONISH
+        move MOVE_CONFUSE_RAY
         ballseal 0
     endparty
 
@@ -1061,11 +1084,11 @@ trainerdata 29, "Rod"
     endparty
 
 trainerdata 30, "Whitney"
-    trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
+    trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES | TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_ABILITY | TRAINER_DATA_TYPE_BALL | TRAINER_DATA_TYPE_IV_EV_SET | TRAINER_DATA_TYPE_NATURE_SET | TRAINER_DATA_TYPE_SHINY_LOCK | TRAINER_DATA_TYPE_ADDITIONAL_FLAGS
     trainerclass CLASS_LEADER
-    nummons 2
+    nummons 3
     item ITEM_SUPER_POTION
-    item ITEM_SUPER_POTION
+    item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
     aiflags F_PRIORITIZE_SUPER_EFFECTIVE | F_EVALUATE_ATTACKS | F_EXPERT_ATTACKS | 0
@@ -1074,27 +1097,57 @@ trainerdata 30, "Whitney"
 
     party 30
         // mon 0
-        ivs 100
+        ivs 255
         abilityslot 0
-        level 17
-        pokemon SPECIES_CLEFAIRY
-        item ITEM_NONE
-        move MOVE_DOUBLE_SLAP
-        move MOVE_MIMIC
-        move MOVE_ENCORE
-        move MOVE_METRONOME
+        level 20
+        monwithform SPECIES_ZORUA, 1
+        item ITEM_SITRUS_BERRY
+        move MOVE_SHADOW_SNEAK
+        move MOVE_TAUNT
+        move MOVE_TACKLE
+        move MOVE_ATTRACT
+        ability ABILITY_ILLUSION
+        setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
+        setevs 6, 0, 0, 252, 252, 0 // hp, atk, def, spd, spatk, spdef
+        nature NATURE_JOLLY
+        shinylock 0
+        additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
         ballseal 0
 
         // mon 1
-        ivs 100
+        ivs 255
         abilityslot 32
-        level 19
+        level 21
         pokemon SPECIES_MILTANK
         item ITEM_LUM_BERRY
         move MOVE_ROLLOUT
         move MOVE_ATTRACT
         move MOVE_STOMP
         move MOVE_MILK_DRINK
+        ability ABILITY_THICK_FAT
+        setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
+        setevs 6, 252, 0, 252, 0, 0 // hp, atk, def, spd, spatk, spdef
+        nature NATURE_JOLLY
+        shinylock 0
+        additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
+        ballseal 0
+
+        // mon 2
+        ivs 255
+        abilityslot 32
+        level 20
+        pokemon SPECIES_LICKITUNG
+        item ITEM_NONE
+        move MOVE_REST
+        move MOVE_SLEEP_TALK
+        move MOVE_ROUND
+        move MOVE_SNORE
+        ability ABILITY_OBLIVIOUS
+        setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
+        setevs 6, 252, 0, 252, 0, 0 // hp, atk, def, spd, spatk, spdef
+        nature NATURE_MODEST
+        shinylock 0
+        additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
         ballseal 0
     endparty
 
@@ -2464,25 +2517,25 @@ trainerdata 70, "Samantha"
 
     party 70
         // mon 0
-        ivs 10
+        ivs 150
         abilityslot 32
-        level 16
-        pokemon SPECIES_MEOWTH
-        move MOVE_SCRATCH
-        move MOVE_GROWL
-        move MOVE_BITE
-        move MOVE_PAY_DAY
+        level 21
+        pokemon SPECIES_SMEARGLE
+        move MOVE_SPORE
+        move MOVE_FAKE_OUT
+        move MOVE_RECOVER
+        move MOVE_SPIKY_SHIELD
         ballseal 0
 
         // mon 1
-        ivs 10
+        ivs 150
         abilityslot 32
-        level 16
+        level 21
         pokemon SPECIES_MEOWTH
-        move MOVE_SCRATCH
+        move MOVE_HEADBUTT
         move MOVE_GROWL
         move MOVE_BITE
-        move MOVE_SLASH
+        move MOVE_TAIL_WHIP
         ballseal 0
     endparty
 
@@ -2500,24 +2553,36 @@ trainerdata 71, "Cathy"
 
     party 71
         // mon 0
-        ivs 10
+        ivs 150
         abilityslot 0
-        level 15
-        pokemon SPECIES_JIGGLYPUFF
+        level 21
+        pokemon SPECIES_GLAMEOW
+        move MOVE_FAKE_OUT
+        move MOVE_SCRATCH
+        move MOVE_HYPNOSIS
+        move MOVE_AERIAL_ACE
         ballseal 0
 
         // mon 1
-        ivs 10
+        ivs 150
         abilityslot 0
-        level 15
-        pokemon SPECIES_JIGGLYPUFF
+        level 21
+        pokemon SPECIES_AIPOM
+        move MOVE_FAKE_OUT
+        move MOVE_SCRATCH
+        move MOVE_ASTONISH
+        move MOVE_SCREECH
         ballseal 0
 
         // mon 2
-        ivs 10
+        ivs 150
         abilityslot 0
-        level 15
-        pokemon SPECIES_JIGGLYPUFF
+        level 21
+        pokemon SPECIES_BUNEARY
+        move MOVE_STOMP
+        move MOVE_BABY_DOLL_EYES
+        move MOVE_DOUBLE_KICK
+        move MOVE_HELPING_HAND
         ballseal 0
     endparty
 
@@ -13390,7 +13455,7 @@ trainerdata 387, "Amy & Mimi"
         move MOVE_CONFUSION
         move MOVE_STRUGGLE_BUG
         move MOVE_LIGHT_SCREEN
-        move MOVE_NONE
+        move MOVE_REFLECT
         ability ABILITY_COMPOUND_EYES
         setivs 25, 25, 25, 25, 25, 25 // hp, atk, def, spd, spatk, spdef
         setevs 32, 32, 32, 32, 32, 32 // hp, atk, def, spd, spatk, spdef
@@ -13403,13 +13468,13 @@ trainerdata 387, "Amy & Mimi"
         ivs 200
         abilityslot 0
         level 16
-        pokemon SPECIES_DOTTLER
+        pokemon SPECIES_YANMA
         item ITEM_NONE
-        move MOVE_CONFUSION
         move MOVE_STRUGGLE_BUG
-        move MOVE_REFLECT
-        move MOVE_NONE
-        ability ABILITY_COMPOUND_EYES
+        move MOVE_AIR_CUTTER
+        move MOVE_SUPERSONIC
+        move MOVE_DETECT
+        ability ABILITY_SPEED_BOOST
         setivs 25, 25, 25, 25, 25, 25 // hp, atk, def, spd, spatk, spdef
         setevs 32, 32, 32, 32, 32, 32 // hp, atk, def, spd, spatk, spdef
         nature NATURE_SERIOUS
