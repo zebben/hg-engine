@@ -1192,7 +1192,7 @@ trainerdata 31, "Morty"
         // mon 1
         ivs 255
         abilityslot 0
-        level 28
+        level 29
         monwithform SPECIES_TYPHLOSION, 1
         item ITEM_NONE
         move MOVE_ERUPTION
