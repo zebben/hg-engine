@@ -55,7 +55,7 @@ trainerdata 1, "Silver"
         move MOVE_WILL_O_WISP
         ability ABILITY_LEVITATE
         setivs 31, 31, 31, 0, 31, 31 // hp, atk, def, spd, spatk, spdef
-        setevs 252, 252, 6, 0, 0, 0 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_ADAMANT
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
@@ -73,7 +73,7 @@ trainerdata 1, "Silver"
         move MOVE_U_TURN
         ability ABILITY_UNNERVE
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
-        setevs 252, 0, 6, 0, 0, 252 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_CAREFUL
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
@@ -91,7 +91,7 @@ trainerdata 1, "Silver"
         move MOVE_POISON_POWDER
         ability ABILITY_OVERGROW
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
-        setevs 6, 252, 0, 252, 0, 0 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_MODEST
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
@@ -724,7 +724,7 @@ trainerdata 20, "Falkner"
         move MOVE_GUST
         ability ABILITY_SYNCHRONIZE
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
-        setevs 6, 0, 0, 252, 252, 0 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_TIMID
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
@@ -742,7 +742,7 @@ trainerdata 20, "Falkner"
         move MOVE_HAZE
         ability ABILITY_INSOMNIA
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
-        setevs 6, 252, 0, 252, 0, 0 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_ADAMANT
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
@@ -774,7 +774,7 @@ trainerdata 21, "Bugsy"
         move MOVE_BUG_BITE
         ability ABILITY_TECHNICIAN
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
-        setevs 6, 252, 0, 252, 0, 0 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_JOLLY
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
@@ -792,7 +792,7 @@ trainerdata 21, "Bugsy"
         move MOVE_BITE
         ability ABILITY_BATTERY
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
-        setevs 252, 252, 6, 0, 0, 0 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_ADAMANT
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
@@ -810,7 +810,7 @@ trainerdata 21, "Bugsy"
         move MOVE_SWORDS_DANCE
         ability ABILITY_SWARM
         setivs 15, 15, 15, 15, 15, 15 // hp, atk, def, spd, spatk, spdef
-        setevs 6, 252, 0, 252, 0, 0 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_ADAMANT
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
@@ -1072,7 +1072,7 @@ trainerdata 29, "Rod"
         move MOVE_NONE
         ability ABILITY_HYPER_CUTTER
         setivs 25, 25, 25, 25, 25, 25 // hp, atk, def, spd, spatk, spdef
-        setevs 32, 32, 32, 32, 32, 32 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_SERIOUS
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
@@ -1090,7 +1090,7 @@ trainerdata 29, "Rod"
         move MOVE_NONE
         ability ABILITY_KEEN_EYE
         setivs 25, 25, 25, 25, 25, 25 // hp, atk, def, spd, spatk, spdef
-        setevs 32, 32, 32, 32, 32, 32 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_SERIOUS
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
@@ -1122,7 +1122,7 @@ trainerdata 30, "Whitney"
         move MOVE_ATTRACT
         ability ABILITY_ILLUSION
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
-        setevs 6, 0, 0, 252, 252, 0 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_JOLLY
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
@@ -1140,7 +1140,7 @@ trainerdata 30, "Whitney"
         move MOVE_MILK_DRINK
         ability ABILITY_THICK_FAT
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
-        setevs 6, 252, 0, 252, 0, 0 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_JOLLY
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
@@ -1158,7 +1158,7 @@ trainerdata 30, "Whitney"
         move MOVE_ATTRACT
         ability ABILITY_OBLIVIOUS
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
-        setevs 6, 252, 0, 252, 0, 0 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_MODEST
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
@@ -1190,7 +1190,7 @@ trainerdata 31, "Morty"
         move MOVE_RECOVER
         ability ABILITY_WATER_ABSORB
         setivs 31, 31, 31, 0, 31, 31 // hp, atk, def, spd, spatk, spdef
-        setevs 252, 0, 252, 0, 0, 6 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_BOLD
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
@@ -1208,7 +1208,7 @@ trainerdata 31, "Morty"
         move MOVE_SHADOW_BALL
         ability ABILITY_MOLD_BREAKER
         setivs 31, 31, 31, 0, 31, 31 // hp, atk, def, spd, spatk, spdef
-        setevs 252, 0, 0, 0, 252, 6 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_MODEST
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
@@ -1226,7 +1226,7 @@ trainerdata 31, "Morty"
         move MOVE_RAGE_POWDER
         ability ABILITY_HOSPITALITY
         setivs 31, 31, 31, 0, 31, 31 // hp, atk, def, spd, spatk, spdef
-        setevs 252, 0, 252, 0, 0, 6 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_BOLD
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
@@ -1244,7 +1244,7 @@ trainerdata 31, "Morty"
         move MOVE_MYSTICAL_FIRE
         ability ABILITY_LEVITATE
         setivs 31, 31, 31, 0, 31, 31 // hp, atk, def, spd, spatk, spdef
-        setevs 252, 0, 0, 0, 252, 6 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_MODEST
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
@@ -1376,7 +1376,7 @@ trainerdata 34, "Chuck"
         move MOVE_DETECT
         ability ABILITY_WATER_ABSORB
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
-        setevs 6, 252, 0, 252, 0, 0 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_ADAMANT
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
@@ -1394,7 +1394,7 @@ trainerdata 34, "Chuck"
         move MOVE_DETECT
         ability ABILITY_SHED_SKIN
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
-        setevs 252, 0, 6, 0, 252, 0 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_CAREFUL
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
@@ -1412,7 +1412,7 @@ trainerdata 34, "Chuck"
         move MOVE_DETECT
         ability ABILITY_GUTS
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
-        setevs 6, 252, 0, 252, 0, 0 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_JOLLY
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
@@ -1430,7 +1430,7 @@ trainerdata 34, "Chuck"
         move MOVE_SWAGGER
         ability ABILITY_SHARPNESS
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
-        setevs 6, 252, 0, 252, 0, 0 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_JOLLY
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
@@ -1834,7 +1834,7 @@ trainerdata 46, "Martha"
         move MOVE_MEGA_DRAIN
         ability ABILITY_CURSED_BODY
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
-        setevs 252, 0, 0, 0, 252, 6 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_MODEST
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
@@ -1852,7 +1852,7 @@ trainerdata 46, "Martha"
         move MOVE_CONFUSE_RAY
         ability ABILITY_CURSED_BODY
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
-        setevs 252, 0, 252, 0, 0, 6 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_BOLD
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
@@ -3280,7 +3280,7 @@ trainerdata 89, "Grace"
         move MOVE_NONE
         ability ABILITY_LEVITATE
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
-        setevs 6, 0, 0, 252, 252, 0 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_TIMID
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
@@ -3298,7 +3298,7 @@ trainerdata 89, "Grace"
         move MOVE_NIGHT_SLASH
         ability ABILITY_NO_GUARD
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
-        setevs 6, 252, 0, 252, 0, 0 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_JOLLY
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
@@ -4333,7 +4333,7 @@ trainerdata 120, "Irene"
         move MOVE_SLEEP_TALK
         ability ABILITY_SAND_STREAM
         setivs 15, 15, 15, 15, 15, 15 // hp, atk, def, spd, spatk, spdef
-        setevs 100, 100, 100, 100, 100, 100 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_CAREFUL
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
@@ -4351,7 +4351,7 @@ trainerdata 120, "Irene"
         move MOVE_THUNDERBOLT
         ability ABILITY_WATER_ABSORB
         setivs 15, 15, 15, 15, 15, 15 // hp, atk, def, spd, spatk, spdef
-        setevs 100, 100, 100, 100, 100, 100 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_MODEST
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
@@ -5452,7 +5452,7 @@ trainerdata 156, "Yoshi"
         move MOVE_LEECH_SEED
         ability ABILITY_SAP_SIPPER
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
-        setevs 6, 252, 0, 252, 0, 0 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_ADAMANT
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
@@ -5470,7 +5470,7 @@ trainerdata 156, "Yoshi"
         move MOVE_QUICK_ATTACK
         ability ABILITY_IRON_FIST
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
-        setevs 6, 252, 0, 252, 0, 0 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_ADAMANT
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
@@ -5502,7 +5502,7 @@ trainerdata 157, "Lao"
         move MOVE_AERIAL_ACE
         ability ABILITY_SHARPNESS
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
-        setevs 6, 252, 0, 252, 0, 0 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_ADAMANT
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
@@ -5520,7 +5520,7 @@ trainerdata 157, "Lao"
         move MOVE_WORK_UP
         ability ABILITY_INNER_FOCUS
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
-        setevs 6, 0, 0, 252, 252, 0 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_TIMID
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
@@ -5580,7 +5580,7 @@ trainerdata 159, "Lung"
         move MOVE_U_TURN
         ability ABILITY_POISON_TOUCH
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
-        setevs 6, 252, 0, 252, 0, 0 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_JOLLY
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
@@ -5598,7 +5598,7 @@ trainerdata 159, "Lung"
         move MOVE_DETECT
         ability ABILITY_INTIMIDATE
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
-        setevs 252, 252, 6, 0, 0, 0 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_ADAMANT
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
@@ -5616,7 +5616,7 @@ trainerdata 159, "Lung"
         move MOVE_U_TURN
         ability ABILITY_POISON_TOUCH
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
-        setevs 0, 6, 0, 252, 0, 252 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature ABILITY_IRON_FIST
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
@@ -8642,7 +8642,7 @@ trainerdata 251, "Nob"
         move MOVE_DETECT
         ability ABILITY_STEADFAST
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
-        setevs 6, 252, 0, 252, 0, 0 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_ADAMANT
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
@@ -8660,7 +8660,7 @@ trainerdata 251, "Nob"
         move MOVE_FIRST_IMPRESSION
         ability ABILITY_DEFIANT
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
-        setevs 6, 252, 0, 252, 0, 0 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_JOLLY
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
@@ -9373,7 +9373,7 @@ trainerdata 263, "Silver"
         move MOVE_WILL_O_WISP
         ability ABILITY_PRESSURE
         setivs 31, 31, 31, 0, 31, 31 // hp, atk, def, spd, spatk, spdef
-        setevs 6, 252, 0, 252, 0, 0 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_ADAMANT
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
@@ -9391,7 +9391,7 @@ trainerdata 263, "Silver"
         move MOVE_CHARGE
         ability ABILITY_STATIC
         setivs 31, 31, 31, 0, 31, 31 // hp, atk, def, spd, spatk, spdef
-        setevs 252, 0, 6, 0, 252, 0 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_MODEST
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
@@ -9409,7 +9409,7 @@ trainerdata 263, "Silver"
         move MOVE_U_TURN
         ability ABILITY_UNNERVE
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
-        setevs 252, 0, 6, 0, 0, 252 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_CAREFUL
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
@@ -9427,7 +9427,7 @@ trainerdata 263, "Silver"
         move MOVE_POISON_POWDER
         ability ABILITY_OVERGROW
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
-        setevs 252, 0, 6, 0, 252, 0 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_MODEST
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
@@ -9560,7 +9560,7 @@ trainerdata 266, "Silver"
         move MOVE_WILL_O_WISP
         ability ABILITY_LEVITATE
         setivs 31, 31, 31, 0, 31, 31 // hp, atk, def, spd, spatk, spdef
-        setevs 252, 252, 6, 0, 0, 0 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_ADAMANT
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
@@ -9578,7 +9578,7 @@ trainerdata 266, "Silver"
         move MOVE_U_TURN
         ability ABILITY_UNNERVE
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
-        setevs 252, 0, 6, 0, 0, 252 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_CAREFUL
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
@@ -9596,7 +9596,7 @@ trainerdata 266, "Silver"
         move MOVE_INCINERATE
         ability ABILITY_BLAZE
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
-        setevs 6, 0, 0, 252, 252, 0 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_MODEST
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
@@ -9628,7 +9628,7 @@ trainerdata 267, "Silver"
         move MOVE_WILL_O_WISP
         ability ABILITY_PRESSURE
         setivs 31, 31, 31, 0, 31, 31 // hp, atk, def, spd, spatk, spdef
-        setevs 6, 252, 0, 252, 0, 0 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_ADAMANT
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
@@ -9646,7 +9646,7 @@ trainerdata 267, "Silver"
         move MOVE_CHARGE
         ability ABILITY_STATIC
         setivs 31, 31, 31, 0, 31, 31 // hp, atk, def, spd, spatk, spdef
-        setevs 252, 0, 6, 0, 252, 0 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_MODEST
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
@@ -9664,7 +9664,7 @@ trainerdata 267, "Silver"
         move MOVE_U_TURN
         ability ABILITY_UNNERVE
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
-        setevs 252, 0, 6, 0, 0, 252 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_CAREFUL
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
@@ -9682,7 +9682,7 @@ trainerdata 267, "Silver"
         move MOVE_DEFENSE_CURL
         ability ABILITY_BLAZE
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
-        setevs 6, 0, 0, 252, 252, 0 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_MODEST
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
@@ -9794,7 +9794,7 @@ trainerdata 269, "Silver"
         move MOVE_WILL_O_WISP
         ability ABILITY_LEVITATE
         setivs 31, 31, 31, 0, 31, 31 // hp, atk, def, spd, spatk, spdef
-        setevs 252, 252, 6, 0, 0, 0 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_ADAMANT
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
@@ -9812,7 +9812,7 @@ trainerdata 269, "Silver"
         move MOVE_U_TURN
         ability ABILITY_UNNERVE
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
-        setevs 252, 0, 6, 0, 0, 252 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_CAREFUL
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
@@ -9830,7 +9830,7 @@ trainerdata 269, "Silver"
         move MOVE_SCARY_FACE
         ability ABILITY_TORRENT
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
-        setevs 6, 252, 0, 252, 0, 0 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_ADAMANT
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
@@ -9862,7 +9862,7 @@ trainerdata 270, "Silver"
         move MOVE_WILL_O_WISP
         ability ABILITY_PRESSURE
         setivs 31, 31, 31, 0, 31, 31 // hp, atk, def, spd, spatk, spdef
-        setevs 6, 252, 0, 252, 0, 0 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_ADAMANT
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
@@ -9880,7 +9880,7 @@ trainerdata 270, "Silver"
         move MOVE_CHARGE
         ability ABILITY_STATIC
         setivs 31, 31, 31, 0, 31, 31 // hp, atk, def, spd, spatk, spdef
-        setevs 252, 0, 6, 0, 252, 0 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_MODEST
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
@@ -9898,7 +9898,7 @@ trainerdata 270, "Silver"
         move MOVE_U_TURN
         ability ABILITY_UNNERVE
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
-        setevs 252, 0, 6, 0, 0, 252 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_CAREFUL
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
@@ -9916,7 +9916,7 @@ trainerdata 270, "Silver"
         move MOVE_SCARY_FACE
         ability ABILITY_TORRENT
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
-        setevs 6, 252, 0, 252, 0, 0 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_ADAMANT
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
@@ -14967,7 +14967,7 @@ trainerdata 417, "Jenn"
         move MOVE_RAPID_SPIN
         ability ABILITY_SAND_FORCE
         setivs 15, 15, 15, 15, 15, 15 // hp, atk, def, spd, spatk, spdef
-        setevs 100, 100, 100, 100, 100, 100 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_ADAMANT
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
@@ -14985,7 +14985,7 @@ trainerdata 417, "Jenn"
         move MOVE_NONE
         ability ABILITY_SAND_FORCE
         setivs 15, 15, 15, 15, 15, 15 // hp, atk, def, spd, spatk, spdef
-        setevs 100, 100, 100, 100, 100, 100 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_ADAMANT
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
@@ -17228,7 +17228,7 @@ trainerdata 486, "Proton"
         move MOVE_PROTECT
         ability ABILITY_DRY_SKIN
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
-        setevs 6, 252, 0, 252, 0, 0 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_JOLLY
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
@@ -17246,7 +17246,7 @@ trainerdata 486, "Proton"
         move MOVE_TAUNT
         ability ABILITY_PRANKSTER
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
-        setevs 252, 252, 0, 0, 0, 4 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_ADAMANT
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
@@ -17674,7 +17674,7 @@ trainerdata 493, "Edith"
         move MOVE_HORN_LEECH
         ability ABILITY_HARVEST
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
-        setevs 252, 252, 6, 0, 0, 0 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_ADAMANT
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
@@ -17692,7 +17692,7 @@ trainerdata 493, "Edith"
         move MOVE_SHADOW_BALL
         ability ABILITY_INSOMNIA
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
-        setevs 252, 0, 0, 0, 252, 6 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_MODEST
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
@@ -17724,7 +17724,7 @@ trainerdata 494, "Georgina"
         move MOVE_SUPERSONIC
         ability ABILITY_AFTERMATH
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
-        setevs 252, 0, 252, 0, 0, 6 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_BOLD
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
@@ -17742,7 +17742,7 @@ trainerdata 494, "Georgina"
         move MOVE_ANCIENT_POWER
         ability ABILITY_INFILTRATOR
         setivs 15, 15, 15, 15, 15, 15 // hp, atk, def, spd, spatk, spdef
-        setevs 252, 0, 0, 0, 252, 6 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_MODEST
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
