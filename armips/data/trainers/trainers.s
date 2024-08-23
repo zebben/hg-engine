@@ -4495,9 +4495,9 @@ trainerdata 122, "Marvin"
     endparty
 
 trainerdata 123, "Tully"
-    trainermontype TRAINER_DATA_TYPE_NOTHING
+    trainermontype TRAINER_DATA_TYPE_MOVES
     trainerclass CLASS_FISHERMAN
-    nummons 1
+    nummons 2
     item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
@@ -4510,8 +4510,23 @@ trainerdata 123, "Tully"
         // mon 0
         ivs 0
         abilityslot 0
-        level 19
+        level 38
         pokemon SPECIES_QWILFISH
+        move MOVE_LIQUIDATION
+        move MOVE_BARB_BARRAGE
+        move MOVE_THUNDER_WAVE
+        move MOVE_PAIN_SPLIT
+        ballseal 0
+
+        // mon 1
+        ivs 0
+        abilityslot 0
+        level 38
+        pokemon SPECIES_OVERQWIL
+        move MOVE_LIQUIDATION
+        move MOVE_BARB_BARRAGE
+        move MOVE_CRUNCH
+        move MOVE_PAIN_SPLIT
         ballseal 0
     endparty
 
@@ -4692,7 +4707,7 @@ trainerdata 128, "Jonah"
     endparty
 
 trainerdata 129, "Shane"
-    trainermontype TRAINER_DATA_TYPE_NOTHING
+    trainermontype TRAINER_DATA_TYPE_MOVES
     trainerclass CLASS_POKE_MANIAC
     nummons 2
     item ITEM_NONE
@@ -4707,15 +4722,23 @@ trainerdata 129, "Shane"
         // mon 0
         ivs 0
         abilityslot 0
-        level 17
-        pokemon SPECIES_NIDORINA
+        level 38
+        pokemon SPECIES_SCIZOR
+        move MOVE_BULLET_PUNCH
+        move MOVE_BUG_BITE
+        move MOVE_ROOST
+        move MOVE_SWORDS_DANCE
         ballseal 0
 
         // mon 1
         ivs 0
         abilityslot 0
-        level 17
-        pokemon SPECIES_NIDORINO
+        level 38
+        pokemon SPECIES_PACHIRISU
+        move MOVE_HELPING_HAND
+        move MOVE_FOLLOW_ME
+        move MOVE_THUNDER_WAVE
+        move MOVE_THUNDERBOLT
         ballseal 0
     endparty
 
@@ -4818,7 +4841,7 @@ trainerdata 133, "Morgan"
     endparty
 
 trainerdata 134, "Benjamin"
-    trainermontype TRAINER_DATA_TYPE_NOTHING
+    trainermontype TRAINER_DATA_TYPE_MOVES
     trainerclass CLASS_HIKER
     nummons 3
     item ITEM_NONE
@@ -4833,22 +4856,34 @@ trainerdata 134, "Benjamin"
         // mon 0
         ivs 0
         abilityslot 0
-        level 15
-        pokemon SPECIES_DIGLETT
+        level 38
+        pokemon SPECIES_RHYPERIOR
+        move MOVE_HAMMER_ARM
+        move MOVE_BULLDOZE
+        move MOVE_ROCK_WRECKER
+        move MOVE_MEGAHORN
         ballseal 0
 
         // mon 1
         ivs 0
         abilityslot 32
-        level 15
-        pokemon SPECIES_GEODUDE
+        level 38
+        pokemon SPECIES_CARBINK
+        move MOVE_SAFEGUARD
+        move MOVE_HELPING_HAND
+        move MOVE_ROCK_SLIDE
+        move MOVE_TRICK_ROOM
         ballseal 0
 
         // mon 2
         ivs 0
         abilityslot 0
-        level 17
-        pokemon SPECIES_DUGTRIO
+        level 38
+        monwithform SPECIES_AVALUGG, 1
+        move MOVE_ROCK_SLIDE
+        move MOVE_MOUNTAIN_GALE
+        move MOVE_RECOVER
+        move MOVE_BODY_PRESS
         ballseal 0
     endparty
 
@@ -19421,7 +19456,7 @@ trainerdata 536, "Bertrand"
     endparty
 
 trainerdata 537, "Harrison"
-    trainermontype TRAINER_DATA_TYPE_NOTHING
+    trainermontype TRAINER_DATA_TYPE_MOVES
     trainerclass CLASS_POKE_MANIAC
     nummons 2
     item ITEM_NONE
@@ -19436,15 +19471,23 @@ trainerdata 537, "Harrison"
         // mon 0
         ivs 0
         abilityslot 32
-        level 17
-        pokemon SPECIES_NIDOKING
+        level 39
+        pokemon SPECIES_SANDACONDA
+        move MOVE_ROCK_SLIDE
+        move MOVE_EARTHQUAKE
+        move MOVE_BODY_PRESS
+        move MOVE_COIL
         ballseal 0
 
         // mon 1
         ivs 0
         abilityslot 0
-        level 17
-        pokemon SPECIES_NIDOQUEEN
+        level 39
+        pokemon SPECIES_EISCUE
+        move MOVE_ICICLE_SPEAR
+        move MOVE_LIQUIDATION
+        move MOVE_HEADBUTT
+        move MOVE_MIST
         ballseal 0
     endparty
 
@@ -19476,7 +19519,7 @@ trainerdata 538, "Hugh"
 trainerdata 539, "Markus"
     trainermontype TRAINER_DATA_TYPE_MOVES
     trainerclass CLASS_SUPER_NERD
-    nummons 1
+    nummons 2
     item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
@@ -19489,12 +19532,23 @@ trainerdata 539, "Markus"
         // mon 0
         ivs 0
         abilityslot 32
-        level 19
-        pokemon SPECIES_SLOWPOKE
-        move MOVE_CURSE
-        move MOVE_WATER_GUN
-        move MOVE_GROWL
-        move MOVE_STRENGTH
+        level 39
+        pokemon SPECIES_MAGNEZONE
+        move MOVE_THUNDERBOLT
+        move MOVE_FLASH_CANNON
+        move MOVE_POWER_GEM
+        move MOVE_THUNDER_WAVE
+        ballseal 0
+
+        // mon 1
+        ivs 0
+        abilityslot 32
+        level 39
+        monwithform SPECIES_GOODRA, 1
+        move MOVE_HEAVY_SLAM
+        move MOVE_BODY_PRESS
+        move MOVE_ACID_ARMOR
+        move MOVE_LIFE_DEW
         ballseal 0
     endparty
 
