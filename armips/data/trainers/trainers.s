@@ -343,14 +343,14 @@ trainerdata 9, "Elaine"
         // mon 0
         ivs 0
         abilityslot 32
-        level 35
+        level 33
         pokemon SPECIES_BARRASKEWDA
         ballseal 0
 
         // mon 1
         ivs 0
         abilityslot 32
-        level 35
+        level 33
         pokemon SPECIES_CRAMORANT
         ballseal 0
     endparty
@@ -589,14 +589,14 @@ trainerdata 16, "Simon"
         // mon 0
         ivs 0
         abilityslot 0
-        level 35
+        level 33
         pokemon SPECIES_LANTURN
         ballseal 0
 
         // mon 1
         ivs 0
         abilityslot 32
-        level 35
+        level 33
         pokemon SPECIES_LUMINEON
         ballseal 0
     endparty
@@ -1302,11 +1302,11 @@ trainerdata 32, "Pryce"
     endparty
 
 trainerdata 33, "Jasmine"
-    trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
+    trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES | TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_ABILITY | TRAINER_DATA_TYPE_BALL | TRAINER_DATA_TYPE_IV_EV_SET | TRAINER_DATA_TYPE_NATURE_SET | TRAINER_DATA_TYPE_SHINY_LOCK | TRAINER_DATA_TYPE_ADDITIONAL_FLAGS
     trainerclass CLASS_LEADER_2
-    nummons 3
-    item ITEM_HYPER_POTION
-    item ITEM_HYPER_POTION
+    nummons 5
+    item ITEM_FULL_RESTORE
+    item ITEM_FULL_RESTORE
     item ITEM_NONE
     item ITEM_NONE
     aiflags F_PRIORITIZE_SUPER_EFFECTIVE | F_EVALUATE_ATTACKS | F_EXPERT_ATTACKS | 0
@@ -1315,39 +1315,93 @@ trainerdata 33, "Jasmine"
 
     party 33
         // mon 0
-        ivs 150
+        ivs 255
         abilityslot 0
-        level 30
-        pokemon SPECIES_MAGNEMITE
-        item ITEM_NONE
-        move MOVE_THUNDERBOLT
-        move MOVE_SUPERSONIC
-        move MOVE_SONIC_BOOM
-        move MOVE_THUNDER_WAVE
+        level 37
+        pokemon SPECIES_FORRETRESS
+        item ITEM_LEFTOVERS
+        move MOVE_SPIKES
+        move MOVE_VOLT_SWITCH
+        move MOVE_GYRO_BALL
+        move MOVE_PROTECT
+        ability ABILITY_OVERCOAT
+        setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
+        nature NATURE_RELAXED
+        shinylock 0
+        additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
         ballseal 0
 
         // mon 1
-        ivs 150
-        abilityslot 32
-        level 30
-        pokemon SPECIES_MAGNEMITE
-        item ITEM_NONE
-        move MOVE_THUNDERBOLT
-        move MOVE_SUPERSONIC
-        move MOVE_SONIC_BOOM
-        move MOVE_THUNDER_WAVE
+        ivs 255
+        abilityslot 0
+        level 37
+        pokemon SPECIES_EMPOLEON
+        item ITEM_DAMP_ROCK
+        move MOVE_SCALD
+        move MOVE_RAIN_DANCE
+        move MOVE_FLASH_CANNON
+        move MOVE_TOXIC
+        ability ABILITY_DEFIANT
+        setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
+        nature NATURE_CALM
+        shinylock 0
+        additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
         ballseal 0
 
         // mon 2
-        ivs 150
-        abilityslot 32
-        level 35
+        ivs 255
+        abilityslot 0
+        level 37
+        pokemon SPECIES_SKARMORY
+        item ITEM_NONE
+        move MOVE_TAILWIND
+        move MOVE_ROOST
+        move MOVE_FLY
+        move MOVE_PARTING_SHOT
+        ability ABILITY_STURDY
+        setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
+        nature NATURE_CALM
+        shinylock 0
+        additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
+        ballseal 0
+
+        // mon 3
+        ivs 255
+        abilityslot 0
+        level 39
         pokemon SPECIES_STEELIX
-        item ITEM_SITRUS_BERRY
-        move MOVE_SCREECH
-        move MOVE_SANDSTORM
-        move MOVE_ROCK_THROW
+        item ITEM_NONE
+        move MOVE_HEADLONG_RUSH
+        move MOVE_ROCK_SLIDE
         move MOVE_IRON_TAIL
+        move MOVE_SCREECH
+        ability ABILITY_ROCK_HEAD
+        setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
+        nature NATURE_ADAMANT
+        shinylock 0
+        additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
+        ballseal 0
+
+        // mon 4
+        ivs 255
+        abilityslot 0
+        level 37
+        pokemon SPECIES_METAGROSS
+        item ITEM_NONE
+        move MOVE_METEOR_MASH
+        move MOVE_ZEN_HEADBUTT
+        move MOVE_EARTHQUAKE
+        move MOVE_AGILITY
+        ability ABILITY_TOUGH_CLAWS
+        setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
+        nature NATURE_JOLLY
+        shinylock 0
+        additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
         ballseal 0
     endparty
 
@@ -1367,7 +1421,7 @@ trainerdata 34, "Chuck"
         // mon 0
         ivs 200
         abilityslot 0
-        level 42
+        level 36
         pokemon SPECIES_POLIWRATH
         item ITEM_SITRUS_BERRY
         move MOVE_ROCK_SMASH
@@ -1385,7 +1439,7 @@ trainerdata 34, "Chuck"
         // mon 1
         ivs 200
         abilityslot 0
-        level 42
+        level 36
         pokemon SPECIES_SCRAFTY
         item ITEM_LEFTOVERS
         move MOVE_TOXIC
@@ -1403,7 +1457,7 @@ trainerdata 34, "Chuck"
         // mon 2
         ivs 200
         abilityslot 0
-        level 44
+        level 38
         pokemon SPECIES_HERACROSS
         item ITEM_FLAME_ORB
         move MOVE_CLOSE_COMBAT
@@ -1421,17 +1475,17 @@ trainerdata 34, "Chuck"
         // mon 3
         ivs 200
         abilityslot 0
-        level 42
+        level 37
         pokemon SPECIES_ANNIHILAPE
         item ITEM_NONE
         move MOVE_RAGE_FIST
         move MOVE_ROCK_SMASH
         move MOVE_STOMPING_TANTRUM
         move MOVE_SWAGGER
-        ability ABILITY_SHARPNESS
+        ability ABILITY_DEFIANT
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
         setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
-        nature NATURE_JOLLY
+        nature NATURE_SERIOUS
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
         ballseal 0
@@ -1551,7 +1605,7 @@ trainerdata 37, "Preston"
         // mon 0
         ivs 0
         abilityslot 0
-        level 34
+        level 33
         pokemon SPECIES_CARNIVINE
         move MOVE_VINE_WHIP
         move MOVE_CRUNCH
@@ -3137,14 +3191,14 @@ trainerdata 85, "Paula"
         // mon 0
         ivs 0
         abilityslot 32
-        level 35
+        level 33
         pokemon SPECIES_DRACOVISH
         ballseal 0
 
         // mon 1
         ivs 0
         abilityslot 32
-        level 35
+        level 33
         pokemon SPECIES_ARCTOVISH
         ballseal 0
     endparty
@@ -3165,7 +3219,7 @@ trainerdata 86, "Randall"
         // mon 0
         ivs 0
         abilityslot 0
-        level 36
+        level 33
         pokemon SPECIES_CLOYSTER
         move MOVE_ROCK_BLAST
         move MOVE_ICICLE_SPEAR
@@ -3176,7 +3230,7 @@ trainerdata 86, "Randall"
         // mon 1
         ivs 0
         abilityslot 0
-        level 36
+        level 33
         pokemon SPECIES_BLASTOISE
         move MOVE_WATER_PULSE
         move MOVE_DARK_PULSE
@@ -3321,7 +3375,7 @@ trainerdata 90, "Kaylee"
         // mon 0
         ivs 0
         abilityslot 32
-        level 38
+        level 34
         pokemon SPECIES_SLOWKING
         move MOVE_FUTURE_SIGHT
         move MOVE_SLACK_OFF
@@ -3332,7 +3386,7 @@ trainerdata 90, "Kaylee"
         // mon 1
         ivs 0
         abilityslot 0
-        level 38
+        level 34
         pokemon SPECIES_MANTINE
         move MOVE_WATER_PULSE
         move MOVE_AIR_SLASH
@@ -3343,7 +3397,7 @@ trainerdata 90, "Kaylee"
         // mon 2
         ivs 0
         abilityslot 32
-        level 38
+        level 34
         pokemon SPECIES_KINGDRA
         move MOVE_SURF
         move MOVE_DRAGON_PULSE
@@ -3368,7 +3422,7 @@ trainerdata 91, "Susie"
         // mon 0
         ivs 0
         abilityslot 0
-        level 37
+        level 34
         pokemon SPECIES_PSYDUCK
         move MOVE_SCRATCH
         move MOVE_WATER_GUN
@@ -3379,7 +3433,7 @@ trainerdata 91, "Susie"
         // mon 1
         ivs 0
         abilityslot 0
-        level 37
+        level 34
         pokemon SPECIES_GOLDEEN
         move MOVE_FLAIL
         move MOVE_WATER_PULSE
@@ -3404,14 +3458,14 @@ trainerdata 92, "Denise"
         // mon 0
         ivs 0
         abilityslot 0
-        level 40
+        level 34
         pokemon SPECIES_DEWGONG
         ballseal 0
 
         // mon 1
         ivs 0
         abilityslot 0
-        level 40
+        level 34
         pokemon SPECIES_LUMINEON
         ballseal 0
     endparty
@@ -3432,14 +3486,14 @@ trainerdata 93, "Kara"
         // mon 0
         ivs 0
         abilityslot 32
-        level 39
+        level 34
         pokemon SPECIES_STARMIE
         ballseal 0
 
         // mon 1
         ivs 0
         abilityslot 32
-        level 39
+        level 34
         pokemon SPECIES_INTELEON
         ballseal 0
     endparty
@@ -3460,7 +3514,7 @@ trainerdata 94, "Wendy"
         // mon 0
         ivs 0
         abilityslot 0
-        level 39
+        level 34
         pokemon SPECIES_KINGDRA
         move MOVE_SURF
         move MOVE_DRAGON_PULSE
@@ -3471,7 +3525,7 @@ trainerdata 94, "Wendy"
         // mon 1
         ivs 0
         abilityslot 0
-        level 39
+        level 34
         pokemon SPECIES_BARBARACLE
         move MOVE_SHELL_SMASH
         move MOVE_RAZOR_SHELL
@@ -3496,21 +3550,21 @@ trainerdata 95, "Charlie"
         // mon 0
         ivs 0
         abilityslot 32
-        level 36
+        level 34
         pokemon SPECIES_BARBARACLE
         ballseal 0
 
         // mon 1
         ivs 0
         abilityslot 0
-        level 36
+        level 34
         pokemon SPECIES_DREDNAW
         ballseal 0
 
         // mon 2
         ivs 0
         abilityslot 32
-        level 36
+        level 34
         pokemon SPECIES_GRAPPLOCT
         ballseal 0
     endparty
@@ -3531,21 +3585,21 @@ trainerdata 96, "George"
         // mon 0
         ivs 0
         abilityslot 0
-        level 37
+        level 34
         pokemon SPECIES_OCTILLERY
         ballseal 0
 
         // mon 1
         ivs 0
         abilityslot 32
-        level 37
+        level 34
         monwithform SPECIES_BASCULEGION, 1
         ballseal 0
 
         // mon 2
         ivs 0
         abilityslot 0
-        level 37
+        level 34
         pokemon SPECIES_BASCULEGION
         ballseal 0
     endparty
@@ -3566,14 +3620,14 @@ trainerdata 97, "Berke"
         // mon 0
         ivs 0
         abilityslot 0
-        level 39
+        level 34
         pokemon SPECIES_OVERQWIL
         ballseal 0
 
         // mon 0
         ivs 0
         abilityslot 0
-        level 39
+        level 34
         pokemon SPECIES_DRACOVISH
         ballseal 0
     endparty
@@ -3594,14 +3648,14 @@ trainerdata 98, "Ronald"
         // mon 0
         ivs 0
         abilityslot 0
-        level 40
+        level 34
         pokemon SPECIES_GYARADOS
         ballseal 0
 
         // mon 1
         ivs 0
         abilityslot 0
-        level 40
+        level 34
         pokemon SPECIES_GOODRA
         ballseal 0
     endparty
@@ -3622,14 +3676,14 @@ trainerdata 99, "Matthew"
         // mon 0
         ivs 0
         abilityslot 0
-        level 38
+        level 34
         pokemon SPECIES_GRAPPLOCT
         ballseal 0
 
         // mon 0
         ivs 0
         abilityslot 0
-        level 38
+        level 34
         pokemon SPECIES_BARRASKEWDA
         ballseal 0
     endparty
@@ -5443,7 +5497,7 @@ trainerdata 156, "Yoshi"
         // mon 1
         ivs 200
         abilityslot 0
-        level 41
+        level 35
         pokemon SPECIES_GOGOAT
         item ITEM_NONE
         move MOVE_HORN_LEECH
@@ -5461,7 +5515,7 @@ trainerdata 156, "Yoshi"
         // mon 1
         ivs 200
         abilityslot 0
-        level 41
+        level 35
         pokemon SPECIES_ELECTIVIRE
         item ITEM_NONE
         move MOVE_SUPERCELL_SLAM
@@ -5493,7 +5547,7 @@ trainerdata 157, "Lao"
         // mon 0
         ivs 200
         abilityslot 0
-        level 41
+        level 35
         pokemon SPECIES_GALLADE
         item ITEM_NONE
         move MOVE_NIGHT_SLASH
@@ -5511,7 +5565,7 @@ trainerdata 157, "Lao"
         // mon 1
         ivs 200
         abilityslot 0
-        level 42
+        level 36
         pokemon SPECIES_LUCARIO
         item ITEM_NONE
         move MOVE_AURA_SPHERE
@@ -5571,7 +5625,7 @@ trainerdata 159, "Lung"
         // mon 0
         ivs 200
         abilityslot 0
-        level 41
+        level 36
         pokemon SPECIES_SNEASLER
         item ITEM_NONE
         move MOVE_DIRE_CLAW
@@ -5589,7 +5643,7 @@ trainerdata 159, "Lung"
         // mon 0
         ivs 200
         abilityslot 0
-        level 41
+        level 36
         pokemon SPECIES_HITMONTOP
         item ITEM_NONE
         move MOVE_FAKE_OUT
@@ -7181,7 +7235,7 @@ trainerdata 212, "Terrell"
         // mon 0
         ivs 0
         abilityslot 0
-        level 34
+        level 33
         pokemon SPECIES_LANTURN
         move MOVE_SCALD
         move MOVE_TOXIC
@@ -7192,7 +7246,7 @@ trainerdata 212, "Terrell"
         // mon 1
         ivs 0
         abilityslot 0
-        level 34
+        level 33
         pokemon SPECIES_QUAGSIRE
         move MOVE_EARTHQUAKE
         move MOVE_YAWN
@@ -7253,7 +7307,7 @@ trainerdata 214, "Roberto"
         // mon 0
         ivs 0
         abilityslot 0
-        level 35
+        level 33
         pokemon SPECIES_HITMONTOP
         move MOVE_HIGH_JUMP_KICK
         move MOVE_MACH_PUNCH
@@ -7264,7 +7318,7 @@ trainerdata 214, "Roberto"
         // mon 1
         ivs 0
         abilityslot 32
-        level 34
+        level 33
         pokemon SPECIES_HERACROSS
         move MOVE_ROCK_BLAST
         move MOVE_BULLET_SEED
@@ -7275,7 +7329,7 @@ trainerdata 214, "Roberto"
         // mon 2
         ivs 0
         abilityslot 0
-        level 34
+        level 33
         pokemon SPECIES_GRAPPLOCT
         move MOVE_DRAIN_PUNCH
         move MOVE_LIQUIDATION
@@ -7300,7 +7354,7 @@ trainerdata 215, "Connie"
         // mon 0
         ivs 0
         abilityslot 0
-        level 34
+        level 33
         pokemon SPECIES_AZUMARILL
         move MOVE_AQUA_JET
         move MOVE_AQUA_TAIL
@@ -7311,7 +7365,7 @@ trainerdata 215, "Connie"
         // mon 1
         ivs 0
         abilityslot 0
-        level 34
+        level 33
         pokemon SPECIES_DEDENNE
         move MOVE_DISARMING_VOICE
         move MOVE_THUNDER_WAVE
@@ -7388,7 +7442,7 @@ trainerdata 217, "Denis"
         // mon 1
         ivs 50
         abilityslot 0
-        level 33
+        level 32
         pokemon SPECIES_SKARMORY
         move MOVE_DRILL_PECK
         move MOVE_SPIKES
@@ -7398,7 +7452,7 @@ trainerdata 217, "Denis"
         // mon 2
         ivs 50
         abilityslot 0
-        level 33
+        level 32
         pokemon SPECIES_HONCHKROW
         move MOVE_DRILL_PECK
         move MOVE_NIGHT_SLASH
@@ -8633,7 +8687,7 @@ trainerdata 251, "Nob"
         // mon 0
         ivs 200
         abilityslot 0
-        level 41
+        level 35
         pokemon SPECIES_SIRFETCHD
         item ITEM_NONE
         move MOVE_BRUTAL_SWING
@@ -8651,7 +8705,7 @@ trainerdata 251, "Nob"
         // mon 1
         ivs 200
         abilityslot 0
-        level 42
+        level 35
         pokemon SPECIES_FALINKS
         item ITEM_NONE
         move MOVE_BULK_UP
@@ -17813,9 +17867,9 @@ trainerdata 497, "Boy"
     endparty
 
 trainerdata 498, "Eusine"
-    trainermontype TRAINER_DATA_TYPE_MOVES
+    trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES | TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_ABILITY | TRAINER_DATA_TYPE_BALL | TRAINER_DATA_TYPE_IV_EV_SET | TRAINER_DATA_TYPE_NATURE_SET | TRAINER_DATA_TYPE_SHINY_LOCK | TRAINER_DATA_TYPE_ADDITIONAL_FLAGS
     trainerclass CLASS_MYSTERY_MAN
-    nummons 3
+    nummons 4
     item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
@@ -17826,36 +17880,75 @@ trainerdata 498, "Eusine"
 
     party 498
         // mon 0
-        ivs 150
+        ivs 255
         abilityslot 0
-        level 25
-        pokemon SPECIES_DROWZEE
-        move MOVE_DREAM_EATER
-        move MOVE_HYPNOSIS
+        level 37
+        pokemon SPECIES_ALAKAZAM
+        item ITEM_LIFE_ORB
         move MOVE_DISABLE
-        move MOVE_CONFUSION
+        move MOVE_PSYCHIC
+        move MOVE_FOCUS_BLAST
+        move MOVE_CALM_MIND
+        ability ABILITY_MAGIC_GUARD
+        setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
+        nature NATURE_TIMID
+        shinylock 0
+        additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
         ballseal 0
-
+        
         // mon 1
-        ivs 150
+        ivs 255
         abilityslot 0
-        level 25
-        pokemon SPECIES_HAUNTER
-        move MOVE_LICK
-        move MOVE_HYPNOSIS
-        move MOVE_MEAN_LOOK
-        move MOVE_CURSE
+        level 37
+        pokemon SPECIES_ELECTRODE
+        item ITEM_LIGHT_CLAY
+        move MOVE_ELECTRO_BALL
+        move MOVE_LIGHT_SCREEN
+        move MOVE_REFLECT
+        move MOVE_THUNDER_WAVE
+        ability ABILITY_SOUNDPROOF
+        setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
+        nature NATURE_TIMID
+        shinylock 0
+        additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
         ballseal 0
 
         // mon 2
-        ivs 150
-        abilityslot 32
-        level 27
-        pokemon SPECIES_ELECTRODE
-        move MOVE_SCREECH
-        move MOVE_SONIC_BOOM
-        move MOVE_THUNDER
-        move MOVE_ROLLOUT
+        ivs 255
+        abilityslot 0
+        level 37
+        pokemon SPECIES_JUMPLUFF
+        item ITEM_FOCUS_SASH
+        move MOVE_SLEEP_POWDER
+        move MOVE_RAGE_POWDER
+        move MOVE_ENCORE
+        move MOVE_PROTECT
+        ability ABILITY_LEAF_GUARD
+        setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
+        nature NATURE_TIMID
+        shinylock 0
+        additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
+        ballseal 0
+
+        // mon 3
+        ivs 255
+        abilityslot 0
+        level 37
+        pokemon SPECIES_DELPHOX
+        item ITEM_LIFE_ORB
+        move MOVE_MYSTICAL_FIRE
+        move MOVE_PSYCHIC
+        move MOVE_FOCUS_BLAST
+        move MOVE_CALM_MIND
+        ability ABILITY_MAGICIAN
+        setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
+        nature NATURE_TIMID
+        shinylock 0
+        additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
         ballseal 0
     endparty
 
