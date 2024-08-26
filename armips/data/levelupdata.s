@@ -29370,14 +29370,19 @@ levelup SPECIES_EISCUE_NOICE_FACE
     learnset MOVE_TACKLE, 1
     learnset MOVE_MIST, 6
     learnset MOVE_WEATHER_BALL, 12
-    learnset MOVE_ICY_WIND, 18
+    learnset MOVE_ICICLE_SPEAR, 18
     learnset MOVE_HEADBUTT, 24
     learnset MOVE_AMNESIA, 30
+    learnset MOVE_BELLY_DRUM, 32
+    learnset MOVE_FLIP_TURN, 34
     learnset MOVE_FREEZE_DRY, 36
     learnset MOVE_HAIL, 42
+    learnset MOVE_ICICLE_CRASH, 45
     learnset MOVE_AURORA_VEIL, 48
-    learnset MOVE_SURF, 54
-    learnset MOVE_BLIZZARD, 60
+    learnset MOVE_ICE_PUNCH, 50
+    learnset MOVE_LIQUIDATION, 54
+    learnset MOVE_FIRST_IMPRESSION, 60
+    learnset MOVE_CLOSE_COMBAT, 62
     terminatelearnset
 
 
