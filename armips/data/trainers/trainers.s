@@ -183,7 +183,7 @@ trainerdata 4, "Wade"
     endparty
 
 trainerdata 5, "Victoria"
-    trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES | TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_ABILITY | TRAINER_DATA_TYPE_BALL | TRAINER_DATA_TYPE_IV_EV_SET | TRAINER_DATA_TYPE_NATURE_SET | TRAINER_DATA_TYPE_SHINY_LOCK | TRAINER_DATA_TYPE_ADDITIONAL_FLAGS
+    trainermontype TRAINER_DATA_TYPE_MOVES
     trainerclass CLASS_BEAUTY
     nummons 3
     item ITEM_NONE
@@ -210,11 +210,11 @@ trainerdata 5, "Victoria"
         ivs 150
         abilityslot 32
         level 20
+        pokemon SPECIES_CHANSEY
         move MOVE_HEADBUTT
         move MOVE_SOFT_BOILED
         move MOVE_HELPING_HAND
         move MOVE_COPYCAT
-        pokemon SPECIES_CHANSEY
         ballseal 0
 
         // mon 2
@@ -830,7 +830,7 @@ trainerdata 21, "Bugsy"
     endparty
 
 trainerdata 22, "Carrie"
-    trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES | TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_ABILITY | TRAINER_DATA_TYPE_BALL | TRAINER_DATA_TYPE_IV_EV_SET | TRAINER_DATA_TYPE_NATURE_SET | TRAINER_DATA_TYPE_SHINY_LOCK | TRAINER_DATA_TYPE_ADDITIONAL_FLAGS
+    trainermontype TRAINER_DATA_TYPE_MOVES
     trainerclass CLASS_LASS
     nummons 2
     item ITEM_NONE
@@ -2767,7 +2767,7 @@ trainerdata 69, "Josh"
     endparty
 
 trainerdata 70, "Samantha"
-    trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES | TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_ABILITY | TRAINER_DATA_TYPE_BALL | TRAINER_DATA_TYPE_IV_EV_SET | TRAINER_DATA_TYPE_NATURE_SET | TRAINER_DATA_TYPE_SHINY_LOCK | TRAINER_DATA_TYPE_ADDITIONAL_FLAGS
+    trainermontype TRAINER_DATA_TYPE_MOVES
     trainerclass CLASS_BEAUTY
     nummons 2
     item ITEM_NONE
@@ -2803,7 +2803,7 @@ trainerdata 70, "Samantha"
     endparty
 
 trainerdata 71, "Cathy"
-    trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES | TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_ABILITY | TRAINER_DATA_TYPE_BALL | TRAINER_DATA_TYPE_IV_EV_SET | TRAINER_DATA_TYPE_NATURE_SET | TRAINER_DATA_TYPE_SHINY_LOCK | TRAINER_DATA_TYPE_ADDITIONAL_FLAGS
+    trainermontype TRAINER_DATA_TYPE_MOVES
     trainerclass CLASS_LASS
     nummons 3
     item ITEM_NONE
@@ -2977,7 +2977,7 @@ trainerdata 75, "Elliot"
     endparty
 
 trainerdata 76, "Brooke"
-    trainermontype TRAINER_DATA_TYPE_MOVES
+    trainermontype TRAINER_DATA_TYPE_NOTHING
     trainerclass CLASS_PICNICKER
     nummons 2
     item ITEM_NONE
@@ -7644,6 +7644,7 @@ trainerdata 217, "Denis"
         move MOVE_WATER_PULSE
         move MOVE_ICY_WIND
         move MOVE_ROOST
+        ballseal 0
 
         // mon 1
         ivs 50
@@ -7654,6 +7655,7 @@ trainerdata 217, "Denis"
         move MOVE_SPIKES
         move MOVE_ROOST
         move MOVE_STEEL_WING
+        ballseal 0
 
         // mon 2
         ivs 50
@@ -7664,6 +7666,7 @@ trainerdata 217, "Denis"
         move MOVE_NIGHT_SLASH
         move MOVE_ROOST
         move MOVE_SUCKER_PUNCH
+        ballseal 0
     endparty
 
 trainerdata 218, "Grunt"
