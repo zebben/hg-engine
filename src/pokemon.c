@@ -1524,7 +1524,7 @@ void LONG_CALL CreateBoxMonData(struct BoxPokemon *boxmon, int species, int leve
     i=ITEM_POKE_BALL;
     SetBoxMonData(boxmon,MON_DATA_POKEBALL,(u8 *)&i);
 
-    if(pow <= MAX_IVS){
+    if(pow == MAX_IVS){
         SetBoxMonData(boxmon,MON_DATA_HP_IV,(u8 *)&pow);
         SetBoxMonData(boxmon,MON_DATA_ATK_IV,(u8 *)&pow);
         SetBoxMonData(boxmon,MON_DATA_DEF_IV,(u8 *)&pow);
@@ -1532,20 +1532,39 @@ void LONG_CALL CreateBoxMonData(struct BoxPokemon *boxmon, int species, int leve
         SetBoxMonData(boxmon,MON_DATA_SPATK_IV,(u8 *)&pow);
         SetBoxMonData(boxmon,MON_DATA_SPDEF_IV,(u8 *)&pow);
     }
-    else{ // why the fuck is it done like this
+    else{ // if not MAX_IVs,
         i=gf_rand();
+
+        // HP
         j=(i&(0x001f<< 0))>> 0;
+        j = DecideBoxMonIVs(j);
         SetBoxMonData(boxmon,MON_DATA_HP_IV,(u8 *)&j);
+
+        // Attack
         j=(i&(0x001f<< 5))>> 5;
+        j = DecideBoxMonIVs(j);
         SetBoxMonData(boxmon,MON_DATA_ATK_IV,(u8 *)&j);
+
+        // Defense
         j=(i&(0x001f<<10))>>10;
+        j = DecideBoxMonIVs(j);
         SetBoxMonData(boxmon,MON_DATA_DEF_IV,(u8 *)&j);
+
         i=gf_rand();
+
+        // Speed
         j=(i&(0x001f<< 0))>> 0;
+        j = DecideBoxMonIVs(j);
         SetBoxMonData(boxmon,MON_DATA_SPEED_IV,(u8 *)&j);
+        
+        // Special Attack
         j=(i&(0x001f<< 5))>> 5;
+        j = DecideBoxMonIVs(j);
         SetBoxMonData(boxmon,MON_DATA_SPATK_IV,(u8 *)&j);
+
+        // Special Defense
         j=(i&(0x001f<<10))>>10;
+        j = DecideBoxMonIVs(j);
         SetBoxMonData(boxmon,MON_DATA_SPDEF_IV,(u8 *)&j);
     }
 
@@ -1567,6 +1586,17 @@ void LONG_CALL CreateBoxMonData(struct BoxPokemon *boxmon, int species, int leve
     SetBoxMonData(boxmon,MON_DATA_GENDER,(u8 *)&i);
     FillInBoxMonLearnset(boxmon);
     BoxMonSetFastModeOff(boxmon,flag);
+}
+
+int LONG_CALL DecideBoxMonIVs(int pow) {
+    if(pow == MAX_IVS){
+        return MAX_IVS;
+    } 
+    else if (pow == MIN_IVS){
+        return MIN_IVS;
+    }
+
+    return MEDIAN_IVS;
 }
 
 /**

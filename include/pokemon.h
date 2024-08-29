@@ -140,6 +140,8 @@ enum
 };
 
 #define MAX_IVS (31)
+#define MEDIAN_IVS (30)
+#define MIN_IVS (0)
 
 #define RND_NO_SET  (0)
 #define RND_SET (1)
