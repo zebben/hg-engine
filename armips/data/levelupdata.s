@@ -17025,6 +17025,7 @@ levelup SPECIES_AURORUS
     learnset MOVE_HAIL, 46
     learnset MOVE_ENCORE, 46
     learnset MOVE_ICE_BEAM, 48
+    learnset MOVE_BOOMBURST, 50
     learnset MOVE_AURORA_VEIL, 52
     learnset MOVE_HYPER_BEAM, 64
     learnset MOVE_BLIZZARD, 66
