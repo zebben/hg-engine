@@ -9648,6 +9648,7 @@ levelup SPECIES_BASTIODON
     learnset MOVE_TAKE_DOWN, 15
     learnset MOVE_IRON_DEFENSE, 19
     learnset MOVE_SWAGGER, 24
+    learnset MOVE_BODY_PRESS, 26
     learnset MOVE_ANCIENT_POWER, 28
     learnset MOVE_ENDURE, 36
     learnset MOVE_SPIKES, 38
@@ -10913,6 +10914,7 @@ levelup SPECIES_RHYPERIOR
     learnset MOVE_TAKE_DOWN, 38
     learnset MOVE_EARTHQUAKE, 47
     learnset MOVE_STONE_EDGE, 47
+    learnset MOVE_STOMPING_TANTRUM, 49
     learnset MOVE_MEGAHORN, 58
     learnset MOVE_SUPERPOWER, 60
     learnset MOVE_HORN_DRILL, 65
