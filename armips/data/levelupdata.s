@@ -3169,6 +3169,7 @@ levelup SPECIES_VAPOREON
     learnset MOVE_MUDDY_WATER, 38
     learnset MOVE_HYDRO_PUMP, 47
     learnset MOVE_LAST_RESORT, 48
+    learnset MOVE_RECOVER, 50
     terminatelearnset
 
 
@@ -20162,6 +20163,7 @@ levelup SPECIES_BOLTUND
     learnset MOVE_ICE_FANG, 30
     learnset MOVE_CRUNCH, 34
     learnset MOVE_CHARGE, 41
+    learnset MOVE_SUPERCELL_SLAM, 43
     learnset MOVE_VOLT_SWITCH, 45
     learnset MOVE_WILD_CHARGE, 48
     learnset MOVE_PLAY_ROUGH, 55

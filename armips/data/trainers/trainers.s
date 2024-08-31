@@ -6134,9 +6134,9 @@ trainerdata 159, "Lung"
     endparty
 
 trainerdata 160, "Naoko"
-    trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
+    trainermontype TRAINER_DATA_TYPE_MOVES
     trainerclass CLASS_KIMONO_GIRL
-    nummons 1
+    nummons 2
     item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
@@ -6149,20 +6149,30 @@ trainerdata 160, "Naoko"
         // mon 0
         ivs 150
         abilityslot 0
-        level 38
+        level 56
         pokemon SPECIES_ESPEON
-        item ITEM_NONE
-        move MOVE_LAST_RESORT
+        move MOVE_CALM_MIND
         move MOVE_PSYCHIC
-        move MOVE_PSYCH_UP
-        move MOVE_SWIFT
+        move MOVE_SHADOW_BALL
+        move MOVE_FOCUS_BLAST
+        ballseal 0
+
+        // mon 1
+        ivs 150
+        abilityslot 0
+        level 56
+        pokemon SPECIES_MEOWSTIC
+        move MOVE_PROTECT
+        move MOVE_HELPING_HAND
+        move MOVE_FAKE_OUT
+        move MOVE_PSYSHOCK
         ballseal 0
     endparty
 
 trainerdata 161, "Sayo"
     trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
     trainerclass CLASS_KIMONO_GIRL
-    nummons 1
+    nummons 2
     item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
@@ -6175,20 +6185,30 @@ trainerdata 161, "Sayo"
         // mon 0
         ivs 150
         abilityslot 0
-        level 38
+        level 56
         pokemon SPECIES_JOLTEON
-        item ITEM_NONE
         move MOVE_LAST_RESORT
         move MOVE_THUNDERBOLT
         move MOVE_DOUBLE_TEAM
         move MOVE_THUNDER_WAVE
         ballseal 0
+
+        // mon 1
+        ivs 150
+        abilityslot 0
+        level 56
+        pokemon SPECIES_BOLTUND
+        move MOVE_THUNDER_FANG
+        move MOVE_CRUNCH
+        move MOVE_ICE_FANG
+        move MOVE_FIRE_FANG
+        ballseal 0
     endparty
 
 trainerdata 162, "Zuki"
-    trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
+    trainermontype TRAINER_DATA_TYPE_MOVES
     trainerclass CLASS_KIMONO_GIRL
-    nummons 1
+    nummons 2
     item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
@@ -6201,20 +6221,30 @@ trainerdata 162, "Zuki"
         // mon 0
         ivs 150
         abilityslot 0
-        level 38
+        level 56
         pokemon SPECIES_UMBREON
-        item ITEM_NONE
-        move MOVE_LAST_RESORT
+        move MOVE_HELPING_HAND
         move MOVE_DARK_PULSE
         move MOVE_CONFUSE_RAY
         move MOVE_SHADOW_BALL
+        ballseal 0
+
+        // mon 1
+        ivs 150
+        abilityslot 0
+        level 56
+        pokemon SPECIES_SYLVEON
+        move MOVE_MOONBLAST
+        move MOVE_AURA_SPHERE
+        move MOVE_SHADOW_BALL
+        move MOVE_CALM_MIND
         ballseal 0
     endparty
 
 trainerdata 163, "Kuni"
     trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
     trainerclass CLASS_KIMONO_GIRL
-    nummons 1
+    nummons 2
     item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
@@ -6227,20 +6257,30 @@ trainerdata 163, "Kuni"
         // mon 0
         ivs 150
         abilityslot 0
-        level 38
+        level 56
         pokemon SPECIES_VAPOREON
-        item ITEM_NONE
-        move MOVE_LAST_RESORT
-        move MOVE_SURF
-        move MOVE_QUICK_ATTACK
-        move MOVE_AURORA_BEAM
+        move MOVE_MUDDY_WATER
+        move MOVE_HELPING_HAND
+        move MOVE_TOXIC
+        move MOVE_RECOVER
+        ballseal 0
+
+        // mon 1
+        ivs 150
+        abilityslot 0
+        level 56
+        pokemon SPECIES_GLACEON
+        move MOVE_ICY_WIND
+        move MOVE_FREEZE_DRY
+        move MOVE_SHADOW_BALL
+        move MOVE_DISCHARGE
         ballseal 0
     endparty
 
 trainerdata 164, "Miki"
-    trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
+    trainermontype TRAINER_DATA_TYPE_MOVES
     trainerclass CLASS_KIMONO_GIRL
-    nummons 1
+    nummons 2
     item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
@@ -6253,13 +6293,23 @@ trainerdata 164, "Miki"
         // mon 0
         ivs 150
         abilityslot 0
-        level 38
+        level 56
         pokemon SPECIES_FLAREON
-        item ITEM_NONE
-        move MOVE_LAST_RESORT
-        move MOVE_FIRE_BLAST
-        move MOVE_QUICK_ATTACK
-        move MOVE_WILL_O_WISP
+        move MOVE_FIRE_LASH
+        move MOVE_SUPERPOWER
+        move MOVE_SUNNY_DAY
+        move MOVE_HELPING_HAND
+        ballseal 0
+
+        // mon 1
+        ivs 150
+        abilityslot 0
+        level 56
+        pokemon SPECIES_LEAFEON
+        move MOVE_SWORDS_DANCE
+        move MOVE_LEAF_BLADE
+        move MOVE_STOMPING_TANTRUM
+        move MOVE_LEECH_SEED
         ballseal 0
     endparty
 
