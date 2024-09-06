@@ -22310,6 +22310,7 @@ levelup SPECIES_MABOSSTIFF
     learnset MOVE_CRUNCH, 34
     learnset MOVE_SWAGGER, 39
     learnset MOVE_REVERSAL, 43
+    learnset MOVE_PLAY_ROUGH, 45
     learnset MOVE_JAW_LOCK, 48
     learnset MOVE_DOUBLE_EDGE, 55
     learnset MOVE_OUTRAGE, 60
@@ -25712,7 +25713,7 @@ levelup SPECIES_PONYTA_GALARIAN
     learnset MOVE_STOMP, 30
     learnset MOVE_HEAL_PULSE, 35
     learnset MOVE_TAKE_DOWN, 41
-    learnset MOVE_DAZZLING_GLEAM, 45
+    learnset MOVE_PLAY_ROUGH, 45
     learnset MOVE_PSYCHIC, 50
     learnset MOVE_HEALING_WISH, 55
     terminatelearnset
@@ -25733,7 +25734,7 @@ levelup SPECIES_RAPIDASH_GALARIAN
     learnset MOVE_STOMP, 30
     learnset MOVE_HEAL_PULSE, 35
     learnset MOVE_TAKE_DOWN, 43
-    learnset MOVE_DAZZLING_GLEAM, 49
+    learnset MOVE_PLAY_ROUGH, 49
     learnset MOVE_PSYCHIC, 56
     learnset MOVE_HEALING_WISH, 63
     terminatelearnset
