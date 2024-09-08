@@ -6176,7 +6176,7 @@ trainerdata 160, "Naoko"
     endparty
 
 trainerdata 161, "Sayo"
-    trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
+    trainermontype TRAINER_DATA_TYPE_MOVES
     trainerclass CLASS_KIMONO_GIRL
     nummons 2
     item ITEM_NONE
@@ -6248,7 +6248,7 @@ trainerdata 162, "Zuki"
     endparty
 
 trainerdata 163, "Kuni"
-    trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
+    trainermontype TRAINER_DATA_TYPE_MOVES
     trainerclass CLASS_KIMONO_GIRL
     nummons 2
     item ITEM_NONE
