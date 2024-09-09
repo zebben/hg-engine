@@ -2827,6 +2827,7 @@ levelup SPECIES_SEAKING
     learnset MOVE_SOAK, 44
     learnset MOVE_HORN_DRILL, 49
     learnset MOVE_MEGAHORN, 52
+    learnset MOVE_WAVE_CRASH, 55
     learnset MOVE_DOUBLE_EDGE, 57
     terminatelearnset
 
