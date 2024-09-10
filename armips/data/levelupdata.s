@@ -546,6 +546,7 @@ levelup SPECIES_RAICHU
     learnset MOVE_TAIL_WHIP, 1
     learnset MOVE_GROWL, 1
     learnset MOVE_QUICK_ATTACK, 1
+    learnset MOVE_SURF, 1
     terminatelearnset
 
 
@@ -22272,6 +22273,7 @@ levelup SPECIES_KILOWATTREL
     learnset MOVE_ROOST, 24
     learnset MOVE_DUAL_WINGBEAT, 30
     learnset MOVE_AGILITY, 36
+    learnset MOVE_TAILWIND, 49
     learnset MOVE_VOLT_SWITCH, 43
     learnset MOVE_DISCHARGE, 48
     learnset MOVE_HURRICANE, 55
