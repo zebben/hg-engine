@@ -8406,7 +8406,7 @@ trainerdata 232, "Vincent"
         // mon 0
         ivs 255
         abilityslot 0
-        level 62
+        level 63
         pokemon SPECIES_PLUSLE
         item ITEM_LIFE_ORB
         move MOVE_NASTY_PLOT
@@ -8424,7 +8424,7 @@ trainerdata 232, "Vincent"
         // mon 1
         ivs 255
         abilityslot 0
-        level 62
+        level 63
         pokemon SPECIES_MINUN
         item ITEM_SITRUS_BERRY
         move MOVE_MOONBLAST
@@ -9646,7 +9646,7 @@ trainerdata 255, "Lt. Surge"
         // mon 1
         ivs 255
         abilityslot 0
-        level 63
+        level 64
         monwithform SPECIES_ROTOM, 2
         item ITEM_LEFTOVERS
         move MOVE_THUNDERBOLT
@@ -9664,7 +9664,7 @@ trainerdata 255, "Lt. Surge"
         // mon 2
         ivs 255
         abilityslot 0
-        level 63
+        level 64
         pokemon SPECIES_ZEBSTRIKA
         item ITEM_SITRUS_BERRY
         move MOVE_WILD_CHARGE
@@ -9700,7 +9700,7 @@ trainerdata 255, "Lt. Surge"
         // mon 4
         ivs 255
         abilityslot 0
-        level 63
+        level 64
         pokemon SPECIES_KILOWATTREL
         item ITEM_LIFE_ORB
         move MOVE_ELECTRO_BALL
@@ -9718,7 +9718,7 @@ trainerdata 255, "Lt. Surge"
         // mon 5
         ivs 255
         abilityslot 0
-        level 63
+        level 64
         monwithform SPECIES_GOLEM, 1
         item ITEM_FOCUS_SASH
         move MOVE_HEAVY_SLAM
@@ -13425,7 +13425,7 @@ trainerdata 337, "Gregory"
         // mon 0
         ivs 255
         abilityslot 0
-        level 62
+        level 63
         pokemon SPECIES_PAWMOT
         item ITEM_MAGNET
         move MOVE_CLOSE_COMBAT
@@ -13461,7 +13461,7 @@ trainerdata 337, "Gregory"
         // mon 2
         ivs 255
         abilityslot 0
-        level 62
+        level 63
         pokemon SPECIES_EMOLGA
         item ITEM_LEFTOVERS
         move MOVE_DISCHARGE
@@ -15330,7 +15330,7 @@ trainerdata 396, "Horton"
         // mon 0
         ivs 255
         abilityslot 0
-        level 62
+        level 63
         monwithform SPECIES_RAICHU, 1
         item ITEM_MAGNET
         move MOVE_PSYCHIC
