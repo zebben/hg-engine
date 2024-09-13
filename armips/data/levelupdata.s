@@ -1201,11 +1201,11 @@ levelup SPECIES_PERSIAN
     learnset MOVE_POWER_GEM, 32
     learnset MOVE_ASSURANCE, 35
     learnset MOVE_PSYCHIC, 39
-    learnset MOVE_NASTY_PLOT, 46
-    learnset MOVE_HYPER_VOICE, 50
-    learnset MOVE_MOONBLAST, 54
+    learnset MOVE_SWORDS_DANCE, 46
+    learnset MOVE_DOUBLE_EDGE, 50
+    learnset MOVE_PLAY_ROUGH, 54
     learnset MOVE_CAPTIVATE, 56
-    learnset MOVE_DARK_PULSE, 61
+    learnset MOVE_CRUNCH, 61
     learnset MOVE_FEINT, 65
     terminatelearnset
 
@@ -2958,15 +2958,16 @@ levelup SPECIES_JYNX
     learnset MOVE_COVET, 16
     learnset MOVE_SING, 20
     learnset MOVE_HEART_STAMP, 21
-    learnset MOVE_ICE_PUNCH, 23
+    learnset MOVE_ICY_WIND, 23
     learnset MOVE_FAKE_TEARS, 25
     learnset MOVE_LOVELY_KISS, 25
     learnset MOVE_WAKE_UP_SLAP, 33
     learnset MOVE_PSYCHIC, 34
     learnset MOVE_MEAN_LOOK, 36
     learnset MOVE_AVALANCHE, 39
-    learnset MOVE_BODY_SLAM, 44
+    learnset MOVE_PSYSHOCK, 44
     learnset MOVE_WRING_OUT, 49
+    learnset MOVE_NASTY_PLOT, 51
     learnset MOVE_PERISH_SONG, 53
     learnset MOVE_BLIZZARD, 58
     terminatelearnset
@@ -8205,7 +8206,8 @@ levelup SPECIES_CLAYDOL
     learnset MOVE_COSMIC_POWER, 23
     learnset MOVE_EXTRASENSORY, 28
     learnset MOVE_RECOVER, 30
-    learnset MOVE_EARTH_POWER, 34
+    learnset MOVE_EARTH_POWER, 32
+    learnset MOVE_POWER_GEM, 34
     learnset MOVE_IMPRISON, 35
     learnset MOVE_GUARD_SPLIT, 36
     learnset MOVE_POWER_SPLIT, 36
@@ -15327,6 +15329,7 @@ levelup SPECIES_BRAVIARY
     learnset MOVE_AERIAL_ACE, 30
     learnset MOVE_SLASH, 36
     learnset MOVE_WHIRLWIND, 42
+    learnset MOVE_PSYCHO_CUT, 45
     learnset MOVE_CRUSH_CLAW, 48
     learnset MOVE_BRAVE_BIRD, 50
     learnset MOVE_SKY_DROP, 57
@@ -18652,6 +18655,7 @@ levelup SPECIES_ORANGURU
     learnset MOVE_INSTRUCT, 41
     learnset MOVE_PSYCHIC, 44
     learnset MOVE_FOUL_PLAY, 46
+    learnset MOVE_HYPER_VOICE, 50
     learnset MOVE_FUTURE_SIGHT, 53
     learnset MOVE_INSTRUCT, 55
     learnset MOVE_POWER_GEM, 58
@@ -22555,10 +22559,12 @@ levelup SPECIES_ESPATHRA
     learnset MOVE_PSYBEAM, 19
     learnset MOVE_PLUCK, 24
     learnset MOVE_AGILITY, 29
+    learnset MOVE_AIR_SLASH, 32
     learnset MOVE_UPROAR, 34
     learnset MOVE_DAZZLING_GLEAM, 43
     learnset MOVE_PSYCHIC, 49
     learnset MOVE_LAST_RESORT, 54
+    learnset MOVE_STORED_POWER, 56
     terminatelearnset
 
 levelup SPECIES_TINKATINK
