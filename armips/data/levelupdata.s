@@ -3400,7 +3400,8 @@ levelup SPECIES_AERODACTYL
     learnset MOVE_STONE_EDGE, 45
     learnset MOVE_SKY_DROP, 49
     learnset MOVE_EARTHQUAKE, 59
-    learnset MOVE_SWORDS_DANCE, 69
+    learnset MOVE_SWORDS_DANCE, 62
+    learnset MOVE_BRAVE_BIRD, 69
     terminatelearnset
 
 
@@ -6272,6 +6273,7 @@ levelup SPECIES_MIGHTYENA
     learnset MOVE_EMBARGO, 32
     learnset MOVE_TAUNT, 36
     learnset MOVE_CRUNCH, 40
+    learnset MOVE_PARTING_SHOT, 42
     learnset MOVE_YAWN, 44
     learnset MOVE_KNOCK_OFF, 45
     learnset MOVE_TAKE_DOWN, 48
@@ -8000,6 +8002,7 @@ levelup SPECIES_ZANGOOSE
     learnset MOVE_SWORDS_DANCE, 47
     learnset MOVE_CLOSE_COMBAT, 50
     learnset MOVE_GUNK_SHOT, 55
+    learnset MOVE_EXTREME_SPEED, 58
     terminatelearnset
 
 
@@ -22938,6 +22941,7 @@ levelup SPECIES_FLAMIGO
     learnset MOVE_WIDE_GUARD, 44
     learnset MOVE_THROAT_CHOP, 48
     learnset MOVE_BRAVE_BIRD, 54
+    learnset MOVE_CLOSE_COMBAT, 58
     terminatelearnset
 
 levelup SPECIES_CETODDLE
@@ -23797,6 +23801,7 @@ levelup SPECIES_ARCHALUDON
     learnset MOVE_BREAKING_SWIPE, 24
     learnset MOVE_DRAGON_TAIL, 30
     learnset MOVE_IRON_DEFENSE, 36
+    learnset MOVE_BODY_PRESS, 36
     learnset MOVE_FOCUS_ENERGY, 42
     learnset MOVE_DRAGON_CLAW, 48
     learnset MOVE_FLASH_CANNON, 54
