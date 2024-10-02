@@ -265,6 +265,7 @@ levelup SPECIES_BUTTERFREE
     learnset MOVE_CAPTIVATE, 37
     learnset MOVE_TAILWIND, 38
     learnset MOVE_QUIVER_DANCE, 45
+    learnset MOVE_ROOST, 51
     terminatelearnset
 
 
@@ -4761,6 +4762,7 @@ levelup SPECIES_SLOWKING
     learnset MOVE_PSYCH_UP, 39
     learnset MOVE_RAIN_DANCE, 42
     learnset MOVE_HEAL_PULSE, 45
+    learnset MOVE_HYDRO_PUMP, 55
     terminatelearnset
 
 
