@@ -3049,6 +3049,7 @@ levelup SPECIES_PINSIR
     learnset MOVE_THRASH, 43
     learnset MOVE_GUILLOTINE, 48
     learnset MOVE_CLOSE_COMBAT, 52
+    learnset MOVE_FIRST_IMPRESSION, 55
     terminatelearnset
 
 
@@ -6939,6 +6940,7 @@ levelup SPECIES_SHEDINJA
     learnset MOVE_CONFUSE_RAY, 21
     learnset MOVE_SHADOW_SNEAK, 25
     learnset MOVE_FURY_SWIPES, 25
+    move MOVE_X_SCISSOR, 28
     learnset MOVE_MIND_READER, 34
     learnset MOVE_GRUDGE, 37
     learnset MOVE_SPITE, 38
@@ -8737,6 +8739,8 @@ levelup SPECIES_WALREIN
     learnset MOVE_AQUA_JET, 48
     learnset MOVE_HAIL, 51
     learnset MOVE_AQUA_TAIL, 52
+    learnset MOVE_ROCK_SLIDE, 55
+    learnset MOVE_EARTHQUAKE, 58
     learnset MOVE_SHEER_COLD, 66
     terminatelearnset
 
@@ -12331,12 +12335,13 @@ levelup SPECIES_SAMUROTT
     learnset MOVE_AQUA_JET, 34
     learnset MOVE_FLIP_TURN, 37
     learnset MOVE_ENCORE, 39
+    learnset MOVE_SACRED_SWORD, 42
     learnset MOVE_AQUA_TAIL, 46
     learnset MOVE_CROSS_CHOP, 49
     learnset MOVE_RETALIATE, 51
     learnset MOVE_SWORDS_DANCE, 58
     learnset MOVE_WAVE_CRASH, 63
-    learnset MOVE_SUPERPOWER, 63
+    learnset MOVE_SUPERPOWER, 65
     terminatelearnset
 
 
@@ -29802,6 +29807,7 @@ levelup SPECIES_SAMUROTT_HISUIAN
     learnset MOVE_RETALIATE, 51
     learnset MOVE_SWORDS_DANCE, 58
     learnset MOVE_HYDRO_PUMP, 63
+    learnset MOVE_SUPERPOWER, 65
     terminatelearnset
 
 

@@ -6844,7 +6844,7 @@ movedata MOVE_MUD_BOMB, "Mud Bomb"
 movedata MOVE_PSYCHO_CUT, "Psycho Cut"
     battleeffect MOVE_EFFECT_HIGH_CRITICAL
     pss SPLIT_PHYSICAL
-    basepower 70
+    basepower 75
     type TYPE_PSYCHIC
     accuracy 100
     pp 20
@@ -6860,11 +6860,11 @@ movedata MOVE_PSYCHO_CUT, "Psycho Cut"
 movedata MOVE_ZEN_HEADBUTT, "Zen Headbutt"
     battleeffect MOVE_EFFECT_FLINCH_HIT
     pss SPLIT_PHYSICAL
-    basepower 80
+    basepower 85
     type TYPE_PSYCHIC
-    accuracy 90
+    accuracy 100
     pp 15
-    effectchance 20
+    effectchance 15
     target MOVE_TARGET_SELECTED
     priority 0
     flags FLAG_KINGS_ROCK | FLAG_MIRROR_MOVE | FLAG_PROTECT | FLAG_CONTACT
