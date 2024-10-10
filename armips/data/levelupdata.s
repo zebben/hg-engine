@@ -3363,6 +3363,8 @@ levelup SPECIES_KABUTOPS
     learnset MOVE_MUD_SHOT, 20
     learnset MOVE_AQUA_JET, 22
     learnset MOVE_ENDURE, 26
+    learnset MOVE_AQUA_CUTTER, 28
+    learnset MOVE_RAZOR_SHELL, 30
     learnset MOVE_BRINE, 35
     learnset MOVE_AQUA_JET, 36
     learnset MOVE_ROCK_SLIDE, 37
@@ -6940,7 +6942,7 @@ levelup SPECIES_SHEDINJA
     learnset MOVE_CONFUSE_RAY, 21
     learnset MOVE_SHADOW_SNEAK, 25
     learnset MOVE_FURY_SWIPES, 25
-    move MOVE_X_SCISSOR, 28
+    learnset MOVE_X_SCISSOR, 28
     learnset MOVE_MIND_READER, 34
     learnset MOVE_GRUDGE, 37
     learnset MOVE_SPITE, 38
@@ -8807,6 +8809,7 @@ levelup SPECIES_RELICANTH
     learnset MOVE_YAWN, 24
     learnset MOVE_TAKE_DOWN, 27
     learnset MOVE_AQUA_TAIL, 30
+    learnset MOVE_ROCK_POLISH, 34
     learnset MOVE_REST, 37
     learnset MOVE_FLAIL, 40
     learnset MOVE_HYDRO_PUMP, 45
