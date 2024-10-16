@@ -7753,6 +7753,7 @@ levelup SPECIES_GRUMPIG
     learnset MOVE_EXTRASENSORY, 26
     learnset MOVE_POWER_GEM, 29
     learnset MOVE_EARTH_POWER, 29
+    learnset MOVE_TRICK_ROOM, 34
     learnset MOVE_REST, 35
     learnset MOVE_SNORE, 35
     learnset MOVE_PSYSHOCK, 42
@@ -8473,7 +8474,8 @@ levelup SPECIES_BANETTE
     learnset MOVE_SWORDS_DANCE, 50
     learnset MOVE_GRUDGE, 52
     learnset MOVE_TRICK, 58
-    learnset MOVE_PHANTOM_FORCE, 64
+    learnset MOVE_PHANTOM_FORCE, 62
+    learnset MOVE_POLTERGEIST, 64
     terminatelearnset
 
 
@@ -13620,6 +13622,7 @@ levelup SPECIES_CRUSTLE
     learnset MOVE_STEALTH_ROCK, 26
     learnset MOVE_FLAIL, 31
     learnset MOVE_ROCK_POLISH, 32
+    learnset MOVE_CRABHAMMER, 34
     learnset MOVE_SHELL_SMASH, 36
     learnset MOVE_X_SCISSOR, 38
     learnset MOVE_LEECH_LIFE, 40
@@ -14416,6 +14419,7 @@ levelup SPECIES_ESCAVALIER
     learnset MOVE_X_SCISSOR, 37
     learnset MOVE_IRON_HEAD, 38
     learnset MOVE_SWORDS_DANCE, 43
+    learnset MOVE_MEGAHORN, 47
     learnset MOVE_GIGA_IMPACT, 51
     learnset MOVE_METAL_BURST, 52
     learnset MOVE_SUPERPOWER, 55
@@ -15464,10 +15468,11 @@ levelup SPECIES_HEATMOR
     learnset MOVE_NASTY_PLOT, 40
     learnset MOVE_LAVA_PLUME, 42
     learnset MOVE_AMNESIA, 45
+    learnset MOVE_SCALD, 45
     learnset MOVE_FLAMETHROWER, 50
     learnset MOVE_POWER_GEM, 53
     learnset MOVE_INFERNO, 60
-    learnset MOVE_EARTH_POWER, 60
+    learnset MOVE_EARTH_POWER, 62
     terminatelearnset
 
 
