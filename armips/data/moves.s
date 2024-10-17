@@ -220,8 +220,8 @@ movedata MOVE_GUILLOTINE, "Guillotine"
 movedata MOVE_RAZOR_WIND, "Razor Wind"
     battleeffect MOVE_EFFECT_CHARGE_TURN_HIGH_CRIT
     pss SPLIT_SPECIAL
-    basepower 90
-    type TYPE_NORMAL
+    basepower 80
+    type TYPE_FLYING
     accuracy 100
     pp 10
     effectchance 0
@@ -284,7 +284,7 @@ movedata MOVE_GUST, "Gust"
 movedata MOVE_WING_ATTACK, "Wing Attack"
     battleeffect MOVE_EFFECT_HIT
     pss SPLIT_PHYSICAL
-    basepower 75
+    basepower 60
     type TYPE_FLYING
     accuracy 100
     pp 35
@@ -828,11 +828,11 @@ movedata MOVE_DISABLE, "Disable"
 movedata MOVE_ACID, "Acid"
     battleeffect MOVE_EFFECT_LOWER_SP_DEF_HIT
     pss SPLIT_SPECIAL
-    basepower 60
+    basepower 50
     type TYPE_POISON
     accuracy 100
     pp 20
-    effectchance 10
+    effectchance 20
     target MOVE_TARGET_BOTH
     priority 0
     flags FLAG_MIRROR_MOVE | FLAG_PROTECT
@@ -3148,7 +3148,7 @@ movedata MOVE_PERISH_SONG, "Perish Song"
 movedata MOVE_ICY_WIND, "Icy Wind"
     battleeffect MOVE_EFFECT_LOWER_SPEED_HIT
     pss SPLIT_SPECIAL
-    basepower 55
+    basepower 65
     type TYPE_ICE
     accuracy 95
     pp 15
@@ -4911,7 +4911,7 @@ movedata MOVE_CRUSH_CLAW, "Crush Claw"
     basepower 85
     type TYPE_NORMAL
     accuracy 100
-    pp 10
+    pp 15
     effectchance 30
     target MOVE_TARGET_SELECTED
     priority 0
@@ -5644,11 +5644,11 @@ movedata MOVE_SHOCK_WAVE, "Shock Wave"
 movedata MOVE_WATER_PULSE, "Water Pulse"
     battleeffect MOVE_EFFECT_CONFUSE_HIT
     pss SPLIT_SPECIAL
-    basepower 80
+    basepower 60
     type TYPE_WATER
     accuracy 100
-    pp 15
-    effectchance 10
+    pp 20
+    effectchance 20
     target MOVE_TARGET_SELECTED
     priority 0
     flags FLAG_HIDE_SHADOW | FLAG_KINGS_ROCK | FLAG_MIRROR_MOVE | FLAG_PROTECT
