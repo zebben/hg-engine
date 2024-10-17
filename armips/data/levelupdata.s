@@ -2978,6 +2978,7 @@ levelup SPECIES_JYNX
     learnset MOVE_NASTY_PLOT, 51
     learnset MOVE_PERISH_SONG, 53
     learnset MOVE_BLIZZARD, 58
+    learnset MOVE_FOCUS_BLAST, 60
     terminatelearnset
 
 
@@ -8606,6 +8607,7 @@ levelup SPECIES_ABSOL
     learnset MOVE_PSYCHO_CUT, 37
     learnset MOVE_ME_FIRST, 41
     learnset MOVE_SUCKER_PUNCH, 42
+    learnset MOVE_PLAY_ROUGH, 45
     learnset MOVE_RAZOR_WIND, 49
     learnset MOVE_FUTURE_SIGHT, 51
     learnset MOVE_PERISH_SONG, 55
@@ -22159,6 +22161,7 @@ levelup SPECIES_SQUAWKABILLY
     learnset MOVE_UPROAR, 24
     learnset MOVE_COPYCAT, 27
     learnset MOVE_FLY, 30
+    learnset MOVE_U_TURN, 30
     learnset MOVE_FACADE, 34
     learnset MOVE_SWAGGER, 38
     learnset MOVE_BRAVE_BIRD, 42
@@ -22219,6 +22222,7 @@ levelup SPECIES_GARGANACL
     learnset MOVE_ROCK_POLISH, 13
     learnset MOVE_HEADBUTT, 16
     learnset MOVE_SALT_CURE, 24
+    learnset MOVE_BODY_PRESS, 28
     learnset MOVE_RECOVER, 30
     learnset MOVE_ROCK_SLIDE, 34
     learnset MOVE_STEALTH_ROCK, 40
