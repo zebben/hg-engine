@@ -1820,7 +1820,7 @@ trainerdata 39, "Eugene"
         move MOVE_OCTAZOOKA
         move MOVE_AURORA_BEAM
         move MOVE_HELPING_HAND
-        move MOVE_SLUDGE_BOMB
+        move MOVE_FLAMETHROWER
         ballseal 0
 
         // mon 1
@@ -2411,9 +2411,9 @@ trainerdata 57, "Ralph"
     endparty
 
 trainerdata 58, "Arnold"
-    trainermontype TRAINER_DATA_TYPE_NOTHING
+    trainermontype TRAINER_DATA_TYPE_MOVES
     trainerclass CLASS_FISHERMAN
-    nummons 1
+    nummons 2
     item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
@@ -2426,8 +2426,23 @@ trainerdata 58, "Arnold"
         // mon 0
         ivs 0
         abilityslot 0
-        level 44
-        pokemon SPECIES_SHELLDER
+        level 74
+        pokemon SPECIES_CLOYSTER
+        move MOVE_ROCK_BLAST
+        move MOVE_ICICLE_SPEAR
+        move MOVE_RAZOR_SHELL
+        move MOVE_SHELL_SMASH
+        ballseal 0
+
+        // mon 1
+        ivs 0
+        abilityslot 0
+        level 74
+        pokemon SPECIES_STARMIE
+        move MOVE_SURF
+        move MOVE_RECOVER
+        move MOVE_PSYCHIC
+        move MOVE_POWER_GEM
         ballseal 0
     endparty
 
@@ -6708,7 +6723,7 @@ trainerdata 162, "Zuki"
     endparty
 
 trainerdata 163, "Kuni"
-    trainermontype TRAINER_DATA_TYPE_MOVES
+    trainermontype TRAINER_DATA_TYPE_MOVES | TRAINER_DATA_TYPE_ABILITY
     trainerclass CLASS_KIMONO_GIRL
     nummons 2
     item ITEM_NONE
@@ -6725,6 +6740,7 @@ trainerdata 163, "Kuni"
         abilityslot 0
         level 52
         pokemon SPECIES_VAPOREON
+        ability ABILITY_WATER_ABSORB
         move MOVE_MUDDY_WATER
         move MOVE_HELPING_HAND
         move MOVE_TOXIC
@@ -6736,7 +6752,8 @@ trainerdata 163, "Kuni"
         abilityslot 0
         level 52
         pokemon SPECIES_GLACEON
-        move MOVE_ICY_WIND
+        ability ABILITY_REFRIGERATE
+        move MOVE_HYPER_VOICE
         move MOVE_FREEZE_DRY
         move MOVE_SHADOW_BALL
         move MOVE_DISCHARGE
@@ -13124,7 +13141,7 @@ trainerdata 295, "Mickey"
     endparty
 
 trainerdata 296, "Nikki"
-    trainermontype TRAINER_DATA_TYPE_NOTHING
+    trainermontype TRAINER_DATA_TYPE_MOVES
     trainerclass CLASS_SWIMMER_F
     nummons 2
     item ITEM_NONE
@@ -13139,15 +13156,23 @@ trainerdata 296, "Nikki"
         // mon 0
         ivs 0
         abilityslot 0
-        level 37
-        pokemon SPECIES_SEEL
+        level 74
+        pokemon SPECIES_BLASTOISE
+        move MOVE_SURF
+        move MOVE_AURA_SPHERE
+        move MOVE_DARK_PULSE
+        move MOVE_CALM_MIND
         ballseal 0
 
         // mon 1
         ivs 0
         abilityslot 0
-        level 42
+        level 74
         pokemon SPECIES_DEWGONG
+        move MOVE_PERISH_SONG
+        move MOVE_HYDRO_PUMP
+        move MOVE_MOONBLAST
+        move MOVE_ICE_BEAM
         ballseal 0
     endparty
 
@@ -17028,7 +17053,7 @@ trainerdata 374, "Tyson"
         // mon 0
         ivs 0
         abilityslot 32
-        level 42
+        level 75
         pokemon SPECIES_QUAGSIRE
         move MOVE_EARTHQUAKE
         move MOVE_YAWN
@@ -17039,10 +17064,10 @@ trainerdata 374, "Tyson"
         // mon 1
         ivs 0
         abilityslot 32
-        level 42
+        level 75
         pokemon SPECIES_OCTILLERY
         move MOVE_SIGNAL_BEAM
-        move MOVE_WRING_OUT
+        move MOVE_FLAMETHROWER
         move MOVE_OCTAZOOKA
         move MOVE_AURORA_BEAM
         ballseal 0
@@ -18660,7 +18685,7 @@ trainerdata 413, "Scott"
         move MOVE_HELPING_HAND
         move MOVE_HYDRO_PUMP
         move MOVE_ICE_BEAM
-        move MOVE_SIGNAL_BEAM
+        move MOVE_FIRE_BLAST
         ballseal 0
     endparty
 
@@ -26206,9 +26231,9 @@ trainerdata 588, "Mina"
     endparty
 
 trainerdata 589, "Murphy"
-    trainermontype TRAINER_DATA_TYPE_NOTHING
+    trainermontype TRAINER_DATA_TYPE_MOVES
     trainerclass CLASS_FISHERMAN
-    nummons 4
+    nummons 3
     item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
@@ -26221,36 +26246,41 @@ trainerdata 589, "Murphy"
         // mon 0
         ivs 0
         abilityslot 0
-        level 32
-        pokemon SPECIES_CORSOLA
+        level 74
+        pokemon SPECIES_LAPRAS
+        move MOVE_SURF
+        move MOVE_PERISH_SONG
+        move MOVE_BLIZZARD
+        move MOVE_RECOVER
         ballseal 0
 
         // mon 1
         ivs 0
         abilityslot 0
-        level 34
-        pokemon SPECIES_CORSOLA
+        level 75
+        pokemon SPECIES_VAPOREON
+        move MOVE_MUDDY_WATER
+        move MOVE_HELPING_HAND
+        move MOVE_TOXIC
+        move MOVE_RECOVER
         ballseal 0
 
         // mon 2
         ivs 0
         abilityslot 0
-        level 36
-        pokemon SPECIES_CORSOLA
-        ballseal 0
-
-        // mon 3
-        ivs 0
-        abilityslot 0
-        level 38
-        pokemon SPECIES_CORSOLA
+        level 74
+        pokemon SPECIES_GOLISOPOD
+        move MOVE_FIRST_IMPRESSION
+        move MOVE_RAZOR_SHELL
+        move MOVE_ROCK_SMASH
+        move MOVE_PROTECT
         ballseal 0
     endparty
 
 trainerdata 590, "Liam"
-    trainermontype TRAINER_DATA_TYPE_NOTHING
+    trainermontype TRAINER_DATA_TYPE_MOVES | TRAINER_DATA_TYPE_ABILITY
     trainerclass CLASS_FISHERMAN
-    nummons 1
+    nummons 2
     item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
@@ -26263,8 +26293,25 @@ trainerdata 590, "Liam"
         // mon 0
         ivs 0
         abilityslot 0
-        level 42
-        pokemon SPECIES_SEADRA
+        level 75
+        pokemon SPECIES_KINGDRA
+        ability ABILITY_SWIFT_SWIM
+        move MOVE_SURF
+        move MOVE_HYDRO_PUMP
+        move MOVE_ICE_BEAM
+        move MOVE_PROTECT
+        ballseal 0
+
+        // mon 1
+        ivs 0
+        abilityslot 0
+        level 75
+        pokemon SPECIES_PELIPPER
+        ability ABILITY_DRIZZLE
+        move MOVE_PROTECT
+        move MOVE_SCALD
+        move MOVE_AIR_SLASH
+        move MOVE_ROOST
         ballseal 0
     endparty
 
@@ -26284,30 +26331,30 @@ trainerdata 591, "Gideon"
         // mon 0
         ivs 0
         abilityslot 0
-        level 44
-        pokemon SPECIES_LANTURN
-        move MOVE_DISCHARGE
-        move MOVE_SIGNAL_BEAM
-        move MOVE_BUBBLE_BEAM
-        move MOVE_CONFUSE_RAY
+        level 75
+        pokemon SPECIES_PALAFIN
+        move MOVE_WAVE_CRASH
+        move MOVE_ICE_PUNCH
+        move MOVE_ACROBATICS
+        move MOVE_JET_PUNCH
         ballseal 0
 
         // mon 1
         ivs 0
         abilityslot 0
-        level 40
-        pokemon SPECIES_MANTINE
-        move MOVE_WATER_PULSE
-        move MOVE_WING_ATTACK
-        move MOVE_PSYBEAM
-        move MOVE_CONFUSE_RAY
+        level 75
+        pokemon SPECIES_TOXAPEX
+        move MOVE_TOXIC
+        move MOVE_RECOVER
+        move MOVE_SURF
+        move MOVE_POISON_JAB
         ballseal 0
     endparty
 
 trainerdata 592, "Chelan"
     trainermontype TRAINER_DATA_TYPE_MOVES
     trainerclass CLASS_SWIMMER_F
-    nummons 1
+    nummons 2
     item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
@@ -26320,19 +26367,30 @@ trainerdata 592, "Chelan"
         // mon 0
         ivs 0
         abilityslot 32
-        level 40
+        level 75
         pokemon SPECIES_AZUMARILL
         move MOVE_WATERFALL
-        move MOVE_ROLLOUT
-        move MOVE_DEFENSE_CURL
-        move MOVE_DIG
+        move MOVE_AQUA_JET
+        move MOVE_SUPERPOWER
+        move MOVE_PROTECT
+        ballseal 0
+
+        // mon 1
+        ivs 0
+        abilityslot 32
+        level 75
+        pokemon SPECIES_ARAQUANID
+        move MOVE_SPIDER_WEB
+        move MOVE_LEECH_LIFE
+        move MOVE_LIQUIDATION
+        move MOVE_LUNGE
         ballseal 0
     endparty
 
 trainerdata 593, "Kendra"
-    trainermontype TRAINER_DATA_TYPE_NOTHING
+    trainermontype TRAINER_DATA_TYPE_MOVES
     trainerclass CLASS_SWIMMER_F
-    nummons 1
+    nummons 2
     item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
@@ -26345,13 +26403,28 @@ trainerdata 593, "Kendra"
         // mon 0
         ivs 0
         abilityslot 0
-        level 43
-        pokemon SPECIES_SLOWKING
+        level 75
+        pokemon SPECIES_VELUZA
+        move MOVE_NIGHT_SLASH
+        move MOVE_PSYCHO_CUT
+        move MOVE_WAVE_CRASH
+        move MOVE_PROTECT
+        ballseal 0
+
+        // mon 1
+        ivs 0
+        abilityslot 0
+        level 75
+        pokemon SPECIES_CLODSIRE
+        move MOVE_TOXIC
+        move MOVE_RECOVER
+        move MOVE_EARTHQUAKE
+        move MOVE_HELPING_HAND
         ballseal 0
     endparty
 
 trainerdata 594, "Esteban"
-    trainermontype TRAINER_DATA_TYPE_NOTHING
+    trainermontype TRAINER_DATA_TYPE_MOVES
     trainerclass CLASS_SWIMMER_M
     nummons 2
     item ITEM_NONE
@@ -26366,20 +26439,28 @@ trainerdata 594, "Esteban"
         // mon 0
         ivs 0
         abilityslot 0
-        level 38
+        level 75
         pokemon SPECIES_GOLDUCK
+        move MOVE_HYDRO_PUMP
+        move MOVE_PSYCHIC
+        move MOVE_PROTECT
+        move MOVE_ICE_BEAM
         ballseal 0
 
         // mon 1
         ivs 0
         abilityslot 0
-        level 38
-        pokemon SPECIES_POLIWHIRL
+        level 75
+        pokemon SPECIES_POLIWRATH
+        move MOVE_SUBMISSION
+        move MOVE_MACH_PUNCH
+        move MOVE_ICE_PUNCH
+        move MOVE_HYPNOSIS
         ballseal 0
     endparty
 
 trainerdata 595, "Duane"
-    trainermontype TRAINER_DATA_TYPE_NOTHING
+    trainermontype TRAINER_DATA_TYPE_MOVES
     trainerclass CLASS_SWIMMER_M
     nummons 2
     item ITEM_NONE
@@ -26394,20 +26475,28 @@ trainerdata 595, "Duane"
         // mon 0
         ivs 0
         abilityslot 0
-        level 40
+        level 75
         pokemon SPECIES_SEAKING
+        move MOVE_MEGAHORN
+        move MOVE_DOUBLE_EDGE
+        move MOVE_WAVE_CRASH
+        move MOVE_PROTECT
         ballseal 0
 
         // mon 1
         ivs 0
         abilityslot 0
-        level 40
+        level 75
         pokemon SPECIES_KABUTOPS
+        move MOVE_ROCK_SLIDE
+        move MOVE_AQUA_JET
+        move MOVE_LEECH_LIFE
+        move MOVE_RAZOR_SHELL
         ballseal 0
     endparty
 
 trainerdata 596, "Kinsley"
-    trainermontype TRAINER_DATA_TYPE_NOTHING
+    trainermontype TRAINER_DATA_TYPE_MOVES
     trainerclass CLASS_BIRD_KEEPER_1
     nummons 3
     item ITEM_NONE
@@ -26422,29 +26511,41 @@ trainerdata 596, "Kinsley"
         // mon 0
         ivs 50
         abilityslot 0
-        level 36
+        level 74
         pokemon SPECIES_FARFETCHD
+        move MOVE_BRAVE_BIRD
+        move MOVE_LEAF_BLADE
+        move MOVE_PROTECT
+        move MOVE_KNOCK_OFF
         ballseal 0
 
         // mon 1
         ivs 50
         abilityslot 0
-        level 36
+        level 74
         pokemon SPECIES_FEAROW
+        move MOVE_DRILL_RUN
+        move MOVE_BRAVE_BIRD
+        move MOVE_ROOST
+        move MOVE_PURSUIT
         ballseal 0
 
         // mon 2
         ivs 50
         abilityslot 0
-        level 37
-        pokemon SPECIES_PIDGEOTTO
+        level 74
+        pokemon SPECIES_PIDGEOT
+        move MOVE_HURRICANE
+        move MOVE_HEAT_WAVE
+        move MOVE_TAILWIND
+        move MOVE_PROTECT
         ballseal 0
     endparty
 
 trainerdata 597, "Easton"
-    trainermontype TRAINER_DATA_TYPE_NOTHING
+    trainermontype TRAINER_DATA_TYPE_MOVES
     trainerclass CLASS_BIRD_KEEPER_1
-    nummons 4
+    nummons 2
     item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
@@ -26457,29 +26558,23 @@ trainerdata 597, "Easton"
         // mon 0
         ivs 50
         abilityslot 0
-        level 35
-        pokemon SPECIES_DODUO
+        level 75
+        pokemon SPECIES_DODRIO
+        move MOVE_QUICK_ATTACK
+        move MOVE_FLARE_BLITZ
+        move MOVE_BRAVE_BIRD
+        move MOVE_WILD_CHARGE
         ballseal 0
 
         // mon 1
         ivs 50
         abilityslot 0
-        level 35
-        pokemon SPECIES_DODUO
-        ballseal 0
-
-        // mon 2
-        ivs 50
-        abilityslot 0
-        level 35
-        pokemon SPECIES_DODRIO
-        ballseal 0
-
-        // mon 3
-        ivs 50
-        abilityslot 0
-        level 36
-        pokemon SPECIES_DODRIO
+        level 75
+        pokemon SPECIES_FLAMIGO
+        move MOVE_THROAT_CHOP
+        move MOVE_BRAVE_BIRD
+        move MOVE_DETECT
+        move MOVE_CLOSE_COMBAT
         ballseal 0
     endparty
 

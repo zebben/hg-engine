@@ -1418,7 +1418,10 @@ levelup SPECIES_POLIWRATH
     learnset MOVE_MUD_SHOT, 1
     learnset MOVE_DOUBLE_SLAP, 1
     learnset MOVE_DYNAMIC_PUNCH, 32
-    learnset MOVE_MIND_READER, 43
+    learnset MOVE_MACH_PUNCH, 40
+    learnset MOVE_ICE_PUNCH, 42
+    learnset MOVE_MIND_READER, 44
+    learnset MOVE_DRAIN_PUNCH, 48
     learnset MOVE_CIRCLE_THROW, 53
     learnset MOVE_CLOSE_COMBAT, 60
     terminatelearnset
@@ -5308,6 +5311,7 @@ levelup SPECIES_REMORAID
 levelup SPECIES_OCTILLERY
     learnset MOVE_OCTAZOOKA, 0
     learnset MOVE_OCTAZOOKA, 1
+    learnset MOVE_FLAMETHROWER, 1
     learnset MOVE_GUNK_SHOT, 1
     learnset MOVE_ROCK_BLAST, 1
     learnset MOVE_HELPING_HAND, 1
@@ -5321,6 +5325,7 @@ levelup SPECIES_OCTILLERY
     learnset MOVE_CONSTRICT, 6
     learnset MOVE_PSYBEAM, 11
     learnset MOVE_AURORA_BEAM, 15
+    learnset MOVE_EMBER, 17
     learnset MOVE_BUBBLE_BEAM, 19
     learnset MOVE_FOCUS_ENERGY, 22
     learnset MOVE_LOCK_ON, 24
@@ -5328,7 +5333,9 @@ levelup SPECIES_OCTILLERY
     learnset MOVE_SIGNAL_BEAM, 34
     learnset MOVE_BULLET_SEED, 37
     learnset MOVE_ICE_BEAM, 37
+    learnset MOVE_FLAMETHROWER, 39
     learnset MOVE_HYDRO_PUMP, 46
+    learnset MOVE_FIRE_BLAST, 47
     learnset MOVE_DARK_PULSE, 48
     learnset MOVE_SOAK, 55
     learnset MOVE_HYPER_BEAM, 55
@@ -11165,6 +11172,7 @@ levelup SPECIES_GLACEON
     learnset MOVE_ICE_SHARD, 22
     learnset MOVE_ICE_BEAM, 25
     learnset MOVE_BARRIER, 29
+    learnset MOVE_HYPER_VOICE, 33
     learnset MOVE_HAIL, 35
     learnset MOVE_MIRROR_COAT, 39
     learnset MOVE_FREEZE_DRY, 40
@@ -19951,18 +19959,19 @@ levelup SPECIES_GREEDENT
     learnset MOVE_SPIT_UP, 15
     learnset MOVE_BODY_SLAM, 20
     learnset MOVE_REST, 27
+    learnset MOVE_SEISMIC_TOSS, 30
     learnset MOVE_COUNTER, 34
     learnset MOVE_BELLY_DRUM, 38
     learnset MOVE_BULLET_SEED, 41
-    learnset MOVE_SUPER_FANG, 48
+    learnset MOVE_SUPER_FANG, 42
+    learnset MOVE_RECOVER, 45
+    learnset MOVE_HELPING_HAND, 48
     learnset MOVE_HYPER_FANG, 50
-    learnset MOVE_ICE_FANG, 53
-    learnset MOVE_FIRE_FANG, 53
-    learnset MOVE_THUNDER_FANG, 53
+    learnset MOVE_TOXIC, 52
     learnset MOVE_BELCH, 55
     learnset MOVE_CRUNCH, 57
     learnset MOVE_SUPERPOWER, 60
-    learnset MOVE_WISH, 65
+    learnset MOVE_WISH, 61
     terminatelearnset
 
 
@@ -22786,6 +22795,7 @@ levelup SPECIES_PALAFIN
     learnset MOVE_ACROBATICS, 29
     learnset MOVE_ENCORE, 34
     learnset MOVE_AQUA_TAIL, 39
+    learnset MOVE_ICE_PUNCH, 42
     learnset MOVE_MIST, 44
     learnset MOVE_HYDRO_PUMP, 50
     learnset MOVE_FOCUS_PUNCH, 55
