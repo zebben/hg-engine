@@ -151,6 +151,7 @@ levelup SPECIES_CHARIZARD
     learnset MOVE_SUNNY_DAY, 38
     learnset MOVE_HEAT_WAVE, 40
     learnset MOVE_SOLAR_BEAM, 45
+    learnset MOVE_HURRICANE, 48
     learnset MOVE_FIRE_SPIN, 50
     learnset MOVE_INFERNO, 57
     learnset MOVE_FIRE_BLAST, 69
@@ -3249,6 +3250,7 @@ levelup SPECIES_FLAREON
     learnset MOVE_SCARY_FACE, 37
     learnset MOVE_LAVA_PLUME, 38
     learnset MOVE_FIRE_LASH, 43
+    learnset MOVE_EARTHQUAKE, 45
     learnset MOVE_FLARE_BLITZ, 47
     learnset MOVE_LAST_RESORT, 48
     learnset MOVE_SWORDS_DANCE, 62
@@ -11056,6 +11058,7 @@ levelup SPECIES_MAGMORTAR
     learnset MOVE_SCARY_FACE, 24
     learnset MOVE_FIRE_PUNCH, 28
     learnset MOVE_LAVA_PLUME, 34
+    learnset MOVE_DARK_PULSE, 36
     learnset MOVE_LOW_KICK, 40
     learnset MOVE_EARTH_POWER, 42
     learnset MOVE_NASTY_PLOT, 44
@@ -11063,6 +11066,8 @@ levelup SPECIES_MAGMORTAR
     learnset MOVE_FLAMETHROWER, 47
     learnset MOVE_SUNNY_DAY, 47
     learnset MOVE_FIRE_BLAST, 56
+    learnset MOVE_AURA_SPHERE, 58
+    learnset MOVE_DRAGON_PULSE, 60
     terminatelearnset
 
 
@@ -13554,6 +13559,7 @@ levelup SPECIES_DARMANITAN
     learnset MOVE_FIRE_PUNCH, 25
     learnset MOVE_UPROAR, 32
     learnset MOVE_BELLY_DRUM, 34
+    learnset MOVE_U_TURN, 36
     learnset MOVE_FLARE_BLITZ, 38
     learnset MOVE_THRASH, 39
     learnset MOVE_TAUNT, 39
@@ -21790,6 +21796,7 @@ levelup SPECIES_SKELEDIRGE
     learnset MOVE_SNARL, 24
     learnset MOVE_ROAR, 28
     learnset MOVE_FLAMETHROWER, 32
+    learnset MOVE_SHADOW_BALL, 37
     learnset MOVE_HYPER_VOICE, 38
     learnset MOVE_WILL_O_WISP, 47
     learnset MOVE_HEX, 47
@@ -26144,7 +26151,9 @@ levelup SPECIES_DARMANITAN_GALARIAN
     learnset MOVE_ICE_PUNCH, 28
     learnset MOVE_FIRE_PUNCH, 28
     learnset MOVE_UPROAR, 32
+    learnset MOVE_U_TURN, 36
     learnset MOVE_BELLY_DRUM, 38
+    learnset MOVE_FLARE_BLITZ, 42
     learnset MOVE_BLIZZARD, 44
     learnset MOVE_THRASH, 50
     learnset MOVE_SUPERPOWER, 56
@@ -26798,6 +26807,7 @@ levelup SPECIES_DARMANITAN_ZEN_MODE
     learnset MOVE_THRASH, 27
     learnset MOVE_BELLY_DRUM, 30
     learnset MOVE_FLARE_BLITZ, 33
+    learnset MOVE_U_TURN, 36
     learnset MOVE_TAUNT, 39
     learnset MOVE_SUPERPOWER, 47
     learnset MOVE_OVERHEAT, 54
@@ -26822,6 +26832,7 @@ levelup SPECIES_DARMANITAN_ZEN_MODE_GALARIAN
     learnset MOVE_THRASH, 27
     learnset MOVE_BELLY_DRUM, 30
     learnset MOVE_FLARE_BLITZ, 33
+    learnset MOVE_U_TURN, 36
     learnset MOVE_TAUNT, 39
     learnset MOVE_SUPERPOWER, 47
     learnset MOVE_OVERHEAT, 54
