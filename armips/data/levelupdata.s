@@ -3123,8 +3123,10 @@ levelup SPECIES_LAPRAS
     learnset MOVE_ICE_SHARD, 15
     learnset MOVE_CONFUSE_RAY, 16
     learnset MOVE_WATER_PULSE, 22
-    learnset MOVE_BODY_SLAM, 29
+    learnset MOVE_FREEZE_DRY, 29
     learnset MOVE_EXTRASENSORY, 31
+    learnset MOVE_LIGHT_SCREEN, 34
+    learnset MOVE_REFLECT, 34
     learnset MOVE_BRINE, 35
     learnset MOVE_RAIN_DANCE, 36
     learnset MOVE_ICY_WIND, 38
@@ -4436,6 +4438,7 @@ levelup SPECIES_SUDOWOODO
     learnset MOVE_ROCK_SLIDE, 32
     learnset MOVE_SUCKER_PUNCH, 33
     learnset MOVE_COUNTER, 38
+    learnset MOVE_WOOD_HAMMER, 40
     learnset MOVE_DOUBLE_EDGE, 43
     learnset MOVE_STONE_EDGE, 47
     learnset MOVE_HEAD_SMASH, 50
@@ -4722,6 +4725,8 @@ levelup SPECIES_UMBREON
     learnset MOVE_FEINT_ATTACK, 20
     learnset MOVE_ASSURANCE, 25
     learnset MOVE_MOONLIGHT, 31
+    learnset MOVE_ACID_ARMOR, 35
+    learnset MOVE_BODY_PRESS, 35
     learnset MOVE_SCREECH, 37
     learnset MOVE_GUARD_SWAP, 39
     learnset MOVE_DARK_PULSE, 40
@@ -20882,6 +20887,7 @@ levelup SPECIES_RUNERIGUS
     learnset MOVE_IRON_DEFENSE, 40
     learnset MOVE_SHADOW_SNEAK, 42
     learnset MOVE_PHANTOM_FORCE, 44
+    learnset MOVE_TRICK_ROOM, 46
     learnset MOVE_EARTHQUAKE, 50
     learnset MOVE_BODY_PRESS, 52
     learnset MOVE_PAIN_SPLIT, 56
