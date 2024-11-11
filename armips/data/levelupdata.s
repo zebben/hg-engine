@@ -3973,10 +3973,12 @@ levelup SPECIES_LEDIAN
     learnset MOVE_COMET_PUNCH, 24
     learnset MOVE_BATON_PASS, 29
     learnset MOVE_AGILITY, 33
-    learnset MOVE_BUG_BUZZ, 38
-    learnset MOVE_HURRICANE, 42
-    learnset MOVE_EXTRASENSORY, 45
-    learnset MOVE_OMINOUS_WIND, 47
+    learnset MOVE_X_SCISSOR, 38
+    learnset MOVE_WING_ATTACK, 42
+    learnset MOVE_ZEN_HEADBUTT, 45
+    learnset MOVE_ICE_PUNCH, 47
+    learnset MOVE_FIRE_PUNCH, 47
+    learnset MOVE_THUNDER_PUNCH, 47
     terminatelearnset
 
 
@@ -9408,6 +9410,7 @@ levelup SPECIES_EMPOLEON
     learnset MOVE_FLASH_CANNON, 45
     learnset MOVE_AIR_SLASH, 49
     learnset MOVE_HYDRO_PUMP, 52
+    learnset MOVE_ROOST, 55
     terminatelearnset
 
 
@@ -21076,6 +21079,7 @@ levelup SPECIES_MORPEKO
     learnset MOVE_FLATTER, 20
     learnset MOVE_BITE, 25
     learnset MOVE_SPARK, 30
+    learnset MOVE_WILD_CHARGE, 32
     learnset MOVE_TORMENT, 35
     learnset MOVE_SUCKER_PUNCH, 37
     learnset MOVE_AGILITY, 40
@@ -29480,6 +29484,7 @@ levelup SPECIES_MORPEKO_HANGRY
     learnset MOVE_FLATTER, 20
     learnset MOVE_BITE, 25
     learnset MOVE_SPARK, 30
+    learnset MOVE_WILD_CHARGE, 32
     learnset MOVE_TORMENT, 35
     learnset MOVE_SUCKER_PUNCH, 37
     learnset MOVE_AGILITY, 40

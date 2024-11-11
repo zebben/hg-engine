@@ -4668,14 +4668,14 @@ movedata MOVE_SECRET_POWER, "Secret Power"
 movedata MOVE_DIVE, "Dive"
     battleeffect MOVE_EFFECT_DIVE
     pss SPLIT_PHYSICAL
-    basepower 80
+    basepower 90
     type TYPE_WATER
     accuracy 100
     pp 10
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
-    flags FLAG_KINGS_ROCK | FLAG_MIRROR_MOVE | FLAG_PROTECT | FLAG_CONTACT
+    flags FLAG_KINGS_ROCK | FLAG_MIRROR_MOVE | FLAG_CONTACT
     appeal 0x06
     contesttype CONTEST_BEAUTY
     terminatedata
