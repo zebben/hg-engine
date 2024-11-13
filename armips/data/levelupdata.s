@@ -1549,6 +1549,7 @@ levelup SPECIES_MACHAMP
     learnset MOVE_LOW_SWEEP, 12
     learnset MOVE_KNOCK_OFF, 18
     learnset MOVE_REVENGE, 19
+    learnset MOVE_DRAIN_PUNCH, 21
     learnset MOVE_VITAL_THROW, 24
     learnset MOVE_WAKE_UP_SLAP, 27
     learnset MOVE_STRENGTH, 31
@@ -10940,6 +10941,7 @@ levelup SPECIES_LICKILICKY
     learnset MOVE_DISABLE, 24
     learnset MOVE_STOMP, 25
     learnset MOVE_KNOCK_OFF, 25
+    learnset MOVE_TRICK, 30
     learnset MOVE_HEAL_BELL, 33
     learnset MOVE_CHIP_AWAY, 37
     learnset MOVE_THUNDERBOLT, 39
@@ -11076,6 +11078,7 @@ levelup SPECIES_MAGMORTAR
     learnset MOVE_FIRE_BLAST, 56
     learnset MOVE_AURA_SPHERE, 58
     learnset MOVE_DRAGON_PULSE, 60
+    learnset MOVE_ERUPTION, 62
     terminatelearnset
 
 
@@ -12413,15 +12416,14 @@ levelup SPECIES_WATCHOG
     learnset MOVE_AFTER_YOU, 25
     learnset MOVE_FOCUS_ENERGY, 29
     learnset MOVE_PSYCH_UP, 32
+    learnset MOVE_NIGHT_SLASH, 34
     learnset MOVE_HIGH_HORSEPOWER, 35
     learnset MOVE_HYPER_FANG, 36
     learnset MOVE_SWORDS_DANCE, 39
+    learnset MOVE_SUCKER_PUNCH, 41
     learnset MOVE_MEAN_LOOK, 43
     learnset MOVE_BATON_PASS, 46
-    learnset MOVE_BODY_SLAM, 50
     learnset MOVE_CLOSE_COMBAT, 55
-    learnset MOVE_NIGHT_SLASH, 57
-    learnset MOVE_DOUBLE_EDGE, 61
     terminatelearnset
 
 
@@ -14988,10 +14990,11 @@ levelup SPECIES_HAXORUS
     learnset MOVE_DRAGON_DANCE, 29
     learnset MOVE_LASER_FOCUS, 33
     learnset MOVE_DRAGON_RUSH, 38
+    learnset MOVE_U_TURN, 44
     learnset MOVE_SWORDS_DANCE, 45
     learnset MOVE_EARTHQUAKE, 50
     learnset MOVE_OUTRAGE, 55
-    learnset MOVE_GUILLOTINE, 55
+    learnset MOVE_GUILLOTINE, 57
     learnset MOVE_CLOSE_COMBAT, 66
     terminatelearnset
 
@@ -18128,6 +18131,7 @@ levelup SPECIES_CRABOMINABLE
     learnset MOVE_BUBBLE_BEAM, 17
     learnset MOVE_POWER_UP_PUNCH, 22
     learnset MOVE_DIZZY_PUNCH, 25
+    learnset MOVE_DRAIN_PUNCH, 27
     learnset MOVE_AVALANCHE, 29
     learnset MOVE_MACH_PUNCH, 30
     learnset MOVE_ICE_SHARD, 32
@@ -24417,6 +24421,8 @@ levelup SPECIES_MEGA_AMPHAROS
 levelup SPECIES_MEGA_STEELIX
     learnset MOVE_CRUNCH, 1
     learnset MOVE_THUNDER_FANG, 1
+    learnset MOVE_WILD_CHARGE, 1
+    learnset MOVE_FLARE_BLITZ, 1
     learnset MOVE_ICE_FANG, 1
     learnset MOVE_FIRE_FANG, 1
     learnset MOVE_ROCK_POLISH, 1
@@ -24903,7 +24909,8 @@ levelup SPECIES_MEGA_ALTARIA
     learnset MOVE_TAKE_DOWN, 31
     learnset MOVE_COTTON_GUARD, 32
     learnset MOVE_DRAGON_PULSE, 40
-    learnset MOVE_MOONBLAST, 47
+    learnset MOVE_PLAY_ROUGH, 43
+    learnset MOVE_DRAGON_CLAW, 46
     learnset MOVE_PERISH_SONG, 48
     learnset MOVE_SKY_ATTACK, 57
     terminatelearnset
@@ -25856,6 +25863,7 @@ levelup SPECIES_RAPIDASH_GALARIAN
     learnset MOVE_PSYBEAM, 25
     learnset MOVE_STOMP, 30
     learnset MOVE_HEAL_PULSE, 35
+    learnset MOVE_FLARE_BLITZ, 38
     learnset MOVE_TAKE_DOWN, 43
     learnset MOVE_PLAY_ROUGH, 49
     learnset MOVE_PSYCHIC, 56
@@ -28710,6 +28718,7 @@ levelup SPECIES_LYCANROC_DUSK
     learnset MOVE_STONE_EDGE, 52
     learnset MOVE_EARTHQUAKE, 59
     learnset MOVE_SWORDS_DANCE, 62
+    learnset MOVE_EXTREME_SPEED, 65
     terminatelearnset
 
 
