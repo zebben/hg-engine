@@ -142,7 +142,7 @@ $(ADPCMXQ):
 ifeq (,$(wildcard $(ADPCMXQ)))
 	rm -r -f tools/source/adpcm-xq
 	cd tools/source ; git clone https://github.com/dbry/adpcm-xq.git
-	cd tools/source/adpcm-xq ; gcc -O2 *.c -o adpcm-xq
+	cd tools/source/adpcm-xq ; gcc -O2 *.c -o adpcm-xq -lm
 	mv tools/source/adpcm-xq/adpcm-xq $(ADPCMXQ)
 	rm -r -f tools/source/adpcm-xq
 endif
@@ -214,6 +214,17 @@ all: $(TOOLS) $(OUTPUT) $(OVERLAY_OUTPUTS)
 	@echo "Making ROM..."
 	$(NDSTOOL) -c $(BUILDROM) -9 $(BASE)/arm9.bin -7 $(BASE)/arm7.bin -y9 $(BASE)/overarm9.bin -y7 $(BASE)/overarm7.bin -d $(FILESYS) -y $(BASE)/overlay -t $(BASE)/banner.bin -h $(BASE)/header.bin
 	@echo "Done.  See output $(BUILDROM)."
+
+
+####################### Restore clean base ################
+NEWFILE = romOld-`date +%d%b%y`.nds
+CLEANROM = romClean.nds
+restore:
+	mv $(ROMNAME) $(NEWFILE)
+	cp $(CLEANROM) $(ROMNAME)
+
+####################### Restore and build ################
+restore_build: | restore all
 
 ####################### Clean #######################
 clean:

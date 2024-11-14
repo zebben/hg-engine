@@ -88,6 +88,7 @@ tools/swav2swar.exe
 
 *.gbapal
 *.4bpp
+changelog
 .idea/*
 .idea/git_toolbox_blame.xml
 .idea/git_toolbox_prj.xml
