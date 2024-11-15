@@ -375,7 +375,7 @@ trainerdata 10, "Amy & Mimi"
         pokemon SPECIES_ANORITH
         item ITEM_NONE
         move MOVE_WATER_GUN
-        move MOVE_SMACK_DOWN
+        move MOVE_ANCIENT_POWER
         move MOVE_FURY_CUTTER
         move MOVE_METAL_CLAW
         ability ABILITY_BATTLE_ARMOR
@@ -394,7 +394,7 @@ trainerdata 10, "Amy & Mimi"
         item ITEM_NONE
         move MOVE_WATER_GUN
         move MOVE_BITE
-        move MOVE_INFESTATION
+        move MOVE_BUG_BITE
         move MOVE_AQUA_RING
         ability ABILITY_WATER_BUBBLE
         setivs 25, 25, 25, 25, 25, 25 // hp, atk, def, spd, spatk, spdef
@@ -1182,7 +1182,7 @@ trainerdata 30, "Whitney"
         item ITEM_NONE
         move MOVE_REST
         move MOVE_SLEEP_TALK
-        move MOVE_ROUND
+        move MOVE_BODY_SLAM
         move MOVE_ATTRACT
         ability ABILITY_OBLIVIOUS
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
@@ -2982,7 +2982,7 @@ trainerdata 70, "Samantha"
         move MOVE_SPORE
         move MOVE_FAKE_OUT
         move MOVE_RECOVER
-        move MOVE_SPIKY_SHIELD
+        move MOVE_PROTECT
         ballseal 0
 
         // mon 1
@@ -4724,7 +4724,7 @@ trainerdata 115, "Megan"
         move MOVE_EARTHQUAKE
         move MOVE_HEADLONG_RUSH
         move MOVE_LEECH_SEED
-        move MOVE_SPIKY_SHIELD
+        move MOVE_PROTECT
         ballseal 0
 
         // mon 1
@@ -4881,7 +4881,7 @@ trainerdata 118, "Kate"
         move MOVE_EARTHQUAKE
         move MOVE_RAZOR_LEAF
         move MOVE_LEECH_SEED
-        move MOVE_SPIKY_SHIELD
+        move MOVE_PROTECT
         ballseal 0
 
         // mon 1
@@ -5440,7 +5440,7 @@ trainerdata 131, "Brent"
         pokemon SPECIES_KLEFKI
         move MOVE_PLAY_ROUGH
         move MOVE_FOUL_PLAY
-        move MOVE_CRAFTY_SHIELD
+        move MOVE_PROTECT
         move MOVE_THUNDER_WAVE
         ballseal 0
 
@@ -5937,7 +5937,7 @@ trainerdata 142, "Gina"
         abilityslot 0
         level 40
         pokemon SPECIES_SUNFLORA
-        move MOVE_FLOWER_SHIELD
+        move MOVE_PROTECT
         move MOVE_SYNTHESIS
         move MOVE_GIGA_DRAIN
         move MOVE_FLAMETHROWER
@@ -7183,7 +7183,7 @@ trainerdata 172, "Brent"
         pokemon SPECIES_KLEFKI
         move MOVE_PLAY_ROUGH
         move MOVE_FOUL_PLAY
-        move MOVE_CRAFTY_SHIELD
+        move MOVE_PROTECT
         move MOVE_THUNDER_WAVE
         ballseal 0
 
@@ -7219,7 +7219,7 @@ trainerdata 173, "Brent"
         pokemon SPECIES_KLEFKI
         move MOVE_PLAY_ROUGH
         move MOVE_FOUL_PLAY
-        move MOVE_CRAFTY_SHIELD
+        move MOVE_PROTECT
         move MOVE_THUNDER_WAVE
         ballseal 0
 
@@ -10290,7 +10290,7 @@ trainerdata 248, "Ed"
         level 71
         pokemon SPECIES_BEEDRILL
         move MOVE_GUNK_SHOT
-        move MOVE_FELL_STINGER
+        move MOVE_X_SCISSOR
         move MOVE_DRILL_RUN
         move MOVE_U_TURN
         ballseal 0
@@ -10831,7 +10831,7 @@ trainerdata 256, "Erika"
         level 71
         pokemon SPECIES_SUNFLORA
         item ITEM_HEAT_ROCK
-        move MOVE_FLOWER_SHIELD
+        move MOVE_PROTECT
         move MOVE_SYNTHESIS
         move MOVE_GIGA_DRAIN
         move MOVE_FLAMETHROWER
@@ -13943,7 +13943,7 @@ trainerdata 299, "Hank"
         abilityslot 0
         level 74
         pokemon SPECIES_MARACTUS
-        move MOVE_SPIKY_SHIELD
+        move MOVE_PROTECT
         move MOVE_RAGE_POWDER
         move MOVE_KNOCK_OFF
         move MOVE_GIGA_DRAIN
@@ -15358,7 +15358,7 @@ trainerdata 326, "Jo & Zoe"
         level 69
         pokemon SPECIES_CACTURNE
         item ITEM_ROCKY_HELMET
-        move MOVE_SPIKY_SHIELD
+        move MOVE_PROTECT
         move MOVE_LEECH_SEED
         move MOVE_GIGA_DRAIN
         move MOVE_SUCKER_PUNCH
@@ -15554,7 +15554,7 @@ trainerdata 330, "Joe"
         pokemon SPECIES_BEARTIC
         ability ABILITY_SLUSH_RUSH
         move MOVE_SWORDS_DANCE
-        move MOVE_PLAY_NICE
+        move MOVE_PLAY_ROUGH
         move MOVE_BRICK_BREAK
         move MOVE_ICICLE_CRASH
         ballseal 0
@@ -15733,7 +15733,7 @@ trainerdata 333, "Edna"
         ability ABILITY_ADAPTABILITY
         item ITEM_NONE
         move MOVE_GUNK_SHOT
-        move MOVE_FELL_STINGER
+        move MOVE_X_SCISSOR
         move MOVE_DRILL_RUN
         move MOVE_U_TURN
         ballseal 0
@@ -15807,7 +15807,7 @@ trainerdata 334, "Gina"
         abilityslot 0
         level 60
         pokemon SPECIES_SUNFLORA
-        move MOVE_FLOWER_SHIELD
+        move MOVE_PROTECT
         move MOVE_SYNTHESIS
         move MOVE_GIGA_DRAIN
         move MOVE_FLAMETHROWER
@@ -15986,7 +15986,7 @@ trainerdata 337, "Gregory"
         item ITEM_ROCKY_HELMET
         move MOVE_VOLT_SWITCH
         move MOVE_IRON_HEAD
-        move MOVE_SPIKY_SHIELD
+        move MOVE_PROTECT
         move MOVE_FAKE_OUT
         ability ABILITY_IRON_BARBS
         setivs 31, 31, 31, 0, 31, 31 // hp, atk, def, spd, spatk, spdef
@@ -16843,7 +16843,7 @@ trainerdata 356, "Michelle"
         level 69
         pokemon SPECIES_MARACTUS
         item ITEM_SITRUS_BERRY
-        move MOVE_SPIKY_SHIELD
+        move MOVE_PROTECT
         move MOVE_RAGE_POWDER
         move MOVE_KNOCK_OFF
         move MOVE_GIGA_DRAIN
@@ -17185,7 +17185,7 @@ trainerdata 362, "Quinn"
         pokemon SPECIES_BEARTIC
         ability ABILITY_SLUSH_RUSH
         move MOVE_SUPERPOWER
-        move MOVE_PLAY_NICE
+        move MOVE_PLAY_ROUGH
         move MOVE_BRICK_BREAK
         move MOVE_ICICLE_CRASH
         ballseal 0
@@ -19174,7 +19174,7 @@ trainerdata 407, "Allen"
         pokemon SPECIES_SUNFLORA
         move MOVE_SOLAR_BEAM
         move MOVE_FLAMETHROWER
-        move MOVE_FLOWER_SHIELD
+        move MOVE_PROTECT
         move MOVE_GIGA_DRAIN
         ability ABILITY_CHLOROPHYLL
         ballseal 0
@@ -19615,7 +19615,7 @@ trainerdata 416, "Jo & Zoe"
         level 69
         pokemon SPECIES_CACTURNE
         item ITEM_ROCKY_HELMET
-        move MOVE_SPIKY_SHIELD
+        move MOVE_PROTECT
         move MOVE_LEECH_SEED
         move MOVE_GIGA_DRAIN
         move MOVE_SUCKER_PUNCH
@@ -20337,7 +20337,7 @@ trainerdata 432, "Alan"
         move MOVE_EARTHQUAKE
         move MOVE_HEADLONG_RUSH
         move MOVE_LEECH_SEED
-        move MOVE_SPIKY_SHIELD
+        move MOVE_PROTECT
         ballseal 0
     endparty
 
@@ -20373,7 +20373,7 @@ trainerdata 433, "Alan"
         move MOVE_EARTHQUAKE
         move MOVE_HEADLONG_RUSH
         move MOVE_LEECH_SEED
-        move MOVE_SPIKY_SHIELD
+        move MOVE_PROTECT
         ballseal 0
     endparty
 
@@ -23697,7 +23697,7 @@ trainerdata 505, "Alan"
         move MOVE_EARTHQUAKE
         move MOVE_HEADLONG_RUSH
         move MOVE_LEECH_SEED
-        move MOVE_SPIKY_SHIELD
+        move MOVE_PROTECT
         ballseal 0
     endparty
 
@@ -24300,7 +24300,7 @@ trainerdata 520, "Gina"
         abilityslot 0
         level 80
         pokemon SPECIES_SUNFLORA
-        move MOVE_FLOWER_SHIELD
+        move MOVE_PROTECT
         move MOVE_SYNTHESIS
         move MOVE_GIGA_DRAIN
         move MOVE_FLAMETHROWER
@@ -24739,7 +24739,7 @@ trainerdata 530, "Brent"
         pokemon SPECIES_KLEFKI
         move MOVE_PLAY_ROUGH
         move MOVE_FOUL_PLAY
-        move MOVE_CRAFTY_SHIELD
+        move MOVE_PROTECT
         move MOVE_THUNDER_WAVE
         ballseal 0
 
@@ -25369,7 +25369,7 @@ trainerdata 547, "Bruce"
         pokemon SPECIES_GLIMMORA
         move MOVE_TOXIC_SPIKES
         move MOVE_MORTAL_SPIN
-        move MOVE_SPIKY_SHIELD
+        move MOVE_PROTECT
         move MOVE_POWER_GEM
         ballseal 0
 
@@ -32079,7 +32079,7 @@ trainerdata 679, "Callie"
         abilityslot 0
         level 24
         pokemon SPECIES_SWIRLIX
-        move MOVE_PLAY_NICE
+        move MOVE_PLAY_ROUGH
         move MOVE_DRAINING_KISS
         move MOVE_FAKE_TEARS
         move MOVE_COTTON_SPORE
@@ -32117,7 +32117,7 @@ trainerdata 680, "Kassandra"
         pokemon SPECIES_HATTREM
         move MOVE_BRUTAL_SWING
         move MOVE_DISARMING_VOICE
-        move MOVE_PLAY_NICE
+        move MOVE_PROTECT
         move MOVE_HEAL_PULSE
         ballseal 0
     endparty
@@ -32487,7 +32487,7 @@ trainerdata 685, "Edwin"
         item ITEM_WHITE_HERB
         move MOVE_TOXIC_SPIKES
         move MOVE_MORTAL_SPIN
-        move MOVE_SPIKY_SHIELD
+        move MOVE_PROTECT
         move MOVE_POWER_GEM
         ability ABILITY_TOXIC_DEBRIS
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
@@ -34857,7 +34857,7 @@ trainerdata 717, "Jasmine"
         item ITEM_ROCKY_HELMET
         move MOVE_VOLT_SWITCH
         move MOVE_IRON_HEAD
-        move MOVE_SPIKY_SHIELD
+        move MOVE_PROTECT
         move MOVE_FAKE_OUT
         ability ABILITY_IRON_BARBS
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
@@ -35497,7 +35497,7 @@ trainerdata 723, "Erika"
         level 80
         pokemon SPECIES_SUNFLORA
         item ITEM_HEAT_ROCK
-        move MOVE_FLOWER_SHIELD
+        move MOVE_PROTECT
         move MOVE_SYNTHESIS
         move MOVE_GIGA_DRAIN
         move MOVE_FIRE_BLAST
@@ -36117,7 +36117,7 @@ trainerdata 728, "Charlotte"
         abilityslot 0
         level 30
         pokemon SPECIES_CHATOT
-        move MOVE_ECHOED_VOICE
+        move MOVE_HYPER_VOICE
         move MOVE_AIR_SLASH
         move MOVE_ROOST
         move MOVE_TAUNT
@@ -36142,7 +36142,7 @@ trainerdata 729, "Duff & Eda"
         abilityslot 32
         level 50
         pokemon SPECIES_CHESNAUGHT
-        move MOVE_SPIKY_SHIELD
+        move MOVE_PROTECT
         move MOVE_LEECH_SEED
         move MOVE_WOOD_HAMMER
         move MOVE_EARTHQUAKE
