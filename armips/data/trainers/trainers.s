@@ -1057,7 +1057,7 @@ trainerdata 28, "Jake"
         abilityslot 32
         level 53
         pokemon SPECIES_KLEAVOR
-        move MOVE_STONE_AXE
+        move MOVE_STONE_EDGE
         move MOVE_ROCK_SLIDE
         move MOVE_X_SCISSOR
         move MOVE_SWORDS_DANCE
@@ -1316,7 +1316,7 @@ trainerdata 32, "Pryce"
         level 40
         pokemon SPECIES_ARCTOVISH
         item ITEM_NONE
-        move MOVE_FISHIOUS_REND
+        move MOVE_LIQUIDATION
         move MOVE_ICICLE_CRASH
         move MOVE_DRAGON_RUSH
         move MOVE_CRUNCH
@@ -4197,7 +4197,7 @@ trainerdata 103, "Blake"
         level 50
         pokemon SPECIES_DRAGAPULT
         item ITEM_HEAVY_DUTY_BOOTS
-        move MOVE_DRAGON_DARTS
+        move MOVE_DRAGON_CLAW
         move MOVE_U_TURN
         move MOVE_PHANTOM_FORCE
         move MOVE_DRAGON_DANCE
@@ -4538,7 +4538,7 @@ trainerdata 111, "Mike"
         move MOVE_HEAVY_SLAM
         move MOVE_BODY_PRESS
         move MOVE_ACID_ARMOR
-        move MOVE_LIFE_DEW
+        move MOVE_RECOVER
         ability ABILITY_SHELL_ARMOR
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
         setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
@@ -4553,7 +4553,7 @@ trainerdata 111, "Mike"
         level 49
         pokemon SPECIES_DRACOVISH
         item ITEM_LIFE_ORB
-        move MOVE_FISHIOUS_REND
+        move MOVE_LIQUIDATION
         move MOVE_PSYCHIC_FANGS
         move MOVE_DRAGON_RUSH
         move MOVE_BRUTAL_SWING
@@ -10661,7 +10661,7 @@ trainerdata 254, "Misty"
         item ITEM_MYSTIC_WATER
         move MOVE_SUCKER_PUNCH
         move MOVE_FLIP_TURN
-        move MOVE_CEASELESS_EDGE
+        move MOVE_CLOSE_COMBAT
         move MOVE_RAZOR_SHELL
         ability ABILITY_SHARPNESS
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
@@ -15899,7 +15899,7 @@ trainerdata 336, "Tanya"
         monwithform SPECIES_DECIDUEYE, 1
         item ITEM_LEFTOVERS
         move MOVE_BULK_UP
-        move MOVE_TRIPLE_ARROWS
+        move MOVE_DRAIN_PUNCH
         move MOVE_LEAF_BLADE
         move MOVE_BRAVE_BIRD
         ability ABILITY_SNIPER
@@ -17208,7 +17208,7 @@ trainerdata 362, "Quinn"
         level 74
         pokemon SPECIES_HYDRAPPLE
         ability ABILITY_SUPERSWEET_SYRUP
-        move MOVE_SYRUP_BOMB
+        move MOVE_GIGA_DRAIN
         move MOVE_DRAGON_PULSE
         move MOVE_RECOVER
         move MOVE_YAWN
@@ -17360,7 +17360,7 @@ trainerdata 365, "Tyrone"
         abilityslot 0
         level 65
         pokemon SPECIES_TINKATON
-        move MOVE_GIGATON_HAMMER
+        move MOVE_IRON_HEAD
         move MOVE_PLAY_ROUGH
         move MOVE_PROTECT
         move MOVE_FAKE_OUT
@@ -18481,8 +18481,8 @@ trainerdata 389, "Nelson"
         level 28
         monwithform SPECIES_SLOWKING, 1
         move MOVE_FUTURE_SIGHT
-        move MOVE_CHILLY_RECEPTION
-        move MOVE_EERIE_SPELL
+        move MOVE_ICE_BEAM
+        move MOVE_RECOVER
         move MOVE_POWER_GEM
         ballseal 0
     endparty
@@ -19052,7 +19052,7 @@ trainerdata 404, "Grunt"
         abilityslot 0
         level 37
         pokemon SPECIES_KLEAVOR
-        move MOVE_STONE_AXE
+        move MOVE_STONE_EDGE
         move MOVE_ROCK_SLIDE
         move MOVE_X_SCISSOR
         move MOVE_AGILITY
@@ -19374,7 +19374,7 @@ trainerdata 412, "Eli"
         level 52
         pokemon SPECIES_SLOWKING
         move MOVE_PSYCHIC
-        move MOVE_CHILLY_RECEPTION
+        move MOVE_ICE_BEAM
         move MOVE_SCALD
         move MOVE_POWER_GEM
         ballseal 0
@@ -21765,7 +21765,7 @@ trainerdata 468, "Ross"
         abilityslot 0
         level 37
         monwithform SPECIES_SLOWKING, 1
-        move MOVE_EERIE_SPELL
+        move MOVE_PSYCHIC
         move MOVE_NASTY_PLOT
         move MOVE_SURF
         move MOVE_SLUDGE_BOMB
@@ -22473,7 +22473,7 @@ trainerdata 484, "Gerardo"
         level 40                                            
         pokemon SPECIES_ARCTOZOLT
         item ITEM_NONE
-        move MOVE_BOLT_BEAK
+        move MOVE_WILD_CHARGE
         move MOVE_ICICLE_CRASH
         move MOVE_LOW_KICK
         move MOVE_STOMPING_TANTRUM
@@ -22577,7 +22577,7 @@ trainerdata 485, "Archer"
         level 47
         pokemon SPECIES_DRAGAPULT
         item ITEM_FOCUS_SASH
-        move MOVE_DRAGON_DARTS
+        move MOVE_DRAGON_CLAW
         move MOVE_PHANTOM_FORCE
         move MOVE_WILL_O_WISP
         move MOVE_U_TURN
@@ -23528,7 +23528,7 @@ trainerdata 501, "Piper"
         level 50
         pokemon SPECIES_DRAGAPULT
         move MOVE_PHANTOM_FORCE
-        move MOVE_DRAGON_DARTS
+        move MOVE_DRAGON_CLAW
         move MOVE_WILL_O_WISP
         move MOVE_SUCKER_PUNCH
         ability ABILITY_INFILTRATOR
@@ -25072,7 +25072,7 @@ trainerdata 539, "Markus"
         move MOVE_HEAVY_SLAM
         move MOVE_BODY_PRESS
         move MOVE_ACID_ARMOR
-        move MOVE_LIFE_DEW
+        move MOVE_RECOVER
         ballseal 0
     endparty
 
@@ -25368,7 +25368,7 @@ trainerdata 547, "Bruce"
         level 74
         pokemon SPECIES_GLIMMORA
         move MOVE_TOXIC_SPIKES
-        move MOVE_MORTAL_SPIN
+        move MOVE_RAPID_SPIN
         move MOVE_PROTECT
         move MOVE_POWER_GEM
         ballseal 0
@@ -25390,7 +25390,7 @@ trainerdata 547, "Bruce"
         level 74
         monwithform SPECIES_DECIDUEYE, 1
         move MOVE_BULK_UP
-        move MOVE_TRIPLE_ARROWS
+        move MOVE_DRAIN_PUNCH
         move MOVE_LEAF_BLADE
         move MOVE_BRAVE_BIRD
         ballseal 0
@@ -25516,7 +25516,7 @@ trainerdata 549, "Zac & Jen"
         abilityslot 0
         level 73
         pokemon SPECIES_MAUSHOLD
-        move MOVE_POPULATION_BOMB
+        move MOVE_DOUBLE_HIT
         move MOVE_BEAT_UP
         move MOVE_BULLET_SEED
         move MOVE_PROTECT
@@ -27008,7 +27008,7 @@ trainerdata 577, "Markey"
         level 71
         pokemon SPECIES_BAXCALIBUR
         move MOVE_ICICLE_CRASH
-        move MOVE_GLAIVE_RUSH
+        move MOVE_OUTRAGE
         move MOVE_DRAGON_TAIL
         move MOVE_PROTECT
         ballseal 0
@@ -27043,7 +27043,7 @@ trainerdata 578, "Teddy"
         abilityslot 0
         level 72
         pokemon SPECIES_MAUSHOLD
-        move MOVE_POPULATION_BOMB
+        move MOVE_DOUBLE_HIT
         move MOVE_BEAT_UP
         move MOVE_BULLET_SEED
         move MOVE_PROTECT
@@ -27928,7 +27928,7 @@ trainerdata 600, "Selina"
         abilityslot 0
         level 63
         pokemon SPECIES_HYDRAPPLE
-        move MOVE_SYRUP_BOMB
+        move MOVE_GIGA_DRAIN
         move MOVE_DRAGON_PULSE
         move MOVE_RECOVER
         move MOVE_YAWN
@@ -29150,7 +29150,7 @@ trainerdata 628, "Reese"
         level 70
         pokemon SPECIES_HOUNDSTONE
         move MOVE_PROTECT
-        move MOVE_LAST_RESPECTS
+        move MOVE_PHANTOM_FORCE
         move MOVE_CRUNCH
         move MOVE_PLAY_ROUGH
         ballseal 0
@@ -29230,7 +29230,7 @@ trainerdata 629, "Reese"
         level 72
         pokemon SPECIES_HOUNDSTONE
         move MOVE_PROTECT
-        move MOVE_LAST_RESPECTS
+        move MOVE_PHANTOM_FORCE
         move MOVE_CRUNCH
         move MOVE_PLAY_ROUGH
         ballseal 0
@@ -29310,7 +29310,7 @@ trainerdata 630, "Reese"
         level 80
         pokemon SPECIES_HOUNDSTONE
         move MOVE_PROTECT
-        move MOVE_LAST_RESPECTS
+        move MOVE_PHANTOM_FORCE
         move MOVE_CRUNCH
         move MOVE_PLAY_ROUGH
         ballseal 0
@@ -32159,7 +32159,7 @@ trainerdata 681, "Arabella"
         level 76
         pokemon SPECIES_HYDRAPPLE
         item ITEM_LUM_BERRY
-        move MOVE_SYRUP_BOMB
+        move MOVE_GIGA_DRAIN
         move MOVE_DRAGON_PULSE
         move MOVE_RECOVER
         move MOVE_YAWN
@@ -32314,7 +32314,7 @@ trainerdata 683, "Salma"
         pokemon SPECIES_QUAQUAVAL
         item ITEM_FOCUS_SASH
         move MOVE_DETECT
-        move MOVE_AQUA_STEP
+        move MOVE_AQUA_JET
         move MOVE_CLOSE_COMBAT
         move MOVE_LIQUIDATION
         ability ABILITY_MOXIE
@@ -32351,7 +32351,7 @@ trainerdata 683, "Salma"
         item ITEM_SITRUS_BERRY
         move MOVE_SHIFT_GEAR
         move MOVE_BOOMBURST
-        move MOVE_OVERDRIVE
+        move MOVE_THUNDERBOLT
         move MOVE_SLUDGE_BOMB
         ability ABILITY_PUNK_ROCK
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
@@ -32486,7 +32486,7 @@ trainerdata 685, "Edwin"
         pokemon SPECIES_GLIMMORA
         item ITEM_WHITE_HERB
         move MOVE_TOXIC_SPIKES
-        move MOVE_MORTAL_SPIN
+        move MOVE_RAPID_SPIN
         move MOVE_PROTECT
         move MOVE_POWER_GEM
         ability ABILITY_TOXIC_DEBRIS
@@ -32669,7 +32669,7 @@ trainerdata 687, "Shaun"
         level 75
         pokemon SPECIES_BAXCALIBUR
         move MOVE_ICICLE_CRASH
-        move MOVE_GLAIVE_RUSH
+        move MOVE_OUTRAGE
         move MOVE_DRAGON_TAIL
         move MOVE_PROTECT
         ballseal 0
@@ -34661,7 +34661,7 @@ trainerdata 716, "Pryce"
         level 80
         pokemon SPECIES_ARCTOVISH
         item ITEM_FOCUS_SASH
-        move MOVE_FISHIOUS_REND
+        move MOVE_LIQUIDATION
         move MOVE_ICICLE_CRASH
         move MOVE_DRAGON_RUSH
         move MOVE_PROTECT
@@ -35327,7 +35327,7 @@ trainerdata 721, "Misty"
         item ITEM_CHOICE_SCARF
         move MOVE_MEGAHORN
         move MOVE_FLIP_TURN
-        move MOVE_CEASELESS_EDGE
+        move MOVE_CLOSE_COMBAT
         move MOVE_RAZOR_SHELL
         ability ABILITY_SHARPNESS
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
