@@ -3354,20 +3354,20 @@ movedata MOVE_MILK_DRINK, "Milk Drink"
     movedescription MOVE_MILK_DRINK, "The user restores its\nown HP by up to half\nof its maximum HP.\nIt may also be used\nto heal an ally’s HP."
 
 movedata MOVE_SPARK, "Spark"
-    battleeffect MOVE_EFFECT_PARALYZE_HIT
+    battleeffect MOVE_EFFECT_PRIORITY_1
     pss SPLIT_PHYSICAL
-    basepower 60
+    basepower 40
     type TYPE_ELECTRIC
     accuracy 100
-    pp 20
-    effectchance 30
+    pp 30
+    effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
-    flags FLAG_MIRROR_MOVE | FLAG_PROTECT | FLAG_CONTACT
+    flags FLAG_KEEP_HP_BAR | FLAG_KINGS_ROCK | FLAG_MIRROR_MOVE | FLAG_PROTECT | FLAG_CONTACT
     appeal 0x05
     contesttype CONTEST_COOL
     terminatedata
-    movedescription MOVE_SPARK, "The user throws an\nelectrically charged\ntackle at the foe.\nIt may also leave the\ntarget paralyzed."
+    movedescription MOVE_SPARK, "The user throws an\nelectrically charged\ntackle at the foe."
 
 movedata MOVE_FURY_CUTTER, "Fury Cutter"
     battleeffect MOVE_EFFECT_DOUBLE_POWER_EACH_TURN

@@ -17692,14 +17692,16 @@ levelup SPECIES_ORICORIO
     learnset MOVE_FEATHER_DANCE, 20
     learnset MOVE_DOUBLE_SLAP, 23
     learnset MOVE_TEETER_DANCE, 26
+    learnset MOVE_FLAMETHROWER, 28
     learnset MOVE_ROOST, 30
     learnset MOVE_CAPTIVATE, 33
     learnset MOVE_AIR_SLASH, 36
-    learnset MOVE_REVELATION_DANCE, 40
+    learnset MOVE_FIRE_BLAST, 40
     learnset MOVE_MIRROR_MOVE, 43
     learnset MOVE_AGILITY, 46
     learnset MOVE_HURRICANE, 50
     learnset MOVE_AURA_SPHERE, 55
+    learnset MOVE_EARTH_POWER, 58
     terminatelearnset
 
 
@@ -18447,14 +18449,15 @@ levelup SPECIES_MINIOR
     learnset MOVE_STEALTH_ROCK, 24
     learnset MOVE_TAKE_DOWN, 29
     learnset MOVE_AUTOTOMIZE, 31
-    learnset MOVE_ACROBATICS, 32
+    learnset MOVE_AIR_SLASH, 32
     learnset MOVE_COSMIC_POWER, 36
     learnset MOVE_POWER_GEM, 38
-    learnset MOVE_ROCK_SLIDE, 38
-    learnset MOVE_DOUBLE_EDGE, 43
+    learnset MOVE_EARTH_POWER, 38
+    learnset MOVE_ICE_BEAM, 43
     learnset MOVE_SHELL_SMASH, 45
     learnset MOVE_EXPLOSION, 50
     learnset MOVE_HIGH_HORSEPOWER, 58
+    learnset MOVE_ROCK_SLIDE, 58
     terminatelearnset
 
 
@@ -21636,8 +21639,8 @@ levelup SPECIES_CHARCADET
     terminatelearnset
 
 levelup SPECIES_ARMAROUGE
-    learnset MOVE_PSYSHOCK, 0
     learnset MOVE_PSYSHOCK, 1
+    learnset MOVE_FLASH_CANNON, 1
     learnset MOVE_ASTONISH, 1
     learnset MOVE_EMBER, 1
     learnset MOVE_LEER, 1
@@ -27725,14 +27728,16 @@ levelup SPECIES_ORICORIO_POM_POM
     learnset MOVE_FEATHER_DANCE, 20
     learnset MOVE_DOUBLE_SLAP, 23
     learnset MOVE_TEETER_DANCE, 26
+    learnset MOVE_THUNDERBOLT, 28
     learnset MOVE_ROOST, 30
     learnset MOVE_CAPTIVATE, 33
     learnset MOVE_AIR_SLASH, 36
-    learnset MOVE_REVELATION_DANCE, 40
+    learnset MOVE_THUNDER, 40
     learnset MOVE_MIRROR_MOVE, 43
     learnset MOVE_AGILITY, 46
     learnset MOVE_HURRICANE, 50
     learnset MOVE_AURA_SPHERE, 55
+    learnset MOVE_VOLT_SWITCH, 58
     terminatelearnset
 
 
@@ -27746,14 +27751,16 @@ levelup SPECIES_ORICORIO_PAU
     learnset MOVE_FEATHER_DANCE, 20
     learnset MOVE_DOUBLE_SLAP, 23
     learnset MOVE_TEETER_DANCE, 26
+    learnset MOVE_PSYCHIC, 26
     learnset MOVE_ROOST, 30
     learnset MOVE_CAPTIVATE, 33
     learnset MOVE_AIR_SLASH, 36
-    learnset MOVE_REVELATION_DANCE, 40
+    learnset MOVE_PSYSHOCK, 40
     learnset MOVE_MIRROR_MOVE, 43
     learnset MOVE_AGILITY, 46
     learnset MOVE_HURRICANE, 50
     learnset MOVE_AURA_SPHERE, 55
+    learnset MOVE_SHADOW_BALL, 58
     terminatelearnset
 
 
@@ -27767,14 +27774,16 @@ levelup SPECIES_ORICORIO_SENSU
     learnset MOVE_FEATHER_DANCE, 20
     learnset MOVE_DOUBLE_SLAP, 23
     learnset MOVE_TEETER_DANCE, 26
+    learnset MOVE_HEX, 28
     learnset MOVE_ROOST, 30
     learnset MOVE_CAPTIVATE, 33
     learnset MOVE_AIR_SLASH, 36
-    learnset MOVE_REVELATION_DANCE, 40
+    learnset MOVE_SHADOW_BALL, 40
     learnset MOVE_MIRROR_MOVE, 43
     learnset MOVE_AGILITY, 46
     learnset MOVE_HURRICANE, 50
     learnset MOVE_AURA_SPHERE, 55
+    learnset MOVE_DAZZLING_GLEAM, 58
     terminatelearnset
 
 

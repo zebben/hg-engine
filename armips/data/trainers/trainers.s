@@ -396,7 +396,7 @@ trainerdata 10, "Amy & Mimi"
         move MOVE_BITE
         move MOVE_BUG_BITE
         move MOVE_AQUA_RING
-        ability ABILITY_WATER_BUBBLE
+        ability ABILITY_FILTER
         setivs 25, 25, 25, 25, 25, 25 // hp, atk, def, spd, spatk, spdef
         setevs 32, 32, 32, 32, 32, 32 // hp, atk, def, spd, spatk, spdef
         nature NATURE_SERIOUS
@@ -1252,7 +1252,7 @@ trainerdata 31, "Morty"
         move MOVE_MEGA_DRAIN
         move MOVE_FOUL_PLAY
         move MOVE_RAGE_POWDER
-        ability ABILITY_HOSPITALITY
+        ability ABILITY_CURSED_BODY
         setivs 31, 31, 31, 0, 31, 31 // hp, atk, def, spd, spatk, spdef
         setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_BOLD
@@ -4919,7 +4919,7 @@ trainerdata 119, "Fran"
         move MOVE_GRAV_APPLE
         move MOVE_FLY
         move MOVE_DRAGON_RUSH
-        ability ABILITY_RIPEN
+        ability ABILITY_HARVEST
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
         setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_ADAMANT
@@ -6641,7 +6641,7 @@ trainerdata 157, "Lao"
         move MOVE_CLOSE_COMBAT
         move MOVE_LEAF_BLADE
         move MOVE_AERIAL_ACE
-        ability ABILITY_SHARPNESS
+        ability ABILITY_DEFIANT
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
         setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_ADAMANT
@@ -9451,9 +9451,9 @@ trainerdata 235, "Noland"
         level 60
         pokemon SPECIES_MINIOR
         move MOVE_SHELL_SMASH
-        move MOVE_ACROBATICS
-        move MOVE_HIGH_HORSEPOWER
-        move MOVE_ROCK_SLIDE
+        move MOVE_AIR_SLASH
+        move MOVE_POWER_GEM
+        move MOVE_EARTH_POWER
         ballseal 0
 
         // mon 2
@@ -9982,7 +9982,7 @@ trainerdata 245, "Will"
         move MOVE_DAZZLING_GLEAM
         move MOVE_PROTECT
         move MOVE_HELPING_HAND
-        ability ABILITY_ARMOR_TAIL
+        ability ABILITY_FILTER
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
         setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_MODEST
@@ -10000,7 +10000,7 @@ trainerdata 245, "Will"
         move MOVE_PSYCHO_CUT
         move MOVE_WAVE_CRASH
         move MOVE_FLIP_TURN
-        ability ABILITY_SHARPNESS
+        ability ABILITY_MOLD_BREAKER
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
         setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_JOLLY
@@ -10538,10 +10538,10 @@ trainerdata 253, "Brock"
         pokemon SPECIES_MINIOR
         item ITEM_WHITE_HERB
         move MOVE_SHELL_SMASH
-        move MOVE_ACROBATICS
-        move MOVE_HIGH_HORSEPOWER
-        move MOVE_ROCK_SLIDE
-        ability ABILITY_SHIELDS_DOWN
+        move MOVE_AIR_SLASH
+        move MOVE_POWER_GEM
+        move MOVE_EARTH_POWER
+        ability ABILITY_STURDY
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
         setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_ADAMANT
@@ -10663,7 +10663,7 @@ trainerdata 254, "Misty"
         move MOVE_FLIP_TURN
         move MOVE_CLOSE_COMBAT
         move MOVE_RAZOR_SHELL
-        ability ABILITY_SHARPNESS
+        ability ABILITY_SHEER_FORCE
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
         setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_JOLLY
@@ -10907,7 +10907,7 @@ trainerdata 256, "Erika"
         move MOVE_PAIN_SPLIT
         move MOVE_CURSE
         move MOVE_PHANTOM_FORCE
-        ability ABILITY_WIND_RIDER
+        ability ABILITY_INTIMIDATE
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
         setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_ADAMANT
@@ -10957,7 +10957,7 @@ trainerdata 257, "Janine"
         move MOVE_GUNK_SHOT
         move MOVE_POISON_JAB
         move MOVE_BODY_PRESS
-        ability ABILITY_POWER_OF_ALCHEMY
+        ability ABILITY_POISON_TOUCH
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
         setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_ADAMANT
@@ -11219,7 +11219,7 @@ trainerdata 259, "Blaine"
         move MOVE_U_TURN
         move MOVE_ICICLE_CRASH
         move MOVE_FLARE_BLITZ
-        ability ABILITY_GORILLA_TACTICS
+        ability ABILITY_ZEN_MODE
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
         setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_JOLLY
@@ -13862,7 +13862,7 @@ trainerdata 298, "Briana"
         move MOVE_LEECH_LIFE
         move MOVE_LIQUIDATION
         move MOVE_FLIP_TURN
-        ability ABILITY_WATER_BUBBLE
+        ability ABILITY_FILTER
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
         setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_ADAMANT
@@ -14082,9 +14082,9 @@ trainerdata 301, "Boris"
         level 72
         pokemon SPECIES_MINIOR
         move MOVE_SHELL_SMASH
-        move MOVE_ACROBATICS
-        move MOVE_HIGH_HORSEPOWER
-        move MOVE_ROCK_SLIDE
+        move MOVE_AIR_SLASH
+        move MOVE_POWER_GEM
+        move MOVE_EARTH_POWER
         ballseal 0
 
         // mon 3
@@ -14420,7 +14420,7 @@ trainerdata 308, "Jerry"
         move MOVE_RAZOR_SHELL
         move MOVE_ROCK_SLIDE
         move MOVE_PROTECT
-        ability ABILITY_SHARPNESS
+        ability ABILITY_SHEER_FORCE
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
         setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_JOLLY
@@ -15588,7 +15588,7 @@ trainerdata 330, "Joe"
         abilityslot 0
         level 68
         pokemon SPECIES_ARBOLIVA
-        ability ABILITY_SEED_SOWER
+        ability ABILITY_GRASSY_SURGE
         move MOVE_GIGA_DRAIN
         move MOVE_HELPING_HAND
         move MOVE_BOOMBURST
@@ -15920,7 +15920,7 @@ trainerdata 336, "Tanya"
         move MOVE_HIGH_JUMP_KICK
         move MOVE_U_TURN
         move MOVE_PLAY_ROUGH
-        ability ABILITY_QUEENLY_MAJESTY
+        ability ABILITY_INTIMIDATE
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
         setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_JOLLY
@@ -17207,7 +17207,7 @@ trainerdata 362, "Quinn"
         abilityslot 32
         level 74
         pokemon SPECIES_HYDRAPPLE
-        ability ABILITY_SUPERSWEET_SYRUP
+        ability ABILITY_NATURAL_CURE
         move MOVE_GIGA_DRAIN
         move MOVE_DRAGON_PULSE
         move MOVE_RECOVER
@@ -17594,7 +17594,7 @@ trainerdata 369, "Darcy"
         move MOVE_POWER_GEM
         move MOVE_STORED_POWER
         move MOVE_HYPER_VOICE
-        ability ABILITY_SYMBIOSIS
+        ability ABILITY_COMPETITIVE
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
         setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_TIMID
@@ -18715,7 +18715,7 @@ trainerdata 396, "Horton"
         move MOVE_THUNDERBOLT
         move MOVE_FOCUS_BLAST
         move MOVE_NASTY_PLOT
-        ability ABILITY_SURGE_SURFER
+        ability ABILITY_LIGHTNING_ROD
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
         setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_MODEST
@@ -20056,7 +20056,7 @@ trainerdata 424, "Colin"
         pokemon SPECIES_ARMAROUGE
         move MOVE_WILL_O_WISP
         move MOVE_LAVA_PLUME
-        move MOVE_PSYCHIC
+        move MOVE_FLASH_CANNON
         move MOVE_NIGHT_SHADE
         ballseal 0
     endparty
@@ -22377,7 +22377,7 @@ trainerdata 482, "Deandre"
         move MOVE_PSYCHIC
         move MOVE_HYPNOSIS
         move MOVE_FOUL_PLAY
-        ability ABILITY_SCREEN_CLEANER
+        ability ABILITY_MAGIC_BOUNCE
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
         setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_TIMID
@@ -23399,7 +23399,7 @@ trainerdata 498, "Eusine"
         move MOVE_PSYCHIC
         move MOVE_FOCUS_BLAST
         move MOVE_CALM_MIND
-        ability ABILITY_MAGICIAN
+        ability ABILITY_MAGIC_GUARD
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
         setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_TIMID
@@ -25935,7 +25935,7 @@ trainerdata 557, "Vic & Tara"
         ability ABILITY_FLASH_FIRE
         move MOVE_WILL_O_WISP
         move MOVE_LAVA_PLUME
-        move MOVE_PSYCHIC
+        move MOVE_FLASH_CANNON
         move MOVE_NIGHT_SHADE
         ballseal 0
     endparty
@@ -27523,8 +27523,8 @@ trainerdata 590, "Liam"
         abilityslot 0
         level 75
         monwithform SPECIES_ORICORIO, 1
-        ability ABILITY_DANCER
-        move MOVE_REVELATION_DANCE
+        ability ABILITY_UNBURDEN
+        move MOVE_THUNDERBOLT
         move MOVE_HURRICANE
         move MOVE_ROOST
         move MOVE_PROTECT
@@ -32041,7 +32041,7 @@ trainerdata 678, "Joy"
         move MOVE_REST
         move MOVE_SLEEP_TALK
         move MOVE_BEAT_UP
-        ability ABILITY_SCHOOLING
+        ability ABILITY_DEFEATIST
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
         setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_QUIET
@@ -32140,7 +32140,7 @@ trainerdata 681, "Arabella"
         abilityslot 0
         level 76
         pokemon SPECIES_RUNERIGUS
-        ability ABILITY_WANDERING_SPIRIT
+        ability ABILITY_MUMMY
         item ITEM_LEFTOVERS
         move MOVE_PAIN_SPLIT
         move MOVE_TRICK_ROOM
@@ -32163,7 +32163,7 @@ trainerdata 681, "Arabella"
         move MOVE_DRAGON_PULSE
         move MOVE_RECOVER
         move MOVE_YAWN
-        ability ABILITY_SUPERSWEET_SYRUP
+        ability ABILITY_NATURAL_CURE
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
         setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_QUIET
@@ -32181,7 +32181,7 @@ trainerdata 681, "Arabella"
         move MOVE_REST
         move MOVE_SLEEP_TALK
         move MOVE_ICE_BEAM
-        ability ABILITY_SCHOOLING
+        ability ABILITY_DEFEATIST
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
         setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_QUIET
@@ -32231,7 +32231,7 @@ trainerdata 682, "Bonita"
         move MOVE_PSYCHO_CUT
         move MOVE_NIGHT_SLASH
         move MOVE_STONE_EDGE
-        ability ABILITY_SHARPNESS
+        ability ABILITY_DEFIANT
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
         setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_JOLLY
@@ -32353,7 +32353,7 @@ trainerdata 683, "Salma"
         move MOVE_BOOMBURST
         move MOVE_THUNDERBOLT
         move MOVE_SLUDGE_BOMB
-        ability ABILITY_PUNK_ROCK
+        ability ABILITY_SHEER_FORCE
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
         setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_MODEST
@@ -32398,12 +32398,12 @@ trainerdata 684, "Elan & Ida"
         abilityslot 0
         level 76
         pokemon SPECIES_TATSUGIRI
-        item ITEM_TOXIC_ORB
+        item ITEM_SITRUS_BERRY
         move MOVE_MUDDY_WATER
         move MOVE_NASTY_PLOT
         move MOVE_DRAGON_PULSE
         move MOVE_HYDRO_PUMP
-        ability ABILITY_COMMANDER
+        ability ABILITY_GLUTTONY
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
         setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_MODEST
@@ -32412,24 +32412,6 @@ trainerdata 684, "Elan & Ida"
         ballseal 0
 
         // mon 1
-        ivs 255
-        abilityslot 0
-        level 76
-        pokemon SPECIES_DONDOZO
-        item ITEM_LEFTOVERS
-        move MOVE_PROTECT
-        move MOVE_HEAVY_SLAM
-        move MOVE_WAVE_CRASH
-        move MOVE_EARTHQUAKE
-        ability ABILITY_UNAWARE
-        setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
-        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
-        nature NATURE_ADAMANT
-        shinylock 0
-        additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
-        ballseal 0
-
-        // mon 2
         ivs 255
         abilityslot 0
         level 76
@@ -32447,6 +32429,24 @@ trainerdata 684, "Elan & Ida"
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
         ballseal 0
 
+        // mon 2
+        ivs 255
+        abilityslot 0
+        level 76
+        pokemon SPECIES_DONDOZO
+        item ITEM_LEFTOVERS
+        move MOVE_PROTECT
+        move MOVE_HEAVY_SLAM
+        move MOVE_WAVE_CRASH
+        move MOVE_EARTHQUAKE
+        ability ABILITY_UNAWARE
+        setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
+        nature NATURE_ADAMANT
+        shinylock 0
+        additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
+        ballseal 0
+
         // mon 3
         ivs 255
         abilityslot 0
@@ -32457,7 +32457,7 @@ trainerdata 684, "Elan & Ida"
         move MOVE_TRICK
         move MOVE_FLASH_CANNON
         move MOVE_THUNDERBOLT
-        ability ABILITY_GOOD_AS_GOLD
+        ability ABILITY_MAGIC_BOUNCE
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
         setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_MODEST
@@ -32489,7 +32489,7 @@ trainerdata 685, "Edwin"
         move MOVE_RAPID_SPIN
         move MOVE_PROTECT
         move MOVE_POWER_GEM
-        ability ABILITY_TOXIC_DEBRIS
+        ability ABILITY_STURDY
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
         setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_TIMID
@@ -33481,7 +33481,7 @@ trainerdata 702, "Will"
         move MOVE_PSYCHO_CUT
         move MOVE_WAVE_CRASH
         move MOVE_ICE_FANG
-        ability ABILITY_SHARPNESS
+        ability ABILITY_MOLD_BREAKER
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
         setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_JOLLY
@@ -33499,7 +33499,7 @@ trainerdata 702, "Will"
         move MOVE_DAZZLING_GLEAM
         move MOVE_ENERGY_BALL
         move MOVE_TRICK
-        ability ABILITY_ARMOR_TAIL
+        ability ABILITY_FILTER
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
         setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_MODEST
@@ -34335,7 +34335,7 @@ trainerdata 713, "Bugsy"
         move MOVE_ROCK_SLIDE
         move MOVE_U_TURN
         move MOVE_ACROBATICS
-        ability ABILITY_SHARPNESS
+        ability ABILITY_SHEER_FORCE
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
         setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_JOLLY
@@ -34475,7 +34475,7 @@ trainerdata 714, "Whitney"
         move MOVE_TOXIC
         move MOVE_SEISMIC_TOSS
         move MOVE_HELPING_HAND
-        ability ABILITY_CHEEK_POUCH
+        ability ABILITY_GLUTTONY
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
         setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_CALM
@@ -34493,7 +34493,7 @@ trainerdata 714, "Whitney"
         move MOVE_PAIN_SPLIT
         move MOVE_FOCUS_BLAST
         move MOVE_FLAMETHROWER
-        ability ABILITY_ILLUSION
+        ability ABILITY_MOLD_BREAKER
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
         setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_NAIVE
@@ -34561,7 +34561,7 @@ trainerdata 715, "Morty"
         move MOVE_SHADOW_BALL
         move MOVE_TRICK_ROOM
         move MOVE_LEAF_STORM
-        ability ABILITY_HOSPITALITY
+        ability ABILITY_CURSED_BODY
         setivs 31, 31, 31, 0, 31, 31 // hp, atk, def, spd, spatk, spdef
         setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_MODEST
@@ -35204,10 +35204,10 @@ trainerdata 720, "Brock"
         pokemon SPECIES_MINIOR
         item ITEM_WHITE_HERB
         move MOVE_SHELL_SMASH
-        move MOVE_ACROBATICS
-        move MOVE_HIGH_HORSEPOWER
-        move MOVE_ROCK_SLIDE
-        ability ABILITY_SHIELDS_DOWN
+        move MOVE_AIR_SLASH
+        move MOVE_POWER_GEM
+        move MOVE_EARTH_POWER
+        ability ABILITY_STURDY
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
         setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_ADAMANT
@@ -35329,7 +35329,7 @@ trainerdata 721, "Misty"
         move MOVE_FLIP_TURN
         move MOVE_CLOSE_COMBAT
         move MOVE_RAZOR_SHELL
-        ability ABILITY_SHARPNESS
+        ability ABILITY_SHEER_FORCE
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
         setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_JOLLY
@@ -35573,7 +35573,7 @@ trainerdata 723, "Erika"
         move MOVE_PAIN_SPLIT
         move MOVE_PROTECT
         move MOVE_PHANTOM_FORCE
-        ability ABILITY_WIND_RIDER
+        ability ABILITY_INTIMIDATE
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
         setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_ADAMANT
@@ -35623,7 +35623,7 @@ trainerdata 724, "Janine"
         move MOVE_GUNK_SHOT
         move MOVE_ICE_PUNCH
         move MOVE_PROTECT
-        ability ABILITY_POWER_OF_ALCHEMY
+        ability ABILITY_POISON_TOUCH
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
         setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_ADAMANT
@@ -35885,7 +35885,7 @@ trainerdata 726, "Blaine"
         move MOVE_U_TURN
         move MOVE_ICICLE_CRASH
         move MOVE_FLARE_BLITZ
-        ability ABILITY_GORILLA_TACTICS
+        ability ABILITY_ZEN_MODE
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
         setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_JOLLY
