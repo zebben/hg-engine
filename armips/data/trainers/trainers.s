@@ -16380,7 +16380,7 @@ trainerdata 348, "Robert"
         pokemon SPECIES_AUDINO
         move MOVE_DAZZLING_GLEAM
         move MOVE_HYPER_VOICE
-        move MOVE_AFTER_YOU
+        move MOVE_HELPING_HAND
         move MOVE_WISH
         ballseal 0
 
@@ -26705,7 +26705,7 @@ trainerdata 571, "Eleanor"
         pokemon SPECIES_AUDINO
         move MOVE_DAZZLING_GLEAM
         move MOVE_HYPER_VOICE
-        move MOVE_AFTER_YOU
+        move MOVE_HELPING_HAND
         move MOVE_WISH
         ballseal 0
     endparty
