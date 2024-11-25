@@ -9466,15 +9466,17 @@ levelup SPECIES_BASTIODON
     learnset MOVE_IRON_DEFENSE, 19
     learnset MOVE_SWAGGER, 24
     learnset MOVE_BODY_PRESS, 26
-    learnset MOVE_ANCIENT_POWER, 28
+    learnset MOVE_HIGH_HORSEPOWER, 28
     learnset MOVE_ENDURE, 36
     learnset MOVE_SPIKES, 38
-    learnset MOVE_STEALTH_ROCK, 40
-    learnset MOVE_METAL_BURST, 43
+    learnset MOVE_EARTHQUAKE, 40
+    learnset MOVE_STEALTH_ROCK, 42
+    learnset MOVE_METAL_BURST, 45
     learnset MOVE_ROAR, 45
     learnset MOVE_IRON_HEAD, 51
     learnset MOVE_HEAVY_SLAM, 58
-    learnset MOVE_HEAD_SMASH, 60
+    learnset MOVE_HEADLONG_RUSH, 62
+    learnset MOVE_HEAD_SMASH, 65
     terminatelearnset
 
 
