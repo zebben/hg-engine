@@ -9098,8 +9098,12 @@ levelup SPECIES_INFERNAPE
     learnset MOVE_FLAME_WHEEL, 19
     learnset MOVE_FEINT, 26
     learnset MOVE_PUNISHMENT, 29
+    learnset MOVE_ICE_PUNCH, 38
+    learnset MOVE_THUNDER_PUNCH, 38
+    learnset MOVE_FIRE_PUNCH, 38
     learnset MOVE_FIRE_SPIN, 42
     learnset MOVE_ACROBATICS, 52
+    learnset MOVE_SHADOW_PUNCH, 56
     learnset MOVE_CALM_MIND, 58
     learnset MOVE_FLARE_BLITZ, 68
     terminatelearnset
@@ -19767,6 +19771,7 @@ levelup SPECIES_TOXTRICITY
     learnset MOVE_SHADOW_PUNCH, 38
     learnset MOVE_POISON_JAB, 40
     learnset MOVE_BULLDOZE, 42
+    learnset MOVE_SPARK, 45
     learnset MOVE_GUNK_SHOT, 48
     learnset MOVE_WILD_CHARGE, 50
     learnset MOVE_SHIFT_GEAR, 52

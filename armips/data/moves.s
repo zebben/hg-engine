@@ -5212,7 +5212,7 @@ movedata MOVE_SIGNAL_BEAM, "Signal Beam"
 movedata MOVE_SHADOW_PUNCH, "Shadow Punch"
     battleeffect MOVE_EFFECT_BYPASS_ACCURACY
     pss SPLIT_PHYSICAL
-    basepower 60
+    basepower 75
     type TYPE_GHOST
     accuracy 0
     pp 20
