@@ -218,12 +218,12 @@ movedata MOVE_GUILLOTINE, "Guillotine"
     movedescription MOVE_GUILLOTINE, "A vicious, tearing\nattack with pincers.\nThe foe will faint\ninstantly if this\nattack hits."
 
 movedata MOVE_RAZOR_WIND, "Razor Wind"
-    battleeffect MOVE_EFFECT_CHARGE_TURN_HIGH_CRIT
+    battleeffect MOVE_EFFECT_HIT
     pss SPLIT_SPECIAL
-    basepower 80
+    basepower 100
     type TYPE_FLYING
-    accuracy 100
-    pp 10
+    accuracy 80
+    pp 5
     effectchance 0
     target MOVE_TARGET_BOTH
     priority 0
@@ -231,7 +231,7 @@ movedata MOVE_RAZOR_WIND, "Razor Wind"
     appeal 0x06
     contesttype CONTEST_COOL
     terminatedata
-    movedescription MOVE_RAZOR_WIND, "A two-turn attack.\nBlades of wind hit the\nfoe on the second\nturn. It has a high\ncritical-hit ratio."
+    movedescription MOVE_RAZOR_WIND, "Blades of wind hit the\nfoe."
 
 movedata MOVE_SWORDS_DANCE, "Swords Dance"
     battleeffect MOVE_EFFECT_ATK_UP_2
@@ -284,10 +284,10 @@ movedata MOVE_GUST, "Gust"
 movedata MOVE_WING_ATTACK, "Wing Attack"
     battleeffect MOVE_EFFECT_HIT
     pss SPLIT_PHYSICAL
-    basepower 60
+    basepower 80
     type TYPE_FLYING
     accuracy 100
-    pp 35
+    pp 25
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
@@ -1052,7 +1052,7 @@ movedata MOVE_PECK, "Peck"
 movedata MOVE_DRILL_PECK, "Drill Peck"
     battleeffect MOVE_EFFECT_HIT
     pss SPLIT_PHYSICAL
-    basepower 80
+    basepower 85
     type TYPE_FLYING
     accuracy 100
     pp 20
@@ -1418,12 +1418,12 @@ movedata MOVE_THUNDER, "Thunder"
     movedescription MOVE_THUNDER, "A wicked thunderbolt\nis dropped on the foe\nto inflict damage.\nIt may also leave the\ntarget paralyzed."
 
 movedata MOVE_ROCK_THROW, "Rock Throw"
-    battleeffect MOVE_EFFECT_HIT
+    battleeffect MOVE_EFFECT_PRIORITY_1
     pss SPLIT_PHYSICAL
-    basepower 50
+    basepower 40
     type TYPE_ROCK
-    accuracy 90
-    pp 15
+    accuracy 100
+    pp 30
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
@@ -2764,10 +2764,10 @@ movedata MOVE_NIGHTMARE, "Nightmare"
 movedata MOVE_FLAME_WHEEL, "Flame Wheel"
     battleeffect MOVE_EFFECT_THAW_AND_BURN_HIT
     pss SPLIT_PHYSICAL
-    basepower 60
+    basepower 85
     type TYPE_FIRE
     accuracy 100
-    pp 25
+    pp 15
     effectchance 10
     target MOVE_TARGET_SELECTED
     priority 0
@@ -2911,8 +2911,8 @@ movedata MOVE_POWDER_SNOW, "Powder Snow"
     basepower 60
     type TYPE_ICE
     accuracy 100
-    pp 20
-    effectchance 10
+    pp 15
+    effectchance 5
     target MOVE_TARGET_BOTH
     priority 0
     flags FLAG_MIRROR_MOVE | FLAG_PROTECT
@@ -3148,9 +3148,9 @@ movedata MOVE_PERISH_SONG, "Perish Song"
 movedata MOVE_ICY_WIND, "Icy Wind"
     battleeffect MOVE_EFFECT_LOWER_SPEED_HIT
     pss SPLIT_SPECIAL
-    basepower 65
+    basepower 60
     type TYPE_ICE
-    accuracy 95
+    accuracy 100
     pp 15
     effectchance 100
     target MOVE_TARGET_BOTH
@@ -4492,10 +4492,10 @@ movedata MOVE_REVENGE, "Revenge"
 movedata MOVE_BRICK_BREAK, "Brick Break"
     battleeffect MOVE_EFFECT_REMOVE_SCREENS
     pss SPLIT_PHYSICAL
-    basepower 75
+    basepower 85
     type TYPE_FIGHTING
     accuracy 100
-    pp 15
+    pp 10
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
@@ -6748,7 +6748,7 @@ movedata MOVE_ICE_SHARD, "Ice Shard"
 movedata MOVE_SHADOW_CLAW, "Shadow Claw"
     battleeffect MOVE_EFFECT_HIGH_CRITICAL
     pss SPLIT_PHYSICAL
-    basepower 80
+    basepower 85
     type TYPE_GHOST
     accuracy 100
     pp 15
@@ -9403,12 +9403,12 @@ movedata MOVE_PLAY_ROUGH, "Play Rough"
     movedescription MOVE_PLAY_ROUGH, "The user attacks by\nplaying rough with the\ntarget. This may also\nlower the target's\nAttack stat."
 
 movedata MOVE_FAIRY_WIND, "Fairy Wind"
-    battleeffect MOVE_EFFECT_HIT
+    battleeffect MOVE_EFFECT_RECOVER_HALF_DAMAGE_DEALT
     pss SPLIT_SPECIAL
-    basepower 40
+    basepower 70
     type (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL
     accuracy 100
-    pp 30
+    pp 15
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
@@ -9416,7 +9416,7 @@ movedata MOVE_FAIRY_WIND, "Fairy Wind"
     appeal 0x00
     contesttype CONTEST_COOL
     terminatedata
-    movedescription MOVE_FAIRY_WIND, "The user attacks by\nstirring up a fairy\nwind to strike the\ntarget."
+    movedescription MOVE_FAIRY_WIND, "The user attacks by\nstirring up a fairy\nwind to strike the\ntarget. The user’s\nHP is restored by\nhalf the damage taken\nby the target."
 
 movedata MOVE_MOONBLAST, "Moonblast"
     battleeffect MOVE_EFFECT_LOWER_SP_ATK_HIT
@@ -11149,10 +11149,10 @@ movedata MOVE_DRAGON_HAMMER, "Dragon Hammer"
 movedata MOVE_BRUTAL_SWING, "Brutal Swing"
     battleeffect MOVE_EFFECT_HIT
     pss SPLIT_PHYSICAL
-    basepower 60
+    basepower 80
     type TYPE_DARK
     accuracy 100
-    pp 20
+    pp 15
     effectchance 0
     target MOVE_TARGET_FOES_AND_ALLY
     priority 0

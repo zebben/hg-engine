@@ -19587,7 +19587,7 @@ mondata SPECIES_ARCTOZOLT, "Arctozolt"
 
 
 mondata SPECIES_DRACOVISH, "Dracovish"
-    basestats 90, 90, 100, 80, 90, 80
+    basestats 90, 120, 100, 80, 60, 80
     types TYPE_WATER, TYPE_DRAGON
     catchrate 45
     baseexp 0 // defined in baseexp.s
@@ -19608,7 +19608,7 @@ mondata SPECIES_DRACOVISH, "Dracovish"
 
 
 mondata SPECIES_ARCTOVISH, "Arctovish"
-    basestats 85, 105, 80, 80, 100, 80
+    basestats 95, 115, 95, 75, 60, 80
     types TYPE_WATER, TYPE_ICE
     catchrate 45
     baseexp 0 // defined in baseexp.s
