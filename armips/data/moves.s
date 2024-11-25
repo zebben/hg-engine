@@ -5215,7 +5215,7 @@ movedata MOVE_SHADOW_PUNCH, "Shadow Punch"
     basepower 75
     type TYPE_GHOST
     accuracy 0
-    pp 20
+    pp 15
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
