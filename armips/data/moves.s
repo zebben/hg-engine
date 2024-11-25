@@ -222,8 +222,8 @@ movedata MOVE_RAZOR_WIND, "Razor Wind"
     pss SPLIT_SPECIAL
     basepower 100
     type TYPE_FLYING
-    accuracy 80
-    pp 5
+    accuracy 90
+    pp 10
     effectchance 0
     target MOVE_TARGET_BOTH
     priority 0
