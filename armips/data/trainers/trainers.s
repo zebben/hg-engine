@@ -5741,7 +5741,7 @@ trainerdata 137, "Vance"
         level 47
         pokemon SPECIES_NOCTOWL
         move MOVE_RAZOR_WIND
-        move MOVE_DARK_PULSE
+        move MOVE_PSYCHIC
         move MOVE_HYPNOSIS
         move MOVE_ROOST
         ballseal 0
@@ -14435,7 +14435,7 @@ trainerdata 308, "Jerry"
         pokemon SPECIES_LUNATONE
         item ITEM_LEFTOVERS
         move MOVE_MOONBLAST
-        move MOVE_EARTH_POWER
+        move MOVE_MOONGEIST_BEAM
         move MOVE_POWER_GEM
         move MOVE_HYPNOSIS
         ability ABILITY_LEVITATE
@@ -18933,7 +18933,7 @@ trainerdata 401, "Alfred"
         abilityslot 0
         level 31
         pokemon SPECIES_NOCTOWL
-        move MOVE_DARK_PULSE
+        move MOVE_PSYCHIC
         move MOVE_AIR_SLASH
         move MOVE_ROOST
         move MOVE_HYPNOSIS
@@ -22714,7 +22714,7 @@ trainerdata 487, "Petrel"
         pokemon SPECIES_NOCTOWL
         item ITEM_LEFTOVERS
         move MOVE_RAZOR_WIND
-        move MOVE_DARK_PULSE
+        move MOVE_PSYCHIC
         move MOVE_ROOST
         move MOVE_MOONBLAST
         ability ABILITY_TINTED_LENS
@@ -22836,7 +22836,7 @@ trainerdata 488, "Petrel"
         pokemon SPECIES_NOCTOWL
         item ITEM_LEFTOVERS
         move MOVE_RAZOR_WIND
-        move MOVE_DARK_PULSE
+        move MOVE_PSYCHIC
         move MOVE_ROOST
         move MOVE_MOONBLAST
         ability ABILITY_TINTED_LENS
@@ -31727,7 +31727,7 @@ trainerdata 672, "Alfred"
         abilityslot 0
         level 40
         pokemon SPECIES_NOCTOWL
-        move MOVE_DARK_PULSE
+        move MOVE_PSYCHIC
         move MOVE_AIR_SLASH
         move MOVE_ROOST
         move MOVE_HYPNOSIS
@@ -31763,7 +31763,7 @@ trainerdata 673, "Alfred"
         abilityslot 0
         level 60
         pokemon SPECIES_NOCTOWL
-        move MOVE_DARK_PULSE
+        move MOVE_PSYCHIC
         move MOVE_AIR_SLASH
         move MOVE_ROOST
         move MOVE_HYPNOSIS
@@ -31799,7 +31799,7 @@ trainerdata 674, "Alfred"
         abilityslot 0
         level 80
         pokemon SPECIES_NOCTOWL
-        move MOVE_DARK_PULSE
+        move MOVE_PSYCHIC
         move MOVE_AIR_SLASH
         move MOVE_ROOST
         move MOVE_HYPNOSIS
@@ -32540,7 +32540,7 @@ trainerdata 685, "Edwin"
         pokemon SPECIES_SOLROCK
         item ITEM_LEFTOVERS
         move MOVE_FLARE_BLITZ
-        move MOVE_ZEN_HEADBUTT
+        move MOVE_SUNSTEEL_STRIKE
         move MOVE_ROCK_SLIDE
         move MOVE_HYPNOSIS
         ability ABILITY_LEVITATE

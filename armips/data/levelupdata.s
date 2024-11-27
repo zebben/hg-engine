@@ -3808,6 +3808,8 @@ levelup SPECIES_HOOTHOOT
 
 levelup SPECIES_NOCTOWL
     learnset MOVE_DARK_PULSE, 0
+    learnset MOVE_PSYCHIC, 0
+    learnset MOVE_PSYCHIC, 1
     learnset MOVE_DARK_PULSE, 1
     learnset MOVE_GROWL, 1
     learnset MOVE_PECK, 1
@@ -4888,11 +4890,12 @@ levelup SPECIES_QWILFISH
     learnset MOVE_PIN_MISSILE, 34
     learnset MOVE_STOCKPILE, 35
     learnset MOVE_SPIT_UP, 35
+    learnset MOVE_BELLY_DRUM, 38
     learnset MOVE_POISON_JAB, 44
     learnset MOVE_TAKE_DOWN, 44
     learnset MOVE_AQUA_TAIL, 50
     learnset MOVE_TOXIC, 52
-    learnset MOVE_HYDRO_PUMP, 57
+    learnset MOVE_WAVE_CRASH, 57
     learnset MOVE_DESTINY_BOND, 59
     learnset MOVE_ACUPRESSURE, 60
     terminatelearnset
@@ -7860,6 +7863,7 @@ levelup SPECIES_LUNATONE
     learnset MOVE_EARTH_POWER, 35
     learnset MOVE_FUTURE_SIGHT, 40
     learnset MOVE_MOONBLAST, 47
+    learnset MOVE_MOONGEIST_BEAM, 52
     terminatelearnset
 
 
@@ -7883,6 +7887,7 @@ levelup SPECIES_SOLROCK
     learnset MOVE_STONE_EDGE, 35
     learnset MOVE_FLARE_BLITZ, 40
     learnset MOVE_EXPLOSION, 47
+    learnset MOVE_SUNSTEEL_STRIKE, 52
     terminatelearnset
 
 
@@ -9162,8 +9167,9 @@ levelup SPECIES_EMPOLEON
     learnset MOVE_SWAGGER, 24
     learnset MOVE_FURY_ATTACK, 28
     learnset MOVE_BRINE, 33
-    learnset MOVE_FLIP_TURN, 37
-    learnset MOVE_WHIRLPOOL, 39
+    learnset MOVE_ROOST, 36
+    learnset MOVE_FLIP_TURN, 38
+    learnset MOVE_WHIRLPOOL, 40
     learnset MOVE_MIST, 42
     learnset MOVE_FLASH_CANNON, 45
     learnset MOVE_AIR_SLASH, 49
@@ -9629,11 +9635,12 @@ levelup SPECIES_FLOATZEL
     learnset MOVE_SWIFT, 21
     learnset MOVE_AQUA_JET, 24
     learnset MOVE_DOUBLE_HIT, 29
+    learnset MOVE_BULLET_PUNCH, 32
     learnset MOVE_WHIRLPOOL, 35
     learnset MOVE_FLIP_TURN, 37
-    learnset MOVE_RAZOR_WIND, 41
+    learnset MOVE_MACH_PUNCH, 41
     learnset MOVE_AQUA_TAIL, 46
-    learnset MOVE_AGILITY, 51
+    learnset MOVE_DOUBLE_KICK, 51
     learnset MOVE_WAVE_CRASH, 55
     learnset MOVE_ICICLE_CRASH, 57
     learnset MOVE_HIGH_HORSEPOWER, 63
@@ -27626,6 +27633,7 @@ levelup SPECIES_LYCANROC_DUSK
     learnset MOVE_ROCK_TOMB, 23
     learnset MOVE_ROAR, 28
     learnset MOVE_BITE, 30
+    learnset MOVE_DOUBLE_HIT, 32
     learnset MOVE_ROCK_SLIDE, 35
     learnset MOVE_ICE_FANG, 40
     learnset MOVE_THUNDER_FANG, 40
