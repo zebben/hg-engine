@@ -1609,7 +1609,7 @@ trainerdata 35, "Clair"
         abilityslot 0
         level 49
         pokemon SPECIES_FLYGON
-        item ITEM_HEAVY_DUTY_BOOTS
+        item ITEM_LIFE_ORB
         move MOVE_EARTH_POWER
         move MOVE_QUIVER_DANCE
         move MOVE_DRAGON_PULSE
@@ -4196,7 +4196,7 @@ trainerdata 103, "Blake"
         abilityslot 32
         level 50
         pokemon SPECIES_DRAGAPULT
-        item ITEM_HEAVY_DUTY_BOOTS
+        item ITEM_LUM_BERRY
         move MOVE_DRAGON_CLAW
         move MOVE_U_TURN
         move MOVE_PHANTOM_FORCE
@@ -10884,7 +10884,7 @@ trainerdata 256, "Erika"
         abilityslot 0
         level 73
         pokemon SPECIES_TANGROWTH
-        item ITEM_ASSAULT_VEST
+        item ITEM_SITRUS_BERRY
         move MOVE_KNOCK_OFF
         move MOVE_GIGA_DRAIN
         move MOVE_POWER_WHIP
@@ -10952,10 +10952,10 @@ trainerdata 257, "Janine"
         abilityslot 0
         level 73
         monwithform SPECIES_MUK, 1
-        item ITEM_ASSAULT_VEST
+        item ITEM_POISON_BARB
         move MOVE_KNOCK_OFF
         move MOVE_GUNK_SHOT
-        move MOVE_POISON_JAB
+        move MOVE_PROTECT
         move MOVE_BODY_PRESS
         ability ABILITY_POISON_TOUCH
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
@@ -11476,7 +11476,7 @@ trainerdata 261, "Blue"
         abilityslot 0
         level 77
         pokemon SPECIES_ARCANINE
-        item ITEM_HEAVY_DUTY_BOOTS
+        item ITEM_LIFE_ORB
         move MOVE_MORNING_SUN
         move MOVE_WILD_CHARGE
         move MOVE_FLARE_BLITZ
@@ -19732,7 +19732,7 @@ trainerdata 418, "Bruno"
         abilityslot 0
         level 58
         pokemon SPECIES_FLAMIGO
-        item ITEM_HEAVY_DUTY_BOOTS
+        item ITEM_SITRUS_BERRY
         move MOVE_BRUTAL_SWING
         move MOVE_BRAVE_BIRD
         move MOVE_DETECT
@@ -22730,7 +22730,7 @@ trainerdata 487, "Petrel"
         abilityslot 0
         level 42
         pokemon SPECIES_CENTISKORCH
-        item ITEM_ASSAULT_VEST
+        item ITEM_SITRUS_BERRY
         move MOVE_FLAME_WHEEL
         move MOVE_FIRST_IMPRESSION
         move MOVE_ROCK_SLIDE
@@ -22852,7 +22852,7 @@ trainerdata 488, "Petrel"
         abilityslot 0
         level 39
         pokemon SPECIES_CENTISKORCH
-        item ITEM_ASSAULT_VEST
+        item ITEM_SITRUS_BERRY
         move MOVE_FLAME_WHEEL
         move MOVE_FIRST_IMPRESSION
         move MOVE_ROCK_SLIDE
@@ -33458,7 +33458,7 @@ trainerdata 702, "Will"
         abilityslot 0
         level 78
         pokemon SPECIES_MALAMAR
-        item ITEM_LEFTOVERS
+        item ITEM_SITRUS_BERRY
         move MOVE_HYPNOSIS
         move MOVE_TRICK_ROOM
         move MOVE_DARK_PULSE
@@ -33530,7 +33530,7 @@ trainerdata 702, "Will"
         abilityslot 0
         level 80
         pokemon SPECIES_XATU
-        item ITEM_HEAVY_DUTY_BOOTS
+        item ITEM_TWISTED_SPOON
         move MOVE_PSYCHIC
         move MOVE_CALM_MIND
         move MOVE_ROOST
@@ -34348,7 +34348,7 @@ trainerdata 713, "Bugsy"
         abilityslot 32
         level 80
         pokemon SPECIES_VOLCARONA
-        item ITEM_HEAVY_DUTY_BOOTS
+        item ITEM_CHARCOAL
         move MOVE_QUIVER_DANCE
         move MOVE_GIGA_DRAIN
         move MOVE_FIERY_DANCE
@@ -35026,7 +35026,7 @@ trainerdata 719, "Clair"
         abilityslot 0
         level 80
         pokemon SPECIES_FLYGON
-        item ITEM_HEAVY_DUTY_BOOTS
+        item ITEM_LIFE_ORB
         move MOVE_EARTH_POWER
         move MOVE_QUIVER_DANCE
         move MOVE_DRAGON_PULSE
@@ -35550,7 +35550,7 @@ trainerdata 723, "Erika"
         abilityslot 0
         level 80
         pokemon SPECIES_TANGROWTH
-        item ITEM_ASSAULT_VEST
+        item ITEM_SITRUS_BERRY
         move MOVE_KNOCK_OFF
         move MOVE_GIGA_DRAIN
         move MOVE_POWER_WHIP
@@ -35690,7 +35690,7 @@ trainerdata 724, "Janine"
         abilityslot 0
         level 80
         pokemon SPECIES_VENUSAUR
-        item ITEM_ASSAULT_VEST
+        item ITEM_MIRACLE_SEED
         move MOVE_GIGA_DRAIN
         move MOVE_LEAF_STORM
         move MOVE_EARTH_POWER
@@ -36020,7 +36020,7 @@ trainerdata 727, "Blue"
         abilityslot 0
         level 85
         pokemon SPECIES_ARCANINE
-        item ITEM_HEAVY_DUTY_BOOTS
+        item ITEM_LIFE_ORB
         move MOVE_MORNING_SUN
         move MOVE_WILD_CHARGE
         move MOVE_FLARE_BLITZ
