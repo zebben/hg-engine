@@ -1490,8 +1490,8 @@ evodata SPECIES_MR_MIME
 evodata SPECIES_SCYTHER
     evolution EVO_ITEM_DAY, ITEM_METAL_COAT, SPECIES_SCIZOR
     evolution EVO_ITEM_NIGHT, ITEM_METAL_COAT, SPECIES_SCIZOR
-    evolution EVO_ITEM_DAY, ITEM_HARD_STONE, SPECIES_KLEAVOR
-    evolution EVO_ITEM_NIGHT, ITEM_HARD_STONE, SPECIES_KLEAVOR
+    evolution EVO_ITEM_DAY, ITEM_PROTECTOR, SPECIES_KLEAVOR
+    evolution EVO_ITEM_NIGHT, ITEM_PROTECTOR, SPECIES_KLEAVOR
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
@@ -1512,8 +1512,8 @@ evodata SPECIES_JYNX
     terminateevodata
 
 evodata SPECIES_ELECTABUZZ
-    evolution EVO_ITEM_DAY, ITEM_ELECTIRIZER, SPECIES_ELECTIVIRE
-    evolution EVO_ITEM_NIGHT, ITEM_ELECTIRIZER, SPECIES_ELECTIVIRE
+    evolution EVO_LEVEL, 32, SPECIES_ELECTIVIRE
+    evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
@@ -1524,8 +1524,8 @@ evodata SPECIES_ELECTABUZZ
     terminateevodata
 
 evodata SPECIES_MAGMAR
-    evolution EVO_ITEM_DAY, ITEM_MAGMARIZER, SPECIES_MAGMORTAR
-    evolution EVO_ITEM_NIGHT, ITEM_MAGMARIZER, SPECIES_MAGMORTAR
+    evolution EVO_LEVEL, 32, SPECIES_MAGMORTAR
+    evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
@@ -2496,7 +2496,7 @@ evodata SPECIES_DUNSPARCE
     terminateevodata
 
 evodata SPECIES_GLIGAR
-    evolution EVO_ITEM_NIGHT, ITEM_RAZOR_FANG, SPECIES_GLISCOR
+    evolution EVO_LEVEL, 28, SPECIES_GLISCOR
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
@@ -2592,7 +2592,7 @@ evodata SPECIES_HERACROSS
     terminateevodata
 
 evodata SPECIES_SNEASEL
-    evolution EVO_ITEM_NIGHT, ITEM_RAZOR_CLAW, SPECIES_WEAVILE
+    evolution EVO_LEVEL, 28, SPECIES_WEAVILE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
@@ -2868,7 +2868,7 @@ evodata SPECIES_HITMONTOP
     terminateevodata
 
 evodata SPECIES_SMOOCHUM
-    evolution EVO_LEVEL, 20, SPECIES_JYNX
+    evolution EVO_FRIENDSHIP, 0, SPECIES_JYNX
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
@@ -2880,7 +2880,7 @@ evodata SPECIES_SMOOCHUM
     terminateevodata
 
 evodata SPECIES_ELEKID
-    evolution EVO_LEVEL, 20, SPECIES_ELECTABUZZ
+    evolution EVO_FRIENDSHIP, 0, SPECIES_ELECTABUZZ
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
@@ -2892,7 +2892,7 @@ evodata SPECIES_ELEKID
     terminateevodata
 
 evodata SPECIES_MAGBY
-    evolution EVO_LEVEL, 20, SPECIES_MAGMAR
+    evolution EVO_FRIENDSHIP, 0, SPECIES_MAGMAR
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
@@ -4272,7 +4272,7 @@ evodata SPECIES_BANETTE
     terminateevodata
 
 evodata SPECIES_DUSKULL
-    evolution EVO_LEVEL, 28, SPECIES_DUSCLOPS
+    evolution EVO_LEVEL, 20, SPECIES_DUSCLOPS
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
@@ -4332,7 +4332,7 @@ evodata SPECIES_ABSOL
     terminateevodata
 
 evodata SPECIES_WYNAUT
-    evolution EVO_LEVEL, 20, SPECIES_WOBBUFFET
+    evolution EVO_FRIENDSHIP, 0, SPECIES_WOBBUFFET
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
@@ -4884,7 +4884,7 @@ evodata SPECIES_LUXRAY
     terminateevodata
 
 evodata SPECIES_BUDEW
-    evolution EVO_FRIENDSHIP_DAY, 0, SPECIES_ROSELIA
+    evolution EVO_FRIENDSHIP, 0, SPECIES_ROSELIA
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
@@ -5208,7 +5208,7 @@ evodata SPECIES_PURUGLY
     terminateevodata
 
 evodata SPECIES_CHINGLING
-    evolution EVO_FRIENDSHIP_NIGHT, 0, SPECIES_CHIMECHO
+    evolution EVO_FRIENDSHIP, 0, SPECIES_CHIMECHO
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
@@ -5268,7 +5268,7 @@ evodata SPECIES_BRONZONG
     terminateevodata
 
 evodata SPECIES_BONSLY
-    evolution EVO_HAS_MOVE, MOVE_MIMIC, SPECIES_SUDOWOODO
+    evolution EVO_FRIENDSHIP, 0, SPECIES_SUDOWOODO
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
@@ -5280,7 +5280,7 @@ evodata SPECIES_BONSLY
     terminateevodata
 
 evodata SPECIES_MIMEJR
-    evolution EVO_HAS_MOVE, MOVE_MIMIC, SPECIES_MR_MIME
+    evolution EVO_FRIENDSHIP, 0, SPECIES_MR_MIME
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
@@ -5292,7 +5292,7 @@ evodata SPECIES_MIMEJR
     terminateevodata
 
 evodata SPECIES_HAPPINY
-    evolution EVO_ITEM_DAY, ITEM_OVAL_STONE, SPECIES_CHANSEY
+    evolution EVO_FRIENDSHIP, 0, SPECIES_CHANSEY
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
@@ -5376,7 +5376,7 @@ evodata SPECIES_MUNCHLAX
     terminateevodata
 
 evodata SPECIES_RIOLU
-    evolution EVO_FRIENDSHIP_DAY, 0, SPECIES_LUCARIO
+    evolution EVO_FRIENDSHIP, 0, SPECIES_LUCARIO
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
@@ -5508,7 +5508,7 @@ evodata SPECIES_LUMINEON
     terminateevodata
 
 evodata SPECIES_MANTYKE
-    evolution EVO_OTHER_PARTY_MON, SPECIES_REMORAID, SPECIES_MANTINE
+    evolution EVO_FRIENDSHIP, 0, SPECIES_MANTINE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
@@ -10792,8 +10792,8 @@ evodata SPECIES_BARRASKEWDA
 terminateevodata
 
 evodata SPECIES_TOXEL
-    evolution EVO_LEVEL_NATURE_AMPED, 30, SPECIES_TOXTRICITY
-    evolutionwithform EVO_LEVEL_NATURE_LOW_KEY, 30, SPECIES_TOXTRICITY, 1
+    evolution EVO_LEVEL_NATURE_AMPED, 28, SPECIES_TOXTRICITY
+    evolutionwithform EVO_LEVEL_NATURE_LOW_KEY, 28, SPECIES_TOXTRICITY, 1
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
@@ -11081,7 +11081,7 @@ evodata SPECIES_PINCURCHIN
 terminateevodata
 
 evodata SPECIES_SNOM
-    evolution EVO_FRIENDSHIP_NIGHT, 0, SPECIES_FROSMOTH
+    evolution EVO_FRIENDSHIP, 0, SPECIES_FROSMOTH
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
@@ -15860,8 +15860,8 @@ evodata SPECIES_QWILFISH_HISUIAN
 terminateevodata
 
 evodata SPECIES_SNEASEL_HISUIAN
-    evolution EVO_ITEM_DAY, ITEM_RAZOR_CLAW, SPECIES_SNEASLER
-    evolution EVO_ITEM_NIGHT, ITEM_RAZOR_CLAW, SPECIES_SNEASLER
+    evolution EVO_LEVEL, 28, SPECIES_SNEASLER
+    evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE

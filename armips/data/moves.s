@@ -5852,10 +5852,10 @@ movedata MOVE_FEINT, "Feint"
 movedata MOVE_PLUCK, "Pluck"
     battleeffect MOVE_EFFECT_EAT_BERRY
     pss SPLIT_PHYSICAL
-    basepower 60
+    basepower 75
     type TYPE_FLYING
     accuracy 100
-    pp 20
+    pp 15
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
