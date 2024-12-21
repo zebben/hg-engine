@@ -11,7 +11,7 @@
 
 trainerdata 0, "-"
     trainermontype TRAINER_DATA_TYPE_NOTHING
-    trainerclass TRAINERCLASS_PKMN_TRAINER_0
+    trainerclass TRAINERCLASS_PKMN_TRAINER_ETHAN
     nummons 0
     item ITEM_NONE
     item ITEM_NONE
