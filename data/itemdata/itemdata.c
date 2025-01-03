@@ -143,7 +143,7 @@ const ITEMDATA __data[] =
 
 [ITEM_ULTRA_BALL] =
 {
-    .price = 1200,
+    .price = 1000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -1248,7 +1248,7 @@ const ITEMDATA __data[] =
 
 [ITEM_BURN_HEAL] =
 {
-    .price = 250,
+    .price = 100,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -1313,7 +1313,7 @@ const ITEMDATA __data[] =
 
 [ITEM_ICE_HEAL] =
 {
-    .price = 250,
+    .price = 100,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -1443,7 +1443,7 @@ const ITEMDATA __data[] =
 
 [ITEM_PARALYZE_HEAL] =
 {
-    .price = 200,
+    .price = 100,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -1768,7 +1768,7 @@ const ITEMDATA __data[] =
 
 [ITEM_FULL_HEAL] =
 {
-    .price = 600,
+    .price = 250,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -3328,7 +3328,7 @@ const ITEMDATA __data[] =
 
 [ITEM_PP_UP] =
 {
-    .price = 9800,
+    .price = 2000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -3458,7 +3458,7 @@ const ITEMDATA __data[] =
 
 [ITEM_PP_MAX] =
 {
-    .price = 9800,
+    .price = 6000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -5733,7 +5733,7 @@ const ITEMDATA __data[] =
 
 [ITEM_PEARL] =
 {
-    .price = 1400,
+    .price = 3000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -5863,7 +5863,7 @@ const ITEMDATA __data[] =
 
 [ITEM_STARDUST] =
 {
-    .price = 2000,
+    .price = 4000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -12948,7 +12948,7 @@ const ITEMDATA __data[] =
 
 [ITEM_KINGS_ROCK - NUM_UNKNOWN_SLOTS] =
 {
-    .price = 100,
+    .price = 500,
     .holdEffect = HOLD_EFFECT_SOMETIMES_FLINCH,
     .holdEffectParam = 10,
     .pluckEffect = 0,
@@ -13728,7 +13728,7 @@ const ITEMDATA __data[] =
 
 [ITEM_METAL_COAT - NUM_UNKNOWN_SLOTS] =
 {
-    .price = 100,
+    .price = 500,
     .holdEffect = HOLD_EFFECT_STRENGTHEN_STEEL,
     .holdEffectParam = 20,
     .pluckEffect = 0,
@@ -19513,7 +19513,7 @@ const ITEMDATA __data[] =
 
 [ITEM_ELECTIRIZER - NUM_UNKNOWN_SLOTS] =
 {
-    .price = 2100,
+    .price = 10000,
     .holdEffect = HOLD_EFFECT_EVOLVE_ELECTABUZZ,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -19578,7 +19578,7 @@ const ITEMDATA __data[] =
 
 [ITEM_MAGMARIZER - NUM_UNKNOWN_SLOTS] =
 {
-    .price = 2100,
+    .price = 10000,
     .holdEffect = HOLD_EFFECT_EVOLVE_MAGMAR,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -36738,7 +36738,7 @@ const ITEMDATA __data[] =
 
 [ITEM_BIG_NUGGET - NUM_UNKNOWN_SLOTS_EXPLORER_KIT] =
 {
-    .price = 10000,
+    .price = 15000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -37323,7 +37323,7 @@ const ITEMDATA __data[] =
 
 [ITEM_PEARL_STRING - NUM_UNKNOWN_SLOTS_EXPLORER_KIT] =
 {
-    .price = 20000,
+    .price = 30000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,

@@ -313,7 +313,7 @@ evodata SPECIES_ARBOK
 
 evodata SPECIES_PIKACHU
     evolution EVO_STONE, ITEM_THUNDER_STONE, SPECIES_RAICHU
-    evolution EVO_NONE, 0, SPECIES_NONE
+    evolutionwithform EVO_STONE, ITEM_SHINY_STONE, SPECIES_RAICHU, 1
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
@@ -1512,7 +1512,7 @@ evodata SPECIES_JYNX
     terminateevodata
 
 evodata SPECIES_ELECTABUZZ
-    evolution EVO_LEVEL, 32, SPECIES_ELECTIVIRE
+    evolution EVO_STONE, ITEM_THUNDER_STONE, SPECIES_ELECTIVIRE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
@@ -1524,7 +1524,7 @@ evodata SPECIES_ELECTABUZZ
     terminateevodata
 
 evodata SPECIES_MAGMAR
-    evolution EVO_LEVEL, 32, SPECIES_MAGMORTAR
+    evolution EVO_STONE, ITEM_FIRE_STONE, SPECIES_MAGMORTAR
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
@@ -1884,8 +1884,8 @@ evodata SPECIES_CYNDAQUIL
     terminateevodata
 
 evodata SPECIES_QUILAVA
-    evolution EVO_LEVEL, 32, SPECIES_TYPHLOSION
-    evolution EVO_NONE, 0, SPECIES_NONE
+    evolution EVO_LEVEL_DAY, 32, SPECIES_TYPHLOSION
+    evolutionwithform EVO_LEVEL_NIGHT, 32, SPECIES_TYPHLOSION, 1
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
@@ -5280,8 +5280,8 @@ evodata SPECIES_BONSLY
     terminateevodata
 
 evodata SPECIES_MIMEJR
-    evolution EVO_FRIENDSHIP, 0, SPECIES_MR_MIME
-    evolution EVO_NONE, 0, SPECIES_NONE
+    evolution EVO_FRIENDSHIP_DAY, 0, SPECIES_MR_MIME
+    evolutionwithform EVO_FRIENDSHIP_NIGHT, 0, SPECIES_MR_MIME, 1
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
@@ -9064,9 +9064,9 @@ evodata SPECIES_CARBINK
 terminateevodata
 
 evodata SPECIES_GOOMY
-    evolution EVO_LEVEL, 30, SPECIES_SLIGGOO
-    evolution EVO_NONE, 0, SPECIES_NONE
-    evolution EVO_NONE, 0, SPECIES_NONE
+    evolution EVO_STONE, ITEM_WATER_STONE, SPECIES_SLIGGOO
+    evolutionwithform EVO_ITEM_DAY, ITEM_METAL_COAT, SPECIES_SLIGGOO, 1
+    evolutionwithform EVO_ITEM_NIGHT, ITEM_METAL_COAT, SPECIES_SLIGGOO, 1
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
@@ -9160,8 +9160,8 @@ evodata SPECIES_GOURGEIST
 terminateevodata
 
 evodata SPECIES_BERGMITE
-    evolution EVO_LEVEL, 28, SPECIES_AVALUGG
-    evolution EVO_NONE, 0, SPECIES_NONE
+    evolution EVO_STONE, ITEM_ICE_STONE, SPECIES_AVALUGG
+    evolutionwithform EVO_STONE, ITEM_MOON_STONE, SPECIES_AVALUGG, 1
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
