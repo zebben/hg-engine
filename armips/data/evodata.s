@@ -9065,8 +9065,8 @@ terminateevodata
 
 evodata SPECIES_GOOMY
     evolution EVO_STONE, ITEM_WATER_STONE, SPECIES_SLIGGOO
-    evolutionwithform EVO_ITEM_DAY, ITEM_METAL_COAT, SPECIES_SLIGGOO, 1
-    evolutionwithform EVO_ITEM_NIGHT, ITEM_METAL_COAT, SPECIES_SLIGGOO, 1
+    evolutionwithform EVO_STONE, ITEM_SHINY_STONE, SPECIES_SLIGGOO, 1
+    evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
