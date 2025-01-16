@@ -108,10 +108,10 @@ movedata MOVE_MEGA_PUNCH, "Mega Punch"
 movedata MOVE_PAY_DAY, "Pay Day"
     battleeffect MOVE_EFFECT_INCREASE_PRIZE_MONEY
     pss SPLIT_PHYSICAL
-    basepower 40
+    basepower 90
     type TYPE_NORMAL
     accuracy 100
-    pp 20
+    pp 15
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
@@ -2060,10 +2060,10 @@ movedata MOVE_WATERFALL, "Waterfall"
 movedata MOVE_CLAMP, "Clamp"
     battleeffect MOVE_EFFECT_BIND_HIT
     pss SPLIT_PHYSICAL
-    basepower 35
+    basepower 70
     type TYPE_WATER
-    accuracy 85
-    pp 15
+    accuracy 100
+    pp 10
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
@@ -2251,11 +2251,11 @@ movedata MOVE_POISON_GAS, "Poison Gas"
 
 movedata MOVE_BARRAGE, "Barrage"
     battleeffect MOVE_EFFECT_MULTI_HIT
-    pss SPLIT_PHYSICAL
-    basepower 15
-    type TYPE_NORMAL
-    accuracy 85
-    pp 20
+    pss SPLIT_SPECIAL
+    basepower 30
+    type TYPE_PSYCHIC
+    accuracy 100
+    pp 10
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
@@ -2263,7 +2263,7 @@ movedata MOVE_BARRAGE, "Barrage"
     appeal 0x07
     contesttype CONTEST_TOUGH
     terminatedata
-    movedescription MOVE_BARRAGE, "Round objects are\nhurled at the foe to\nstrike two to five\ntimes in a row.\n"
+    movedescription MOVE_BARRAGE, "Energy is \nhurled at the foe to\nstrike two to five\ntimes in a row.\n"
 
 movedata MOVE_LEECH_LIFE, "Leech Life"
     battleeffect MOVE_EFFECT_RECOVER_HALF_DAMAGE_DEALT

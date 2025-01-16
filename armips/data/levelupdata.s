@@ -1397,9 +1397,7 @@ levelup SPECIES_ABRA
 
 levelup SPECIES_KADABRA
     learnset MOVE_CONFUSION, 0
-    learnset MOVE_KINESIS, 0
     learnset MOVE_CONFUSION, 1
-    learnset MOVE_KINESIS, 1
     learnset MOVE_DISABLE, 1
     learnset MOVE_TELEPORT, 1
     learnset MOVE_PSYBEAM, 12
@@ -1419,9 +1417,7 @@ levelup SPECIES_KADABRA
 
 
 levelup SPECIES_ALAKAZAM
-    learnset MOVE_KINESIS, 0
     learnset MOVE_CONFUSION, 1
-    learnset MOVE_KINESIS, 1
     learnset MOVE_DISABLE, 1
     learnset MOVE_TELEPORT, 1
     learnset MOVE_PSYBEAM, 12
@@ -23275,9 +23271,7 @@ levelup SPECIES_MEGA_PIDGEOT
 
 
 levelup SPECIES_MEGA_ALAKAZAM
-    learnset MOVE_KINESIS, 0
     learnset MOVE_CONFUSION, 1
-    learnset MOVE_KINESIS, 1
     learnset MOVE_DISABLE, 1
     learnset MOVE_TELEPORT, 1
     learnset MOVE_PSYBEAM, 12
