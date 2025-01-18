@@ -4278,7 +4278,7 @@ mondata SPECIES_WOBBUFFET, "Wobbuffet"
 
 
 mondata SPECIES_GIRAFARIG, "Girafarig"
-    basestats 70, 80, 65, 85, 90, 65
+    basestats 50, 50, 40, 60, 65, 65
     types TYPE_NORMAL, TYPE_PSYCHIC
     catchrate 60
     baseexp 0 // defined in baseexp.s
@@ -16060,7 +16060,7 @@ mondata SPECIES_AVALUGG, "Avalugg"
 
 mondata SPECIES_NOIBAT, "Noibat"
     basestats 40, 30, 35, 55, 45, 40
-    types TYPE_FLYING, TYPE_DRAGON
+    types TYPE_FLYING, TYPE_FLYING
     catchrate 190
     baseexp 0 // defined in baseexp.s
     evyields 4, 4, 4, 4, 4, 4
