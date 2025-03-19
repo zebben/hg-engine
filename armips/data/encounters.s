@@ -13734,7 +13734,7 @@ pokemon SPECIES_LUVDISC
 .close
 
 
-encounterdata 132   // Tohjo Falls // maybe wormadam forms? a bit "early"
+encounterdata 132   // Tohjo Falls
 
 walkrate 15
 surfrate 10
@@ -13745,46 +13745,46 @@ superrodrate 75
 walklevels 20, 20, 21, 21, 22, 22, 23, 23, 24, 24, 25, 25
 
 // morning encounter slots
-pokemon SPECIES_NIDORINA
-pokemon SPECIES_NIDORINA
-pokemon SPECIES_NIDORINO
-pokemon SPECIES_NIDORINO
-pokemon SPECIES_GEODUDE
-pokemon SPECIES_GEODUDE
-monwithform SPECIES_GEODUDE, 1
-monwithform SPECIES_GEODUDE, 1
-pokemon SPECIES_GEODUDE
-monwithform SPECIES_GEODUDE, 1
-pokemon SPECIES_NIDORINO
-pokemon SPECIES_NIDORINA
+monwithform SPECIES_GROWLITHE, 1
+pokemon SPECIES_MAGBY
+pokemon SPECIES_HIPPOPOTAS
+pokemon SPECIES_DRILBUR
+pokemon SPECIES_DWEBBLE
+pokemon SPECIES_KLINK
+pokemon SPECIES_KLANG
+pokemon SPECIES_DWEBBLE
+pokemon SPECIES_DRILBUR
+pokemon SPECIES_HIPPOPOTAS
+pokemon SPECIES_MAGBY
+monwithform SPECIES_WORMADAM, 1
 
 // day encounter slots
-pokemon SPECIES_NIDORINA
-pokemon SPECIES_NIDORINA
-pokemon SPECIES_NIDORINO
-pokemon SPECIES_NIDORINO
-pokemon SPECIES_GEODUDE
-pokemon SPECIES_GEODUDE
-monwithform SPECIES_GEODUDE, 1
-monwithform SPECIES_GEODUDE, 1
-pokemon SPECIES_GEODUDE
-monwithform SPECIES_GEODUDE, 1
-pokemon SPECIES_NIDORINO
-pokemon SPECIES_NIDORINA
+monwithform SPECIES_GROWLITHE, 1
+pokemon SPECIES_MAGBY
+pokemon SPECIES_HIPPOPOTAS
+pokemon SPECIES_DRILBUR
+pokemon SPECIES_DWEBBLE
+pokemon SPECIES_KLINK
+pokemon SPECIES_KLANG
+pokemon SPECIES_DWEBBLE
+pokemon SPECIES_DRILBUR
+pokemon SPECIES_HIPPOPOTAS
+pokemon SPECIES_MAGBY
+monwithform SPECIES_WORMADAM, 2
 
 // night encounter slots
-pokemon SPECIES_NIDORINA
-pokemon SPECIES_NIDORINA
-pokemon SPECIES_NIDORINO
-pokemon SPECIES_NIDORINO
-pokemon SPECIES_GEODUDE
-pokemon SPECIES_GEODUDE
-monwithform SPECIES_GEODUDE, 1
-monwithform SPECIES_GEODUDE, 1
-pokemon SPECIES_GEODUDE
-monwithform SPECIES_GEODUDE, 1
-pokemon SPECIES_NIDORINO
-pokemon SPECIES_NIDORINA
+pokemon SPECIES_SINISTEA
+pokemon SPECIES_MINCCINO
+pokemon SPECIES_SHELMET
+pokemon SPECIES_BOLDORE
+pokemon SPECIES_NOSEPASS
+pokemon SPECIES_SWINUB
+pokemon SPECIES_SWINUB
+pokemon SPECIES_NOSEPASS
+pokemon SPECIES_ROGGENROLA
+pokemon SPECIES_SHELMET
+pokemon SPECIES_MINCCINO
+pokemon SPECIES_SINISTEA
 
 // hoenn encounter slots
 pokemon SPECIES_ABSOL
@@ -13849,46 +13849,46 @@ superrodrate 0
 walklevels 65, 65, 65, 65, 65, 65, 65, 65, 66, 66, 66, 66
 
 // morning encounter slots
-pokemon SPECIES_DIGLETT
-pokemon SPECIES_DIGLETT
-pokemon SPECIES_DIGLETT
-pokemon SPECIES_DIGLETT
-pokemon SPECIES_DIGLETT
-pokemon SPECIES_DIGLETT
-pokemon SPECIES_DIGLETT
-pokemon SPECIES_DIGLETT
-pokemon SPECIES_DUGTRIO
-pokemon SPECIES_DUGTRIO
-pokemon SPECIES_DUGTRIO
-pokemon SPECIES_DUGTRIO
+monwithform SPECIES_GRAVELER, 1
+monwithform SPECIES_DIGLETT, 1
+pokemon SPECIES_AGGRON
+pokemon SPECIES_MAGNEZONE
+pokemon SPECIES_STEELIX
+pokemon SPECIES_ONIX
+pokemon SPECIES_SHUCKLE
+pokemon SPECIES_MAGNETON
+pokemon SPECIES_LAIRON
+pokemon SPECIES_SHUCKLE
+monwithform SPECIES_DUGTRIO, 1
+monwithform SPECIES_GOLEM, 1
 
 // day encounter slots
-pokemon SPECIES_DIGLETT
-pokemon SPECIES_DIGLETT
-pokemon SPECIES_DIGLETT
-pokemon SPECIES_DIGLETT
-pokemon SPECIES_DIGLETT
-pokemon SPECIES_DIGLETT
-pokemon SPECIES_DIGLETT
-pokemon SPECIES_DIGLETT
-pokemon SPECIES_DUGTRIO
-pokemon SPECIES_DUGTRIO
-pokemon SPECIES_DUGTRIO
-pokemon SPECIES_DUGTRIO
+monwithform SPECIES_GRAVELER, 1
+monwithform SPECIES_DIGLETT, 1
+pokemon SPECIES_AGGRON
+pokemon SPECIES_MAGNEZONE
+pokemon SPECIES_STEELIX
+pokemon SPECIES_ONIX
+pokemon SPECIES_SHUCKLE
+pokemon SPECIES_MAGNETON
+pokemon SPECIES_LAIRON
+pokemon SPECIES_SHUCKLE
+monwithform SPECIES_DUGTRIO, 1
+monwithform SPECIES_GOLEM, 1
 
 // night encounter slots
-pokemon SPECIES_DIGLETT
-pokemon SPECIES_DIGLETT
-pokemon SPECIES_DIGLETT
-pokemon SPECIES_DIGLETT
-pokemon SPECIES_DIGLETT
-pokemon SPECIES_DIGLETT
-pokemon SPECIES_DIGLETT
-pokemon SPECIES_DIGLETT
+pokemon SPECIES_MAWILE
+pokemon SPECIES_SWOOBAT
+pokemon SPECIES_PERRSERKER
+pokemon SPECIES_GLIMMET
+monwithform SPECIES_STUNFISK, 1
 pokemon SPECIES_DUGTRIO
-pokemon SPECIES_DUGTRIO
-pokemon SPECIES_DUGTRIO
-pokemon SPECIES_DUGTRIO
+pokemon SPECIES_DIGLETT
+monwithform SPECIES_STUNFISK, 1
+pokemon SPECIES_GLIMMORA
+pokemon SPECIES_PERRSERKER
+pokemon SPECIES_SWOOBAT
+pokemon SPECIES_MAWILE
 
 // hoenn encounter slots
 pokemon SPECIES_ABSOL
