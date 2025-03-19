@@ -13,7 +13,7 @@ while read -r line; do
     elif [[ $line =~ ^evolution\ && ! $line =~ EVO_NONE ]]; then
         evolution_method=$(echo "$line" | awk -F', ' '{print $1}' | sed 's/evolution //' | sed 's/EVO_//' | sed 's/_/ /g')
         evolution_criteria=$(echo "$line" | awk -F', ' '{print $2}' | sed 's/ITEM_//' | sed 's/MOVE_//' | sed 's/TYPE_//' | sed 's/_/ /g')
-        evolution_species=$(echo "$line" | awk -F', ' '{print $3}' | sed 's/SPECIES_//' | sed 's/_/ /g')
+        evolved_species=$(echo "$line" | awk -F', ' '{print $3}' | sed 's/SPECIES_//' | sed 's/_/ /g')
         if [[ -n $evolved_species && ${#species_list[@]} -gt 0 ]]; then
             evolutions_list[${#species_list[@]}-1]+="$evolved_species via $evolution_method $evolution_criteria. "
         fi
