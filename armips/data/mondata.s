@@ -13644,7 +13644,7 @@ mondata SPECIES_FERROTHORN, "Ferrothorn"
 
 
 mondata SPECIES_KLINK, "Klink"
-    basestats 40, 55, 70, 30, 45, 60
+    basestats 25, 45, 45, 30, 25, 40
     types TYPE_STEEL, TYPE_STEEL
     catchrate 130
     baseexp 0 // defined in baseexp.s
@@ -13875,7 +13875,7 @@ mondata SPECIES_CHANDELURE, "Chandelure"
 
 
 mondata SPECIES_AXEW, "Axew"
-    basestats 46, 87, 60, 57, 30, 40
+    basestats 46, 67, 50, 57, 30, 30
     types TYPE_DRAGON, TYPE_DRAGON
     catchrate 75
     baseexp 0 // defined in baseexp.s
@@ -15324,7 +15324,7 @@ mondata SPECIES_MEOWSTIC, "Meowstic"
 
 
 mondata SPECIES_HONEDGE, "Honedge"
-    basestats 45, 80, 100, 28, 35, 37
+    basestats 45, 60, 70, 28, 35, 37
     types TYPE_STEEL, TYPE_GHOST
     catchrate 180
     baseexp 0 // defined in baseexp.s
@@ -15681,8 +15681,8 @@ mondata SPECIES_HELIOLISK, "Heliolisk"
 
 
 mondata SPECIES_TYRUNT, "Tyrunt"
-    basestats 58, 89, 77, 48, 45, 45
-    types TYPE_ROCK, TYPE_DRAGON
+    basestats 58, 70, 60, 48, 25, 25
+    types TYPE_ROCK, TYPE_ROCK
     catchrate 45
     baseexp 0 // defined in baseexp.s
     evyields 4, 4, 4, 4, 4, 4
