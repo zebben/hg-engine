@@ -26,6 +26,7 @@
 
 .include "armips/asm/tm.s" // make tms infinite
 .include "armips/asm/forget_hm.s" // allows hm to be forgotten
+.include "armips/asm/mart_items.s" // customize poke mart items
 
 .if FAIRY_TYPE_IMPLEMENTED == 1
 
