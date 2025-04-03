@@ -94,7 +94,7 @@
 
 /* Mahogany City (Pre Rocket Hideout) */
 .org 0x020FBAB8
-.halfword ITEM_TINYMUSHROOM
+.halfword ITEM_TINY_MUSHROOM
 .halfword ITEM_POKE_BALL
 .halfword ITEM_POTION
 .halfword 0xFFFF
@@ -110,7 +110,7 @@
 /* Goldenrod City Herb Shop */
 .org 0x020FBACA
 .halfword ITEM_HEAL_POWDER
-.halfword ITEM_ENERGYPOWDER
+.halfword ITEM_ENERGY_POWDER
 .halfword ITEM_ENERGY_ROOT
 .halfword ITEM_REVIVAL_HERB
 .halfword 0xFFFF
@@ -163,7 +163,7 @@
 .halfword ITEM_DIRE_HIT
 .halfword ITEM_X_ACCURACY
 .halfword ITEM_X_SPECIAL
-.halfword ITEM_X_SP__DEF
+.halfword ITEM_X_SP_DEF
 .halfword 0xFFFF
 
 /* Celadon City Department Store - X Items */
@@ -175,7 +175,7 @@
 .halfword ITEM_DIRE_HIT
 .halfword ITEM_X_ACCURACY
 .halfword ITEM_X_SPECIAL
-.halfword ITEM_X_SP__DEF
+.halfword ITEM_X_SP_DEF
 .halfword 0xFFFF
 
 /* Mahogany City (Post Rocked Hideout) */
@@ -184,7 +184,7 @@
 .halfword ITEM_SUPER_POTION
 .halfword ITEM_HYPER_POTION
 .halfword ITEM_ANTIDOTE
-.halfword ITEM_PARLYZ_HEAL
+.halfword ITEM_PARALYZE_HEAL
 .halfword ITEM_SUPER_REPEL
 .halfword ITEM_REVIVE
 .halfword ITEM_AIR_MAIL
@@ -198,7 +198,7 @@
 .halfword ITEM_MAX_POTION
 .halfword ITEM_REVIVE
 .halfword ITEM_ANTIDOTE
-.halfword ITEM_PARLYZ_HEAL
+.halfword ITEM_PARALYZE_HEAL
 .halfword ITEM_BURN_HEAL
 .halfword ITEM_ICE_HEAL
 .halfword ITEM_AWAKENING
@@ -213,7 +213,7 @@
 .halfword ITEM_MAX_POTION
 .halfword ITEM_REVIVE
 .halfword ITEM_ANTIDOTE
-.halfword ITEM_PARLYZ_HEAL
+.halfword ITEM_PARALYZE_HEAL
 .halfword ITEM_BURN_HEAL
 .halfword ITEM_ICE_HEAL
 .halfword ITEM_AWAKENING
@@ -228,7 +228,7 @@
 .halfword ITEM_MAX_POTION
 .halfword ITEM_REVIVE
 .halfword ITEM_ANTIDOTE
-.halfword ITEM_PARLYZ_HEAL
+.halfword ITEM_PARALYZE_HEAL
 .halfword ITEM_BURN_HEAL
 .halfword ITEM_ICE_HEAL
 .halfword ITEM_AWAKENING
@@ -259,7 +259,7 @@
 .halfword ITEM_MAX_POTION
 .halfword ITEM_REVIVE
 .halfword ITEM_ANTIDOTE
-.halfword ITEM_PARLYZ_HEAL
+.halfword ITEM_PARALYZE_HEAL
 .halfword ITEM_BURN_HEAL
 .halfword ITEM_ICE_HEAL
 .halfword ITEM_AWAKENING
@@ -281,7 +281,6 @@
 .halfword ITEM_TM14
 .halfword ITEM_TM15
 .halfword 0xFFFF
-.close
 
 /* Badge Breakpoints */
 ZERO_BADGES equ 1
@@ -324,7 +323,7 @@ EIGHT_BADGES equ 6
 .halfword ITEM_ANTIDOTE
 .halfword ZERO_BADGES
 
-.halfword ITEM_PARLYZ_HEAL
+.halfword ITEM_PARALYZE_HEAL
 .halfword ZERO_BADGES
 
 .halfword ITEM_AWAKENING
@@ -350,3 +349,5 @@ EIGHT_BADGES equ 6
 
 .halfword ITEM_MAX_REPEL
 .halfword SEVEN_BADGES
+
+.close
