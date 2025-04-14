@@ -2487,6 +2487,7 @@ levelup SPECIES_LICKITUNG
     learnset MOVE_DISABLE, 24
     learnset MOVE_STOMP, 25
     learnset MOVE_KNOCK_OFF, 25
+    learnset MOVE_ROLLOUT, 28
     learnset MOVE_HEAL_BELL, 33
     learnset MOVE_THUNDERBOLT, 39
     learnset MOVE_ICE_BEAM, 40

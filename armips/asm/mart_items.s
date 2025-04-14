@@ -45,9 +45,9 @@
 
 /* Blackthorn City */
 .org 0x020FBA80
-.halfword ITEM_AIR_MAIL
-.halfword ITEM_NET_BALL
-.halfword ITEM_DUSK_BALL
+.halfword ITEM_CHOICE_BAND
+.halfword ITEM_CHOICE_SPECS
+.halfword ITEM_CHOICE_SCARF
 .halfword 0xFFFF
 
 /* Olivine City */
@@ -109,10 +109,10 @@
 
 /* Goldenrod City Herb Shop */
 .org 0x020FBACA
-.halfword ITEM_HEAL_POWDER
-.halfword ITEM_ENERGY_POWDER
-.halfword ITEM_ENERGY_ROOT
-.halfword ITEM_REVIVAL_HERB
+.halfword ITEM_NAIVE_MINT
+.halfword ITEM_SERIOUS_MINT
+.halfword ITEM_LONELY_MINT
+.halfword ITEM_ADAMANT_MINT
 .halfword 0xFFFF
 
 /* Cianwood City Pharmacy */
@@ -126,12 +126,12 @@
 
 /* Goldenrod City Department Store - Vitamins */
 .org 0x020FBAFA
-.halfword ITEM_PROTEIN
-.halfword ITEM_IRON
-.halfword ITEM_CALCIUM
-.halfword ITEM_ZINC
-.halfword ITEM_CARBOS
-.halfword ITEM_HP_UP
+.halfword ITEM_GENTLE_MINT
+.halfword ITEM_CAREFUL_MINT
+.halfword ITEM_SASSY_MINT
+.halfword ITEM_TIMID_MINT
+.halfword ITEM_HASTY_MINT
+.halfword ITEM_JOLLY_MINT
 .halfword 0xFFFF
 
 /* Celadon City Department Store - Vitamins */
@@ -156,14 +156,14 @@
 
 /* Goldenrod City Department Store - X Items */
 .org 0x020FBBB4
-.halfword ITEM_X_SPEED
-.halfword ITEM_X_ATTACK
-.halfword ITEM_X_DEFENSE
-.halfword ITEM_GUARD_SPEC
-.halfword ITEM_DIRE_HIT
-.halfword ITEM_X_ACCURACY
-.halfword ITEM_X_SPECIAL
-.halfword ITEM_X_SP_DEF
+.halfword ITEM_IMPISH_MINT
+.halfword ITEM_LAX_MINT
+.halfword ITEM_RELAXED_MINT
+.halfword ITEM_MODEST_MINT
+.halfword ITEM_MILD_MINT
+.halfword ITEM_RASH_MINT
+.halfword ITEM_QUIET_MINT
+.halfword ITEM_CALM_MINT
 .halfword 0xFFFF
 
 /* Celadon City Department Store - X Items */
@@ -192,17 +192,17 @@
 
 /* Goldenrod City Department Store - Healing Items */
 .org 0x020FBBEA
-.halfword ITEM_POTION
-.halfword ITEM_SUPER_POTION
-.halfword ITEM_HYPER_POTION
-.halfword ITEM_MAX_POTION
-.halfword ITEM_REVIVE
-.halfword ITEM_ANTIDOTE
-.halfword ITEM_PARALYZE_HEAL
-.halfword ITEM_BURN_HEAL
-.halfword ITEM_ICE_HEAL
-.halfword ITEM_AWAKENING
-.halfword ITEM_FULL_HEAL
+.halfword ITEM_FIRE_STONE
+.halfword ITEM_WATER_STONE
+.halfword ITEM_THUNDER_STONE
+.halfword ITEM_LEAF_STONE
+.halfword ITEM_MOON_STONE
+.halfword ITEM_SUN_STONE
+.halfword ITEM_SHINY_STONE
+.halfword ITEM_DUSK_STONE
+.halfword ITEM_DAWN_STONE
+.halfword ITEM_ICE_STONE
+.halfword ITEM_KINGS_ROCK
 .halfword 0xFFFF
 
 /* Celadon City Department Store - Healing Items */
@@ -222,48 +222,50 @@
 
 /* Goldenrod City Department Store - Trainer's Market */
 .org 0x020FBC1A
-.halfword ITEM_POTION
-.halfword ITEM_SUPER_POTION
-.halfword ITEM_HYPER_POTION
-.halfword ITEM_MAX_POTION
-.halfword ITEM_REVIVE
-.halfword ITEM_ANTIDOTE
-.halfword ITEM_PARALYZE_HEAL
-.halfword ITEM_BURN_HEAL
-.halfword ITEM_ICE_HEAL
-.halfword ITEM_AWAKENING
-.halfword ITEM_FULL_HEAL
+.halfword ITEM_PROTECTOR
+.halfword ITEM_METAL_COAT
+.halfword ITEM_UP_GRADE
+.halfword ITEM_DUBIOUS_DISC
+.halfword ITEM_SYRUPY_APPLE
+.halfword ITEM_TART_APPLE
+.halfword ITEM_SWEET_APPLE
+.halfword ITEM_FOCUS_SASH
+.halfword ITEM_EXPERT_BELT
+.halfword ITEM_NAUGHTY_MINT
+.halfword ITEM_BRAVE_MINT
+.halfword ITEM_BOLD_MINT
 .halfword 0xFFFF
 
 /* Goldenrod City Department Store - TM Corner */
 .org 0x020FBC34
-.halfword ITEM_TM70
-.halfword ITEM_TM17
-.halfword ITEM_TM54
-.halfword ITEM_TM83
-.halfword ITEM_TM16
-.halfword ITEM_TM33
-.halfword ITEM_TM22
-.halfword ITEM_TM52
-.halfword ITEM_TM38
-.halfword ITEM_TM25
-.halfword ITEM_TM14
-.halfword ITEM_TM15
+.halfword ITEM_POWER_WEIGHT
+.halfword ITEM_POWER_BRACER
+.halfword ITEM_POWER_BELT
+.halfword ITEM_POWER_LENS
+.halfword ITEM_POWER_BAND
+.halfword ITEM_POWER_ANKLET
+.halfword ITEM_ABILITY_CAPSULE
+.halfword ITEM_ROCKY_HELMET
+.halfword ITEM_EVIOLITE
+.halfword ITEM_LIGHT_CLAY
+.halfword ITEM_LEFTOVERS
+.halfword ITEM_LIFE_ORB
 .halfword 0xFFFF
 
 /* Celadon City Department Store - Trainer's Market */
 .org 0x020FBC4E
-.halfword ITEM_POTION
-.halfword ITEM_SUPER_POTION
-.halfword ITEM_HYPER_POTION
-.halfword ITEM_MAX_POTION
-.halfword ITEM_REVIVE
-.halfword ITEM_ANTIDOTE
-.halfword ITEM_PARALYZE_HEAL
-.halfword ITEM_BURN_HEAL
-.halfword ITEM_ICE_HEAL
-.halfword ITEM_AWAKENING
-.halfword ITEM_FULL_HEAL
+.halfword ITEM_POKE_BALL
+.halfword ITEM_GREAT_BALL
+.halfword ITEM_ULTRA_BALL
+.halfword ITEM_ESCAPE_ROPE
+.halfword ITEM_POKE_DOLL
+.halfword ITEM_REPEL
+.halfword ITEM_SUPER_REPEL
+.halfword ITEM_MAX_REPEL
+.halfword ITEM_GRASS_MAIL
+.halfword ITEM_FLAME_MAIL
+.halfword ITEM_BUBBLE_MAIL
+.halfword ITEM_SPACE_MAIL
 .halfword 0xFFFF
 
 /* Celadon City Department Store - TM Corner */
