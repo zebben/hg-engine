@@ -594,6 +594,7 @@ A shard that fell to the ground when a\ncomet passed nearby. It can be sold at\n
 A somewhat different Poké Ball that\nmakes it easier to catch wild Pokémon\nwhile they’re asleep.
 An item to be held by a Pokémon.\nIf the holder is hit by an attack, it\nwill be switched out of battle.
 A mysterious evolutionary lump.\nWhen held by a Pokémon that can still\revolve, it raises both Defense and Sp. Def.
+When held by a Pokémon that can still\revolve, it raises both Defense and Sp. Def.\rPrevents evolving.
 An item to be held by a Pokémon.\nThis very light stone reduces the\nweight of the holder.
 Very large pearls that have a nice\nsilvery sheen to them. They can be sold\nat a high price to shops.
 A mysterious scale that causes\na certain Pokémon to evolve.\nIt shines in rainbow colors.

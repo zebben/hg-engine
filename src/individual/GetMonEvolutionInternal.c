@@ -57,7 +57,7 @@ u16 GetMonEvolutionInternal(struct Party *party, struct PartyPokemon *pokemon, u
     holdEffect = GetItemData(heldItem, ITEM_PARAM_HOLD_EFFECT, 0);
     level = (u8)GetMonData(pokemon, MON_DATA_LEVEL, NULL);
 
-    if (species != SPECIES_KADABRA && holdEffect == HOLD_EFFECT_NO_EVOLVE && context != EVOCTX_ITEM_USE) {
+    if (species != SPECIES_KADABRA && (holdEffect == HOLD_EFFECT_NO_EVOLVE || holdEffect == HOLD_EFFECT_EVIOLITE) && context != EVOCTX_ITEM_USE) {
         return SPECIES_NONE;
     }
 
