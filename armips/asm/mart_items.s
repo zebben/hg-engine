@@ -5,8 +5,8 @@
 
 /* Cherrygrove City */
 .org 0x020FBA54
-.halfword ITEM_AIR_MAIL
-.halfword ITEM_HEAL_BALL
+.halfword ITEM_SHELL_BELL
+.halfword ITEM_SCOPE_LENS
 .halfword 0xFFFF
 
 /* Cerulean City */
@@ -17,9 +17,9 @@
 
 /* Ecruteak City */
 .org 0x020FBA60
-.halfword ITEM_AIR_MAIL
-.halfword ITEM_HEAL_BALL
-.halfword ITEM_NET_BALL
+.halfword ITEM_DAMP_ROCK
+.halfword ITEM_WIDE_LENS
+.halfword ITEM_SPELL_TAG
 .halfword 0xFFFF
 
 /* Celadon Department Store Mall */
@@ -38,23 +38,23 @@
 
 /* Violet City */
 .org 0x020FBA78
-.halfword ITEM_TUNNEL_MAIL
-.halfword ITEM_HEAL_BALL
-.halfword ITEM_NET_BALL
+.halfword ITEM_BIG_ROOT
+.halfword ITEM_LAGGING_TAIL
+.halfword ITEM_SHARP_BEAK
 .halfword 0xFFFF
 
 /* Blackthorn City */
 .org 0x020FBA80
 .halfword ITEM_CHOICE_BAND
 .halfword ITEM_CHOICE_SPECS
-.halfword ITEM_CHOICE_SCARF
+.halfword ITEM_DRAGON_FANG
 .halfword 0xFFFF
 
 /* Olivine City */
 .org 0x020FBA88
-.halfword ITEM_HEART_MAIL
-.halfword ITEM_HEAL_BALL
-.halfword ITEM_NET_BALL
+.halfword ITEM_SMOOTH_ROCK
+.halfword ITEM_EXP_SHARE
+.halfword ITEM_METAL_COAT
 .halfword 0xFFFF
 
 /* Fuchsia City */
@@ -87,21 +87,21 @@
 
 /* Azalea City */
 .org 0x020FBAB0
-.halfword ITEM_BLOOM_MAIL
-.halfword ITEM_HEAL_BALL
-.halfword ITEM_NET_BALL
+.halfword ITEM_AMULET_COIN
+.halfword ITEM_BLACK_SLUDGE
+.halfword ITEM_SILVER_POWDER
 .halfword 0xFFFF
 
 /* Mahogany City (Pre Rocket Hideout) */
 .org 0x020FBAB8
-.halfword ITEM_TINY_MUSHROOM
-.halfword ITEM_POKE_BALL
-.halfword ITEM_POTION
+.halfword ITEM_ICY_ROCK
+.halfword ITEM_LUCKY_EGG
+.halfword ITEM_NEVER_MELT_ICE
 .halfword 0xFFFF
 
 /* Safari Zone Gate */
 .org 0x020FBAC0
-.halfword ITEM_AIR_MAIL
+.halfword ITEM_POWER_HERB
 .halfword ITEM_NEST_BALL
 .halfword ITEM_DUSK_BALL
 .halfword ITEM_QUICK_BALL
@@ -117,11 +117,11 @@
 
 /* Cianwood City Pharmacy */
 .org 0x020FBAD4
-.halfword ITEM_POTION
-.halfword ITEM_SUPER_POTION
-.halfword ITEM_HYPER_POTION
-.halfword ITEM_FULL_HEAL
-.halfword ITEM_REVIVE
+.halfword ITEM_HEAT_ROCK
+.halfword ITEM_FLAME_ORB
+.halfword ITEM_AIR_BALLOON
+.halfword ITEM_BLACK_BELT
+.halfword ITEM_POISON_BARB
 .halfword 0xFFFF
 
 /* Goldenrod City Department Store - Vitamins */
@@ -184,10 +184,10 @@
 .halfword ITEM_SUPER_POTION
 .halfword ITEM_HYPER_POTION
 .halfword ITEM_ANTIDOTE
-.halfword ITEM_PARALYZE_HEAL
-.halfword ITEM_SUPER_REPEL
-.halfword ITEM_REVIVE
-.halfword ITEM_AIR_MAIL
+.halfword ITEM_FAIRY_FEATHER
+.halfword ITEM_NEVER_MELT_ICE
+.halfword ITEM_CHOICE_SCARF
+.halfword ITEM_ICY_ROCK
 .halfword 0xFFFF
 
 /* Goldenrod City Department Store - Healing Items */
@@ -301,7 +301,7 @@ EIGHT_BADGES equ 6
 .halfword ITEM_GREAT_BALL
 .halfword THREE_BADGES
 
-.halfword ITEM_GREAT_BALL
+.halfword ITEM_ULTRA_BALL
 .halfword FIVE_BADGES
 
 .halfword ITEM_POTION
@@ -313,10 +313,10 @@ EIGHT_BADGES equ 6
 .halfword ITEM_HYPER_POTION
 .halfword FIVE_BADGES
 
-.halfword ITEM_MAX_POTION
+.halfword ITEM_SITRUS_BERRY
 .halfword SEVEN_BADGES
 
-.halfword ITEM_FULL_RESTORE
+.halfword ITEM_MAX_POTION
 .halfword EIGHT_BADGES
 
 .halfword ITEM_REVIVE
@@ -328,16 +328,16 @@ EIGHT_BADGES equ 6
 .halfword ITEM_PARALYZE_HEAL
 .halfword ZERO_BADGES
 
-.halfword ITEM_AWAKENING
-.halfword ONE_BADGE
-
-.halfword ITEM_BURN_HEAL
-.halfword ONE_BADGE
-
-.halfword ITEM_ICE_HEAL
-.halfword ONE_BADGE
-
 .halfword ITEM_FULL_HEAL
+.halfword ONE_BADGE
+
+.halfword ITEM_ORAN_BERRY
+.halfword ONE_BADGE
+
+.halfword ITEM_ETHER
+.halfword ONE_BADGE
+
+.halfword ITEM_ELIXIR
 .halfword FIVE_BADGES
 
 .halfword ITEM_ESCAPE_ROPE

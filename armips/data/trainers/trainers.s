@@ -6236,7 +6236,7 @@ trainerdata 149, "Dean"
         ivs 0
         abilityslot 32
         level 65
-        monwithform SPECIES_SLOWBRO, 1
+        monwithform SPECIES_SLOWBRO, 2
         move MOVE_GUNK_SHOT
         move MOVE_WATERFALL
         move MOVE_SLACK_OFF

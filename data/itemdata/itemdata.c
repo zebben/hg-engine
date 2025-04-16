@@ -143,7 +143,7 @@ const ITEMDATA __data[] =
 
 [ITEM_ULTRA_BALL] =
 {
-    .price = 1000,
+    .price = 800,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -208,7 +208,7 @@ const ITEMDATA __data[] =
 
 [ITEM_GREAT_BALL] =
 {
-    .price = 600,
+    .price = 500,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -273,7 +273,7 @@ const ITEMDATA __data[] =
 
 [ITEM_POKE_BALL] =
 {
-    .price = 200,
+    .price = 150,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -533,7 +533,7 @@ const ITEMDATA __data[] =
 
 [ITEM_NEST_BALL] =
 {
-    .price = 1000,
+    .price = 700,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -598,7 +598,7 @@ const ITEMDATA __data[] =
 
 [ITEM_REPEAT_BALL] =
 {
-    .price = 1000,
+    .price = 500,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -663,7 +663,7 @@ const ITEMDATA __data[] =
 
 [ITEM_TIMER_BALL] =
 {
-    .price = 1000,
+    .price = 700,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -858,7 +858,7 @@ const ITEMDATA __data[] =
 
 [ITEM_DUSK_BALL] =
 {
-    .price = 1000,
+    .price = 700,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -988,7 +988,7 @@ const ITEMDATA __data[] =
 
 [ITEM_QUICK_BALL] =
 {
-    .price = 1000,
+    .price = 700,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -1508,7 +1508,7 @@ const ITEMDATA __data[] =
 
 [ITEM_FULL_RESTORE] =
 {
-    .price = 3000,
+    .price = 5000,
     .holdEffect = 0,
     .holdEffectParam = 255,
     .pluckEffect = 0,
@@ -1768,7 +1768,7 @@ const ITEMDATA __data[] =
 
 [ITEM_FULL_HEAL] =
 {
-    .price = 250,
+    .price = 325,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -2483,7 +2483,7 @@ const ITEMDATA __data[] =
 
 [ITEM_ETHER] =
 {
-    .price = 1200,
+    .price = 750,
     .holdEffect = 0,
     .holdEffectParam = 10,
     .pluckEffect = 0,
@@ -2548,7 +2548,7 @@ const ITEMDATA __data[] =
 
 [ITEM_MAX_ETHER] =
 {
-    .price = 2000,
+    .price = 1500,
     .holdEffect = 0,
     .holdEffectParam = 255,
     .pluckEffect = 0,
@@ -2613,7 +2613,7 @@ const ITEMDATA __data[] =
 
 [ITEM_ELIXIR] =
 {
-    .price = 3000,
+    .price = 2500,
     .holdEffect = 0,
     .holdEffectParam = 10,
     .pluckEffect = 0,
@@ -2678,7 +2678,7 @@ const ITEMDATA __data[] =
 
 [ITEM_MAX_ELIXIR] =
 {
-    .price = 4500,
+    .price = 4000,
     .holdEffect = 0,
     .holdEffectParam = 255,
     .pluckEffect = 0,
@@ -4953,7 +4953,7 @@ const ITEMDATA __data[] =
 
 [ITEM_SUPER_REPEL] =
 {
-    .price = 500,
+    .price = 300,
     .holdEffect = 0,
     .holdEffectParam = 200,
     .pluckEffect = 0,
@@ -5018,7 +5018,7 @@ const ITEMDATA __data[] =
 
 [ITEM_MAX_REPEL] =
 {
-    .price = 700,
+    .price = 400,
     .holdEffect = 0,
     .holdEffectParam = 250,
     .pluckEffect = 0,
@@ -5148,7 +5148,7 @@ const ITEMDATA __data[] =
 
 [ITEM_REPEL] =
 {
-    .price = 350,
+    .price = 150,
     .holdEffect = 0,
     .holdEffectParam = 100,
     .pluckEffect = 0,
@@ -8658,7 +8658,7 @@ const ITEMDATA __data[] =
 
 [ITEM_ORAN_BERRY - NUM_UNKNOWN_SLOTS] =
 {
-    .price = 20,
+    .price = 200,
     .holdEffect = HOLD_EFFECT_HP_RESTORE,
     .holdEffectParam = 10,
     .pluckEffect = 7,
@@ -8853,7 +8853,7 @@ const ITEMDATA __data[] =
 
 [ITEM_SITRUS_BERRY - NUM_UNKNOWN_SLOTS] =
 {
-    .price = 20,
+    .price = 1000,
     .holdEffect = HOLD_EFFECT_HP_PCT_RESTORE,
     .holdEffectParam = 25,
     .pluckEffect = 10,
@@ -12883,7 +12883,7 @@ const ITEMDATA __data[] =
 
 [ITEM_CHOICE_BAND - NUM_UNKNOWN_SLOTS] =
 {
-    .price = 100,
+    .price = 7000,
     .holdEffect = HOLD_EFFECT_CHOICE_ATK,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -16133,7 +16133,7 @@ const ITEMDATA __data[] =
 
 [ITEM_LIFE_ORB - NUM_UNKNOWN_SLOTS] =
 {
-    .price = 200,
+    .price = 6000,
     .holdEffect = HOLD_EFFECT_HP_DRAIN_ON_ATK,
     .holdEffectParam = 30,
     .pluckEffect = 0,
@@ -17238,7 +17238,7 @@ const ITEMDATA __data[] =
 
 [ITEM_CHOICE_SCARF - NUM_UNKNOWN_SLOTS] =
 {
-    .price = 200,
+    .price = 7000,
     .holdEffect = HOLD_EFFECT_CHOICE_SPEED,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -17888,7 +17888,7 @@ const ITEMDATA __data[] =
 
 [ITEM_CHOICE_SPECS - NUM_UNKNOWN_SLOTS] =
 {
-    .price = 200,
+    .price = 7000,
     .holdEffect = HOLD_EFFECT_CHOICE_SPATK,
     .holdEffectParam = 0,
     .pluckEffect = 0,
