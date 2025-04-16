@@ -4956,8 +4956,8 @@ evodata SPECIES_BASTIODON
     terminateevodata
 
 evodata SPECIES_BURMY
-    evolution EVO_LEVEL_FEMALE, 20, SPECIES_WORMADAM
-    evolution EVO_LEVEL_MALE, 20, SPECIES_MOTHIM
+    evolution EVO_LEVEL_FEMALE, 28, SPECIES_WORMADAM
+    evolution EVO_LEVEL_MALE, 28, SPECIES_MOTHIM
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE

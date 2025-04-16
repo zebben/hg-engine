@@ -9266,8 +9266,9 @@ levelup SPECIES_BIBAREL
 levelup SPECIES_KRICKETOT
     learnset MOVE_GROWL, 1
     learnset MOVE_BIDE, 1
-    learnset MOVE_STRUGGLE_BUG, 6
-    learnset MOVE_BUG_BITE, 16
+    learnset MOVE_TACKLE, 1
+    learnset MOVE_BUG_BITE, 12
+    learnset MOVE_QUICK_ATTACK, 15
     terminatelearnset
 
 
@@ -9276,12 +9277,16 @@ levelup SPECIES_KRICKETUNE
     learnset MOVE_FURY_CUTTER, 1
     learnset MOVE_GROWL, 1
     learnset MOVE_BIDE, 1
+    learnset MOVE_BUG_BITE, 12
     learnset MOVE_ABSORB, 14
+    learnset MOVE_QUICK_ATTACK, 15
     learnset MOVE_SING, 18
     learnset MOVE_FOCUS_ENERGY, 22
+    learnset MOVE_COVET, 24
     learnset MOVE_SLASH, 26
     learnset MOVE_X_SCISSOR, 30
     learnset MOVE_BODY_SLAM, 30
+    learnset MOVE_RAPID_SPIN, 32
     learnset MOVE_SCREECH, 34
     learnset MOVE_TAUNT, 38
     learnset MOVE_BODY_SLAM, 39
@@ -9485,8 +9490,9 @@ levelup SPECIES_BASTIODON
 
 levelup SPECIES_BURMY
     learnset MOVE_PROTECT, 1
-    learnset MOVE_TACKLE, 10
-    learnset MOVE_BUG_BITE, 15
+    learnset MOVE_TACKLE, 3
+    learnset MOVE_BUG_BITE, 7
+    learnset MOVE_GUST, 15
     learnset MOVE_HIDDEN_POWER, 20
     terminatelearnset
 
@@ -12366,10 +12372,10 @@ levelup SPECIES_MUSHARNA
 
 
 levelup SPECIES_PIDOVE
-    learnset MOVE_GUST, 1
+    learnset MOVE_TACKLE, 1
     learnset MOVE_GROWL, 1
-    learnset MOVE_GROWL, 4
     learnset MOVE_LEER, 5
+    learnset MOVE_GUST, 6
     learnset MOVE_QUICK_ATTACK, 9
     learnset MOVE_AIR_CUTTER, 15
     learnset MOVE_TAUNT, 18
