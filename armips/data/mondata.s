@@ -225,7 +225,7 @@ mondata SPECIES_BLASTOISE, "Blastoise"
 
 
 mondata SPECIES_CATERPIE, "Caterpie"
-    basestats 45, 30, 35, 45, 20, 20
+    basestats 45, 40, 35, 45, 20, 20
     types TYPE_BUG, TYPE_BUG
     catchrate 255
     baseexp 0 // defined in baseexp.s
@@ -288,7 +288,7 @@ mondata SPECIES_BUTTERFREE, "Butterfree"
 
 
 mondata SPECIES_WEEDLE, "Weedle"
-    basestats 40, 35, 30, 50, 20, 20
+    basestats 40, 55, 30, 50, 20, 20
     types TYPE_BUG, TYPE_POISON
     catchrate 255
     baseexp 0 // defined in baseexp.s
@@ -8667,7 +8667,7 @@ mondata SPECIES_BASTIODON, "Bastiodon"
 
 
 mondata SPECIES_BURMY, "Burmy"
-    basestats 40, 29, 45, 36, 29, 45
+    basestats 40, 36, 45, 36, 29, 45
     types TYPE_BUG, TYPE_BUG
     catchrate 120
     baseexp 0 // defined in baseexp.s

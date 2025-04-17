@@ -31,7 +31,7 @@ trainerdata 0, "-"
     endparty
 
 trainerdata 1, "Silver"
-    trainermontype TRAINER_DATA_TYPE_NOTHING
+    trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES | TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_ABILITY | TRAINER_DATA_TYPE_BALL | TRAINER_DATA_TYPE_IV_EV_SET | TRAINER_DATA_TYPE_NATURE_SET | TRAINER_DATA_TYPE_SHINY_LOCK | TRAINER_DATA_TYPE_ADDITIONAL_FLAGS
     trainerclass TRAINERCLASS_RIVAL
     nummons 3
     item ITEM_NONE
@@ -1918,7 +1918,7 @@ trainerdata 41, "Clyde"
     endparty
 
 trainerdata 42, "Nathan"
-    trainermontype TRAINER_DATA_TYPE_NOTHING
+    trainermontype TRAINER_DATA_TYPE_MOVES
     trainerclass TRAINERCLASS_PSYCHIC_M
     nummons 2
     item ITEM_NONE
@@ -5130,7 +5130,7 @@ trainerdata 123, "Tully"
     endparty
 
 trainerdata 124, "Wilton"
-    trainermontype TRAINER_DATA_TYPE_NOTHING
+    trainermontype TRAINER_DATA_TYPE_MOVES
     trainerclass TRAINERCLASS_FISHERMAN
     nummons 3
     item ITEM_NONE
@@ -6158,7 +6158,7 @@ trainerdata 147, "Ted"
     endparty
 
 trainerdata 148, "Lloyd"
-    trainermontype TRAINER_DATA_TYPE_NOTHING | TRAINER_DATA_TYPE_ITEMS
+    trainermontype TRAINER_DATA_TYPE_MOVES | TRAINER_DATA_TYPE_ITEMS
     trainerclass TRAINERCLASS_CAMPER
     nummons 4
     item ITEM_NONE
@@ -8365,7 +8365,7 @@ trainerdata 205, "Nick"
     endparty
 
 trainerdata 206, "Gwen"
-    trainermontype TRAINER_DATA_TYPE_NOTHING
+    trainermontype TRAINER_DATA_TYPE_MOVES
     trainerclass TRAINERCLASS_ACE_TRAINER_F
     nummons 4
     item ITEM_NONE
@@ -11790,7 +11790,7 @@ trainerdata 264, "Silver"
 trainerdata 265, "Silver"
     trainermontype TRAINER_DATA_TYPE_NOTHING
     trainerclass TRAINERCLASS_RIVAL
-    nummons 2
+    nummons 1
     item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
@@ -11805,14 +11805,6 @@ trainerdata 265, "Silver"
         abilityslot 0
         level 5
         pokemon SPECIES_CHIKORITA
-        ballseal 0
-
-        // mon 1
-        ivs 0
-        abilityslot 0
-        level 5
-        pokemon SPECIES_CHIKORITA
-        ballseal 0
     endparty
 
 trainerdata 266, "Silver"
@@ -13474,7 +13466,7 @@ trainerdata 289, "Silver"
     endparty
 
 trainerdata 290, "Li"
-    trainermontype TRAINER_DATA_TYPE_NOTHING
+    trainermontype TRAINER_DATA_TYPE_MOVES
     trainerclass TRAINERCLASS_ELDER
     nummons 3
     item ITEM_NONE
@@ -15038,7 +15030,7 @@ trainerdata 319, "Bill"
     endparty
 
 trainerdata 320, "Martin"
-    trainermontype TRAINER_DATA_TYPE_NOTHING
+    trainermontype TRAINER_DATA_TYPE_MOVES
     trainerclass TRAINERCLASS_FISHERMAN
     nummons 3
     item ITEM_NONE
@@ -15655,7 +15647,7 @@ trainerdata 331, "Billy"
     endparty
 
 trainerdata 332, "Heidi"
-    trainermontype TRAINER_DATA_TYPE_NOTHING
+    trainermontype TRAINER_DATA_TYPE_MOVES
     trainerclass TRAINERCLASS_PICNICKER
     nummons 4
     item ITEM_NONE
@@ -15779,7 +15771,7 @@ trainerdata 333, "Edna"
     endparty
 
 trainerdata 334, "Gina"
-    trainermontype TRAINER_DATA_TYPE_NOTHING
+    trainermontype TRAINER_DATA_TYPE_MOVES
     trainerclass TRAINERCLASS_PICNICKER
     nummons 3
     item ITEM_NONE
@@ -16875,7 +16867,7 @@ trainerdata 356, "Michelle"
     endparty
 
 trainerdata 357, "Clarke"
-    trainermontype TRAINER_DATA_TYPE_NOTHING
+    trainermontype TRAINER_DATA_TYPE_MOVES
     trainerclass TRAINERCLASS_HIKER
     nummons 4
     item ITEM_NONE
@@ -16991,7 +16983,7 @@ trainerdata 358, "Kenny"
     endparty
 
 trainerdata 359, "Jim"
-    trainermontype TRAINER_DATA_TYPE_NOTHING
+    trainermontype TRAINER_DATA_TYPE_MOVES
     trainerclass TRAINERCLASS_HIKER
     nummons 4
     item ITEM_NONE
@@ -19345,7 +19337,7 @@ trainerdata 411, "Vernon"
     endparty
 
 trainerdata 412, "Eli"
-    trainermontype TRAINER_DATA_TYPE_NOTHING
+    trainermontype TRAINER_DATA_TYPE_MOVES
     trainerclass TRAINERCLASS_PSYCHIC_M
     nummons 3
     item ITEM_NONE
@@ -19629,7 +19621,7 @@ trainerdata 416, "Jo & Zoe"
     endparty
 
 trainerdata 417, "Jenn"
-    trainermontype TRAINER_DATA_TYPE_NOTHING
+    trainermontype TRAINER_DATA_TYPE_MOVES
     trainerclass TRAINERCLASS_ACE_TRAINER_F
     nummons 2
     item ITEM_NONE
@@ -20414,7 +20406,7 @@ trainerdata 434, "Chad"
     endparty
 
 trainerdata 435, "Chad"
-    trainermontype TRAINER_DATA_TYPE_NOTHING
+    trainermontype TRAINER_DATA_TYPE_MOVES
     trainerclass TRAINERCLASS_SCHOOL_KID_M
     nummons 2
     item ITEM_NONE
@@ -26932,7 +26924,7 @@ trainerdata 575, "Dan"
     endparty
 
 trainerdata 576, "Theron"
-    trainermontype TRAINER_DATA_TYPE_NOTHING
+    trainermontype TRAINER_DATA_TYPE_MOVES
     trainerclass TRAINERCLASS_BIKER
     nummons 3
     item ITEM_NONE
@@ -26979,7 +26971,7 @@ trainerdata 576, "Theron"
     endparty
 
 trainerdata 577, "Markey"
-    trainermontype TRAINER_DATA_TYPE_NOTHING
+    trainermontype TRAINER_DATA_TYPE_MOVES
     trainerclass TRAINERCLASS_BIKER
     nummons 2
     item ITEM_NONE
@@ -28289,7 +28281,7 @@ trainerdata 608, "Wilton"
         // mon 2
         ivs 0
         abilityslot 0
-        level 63
+        level 43
         pokemon SPECIES_SEAKING
         ballseal 0
     endparty
@@ -29513,7 +29505,7 @@ trainerdata 633, "Aiden"
     endparty
 
 trainerdata 634, "Ernest"
-    trainermontype TRAINER_DATA_TYPE_NOTHING
+    trainermontype TRAINER_DATA_TYPE_MOVES
     trainerclass TRAINERCLASS_BIKER
     nummons 4
     item ITEM_NONE
@@ -33153,7 +33145,7 @@ trainerdata 697, "Stacey"
         // mon 2
         ivs 0
         abilityslot 0
-        level 60
+        level 70
         pokemon SPECIES_EELEKTROSS
         move MOVE_CLOSE_COMBAT
         move MOVE_WILD_CHARGE
