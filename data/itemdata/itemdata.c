@@ -1898,7 +1898,7 @@ const ITEMDATA __data[] =
 
 [ITEM_MAX_REVIVE] =
 {
-    .price = 4000,
+    .price = 5000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -13013,7 +13013,7 @@ const ITEMDATA __data[] =
 
 [ITEM_SILVER_POWDER - NUM_UNKNOWN_SLOTS] =
 {
-    .price = 100,
+    .price = 700,
     .holdEffect = HOLD_EFFECT_STRENGTHEN_BUG,
     .holdEffectParam = 20,
     .pluckEffect = 0,
@@ -13598,7 +13598,7 @@ const ITEMDATA __data[] =
 
 [ITEM_LUCKY_EGG - NUM_UNKNOWN_SLOTS] =
 {
-    .price = 200,
+    .price = 1000,
     .holdEffect = HOLD_EFFECT_EXP_UP,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -13663,7 +13663,7 @@ const ITEMDATA __data[] =
 
 [ITEM_SCOPE_LENS - NUM_UNKNOWN_SLOTS] =
 {
-    .price = 200,
+    .price = 700,
     .holdEffect = HOLD_EFFECT_CRITRATE_UP,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -14053,7 +14053,7 @@ const ITEMDATA __data[] =
 
 [ITEM_HARD_STONE - NUM_UNKNOWN_SLOTS] =
 {
-    .price = 100,
+    .price = 700,
     .holdEffect = HOLD_EFFECT_STRENGTHEN_ROCK,
     .holdEffectParam = 20,
     .pluckEffect = 0,
@@ -14248,7 +14248,7 @@ const ITEMDATA __data[] =
 
 [ITEM_BLACK_BELT - NUM_UNKNOWN_SLOTS] =
 {
-    .price = 100,
+    .price = 700,
     .holdEffect = HOLD_EFFECT_STRENGTHEN_FIGHT,
     .holdEffectParam = 20,
     .pluckEffect = 0,
@@ -14443,7 +14443,7 @@ const ITEMDATA __data[] =
 
 [ITEM_SHARP_BEAK - NUM_UNKNOWN_SLOTS] =
 {
-    .price = 100,
+    .price = 700,
     .holdEffect = HOLD_EFFECT_STRENGTHEN_FLYING,
     .holdEffectParam = 20,
     .pluckEffect = 0,
@@ -14508,7 +14508,7 @@ const ITEMDATA __data[] =
 
 [ITEM_POISON_BARB - NUM_UNKNOWN_SLOTS] =
 {
-    .price = 100,
+    .price = 700,
     .holdEffect = HOLD_EFFECT_STRENGTHEN_POISON,
     .holdEffectParam = 20,
     .pluckEffect = 0,
@@ -14573,7 +14573,7 @@ const ITEMDATA __data[] =
 
 [ITEM_NEVER_MELT_ICE - NUM_UNKNOWN_SLOTS] =
 {
-    .price = 100,
+    .price = 700,
     .holdEffect = HOLD_EFFECT_STRENGTHEN_ICE,
     .holdEffectParam = 20,
     .pluckEffect = 0,
@@ -14638,7 +14638,7 @@ const ITEMDATA __data[] =
 
 [ITEM_SPELL_TAG - NUM_UNKNOWN_SLOTS] =
 {
-    .price = 100,
+    .price = 700,
     .holdEffect = HOLD_EFFECT_STRENGTHEN_GHOST,
     .holdEffectParam = 20,
     .pluckEffect = 0,
@@ -14833,7 +14833,7 @@ const ITEMDATA __data[] =
 
 [ITEM_DRAGON_FANG - NUM_UNKNOWN_SLOTS] =
 {
-    .price = 100,
+    .price = 700,
     .holdEffect = HOLD_EFFECT_STRENGTHEN_DRAGON,
     .holdEffectParam = 20,
     .pluckEffect = 0,
@@ -14898,7 +14898,7 @@ const ITEMDATA __data[] =
 
 [ITEM_SILK_SCARF - NUM_UNKNOWN_SLOTS] =
 {
-    .price = 100,
+    .price = 700,
     .holdEffect = HOLD_EFFECT_STRENGTHEN_NORMAL,
     .holdEffectParam = 20,
     .pluckEffect = 0,
@@ -15028,7 +15028,7 @@ const ITEMDATA __data[] =
 
 [ITEM_SHELL_BELL - NUM_UNKNOWN_SLOTS] =
 {
-    .price = 200,
+    .price = 400,
     .holdEffect = HOLD_EFFECT_HP_RESTORE_ON_DMG,
     .holdEffectParam = 8,
     .pluckEffect = 0,
@@ -15808,7 +15808,7 @@ const ITEMDATA __data[] =
 
 [ITEM_WIDE_LENS - NUM_UNKNOWN_SLOTS] =
 {
-    .price = 200,
+    .price = 400,
     .holdEffect = HOLD_EFFECT_ACCURACY_UP,
     .holdEffectParam = 10,
     .pluckEffect = 0,
@@ -16328,7 +16328,7 @@ const ITEMDATA __data[] =
 
 [ITEM_FLAME_ORB - NUM_UNKNOWN_SLOTS] =
 {
-    .price = 100,
+    .price = 700,
     .holdEffect = HOLD_EFFECT_BRN_USER,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -16848,7 +16848,7 @@ const ITEMDATA __data[] =
 
 [ITEM_BLACK_SLUDGE - NUM_UNKNOWN_SLOTS] =
 {
-    .price = 200,
+    .price = 600,
     .holdEffect = HOLD_EFFECT_HP_RESTORE_PSN_TYPE,
     .holdEffectParam = 16,
     .pluckEffect = 0,
@@ -16913,7 +16913,7 @@ const ITEMDATA __data[] =
 
 [ITEM_ICY_ROCK - NUM_UNKNOWN_SLOTS] =
 {
-    .price = 200,
+    .price = 500,
     .holdEffect = HOLD_EFFECT_EXTEND_HAIL,
     .holdEffectParam = 3,
     .pluckEffect = 0,
@@ -16978,7 +16978,7 @@ const ITEMDATA __data[] =
 
 [ITEM_SMOOTH_ROCK - NUM_UNKNOWN_SLOTS] =
 {
-    .price = 200,
+    .price = 500,
     .holdEffect = HOLD_EFFECT_EXTEND_SANDSTORM,
     .holdEffectParam = 3,
     .pluckEffect = 0,
@@ -17043,7 +17043,7 @@ const ITEMDATA __data[] =
 
 [ITEM_HEAT_ROCK - NUM_UNKNOWN_SLOTS] =
 {
-    .price = 200,
+    .price = 500,
     .holdEffect = HOLD_EFFECT_EXTEND_SUN,
     .holdEffectParam = 3,
     .pluckEffect = 0,
@@ -17108,7 +17108,7 @@ const ITEMDATA __data[] =
 
 [ITEM_DAMP_ROCK - NUM_UNKNOWN_SLOTS] =
 {
-    .price = 200,
+    .price = 500,
     .holdEffect = HOLD_EFFECT_EXTEND_RAIN,
     .holdEffectParam = 3,
     .pluckEffect = 0,
@@ -17823,7 +17823,7 @@ const ITEMDATA __data[] =
 
 [ITEM_BIG_ROOT - NUM_UNKNOWN_SLOTS] =
 {
-    .price = 200,
+    .price = 600,
     .holdEffect = HOLD_EFFECT_LEECH_BOOST,
     .holdEffectParam = 30,
     .pluckEffect = 0,
@@ -36608,7 +36608,7 @@ const ITEMDATA __data[] =
 
 [ITEM_AIR_BALLOON - NUM_UNKNOWN_SLOTS_EXPLORER_KIT] =
 {
-    .price = 200,
+    .price = 700,
     .holdEffect = HOLD_EFFECT_UNGROUND_DESTROYED_ON_HIT,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -39143,7 +39143,7 @@ const ITEMDATA __data[] =
 
 [ITEM_ABILITY_PATCH - NUM_UNKNOWN_SLOTS_EXPLORER_KIT] =
 {
-    .price = 25000,
+    .price = 5000,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -41418,7 +41418,7 @@ const ITEMDATA __data[] =
 
 [ITEM_CLEAR_AMULET - NUM_UNKNOWN_SLOTS_EXPLORER_KIT] =
 {
-    .price = 200,
+    .price = 1000,
     .holdEffect = HOLD_EFFECT_PREVENT_STAT_DROPS,
     .holdEffectParam = 0,
     .pluckEffect = 0,
