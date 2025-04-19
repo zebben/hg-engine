@@ -9269,6 +9269,7 @@ levelup SPECIES_KRICKETOT
     learnset MOVE_TACKLE, 1
     learnset MOVE_BUG_BITE, 12
     learnset MOVE_QUICK_ATTACK, 15
+    learnset MOVE_SING, 18
     terminatelearnset
 
 

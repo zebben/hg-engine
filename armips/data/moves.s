@@ -587,11 +587,11 @@ movedata MOVE_WRAP, "Wrap"
     movedescription MOVE_WRAP, "A long body or vines\nare used to wrap and\nsqueeze the foe for\ntwo to five turns.\n"
 
 movedata MOVE_TAKE_DOWN, "Take Down"
-    battleeffect MOVE_EFFECT_RECOIL_QUARTER
+    battleeffect MOVE_EFFECT_RECOIL_THIRD
     pss SPLIT_PHYSICAL
-    basepower 100
+    basepower 120
     type TYPE_NORMAL
-    accuracy 90
+    accuracy 100
     pp 15
     effectchance 0
     target RANGE_SINGLE_TARGET
@@ -1069,7 +1069,7 @@ movedata MOVE_DRILL_PECK, "Drill Peck"
 movedata MOVE_SUBMISSION, "Submission"
     battleeffect MOVE_EFFECT_RECOIL_THIRD
     pss SPLIT_PHYSICAL
-    basepower 110
+    basepower 120
     type TYPE_FIGHTING
     accuracy 100
     pp 15
@@ -2075,20 +2075,20 @@ movedata MOVE_CLAMP, "Clamp"
     movedescription MOVE_CLAMP, "The foe is clamped\nand squeezed by\nthe user’s very thick\nand sturdy shell for\ntwo to five turns."
 
 movedata MOVE_SWIFT, "Swift"
-    battleeffect MOVE_EFFECT_BYPASS_ACCURACY
+    battleeffect MOVE_EFFECT_PRIORITY_1
     pss SPLIT_SPECIAL
-    basepower 60
+    basepower 45
     type TYPE_NORMAL
-    accuracy 0
+    accuracy 100
     pp 20
     effectchance 0
     target RANGE_ADJACENT_OPPONENTS
-    priority 0
+    priority 1
     flags FLAG_KINGS_ROCK | FLAG_MIRROR_MOVE | FLAG_PROTECT
     appeal 0x11
     contesttype CONTEST_COOL
     terminatedata
-    movedescription MOVE_SWIFT, "Star-shaped rays are\nshot at the foe.\nThis attack never\nmisses.\n"
+    movedescription MOVE_SWIFT, "Star-shaped rays are\nshot at the foe.\nThis move\nalways goes first."
 
 movedata MOVE_SKULL_BASH, "Skull Bash"
     battleeffect MOVE_EFFECT_CHARGE_TURN_DEF_UP
@@ -2621,10 +2621,10 @@ movedata MOVE_SUPER_FANG, "Super Fang"
 movedata MOVE_SLASH, "Slash"
     battleeffect MOVE_EFFECT_HIGH_CRITICAL
     pss SPLIT_PHYSICAL
-    basepower 70
+    basepower 95
     type TYPE_NORMAL
     accuracy 100
-    pp 20
+    pp 15
     effectchance 0
     target RANGE_SINGLE_TARGET
     priority 0
