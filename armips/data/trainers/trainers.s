@@ -1094,8 +1094,8 @@ trainerdata 29, "Rod"
         level 10
         pokemon SPECIES_GLIGAR
         item ITEM_NONE
-        move MOVE_WING_ATTACK
-        move MOVE_DIG
+        move MOVE_GUST
+        move MOVE_MUD_SLAP
         move MOVE_GROWL
         move MOVE_NONE
         ability ABILITY_HYPER_CUTTER
@@ -1113,10 +1113,10 @@ trainerdata 29, "Rod"
         pokemon SPECIES_MANTYKE
         item ITEM_NONE
         move MOVE_WATER_GUN
-        move MOVE_WING_ATTACK
+        move MOVE_GUST
         move MOVE_AQUA_RING
         move MOVE_NONE
-        ability ABILITY_KEEN_EYE
+        ability ABILITY_WATER_ABSORB
         setivs 25, 25, 25, 25, 25, 25 // hp, atk, def, spd, spatk, spdef
         setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_SERIOUS
@@ -2231,7 +2231,7 @@ trainerdata 50, "Abe"
         abilityslot 0
         level 9
         pokemon SPECIES_NOIBAT
-        item ITEM_ORAN_BERRY
+        item ITEM_NONE
         move MOVE_GUST
         move MOVE_DRAGON_BREATH
         move MOVE_ABSORB
@@ -2249,7 +2249,7 @@ trainerdata 50, "Abe"
         abilityslot 0
         level 10
         pokemon SPECIES_STARLY
-        item ITEM_ORAN_BERRY
+        item ITEM_NONE
         move MOVE_PECK
         move MOVE_QUICK_ATTACK
         move MOVE_GROWL
