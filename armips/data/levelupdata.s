@@ -9267,15 +9267,13 @@ levelup SPECIES_KRICKETOT
     learnset MOVE_GROWL, 1
     learnset MOVE_BIDE, 1
     learnset MOVE_TACKLE, 1
-    learnset MOVE_BUG_BITE, 12
-    learnset MOVE_QUICK_ATTACK, 15
+    learnset MOVE_STRUGGLE_BUG, 12
+    learnset MOVE_SWIFT, 15
     learnset MOVE_SING, 18
     terminatelearnset
 
 
 levelup SPECIES_KRICKETUNE
-    learnset MOVE_FURY_CUTTER, 0
-    learnset MOVE_FURY_CUTTER, 1
     learnset MOVE_GROWL, 1
     learnset MOVE_BIDE, 1
     learnset MOVE_BUG_BITE, 12
@@ -9284,19 +9282,18 @@ levelup SPECIES_KRICKETUNE
     learnset MOVE_SING, 18
     learnset MOVE_FOCUS_ENERGY, 22
     learnset MOVE_COVET, 24
-    learnset MOVE_SLASH, 26
-    learnset MOVE_X_SCISSOR, 30
-    learnset MOVE_BODY_SLAM, 30
+    learnset MOVE_SING, 26
+    learnset MOVE_BUG_BUZZ, 30
+    learnset MOVE_HYPER_VOICE, 30
     learnset MOVE_RAPID_SPIN, 32
     learnset MOVE_SCREECH, 34
     learnset MOVE_TAUNT, 38
-    learnset MOVE_BODY_SLAM, 39
     learnset MOVE_U_TURN, 40
-    learnset MOVE_NIGHT_SLASH, 42
+    learnset MOVE_SNARL, 42
     learnset MOVE_TAILWIND, 44
-    learnset MOVE_CLOSE_COMBAT, 46
+    learnset MOVE_FOCUS_BLAST, 46
     learnset MOVE_PERISH_SONG, 50
-    learnset MOVE_LEECH_LIFE, 55
+    learnset MOVE_GIGA_DRAIN, 55
     terminatelearnset
 
 

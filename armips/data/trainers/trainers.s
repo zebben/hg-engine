@@ -1012,7 +1012,7 @@ trainerdata 26, "Roland"
     endparty
 
 trainerdata 27, "Liz"
-    trainermontype TRAINER_DATA_TYPE_NOTHING
+    trainermontype TRAINER_DATA_TYPE_ABILITY
     trainerclass TRAINERCLASS_PICNICKER
     nummons 2
     item ITEM_NONE
@@ -1029,6 +1029,7 @@ trainerdata 27, "Liz"
         abilityslot 32
         level 10
         pokemon SPECIES_PHANPY
+        ability ABILITY_PICKUP
         ballseal 0
 
         // mon 1
@@ -1036,6 +1037,7 @@ trainerdata 27, "Liz"
         abilityslot 32
         level 10
         pokemon SPECIES_HIPPOPOTAS
+        ability ABILITY_PICKUP
         ballseal 0
     endparty
 
@@ -12527,10 +12529,10 @@ trainerdata 274, "Todd"
         abilityslot 0
         level 40
         pokemon SPECIES_KRICKETUNE
-        move MOVE_LEECH_LIFE
-        move MOVE_NIGHT_SLASH
-        move MOVE_CLOSE_COMBAT
-        move MOVE_TAUNT
+        move MOVE_BUG_BUZZ
+        move MOVE_BOOMBURST
+        move MOVE_FOCUS_BLAST
+        move MOVE_SING
         ballseal 0
     endparty
 
@@ -12563,10 +12565,10 @@ trainerdata 275, "Todd"
         abilityslot 0
         level 60
         pokemon SPECIES_KRICKETUNE
-        move MOVE_LEECH_LIFE
-        move MOVE_NIGHT_SLASH
-        move MOVE_CLOSE_COMBAT
-        move MOVE_TAUNT
+        move MOVE_BUG_BUZZ
+        move MOVE_BOOMBURST
+        move MOVE_FOCUS_BLAST
+        move MOVE_SING
         ballseal 0
     endparty
 
@@ -24516,10 +24518,10 @@ trainerdata 525, "Todd"
         abilityslot 0
         level 80
         pokemon SPECIES_KRICKETUNE
-        move MOVE_LEECH_LIFE
-        move MOVE_NIGHT_SLASH
-        move MOVE_CLOSE_COMBAT
-        move MOVE_TAUNT
+        move MOVE_BUG_BUZZ
+        move MOVE_BOOMBURST
+        move MOVE_FOCUS_BLAST
+        move MOVE_SING
         ballseal 0
     endparty
 
