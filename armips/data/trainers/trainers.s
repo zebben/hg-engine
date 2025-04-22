@@ -7499,7 +7499,7 @@ trainerdata 181, "William"
     endparty
 
 trainerdata 182, "Beverly"
-    trainermontype TRAINER_DATA_TYPE_NOTHING
+    trainermontype TRAINER_DATA_TYPE_ITEMS
     trainerclass TRAINERCLASS_POKEFAN
     nummons 2
     item ITEM_NONE
@@ -19237,7 +19237,7 @@ trainerdata 408, "Cybil"
     endparty
 
 trainerdata 409, "Brandon"
-    trainermontype TRAINER_DATA_TYPE_NOTHING
+    trainermontype TRAINER_DATA_TYPE_ITEMS
     trainerclass TRAINERCLASS_POKEFAN_M
     nummons 2
     item ITEM_NONE

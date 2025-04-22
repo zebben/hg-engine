@@ -16474,12 +16474,11 @@ levelup SPECIES_TYRUNT
     learnset MOVE_TAIL_WHIP, 1
     learnset MOVE_ROAR, 4
     learnset MOVE_BIDE, 12
-    learnset MOVE_CHARM, 15
-    learnset MOVE_STEALTH_ROCK, 15
-    learnset MOVE_ANCIENT_POWER, 16
-    learnset MOVE_BITE, 16
-    learnset MOVE_STOMP, 17
-    learnset MOVE_ROAR, 24
+    learnset MOVE_BITE, 13
+    learnset MOVE_ROCK_TOMB, 16
+    learnset MOVE_STOMP, 18
+    learnset MOVE_ROCK_THROW, 20
+    learnset MOVE_STEALTH_ROCK, 24
     learnset MOVE_ROCK_SLIDE, 28
     learnset MOVE_CRUNCH, 32
     learnset MOVE_DRAGON_CLAW, 36
@@ -16500,13 +16499,14 @@ levelup SPECIES_TYRANTRUM
     learnset MOVE_STOMP, 1
     learnset MOVE_ROAR, 6
     learnset MOVE_BIDE, 12
-    learnset MOVE_CHARM, 15
-    learnset MOVE_STEALTH_ROCK, 15
-    learnset MOVE_BITE, 16
-    learnset MOVE_STOMP, 17
+    learnset MOVE_BITE, 13
+    learnset MOVE_ROCK_TOMB, 16
+    learnset MOVE_STOMP, 18
+    learnset MOVE_ROCK_THROW, 20
     learnset MOVE_ROAR, 24
     learnset MOVE_ANCIENT_POWER, 26
     learnset MOVE_ROCK_SLIDE, 28
+    learnset MOVE_ROCK_SLIDE, 29
     learnset MOVE_CRUNCH, 32
     learnset MOVE_DRAGON_CLAW, 36
     learnset MOVE_THRASH, 42

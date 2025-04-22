@@ -1888,7 +1888,7 @@ rocksmashrate 0
 oldrodrate 25
 goodrodrate 50
 superrodrate 75
-walklevels 7, 7, 7, 7, 7, 7, 8, 8, 8, 9, 9, 10
+walklevels 7, 7, 7, 8, 8, 8, 8, 8, 8, 9, 9, 10
 
 // morning encounter slots
 pokemon SPECIES_SHUPPET
