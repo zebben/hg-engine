@@ -804,15 +804,15 @@ trainerdata 21, "Bugsy"
         // mon 0
         ivs 200
         abilityslot 32
-        level 17
+        level 16
         pokemon SPECIES_SCYTHER
         item ITEM_NONE
         move MOVE_U_TURN
         move MOVE_QUICK_ATTACK
-        move MOVE_AERIAL_ACE
+        move MOVE_PURSUIT
         move MOVE_BUG_BITE
         ability ABILITY_TECHNICIAN
-        setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
+        setivs 25, 25, 25, 25, 25, 25 // hp, atk, def, spd, spatk, spdef
         setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_JOLLY
         shinylock 0
@@ -822,7 +822,7 @@ trainerdata 21, "Bugsy"
         // mon 1
         ivs 200
         abilityslot 32
-        level 17
+        level 15
         pokemon SPECIES_CHARJABUG
         item ITEM_NONE
         move MOVE_U_TURN
@@ -830,7 +830,7 @@ trainerdata 21, "Bugsy"
         move MOVE_SPARK
         move MOVE_BITE
         ability ABILITY_BATTERY
-        setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
+        setivs 25, 25, 25, 25, 25, 25 // hp, atk, def, spd, spatk, spdef
         setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_ADAMANT
         shinylock 0
@@ -840,15 +840,15 @@ trainerdata 21, "Bugsy"
         // mon 2
         ivs 200
         abilityslot 32
-        level 18
+        level 16
         pokemon SPECIES_ARIADOS
         item ITEM_SITRUS_BERRY
         move MOVE_U_TURN
         move MOVE_BUG_BITE
         move MOVE_SHADOW_SNEAK
-        move MOVE_SWORDS_DANCE
+        move MOVE_POISON_STING
         ability ABILITY_SWARM
-        setivs 15, 15, 15, 15, 15, 15 // hp, atk, def, spd, spatk, spdef
+        setivs 5, 5, 5, 5, 5, 5 // hp, atk, def, spd, spatk, spdef
         setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_ADAMANT
         shinylock 0

@@ -246,7 +246,7 @@ mondata SPECIES_CATERPIE, "Caterpie"
 
 
 mondata SPECIES_METAPOD, "Metapod"
-    basestats 50, 20, 55, 30, 25, 25
+    basestats 50, 40, 55, 30, 65, 25
     types TYPE_BUG, TYPE_BUG
     catchrate 120
     baseexp 0 // defined in baseexp.s
@@ -309,7 +309,7 @@ mondata SPECIES_WEEDLE, "Weedle"
 
 
 mondata SPECIES_KAKUNA, "Kakuna"
-    basestats 45, 25, 50, 35, 25, 25
+    basestats 45, 55, 50, 50, 25, 25
     types TYPE_BUG, TYPE_POISON
     catchrate 120
     baseexp 0 // defined in baseexp.s

@@ -237,6 +237,7 @@ levelup SPECIES_CATERPIE
 levelup SPECIES_METAPOD
     learnset MOVE_HARDEN, 0
     learnset MOVE_HARDEN, 1
+    learnset MOVE_STRUGGLE_BUG, 19
     terminatelearnset
 
 
@@ -277,6 +278,7 @@ levelup SPECIES_WEEDLE
 levelup SPECIES_KAKUNA
     learnset MOVE_HARDEN, 0
     learnset MOVE_HARDEN, 1
+    learnset MOVE_POISON_FANG, 18
     terminatelearnset
 
 
