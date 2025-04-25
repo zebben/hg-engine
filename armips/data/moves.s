@@ -1427,12 +1427,12 @@ movedata MOVE_ROCK_THROW, "Rock Throw"
     pp 30
     effectchance 0
     target RANGE_SINGLE_TARGET
-    priority 0
-    flags FLAG_KINGS_ROCK | FLAG_MIRROR_MOVE | FLAG_PROTECT
+    priority 1
+    flags FLAG_KEEP_HP_BAR | FLAG_KINGS_ROCK | FLAG_MIRROR_MOVE | FLAG_PROTECT | FLAG_CONTACT
     appeal 0x05
     contesttype CONTEST_TOUGH
     terminatedata
-    movedescription MOVE_ROCK_THROW, "The user picks up\nand throws a small\nrock at the foe to\nattack.\n"
+    movedescription MOVE_ROCK_THROW, "The user throws a\nrock at the foe.\nThis move\nalways goes first."
 
 movedata MOVE_EARTHQUAKE, "Earthquake"
     battleeffect MOVE_EFFECT_DOUBLE_DAMAGE_DIG
@@ -2077,7 +2077,7 @@ movedata MOVE_CLAMP, "Clamp"
 movedata MOVE_SWIFT, "Swift"
     battleeffect MOVE_EFFECT_PRIORITY_1
     pss SPLIT_SPECIAL
-    basepower 45
+    basepower 40
     type TYPE_NORMAL
     accuracy 100
     pp 20
@@ -4909,7 +4909,7 @@ movedata MOVE_POISON_FANG, "Poison Fang"
 movedata MOVE_CRUSH_CLAW, "Crush Claw"
     battleeffect MOVE_EFFECT_LOWER_DEFENSE_HIT
     pss SPLIT_PHYSICAL
-    basepower 85
+    basepower 95
     type TYPE_NORMAL
     accuracy 100
     pp 15

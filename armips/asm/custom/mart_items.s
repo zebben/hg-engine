@@ -1,11 +1,13 @@
 .nds
 .thumb
 
+/* Format credit to Drayano */
+
 .open "base/arm9.bin", 0x02000000
 
 /* Cherrygrove City */
 .org 0x020FBA54
-.halfword ITEM_SHELL_BELL
+.halfword ITEM_TM17
 .halfword ITEM_SCOPE_LENS
 .halfword 0xFFFF
 

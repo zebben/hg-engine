@@ -1143,12 +1143,12 @@ trainerdata 30, "Whitney"
         // mon 0
         ivs 255
         abilityslot 0
-        level 19
+        level 20
         monwithform SPECIES_ZORUA, 1
         item ITEM_SITRUS_BERRY
         move MOVE_SHADOW_SNEAK
-        move MOVE_TAUNT
-        move MOVE_TACKLE
+        move MOVE_TORMENT
+        move MOVE_HEADBUTT
         move MOVE_ATTRACT
         ability ABILITY_ILLUSION
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
@@ -1161,7 +1161,7 @@ trainerdata 30, "Whitney"
         // mon 1
         ivs 255
         abilityslot 32
-        level 21
+        level 22
         pokemon SPECIES_MILTANK
         item ITEM_LUM_BERRY
         move MOVE_ROLLOUT
@@ -1179,13 +1179,13 @@ trainerdata 30, "Whitney"
         // mon 2
         ivs 255
         abilityslot 32
-        level 19
+        level 20
         pokemon SPECIES_LICKITUNG
-        item ITEM_NONE
+        item ITEM_CHESTO_BERRY
         move MOVE_REST
-        move MOVE_SLEEP_TALK
-        move MOVE_BODY_SLAM
-        move MOVE_ATTRACT
+        move MOVE_HEAL_BELL
+        move MOVE_GIGA_DRAIN
+        move MOVE_TRI_ATTACK
         ability ABILITY_OBLIVIOUS
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
         setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef

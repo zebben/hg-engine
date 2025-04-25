@@ -2485,9 +2485,9 @@ levelup SPECIES_LICKITUNG
     learnset MOVE_POWER_WHIP, 1
     learnset MOVE_SUPERSONIC, 5
     learnset MOVE_DEFENSE_CURL, 9
-    learnset MOVE_WRAP, 17
+    learnset MOVE_TRI_ATTACK, 17
     learnset MOVE_DISABLE, 24
-    learnset MOVE_STOMP, 25
+    learnset MOVE_SWIFT, 25
     learnset MOVE_KNOCK_OFF, 25
     learnset MOVE_ROLLOUT, 28
     learnset MOVE_HEAL_BELL, 33
