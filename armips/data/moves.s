@@ -14270,7 +14270,7 @@ movedata MOVE_HYPER_DRILL, "Hyper Drill"
 movedata MOVE_TWIN_BEAM, "Twin Beam"
     battleeffect MOVE_EFFECT_HIT_TWICE
     pss SPLIT_SPECIAL
-    basepower 40
+    basepower 45
     type TYPE_PSYCHIC
     accuracy 100
     pp 10

@@ -4333,22 +4333,22 @@ pokemon SPECIES_NONE
 pokemon SPECIES_NONE
 
 // surf encounters
-encounter SPECIES_DRACOVISH, 26, 30
-encounter SPECIES_DRACOVISH, 26, 30
-encounter SPECIES_TATSUGIRI, 26, 30
-encounterwithform SPECIES_TATSUGIRI, 1, 26, 30
-encounterwithform SPECIES_TATSUGIRI, 2, 26, 30
+encounter SPECIES_DRACOVISH, 26, 28
+encounter SPECIES_DRACOVISH, 26, 28
+encounter SPECIES_TATSUGIRI, 26, 28
+encounterwithform SPECIES_TATSUGIRI, 1, 26, 28
+encounterwithform SPECIES_TATSUGIRI, 2, 26, 28
 
 // rock smash encounters
 encounter SPECIES_NONE, 0, 0
 encounter SPECIES_NONE, 0, 0
 
 // old rod encounters
-encounter SPECIES_DRACOVISH, 26, 30
-encounter SPECIES_DRACOZOLT, 26, 30
-encounter SPECIES_ARCTOZOLT, 26, 30
-encounter SPECIES_ARROKUDA, 26, 30
-encounter SPECIES_ARCTOVISH, 26, 30
+encounter SPECIES_DRACOVISH, 26, 28
+encounter SPECIES_DRACOZOLT, 26, 28
+encounter SPECIES_ARCTOZOLT, 26, 28
+encounter SPECIES_ARROKUDA, 26, 28
+encounter SPECIES_ARCTOVISH, 26, 28
 
 // good rod encounters
 encounter SPECIES_DRACOVISH, 30, 34

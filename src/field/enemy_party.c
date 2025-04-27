@@ -42,6 +42,22 @@ void randomize(int arr[], int n) {
     }
 }
 
+/**
+ *  @brief generate a random number between and including the min and max
+ *
+ *  @param min the min number allowed
+ *  @param max the max number allowed
+ */
+int randomNumBetween(int min, int max) 
+{
+    if (max < min)
+    {
+        max = min + 1;
+    }
+    gf_srand(gf_get_seed());
+    return gf_rand()%((max+1)-min) + min;
+}
+
 extern u32 gLastPokemonLevelForMoneyCalc;
 
 /**
@@ -57,8 +73,34 @@ void MakeTrainerPokemonParty(struct BATTLE_PARAM *bp, int num, int heapID)
     int i, j;
     u32 rnd_tmp, rnd, seed_tmp;
     u8 pow;
+    u8 highestPlayerPokeLvl = 1; // level floor, only used if scaling based on player level
 
     seed_tmp = gf_get_seed();
+
+    #ifdef SCALE_TRAINER_POKEMON_LEVEL
+        struct Party *party = bp->poke_party[0];
+        s32 player_poke_count = party->count;
+        
+        for(int k = 0; k < player_poke_count; k++) {
+            u8 monLvl = (u8)GetMonData(Party_GetMonByIndex(party, k), MON_DATA_LEVEL, NULL);
+            if (monLvl > highestPlayerPokeLvl) 
+            {
+                highestPlayerPokeLvl = monLvl;
+            }
+        }
+
+        // add a random number of levels between -1 and 3
+        // adds some variety to trainer battles vs just setting to player level
+        // TODO zebben: may need to adjust the bounds later
+        // TODO zebben: first Silver battle (find ID) should always be level 5
+        highestPlayerPokeLvl += randomNumBetween(-1, 3);
+
+        // ensure the trainer's mons don't get above level 100
+        if (highestPlayerPokeLvl > 100) 
+        {
+            highestPlayerPokeLvl = 100;
+        }
+    #endif
 
     PokeParty_Init(bp->poke_party[num], 6);
 
@@ -142,6 +184,9 @@ void MakeTrainerPokemonParty(struct BATTLE_PARAM *bp, int num, int heapID)
 
         // level field
         level = buf[offset] | (buf[offset+1] << 8);
+        #ifdef SCALE_TRAINER_POKEMON_LEVEL
+            level = highestPlayerPokeLvl;
+        #endif
         gLastPokemonLevelForMoneyCalc = level; // ends up being the last level at the end of the loop that we use for the money calc loop default case
         offset += 2;
 
@@ -484,6 +529,31 @@ BOOL LONG_CALL AddWildPartyPokemon(int inTarget, EncounterInfo *encounterInfo, s
     u8 change_form = 0;
     u8 form_no;
     u16 species;
+
+    #ifdef SCALE_WILD_POKEMON_LEVEL
+        u8 highestPlayerPokeLvl = 1;
+        struct Party *party = encounterBattleParam->poke_party[0];
+        s32 player_poke_count = party->count;
+        
+        for (int i = 0; i < player_poke_count; i++) {
+            u8 monLvl = (u8)GetMonData(Party_GetMonByIndex(party, i), MON_DATA_LEVEL, NULL);
+            if (monLvl > highestPlayerPokeLvl) 
+            {
+                highestPlayerPokeLvl = monLvl;
+            }
+        }
+
+        // subtract a random number of levels between 3 and 5
+        // adds some variety to wild encounters vs just setting to player level
+        highestPlayerPokeLvl -= randomNumBetween(3, 5);
+        
+        // make sure wild pokemon are at least level 2
+        if (highestPlayerPokeLvl < 2) {
+            highestPlayerPokeLvl = 2;
+        }
+        
+        SetMonData(encounterPartyPokemon, MON_DATA_LEVEL, &highestPlayerPokeLvl);
+    #endif
 
     if (encounterInfo->isEgg == 0 && encounterInfo->ability == ABILITY_COMPOUND_EYES)
     {

@@ -148,4 +148,8 @@
 // STATIC_HP_BAR updates the HP bar to increase/decrease at a fixed rate like later generations
 #define STATIC_HP_BAR
 
+#define SCALE_TRAINER_POKEMON_LEVEL
+
+#define SCALE_WILD_POKEMON_LEVEL
+
 #endif
