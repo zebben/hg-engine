@@ -148,8 +148,12 @@
 // STATIC_HP_BAR updates the HP bar to increase/decrease at a fixed rate like later generations
 #define STATIC_HP_BAR
 
+// SCALE_TRAINER_POKEMON_LEVEL scales enemy trainer pokemon levels based on the player's party
+// scale between -1 and +3 levels of the player's highest level pokemon
 #define SCALE_TRAINER_POKEMON_LEVEL
 
+// SCALE_WILD_POKEMON_LEVEL scales wild pokemone encounter levels based on the player's party
+// scale between 3 and 5 levels below the player's highest level pokemon
 #define SCALE_WILD_POKEMON_LEVEL
 
 #endif

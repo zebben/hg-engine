@@ -88,18 +88,6 @@ void MakeTrainerPokemonParty(struct BATTLE_PARAM *bp, int num, int heapID)
                 highestPlayerPokeLvl = monLvl;
             }
         }
-
-        // add a random number of levels between -1 and 3
-        // adds some variety to trainer battles vs just setting to player level
-        // TODO zebben: may need to adjust the bounds later
-        // TODO zebben: first Silver battle (find ID) should always be level 5
-        highestPlayerPokeLvl += randomNumBetween(-1, 3);
-
-        // ensure the trainer's mons don't get above level 100
-        if (highestPlayerPokeLvl > 100) 
-        {
-            highestPlayerPokeLvl = 100;
-        }
     #endif
 
     PokeParty_Init(bp->poke_party[num], 6);
@@ -185,7 +173,28 @@ void MakeTrainerPokemonParty(struct BATTLE_PARAM *bp, int num, int heapID)
         // level field
         level = buf[offset] | (buf[offset+1] << 8);
         #ifdef SCALE_TRAINER_POKEMON_LEVEL
-            level = highestPlayerPokeLvl;
+            if (highestPlayerPokeLvl < 10) 
+            {
+                // reduced variance for low level fights. particularly for first Silver battle
+                level += randomNumBetween(-1, 1);
+            } 
+            else 
+            {
+                // scale level of trainer mons between -1 and 3
+                level += randomNumBetween(-1, 3);
+            }
+
+            // ensure the trainer's mons don't get above level 100
+            if (level > 100) 
+            {
+                level = 100;
+            }
+
+            // ensure the trainer's mons don't get below level 1
+            if (level < 1) 
+            {
+                level = 1;
+            }
         #endif
         gLastPokemonLevelForMoneyCalc = level; // ends up being the last level at the end of the loop that we use for the money calc loop default case
         offset += 2;
