@@ -5984,7 +5984,7 @@ pokemon SPECIES_CACNEA
 pokemon SPECIES_ESPURR
 pokemon SPECIES_ESPURR
 pokemon SPECIES_GOTHITA
-pokemon SPECIES_POOCHYENA
+pokemon SPECIES_GOOMY
 
 // hoenn encounter slots
 pokemon SPECIES_WHISMUR

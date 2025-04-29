@@ -176,12 +176,12 @@ void MakeTrainerPokemonParty(struct BATTLE_PARAM *bp, int num, int heapID)
             if (highestPlayerPokeLvl < 10) 
             {
                 // reduced variance for low level fights. particularly for first Silver battle
-                level += randomNumBetween(-1, 1);
+                level = highestPlayerPokeLvl + randomNumBetween(-1, 1);
             } 
             else 
             {
                 // scale level of trainer mons between -1 and 3
-                level += randomNumBetween(-1, 3);
+                level = highestPlayerPokeLvl + randomNumBetween(-1, 3);
             }
 
             // ensure the trainer's mons don't get above level 100
@@ -604,5 +604,11 @@ BOOL LONG_CALL AddWildPartyPokemon(int inTarget, EncounterInfo *encounterInfo, s
         ResetPartyPokemonAbility(encounterPartyPokemon);
         InitBoxMonMoveset(&encounterPartyPokemon->box);
     }
+
+    #ifdef SCALE_WILD_POKEMON_LEVEL
+        RecalcPartyPokemonStats(encounterPartyPokemon);
+        InitBoxMonMoveset(&encounterPartyPokemon->box);
+    #endif
+
     return PokeParty_Add(encounterBattleParam->poke_party[inTarget], encounterPartyPokemon);
 }

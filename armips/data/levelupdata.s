@@ -278,7 +278,7 @@ levelup SPECIES_WEEDLE
 levelup SPECIES_KAKUNA
     learnset MOVE_HARDEN, 0
     learnset MOVE_HARDEN, 1
-    learnset MOVE_POISON_FANG, 18
+    learnset MOVE_POISON_JAB, 18
     terminatelearnset
 
 
