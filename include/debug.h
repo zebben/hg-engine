@@ -21,7 +21,7 @@
 //#define DEBUG_SCALED_EXPERIENCE
 
 // DEBUG_BATTLE_SCRIPT_COMMANDS prints out the battle script command names in the desmume window
-//#define DEBUG_BATTLE_SCRIPT_COMMANDS
+#define DEBUG_BATTLE_SCRIPT_COMMANDS
 
 // DEBUG_PRINT_OVERLAY_LOADS prints out overlay loads and unloads in the desmume window
 //#define DEBUG_PRINT_OVERLAY_LOADS
@@ -63,7 +63,7 @@
 //#define DEBUG_ENDTURN_LOGIC
 
 // DEBUG_BEFORE_MOVE_LOGIC turns on a number of debug prints related to the before-move logic
-//#define DEBUG_BEFORE_MOVE_LOGIC
+#define DEBUG_BEFORE_MOVE_LOGIC
 
 // DEBUG_PRINT_HEAP_CREATION allows for debug prints on heap creation/deletion
 //#define DEBUG_PRINT_HEAP_CREATION
