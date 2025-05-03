@@ -227,13 +227,12 @@ void Sub_PokeIconResourceLoad(struct BI_PARAM *bip)
         {
             nclr = BATTLE_GFX_FOG_NCLR;
         }
-        // TODO zebben: these freeze the game...
         
-        //OAM_LoadResourcePlttWorkArc(pfd, FADE_SUB_OBJ, csp, crp, ARC_BATTLE_GFX, nclr, 0, 1, NNS_G2D_VRAM_TYPE_2DSUB, WEATHER_ICON_PAL_TAG);
+        OAM_LoadResourcePlttWorkArc(pfd, FADE_SUB_OBJ, csp, crp, ARC_BATTLE_GFX, nclr, 0, 1, NNS_G2D_VRAM_TYPE_2DSUB, WEATHER_ICON_PAL_TAG);
         
-        //OAM_LoadResourceCellArc(csp, crp, ARC_BATTLE_GFX, BATTLE_GFX_NCER, 0, WEATHER_ICON_CELL_TAG); //NCER
+        OAM_LoadResourceCellArc(csp, crp, ARC_BATTLE_GFX, BATTLE_GFX_NCER, 0, WEATHER_ICON_CELL_TAG); //NCER
         
-        //OAM_LoadResourceCellAnmArc(csp, crp, ARC_POKEICON, 3, 0, WEATHER_ICON_CELL_ANIM_TAG); //NANR
+        OAM_LoadResourceCellAnmArc(csp, crp, ARC_POKEICON, 3, 0, WEATHER_ICON_CELL_ANIM_TAG); //NANR
     }
 }
 
@@ -854,16 +853,14 @@ void LoadDifferentBattleBackground(struct BattleSystem *bw, u32 bg, u32 terrain)
         palette = terrain;
     }
     
-    // TODO zebben: these are broken just like weather
-    // Ground_ActorResourceSet(&bw->ground[0], bw, 0, palette); // new terrains are just repointed below
-    // Ground_ActorResourceSet(&bw->ground[1], bw, 1, palette);
+    Ground_ActorResourceSet(&bw->ground[0], bw, 0, palette); // new terrains are just repointed below
+    Ground_ActorResourceSet(&bw->ground[1], bw, 1, palette);
 
     // free resources
     sys_FreeMemoryEz(bw->bg_area);
     sys_FreeMemoryEz(bw->pal_area);
 
-    // TODO zebben: broken just like weather
-    // BattleWorkGroundBGChg(bw);
+    BattleWorkGroundBGChg(bw);
 
     // finally set the fields for nature power/secret power/camouflage/friends
     //bw->bgId = bg;
