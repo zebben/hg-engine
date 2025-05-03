@@ -554,7 +554,7 @@ BOOL LONG_CALL AddWildPartyPokemon(int inTarget, EncounterInfo *encounterInfo, s
 
         // subtract a random number of levels between 3 and 5
         // adds some variety to wild encounters vs just setting to player level
-        highestPlayerPokeLvl += randomNumBetween(30, 55);
+        highestPlayerPokeLvl -= randomNumBetween(3, 5);
         
         // make sure wild pokemon are at least level 2
         if (highestPlayerPokeLvl < 2) {
