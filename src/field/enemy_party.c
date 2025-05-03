@@ -554,14 +554,20 @@ BOOL LONG_CALL AddWildPartyPokemon(int inTarget, EncounterInfo *encounterInfo, s
 
         // subtract a random number of levels between 3 and 5
         // adds some variety to wild encounters vs just setting to player level
-        highestPlayerPokeLvl -= randomNumBetween(3, 5);
+        highestPlayerPokeLvl += randomNumBetween(30, 55);
         
         // make sure wild pokemon are at least level 2
         if (highestPlayerPokeLvl < 2) {
             highestPlayerPokeLvl = 2;
         }
-        
+
+        // set exp and level then recalc stats and moveset
+        u32 exp = PokeLevelExpGet(species, highestPlayerPokeLvl);
         SetMonData(encounterPartyPokemon, MON_DATA_LEVEL, &highestPlayerPokeLvl);
+        SetMonData(encounterPartyPokemon, MON_DATA_EXPERIENCE, &exp);
+        encounterInfo->level = highestPlayerPokeLvl;
+        RecalcPartyPokemonStats(encounterPartyPokemon);
+        InitBoxMonMoveset(&encounterPartyPokemon->box);
     #endif
 
     if (encounterInfo->isEgg == 0 && encounterInfo->ability == ABILITY_COMPOUND_EYES)
@@ -604,11 +610,6 @@ BOOL LONG_CALL AddWildPartyPokemon(int inTarget, EncounterInfo *encounterInfo, s
         ResetPartyPokemonAbility(encounterPartyPokemon);
         InitBoxMonMoveset(&encounterPartyPokemon->box);
     }
-
-    #ifdef SCALE_WILD_POKEMON_LEVEL
-        RecalcPartyPokemonStats(encounterPartyPokemon);
-        InitBoxMonMoveset(&encounterPartyPokemon->box);
-    #endif
 
     return PokeParty_Add(encounterBattleParam->poke_party[inTarget], encounterPartyPokemon);
 }
