@@ -253,7 +253,7 @@ movedata MOVE_SWORDS_DANCE, "Swords Dance"
 movedata MOVE_CUT, "Cut"
     battleeffect MOVE_EFFECT_HIT
     pss SPLIT_PHYSICAL
-    basepower 75
+    basepower 70
     type TYPE_GRASS
     accuracy 100
     pp 15
@@ -1293,7 +1293,7 @@ movedata MOVE_SLEEP_POWDER, "Sleep Powder"
 movedata MOVE_PETAL_DANCE, "Petal Dance"
     battleeffect MOVE_EFFECT_CONTINUE_AND_CONFUSE_SELF
     pss SPLIT_SPECIAL
-    basepower 120
+    basepower 130
     type TYPE_GRASS
     accuracy 100
     pp 10
@@ -3837,7 +3837,7 @@ movedata MOVE_CROSS_CHOP, "Cross Chop"
 movedata MOVE_TWISTER, "Twister"
     battleeffect MOVE_EFFECT_FLINCH_DOUBLE_DAMAGE_FLY_OR_BOUNCE
     pss SPLIT_SPECIAL
-    basepower 70
+    basepower 60
     type TYPE_DRAGON
     accuracy 100
     pp 15
@@ -3997,10 +3997,10 @@ movedata MOVE_FUTURE_SIGHT, "Future Sight"
 movedata MOVE_ROCK_SMASH, "Rock Smash"
     battleeffect MOVE_EFFECT_LOWER_DEFENSE_HIT
     pss SPLIT_PHYSICAL
-    basepower 80
+    basepower 65
     type TYPE_FIGHTING
     accuracy 100
-    pp 15
+    pp 20
     effectchance 50
     target RANGE_SINGLE_TARGET
     priority 0
@@ -4653,10 +4653,10 @@ movedata MOVE_SNATCH, "Snatch"
 movedata MOVE_SECRET_POWER, "Secret Power"
     battleeffect MOVE_EFFECT_SECRET_POWER
     pss SPLIT_PHYSICAL
-    basepower 70
+    basepower 85
     type TYPE_NORMAL
     accuracy 100
-    pp 20
+    pp 15
     effectchance 30
     target RANGE_SINGLE_TARGET
     priority 0
@@ -4799,7 +4799,7 @@ movedata MOVE_BLAZE_KICK, "Blaze Kick"
     pss SPLIT_PHYSICAL
     basepower 85
     type TYPE_FIRE
-    accuracy 90
+    accuracy 100
     pp 10
     effectchance 10
     target RANGE_SINGLE_TARGET
@@ -6909,7 +6909,7 @@ movedata MOVE_FLASH_CANNON, "Flash Cannon"
 movedata MOVE_ROCK_CLIMB, "Rock Climb"
     battleeffect MOVE_EFFECT_CONFUSE_HIT
     pss SPLIT_PHYSICAL
-    basepower 80
+    basepower 90
     type TYPE_ROCK
     accuracy 85
     pp 15
@@ -7343,8 +7343,8 @@ movedata MOVE_DOUBLE_HIT, "Double Hit"
     pss SPLIT_PHYSICAL
     basepower 40
     type TYPE_NORMAL
-    accuracy 90
-    pp 10
+    accuracy 100
+    pp 15
     effectchance 0
     target RANGE_SINGLE_TARGET
     priority 0
@@ -8509,7 +8509,7 @@ movedata MOVE_ELECTROWEB, "Electroweb"
 movedata MOVE_WILD_CHARGE, "Wild Charge"
     battleeffect MOVE_EFFECT_RECOIL_THIRD
     pss SPLIT_PHYSICAL
-    basepower 120
+    basepower 115
     type TYPE_ELECTRIC
     accuracy 100
     pp 15
