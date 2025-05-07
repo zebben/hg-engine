@@ -148,6 +148,10 @@
 // STATIC_HP_BAR updates the HP bar to increase/decrease at a fixed rate like later generations
 #define STATIC_HP_BAR
 
+// EASY_MODE_IVS only allows a pokemon's IVs to roll 0, 30, or 31. the result is heavily weighted 
+// towards 30
+#define EASY_MODE_IVS
+
 // SCALE_TRAINER_POKEMON_LEVEL scales enemy trainer party levels based on the player's party
 // scale between -1 and +3 levels of the player's highest level party member
 #define SCALE_TRAINER_POKEMON_LEVEL

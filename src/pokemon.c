@@ -1434,11 +1434,18 @@ BOOL LONG_CALL GiveMon(int heapId, void *saveData, int species, int level, int f
 
 extern u32 space_for_setmondata;
 
-int LONG_CALL DecideBoxMonIVs(int pow) {
-    if(pow == MAX_IVS){
+/**
+ *  @brief returns an IV value. if min or max are rolled, use it. else return MEDIAN_IVs
+ *
+ *  @param pow random iv value
+ */
+int LONG_CALL easyModeIVs(int iv) {
+    if (iv == MAX_IVS)
+    {
         return MAX_IVS;
     }
-    else if (pow == MIN_IVS){
+    else if (iv == MIN_IVS)
+    {
         return MIN_IVS;
     }
 
@@ -1509,7 +1516,7 @@ void LONG_CALL CreateBoxMonData(struct BoxPokemon *boxmon, int species, int leve
     i=ITEM_POKE_BALL;
     SetBoxMonData(boxmon,MON_DATA_POKEBALL,(u8 *)&i);
 
-    if(pow == MAX_IVS){
+    if(pow <= MAX_IVS){
         SetBoxMonData(boxmon,MON_DATA_HP_IV,(u8 *)&pow);
         SetBoxMonData(boxmon,MON_DATA_ATK_IV,(u8 *)&pow);
         SetBoxMonData(boxmon,MON_DATA_DEF_IV,(u8 *)&pow);
@@ -1517,42 +1524,58 @@ void LONG_CALL CreateBoxMonData(struct BoxPokemon *boxmon, int species, int leve
         SetBoxMonData(boxmon,MON_DATA_SPATK_IV,(u8 *)&pow);
         SetBoxMonData(boxmon,MON_DATA_SPDEF_IV,(u8 *)&pow);
     }
-    else
-    { // if not MAX_IVs,
+    else{ // why the fuck is it done like this
+        i=gf_rand();
+        j=(i&(0x001f<< 0))>> 0;
+        SetBoxMonData(boxmon,MON_DATA_HP_IV,(u8 *)&j);
+        j=(i&(0x001f<< 5))>> 5;
+        SetBoxMonData(boxmon,MON_DATA_ATK_IV,(u8 *)&j);
+        j=(i&(0x001f<<10))>>10;
+        SetBoxMonData(boxmon,MON_DATA_DEF_IV,(u8 *)&j);
+        i=gf_rand();
+        j=(i&(0x001f<< 0))>> 0;
+        SetBoxMonData(boxmon,MON_DATA_SPEED_IV,(u8 *)&j);
+        j=(i&(0x001f<< 5))>> 5;
+        SetBoxMonData(boxmon,MON_DATA_SPATK_IV,(u8 *)&j);
+        j=(i&(0x001f<<10))>>10;
+        SetBoxMonData(boxmon,MON_DATA_SPDEF_IV,(u8 *)&j);
+    }
+
+    #ifdef EASY_MODE_IVS
         i = gf_rand();
 
         // HP
         j = (i&(0x001f<< 0)) >> 0;
-        j = DecideBoxMonIVs(j);
+        j = easyModeIVs(j);
         SetBoxMonData(boxmon,MON_DATA_HP_IV,(u8 *)&j);
 
         // Attack
         j = (i&(0x001f<< 5)) >> 5;
-        j = DecideBoxMonIVs(j);
+        j = easyModeIVs(j);
         SetBoxMonData(boxmon,MON_DATA_ATK_IV,(u8 *)&j);
 
         // Defense
         j = (i&(0x001f<<10)) >> 10;
-        j = DecideBoxMonIVs(j);
+        j = easyModeIVs(j);
         SetBoxMonData(boxmon,MON_DATA_DEF_IV,(u8 *)&j);
 
         i = gf_rand();
 
         // Speed
         j = (i&(0x001f<< 0)) >> 0;
-        j = DecideBoxMonIVs(j);
+        j = easyModeIVs(j);
         SetBoxMonData(boxmon,MON_DATA_SPEED_IV,(u8 *)&j);
         
         // Special Attack
         j = (i&(0x001f<< 5)) >> 5;
-        j = DecideBoxMonIVs(j);
+        j = easyModeIVs(j);
         SetBoxMonData(boxmon,MON_DATA_SPATK_IV,(u8 *)&j);
 
         // Special Defense
         j = (i&(0x001f<<10)) >>10;
-        j = DecideBoxMonIVs(j);
+        j = easyModeIVs(j);
         SetBoxMonData(boxmon,MON_DATA_SPDEF_IV,(u8 *)&j);
-    }
+    #endif
 
     i = PokePersonalParaGet(species,PERSONAL_ABILITY_1);
     j = PokePersonalParaGet(species,PERSONAL_ABILITY_2);
