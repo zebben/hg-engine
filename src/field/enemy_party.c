@@ -42,22 +42,6 @@ void randomize(int arr[], int n) {
     }
 }
 
-/**
- *  @brief generate a random number between and including the min and max
- *
- *  @param min the min number allowed
- *  @param max the max number allowed
- */
-int randomNumBetween(int min, int max) 
-{
-    if (max < min)
-    {
-        max = min + 1;
-    }
-    gf_srand(gf_get_seed());
-    return gf_rand()%((max+1)-min) + min;
-}
-
 extern u32 gLastPokemonLevelForMoneyCalc;
 
 /**
@@ -73,16 +57,21 @@ void MakeTrainerPokemonParty(struct BATTLE_PARAM *bp, int num, int heapID)
     int i, j;
     u32 rnd_tmp, rnd, seed_tmp;
     u8 pow;
-    u8 highestPlayerPokeLvl = 1; // level floor, only used if scaling based on player level
 
     seed_tmp = gf_get_seed();
 
+    // level scaling options, only used if scaling based on player level
+    int scaleOptions[6] = {-1, 0, 0, 1, 2, 3};
+    u8 highestPlayerPokeLvl = 1; // level floor
+
     #ifdef SCALE_TRAINER_POKEMON_LEVEL
+        // shuffle the order of the scale options
+        randomize(scaleOptions, 6);
         struct Party *party = bp->poke_party[0];
         s32 player_poke_count = party->count;
         
-        for(int k = 0; k < player_poke_count; k++) {
-            u8 monLvl = (u8)GetMonData(Party_GetMonByIndex(party, k), MON_DATA_LEVEL, NULL);
+        for(int i = 0; i < player_poke_count; i++) {
+            u8 monLvl = (u8)GetMonData(Party_GetMonByIndex(party, i), MON_DATA_LEVEL, NULL);
             if (monLvl > highestPlayerPokeLvl) 
             {
                 highestPlayerPokeLvl = monLvl;
@@ -176,12 +165,12 @@ void MakeTrainerPokemonParty(struct BATTLE_PARAM *bp, int num, int heapID)
             if (highestPlayerPokeLvl < 10) 
             {
                 // reduced variance for low level fights. particularly for first Silver battle
-                level = highestPlayerPokeLvl + randomNumBetween(-1, 1);
+                level = highestPlayerPokeLvl + scaleOptions[i]%(1) + 1;
             } 
             else 
             {
-                // scale level of trainer mons between -1 and 3
-                level = highestPlayerPokeLvl + randomNumBetween(-1, 3);
+                // scale level of trainer mons
+                level = highestPlayerPokeLvl + scaleOptions[i];
             }
 
             // ensure the trainer's mons don't get above level 100
@@ -554,7 +543,9 @@ BOOL LONG_CALL AddWildPartyPokemon(int inTarget, EncounterInfo *encounterInfo, s
 
         // subtract a random number of levels between 3 and 5
         // adds some variety to wild encounters vs just setting to player level
-        highestPlayerPokeLvl -= randomNumBetween(3, 5);
+        int scaleOptions[3] = {3, 4, 5};
+        randomize(scaleOptions, 3);
+        highestPlayerPokeLvl -= scaleOptions[0];
         
         // make sure wild pokemon are at least level 2
         if (highestPlayerPokeLvl < 2) {
