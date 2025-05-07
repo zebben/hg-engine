@@ -1439,7 +1439,8 @@ extern u32 space_for_setmondata;
  *
  *  @param pow random iv value
  */
-int LONG_CALL easyModeIVs(int iv) {
+int LONG_CALL easyModeIVs(int iv) 
+{
     if (iv == MAX_IVS)
     {
         return MAX_IVS;
