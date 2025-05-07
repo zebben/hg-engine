@@ -154,10 +154,10 @@
 
 // SCALE_TRAINER_POKEMON_LEVEL scales enemy trainer party levels based on the player's party
 // scale between -1 and +3 levels of the player's highest level party member
-#define SCALE_TRAINER_POKEMON_LEVEL
+// #define SCALE_TRAINER_POKEMON_LEVEL
 
 // SCALE_WILD_POKEMON_LEVEL scales wild encounter levels based on the player's party
 // scale between 3 and 5 levels below the player's highest level party member
-#define SCALE_WILD_POKEMON_LEVEL
+// #define SCALE_WILD_POKEMON_LEVEL
 
 #endif
