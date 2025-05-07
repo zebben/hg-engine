@@ -1548,34 +1548,34 @@ void LONG_CALL CreateBoxMonData(struct BoxPokemon *boxmon, int species, int leve
         // HP
         j = (i&(0x001f<< 0)) >> 0;
         j = easyModeIVs(j);
-        SetBoxMonData(boxmon,MON_DATA_HP_IV,(u8 *)&j);
+        SetBoxMonData(boxmon, MON_DATA_HP_IV, (u8 *)&j);
 
         // Attack
         j = (i&(0x001f<< 5)) >> 5;
         j = easyModeIVs(j);
-        SetBoxMonData(boxmon,MON_DATA_ATK_IV,(u8 *)&j);
+        SetBoxMonData(boxmon, MON_DATA_ATK_IV, (u8 *)&j);
 
         // Defense
         j = (i&(0x001f<<10)) >> 10;
         j = easyModeIVs(j);
-        SetBoxMonData(boxmon,MON_DATA_DEF_IV,(u8 *)&j);
+        SetBoxMonData(boxmon, MON_DATA_DEF_IV, (u8 *)&j);
 
         i = gf_rand();
 
         // Speed
         j = (i&(0x001f<< 0)) >> 0;
         j = easyModeIVs(j);
-        SetBoxMonData(boxmon,MON_DATA_SPEED_IV,(u8 *)&j);
+        SetBoxMonData(boxmon, MON_DATA_SPEED_IV, (u8 *)&j);
         
         // Special Attack
         j = (i&(0x001f<< 5)) >> 5;
         j = easyModeIVs(j);
-        SetBoxMonData(boxmon,MON_DATA_SPATK_IV,(u8 *)&j);
+        SetBoxMonData(boxmon, MON_DATA_SPATK_IV, (u8 *)&j);
 
         // Special Defense
         j = (i&(0x001f<<10)) >>10;
         j = easyModeIVs(j);
-        SetBoxMonData(boxmon,MON_DATA_SPDEF_IV,(u8 *)&j);
+        SetBoxMonData(boxmon, MON_DATA_SPDEF_IV, (u8 *)&j);
     #endif
 
     i = PokePersonalParaGet(species,PERSONAL_ABILITY_1);
