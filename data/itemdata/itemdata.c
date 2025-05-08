@@ -33488,7 +33488,7 @@ const ITEMDATA __data[] =
 
 [ITEM_CHARIZARDITE_X - NUM_UNKNOWN_SLOTS_EXPLORER_KIT] =
 {
-    .price = 0,
+    .price = 9999,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -33553,7 +33553,7 @@ const ITEMDATA __data[] =
 
 [ITEM_CHARIZARDITE_Y - NUM_UNKNOWN_SLOTS_EXPLORER_KIT] =
 {
-    .price = 0,
+    .price = 9999,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,

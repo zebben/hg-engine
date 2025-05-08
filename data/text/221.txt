@@ -536,8 +536,8 @@ A shiny red orb that is said to have\na legend and has a deep connection with\nt
 A shiny blue orb that is said to have\na legend and has a deep connection with\nthe Hoenn region.
 A crystal ball that was excavated from\nthe ground. A very beautiful stone that\nis covered with bits of rock and earth.
 One of a variety of Mega Stones.\nHave Venusaur hold it, and this stone\nwill enable it to Mega Evolve in battle.
-One of a variety of Mega Stones.\nHave Charizard hold it, and this stone\nwill enable it to Mega Evolve in battle.
-One of a variety of Mega Stones.\nHave Charizard hold it, and this stone\nwill enable it to Mega Evolve in battle.
+Allows standard Mega Evolution.\nHave a Pokémon hold it, and this stone\nwill enable it to Mega Evolve in battle.
+Allows alternate Mega Evolution.\nHave a Pokémon hold it, and this stone\nwill enable it to Mega Evolve in battle.
 One of a variety of Mega Stones.\nHave Blastoise hold it, and this stone\nwill enable it to Mega Evolve in battle.
 One of a variety of Mega Stones.\nHave Beedrill hold it, and this stone\nwill enable it to Mega Evolve in battle.
 One of a variety of Mega Stones.\nHave Pidgeot hold it, and this stone\nwill enable it to Mega Evolve in battle.
