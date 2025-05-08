@@ -6829,7 +6829,7 @@ pokemon SPECIES_NONE
 // surf encounters
 encounter SPECIES_BUIZEL, 42, 45
 encounter SPECIES_FLOATZEL, 42, 45
-encounter SPECIES_FLOATZEL, 42, 45
+encounter SPECIES_RELICANTH, 42, 45
 encounter SPECIES_GASTRODON, 42, 45
 encounterwithform SPECIES_GASTRODON, 1, 42, 45
 
@@ -6838,15 +6838,15 @@ encounter SPECIES_NONE, 0, 0
 encounter SPECIES_NONE, 0, 0
 
 // old rod encounters
-encounter SPECIES_RELICANTH, 40, 42
-encounter SPECIES_RELICANTH, 40, 42
-encounter SPECIES_RELICANTH, 40, 42
-encounter SPECIES_LUVDISC, 40, 42
-encounter SPECIES_LUVDISC, 40, 42
+encounter SPECIES_LUVDISC, 30, 38
+encounter SPECIES_LUVDISC, 30, 38
+encounter SPECIES_LUVDISC, 30, 38
+encounter SPECIES_LUVDISC, 30, 38
+encounter SPECIES_LUVDISC, 30, 38
 
 // good rod encounters
-encounter SPECIES_RELICANTH, 42, 45
-encounter SPECIES_RELICANTH, 42, 45
+encounter SPECIES_LUVDISC, 42, 45
+encounter SPECIES_LUVDISC, 42, 45
 encounter SPECIES_LUVDISC, 42, 45
 encounter SPECIES_LUVDISC, 42, 45
 encounter SPECIES_LUVDISC, 42, 45
@@ -6854,9 +6854,9 @@ encounter SPECIES_LUVDISC, 42, 45
 // super rod encounters
 encounter SPECIES_LUVDISC, 55, 65
 encounter SPECIES_LUVDISC, 55, 65
-encounter SPECIES_RELICANTH, 55, 65
-encounter SPECIES_RELICANTH, 55, 65
-encounter SPECIES_RELICANTH, 55, 65
+encounter SPECIES_LUVDISC, 55, 65
+encounter SPECIES_LUVDISC, 55, 65
+encounter SPECIES_LUVDISC, 55, 65
 
 // swarm grass
 pokemon SPECIES_NONE

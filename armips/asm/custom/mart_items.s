@@ -1,7 +1,7 @@
 .nds
 .thumb
 
-/* Format credit to Drayano */
+/* Format credit to Drayano & Saucey */
 
 .open "base/arm9.bin", 0x02000000
 
@@ -309,38 +309,35 @@ EIGHT_BADGES equ 6
 .halfword ITEM_POTION
 .halfword ZERO_BADGES
 
-.halfword ITEM_SUPER_POTION
-.halfword ONE_BADGE
-
 .halfword ITEM_HYPER_POTION
-.halfword FIVE_BADGES
-
-.halfword ITEM_SITRUS_BERRY
-.halfword SEVEN_BADGES
-
-.halfword ITEM_MAX_POTION
-.halfword EIGHT_BADGES
-
-.halfword ITEM_REVIVE
 .halfword THREE_BADGES
 
-.halfword ITEM_ANTIDOTE
-.halfword ZERO_BADGES
-
-.halfword ITEM_PARALYZE_HEAL
-.halfword ZERO_BADGES
+.halfword ITEM_FULL_RESTORE
+.halfword FIVE_BADGES
 
 .halfword ITEM_FULL_HEAL
+.halfword ZERO_BADGES
+
+.halfword ITEM_REVIVE
 .halfword ONE_BADGE
+
+.halfword ITEM_MAX_REVIVE
+.halfword THREE_BADGES
 
 .halfword ITEM_ORAN_BERRY
 .halfword ONE_BADGE
+
+.halfword ITEM_SITRUS_BERRY
+.halfword FIVE_BADGES
+
+.halfword ITEM_LUM_BERRY
+.halfword SEVEN_BADGES
 
 .halfword ITEM_ETHER
 .halfword ONE_BADGE
 
 .halfword ITEM_ELIXIR
-.halfword FIVE_BADGES
+.halfword THREE_BADGES
 
 .halfword ITEM_ESCAPE_ROPE
 .halfword ONE_BADGE
@@ -352,6 +349,9 @@ EIGHT_BADGES equ 6
 .halfword THREE_BADGES
 
 .halfword ITEM_MAX_REPEL
-.halfword SEVEN_BADGES
+.halfword FIVE_BADGES
+
+.halfword ITEM_ABILITY_CAPSULE
+.halfword EIGHT_BADGES
 
 .close
