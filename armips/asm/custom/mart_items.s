@@ -8,7 +8,7 @@
 /* Cherrygrove City */
 .org 0x020FBA54
 .halfword ITEM_TM17
-.halfword ITEM_SCOPE_LENS
+.halfword ITEM_SERIOUS_MINT
 .halfword 0xFFFF
 
 /* Cerulean City */
@@ -19,8 +19,8 @@
 
 /* Ecruteak City */
 .org 0x020FBA60
-.halfword ITEM_DAMP_ROCK
-.halfword ITEM_WIDE_LENS
+.halfword ITEM_HASTY_MINT
+.halfword ITEM_NAIVE_MINT
 .halfword ITEM_SPELL_TAG
 .halfword 0xFFFF
 
@@ -40,8 +40,8 @@
 
 /* Violet City */
 .org 0x020FBA78
-.halfword ITEM_BIG_ROOT
-.halfword ITEM_LAGGING_TAIL
+.halfword ITEM_NAUGHTY_MINT
+.halfword ITEM_MILD_MINT
 .halfword ITEM_SHARP_BEAK
 .halfword 0xFFFF
 
@@ -54,9 +54,9 @@
 
 /* Olivine City */
 .org 0x020FBA88
-.halfword ITEM_SMOOTH_ROCK
-.halfword ITEM_EXP_SHARE
-.halfword ITEM_METAL_COAT
+.halfword ITEM_ADAMANT_MINT
+.halfword ITEM_MODEST_MINT
+.halfword ITEM_TIMID_MINT
 .halfword 0xFFFF
 
 /* Fuchsia City */
@@ -89,51 +89,51 @@
 
 /* Azalea City */
 .org 0x020FBAB0
-.halfword ITEM_AMULET_COIN
-.halfword ITEM_BLACK_SLUDGE
+.halfword ITEM_LONELY_MINT
+.halfword ITEM_RASH_MINT
 .halfword ITEM_SILVER_POWDER
 .halfword 0xFFFF
 
-/* Mahogany City (Pre Rocket Hideout) */
+/* Mahogany Town (Pre Rocket Hideout) */
 .org 0x020FBAB8
-.halfword ITEM_ICY_ROCK
-.halfword ITEM_LUCKY_EGG
+.halfword ITEM_JOLLY_MINT
+.halfword ITEM_BRAVE_MINT
 .halfword ITEM_NEVER_MELT_ICE
 .halfword 0xFFFF
 
 /* Safari Zone Gate */
 .org 0x020FBAC0
-.halfword ITEM_POWER_HERB
-.halfword ITEM_NEST_BALL
-.halfword ITEM_DUSK_BALL
-.halfword ITEM_QUICK_BALL
+.halfword ITEM_LAX_MINT
+.halfword ITEM_RELAXED_MINT
+.halfword ITEM_BRAVE_MINT
+.halfword ITEM_SASSY_MINT
 .halfword 0xFFFF
 
 /* Goldenrod City Herb Shop */
 .org 0x020FBACA
-.halfword ITEM_NAIVE_MINT
-.halfword ITEM_SERIOUS_MINT
-.halfword ITEM_LONELY_MINT
-.halfword ITEM_ADAMANT_MINT
+.halfword ITEM_POWER_HERB
+.halfword ITEM_ICY_ROCK
+.halfword ITEM_HEAT_ROCK
+.halfword ITEM_DAMP_ROCK
 .halfword 0xFFFF
 
 /* Cianwood City Pharmacy */
 .org 0x020FBAD4
-.halfword ITEM_HEAT_ROCK
-.halfword ITEM_FLAME_ORB
-.halfword ITEM_AIR_BALLOON
+.halfword ITEM_IMPISH_MINT
+.halfword ITEM_BOLD_MINT
+.halfword ITEM_CALM_MINT
+.halfword ITEM_CAREFUL_MINT
 .halfword ITEM_BLACK_BELT
-.halfword ITEM_POISON_BARB
 .halfword 0xFFFF
 
 /* Goldenrod City Department Store - Vitamins */
 .org 0x020FBAFA
-.halfword ITEM_GENTLE_MINT
-.halfword ITEM_CAREFUL_MINT
-.halfword ITEM_SASSY_MINT
-.halfword ITEM_TIMID_MINT
-.halfword ITEM_HASTY_MINT
-.halfword ITEM_JOLLY_MINT
+.halfword ITEM_LUCKY_EGG
+.halfword ITEM_AMULET_COIN
+.halfword ITEM_AIR_BALLOON
+.halfword ITEM_LIGHT_CLAY
+.halfword ITEM_FOCUS_SASH
+.halfword ITEM_EXP_SHARE
 .halfword 0xFFFF
 
 /* Celadon City Department Store - Vitamins */
@@ -158,14 +158,14 @@
 
 /* Goldenrod City Department Store - X Items */
 .org 0x020FBBB4
-.halfword ITEM_IMPISH_MINT
-.halfword ITEM_LAX_MINT
-.halfword ITEM_RELAXED_MINT
-.halfword ITEM_MODEST_MINT
-.halfword ITEM_MILD_MINT
-.halfword ITEM_RASH_MINT
-.halfword ITEM_QUIET_MINT
-.halfword ITEM_CALM_MINT
+.halfword ITEM_LEFTOVERS
+.halfword ITEM_BLACK_SLUDGE
+.halfword ITEM_LIFE_ORB
+.halfword ITEM_FLAME_ORB
+.halfword ITEM_TOXIC_ORB
+.halfword ITEM_CHOICE_SCARF
+.halfword ITEM_EXPERT_BELT
+.halfword ITEM_ROCKY_HELMET
 .halfword 0xFFFF
 
 /* Celadon City Department Store - X Items */
@@ -180,16 +180,16 @@
 .halfword ITEM_X_SP_DEF
 .halfword 0xFFFF
 
-/* Mahogany City (Post Rocked Hideout) */
+/* Mahogany Town (Post Rocked Hideout) */
 .org 0x020FBBD8
-.halfword ITEM_GREAT_BALL
-.halfword ITEM_SUPER_POTION
-.halfword ITEM_HYPER_POTION
-.halfword ITEM_ANTIDOTE
-.halfword ITEM_FAIRY_FEATHER
+.halfword ITEM_CHARIZARDITE_X
+.halfword ITEM_CHARIZARDITE_Y
+.halfword ITEM_JOLLY_MINT
+.halfword ITEM_BRAVE_MINT
+.halfword ITEM_QUIET_MINT
+.halfword ITEM_GENTLE_MINT
 .halfword ITEM_NEVER_MELT_ICE
-.halfword ITEM_CHOICE_SCARF
-.halfword ITEM_ICY_ROCK
+.halfword ITEM_FAIRY_FEATHER
 .halfword 0xFFFF
 
 /* Goldenrod City Department Store - Healing Items */
@@ -231,27 +231,27 @@
 .halfword ITEM_SYRUPY_APPLE
 .halfword ITEM_TART_APPLE
 .halfword ITEM_SWEET_APPLE
-.halfword ITEM_FOCUS_SASH
-.halfword ITEM_EXPERT_BELT
-.halfword ITEM_NAUGHTY_MINT
-.halfword ITEM_BRAVE_MINT
-.halfword ITEM_BOLD_MINT
+.halfword ITEM_POWER_BELT
+.halfword ITEM_POWER_ANKLET
+.halfword ITEM_POWER_BAND
+.halfword ITEM_LINKING_CORD
+.halfword ITEM_EVIOLITE
 .halfword 0xFFFF
 
 /* Goldenrod City Department Store - TM Corner */
 .org 0x020FBC34
-.halfword ITEM_POWER_WEIGHT
-.halfword ITEM_POWER_BRACER
-.halfword ITEM_POWER_BELT
-.halfword ITEM_POWER_LENS
-.halfword ITEM_POWER_BAND
-.halfword ITEM_POWER_ANKLET
-.halfword ITEM_ABILITY_CAPSULE
-.halfword ITEM_ROCKY_HELMET
-.halfword ITEM_EVIOLITE
-.halfword ITEM_LIGHT_CLAY
-.halfword ITEM_LEFTOVERS
-.halfword ITEM_LIFE_ORB
+.halfword ITEM_TM16
+.halfword ITEM_TM33
+.halfword ITEM_TM22
+.halfword ITEM_TM52
+.halfword ITEM_TM15
+.halfword ITEM_TM14
+.halfword ITEM_TM25
+.halfword ITEM_TM38
+.halfword ITEM_TM53
+.halfword ITEM_TM31
+.halfword ITEM_TM61
+.halfword ITEM_TM73
 .halfword 0xFFFF
 
 /* Celadon City Department Store - Trainer's Market */
@@ -296,6 +296,9 @@ EIGHT_BADGES equ 6
 
 /* General Marts - 2nd Clerk */
 .org 0x020FBF22
+
+.halfword ITEM_ABILITY_CAPSULE
+.halfword FIVE_BADGES
 
 .halfword ITEM_POKE_BALL
 .halfword ZERO_BADGES
@@ -349,9 +352,6 @@ EIGHT_BADGES equ 6
 .halfword THREE_BADGES
 
 .halfword ITEM_MAX_REPEL
-.halfword FIVE_BADGES
-
-.halfword ITEM_ABILITY_CAPSULE
-.halfword EIGHT_BADGES
+.halfword SEVEN_BADGES
 
 .close

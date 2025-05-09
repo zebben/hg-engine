@@ -253,10 +253,10 @@ movedata MOVE_SWORDS_DANCE, "Swords Dance"
 movedata MOVE_CUT, "Cut"
     battleeffect MOVE_EFFECT_HIT
     pss SPLIT_PHYSICAL
-    basepower 70
+    basepower 60
     type TYPE_GRASS
     accuracy 100
-    pp 15
+    pp 30
     effectchance 0
     target RANGE_SINGLE_TARGET
     priority 0
@@ -3997,10 +3997,10 @@ movedata MOVE_FUTURE_SIGHT, "Future Sight"
 movedata MOVE_ROCK_SMASH, "Rock Smash"
     battleeffect MOVE_EFFECT_LOWER_DEFENSE_HIT
     pss SPLIT_PHYSICAL
-    basepower 65
+    basepower 60
     type TYPE_FIGHTING
     accuracy 100
-    pp 20
+    pp 30
     effectchance 50
     target RANGE_SINGLE_TARGET
     priority 0
