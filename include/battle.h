@@ -1370,6 +1370,7 @@ struct PACKED BattleStruct {
                int numberOfTurnsClientHasCurrentAbility[CLIENT_MAX]; // idk it's probably not u8?
                u8 clientPriority[CLIENT_MAX];
                OnceOnlyAbilityFlags onceOnlyAbilityFlags[4][6];
+               BOOL defenderHeldItemTriggered; // TODO zebben remove me
 };
 
 enum {

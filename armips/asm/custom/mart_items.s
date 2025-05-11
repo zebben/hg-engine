@@ -49,7 +49,7 @@
 .org 0x020FBA80
 .halfword ITEM_CHOICE_BAND
 .halfword ITEM_CHOICE_SPECS
-.halfword ITEM_DRAGON_FANG
+.halfword ITEM_CHOICE_SCARF
 .halfword 0xFFFF
 
 /* Olivine City */
@@ -129,11 +129,11 @@
 /* Goldenrod City Department Store - Vitamins */
 .org 0x020FBAFA
 .halfword ITEM_LUCKY_EGG
-.halfword ITEM_AMULET_COIN
+.halfword ITEM_EXP_SHARE
 .halfword ITEM_AIR_BALLOON
 .halfword ITEM_LIGHT_CLAY
 .halfword ITEM_FOCUS_SASH
-.halfword ITEM_EXP_SHARE
+.halfword ITEM_TERRAIN_EXTENDER
 .halfword 0xFFFF
 
 /* Celadon City Department Store - Vitamins */
@@ -163,7 +163,7 @@
 .halfword ITEM_LIFE_ORB
 .halfword ITEM_FLAME_ORB
 .halfword ITEM_TOXIC_ORB
-.halfword ITEM_CHOICE_SCARF
+.halfword ITEM_EJECT_BUTTON
 .halfword ITEM_EXPERT_BELT
 .halfword ITEM_ROCKY_HELMET
 .halfword 0xFFFF

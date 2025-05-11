@@ -2119,7 +2119,9 @@ levelup SPECIES_GENGAR
     learnset MOVE_CONFUSE_RAY, 19
     learnset MOVE_NIGHT_SHADE, 23
     learnset MOVE_SUCKER_PUNCH, 29
-    learnset MOVE_HEX, 38
+    learnset MOVE_SLUDGE, 32
+    learnset MOVE_HEX, 32
+    learnset MOVE_VENOSHOCK, 36
     learnset MOVE_SHADOW_BALL, 41
     learnset MOVE_DARK_PULSE, 42
     learnset MOVE_DREAM_EATER, 50
@@ -4163,7 +4165,7 @@ levelup SPECIES_FLAAFFY
     learnset MOVE_THUNDER_SHOCK, 8
     learnset MOVE_COTTON_SPORE, 11
     learnset MOVE_CHARGE, 16
-    learnset MOVE_TAKE_DOWN, 20
+    learnset MOVE_SHOCK_WAVE, 20
     learnset MOVE_CONFUSE_RAY, 29
     learnset MOVE_POWER_GEM, 34
     learnset MOVE_DISCHARGE, 38
@@ -4184,6 +4186,7 @@ levelup SPECIES_AMPHAROS
     learnset MOVE_GROWL, 1
     learnset MOVE_THUNDER_WAVE, 1
     learnset MOVE_THUNDER_SHOCK, 1
+    learnset MOVE_SHOCK_WAVE, 1
     learnset MOVE_THUNDER_WAVE, 4
     learnset MOVE_THUNDER_SHOCK, 8
     learnset MOVE_COTTON_SPORE, 11
@@ -4191,6 +4194,7 @@ levelup SPECIES_AMPHAROS
     learnset MOVE_TAKE_DOWN, 20
     learnset MOVE_CONFUSE_RAY, 29
     learnset MOVE_POWER_GEM, 35
+    learnset MOVE_VOLT_SWITCH, 38
     learnset MOVE_DISCHARGE, 40
     learnset MOVE_IRON_DEFENSE, 46
     learnset MOVE_SIGNAL_BEAM, 51
@@ -23337,12 +23341,16 @@ levelup SPECIES_MEGA_GENGAR
     learnset MOVE_CONFUSE_RAY, 19
     learnset MOVE_NIGHT_SHADE, 23
     learnset MOVE_SUCKER_PUNCH, 29
-    learnset MOVE_HEX, 38
+    learnset MOVE_SLUDGE, 32
+    learnset MOVE_HEX, 32
+    learnset MOVE_VENOSHOCK, 36
     learnset MOVE_SHADOW_BALL, 41
     learnset MOVE_DARK_PULSE, 42
     learnset MOVE_DREAM_EATER, 50
     learnset MOVE_DESTINY_BOND, 52
     learnset MOVE_NIGHTMARE, 61
+    learnset MOVE_MYSTICAL_FIRE, 63
+    learnset MOVE_AURA_SPHERE, 70
     terminatelearnset
 
 
@@ -23513,6 +23521,7 @@ levelup SPECIES_MEGA_AMPHAROS
     learnset MOVE_GROWL, 1
     learnset MOVE_THUNDER_WAVE, 1
     learnset MOVE_THUNDER_SHOCK, 1
+    learnset MOVE_SHOCK_WAVE, 1
     learnset MOVE_THUNDER_WAVE, 4
     learnset MOVE_THUNDER_SHOCK, 8
     learnset MOVE_COTTON_SPORE, 11
@@ -23520,6 +23529,7 @@ levelup SPECIES_MEGA_AMPHAROS
     learnset MOVE_TAKE_DOWN, 20
     learnset MOVE_CONFUSE_RAY, 29
     learnset MOVE_POWER_GEM, 35
+    learnset MOVE_VOLT_SWITCH, 38
     learnset MOVE_DISCHARGE, 40
     learnset MOVE_IRON_DEFENSE, 46
     learnset MOVE_SIGNAL_BEAM, 51

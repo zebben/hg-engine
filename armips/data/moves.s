@@ -6590,7 +6590,7 @@ movedata MOVE_FOCUS_BLAST, "Focus Blast"
     battleeffect MOVE_EFFECT_USER_SP_ATK_DOWN_2
     pss SPLIT_SPECIAL
     basepower 130
-    type TYPE_NORMAL
+    type TYPE_FIGHTING
     accuracy 90
     pp 5
     effectchance 0

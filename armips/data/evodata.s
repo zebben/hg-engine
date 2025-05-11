@@ -780,7 +780,7 @@ evodata SPECIES_ABRA
     terminateevodata
 
 evodata SPECIES_KADABRA
-    evolution EVO_LEVEL, 30, SPECIES_ALAKAZAM
+    evolution EVO_STONE, ITEM_LINKING_CORD, SPECIES_ALAKAZAM
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
@@ -816,7 +816,7 @@ evodata SPECIES_MACHOP
     terminateevodata
 
 evodata SPECIES_MACHOKE
-    evolution EVO_LEVEL, 30, SPECIES_MACHAMP
+    evolution EVO_STONE, ITEM_LINKING_CORD, SPECIES_MACHAMP
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
@@ -912,7 +912,7 @@ evodata SPECIES_GEODUDE
     terminateevodata
 
 evodata SPECIES_GRAVELER
-    evolution EVO_LEVEL, 30, SPECIES_GOLEM
+    evolution EVO_STONE, ITEM_LINKING_CORD, SPECIES_GOLEM
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
@@ -1128,7 +1128,7 @@ evodata SPECIES_GASTLY
     terminateevodata
 
 evodata SPECIES_HAUNTER
-    evolution EVO_LEVEL, 30, SPECIES_GENGAR
+    evolution EVO_STONE, ITEM_LINKING_CORD, SPECIES_GENGAR
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
@@ -6916,7 +6916,7 @@ evodata SPECIES_ROGGENROLA
     terminateevodata
 
 evodata SPECIES_BOLDORE
-    evolution EVO_LEVEL, 30, SPECIES_GIGALITH
+    evolution EVO_STONE, ITEM_LINKING_CORD, SPECIES_GIGALITH
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
@@ -7012,7 +7012,7 @@ evodata SPECIES_TIMBURR
     terminateevodata
 
 evodata SPECIES_GURDURR
-    evolution EVO_LEVEL, 30, SPECIES_CONKELDURR
+    evolution EVO_STONE, ITEM_LINKING_CORD, SPECIES_CONKELDURR
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
@@ -9112,7 +9112,7 @@ evodata SPECIES_KLEFKI
 terminateevodata
 
 evodata SPECIES_PHANTUMP
-    evolution EVO_LEVEL, 28, SPECIES_TREVENANT
+    evolution EVO_STONE, ITEM_LINKING_CORD, SPECIES_TREVENANT
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
@@ -9136,7 +9136,7 @@ evodata SPECIES_TREVENANT
 terminateevodata
 
 evodata SPECIES_PUMPKABOO
-    evolution EVO_LEVEL, 28, SPECIES_GOURGEIST
+    evolution EVO_STONE, ITEM_LINKING_CORD, SPECIES_GOURGEIST
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
@@ -13676,7 +13676,7 @@ evodata SPECIES_GEODUDE_ALOLAN
 terminateevodata
 
 evodata SPECIES_GRAVELER_ALOLAN
-    evolutionwithform EVO_LEVEL, 30, SPECIES_GOLEM, 1
+    evolutionwithform EVO_STONE, ITEM_LINKING_CORD, SPECIES_GOLEM, 1
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
@@ -15164,7 +15164,7 @@ evodata SPECIES_AEGISLASH_BLADE
 terminateevodata
 
 evodata SPECIES_PUMPKABOO_SMALL
-    evolution EVO_LEVEL, 28, SPECIES_GOURGEIST
+    evolution EVO_STONE, ITEM_LINKING_CORD, SPECIES_GOURGEIST
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
@@ -15176,7 +15176,7 @@ evodata SPECIES_PUMPKABOO_SMALL
 terminateevodata
 
 evodata SPECIES_PUMPKABOO_LARGE
-    evolution EVO_LEVEL, 28, SPECIES_GOURGEIST
+    evolution EVO_STONE, ITEM_LINKING_CORD, SPECIES_GOURGEIST
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
@@ -15188,7 +15188,7 @@ evodata SPECIES_PUMPKABOO_LARGE
 terminateevodata
 
 evodata SPECIES_PUMPKABOO_SUPER
-    evolution EVO_LEVEL, 28, SPECIES_GOURGEIST
+    evolution EVO_STONE, ITEM_LINKING_CORD, SPECIES_GOURGEIST
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE

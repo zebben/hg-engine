@@ -1284,7 +1284,7 @@ trainerdata 31, "Morty"
 trainerdata 32, "Pryce"
     trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES | TRAINER_DATA_TYPE_ABILITY | TRAINER_DATA_TYPE_IV_EV_SET | TRAINER_DATA_TYPE_NATURE_SET | TRAINER_DATA_TYPE_SHINY_LOCK | TRAINER_DATA_TYPE_ADDITIONAL_FLAGS
     trainerclass TRAINERCLASS_LEADER_PRYCE
-    nummons 5
+    nummons 6
     item ITEM_FULL_RESTORE
     item ITEM_FULL_RESTORE
     item ITEM_NONE
@@ -1377,6 +1377,25 @@ trainerdata 32, "Pryce"
         move MOVE_ICE_SHARD
         move MOVE_IRON_HEAD
         ability ABILITY_THICK_FAT
+        setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
+        nature NATURE_JOLLY
+        shinylock 0
+        additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
+        ballseal 0
+        ballseal 0
+        
+        // mon 5
+        ivs 255
+        abilityslot 0
+        level 42
+        pokemon SPECIES_GLALIE
+        item ITEM_CHARIZARDITE_X
+        move MOVE_BODY_SLAM
+        move MOVE_ICE_SHARD
+        move MOVE_CRUNCH
+        move MOVE_PROTECT
+        ability ABILITY_REFRIGERATE
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
         setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_JOLLY
@@ -4655,7 +4674,7 @@ trainerdata 113, "Jamie"
     endparty
 
 trainerdata 114, "Reena"
-    trainermontype TRAINER_DATA_TYPE_MOVES
+    trainermontype TRAINER_DATA_TYPE_MOVES | TRAINER_DATA_TYPE_ABILITY
     trainerclass TRAINERCLASS_ACE_TRAINER_F
     nummons 3
     item ITEM_NONE
@@ -20773,7 +20792,7 @@ trainerdata 444, "Reena"
     endparty
 
 trainerdata 445, "Reena"
-    trainermontype TRAINER_DATA_TYPE_MOVES
+    trainermontype TRAINER_DATA_TYPE_MOVES | TRAINER_DATA_TYPE_ABILITY
     trainerclass TRAINERCLASS_ACE_TRAINER_F
     nummons 3
     item ITEM_NONE
@@ -28178,7 +28197,7 @@ trainerdata 606, "Parry"
     endparty
 
 trainerdata 607, "Reena"
-    trainermontype TRAINER_DATA_TYPE_MOVES
+    trainermontype TRAINER_DATA_TYPE_MOVES | TRAINER_DATA_TYPE_ABILITY
     trainerclass TRAINERCLASS_ACE_TRAINER_F
     nummons 6
     item ITEM_NONE
@@ -34642,16 +34661,16 @@ trainerdata 716, "Pryce"
         ivs 255
         abilityslot 0
         level 80
-        pokemon SPECIES_VANILLUXE
-        item ITEM_ICY_ROCK
+        pokemon SPECIES_ABOMASNOW
+        item ITEM_CHARIZARDITE_X
+        move MOVE_GRASS_WHISTLE
         move MOVE_PROTECT
-        move MOVE_HAIL
-        move MOVE_WEATHER_BALL
-        move MOVE_LIGHT_SCREEN
+        move MOVE_BLIZZARD
+        move MOVE_WOOD_HAMMER
         ability ABILITY_SNOW_WARNING
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
         setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
-        nature NATURE_CALM
+        nature NATURE_BRAVE
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
         ballseal 0

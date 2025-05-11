@@ -253,6 +253,8 @@ void LONG_CALL BattleController_MoveEndInternal(struct BattleSystem *bsys, struc
         ctx->executionIndex++;
     }
 
+    ctx->defenderHeldItemTriggered = FALSE; // TODO zebben remove me
+
     BattleStructureInit(ctx);
 
     ctx->server_seq_no = CONTROLLER_COMMAND_8;

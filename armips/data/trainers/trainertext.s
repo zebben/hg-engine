@@ -265,7 +265,7 @@ _0188: // Trainer 34
 _0194: // Trainer 32
     trainertextentry  32, TEXT_LAST_MON_SENT_OUT, "Humph... You are quite the Trainer.\n"
     trainertextentry  32, TEXT_LAST_MON_CRITICAL, "Willow is my middle name.\nWillow is flexible and not easily broken.\fI’m not giving up yet.\n"
-    trainertextentry  32, TEXT_DEFEATED_IN_BATTLE, "Hmm. Seems as if my luck has run out...\nOh! That reminds me...\rCheck out the souvenir shop\ron your way out.\n"
+    trainertextentry  32, TEXT_DEFEATED_IN_BATTLE, "Hmm. Seems as if my luck has run out...\nOh! That reminds me...\rI hear the souvenir shop\rnas some interesting new items.\nI hope it opens again soon."
 
 _01A0: // Trainer 35
     trainertextentry  35, TEXT_LAST_MON_SENT_OUT, "One Pokémon left?\nThis is where the real battle begins!\n"

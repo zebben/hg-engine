@@ -18347,7 +18347,7 @@ mondata SPECIES_CORVISQUIRE, "Corvsquire"
     mondexweight SPECIES_CORVISQUIRE, "35.3 lbs."
 
 
-mondata SPECIES_CORVIKNIGHT, "Corviknite"
+mondata SPECIES_CORVIKNIGHT, "Corviknight"
     basestats 98, 87, 105, 70, 85, 85
     types TYPE_FLYING, TYPE_STEEL
     catchrate 45

@@ -536,8 +536,8 @@ Red Orb
 Blue Orb
 Enigma Stone
 Venusaurite
-Std Mega Stone
-Alt Mega Stone
+Mega Stone
+Alt. Mega Stone
 Blastoisite
 Beedrillite
 Pidgeotite
