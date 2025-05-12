@@ -185,7 +185,7 @@ trainerdata 4, "Wade"
 trainerdata 5, "Victoria"
     trainermontype TRAINER_DATA_TYPE_MOVES
     trainerclass TRAINERCLASS_BEAUTY
-    nummons 3
+    nummons 2
     item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
@@ -207,17 +207,6 @@ trainerdata 5, "Victoria"
         ballseal 0
 
         // mon 1
-        ivs 150
-        abilityslot 32
-        level 19
-        pokemon SPECIES_CHANSEY
-        move MOVE_HEADBUTT
-        move MOVE_SOFT_BOILED
-        move MOVE_HELPING_HAND
-        move MOVE_COPYCAT
-        ballseal 0
-
-        // mon 2
         ivs 150
         abilityslot 32
         level 18
@@ -859,7 +848,7 @@ trainerdata 21, "Bugsy"
 trainerdata 22, "Carrie"
     trainermontype TRAINER_DATA_TYPE_MOVES
     trainerclass TRAINERCLASS_LASS
-    nummons 2
+    nummons 3
     item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
@@ -881,6 +870,17 @@ trainerdata 22, "Carrie"
         ballseal 0
 
         // mon 1
+        ivs 150
+        abilityslot 32
+        level 19
+        pokemon SPECIES_CHANSEY
+        move MOVE_HEADBUTT
+        move MOVE_SOFT_BOILED
+        move MOVE_HELPING_HAND
+        move MOVE_COPYCAT
+        ballseal 0
+
+        // mon 2
         ivs 150
         abilityslot 0
         level 19
@@ -23496,24 +23496,24 @@ trainerdata 500, "Kobe"
         ivs 50
         abilityslot 0
         level 50
-        pokemon SPECIES_GARCHOMP
+        pokemon SPECIES_SALAMENCE
         move MOVE_EARTHQUAKE
         move MOVE_DRAGON_RUSH
-        move MOVE_SWORDS_DANCE
+        move MOVE_DRAGON_DANCE
         move MOVE_FIRE_FANG
-        ability ABILITY_ROUGH_SKIN
+        ability ABILITY_MOXIE
         ballseal 0
 
         // mon 1
         ivs 50
         abilityslot 0
         level 50
-        pokemon SPECIES_NOIVERN
-        move MOVE_BOOMBURST
+        pokemon SPECIES_DRAMPA
+        move MOVE_SWIFT
         move MOVE_DRAGON_PULSE
         move MOVE_FIRE_BLAST
-        move MOVE_TAILWIND
-        ability ABILITY_AERILATE
+        move MOVE_POWDER_SNOW
+        ability ABILITY_TECHNICIAN
         ballseal 0
     endparty
 
