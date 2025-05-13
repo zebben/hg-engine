@@ -378,9 +378,25 @@ def generate_index(species_path, output_path="../../wiki/index.html"):
     with open(output_path, "w") as f:
         f.write("<!DOCTYPE html>\n<html lang='en'>\n<head>\n")
         f.write("  <meta charset='UTF-8'>\n  <title>Mirror Gold Pokédex Index</title>\n")
-        f.write("  <link rel='stylesheet' href='styles.css'>\n")
+        f.write("  <link rel='stylesheet' href='style.css'>\n")
+        f.write("""
+  <script>
+      function filterPokemon() {
+          let input = document.getElementById('searchBox').value.toUpperCase();
+          let ul = document.getElementById('pokemonList');
+          let items = ul.getElementsByTagName('li');
+          for (let i = 0; i < items.length; i++) {
+              let a = items[i].getElementsByTagName("a")[0];
+              let txt = a.textContent || a.innerText;
+              items[i].style.display = txt.toUpperCase().indexOf(input) > -1 ? "" : "none";
+          }
+      }
+  </script>
+        """)
         f.write("</head>\n<body>\n")
-        f.write("  <h1>Mirror Gold Pokédex</h1>\n  <ul>\n")
+        f.write("  <h1 class='center''>Mirror Gold Pokédex</h1>\n")
+        f.write("  <div class='center'><input type='text' id='searchBox' class='center' placeholder='Search Pokémon...' onkeyup='filterPokemon()' /></div>\n")
+        f.write("  <ul id='pokemonList' class='center'>\n")
 
         for name in species:
             f.write(f"    <li><a href='pokemon/{name}.html'>{name}</a></li>\n")
