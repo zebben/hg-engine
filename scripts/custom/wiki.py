@@ -244,7 +244,7 @@ def generate_pokemon_pages(evodata_path, output_dir, mondata_path, species_path,
 
         locations = encounter_locations.get(species, [])
         if locations:
-            locations_html = "<ul>\n" + "".join(f"  <li>{loc}</li>\n" for loc in sorted(set(locations))) + "</ul>"
+            locations_html = "<ul class='center'>\n" + "".join(f"  <li>{loc}</li>\n" for loc in sorted(set(locations))) + "</ul>"
         else:
             locations_html = "<p><em>Not found in the wild.</em></p>"
 
