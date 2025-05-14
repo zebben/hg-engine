@@ -5213,7 +5213,7 @@ trainerdata 125, "Edgar"
         // mon 0
         ivs 0
         abilityslot 0
-        level 47
+        level 45
         pokemon SPECIES_LANTURN
         move MOVE_SCALD
         move MOVE_DISCHARGE
@@ -5224,7 +5224,7 @@ trainerdata 125, "Edgar"
         // mon 1
         ivs 0
         abilityslot 32
-        level 47
+        level 45
         pokemon SPECIES_QWILFISH
         move MOVE_AQUA_TAIL
         move MOVE_BARB_BARRAGE
@@ -14735,7 +14735,7 @@ trainerdata 313, "Reese"
         // mon 0
         ivs 0
         abilityslot 0
-        level 70
+        level 67
         pokemon SPECIES_VOLBEAT
         move MOVE_MOONBLAST
         move MOVE_HYPNOSIS
@@ -14746,7 +14746,7 @@ trainerdata 313, "Reese"
         // mon 1
         ivs 0
         abilityslot 0
-        level 70
+        level 66
         pokemon SPECIES_KROOKODILE
         move MOVE_CLOSE_COMBAT
         move MOVE_HEADLONG_RUSH
@@ -14757,7 +14757,7 @@ trainerdata 313, "Reese"
         // mon 2
         ivs 0
         abilityslot 0
-        level 70
+        level 68
         pokemon SPECIES_OINKOLOGNE
         move MOVE_PROTECT
         move MOVE_DOUBLE_EDGE
@@ -14782,7 +14782,7 @@ trainerdata 314, "Joel"
         // mon 0
         ivs 0
         abilityslot 0
-        level 71
+        level 67
         pokemon SPECIES_MAROWAK
         item ITEM_THICK_CLUB
         move MOVE_BONE_RUSH
@@ -14794,7 +14794,7 @@ trainerdata 314, "Joel"
         // mon 1
         ivs 0
         abilityslot 0
-        level 70
+        level 68
         pokemon SPECIES_BEHEEYEM
         item ITEM_LEFTOVERS
         move MOVE_TRICK_ROOM
@@ -14806,7 +14806,7 @@ trainerdata 314, "Joel"
         // mon 2
         ivs 0
         abilityslot 0
-        level 70
+        level 67
         pokemon SPECIES_HAXORUS
         item ITEM_LIFE_ORB
         move MOVE_CLOSE_COMBAT
@@ -15271,7 +15271,7 @@ trainerdata 324, "Tully"
     endparty
 
 trainerdata 325, "Wilton"
-    trainermontype TRAINER_DATA_TYPE_NOTHING
+    trainermontype TRAINER_DATA_TYPE_MOVES
     trainerclass TRAINERCLASS_FISHERMAN
     nummons 3
     item ITEM_NONE
@@ -15286,22 +15286,34 @@ trainerdata 325, "Wilton"
         // mon 0
         ivs 0
         abilityslot 0
-        level 32
-        pokemon SPECIES_GOLDEEN
+        level 47
+        pokemon SPECIES_QWILFISH
+        move MOVE_LIQUIDATION
+        move MOVE_BARB_BARRAGE
+        move MOVE_THUNDER_WAVE
+        move MOVE_PAIN_SPLIT
         ballseal 0
 
         // mon 1
         ivs 0
         abilityslot 0
-        level 32
-        pokemon SPECIES_GOLDEEN
+        level 47
+        pokemon SPECIES_EMPOLEON
+        move MOVE_HYDRO_PUMP
+        move MOVE_FLASH_CANNON
+        move MOVE_ICE_BEAM
+        move MOVE_PROTECT
         ballseal 0
 
         // mon 2
         ivs 0
         abilityslot 0
-        level 36
-        pokemon SPECIES_SEAKING
+        level 47
+        pokemon SPECIES_GASTRODON
+        move MOVE_SCALD
+        move MOVE_EARTH_POWER
+        move MOVE_TOXIC
+        move MOVE_PROTECT
         ballseal 0
     endparty
 
@@ -19106,7 +19118,7 @@ trainerdata 405, "Phil"
         // mon 0
         ivs 0
         abilityslot 0
-        level 47
+        level 45
         pokemon SPECIES_XATU
         move MOVE_HELPING_HAND
         move MOVE_ROOST
@@ -19117,7 +19129,7 @@ trainerdata 405, "Phil"
         // mon 1
         ivs 0
         abilityslot 0
-        level 47
+        level 44
         pokemon SPECIES_ESPEON
         move MOVE_PSYCHIC
         move MOVE_SHADOW_BALL
@@ -19142,7 +19154,7 @@ trainerdata 406, "Zach"
         // mon 0
         ivs 0
         abilityslot 0
-        level 47
+        level 46
         pokemon SPECIES_HERACROSS
         move MOVE_CLOSE_COMBAT
         move MOVE_MEGAHORN
@@ -19153,7 +19165,7 @@ trainerdata 406, "Zach"
         // mon 1
         ivs 0
         abilityslot 0
-        level 47
+        level 46
         pokemon SPECIES_DONPHAN
         move MOVE_HEADLONG_RUSH
         move MOVE_THUNDER_FANG
@@ -19178,7 +19190,7 @@ trainerdata 407, "Allen"
         // mon 0
         ivs 50
         abilityslot 0
-        level 47
+        level 45
         pokemon SPECIES_NINETALES
         move MOVE_PROTECT
         move MOVE_LAVA_PLUME
@@ -19190,7 +19202,7 @@ trainerdata 407, "Allen"
         // mon 1
         ivs 50
         abilityslot 0
-        level 48
+        level 46
         pokemon SPECIES_SUNFLORA
         move MOVE_SOLAR_BEAM
         move MOVE_FLAMETHROWER
@@ -19228,7 +19240,7 @@ trainerdata 408, "Cybil"
         // mon 0
         ivs 50
         abilityslot 0
-        level 47
+        level 45
         pokemon SPECIES_POLITOED
         move MOVE_PROTECT
         move MOVE_SURF
@@ -19240,7 +19252,7 @@ trainerdata 408, "Cybil"
         // mon 1
         ivs 50
         abilityslot 0
-        level 47
+        level 45
         pokemon SPECIES_FLOATZEL
         move MOVE_CRUNCH
         move MOVE_ICICLE_CRASH
@@ -19252,7 +19264,7 @@ trainerdata 408, "Cybil"
         // mon 2
         ivs 50
         abilityslot 0
-        level 48
+        level 46
         pokemon SPECIES_KINGDRA
         move MOVE_PROTECT
         move MOVE_DRAGON_PULSE
@@ -20992,7 +21004,7 @@ trainerdata 450, "Wilton"
         // mon 0
         ivs 0
         abilityslot 0
-        level 47
+        level 49
         pokemon SPECIES_QWILFISH
         move MOVE_LIQUIDATION
         move MOVE_BARB_BARRAGE
@@ -21003,7 +21015,7 @@ trainerdata 450, "Wilton"
         // mon 1
         ivs 0
         abilityslot 0
-        level 47
+        level 49
         pokemon SPECIES_EMPOLEON
         move MOVE_HYDRO_PUMP
         move MOVE_FLASH_CANNON
@@ -21014,7 +21026,7 @@ trainerdata 450, "Wilton"
         // mon 2
         ivs 0
         abilityslot 0
-        level 47
+        level 49
         pokemon SPECIES_GASTRODON
         move MOVE_SCALD
         move MOVE_EARTH_POWER
@@ -26746,7 +26758,7 @@ trainerdata 572, "Dale"
         // mon 0
         ivs 0
         abilityslot 32
-        level 70
+        level 66
         pokemon SPECIES_GENGAR
         move MOVE_SHADOW_BALL
         move MOVE_SLUDGE_BOMB
@@ -26757,7 +26769,7 @@ trainerdata 572, "Dale"
         // mon 1
         ivs 0
         abilityslot 32
-        level 70
+        level 67
         pokemon SPECIES_SABLEYE
         move MOVE_PROTECT
         move MOVE_DISABLE
@@ -26768,7 +26780,7 @@ trainerdata 572, "Dale"
         // mon 2
         ivs 0
         abilityslot 32
-        level 70
+        level 67
         pokemon SPECIES_GOLISOPOD
         move MOVE_FIRST_IMPRESSION
         move MOVE_RAZOR_SHELL
@@ -26779,7 +26791,7 @@ trainerdata 572, "Dale"
         // mon 3
         ivs 0
         abilityslot 32
-        level 70
+        level 66
         pokemon SPECIES_STOUTLAND
         move MOVE_SWORDS_DANCE
         move MOVE_EXTREME_SPEED
@@ -26804,7 +26816,7 @@ trainerdata 573, "Jacob"
         // mon 0
         ivs 0
         abilityslot 0
-        level 70
+        level 68
         pokemon SPECIES_AERODACTYL
         move MOVE_EARTHQUAKE
         move MOVE_ROCK_SLIDE
@@ -26815,7 +26827,7 @@ trainerdata 573, "Jacob"
         // mon 1
         ivs 0
         abilityslot 32
-        level 71
+        level 69
         pokemon SPECIES_LINOONE
         move MOVE_BELLY_DRUM
         move MOVE_EXTREME_SPEED
@@ -26826,7 +26838,7 @@ trainerdata 573, "Jacob"
         // mon 2
         ivs 0
         abilityslot 32
-        level 70
+        level 66
         pokemon SPECIES_CRABOMINABLE
         move MOVE_CLOSE_COMBAT
         move MOVE_ICICLE_CRASH
@@ -26920,7 +26932,7 @@ trainerdata 575, "Dan"
         // mon 0
         ivs 0
         abilityslot 0
-        level 71
+        level 69
         pokemon SPECIES_LOKIX
         move MOVE_PROTECT
         move MOVE_HIGH_JUMP_KICK
@@ -26942,7 +26954,7 @@ trainerdata 575, "Dan"
         // mon 2
         ivs 0
         abilityslot 0
-        level 70
+        level 67
         pokemon SPECIES_RIBOMBEE
         move MOVE_QUIVER_DANCE
         move MOVE_AROMATHERAPY
@@ -27086,7 +27098,7 @@ trainerdata 579, "Ernest"
         // mon 0
         ivs 0
         abilityslot 32
-        level 70
+        level 68
         monwithform SPECIES_STUNFISK, 1
         move MOVE_STEALTH_ROCK
         move MOVE_BODY_PRESS
@@ -27097,7 +27109,7 @@ trainerdata 579, "Ernest"
         // mon 1
         ivs 0
         abilityslot 32
-        level 71
+        level 67
         pokemon SPECIES_COFAGRIGUS
         move MOVE_SHADOW_BALL
         move MOVE_WILL_O_WISP
@@ -27108,7 +27120,7 @@ trainerdata 579, "Ernest"
         // mon 2
         ivs 0
         abilityslot 32
-        level 71
+        level 66
         pokemon SPECIES_WIGGLYTUFF
         move MOVE_WISH
         move MOVE_PROTECT
@@ -27119,7 +27131,7 @@ trainerdata 579, "Ernest"
         // mon 3
         ivs 0
         abilityslot 32
-        level 70
+        level 67
         pokemon SPECIES_DURANT
         move MOVE_X_SCISSOR
         move MOVE_IRON_HEAD
@@ -28280,7 +28292,7 @@ trainerdata 607, "Reena"
     endparty
 
 trainerdata 608, "Wilton"
-    trainermontype TRAINER_DATA_TYPE_NOTHING
+    trainermontype TRAINER_DATA_TYPE_MOVES
     trainerclass TRAINERCLASS_FISHERMAN
     nummons 3
     item ITEM_NONE
@@ -28295,22 +28307,34 @@ trainerdata 608, "Wilton"
         // mon 0
         ivs 0
         abilityslot 0
-        level 42
-        pokemon SPECIES_SEAKING
+        level 49
+        pokemon SPECIES_QWILFISH
+        move MOVE_LIQUIDATION
+        move MOVE_BARB_BARRAGE
+        move MOVE_THUNDER_WAVE
+        move MOVE_PAIN_SPLIT
         ballseal 0
 
         // mon 1
         ivs 0
         abilityslot 0
-        level 46
-        pokemon SPECIES_SEAKING
+        level 51
+        pokemon SPECIES_EMPOLEON
+        move MOVE_HYDRO_PUMP
+        move MOVE_FLASH_CANNON
+        move MOVE_ICE_BEAM
+        move MOVE_PROTECT
         ballseal 0
 
         // mon 2
         ivs 0
         abilityslot 0
-        level 43
-        pokemon SPECIES_SEAKING
+        level 52
+        pokemon SPECIES_GASTRODON
+        move MOVE_SCALD
+        move MOVE_EARTH_POWER
+        move MOVE_TOXIC
+        move MOVE_PROTECT
         ballseal 0
     endparty
 
@@ -29374,7 +29398,7 @@ trainerdata 631, "Aiden"
         // mon 0
         ivs 0
         abilityslot 32
-        level 73
+        level 69
         pokemon SPECIES_DRUDDIGON
         move MOVE_CLOSE_COMBAT
         move MOVE_DRAGON_DANCE
@@ -29385,7 +29409,7 @@ trainerdata 631, "Aiden"
         // mon 1
         ivs 0
         abilityslot 32
-        level 72
+        level 68
         pokemon SPECIES_SPIDOPS
         move MOVE_TAILWIND
         move MOVE_PROTECT
@@ -29396,7 +29420,7 @@ trainerdata 631, "Aiden"
         // mon 2
         ivs 0
         abilityslot 32
-        level 72
+        level 66
         pokemon SPECIES_BOMBIRDIER
         move MOVE_ROCK_SLIDE
         move MOVE_PROTECT
@@ -29407,7 +29431,7 @@ trainerdata 631, "Aiden"
         // mon 3
         ivs 0
         abilityslot 32
-        level 72
+        level 67
         pokemon SPECIES_LAPRAS
         move MOVE_SURF
         move MOVE_PROTECT

@@ -6150,7 +6150,7 @@ rocksmashrate 0
 oldrodrate 25
 goodrodrate 50
 superrodrate 75
-walklevels 40, 40, 42, 42, 42, 42, 42, 42, 42, 43, 43, 43
+walklevels 36, 36, 38, 38, 38, 38, 38, 38, 38, 39, 39, 39
 
 // morning encounter slots
 pokemon SPECIES_MILTANK
@@ -12182,7 +12182,7 @@ rocksmashrate 0
 oldrodrate 0
 goodrodrate 0
 superrodrate 0
-walklevels 60, 60, 60, 61, 61, 61, 61, 62, 62, 62, 62, 63
+walklevels 58, 58, 58, 58, 58, 59, 59, 59, 59, 60, 60, 60
 
 // morning encounter slots
 pokemon SPECIES_VICTREEBEL
@@ -13014,7 +13014,7 @@ rocksmashrate 0
 oldrodrate 0
 goodrodrate 0
 superrodrate 0
-walklevels 62, 62, 63, 63, 63, 63, 63, 64, 64, 64, 64, 65
+walklevels 61, 61, 62, 62, 62, 62, 62, 63, 63, 63, 63, 63
 
 // morning encounter slots
 pokemon SPECIES_SAWK
@@ -13118,7 +13118,7 @@ rocksmashrate 0
 oldrodrate 0
 goodrodrate 0
 superrodrate 0
-walklevels 62, 62, 63, 63, 63, 63, 63, 64, 64, 64, 64, 65
+walklevels 61, 61, 62, 62, 62, 63, 63, 63, 63, 63, 64, 64
 
 // morning encounter slots
 pokemon SPECIES_EXEGGUTOR
