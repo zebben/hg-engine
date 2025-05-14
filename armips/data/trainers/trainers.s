@@ -4250,7 +4250,7 @@ trainerdata 103, "Blake"
     endparty
 
 trainerdata 104, "Brian"
-    trainermontype TRAINER_DATA_TYPE_MOVES
+    trainermontype TRAINER_DATA_TYPE_MOVES | TRAINER_DATA_TYPE_ITEMS
     trainerclass TRAINERCLASS_ACE_TRAINER_M
     nummons 2
     item ITEM_NONE
@@ -4267,6 +4267,7 @@ trainerdata 104, "Brian"
         abilityslot 0
         level 52
         pokemon SPECIES_AMPHAROS
+        item ITEM_CHARIZARDITE_X
         move MOVE_DISCHARGE
         move MOVE_POWER_GEM
         move MOVE_DRAGON_PULSE
@@ -4278,6 +4279,7 @@ trainerdata 104, "Brian"
         abilityslot 0
         level 51
         pokemon SPECIES_GLISCOR
+        item ITEM_LEFTOVERS
         move MOVE_ACROBATICS
         move MOVE_X_SCISSOR
         move MOVE_KNOCK_OFF
@@ -4391,7 +4393,7 @@ trainerdata 107, "Mickey"
     endparty
 
 trainerdata 108, "Ryan"
-    trainermontype TRAINER_DATA_TYPE_MOVES | TRAINER_DATA_TYPE_ABILITY
+    trainermontype TRAINER_DATA_TYPE_MOVES | TRAINER_DATA_TYPE_ABILITY | TRAINER_DATA_TYPE_ITEMS
     trainerclass TRAINERCLASS_ACE_TRAINER_M
     nummons 3
     item ITEM_FULL_RESTORE
@@ -4408,6 +4410,7 @@ trainerdata 108, "Ryan"
         abilityslot 0
         level 50
         pokemon SPECIES_ABOMASNOW
+        item ITEM_CHARIZARDITE_X
         move MOVE_GRASS_WHISTLE
         move MOVE_PROTECT
         move MOVE_BLIZZARD
@@ -4420,6 +4423,7 @@ trainerdata 108, "Ryan"
         abilityslot 0
         level 50
         pokemon SPECIES_MAMOSWINE
+        item ITEM_NEVER_MELT_ICE
         move MOVE_EARTHQUAKE
         move MOVE_ICICLE_CRASH
         move MOVE_ROCK_SLIDE
@@ -4432,6 +4436,7 @@ trainerdata 108, "Ryan"
         abilityslot 0
         level 51
         pokemon SPECIES_FROSLASS
+        item ITEM_LEFTOVERS
         move MOVE_BLIZZARD
         move MOVE_ICY_WIND
         move MOVE_HEX
@@ -10546,7 +10551,7 @@ trainerdata 253, "Brock"
         abilityslot 0
         level 73
         pokemon SPECIES_STEELIX
-        item ITEM_LEFTOVERS
+        item ITEM_CHARIZARDITE_X
         move MOVE_PROTECT
         move MOVE_HEADLONG_RUSH
         move MOVE_WILD_CHARGE
@@ -11052,7 +11057,7 @@ trainerdata 257, "Janine"
         abilityslot 0
         level 73
         pokemon SPECIES_VENUSAUR
-        item ITEM_MIRACLE_SEED
+        item ITEM_CHARIZARDITE_X
         move MOVE_SLEEP_POWDER
         move MOVE_LEAF_STORM
         move MOVE_EARTH_POWER
@@ -11120,7 +11125,7 @@ trainerdata 258, "Sabrina"
         abilityslot 0
         level 66
         pokemon SPECIES_MEDICHAM
-        item ITEM_SITRUS_BERRY
+        item ITEM_CHARIZARDITE_X
         move MOVE_PROTECT
         move MOVE_HIGH_JUMP_KICK
         move MOVE_ICE_PUNCH
@@ -11192,8 +11197,8 @@ trainerdata 258, "Sabrina"
         abilityslot 0
         level 67
         monwithform SPECIES_BRAVIARY, 1
-        item ITEM_TWISTED_SPOON
-        move MOVE_TAILWIND
+        item ITEM_SITRUS_BERRY
+        move MOVE_PROTECT
         move MOVE_BRAVE_BIRD
         move MOVE_SUPERPOWER
         move MOVE_PSYCHO_CUT
@@ -11468,7 +11473,7 @@ trainerdata 261, "Blue"
         abilityslot 0
         level 79
         pokemon SPECIES_BLASTOISE
-        item ITEM_LEFTOVERS
+        item ITEM_CHARIZARDITE_X
         move MOVE_SURF
         move MOVE_AURA_SPHERE
         move MOVE_DARK_PULSE
@@ -11558,7 +11563,7 @@ trainerdata 261, "Blue"
         abilityslot 0
         level 77
         pokemon SPECIES_HATTERENE
-        item ITEM_FAIRY_FEATHER
+        item ITEM_LEFTOVERS
         move MOVE_PSYCHIC
         move MOVE_DAZZLING_GLEAM
         move MOVE_AURA_SPHERE
@@ -33380,7 +33385,7 @@ trainerdata 701, "Lance"
         abilityslot 0
         level 80
         pokemon SPECIES_CHARIZARD
-        item ITEM_SITRUS_BERRY
+        item ITEM_CHARIZARDITE_Y
         move MOVE_HEAT_WAVE
         move MOVE_RAZOR_WIND
         move MOVE_PROTECT
@@ -33397,16 +33402,16 @@ trainerdata 701, "Lance"
         ivs 255
         abilityslot 0
         level 80
-        pokemon SPECIES_TORKOAL
-        item ITEM_HEAT_ROCK
-        move MOVE_STEALTH_ROCK
-        move MOVE_SCALD
-        move MOVE_LAVA_PLUME
-        move MOVE_SUNNY_DAY
-        ability ABILITY_DROUGHT
+        pokemon SPECIES_HELIOLISK
+        item ITEM_AIR_BALLOON
+        move MOVE_THUNDERBOLT
+        move MOVE_HYPER_VOICE
+        move MOVE_DARK_PULSE
+        move MOVE_PROTECT
+        ability ABILITY_SOLAR_POWER
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
         setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
-        nature NATURE_CALM
+        nature NATURE_MODEST
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
         ballseal 0
@@ -35228,7 +35233,7 @@ trainerdata 720, "Brock"
         abilityslot 0
         level 80
         pokemon SPECIES_STEELIX
-        item ITEM_CHOICE_BAND
+        item ITEM_CHARIZARDITE_X
         move MOVE_HEAD_SMASH
         move MOVE_HEADLONG_RUSH
         move MOVE_WILD_CHARGE
@@ -35734,7 +35739,7 @@ trainerdata 724, "Janine"
         abilityslot 0
         level 80
         pokemon SPECIES_VENUSAUR
-        item ITEM_MIRACLE_SEED
+        item ITEM_CHARIZARDITE_X
         move MOVE_GIGA_DRAIN
         move MOVE_LEAF_STORM
         move MOVE_EARTH_POWER
@@ -35802,7 +35807,7 @@ trainerdata 725, "Sabrina"
         abilityslot 0
         level 80
         pokemon SPECIES_MEDICHAM
-        item ITEM_SITRUS_BERRY
+        item ITEM_CHARIZARDITE_X
         move MOVE_PROTECT
         move MOVE_HIGH_JUMP_KICK
         move MOVE_ICE_PUNCH
@@ -36028,7 +36033,7 @@ trainerdata 727, "Blue"
         abilityslot 0
         level 85
         pokemon SPECIES_BLASTOISE
-        item ITEM_LEFTOVERS
+        item ITEM_CHARIZARDITE_X
         move MOVE_SURF
         move MOVE_AURA_SPHERE
         move MOVE_DARK_PULSE

@@ -8635,7 +8635,6 @@ levelup SPECIES_LUVDISC
     learnset MOVE_SCALD, 36
     learnset MOVE_CAPTIVATE, 37
     learnset MOVE_AQUA_RING, 40
-    learnset MOVE_SOAK, 42
     learnset MOVE_DAZZLING_GLEAM, 44
     learnset MOVE_RECOVER, 45
     learnset MOVE_HYDRO_PUMP, 46

@@ -226,7 +226,7 @@ movedata MOVE_RAZOR_WIND, "Razor Wind"
     accuracy 90
     pp 10
     effectchance 0
-    target RANGE_ADJACENT_OPPONENTS
+    target RANGE_SINGLE_TARGET
     priority 0
     flags FLAG_KINGS_ROCK | FLAG_MIRROR_MOVE | FLAG_PROTECT
     appeal 0x06
@@ -1021,7 +1021,7 @@ movedata MOVE_AURORA_BEAM, "Aurora Beam"
 movedata MOVE_HYPER_BEAM, "Hyper Beam"
     battleeffect MOVE_EFFECT_USER_SP_ATK_DOWN_2
     pss SPLIT_SPECIAL
-    basepower 120
+    basepower 130
     type TYPE_NORMAL
     accuracy 90
     pp 5
