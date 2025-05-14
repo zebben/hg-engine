@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>Mirror Gold Pokédex Index</title>
+  <link rel='stylesheet' href='style.css'>
+
+  <script>
+      function filterPokemon() {
+          let input = document.getElementById('searchBox').value.toUpperCase();
+          let ul = document.getElementById('pokemonList');
+          let items = ul.getElementsByTagName('li');
+          for (let i = 0; i < items.length; i++) {
+              let a = items[i].getElementsByTagName("a")[0];
+              let txt = a.textContent || a.innerText;
+              items[i].style.display = txt.toUpperCase().indexOf(input) > -1 ? "" : "none";
+          }
+      }
+  </script>
+        </head>
+<body>
+  <h1 class='center'>Mirror Gold Wiki</h1>
+  <h3 class='center'><a href='./pokedex/index.html'>Pokédex</a></h3>
+  <h3 class='center'><a href='./trainers/index.html'>Trainers</a></h3>
+</body>
+</html>

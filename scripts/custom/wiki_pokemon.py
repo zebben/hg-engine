@@ -354,7 +354,7 @@ def generate_pokemon_pages(evodata_path, output_dir, mondata_path, species_path,
             {locations_html}
             """)
 
-            f.write("""    <h3 class='center'><a href='../index.html'>Back to Index</a></h3>
+            f.write("""    <h3 class='center'><a href='./index.html'>Back to Pokédex Index</a></h3>
           </body>
         </html>
         """)
@@ -364,7 +364,7 @@ def generate_pokemon_pages(evodata_path, output_dir, mondata_path, species_path,
 
 generate_pokemon_pages(
     evodata_path="../../armips/data/evodata.s",
-    output_dir="../../wiki/pokemon",
+    output_dir="../../wiki/pokedex",
     mondata_path="../../armips/data/mondata.s",
     species_path="../../include/constants/species.h",
     sprite_root="../../data/graphics/sprites",
@@ -372,13 +372,13 @@ generate_pokemon_pages(
     encounter_path="../../armips/data/encounters.s"
 )
 
-def generate_index(species_path, output_path="../../wiki/index.html"):
+def generate_index(species_path, output_path="../../wiki/pokedex/index.html"):
     species = parse_species(species_path)
 
     with open(output_path, "w") as f:
         f.write("<!DOCTYPE html>\n<html lang='en'>\n<head>\n")
         f.write("  <meta charset='UTF-8'>\n  <title>Mirror Gold Pokédex Index</title>\n")
-        f.write("  <link rel='stylesheet' href='style.css'>\n")
+        f.write("  <link rel='stylesheet' href='../style.css'>\n")
         f.write("""
   <script>
       function filterPokemon() {
@@ -395,14 +395,16 @@ def generate_index(species_path, output_path="../../wiki/index.html"):
         """)
         f.write("</head>\n<body>\n")
         f.write("  <h1 class='center''>Mirror Gold Pokédex</h1>\n")
+        f.write("  <h3 class='center'><a href='../index.html'>Back to Wiki Index</a></h3>\n")
         f.write("  <div class='center'><input type='text' id='searchBox' class='center' placeholder='Search Pokémon...' onkeyup='filterPokemon()' /></div>\n")
         f.write("  <ul id='pokemonList' class='center'>\n")
 
         for name in species:
-            f.write(f"    <li><a href='pokemon/{name}.html'>{name}</a></li>\n")
+            f.write(f"    <li><a href='./{name}.html'>{name}</a></li>\n")
 
         f.write("  </ul>\n</body>\n</html>\n")
 
     print(f"Index generated at {output_path} with {len(species)} entries.")
 
-generate_index("../../include/constants/species.h")
+if __name__ == "__main__":
+    generate_index("../../include/constants/species.h")
