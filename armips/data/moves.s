@@ -673,7 +673,7 @@ movedata MOVE_TWINEEDLE, "Twineedle"
     type TYPE_BUG
     accuracy 100
     pp 15
-    effectchance 10
+    effectchance 20
     target RANGE_SINGLE_TARGET
     priority 0
     flags FLAG_KEEP_HP_BAR | FLAG_MIRROR_MOVE | FLAG_PROTECT
@@ -1021,7 +1021,7 @@ movedata MOVE_AURORA_BEAM, "Aurora Beam"
 movedata MOVE_HYPER_BEAM, "Hyper Beam"
     battleeffect MOVE_EFFECT_USER_SP_ATK_DOWN_2
     pss SPLIT_SPECIAL
-    basepower 130
+    basepower 120
     type TYPE_NORMAL
     accuracy 90
     pp 5
@@ -3885,7 +3885,7 @@ movedata MOVE_SUNNY_DAY, "Sunny Day"
 movedata MOVE_CRUNCH, "Crunch"
     battleeffect MOVE_EFFECT_LOWER_DEFENSE_HIT
     pss SPLIT_PHYSICAL
-    basepower 80
+    basepower 85
     type TYPE_DARK
     accuracy 100
     pp 15
@@ -6587,20 +6587,20 @@ movedata MOVE_VACUUM_WAVE, "Vacuum Wave"
     movedescription MOVE_VACUUM_WAVE, "The user whirls its\nfists to send a wave\nof pure vacuum at\nthe foe. This move\nalways goes first."
 
 movedata MOVE_FOCUS_BLAST, "Focus Blast"
-    battleeffect MOVE_EFFECT_USER_SP_ATK_DOWN_2
+    battleeffect MOVE_EFFECT_LOWER_SP_DEF_HIT
     pss SPLIT_SPECIAL
-    basepower 130
+    basepower 110
     type TYPE_FIGHTING
-    accuracy 90
+    accuracy 85
     pp 5
-    effectchance 0
+    effectchance 10
     target RANGE_SINGLE_TARGET
     priority 0
-    flags FLAG_HIDE_SHADOW | FLAG_MIRROR_MOVE | FLAG_PROTECT
+    flags FLAG_HIDE_SHADOW | FLAG_KINGS_ROCK | FLAG_MIRROR_MOVE | FLAG_PROTECT
     appeal 0x11
     contesttype CONTEST_COOL
     terminatedata
-    movedescription MOVE_FOCUS_BLAST, "The user heightens\nits mental focus and\nunleashes its power.\nSharply reduces the\nuser’s Sp. Atk stat."
+    movedescription MOVE_FOCUS_BLAST, "The user heightens\nits mental focus and\nunleashes its power.\nIt may also lower the\ntarget’s Sp. Def."
 
 movedata MOVE_ENERGY_BALL, "Energy Ball"
     battleeffect MOVE_EFFECT_LOWER_SP_DEF_HIT

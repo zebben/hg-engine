@@ -18471,6 +18471,7 @@ levelup SPECIES_DRAMPA
     learnset MOVE_SWIFT, 37
     learnset MOVE_POWDER_SNOW, 39
     learnset MOVE_NASTY_PLOT, 42
+    learnset MOVE_SNARL, 44
     learnset MOVE_HYPER_VOICE, 45
     learnset MOVE_FOCUS_BLAST, 48
     learnset MOVE_TRICK_ROOM, 50
