@@ -6334,7 +6334,6 @@ trainerdata 150, "Sid"
         level 65
         pokemon SPECIES_SAWSBUCK
         ability ABILITY_SERENE_GRACE
-        item ITEM_NONE
         move MOVE_CLOSE_COMBAT
         move MOVE_DOUBLE_EDGE
         move MOVE_LEAF_BLADE
@@ -10322,6 +10321,7 @@ trainerdata 248, "Ed"
         abilityslot 0
         level 71
         pokemon SPECIES_BEEDRILL
+        item ITEM_CHARIZARDITE_X
         move MOVE_GUNK_SHOT
         move MOVE_X_SCISSOR
         move MOVE_DRILL_RUN
@@ -10480,7 +10480,7 @@ trainerdata 252, "Harold"
     endparty
 
 trainerdata 253, "Brock"
-    trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
+    trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES | TRAINER_DATA_TYPE_ABILITY | TRAINER_DATA_TYPE_IV_EV_SET | TRAINER_DATA_TYPE_NATURE_SET | TRAINER_DATA_TYPE_SHINY_LOCK | TRAINER_DATA_TYPE_ADDITIONAL_FLAGS
     trainerclass TRAINERCLASS_LEADER_BROCK
     nummons 6
     item ITEM_FULL_RESTORE
@@ -10968,7 +10968,7 @@ trainerdata 256, "Erika"
     endparty
 
 trainerdata 257, "Janine"
-    trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
+    trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES | TRAINER_DATA_TYPE_ABILITY | TRAINER_DATA_TYPE_IV_EV_SET | TRAINER_DATA_TYPE_NATURE_SET | TRAINER_DATA_TYPE_SHINY_LOCK | TRAINER_DATA_TYPE_ADDITIONAL_FLAGS
     trainerclass TRAINERCLASS_LEADER_JANINE
     nummons 6
     item ITEM_FULL_RESTORE
@@ -11334,7 +11334,7 @@ trainerdata 259, "Blaine"
     endparty
 
 trainerdata 260, "Red"
-    trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
+    trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES | TRAINER_DATA_TYPE_ABILITY | TRAINER_DATA_TYPE_IV_EV_SET | TRAINER_DATA_TYPE_NATURE_SET | TRAINER_DATA_TYPE_SHINY_LOCK | TRAINER_DATA_TYPE_ADDITIONAL_FLAGS
     trainerclass TRAINERCLASS_PKMN_TRAINER_RED
     nummons 6
     item ITEM_FULL_RESTORE
@@ -19668,7 +19668,7 @@ trainerdata 416, "Jo & Zoe"
     endparty
 
 trainerdata 417, "Jenn"
-    trainermontype TRAINER_DATA_TYPE_MOVES
+    trainermontype TRAINER_DATA_TYPE_MOVES | TRAINER_DATA_TYPE_ABILITY | TRAINER_DATA_TYPE_IV_EV_SET | TRAINER_DATA_TYPE_NATURE_SET | TRAINER_DATA_TYPE_SHINY_LOCK | TRAINER_DATA_TYPE_ADDITIONAL_FLAGS
     trainerclass TRAINERCLASS_ACE_TRAINER_F
     nummons 2
     item ITEM_NONE
@@ -19685,7 +19685,6 @@ trainerdata 417, "Jenn"
         abilityslot 0
         level 32
         pokemon SPECIES_DONPHAN
-        item ITEM_NONE
         move MOVE_HIGH_HORSEPOWER
         move MOVE_ROCK_SLIDE
         move MOVE_FLAME_WHEEL
@@ -19703,7 +19702,6 @@ trainerdata 417, "Jenn"
         abilityslot 0
         level 32
         pokemon SPECIES_FLOATZEL
-        item ITEM_NONE
         move MOVE_LIQUIDATION
         move MOVE_CRUNCH
         move MOVE_AQUA_JET
@@ -26407,7 +26405,7 @@ trainerdata 565, "Josh"
     endparty
 
 trainerdata 566, "Connor"
-    trainermontype TRAINER_DATA_TYPE_MOVES
+    trainermontype TRAINER_DATA_TYPE_MOVES | TRAINER_DATA_TYPE_ITEMS
     trainerclass TRAINERCLASS_SCHOOL_KID_M
     nummons 4
     item ITEM_NONE
@@ -26452,6 +26450,7 @@ trainerdata 566, "Connor"
         move MOVE_LEAF_STORM
         move MOVE_HYPNOSIS
         move MOVE_PROTECT
+        move MOVE_BARRAGE
         ballseal 0
 
         // mon 3
@@ -28237,6 +28236,7 @@ trainerdata 607, "Reena"
         move MOVE_EXTREME_SPEED
         move MOVE_CRUNCH
         move MOVE_ROAR
+        ability ABILITY_INTIMIDATE
         ballseal 0
 
         // mon 1
@@ -28248,6 +28248,7 @@ trainerdata 607, "Reena"
         move MOVE_POISON_FANG
         move MOVE_EARTH_POWER
         move MOVE_BODY_SLAM
+        ability ABILITY_SHEER_FORCE
         ballseal 0
 
         // mon 2
@@ -28259,6 +28260,7 @@ trainerdata 607, "Reena"
         move MOVE_NONE
         move MOVE_COSMIC_POWER
         move MOVE_PSYCHIC
+        ability ABILITY_NATURAL_CURE
         ballseal 0
 
         // mon 3
@@ -35042,7 +35044,7 @@ trainerdata 718, "Chuck"
     endparty
 
 trainerdata 719, "Clair"
-    trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
+    trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES | TRAINER_DATA_TYPE_ABILITY | TRAINER_DATA_TYPE_IV_EV_SET | TRAINER_DATA_TYPE_NATURE_SET | TRAINER_DATA_TYPE_SHINY_LOCK | TRAINER_DATA_TYPE_ADDITIONAL_FLAGS
     trainerclass TRAINERCLASS_LEADER_CLAIR
     nummons 6
     item ITEM_FULL_RESTORE
@@ -35652,7 +35654,7 @@ trainerdata 723, "Erika"
     endparty
 
 trainerdata 724, "Janine"
-    trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
+    trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES | TRAINER_DATA_TYPE_ABILITY | TRAINER_DATA_TYPE_IV_EV_SET | TRAINER_DATA_TYPE_NATURE_SET | TRAINER_DATA_TYPE_SHINY_LOCK | TRAINER_DATA_TYPE_ADDITIONAL_FLAGS
     trainerclass TRAINERCLASS_LEADER_JANINE
     nummons 6
     item ITEM_FULL_RESTORE

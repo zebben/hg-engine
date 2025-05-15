@@ -12478,7 +12478,7 @@ movedata MOVE_CLANGOROUS_SOUL, "Clangorous Soul"
 movedata MOVE_BODY_PRESS, "Body Press"
     battleeffect MOVE_EFFECT_HIT
     pss SPLIT_PHYSICAL
-    basepower 80
+    basepower 75
     type TYPE_FIGHTING
     accuracy 100
     pp 10

@@ -29233,7 +29233,10 @@ levelup SPECIES_GOODRA_HISUIAN
     learnset MOVE_CURSE, 43
     learnset MOVE_BODY_SLAM, 49
     learnset MOVE_IRON_HEAD, 49
-    learnset MOVE_MUDDY_WATER, 58
+    learnset MOVE_GUNK_SHOT, 45
+    learnset MOVE_MUDDY_WATER, 48
+    learnset MOVE_OUTRAGE, 55
+    learnset MOVE_POWER_WHIP, 59
     learnset MOVE_HEAVY_SLAM, 67
     terminatelearnset
 
