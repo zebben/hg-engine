@@ -260,7 +260,7 @@ def generate_pokemon_pages(evodata_path, output_dir, mondata_path, species_path,
             """
             if stats.get("abilities"):
                 abilities_html = " / ".join(
-                    f"<a href='https://bulbapedia.bulbagarden.net/wiki/{ability.replace('_', ' ')}_(Ability)' target='_blank'>{ability.replace('_', ' ').title()}</a>"
+                    f"<a href='https://bulbapedia.bulbagarden.net/wiki/{ability.replace('_', ' ').title()}_(Ability)' target='_blank'>{ability.replace('_', ' ').title()}</a>"
                     for ability in stats["abilities"]
                 )
 

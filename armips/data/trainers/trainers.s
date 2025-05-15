@@ -10861,7 +10861,7 @@ trainerdata 256, "Erika"
         // mon 0
         ivs 200
         abilityslot 0
-        level 71
+        level 70
         pokemon SPECIES_SUNFLORA
         item ITEM_HEAT_ROCK
         move MOVE_PROTECT
@@ -10879,7 +10879,7 @@ trainerdata 256, "Erika"
         // mon 1
         ivs 200
         abilityslot 0
-        level 71
+        level 69
         pokemon SPECIES_TROPIUS
         item ITEM_LIFE_ORB
         move MOVE_SOLAR_BEAM
@@ -10897,7 +10897,7 @@ trainerdata 256, "Erika"
         // mon 2
         ivs 200
         abilityslot 0
-        level 71
+        level 68
         monwithform SPECIES_LILLIGANT, 1
         item ITEM_FOCUS_SASH
         move MOVE_HIGH_JUMP_KICK
@@ -10915,7 +10915,7 @@ trainerdata 256, "Erika"
         // mon 3
         ivs 200
         abilityslot 0
-        level 73
+        level 68
         pokemon SPECIES_TANGROWTH
         item ITEM_SITRUS_BERRY
         move MOVE_KNOCK_OFF
@@ -10933,7 +10933,7 @@ trainerdata 256, "Erika"
         // mon 4
         ivs 200
         abilityslot 0
-        level 71
+        level 68
         pokemon SPECIES_BRAMBLEGHAST
         item ITEM_LEFTOVERS
         move MOVE_POWER_WHIP
@@ -10951,7 +10951,7 @@ trainerdata 256, "Erika"
         // mon 5
         ivs 200
         abilityslot 0
-        level 70
+        level 69
         pokemon SPECIES_AMOONGUSS
         item ITEM_ROCKY_HELMET
         move MOVE_SPORE
@@ -14648,6 +14648,7 @@ trainerdata 311, "Zeke"
         abilityslot 0
         level 65
         pokemon SPECIES_DUSTOX
+        ability ABILITY_COMPOUND_EYES
         move MOVE_QUIVER_DANCE
         move MOVE_SLUDGE_BOMB
         move MOVE_EXTRASENSORY
@@ -14659,6 +14660,7 @@ trainerdata 311, "Zeke"
         abilityslot 0
         level 65
         pokemon SPECIES_CERULEDGE
+        ability ABILITY_FLASH_FIRE
         move MOVE_FLARE_BLITZ
         move MOVE_PSYCHO_CUT
         move MOVE_WILL_O_WISP
@@ -15338,7 +15340,7 @@ trainerdata 326, "Jo & Zoe"
         // mon 0
         ivs 200
         abilityslot 0
-        level 69
+        level 66
         pokemon SPECIES_DHELMISE
         item ITEM_LEFTOVERS
         move MOVE_PHANTOM_FORCE
@@ -15356,7 +15358,7 @@ trainerdata 326, "Jo & Zoe"
         // mon 1
         ivs 200
         abilityslot 0
-        level 69
+        level 65
         pokemon SPECIES_LURANTIS
         item ITEM_SITRUS_BERRY
         move MOVE_LEAF_STORM
@@ -15374,7 +15376,7 @@ trainerdata 326, "Jo & Zoe"
         // mon 2
         ivs 200
         abilityslot 0
-        level 69
+        level 65
         pokemon SPECIES_SHIINOTIC
         item ITEM_SITRUS_BERRY
         move MOVE_HELPING_HAND
@@ -15392,7 +15394,7 @@ trainerdata 326, "Jo & Zoe"
         // mon 3
         ivs 200
         abilityslot 0
-        level 69
+        level 66
         pokemon SPECIES_CACTURNE
         item ITEM_ROCKY_HELMET
         move MOVE_PROTECT
@@ -15914,7 +15916,7 @@ trainerdata 336, "Tanya"
         // mon 0
         ivs 200
         abilityslot 0
-        level 70
+        level 67
         pokemon SPECIES_DECIDUEYE
         item ITEM_LIFE_ORB
         move MOVE_SHADOW_SNEAK
@@ -15932,7 +15934,7 @@ trainerdata 336, "Tanya"
         // mon 1
         ivs 200
         abilityslot 0
-        level 70
+        level 67
         monwithform SPECIES_DECIDUEYE, 1
         item ITEM_LEFTOVERS
         move MOVE_BULK_UP
@@ -15950,7 +15952,7 @@ trainerdata 336, "Tanya"
         // mon 2
         ivs 200
         abilityslot 0
-        level 70
+        level 66
         pokemon SPECIES_TSAREENA
         item ITEM_CHOICE_SCARF
         move MOVE_POWER_WHIP
@@ -15968,7 +15970,7 @@ trainerdata 336, "Tanya"
         // mon 3
         ivs 200
         abilityslot 0
-        level 70
+        level 66
         pokemon SPECIES_VENUSAUR
         item ITEM_BLACK_SLUDGE
         move MOVE_SLEEP_POWDER
@@ -16299,7 +16301,7 @@ trainerdata 346, "Julia"
         // mon 0
         ivs 200
         abilityslot 0
-        level 70
+        level 67
         pokemon SPECIES_VENUSAUR
         item ITEM_BLACK_SLUDGE
         move MOVE_SLEEP_POWDER
@@ -16317,7 +16319,7 @@ trainerdata 346, "Julia"
         // mon 1
         ivs 200
         abilityslot 0
-        level 70
+        level 66
         pokemon SPECIES_MEOWSCARADA
         item ITEM_LIFE_ORB
         move MOVE_JUMP_KICK
@@ -16335,7 +16337,7 @@ trainerdata 346, "Julia"
         // mon 2
         ivs 200
         abilityslot 0
-        level 70
+        level 68
         pokemon SPECIES_EXEGGUTOR
         item ITEM_SITRUS_BERRY
         move MOVE_PROTECT
@@ -16353,7 +16355,7 @@ trainerdata 346, "Julia"
         // mon 3
         ivs 200
         abilityslot 0
-        level 70
+        level 68
         pokemon SPECIES_VILEPLUME
         item ITEM_SITRUS_BERRY
         move MOVE_SLUDGE_BOMB
@@ -16841,7 +16843,7 @@ trainerdata 356, "Michelle"
         // mon 0
         ivs 200
         abilityslot 0
-        level 69
+        level 66
         pokemon SPECIES_FERROTHORN
         item ITEM_ROCKY_HELMET
         move MOVE_SPIKES
@@ -16859,7 +16861,7 @@ trainerdata 356, "Michelle"
         // mon 1
         ivs 200
         abilityslot 0
-        level 69
+        level 65
         pokemon SPECIES_WHIMSICOTT
         item ITEM_SITRUS_BERRY
         move MOVE_TAILWIND
@@ -16877,7 +16879,7 @@ trainerdata 356, "Michelle"
         // mon 2
         ivs 200
         abilityslot 0
-        level 69
+        level 66
         pokemon SPECIES_MARACTUS
         item ITEM_SITRUS_BERRY
         move MOVE_PROTECT
@@ -16895,7 +16897,7 @@ trainerdata 356, "Michelle"
         // mon 3
         ivs 200
         abilityslot 0
-        level 69
+        level 66
         pokemon SPECIES_SERPERIOR
         item ITEM_LIFE_ORB
         move MOVE_LEAF_STORM
@@ -35162,7 +35164,7 @@ trainerdata 719, "Clair"
     endparty
 
 trainerdata 720, "Brock"
-    trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
+    trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES | TRAINER_DATA_TYPE_ABILITY | TRAINER_DATA_TYPE_IV_EV_SET | TRAINER_DATA_TYPE_NATURE_SET | TRAINER_DATA_TYPE_SHINY_LOCK | TRAINER_DATA_TYPE_ADDITIONAL_FLAGS
     trainerclass TRAINERCLASS_LEADER_BROCK
     nummons 6
     item ITEM_FULL_RESTORE
