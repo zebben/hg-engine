@@ -16747,11 +16747,11 @@ levelup SPECIES_GOODRA
     learnset MOVE_WATER_PULSE, 25
     learnset MOVE_RAIN_DANCE, 27
     learnset MOVE_SLUDGE_BOMB, 35
+    learnset MOVE_MUDDY_WATER, 39
     learnset MOVE_DRAGON_PULSE, 40
     learnset MOVE_BODY_SLAM, 41
     learnset MOVE_CURSE, 43
     learnset MOVE_GUNK_SHOT, 45
-    learnset MOVE_MUDDY_WATER, 48
     learnset MOVE_OUTRAGE, 55
     learnset MOVE_POWER_WHIP, 59
     learnset MOVE_WAVE_CRASH, 63
@@ -23673,7 +23673,6 @@ levelup SPECIES_MEGA_HOUNDOOM
     terminatelearnset
 
 
-
 levelup SPECIES_MEGA_TYRANITAR
     learnset MOVE_IRON_DEFENSE, 1
     learnset MOVE_THUNDER_PUNCH, 1
@@ -29231,10 +29230,11 @@ levelup SPECIES_GOODRA_HISUIAN
     learnset MOVE_RAIN_DANCE, 30
     learnset MOVE_DRAGON_PULSE, 35
     learnset MOVE_CURSE, 43
+    learnset MOVE_GUNK_SHOT, 45
+    learnset MOVE_MUDDY_WATER, 47
     learnset MOVE_BODY_SLAM, 49
     learnset MOVE_IRON_HEAD, 49
-    learnset MOVE_GUNK_SHOT, 45
-    learnset MOVE_MUDDY_WATER, 48
+    learnset MOVE_BODY_PRESS, 52
     learnset MOVE_OUTRAGE, 55
     learnset MOVE_POWER_WHIP, 59
     learnset MOVE_HEAVY_SLAM, 67
