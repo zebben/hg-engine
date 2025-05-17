@@ -1,6 +1,8 @@
 import sys
 import os
 
+# Skip First Rival Battle and Vanilla Double Battles
+# TODO zebben get the other double battle IDs
 IMPORTANT_TRAINER_IDS = {
     495,
     496,
