@@ -28,6 +28,7 @@
 
 // custom stuff
 .include "armips/asm/custom/mart_items.s" // customize poke mart items
+.include "armips/asm/custom/double_battle_patches.s" // TODO zebben conditional
 
 .if FAIRY_TYPE_IMPLEMENTED == 1
 

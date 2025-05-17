@@ -85,6 +85,13 @@ void MakeTrainerPokemonParty(struct BATTLE_PARAM *bp, int num, int heapID)
 
     TT_TrainerPokeDataGet(bp->trainer_id[num], buf);
 
+    // don't modify first rival fight or trainers which are already double battles
+//    u8 trtype = bp->trainer_data[num].tr_type;
+//    if (bp->trainer_data[num].trainer[16] == 0 && (trtype != TRAINERCLASS_PASSERBY && trtype != TRAINERCLASS_TWINS && trtype != TRAINERCLASS_DOUBLE_TEAM && trtype != TRAINERCLASS_YOUNG_COUPLE))
+//    {
+//        bp->trainer_data[num].trainer[16] |= 0x03;
+//    }
+
     if (TT_TrainerTypeSexGet(bp->trainer_data[num].tr_type) == 1) // if trainer is female
     {
         rnd_tmp = 120;
