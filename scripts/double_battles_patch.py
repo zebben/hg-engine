@@ -2,11 +2,39 @@ import sys
 import os
 
 # Skip First Rival Battle and Vanilla Double Battles
-# TODO zebben get the other double battle IDs
 IMPORTANT_TRAINER_IDS = {
+    # Passerby (First Rival Fight)
     495,
     496,
-    497
+    497,
+    # Twins
+    10,
+    81,
+    326,
+    385,
+    387,
+    416,
+    425,
+    426,
+    502,
+    531,
+    569,
+    598,
+    643,
+    644,
+    645,
+    # Double Team
+    549,
+    684,
+    730,
+    # Young Couple
+    553,
+    557,
+    559,
+    652,
+    653,
+    654,
+    729
 }
 
 def patch_all_trainers(directory):
