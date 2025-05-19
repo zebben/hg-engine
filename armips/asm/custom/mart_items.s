@@ -300,6 +300,9 @@ EIGHT_BADGES equ 6
 .halfword ITEM_ABILITY_CAPSULE
 .halfword FIVE_BADGES
 
+.halfword ITEM_RARE_CANDY
+.halfword EIGHT_BADGES
+
 .halfword ITEM_POKE_BALL
 .halfword ZERO_BADGES
 
@@ -348,10 +351,7 @@ EIGHT_BADGES equ 6
 .halfword ITEM_REPEL
 .halfword ONE_BADGE
 
-.halfword ITEM_SUPER_REPEL
-.halfword THREE_BADGES
-
 .halfword ITEM_MAX_REPEL
-.halfword SEVEN_BADGES
+.halfword THREE_BADGES
 
 .close
