@@ -19638,7 +19638,7 @@ mondata SPECIES_DURALUDON, "Duraludon"
     genderratio 127
     eggcycles 3
     basefriendship 50
-    growthrate GROWTH_MEDIUM_FAST
+    growthrate GROWTH_SLOW
     egggroups EGG_GROUP_MINERAL, EGG_GROUP_DRAGON
     abilities ABILITY_LIGHT_METAL, ABILITY_HEAVY_METAL
     runchance 0

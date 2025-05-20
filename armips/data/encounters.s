@@ -8222,7 +8222,7 @@ pokemon SPECIES_VELUZA
 .close
 
 
-encounterdata  79   // Mt. Silver (Moltres room) TODO
+encounterdata  79   // Mt. Silver (Moltres room)
 
 walkrate 5
 surfrate 10
@@ -9054,7 +9054,7 @@ pokemon SPECIES_MAGIKARP
 .close
 
 
-encounterdata  87   // Mt. Silver (Mountainside) TODO
+encounterdata  87   // Mt. Silver (Mountainside)
 
 walkrate 20
 surfrate 0

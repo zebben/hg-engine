@@ -328,7 +328,7 @@ movedata MOVE_FLY, "Fly"
     appeal 0x06
     contesttype CONTEST_SMART
     terminatedata
-    movedescription MOVE_FLY, "The user soars, then\nstrikes on the second\nturn. It can be\nused to travel to\nany familiar town.\nIt hits even if the\nfoe protects itself."
+    movedescription MOVE_FLY, "Strikes on the second turn\nthrough protect.\nUsed to travel to\nany familiar town."
 
 movedata MOVE_BIND, "Bind"
     battleeffect MOVE_EFFECT_BIND_HIT
@@ -9417,7 +9417,7 @@ movedata MOVE_FAIRY_WIND, "Fairy Wind"
     appeal 0x00
     contesttype CONTEST_COOL
     terminatedata
-    movedescription MOVE_FAIRY_WIND, "The user attacks by\nstirring up a fairy\nwind to strike the\ntarget. The user’s\nHP is restored by\nhalf the damage taken\nby the target."
+    movedescription MOVE_FAIRY_WIND, "The user attacks by\nstirring up a\nwind to strike the target.\nRestores HP by\nhalf the damage dealt."
 
 movedata MOVE_MOONBLAST, "Moonblast"
     battleeffect MOVE_EFFECT_LOWER_SP_ATK_HIT
