@@ -330,14 +330,14 @@ trainerdata 9, "Elaine"
 
     party 9
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 32
         level 33
         pokemon SPECIES_BARRASKEWDA
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 32
         level 33
         pokemon SPECIES_CRAMORANT
@@ -506,7 +506,7 @@ trainerdata 14, "Duncan"
 
     party 14
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 41
         pokemon SPECIES_UMBREON
@@ -517,7 +517,7 @@ trainerdata 14, "Duncan"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 41
         pokemon SPECIES_HONCHKROW
@@ -528,7 +528,7 @@ trainerdata 14, "Duncan"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 60
         abilityslot 0
         level 41
         pokemon SPECIES_SKUNTANK
@@ -553,7 +553,7 @@ trainerdata 15, "Otis"
 
     party 15
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 74
         pokemon SPECIES_SCOVILLAIN
@@ -564,7 +564,7 @@ trainerdata 15, "Otis"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 74
         pokemon SPECIES_REVAVROOM
@@ -575,7 +575,7 @@ trainerdata 15, "Otis"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 74
         pokemon SPECIES_CLODSIRE
@@ -600,14 +600,14 @@ trainerdata 16, "Simon"
 
     party 16
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 33
         pokemon SPECIES_LANTURN
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 32
         level 33
         pokemon SPECIES_LUMINEON
@@ -1766,7 +1766,7 @@ trainerdata 37, "Preston"
 
     party 37
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 33
         pokemon SPECIES_CARNIVINE
@@ -1777,7 +1777,7 @@ trainerdata 37, "Preston"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 33
         pokemon SPECIES_BARBARACLE
@@ -1802,7 +1802,7 @@ trainerdata 38, "Colette"
 
     party 38
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 32
         level 72
         pokemon SPECIES_CLEFABLE
@@ -1813,7 +1813,7 @@ trainerdata 38, "Colette"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 32
         level 72
         pokemon SPECIES_FEAROW
@@ -1824,7 +1824,7 @@ trainerdata 38, "Colette"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 32
         level 72
         pokemon SPECIES_DHELMISE
@@ -1924,14 +1924,14 @@ trainerdata 41, "Clyde"
 
     party 41
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 42
         pokemon SPECIES_ELECTABUZZ
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 42
         pokemon SPECIES_ELECTABUZZ
@@ -2173,7 +2173,7 @@ trainerdata 48, "Rob"
 
     party 48
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 71
         pokemon SPECIES_BEEDRILL
@@ -2184,7 +2184,7 @@ trainerdata 48, "Rob"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 72
         pokemon SPECIES_PINSIR
@@ -2195,7 +2195,7 @@ trainerdata 48, "Rob"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 72
         pokemon SPECIES_DUSTOX
@@ -2508,7 +2508,7 @@ trainerdata 58, "Arnold"
 
     party 58
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 74
         pokemon SPECIES_CLOYSTER
@@ -2519,7 +2519,7 @@ trainerdata 58, "Arnold"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 74
         pokemon SPECIES_KILOWATTREL
@@ -2530,7 +2530,7 @@ trainerdata 58, "Arnold"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 74
         pokemon SPECIES_STARMIE
@@ -2555,7 +2555,7 @@ trainerdata 59, "Kyle"
 
     party 59
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 69
         pokemon SPECIES_DONDOZO
@@ -2566,7 +2566,7 @@ trainerdata 59, "Kyle"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 69
         pokemon SPECIES_TATSUGIRI
@@ -2577,7 +2577,7 @@ trainerdata 59, "Kyle"
         ballseal 0
 
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 69
         pokemon SPECIES_SEAKING
@@ -3290,14 +3290,14 @@ trainerdata 79, "Ken"
 
     party 79
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 32
         level 39
         pokemon SPECIES_ARIADOS
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 32
         level 40
         pokemon SPECIES_PINSIR
@@ -3593,14 +3593,14 @@ trainerdata 85, "Paula"
 
     party 85
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 32
         level 33
         pokemon SPECIES_DRACOVISH
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 32
         level 33
         pokemon SPECIES_ARCTOVISH
@@ -3621,7 +3621,7 @@ trainerdata 86, "Randall"
 
     party 86
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 33
         pokemon SPECIES_CLOYSTER
@@ -3632,7 +3632,7 @@ trainerdata 86, "Randall"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 33
         pokemon SPECIES_BLASTOISE
@@ -3784,7 +3784,7 @@ trainerdata 90, "Kaylee"
 
     party 90
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 32
         level 34
         pokemon SPECIES_SLOWKING
@@ -3795,7 +3795,7 @@ trainerdata 90, "Kaylee"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 34
         pokemon SPECIES_MANTINE
@@ -3806,7 +3806,7 @@ trainerdata 90, "Kaylee"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 60
         abilityslot 32
         level 34
         pokemon SPECIES_KINGDRA
@@ -3831,7 +3831,7 @@ trainerdata 91, "Susie"
 
     party 91
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 34
         pokemon SPECIES_PSYDUCK
@@ -3842,7 +3842,7 @@ trainerdata 91, "Susie"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 34
         pokemon SPECIES_GOLDEEN
@@ -3867,14 +3867,14 @@ trainerdata 92, "Denise"
 
     party 92
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 34
         pokemon SPECIES_DEWGONG
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 34
         pokemon SPECIES_LUMINEON
@@ -3895,14 +3895,14 @@ trainerdata 93, "Kara"
 
     party 93
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 32
         level 34
         pokemon SPECIES_STARMIE
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 32
         level 34
         pokemon SPECIES_INTELEON
@@ -3923,7 +3923,7 @@ trainerdata 94, "Wendy"
 
     party 94
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 34
         pokemon SPECIES_KINGDRA
@@ -3934,7 +3934,7 @@ trainerdata 94, "Wendy"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 34
         pokemon SPECIES_BARBARACLE
@@ -3959,21 +3959,21 @@ trainerdata 95, "Charlie"
 
     party 95
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 32
         level 34
         pokemon SPECIES_BARBARACLE
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 34
         pokemon SPECIES_DREDNAW
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 60
         abilityslot 32
         level 34
         pokemon SPECIES_GRAPPLOCT
@@ -3994,21 +3994,21 @@ trainerdata 96, "George"
 
     party 96
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 34
         pokemon SPECIES_OCTILLERY
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 32
         level 34
         monwithform SPECIES_BASCULEGION, 1
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 60
         abilityslot 0
         level 34
         pokemon SPECIES_BASCULEGION
@@ -4029,14 +4029,14 @@ trainerdata 97, "Berke"
 
     party 97
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 34
         pokemon SPECIES_OVERQWIL
         ballseal 0
 
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 34
         pokemon SPECIES_DRACOVISH
@@ -4057,14 +4057,14 @@ trainerdata 98, "Ronald"
 
     party 98
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 34
         pokemon SPECIES_GYARADOS
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 34
         pokemon SPECIES_GOODRA
@@ -4085,14 +4085,14 @@ trainerdata 99, "Matthew"
 
     party 99
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 34
         pokemon SPECIES_GRAPPLOCT
         ballseal 0
 
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 34
         pokemon SPECIES_BARRASKEWDA
@@ -4113,7 +4113,7 @@ trainerdata 100, "Anthony"
 
     party 100
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 40
         pokemon SPECIES_BASTIODON
@@ -4124,7 +4124,7 @@ trainerdata 100, "Anthony"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 32
         level 40
         pokemon SPECIES_CONKELDURR
@@ -5086,7 +5086,7 @@ trainerdata 122, "Marvin"
 
     party 122
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 34
         pokemon SPECIES_QWILFISH
@@ -5097,7 +5097,7 @@ trainerdata 122, "Marvin"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 34
         pokemon SPECIES_CLAWITZER
@@ -5108,7 +5108,7 @@ trainerdata 122, "Marvin"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 60
         abilityslot 0
         level 34
         pokemon SPECIES_DREDNAW
@@ -5169,7 +5169,7 @@ trainerdata 124, "Wilton"
 
     party 124
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 47
         pokemon SPECIES_QWILFISH
@@ -5180,7 +5180,7 @@ trainerdata 124, "Wilton"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 47
         pokemon SPECIES_EMPOLEON
@@ -5191,7 +5191,7 @@ trainerdata 124, "Wilton"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 60
         abilityslot 0
         level 47
         pokemon SPECIES_GASTRODON
@@ -5216,7 +5216,7 @@ trainerdata 125, "Edgar"
 
     party 125
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 45
         pokemon SPECIES_LANTURN
@@ -5227,7 +5227,7 @@ trainerdata 125, "Edgar"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 32
         level 45
         pokemon SPECIES_QWILFISH
@@ -5252,7 +5252,7 @@ trainerdata 126, "Andre"
 
     party 126
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 35
         pokemon SPECIES_QUAGSIRE
@@ -5263,7 +5263,7 @@ trainerdata 126, "Andre"
         ballseal 0
 
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 35
         pokemon SPECIES_MANTINE
@@ -5288,7 +5288,7 @@ trainerdata 127, "Raymond"
 
     party 127
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 36
         pokemon SPECIES_FLOATZEL
@@ -5299,7 +5299,7 @@ trainerdata 127, "Raymond"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 35
         pokemon SPECIES_GASTRODON
@@ -5310,7 +5310,7 @@ trainerdata 127, "Raymond"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 60
         abilityslot 0
         level 35
         monwithform SPECIES_ROTOM, 2
@@ -5321,7 +5321,7 @@ trainerdata 127, "Raymond"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 60
         abilityslot 0
         level 36
         pokemon SPECIES_BARBARACLE
@@ -5346,28 +5346,28 @@ trainerdata 128, "Jonah"
 
     party 128
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 33
         pokemon SPECIES_SHELLDER
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 32
         level 37
         pokemon SPECIES_OCTILLERY
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 60
         abilityslot 32
         level 33
         pokemon SPECIES_REMORAID
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 60
         abilityslot 0
         level 37
         pokemon SPECIES_CLOYSTER
@@ -5424,7 +5424,7 @@ trainerdata 130, "Beckett"
 
     party 130
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 33
         pokemon SPECIES_SPIRITOMB
@@ -5435,7 +5435,7 @@ trainerdata 130, "Beckett"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 34
         pokemon SPECIES_MAGMAR
@@ -5460,7 +5460,7 @@ trainerdata 131, "Brent"
 
     party 131
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 34
         pokemon SPECIES_KLEFKI
@@ -5471,7 +5471,7 @@ trainerdata 131, "Brent"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 34
         pokemon SPECIES_ARIADOS
@@ -5496,7 +5496,7 @@ trainerdata 132, "Ron"
 
     party 132
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 32
         level 34
         pokemon SPECIES_ABOMASNOW
@@ -5507,7 +5507,7 @@ trainerdata 132, "Ron"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 32
         level 34
         pokemon SPECIES_FROSLASS
@@ -5532,14 +5532,14 @@ trainerdata 133, "Morgan"
 
     party 133
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 32
         level 39
         pokemon SPECIES_RHYHORN
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 32
         level 39
         pokemon SPECIES_RHYDON
@@ -5607,7 +5607,7 @@ trainerdata 135, "Johnny"
 
     party 135
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 71
         pokemon SPECIES_PINSIR
@@ -5618,7 +5618,7 @@ trainerdata 135, "Johnny"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 71
         pokemon SPECIES_CRYOGONAL
@@ -5629,7 +5629,7 @@ trainerdata 135, "Johnny"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 71
         pokemon SPECIES_TOEDSCRUEL
@@ -5640,7 +5640,7 @@ trainerdata 135, "Johnny"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 0
         level 72
         pokemon SPECIES_WISHIWASHI
@@ -5815,7 +5815,7 @@ trainerdata 139, "Debra"
 
     party 139
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 32
         level 62
         pokemon SPECIES_CINCCINO
@@ -5826,7 +5826,7 @@ trainerdata 139, "Debra"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 32
         level 62
         pokemon SPECIES_MUDSDALE
@@ -5837,7 +5837,7 @@ trainerdata 139, "Debra"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 32
         level 62
         pokemon SPECIES_NIDOQUEEN
@@ -5862,7 +5862,7 @@ trainerdata 140, "Doug"
 
     party 140
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 71
         pokemon SPECIES_BUTTERFREE
@@ -5873,7 +5873,7 @@ trainerdata 140, "Doug"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 71
         pokemon SPECIES_ARIADOS
@@ -5884,7 +5884,7 @@ trainerdata 140, "Doug"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 70
         pokemon SPECIES_RABSCA
@@ -5895,7 +5895,7 @@ trainerdata 140, "Doug"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 0
         level 71
         pokemon SPECIES_BEAUTIFLY
@@ -5948,7 +5948,7 @@ trainerdata 142, "Gina"
 
     party 142
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 40
         pokemon SPECIES_JUMPLUFF
@@ -5959,7 +5959,7 @@ trainerdata 142, "Gina"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 40
         pokemon SPECIES_SUNFLORA
@@ -5970,7 +5970,7 @@ trainerdata 142, "Gina"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 60
         abilityslot 0
         level 40
         pokemon SPECIES_DONPHAN
@@ -5995,7 +5995,7 @@ trainerdata 143, "Erik"
 
     party 143
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 50
         pokemon SPECIES_HITMONTOP
@@ -6006,7 +6006,7 @@ trainerdata 143, "Erik"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 32
         level 50
         pokemon SPECIES_BASTIODON
@@ -6017,7 +6017,7 @@ trainerdata 143, "Erik"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 60
         abilityslot 0
         level 51
         pokemon SPECIES_ELECTIVIRE
@@ -6089,7 +6089,7 @@ trainerdata 145, "Parry"
 
     party 145
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 51
         pokemon SPECIES_DIGGERSBY
@@ -6100,7 +6100,7 @@ trainerdata 145, "Parry"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 51
         pokemon SPECIES_CARBINK
@@ -6161,7 +6161,7 @@ trainerdata 147, "Ted"
 
     party 147
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 32
         level 51
         monwithform SPECIES_VIVILLON, 3
@@ -6172,7 +6172,7 @@ trainerdata 147, "Ted"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 32
         level 51
         pokemon SPECIES_PYROAR
@@ -6197,7 +6197,7 @@ trainerdata 148, "Lloyd"
 
     party 148
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 68
         pokemon SPECIES_SQUAWKABILLY
@@ -6209,7 +6209,7 @@ trainerdata 148, "Lloyd"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 68
         pokemon SPECIES_DARMANITAN
@@ -6221,7 +6221,7 @@ trainerdata 148, "Lloyd"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 68
         pokemon SPECIES_BEAUTIFLY
@@ -6233,7 +6233,7 @@ trainerdata 148, "Lloyd"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 0
         level 68
         monwithform SPECIES_PERSIAN, 1
@@ -6259,7 +6259,7 @@ trainerdata 149, "Dean"
 
     party 149
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 32
         level 65
         monwithform SPECIES_SLOWBRO, 2
@@ -6270,7 +6270,7 @@ trainerdata 149, "Dean"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 66
         pokemon SPECIES_DODRIO
@@ -6281,7 +6281,7 @@ trainerdata 149, "Dean"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 66
         pokemon SPECIES_ABSOL
@@ -6292,7 +6292,7 @@ trainerdata 149, "Dean"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 0
         level 66
         pokemon SPECIES_BOUFFALANT
@@ -6317,7 +6317,7 @@ trainerdata 150, "Sid"
 
     party 150
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 65
         pokemon SPECIES_KECLEON
@@ -6329,7 +6329,7 @@ trainerdata 150, "Sid"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 65
         pokemon SPECIES_SAWSBUCK
@@ -6341,7 +6341,7 @@ trainerdata 150, "Sid"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 32
         level 66
         pokemon SPECIES_SANDSLASH
@@ -6353,7 +6353,7 @@ trainerdata 150, "Sid"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 0
         level 66
         pokemon SPECIES_LUNATONE
@@ -6379,7 +6379,7 @@ trainerdata 151, "Erin"
 
     party 151
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 32
         level 51
         pokemon SPECIES_UMBREON
@@ -6390,7 +6390,7 @@ trainerdata 151, "Erin"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 32
         level 51
         pokemon SPECIES_ESPEON
@@ -6415,7 +6415,7 @@ trainerdata 152, "Hope"
 
     party 152
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 74
         pokemon SPECIES_LINOONE
@@ -6427,7 +6427,7 @@ trainerdata 152, "Hope"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 74
         pokemon SPECIES_SHARPEDO
@@ -6439,7 +6439,7 @@ trainerdata 152, "Hope"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 74
         pokemon SPECIES_TROPIUS
@@ -6451,7 +6451,7 @@ trainerdata 152, "Hope"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 0
         level 74
         pokemon SPECIES_MAROWAK
@@ -6477,7 +6477,7 @@ trainerdata 153, "Sharon"
 
     party 153
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 32
         level 74
         pokemon SPECIES_ABSOL
@@ -6488,7 +6488,7 @@ trainerdata 153, "Sharon"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 32
         level 74
         pokemon SPECIES_ESCAVALIER
@@ -6499,7 +6499,7 @@ trainerdata 153, "Sharon"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 32
         level 74
         pokemon SPECIES_ORANGURU
@@ -6510,7 +6510,7 @@ trainerdata 153, "Sharon"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 32
         level 74
         pokemon SPECIES_GARGANACL
@@ -6535,7 +6535,7 @@ trainerdata 154, "Bailey"
 
     party 154
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 32
         level 51
         pokemon SPECIES_RAMPARDOS
@@ -6546,7 +6546,7 @@ trainerdata 154, "Bailey"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 32
         level 52
         pokemon SPECIES_RHYPERIOR
@@ -6571,7 +6571,7 @@ trainerdata 155, "Anthony"
 
     party 155
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 60
         pokemon SPECIES_BASTIODON
@@ -6582,7 +6582,7 @@ trainerdata 155, "Anthony"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 32
         level 60
         pokemon SPECIES_CONKELDURR
@@ -7202,7 +7202,7 @@ trainerdata 172, "Brent"
 
     party 172
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 40
         pokemon SPECIES_KLEFKI
@@ -7213,7 +7213,7 @@ trainerdata 172, "Brent"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 40
         pokemon SPECIES_ARIADOS
@@ -7238,7 +7238,7 @@ trainerdata 173, "Brent"
 
     party 173
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 60
         pokemon SPECIES_KLEFKI
@@ -7249,7 +7249,7 @@ trainerdata 173, "Brent"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 60
         pokemon SPECIES_ARIADOS
@@ -7421,7 +7421,7 @@ trainerdata 179, "Kipp"
 
     party 179
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 32
         level 71
         pokemon SPECIES_SALAMENCE
@@ -7432,7 +7432,7 @@ trainerdata 179, "Kipp"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 71
         pokemon SPECIES_ELECTRODE
@@ -7443,7 +7443,7 @@ trainerdata 179, "Kipp"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 72
         pokemon SPECIES_WATCHOG
@@ -7454,7 +7454,7 @@ trainerdata 179, "Kipp"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 0
         level 71
         pokemon SPECIES_GENGAR
@@ -7980,14 +7980,14 @@ trainerdata 194, "Mickey"
 
     party 194
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 33
         pokemon SPECIES_HOUNDOUR
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 33
         pokemon SPECIES_HOUNDOUR
@@ -8517,14 +8517,14 @@ trainerdata 209, "Cassie"
 
     party 209
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 36
         pokemon SPECIES_VILEPLUME
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 42
         pokemon SPECIES_BUTTERFREE
@@ -8545,21 +8545,21 @@ trainerdata 210, "Caroline"
 
     party 210
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 38
         pokemon SPECIES_MARILL
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 40
         pokemon SPECIES_SEEL
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 60
         abilityslot 2
         level 38
         pokemon SPECIES_MARILL
@@ -8580,7 +8580,7 @@ trainerdata 211, "Huey"
 
     party 211
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 31
         pokemon SPECIES_MANTINE
@@ -8591,7 +8591,7 @@ trainerdata 211, "Huey"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 31
         pokemon SPECIES_DREDNAW
@@ -8616,7 +8616,7 @@ trainerdata 212, "Terrell"
 
     party 212
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 33
         pokemon SPECIES_LANTURN
@@ -8627,7 +8627,7 @@ trainerdata 212, "Terrell"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 33
         pokemon SPECIES_QUAGSIRE
@@ -8652,7 +8652,7 @@ trainerdata 213, "Kent"
 
     party 213
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 32
         pokemon SPECIES_CLAWITZER
@@ -8663,7 +8663,7 @@ trainerdata 213, "Kent"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 32
         level 32
         pokemon SPECIES_EMPOLEON
@@ -8688,7 +8688,7 @@ trainerdata 214, "Roberto"
 
     party 214
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 33
         pokemon SPECIES_HITMONTOP
@@ -8699,7 +8699,7 @@ trainerdata 214, "Roberto"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 32
         level 33
         pokemon SPECIES_HERACROSS
@@ -8710,7 +8710,7 @@ trainerdata 214, "Roberto"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 60
         abilityslot 0
         level 32
         pokemon SPECIES_GRAPPLOCT
@@ -8735,7 +8735,7 @@ trainerdata 215, "Connie"
 
     party 215
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 33
         pokemon SPECIES_AZUMARILL
@@ -8746,7 +8746,7 @@ trainerdata 215, "Connie"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 33
         pokemon SPECIES_DEDENNE
@@ -9285,14 +9285,14 @@ trainerdata 231, "Edward"
 
     party 231
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 41
         pokemon SPECIES_PERSIAN
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 41
         pokemon SPECIES_PERSIAN
@@ -9409,7 +9409,7 @@ trainerdata 234, "Eoin"
 
     party 234
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 32
         level 65
         monwithform SPECIES_LYCANROC, 1
@@ -9420,7 +9420,7 @@ trainerdata 234, "Eoin"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 32
         level 66
         pokemon SPECIES_GARGANACL
@@ -9431,7 +9431,7 @@ trainerdata 234, "Eoin"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 32
         level 65
         monwithform SPECIES_ARCANINE, 1
@@ -9442,7 +9442,7 @@ trainerdata 234, "Eoin"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 32
         level 66
         pokemon SPECIES_SAMUROTT
@@ -9467,7 +9467,7 @@ trainerdata 235, "Noland"
 
     party 235
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 59
         pokemon SPECIES_LYCANROC
@@ -9478,7 +9478,7 @@ trainerdata 235, "Noland"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 32
         level 60
         pokemon SPECIES_MINIOR
@@ -9489,7 +9489,7 @@ trainerdata 235, "Noland"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 60
         abilityslot 32
         level 60
         pokemon SPECIES_TURTONATOR
@@ -9608,7 +9608,7 @@ trainerdata 238, "Stanly"
 
     party 238
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 32
         level 59
         pokemon SPECIES_DONDOZO
@@ -9619,7 +9619,7 @@ trainerdata 238, "Stanly"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 32
         level 59
         pokemon SPECIES_TATSUGIRI
@@ -9630,7 +9630,7 @@ trainerdata 238, "Stanly"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 60
         abilityslot 32
         level 60
         pokemon SPECIES_BRELOOM
@@ -9655,7 +9655,7 @@ trainerdata 239, "Jeff"
 
     party 239
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 62
         pokemon SPECIES_SEAKING
@@ -9666,7 +9666,7 @@ trainerdata 239, "Jeff"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 32
         level 62
         pokemon SPECIES_SWAMPERT
@@ -9677,7 +9677,7 @@ trainerdata 239, "Jeff"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 32
         level 62
         pokemon SPECIES_QUAQUAVAL
@@ -9702,14 +9702,14 @@ trainerdata 240, "Garrett"
 
     party 240
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 42
         pokemon SPECIES_KINGLER
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 42
         pokemon SPECIES_KINGLER
@@ -9730,28 +9730,28 @@ trainerdata 241, "Kenneth"
 
     party 241
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 36
         pokemon SPECIES_MACHOP
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 32
         level 36
         pokemon SPECIES_MACHOP
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 60
         abilityslot 0
         level 36
         pokemon SPECIES_POLIWRATH
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 60
         abilityslot 32
         level 36
         pokemon SPECIES_MACHOP
@@ -9772,7 +9772,7 @@ trainerdata 242, "Fritz"
 
     party 242
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 32
         level 61
         pokemon SPECIES_MR_MIME
@@ -9783,7 +9783,7 @@ trainerdata 242, "Fritz"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 60
         pokemon SPECIES_ELECTRODE
@@ -9794,7 +9794,7 @@ trainerdata 242, "Fritz"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 61
         monwithform SPECIES_ELECTRODE, 1
@@ -9819,14 +9819,14 @@ trainerdata 243, "Katie"
 
     party 243
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 41
         pokemon SPECIES_DEWGONG
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 41
         pokemon SPECIES_DEWGONG
@@ -10281,7 +10281,7 @@ trainerdata 248, "Ed"
 
     party 248
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 71
         pokemon SPECIES_CRUSTLE
@@ -10293,7 +10293,7 @@ trainerdata 248, "Ed"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 72
         pokemon SPECIES_ARMALDO
@@ -10305,7 +10305,7 @@ trainerdata 248, "Ed"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 71
         pokemon SPECIES_SHEDINJA
@@ -10317,7 +10317,7 @@ trainerdata 248, "Ed"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 0
         level 71
         pokemon SPECIES_BEEDRILL
@@ -10457,7 +10457,7 @@ trainerdata 252, "Harold"
 
     party 252
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 76
         pokemon SPECIES_HUNTAIL
@@ -10468,7 +10468,7 @@ trainerdata 252, "Harold"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 76
         pokemon SPECIES_PALAFIN
@@ -12545,7 +12545,7 @@ trainerdata 274, "Todd"
 
     party 274
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 40
         pokemon SPECIES_EMPOLEON
@@ -12556,7 +12556,7 @@ trainerdata 274, "Todd"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 40
         pokemon SPECIES_KRICKETUNE
@@ -12581,7 +12581,7 @@ trainerdata 275, "Todd"
 
     party 275
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 60
         pokemon SPECIES_EMPOLEON
@@ -12592,7 +12592,7 @@ trainerdata 275, "Todd"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 60
         pokemon SPECIES_KRICKETUNE
@@ -12617,7 +12617,7 @@ trainerdata 276, "Liz"
 
     party 276
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 32
         level 40
         pokemon SPECIES_DONPHAN
@@ -12628,7 +12628,7 @@ trainerdata 276, "Liz"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 32
         level 40
         pokemon SPECIES_HIPPOWDON
@@ -12653,7 +12653,7 @@ trainerdata 277, "Liz"
 
     party 277
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 32
         level 60
         pokemon SPECIES_DONPHAN
@@ -12664,7 +12664,7 @@ trainerdata 277, "Liz"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 32
         level 60
         pokemon SPECIES_HIPPOWDON
@@ -12725,7 +12725,7 @@ trainerdata 279, "Joey"
 
     party 279
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 40
         pokemon SPECIES_RATICATE
@@ -12736,7 +12736,7 @@ trainerdata 279, "Joey"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 40
         pokemon SPECIES_GREEDENT
@@ -12761,7 +12761,7 @@ trainerdata 280, "Joey"
 
     party 280
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 60
         pokemon SPECIES_RATICATE
@@ -12772,7 +12772,7 @@ trainerdata 280, "Joey"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 60
         pokemon SPECIES_GREEDENT
@@ -12860,7 +12860,7 @@ trainerdata 283, "Orson"
 
     party 283
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 41
         pokemon SPECIES_GRENINJA
@@ -12871,7 +12871,7 @@ trainerdata 283, "Orson"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 42
         pokemon SPECIES_ACCELGOR
@@ -12896,28 +12896,28 @@ trainerdata 284, "Corey"
 
     party 284
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 33
         pokemon SPECIES_KOFFING
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 36
         pokemon SPECIES_MAGMAR
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 60
         abilityslot 0
         level 33
         pokemon SPECIES_KOFFING
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 60
         abilityslot 0
         level 38
         pokemon SPECIES_KOFFING
@@ -13559,7 +13559,7 @@ trainerdata 291, "Debbie"
 
     party 291
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 76
         pokemon SPECIES_GOREBYSS
@@ -13570,7 +13570,7 @@ trainerdata 291, "Debbie"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 76
         pokemon SPECIES_PALAFIN
@@ -13623,7 +13623,7 @@ trainerdata 293, "Nicole"
 
     party 293
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 32
         level 75
         pokemon SPECIES_SHARPEDO
@@ -13634,7 +13634,7 @@ trainerdata 293, "Nicole"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 32
         level 75
         pokemon SPECIES_FLYGON
@@ -13645,7 +13645,7 @@ trainerdata 293, "Nicole"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 32
         level 75
         pokemon SPECIES_RELICANTH
@@ -13670,7 +13670,7 @@ trainerdata 294, "Lori"
 
     party 294
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 32
         level 75
         pokemon SPECIES_AERODACTYL
@@ -13681,7 +13681,7 @@ trainerdata 294, "Lori"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 32
         level 75
         pokemon SPECIES_LAPRAS
@@ -13692,7 +13692,7 @@ trainerdata 294, "Lori"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 32
         level 75
         pokemon SPECIES_STARMIE
@@ -13745,7 +13745,7 @@ trainerdata 296, "Nikki"
 
     party 296
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 74
         pokemon SPECIES_BLASTOISE
@@ -13756,7 +13756,7 @@ trainerdata 296, "Nikki"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 74
         pokemon SPECIES_DEWGONG
@@ -13767,7 +13767,7 @@ trainerdata 296, "Nikki"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 74
         pokemon SPECIES_DONDOZO
@@ -14232,28 +14232,28 @@ trainerdata 304, "Mickey"
 
     party 304
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 33
         pokemon SPECIES_GRAVELER
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 36
         pokemon SPECIES_GRAVELER
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 60
         abilityslot 0
         level 40
         pokemon SPECIES_GOLBAT
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 60
         abilityslot 0
         level 42
         pokemon SPECIES_GOLDUCK
@@ -14274,28 +14274,28 @@ trainerdata 305, "Mickey"
 
     party 305
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 33
         pokemon SPECIES_GRAVELER
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 36
         pokemon SPECIES_GRAVELER
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 60
         abilityslot 0
         level 40
         pokemon SPECIES_GOLBAT
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 60
         abilityslot 0
         level 42
         pokemon SPECIES_GOLDUCK
@@ -14316,28 +14316,28 @@ trainerdata 306, "Mickey"
 
     party 306
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 33
         pokemon SPECIES_GRAVELER
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 36
         pokemon SPECIES_GRAVELER
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 60
         abilityslot 0
         level 40
         pokemon SPECIES_GOLBAT
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 60
         abilityslot 0
         level 42
         pokemon SPECIES_GOLDUCK
@@ -14358,28 +14358,28 @@ trainerdata 307, "Mickey"
 
     party 307
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 33
         pokemon SPECIES_GRAVELER
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 36
         pokemon SPECIES_GRAVELER
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 60
         abilityslot 0
         level 40
         pokemon SPECIES_GOLBAT
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 60
         abilityslot 0
         level 42
         pokemon SPECIES_GOLDUCK
@@ -14504,7 +14504,7 @@ trainerdata 309, "Dwayne"
 
     party 309
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 64
         pokemon SPECIES_VENOMOTH
@@ -14515,7 +14515,7 @@ trainerdata 309, "Dwayne"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 64
         pokemon SPECIES_NIDOKING
@@ -14526,7 +14526,7 @@ trainerdata 309, "Dwayne"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 64
         pokemon SPECIES_HEATMOR
@@ -14537,7 +14537,7 @@ trainerdata 309, "Dwayne"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 0
         level 64
         pokemon SPECIES_CLODSIRE
@@ -14562,7 +14562,7 @@ trainerdata 310, "Harris"
 
     party 310
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 65
         pokemon SPECIES_VOLCARONA
@@ -14573,7 +14573,7 @@ trainerdata 310, "Harris"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 65
         pokemon SPECIES_SWALOT
@@ -14584,7 +14584,7 @@ trainerdata 310, "Harris"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 65
         pokemon SPECIES_TENTACRUEL
@@ -14595,7 +14595,7 @@ trainerdata 310, "Harris"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 65
         pokemon SPECIES_VENUSAUR
@@ -14620,7 +14620,7 @@ trainerdata 311, "Zeke"
 
     party 311
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 65
         pokemon SPECIES_NINETALES
@@ -14632,7 +14632,7 @@ trainerdata 311, "Zeke"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 65
         pokemon SPECIES_VILEPLUME
@@ -14644,7 +14644,7 @@ trainerdata 311, "Zeke"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 65
         pokemon SPECIES_DUSTOX
@@ -14656,7 +14656,7 @@ trainerdata 311, "Zeke"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 0
         level 65
         pokemon SPECIES_CERULEDGE
@@ -14682,7 +14682,7 @@ trainerdata 312, "Charles"
 
     party 312
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 72
         pokemon SPECIES_HYDREIGON
@@ -14693,7 +14693,7 @@ trainerdata 312, "Charles"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 72
         pokemon SPECIES_SEISMITOAD
@@ -14704,7 +14704,7 @@ trainerdata 312, "Charles"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 72
         pokemon SPECIES_COMFEY
@@ -14715,7 +14715,7 @@ trainerdata 312, "Charles"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 0
         level 72
         pokemon SPECIES_CONKELDURR
@@ -14740,7 +14740,7 @@ trainerdata 313, "Reese"
 
     party 313
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 67
         pokemon SPECIES_VOLBEAT
@@ -14751,7 +14751,7 @@ trainerdata 313, "Reese"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 66
         pokemon SPECIES_KROOKODILE
@@ -14762,7 +14762,7 @@ trainerdata 313, "Reese"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 68
         pokemon SPECIES_OINKOLOGNE
@@ -14787,7 +14787,7 @@ trainerdata 314, "Joel"
 
     party 314
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 67
         pokemon SPECIES_MAROWAK
@@ -14799,7 +14799,7 @@ trainerdata 314, "Joel"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 68
         pokemon SPECIES_BEHEEYEM
@@ -14811,7 +14811,7 @@ trainerdata 314, "Joel"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 67
         pokemon SPECIES_HAXORUS
@@ -14837,7 +14837,7 @@ trainerdata 315, "Glenn"
 
     party 315
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 2
         level 71
         pokemon SPECIES_SPINDA
@@ -14849,7 +14849,7 @@ trainerdata 315, "Glenn"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 2
         level 71
         pokemon SPECIES_DEWGONG
@@ -14861,7 +14861,7 @@ trainerdata 315, "Glenn"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 2
         level 71
         pokemon SPECIES_RABSCA
@@ -14887,7 +14887,7 @@ trainerdata 316, "Herman"
 
     party 316
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 70
         pokemon SPECIES_ALAKAZAM
@@ -14898,7 +14898,7 @@ trainerdata 316, "Herman"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 70
         pokemon SPECIES_HYPNO
@@ -14909,7 +14909,7 @@ trainerdata 316, "Herman"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 70
         pokemon SPECIES_EXEGGUTOR
@@ -14920,7 +14920,7 @@ trainerdata 316, "Herman"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 0
         level 70
         pokemon SPECIES_GRUMPIG
@@ -14945,7 +14945,7 @@ trainerdata 317, "Fidel"
 
     party 317
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 32
         level 71
         pokemon SPECIES_ORANGURU        
@@ -14956,7 +14956,7 @@ trainerdata 317, "Fidel"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 32
         level 71
         pokemon SPECIES_RABSCA        
@@ -14967,7 +14967,7 @@ trainerdata 317, "Fidel"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 32
         level 71
         pokemon SPECIES_ESPATHRA        
@@ -14978,7 +14978,7 @@ trainerdata 317, "Fidel"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 32
         level 71
         pokemon SPECIES_GOTHITELLE        
@@ -15003,7 +15003,7 @@ trainerdata 318, "Burt"
 
     party 318
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 74
         pokemon SPECIES_WEEZING
@@ -15014,7 +15014,7 @@ trainerdata 318, "Burt"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 74
         pokemon SPECIES_ARCANINE
@@ -15025,7 +15025,7 @@ trainerdata 318, "Burt"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 74
         pokemon SPECIES_LIEPARD
@@ -15078,7 +15078,7 @@ trainerdata 320, "Martin"
 
     party 320
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 69
         pokemon SPECIES_GOLDUCK
@@ -15089,7 +15089,7 @@ trainerdata 320, "Martin"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 69
         pokemon SPECIES_WUGTRIO
@@ -15100,7 +15100,7 @@ trainerdata 320, "Martin"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 69
         pokemon SPECIES_BRUXISH
@@ -15125,7 +15125,7 @@ trainerdata 321, "Stephen"
 
     party 321
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 69
         pokemon SPECIES_TENTACRUEL
@@ -15136,7 +15136,7 @@ trainerdata 321, "Stephen"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 69
         pokemon SPECIES_PALAFIN
@@ -15147,7 +15147,7 @@ trainerdata 321, "Stephen"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 69
         pokemon SPECIES_GOLISOPOD
@@ -15172,7 +15172,7 @@ trainerdata 322, "Barney"
 
     party 322
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 69
         pokemon SPECIES_GYARADOS
@@ -15183,7 +15183,7 @@ trainerdata 322, "Barney"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 69
         pokemon SPECIES_PRIMARINA
@@ -15194,7 +15194,7 @@ trainerdata 322, "Barney"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 69
         pokemon SPECIES_JELLICENT
@@ -15219,7 +15219,7 @@ trainerdata 323, "Tully"
 
     party 323
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 40
         pokemon SPECIES_QWILFISH
@@ -15230,7 +15230,7 @@ trainerdata 323, "Tully"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 40
         pokemon SPECIES_OVERQWIL
@@ -15255,7 +15255,7 @@ trainerdata 324, "Tully"
 
     party 324
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 60
         pokemon SPECIES_QWILFISH
@@ -15266,7 +15266,7 @@ trainerdata 324, "Tully"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 60
         pokemon SPECIES_OVERQWIL
@@ -15291,7 +15291,7 @@ trainerdata 325, "Wilton"
 
     party 325
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 47
         pokemon SPECIES_QWILFISH
@@ -15302,7 +15302,7 @@ trainerdata 325, "Wilton"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 47
         pokemon SPECIES_EMPOLEON
@@ -15313,7 +15313,7 @@ trainerdata 325, "Wilton"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 60
         abilityslot 0
         level 47
         pokemon SPECIES_GASTRODON
@@ -15424,7 +15424,7 @@ trainerdata 327, "Danny"
 
     party 327
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 32
         level 73
         pokemon SPECIES_JYNX
@@ -15435,7 +15435,7 @@ trainerdata 327, "Danny"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 72
         pokemon SPECIES_LURANTIS
@@ -15446,7 +15446,7 @@ trainerdata 327, "Danny"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 75
         pokemon SPECIES_DACHSBUN
@@ -15471,7 +15471,7 @@ trainerdata 328, "Tommy"
 
     party 328
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 72
         monwithform SPECIES_RATICATE, 1
@@ -15482,7 +15482,7 @@ trainerdata 328, "Tommy"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 32
         level 71
         pokemon SPECIES_ALAKAZAM
@@ -15493,7 +15493,7 @@ trainerdata 328, "Tommy"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 32
         level 71
         pokemon SPECIES_DUGTRIO
@@ -15504,7 +15504,7 @@ trainerdata 328, "Tommy"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 32
         level 71
         pokemon SPECIES_BELLIBOLT
@@ -15529,7 +15529,7 @@ trainerdata 329, "Dudley"
 
     party 329
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 67
         pokemon SPECIES_SIMIPOUR
@@ -15540,7 +15540,7 @@ trainerdata 329, "Dudley"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 67
         pokemon SPECIES_SAWK
@@ -15551,7 +15551,7 @@ trainerdata 329, "Dudley"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 67
         pokemon SPECIES_LILLIGANT
@@ -15562,7 +15562,7 @@ trainerdata 329, "Dudley"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 0
         level 67
         pokemon SPECIES_CARRACOSTA
@@ -15587,7 +15587,7 @@ trainerdata 330, "Joe"
 
     party 330
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 68
         pokemon SPECIES_BEARTIC
@@ -15599,7 +15599,7 @@ trainerdata 330, "Joe"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 68
         monwithform SPECIES_NINETALES, 1
@@ -15611,7 +15611,7 @@ trainerdata 330, "Joe"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 68
         pokemon SPECIES_CLOYSTER
@@ -15623,7 +15623,7 @@ trainerdata 330, "Joe"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 0
         level 68
         pokemon SPECIES_ARBOLIVA
@@ -15649,7 +15649,7 @@ trainerdata 331, "Billy"
 
     party 331
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 32
         level 73
         pokemon SPECIES_PARASECT
@@ -15660,7 +15660,7 @@ trainerdata 331, "Billy"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 72
         pokemon SPECIES_POLIWRATH        
@@ -15671,7 +15671,7 @@ trainerdata 331, "Billy"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 73
         pokemon SPECIES_DITTO
@@ -15682,7 +15682,7 @@ trainerdata 331, "Billy"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 0
         level 72
         pokemon SPECIES_DITTO
@@ -15707,7 +15707,7 @@ trainerdata 332, "Heidi"
 
     party 332
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 32
         level 66
         pokemon SPECIES_FEAROW
@@ -15718,7 +15718,7 @@ trainerdata 332, "Heidi"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 66
         pokemon SPECIES_BUTTERFREE
@@ -15729,7 +15729,7 @@ trainerdata 332, "Heidi"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 65
         pokemon SPECIES_SIMISEAR
@@ -15740,7 +15740,7 @@ trainerdata 332, "Heidi"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 0
         level 66
         pokemon SPECIES_MIGHTYENA
@@ -15765,7 +15765,7 @@ trainerdata 333, "Edna"
 
     party 333
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 32
         level 65
         pokemon SPECIES_BEEDRILL
@@ -15778,7 +15778,7 @@ trainerdata 333, "Edna"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 66
         pokemon SPECIES_SWELLOW
@@ -15791,7 +15791,7 @@ trainerdata 333, "Edna"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 65
         monwithform SPECIES_SANDSLASH, 1
@@ -15804,7 +15804,7 @@ trainerdata 333, "Edna"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 0
         level 66
         pokemon SPECIES_SOLROCK
@@ -15831,7 +15831,7 @@ trainerdata 334, "Gina"
 
     party 334
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 60
         pokemon SPECIES_JUMPLUFF
@@ -15842,7 +15842,7 @@ trainerdata 334, "Gina"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 60
         pokemon SPECIES_SUNFLORA
@@ -15853,7 +15853,7 @@ trainerdata 334, "Gina"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 60
         abilityslot 0
         level 60
         pokemon SPECIES_DONPHAN
@@ -15878,7 +15878,7 @@ trainerdata 335, "Erin"
 
     party 335
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 32
         level 56
         pokemon SPECIES_UMBREON
@@ -15889,7 +15889,7 @@ trainerdata 335, "Erin"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 32
         level 56
         pokemon SPECIES_ESPEON
@@ -16413,7 +16413,7 @@ trainerdata 348, "Robert"
 
     party 348
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 32
         level 65
         pokemon SPECIES_AUDINO
@@ -16424,7 +16424,7 @@ trainerdata 348, "Robert"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 32
         level 66
         pokemon SPECIES_KOMALA
@@ -16435,7 +16435,7 @@ trainerdata 348, "Robert"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 32
         level 65
         pokemon SPECIES_BEWEAR
@@ -16446,7 +16446,7 @@ trainerdata 348, "Robert"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 32
         level 66
         pokemon SPECIES_KLAWF
@@ -16471,7 +16471,7 @@ trainerdata 349, "Joshua"
 
     party 349
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 70
         pokemon SPECIES_RAICHU
@@ -16482,7 +16482,7 @@ trainerdata 349, "Joshua"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 70
         pokemon SPECIES_EMOLGA
@@ -16493,7 +16493,7 @@ trainerdata 349, "Joshua"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 70
         pokemon SPECIES_HAXORUS
@@ -16504,7 +16504,7 @@ trainerdata 349, "Joshua"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 0
         level 71
         pokemon SPECIES_MUDSDALE
@@ -16529,7 +16529,7 @@ trainerdata 350, "Carter"
 
     party 350
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 71
         pokemon SPECIES_ALTARIA
@@ -16540,7 +16540,7 @@ trainerdata 350, "Carter"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 71
         pokemon SPECIES_BLASTOISE
@@ -16551,7 +16551,7 @@ trainerdata 350, "Carter"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 71
         pokemon SPECIES_FLYGON
@@ -16562,7 +16562,7 @@ trainerdata 350, "Carter"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 0
         level 71
         pokemon SPECIES_MANECTRIC
@@ -16587,7 +16587,7 @@ trainerdata 351, "Trevor"
 
     party 351
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 32
         level 71
         pokemon SPECIES_SLAKING
@@ -16600,7 +16600,7 @@ trainerdata 351, "Trevor"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 32
         level 71
         pokemon SPECIES_ZANGOOSE
@@ -16613,7 +16613,7 @@ trainerdata 351, "Trevor"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 32
         level 71
         pokemon SPECIES_SEVIPER
@@ -16640,35 +16640,35 @@ trainerdata 352, "Georgia"
 
     party 352
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 32
         level 31
         pokemon SPECIES_SENTRET
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 32
         level 31
         pokemon SPECIES_SENTRET
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 60
         abilityslot 32
         level 31
         pokemon SPECIES_SENTRET
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 60
         abilityslot 32
         level 36
         pokemon SPECIES_FURRET
         ballseal 0
 
         // mon 4
-        ivs 0
+        ivs 60
         abilityslot 32
         level 31
         pokemon SPECIES_SENTRET
@@ -16747,7 +16747,7 @@ trainerdata 354, "Laura"
 
     party 354
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 68
         pokemon SPECIES_PIDGEOT
@@ -16758,7 +16758,7 @@ trainerdata 354, "Laura"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 32
         level 68
         pokemon SPECIES_SHIFTRY
@@ -16769,7 +16769,7 @@ trainerdata 354, "Laura"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 68
         pokemon SPECIES_ESCAVALIER
@@ -16794,7 +16794,7 @@ trainerdata 355, "Shannon"
 
     party 355
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 68
         pokemon SPECIES_SCOVILLAIN
@@ -16805,7 +16805,7 @@ trainerdata 355, "Shannon"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 32
         level 68
         pokemon SPECIES_PASSIMIAN
@@ -16816,7 +16816,7 @@ trainerdata 355, "Shannon"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 68
         pokemon SPECIES_CHANDELURE
@@ -16927,7 +16927,7 @@ trainerdata 357, "Clarke"
 
     party 357
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 32
         level 66
         pokemon SPECIES_CRUSTLE
@@ -16938,7 +16938,7 @@ trainerdata 357, "Clarke"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 65
         pokemon SPECIES_ARCHEOPS
@@ -16949,7 +16949,7 @@ trainerdata 357, "Clarke"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 66
         pokemon SPECIES_MIENSHAO
@@ -16960,7 +16960,7 @@ trainerdata 357, "Clarke"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 0
         level 66
         pokemon SPECIES_BRAVIARY
@@ -16985,7 +16985,7 @@ trainerdata 358, "Kenny"
 
     party 358
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 70
         pokemon SPECIES_GALVANTULA
@@ -16996,7 +16996,7 @@ trainerdata 358, "Kenny"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 70
         pokemon SPECIES_GOLEM
@@ -17007,7 +17007,7 @@ trainerdata 358, "Kenny"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 70
         pokemon SPECIES_MIENSHAO
@@ -17018,7 +17018,7 @@ trainerdata 358, "Kenny"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 0
         level 71
         pokemon SPECIES_SANDSLASH
@@ -17043,7 +17043,7 @@ trainerdata 359, "Jim"
 
     party 359
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 32
         level 66
         pokemon SPECIES_POLIWRATH
@@ -17054,7 +17054,7 @@ trainerdata 359, "Jim"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 32
         level 66
         pokemon SPECIES_GOLEM
@@ -17065,7 +17065,7 @@ trainerdata 359, "Jim"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 32
         level 66
         pokemon SPECIES_HITMONLEE
@@ -17076,7 +17076,7 @@ trainerdata 359, "Jim"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 32
         level 66
         pokemon SPECIES_KABUTOPS
@@ -17101,7 +17101,7 @@ trainerdata 360, "Arnie"
 
     party 360
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 40
         pokemon SPECIES_SCIZOR
@@ -17112,7 +17112,7 @@ trainerdata 360, "Arnie"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 40
         pokemon SPECIES_SHUCKLE
@@ -17326,7 +17326,7 @@ trainerdata 364, "Sam"
 
     party 364
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 65
         monwithform SPECIES_DUGTRIO, 1
@@ -17337,7 +17337,7 @@ trainerdata 364, "Sam"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 65
         pokemon SPECIES_MUK
@@ -17348,7 +17348,7 @@ trainerdata 364, "Sam"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 65
         pokemon SPECIES_MAWILE
@@ -17359,7 +17359,7 @@ trainerdata 364, "Sam"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 0
         level 65
         pokemon SPECIES_REVAVROOM
@@ -17384,7 +17384,7 @@ trainerdata 365, "Tyrone"
 
     party 365
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 32
         level 65
         pokemon SPECIES_AGGRON
@@ -17395,7 +17395,7 @@ trainerdata 365, "Tyrone"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 65
         pokemon SPECIES_TINKATON
@@ -17406,7 +17406,7 @@ trainerdata 365, "Tyrone"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 32
         level 65
         pokemon SPECIES_BELLIBOLT
@@ -17417,7 +17417,7 @@ trainerdata 365, "Tyrone"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 32
         level 65
         pokemon SPECIES_ORTHWORM
@@ -17500,7 +17500,7 @@ trainerdata 367, "Shawn"
 
     party 367
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 32
         level 39
         pokemon SPECIES_MAGNEMITE
@@ -17508,7 +17508,7 @@ trainerdata 367, "Shawn"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 41
         pokemon SPECIES_MUK
@@ -17516,7 +17516,7 @@ trainerdata 367, "Shawn"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 60
         abilityslot 0
         level 39
         pokemon SPECIES_MAGNEMITE
@@ -17674,7 +17674,7 @@ trainerdata 370, "Jerome"
 
     party 370
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 32
         level 76
         pokemon SPECIES_SEAKING
@@ -17685,7 +17685,7 @@ trainerdata 370, "Jerome"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 32
         level 76
         pokemon SPECIES_VELUZA
@@ -17696,7 +17696,7 @@ trainerdata 370, "Jerome"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 32
         level 76
         pokemon SPECIES_SWANNA
@@ -17721,7 +17721,7 @@ trainerdata 371, "Tucker"
 
     party 371
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 76
         pokemon SPECIES_QUAQUAVAL
@@ -17732,7 +17732,7 @@ trainerdata 371, "Tucker"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 32
         level 76
         pokemon SPECIES_CLOYSTER
@@ -17792,7 +17792,7 @@ trainerdata 373, "Frankie"
 
     party 373
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 32
         level 75
         pokemon SPECIES_SWANNA
@@ -17803,7 +17803,7 @@ trainerdata 373, "Frankie"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 32
         level 75
         pokemon SPECIES_ALOMOMOLA
@@ -17814,7 +17814,7 @@ trainerdata 373, "Frankie"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 32
         level 75
         pokemon SPECIES_ALOMOMOLA
@@ -17839,7 +17839,7 @@ trainerdata 374, "Tyson"
 
     party 374
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 32
         level 75
         pokemon SPECIES_QUAGSIRE
@@ -17850,7 +17850,7 @@ trainerdata 374, "Tyson"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 32
         level 75
         pokemon SPECIES_OCTILLERY
@@ -18031,7 +18031,7 @@ trainerdata 378, "Warren"
 
     party 378
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 73
         pokemon SPECIES_WHIMSICOTT
@@ -18042,7 +18042,7 @@ trainerdata 378, "Warren"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 73
         pokemon SPECIES_PALOSSAND
@@ -18053,7 +18053,7 @@ trainerdata 378, "Warren"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 73
         pokemon SPECIES_ARCHALUDON
@@ -18078,7 +18078,7 @@ trainerdata 379, "Jimmy"
 
     party 379
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 73
         pokemon SPECIES_GHOLDENGO
@@ -18089,7 +18089,7 @@ trainerdata 379, "Jimmy"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 74
         pokemon SPECIES_GRUMPIG
@@ -18100,7 +18100,7 @@ trainerdata 379, "Jimmy"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 73
         pokemon SPECIES_BANETTE
@@ -18125,7 +18125,7 @@ trainerdata 380, "Owen"
 
     party 380
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 71
         pokemon SPECIES_ARCANINE
@@ -18136,7 +18136,7 @@ trainerdata 380, "Owen"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 71
         pokemon SPECIES_COFAGRIGUS
@@ -18147,7 +18147,7 @@ trainerdata 380, "Owen"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 71
         pokemon SPECIES_BOUFFALANT
@@ -18158,7 +18158,7 @@ trainerdata 380, "Owen"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 0
         level 71
         pokemon SPECIES_SHIINOTIC
@@ -18183,7 +18183,7 @@ trainerdata 381, "Jason"
 
     party 381
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 70
         monwithform SPECIES_RATICATE, 1
@@ -18194,7 +18194,7 @@ trainerdata 381, "Jason"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 70
         pokemon SPECIES_CLEFABLE
@@ -18205,7 +18205,7 @@ trainerdata 381, "Jason"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 71
         pokemon SPECIES_EXPLOUD
@@ -18216,7 +18216,7 @@ trainerdata 381, "Jason"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 0
         level 70
         pokemon SPECIES_WALREIN
@@ -18241,7 +18241,7 @@ trainerdata 382, "Hillary"
 
     party 382
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 32
         level 71
         pokemon SPECIES_PRIMARINA
@@ -18252,7 +18252,7 @@ trainerdata 382, "Hillary"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 72
         pokemon SPECIES_KOMALA
@@ -18263,7 +18263,7 @@ trainerdata 382, "Hillary"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 71
         pokemon SPECIES_GOURGEIST
@@ -18274,7 +18274,7 @@ trainerdata 382, "Hillary"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 0
         level 71
         pokemon SPECIES_SWAMPERT
@@ -18885,7 +18885,7 @@ trainerdata 399, "Lyle"
 
     party 399
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 59
         monwithform SPECIES_MAROWAK, 1
@@ -18896,7 +18896,7 @@ trainerdata 399, "Lyle"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 59
         pokemon SPECIES_EMBOAR
@@ -18907,7 +18907,7 @@ trainerdata 399, "Lyle"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 60
         abilityslot 0
         level 60
         monwithform SPECIES_TAUROS, 2
@@ -18968,7 +18968,7 @@ trainerdata 401, "Alfred"
 
     party 401
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 31
         pokemon SPECIES_NOCTOWL
@@ -18979,7 +18979,7 @@ trainerdata 401, "Alfred"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 31
         pokemon SPECIES_PANGORO
@@ -19004,7 +19004,7 @@ trainerdata 402, "Tiffany"
 
     party 402
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 33
         pokemon SPECIES_SYLVEON
@@ -19015,7 +19015,7 @@ trainerdata 402, "Tiffany"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 33
         pokemon SPECIES_AZUMARILL
@@ -19040,7 +19040,7 @@ trainerdata 403, "Spencer"
 
     party 403
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 33
         pokemon SPECIES_UMBREON
@@ -19051,7 +19051,7 @@ trainerdata 403, "Spencer"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 33
         pokemon SPECIES_TANGROWTH
@@ -19062,7 +19062,7 @@ trainerdata 403, "Spencer"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 60
         abilityslot 0
         level 32
         pokemon SPECIES_PORYGON_Z
@@ -19123,7 +19123,7 @@ trainerdata 405, "Phil"
 
     party 405
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 45
         pokemon SPECIES_XATU
@@ -19134,7 +19134,7 @@ trainerdata 405, "Phil"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 44
         pokemon SPECIES_ESPEON
@@ -19159,7 +19159,7 @@ trainerdata 406, "Zach"
 
     party 406
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 46
         pokemon SPECIES_HERACROSS
@@ -19170,7 +19170,7 @@ trainerdata 406, "Zach"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 46
         pokemon SPECIES_DONPHAN
@@ -19361,7 +19361,7 @@ trainerdata 411, "Vernon"
 
     party 411
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 53
         pokemon SPECIES_INDEEDEE
@@ -19372,7 +19372,7 @@ trainerdata 411, "Vernon"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 53
         pokemon SPECIES_HATTERENE
@@ -19397,7 +19397,7 @@ trainerdata 412, "Eli"
 
     party 412
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 52
         pokemon SPECIES_ESPEON
@@ -19408,7 +19408,7 @@ trainerdata 412, "Eli"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 52
         pokemon SPECIES_SLOWKING
@@ -19419,7 +19419,7 @@ trainerdata 412, "Eli"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 60
         abilityslot 0
         level 52
         pokemon SPECIES_GALLADE
@@ -19444,7 +19444,7 @@ trainerdata 413, "Scott"
 
     party 413
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 32
         level 53
         pokemon SPECIES_LANTURN
@@ -19455,7 +19455,7 @@ trainerdata 413, "Scott"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 52
         pokemon SPECIES_QWILFISH
@@ -19466,7 +19466,7 @@ trainerdata 413, "Scott"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 60
         abilityslot 0
         level 53
         pokemon SPECIES_OCTILLERY
@@ -19833,7 +19833,7 @@ trainerdata 419, "Ellen"
 
     party 419
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 67
         pokemon SPECIES_SIMISAGE
@@ -19844,7 +19844,7 @@ trainerdata 419, "Ellen"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 68
         pokemon SPECIES_LEAVANNY
@@ -19855,7 +19855,7 @@ trainerdata 419, "Ellen"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 68
         pokemon SPECIES_THROH
@@ -19866,7 +19866,7 @@ trainerdata 419, "Ellen"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 0
         level 67
         pokemon SPECIES_GARBODOR
@@ -20002,14 +20002,14 @@ trainerdata 422, "Rodney"
 
     party 422
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 37
         pokemon SPECIES_CHINGLING
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 32
         level 41
         pokemon SPECIES_HYPNO
@@ -20030,21 +20030,21 @@ trainerdata 423, "Jeremy"
 
     party 423
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 32
         level 36
         pokemon SPECIES_MEOWTH
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 32
         level 36
         pokemon SPECIES_MEOWTH
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 60
         abilityslot 32
         level 36
         pokemon SPECIES_MEOWTH
@@ -20065,7 +20065,7 @@ trainerdata 424, "Colin"
 
     party 424
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 32
         level 59
         pokemon SPECIES_SLAKING
@@ -20076,7 +20076,7 @@ trainerdata 424, "Colin"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 32
         level 59
         pokemon SPECIES_FARFETCHD
@@ -20087,7 +20087,7 @@ trainerdata 424, "Colin"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 60
         abilityslot 0
         level 60
         pokemon SPECIES_ARMAROUGE
@@ -20112,7 +20112,7 @@ trainerdata 425, "Meg & Peg"
 
     party 425
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 32
         level 59
         pokemon SPECIES_PALOSSAND
@@ -20123,7 +20123,7 @@ trainerdata 425, "Meg & Peg"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 59
         pokemon SPECIES_SWANNA
@@ -20134,7 +20134,7 @@ trainerdata 425, "Meg & Peg"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 60
         abilityslot 0
         level 60
         pokemon SPECIES_SCEPTILE
@@ -20145,7 +20145,7 @@ trainerdata 425, "Meg & Peg"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 60
         abilityslot 0
         level 60
         pokemon SPECIES_BLAZIKEN
@@ -20170,14 +20170,14 @@ trainerdata 426, "Meg & Peg"
 
     party 426
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 39
         pokemon SPECIES_PHANPY
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 32
         level 39
         pokemon SPECIES_TEDDIURSA
@@ -20198,14 +20198,14 @@ trainerdata 427, "Shirley"
 
     party 427
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 32
         level 43
         pokemon SPECIES_CHATOT
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 43
         pokemon SPECIES_JIGGLYPUFF
@@ -20226,14 +20226,14 @@ trainerdata 428, "Nate"
 
     party 428
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 40
         pokemon SPECIES_LEDIAN
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 40
         pokemon SPECIES_EXEGGUTOR
@@ -20254,7 +20254,7 @@ trainerdata 429, "Ricky"
 
     party 429
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 40
         pokemon SPECIES_AIPOM
@@ -20262,7 +20262,7 @@ trainerdata 429, "Ricky"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 40
         pokemon SPECIES_DITTO
@@ -20284,7 +20284,7 @@ trainerdata 430, "Jack"
 
     party 430
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 40
         pokemon SPECIES_ROSERADE
@@ -20295,7 +20295,7 @@ trainerdata 430, "Jack"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 40
         pokemon SPECIES_MAMOSWINE
@@ -20320,7 +20320,7 @@ trainerdata 431, "Jack"
 
     party 431
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 60
         pokemon SPECIES_ROSERADE
@@ -20331,7 +20331,7 @@ trainerdata 431, "Jack"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 60
         pokemon SPECIES_MAMOSWINE
@@ -20356,7 +20356,7 @@ trainerdata 432, "Alan"
 
     party 432
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 40
         pokemon SPECIES_KINGDRA
@@ -20367,7 +20367,7 @@ trainerdata 432, "Alan"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 40
         pokemon SPECIES_TORTERRA
@@ -20392,7 +20392,7 @@ trainerdata 433, "Alan"
 
     party 433
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 60
         pokemon SPECIES_KINGDRA
@@ -20403,7 +20403,7 @@ trainerdata 433, "Alan"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 60
         pokemon SPECIES_TORTERRA
@@ -20428,7 +20428,7 @@ trainerdata 434, "Chad"
 
     party 434
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 40
         pokemon SPECIES_MR_MIME
@@ -20439,7 +20439,7 @@ trainerdata 434, "Chad"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 40
         pokemon SPECIES_MR_RIME
@@ -20464,7 +20464,7 @@ trainerdata 435, "Chad"
 
     party 435
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 60
         pokemon SPECIES_MR_MIME
@@ -20475,7 +20475,7 @@ trainerdata 435, "Chad"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 60
         pokemon SPECIES_MR_RIME
@@ -20500,7 +20500,7 @@ trainerdata 436, "Beverly"
 
     party 436
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 40
         pokemon SPECIES_GRANBULL
@@ -20511,7 +20511,7 @@ trainerdata 436, "Beverly"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 40
         pokemon SPECIES_AZUMARILL
@@ -20536,7 +20536,7 @@ trainerdata 437, "Beverly"
 
     party 437
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 60
         pokemon SPECIES_GRANBULL
@@ -20547,7 +20547,7 @@ trainerdata 437, "Beverly"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 60
         pokemon SPECIES_AZUMARILL
@@ -20572,7 +20572,7 @@ trainerdata 438, "Derek"
 
     party 438
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 40
         pokemon SPECIES_MORPEKO
@@ -20583,7 +20583,7 @@ trainerdata 438, "Derek"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 40
         pokemon SPECIES_MORPEKO
@@ -20608,7 +20608,7 @@ trainerdata 439, "Derek"
 
     party 439
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 60
         pokemon SPECIES_MORPEKO
@@ -20619,7 +20619,7 @@ trainerdata 439, "Derek"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 60
         pokemon SPECIES_MORPEKO
@@ -20644,7 +20644,7 @@ trainerdata 440, "Huey"
 
     party 440
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 40
         pokemon SPECIES_MANTINE
@@ -20655,7 +20655,7 @@ trainerdata 440, "Huey"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 40
         pokemon SPECIES_DREDNAW
@@ -20680,7 +20680,7 @@ trainerdata 441, "Huey"
 
     party 441
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 60
         pokemon SPECIES_MANTINE
@@ -20691,7 +20691,7 @@ trainerdata 441, "Huey"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 60
         pokemon SPECIES_DREDNAW
@@ -20971,7 +20971,7 @@ trainerdata 449, "Arnie"
 
     party 449
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 60
         pokemon SPECIES_SCIZOR
@@ -20982,7 +20982,7 @@ trainerdata 449, "Arnie"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 60
         pokemon SPECIES_SHUCKLE
@@ -21007,7 +21007,7 @@ trainerdata 450, "Wilton"
 
     party 450
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 49
         pokemon SPECIES_QWILFISH
@@ -21018,7 +21018,7 @@ trainerdata 450, "Wilton"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 49
         pokemon SPECIES_EMPOLEON
@@ -21029,7 +21029,7 @@ trainerdata 450, "Wilton"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 60
         abilityslot 0
         level 49
         pokemon SPECIES_GASTRODON
@@ -21054,7 +21054,7 @@ trainerdata 451, "Parry"
 
     party 451
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 60
         pokemon SPECIES_DIGGERSBY
@@ -21065,7 +21065,7 @@ trainerdata 451, "Parry"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 60
         pokemon SPECIES_CARBINK
@@ -21090,7 +21090,7 @@ trainerdata 452, "Parry"
 
     party 452
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 56
         pokemon SPECIES_DIGGERSBY
@@ -21101,7 +21101,7 @@ trainerdata 452, "Parry"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 56
         pokemon SPECIES_CARBINK
@@ -21126,7 +21126,7 @@ trainerdata 453, "Erin"
 
     party 453
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 32
         level 60
         pokemon SPECIES_UMBREON
@@ -21137,7 +21137,7 @@ trainerdata 453, "Erin"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 32
         level 60
         pokemon SPECIES_ESPEON
@@ -21162,7 +21162,7 @@ trainerdata 454, "Irwin"
 
     party 454
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 40
         pokemon SPECIES_BRONZONG
@@ -21173,7 +21173,7 @@ trainerdata 454, "Irwin"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 40
         pokemon SPECIES_FORRETRESS
@@ -21184,7 +21184,7 @@ trainerdata 454, "Irwin"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 60
         abilityslot 0
         level 40
         pokemon SPECIES_HATTERENE
@@ -21195,7 +21195,7 @@ trainerdata 454, "Irwin"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 60
         abilityslot 0
         level 40
         pokemon SPECIES_WOBBUFFET
@@ -21220,7 +21220,7 @@ trainerdata 455, "Irwin"
 
     party 455
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 60
         pokemon SPECIES_BRONZONG
@@ -21231,7 +21231,7 @@ trainerdata 455, "Irwin"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 60
         pokemon SPECIES_FORRETRESS
@@ -21242,7 +21242,7 @@ trainerdata 455, "Irwin"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 60
         abilityslot 0
         level 60
         pokemon SPECIES_HATTERENE
@@ -21253,7 +21253,7 @@ trainerdata 455, "Irwin"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 60
         abilityslot 0
         level 60
         pokemon SPECIES_WOBBUFFET
@@ -21444,7 +21444,7 @@ trainerdata 460, "Wade"
 
     party 460
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 60
         pokemon SPECIES_ARIADOS
@@ -21455,7 +21455,7 @@ trainerdata 460, "Wade"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 60
         pokemon SPECIES_LEDIAN
@@ -21466,7 +21466,7 @@ trainerdata 460, "Wade"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 60
         abilityslot 0
         level 60
         pokemon SPECIES_PARASECT
@@ -21477,7 +21477,7 @@ trainerdata 460, "Wade"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 60
         abilityslot 0
         level 60
         pokemon SPECIES_VENOMOTH
@@ -21502,7 +21502,7 @@ trainerdata 461, "Wade"
 
     party 461
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 40
         pokemon SPECIES_ARIADOS
@@ -21513,7 +21513,7 @@ trainerdata 461, "Wade"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 40
         pokemon SPECIES_LEDIAN
@@ -21524,7 +21524,7 @@ trainerdata 461, "Wade"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 60
         abilityslot 0
         level 40
         pokemon SPECIES_PARASECT
@@ -21535,7 +21535,7 @@ trainerdata 461, "Wade"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 60
         abilityslot 0
         level 40
         pokemon SPECIES_VENOMOTH
@@ -21560,7 +21560,7 @@ trainerdata 462, "Ralph"
 
     party 462
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 40
         pokemon SPECIES_GASTRODON
@@ -21571,7 +21571,7 @@ trainerdata 462, "Ralph"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 40
         pokemon SPECIES_BARRASKEWDA
@@ -21596,7 +21596,7 @@ trainerdata 463, "Ralph"
 
     party 463
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 60
         pokemon SPECIES_GASTRODON
@@ -21607,7 +21607,7 @@ trainerdata 463, "Ralph"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 60
         pokemon SPECIES_BARRASKEWDA
@@ -21632,7 +21632,7 @@ trainerdata 464, "Dana"
 
     party 464
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 40
         pokemon SPECIES_AMPHAROS
@@ -21643,7 +21643,7 @@ trainerdata 464, "Dana"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 40
         pokemon SPECIES_SHUCKLE
@@ -21668,7 +21668,7 @@ trainerdata 465, "Dana"
 
     party 465
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 60
         pokemon SPECIES_AMPHAROS
@@ -21679,7 +21679,7 @@ trainerdata 465, "Dana"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 60
         pokemon SPECIES_SHUCKLE
@@ -21704,7 +21704,7 @@ trainerdata 466, "Tiffany"
 
     party 466
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 40
         pokemon SPECIES_SYLVEON
@@ -21715,7 +21715,7 @@ trainerdata 466, "Tiffany"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 40
         pokemon SPECIES_AZUMARILL
@@ -21740,7 +21740,7 @@ trainerdata 467, "Tiffany"
 
     party 467
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 60
         pokemon SPECIES_CLEFABLE
@@ -21751,7 +21751,7 @@ trainerdata 467, "Tiffany"
         ballseal 0
         
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 60
         pokemon SPECIES_SYLVEON
@@ -21762,7 +21762,7 @@ trainerdata 467, "Tiffany"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 60
         abilityslot 0
         level 60
         pokemon SPECIES_AZUMARILL
@@ -21787,7 +21787,7 @@ trainerdata 468, "Ross"
 
     party 468
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 37
         pokemon SPECIES_INDEEDEE
@@ -21798,7 +21798,7 @@ trainerdata 468, "Ross"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 37
         monwithform SPECIES_SLOWKING, 1
@@ -21823,7 +21823,7 @@ trainerdata 469, "Mitch"
 
     party 469
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 37
         pokemon SPECIES_DITTO
@@ -21834,7 +21834,7 @@ trainerdata 469, "Mitch"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 38
         pokemon SPECIES_DITTO
@@ -21859,7 +21859,7 @@ trainerdata 470, "Gregg"
 
     party 470
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 36
         pokemon SPECIES_PORYGON_Z
@@ -21870,7 +21870,7 @@ trainerdata 470, "Gregg"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 32
         level 36
         pokemon SPECIES_MAGNEZONE
@@ -21881,7 +21881,7 @@ trainerdata 470, "Gregg"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 60
         abilityslot 0
         level 36
         monwithform SPECIES_WORMADAM, 1
@@ -21906,7 +21906,7 @@ trainerdata 471, "Garett"
 
     party 471
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 32
         level 41
         pokemon SPECIES_SCIZOR
@@ -21917,7 +21917,7 @@ trainerdata 471, "Garett"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 42
         pokemon SPECIES_AMPHAROS
@@ -21928,7 +21928,7 @@ trainerdata 471, "Garett"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 60
         abilityslot 0
         level 41
         pokemon SPECIES_PERRSERKER
@@ -21953,7 +21953,7 @@ trainerdata 472, "Trenton"
 
     party 472
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 32
         level 42
         pokemon SPECIES_PORYGON_Z
@@ -21964,7 +21964,7 @@ trainerdata 472, "Trenton"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 32
         level 42
         pokemon SPECIES_TOXTRICITY
@@ -23163,7 +23163,7 @@ trainerdata 492, "Alex"
 
     party 492
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 32
         level 70
         pokemon SPECIES_NIDOKING
@@ -23174,7 +23174,7 @@ trainerdata 492, "Alex"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 32
         level 71
         pokemon SPECIES_SLOWKING
@@ -23185,7 +23185,7 @@ trainerdata 492, "Alex"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 70
         pokemon SPECIES_GYARADOS
@@ -23586,7 +23586,7 @@ trainerdata 502, "Clea & Gil"
 
     party 502
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 50
         pokemon SPECIES_DRAGALGE
@@ -23597,7 +23597,7 @@ trainerdata 502, "Clea & Gil"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 50
         pokemon SPECIES_GOODRA
@@ -23622,7 +23622,7 @@ trainerdata 503, "Jack"
 
     party 503
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_ROSERADE
@@ -23633,7 +23633,7 @@ trainerdata 503, "Jack"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_MAMOSWINE
@@ -23644,7 +23644,7 @@ trainerdata 503, "Jack"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_ARCANINE
@@ -23669,7 +23669,7 @@ trainerdata 504, "Mickey"
 
     party 504
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 35
         pokemon SPECIES_ELECTRODE
@@ -23680,7 +23680,7 @@ trainerdata 504, "Mickey"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 35
         pokemon SPECIES_GROWLITHE
@@ -23691,7 +23691,7 @@ trainerdata 504, "Mickey"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 60
         abilityslot 0
         level 37
         pokemon SPECIES_VILEPLUME
@@ -23716,7 +23716,7 @@ trainerdata 505, "Alan"
 
     party 505
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_KINGDRA
@@ -23727,7 +23727,7 @@ trainerdata 505, "Alan"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_TORTERRA
@@ -23752,7 +23752,7 @@ trainerdata 506, "Mickey"
 
     party 506
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 35
         pokemon SPECIES_XATU
@@ -23763,7 +23763,7 @@ trainerdata 506, "Mickey"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 32
         pokemon SPECIES_TANGELA
@@ -23774,7 +23774,7 @@ trainerdata 506, "Mickey"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 60
         abilityslot 0
         level 32
         pokemon SPECIES_YANMA
@@ -23785,7 +23785,7 @@ trainerdata 506, "Mickey"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 60
         abilityslot 0
         level 35
         pokemon SPECIES_QUAGSIRE
@@ -23810,7 +23810,7 @@ trainerdata 507, "Chad"
 
     party 507
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_MR_MIME
@@ -23821,7 +23821,7 @@ trainerdata 507, "Chad"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_MR_RIME
@@ -23846,7 +23846,7 @@ trainerdata 508, "Mickey"
 
     party 508
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 34
         pokemon SPECIES_MR_MIME
@@ -23857,7 +23857,7 @@ trainerdata 508, "Mickey"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 38
         pokemon SPECIES_MAGNETON
@@ -23882,7 +23882,7 @@ trainerdata 509, "Huey"
 
     party 509
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_MANTINE
@@ -23893,7 +23893,7 @@ trainerdata 509, "Huey"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_DREDNAW
@@ -23918,7 +23918,7 @@ trainerdata 510, "Joey"
 
     party 510
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_RATICATE
@@ -23929,7 +23929,7 @@ trainerdata 510, "Joey"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_GREEDENT
@@ -23954,7 +23954,7 @@ trainerdata 511, "Mickey"
 
     party 511
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 37
         pokemon SPECIES_RATICATE
@@ -23965,7 +23965,7 @@ trainerdata 511, "Mickey"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 37
         pokemon SPECIES_RATICATE
@@ -23990,7 +23990,7 @@ trainerdata 512, "Wade"
 
     party 512
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_ARIADOS
@@ -24001,7 +24001,7 @@ trainerdata 512, "Wade"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_LEDIAN
@@ -24012,7 +24012,7 @@ trainerdata 512, "Wade"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_PARASECT
@@ -24023,7 +24023,7 @@ trainerdata 512, "Wade"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_VENOMOTH
@@ -24048,7 +24048,7 @@ trainerdata 513, "Arnie"
 
     party 513
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_SCIZOR
@@ -24059,7 +24059,7 @@ trainerdata 513, "Arnie"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_SHUCKLE
@@ -24084,7 +24084,7 @@ trainerdata 514, "Mickey"
 
     party 514
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 40
         pokemon SPECIES_VENOMOTH
@@ -24095,7 +24095,7 @@ trainerdata 514, "Mickey"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 40
         pokemon SPECIES_VENOMOTH
@@ -24120,7 +24120,7 @@ trainerdata 515, "Ralph"
 
     party 515
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_GASTRODON
@@ -24131,7 +24131,7 @@ trainerdata 515, "Ralph"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_BARRASKEWDA
@@ -24156,7 +24156,7 @@ trainerdata 516, "Mickey"
 
     party 516
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 35
         pokemon SPECIES_QWILFISH
@@ -24167,7 +24167,7 @@ trainerdata 516, "Mickey"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 39
         pokemon SPECIES_SEAKING
@@ -24192,7 +24192,7 @@ trainerdata 517, "Tully"
 
     party 517
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_SEAKING
@@ -24203,7 +24203,7 @@ trainerdata 517, "Tully"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_QWILFISH
@@ -24214,7 +24214,7 @@ trainerdata 517, "Tully"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_OVERQWIL
@@ -24239,7 +24239,7 @@ trainerdata 518, "Liz"
 
     party 518
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 32
         level 80
         pokemon SPECIES_DONPHAN
@@ -24250,7 +24250,7 @@ trainerdata 518, "Liz"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 32
         level 80
         pokemon SPECIES_HIPPOWDON
@@ -24286,7 +24286,7 @@ trainerdata 519, "Mickey"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 32
         pokemon SPECIES_NIDOKING
@@ -24297,7 +24297,7 @@ trainerdata 519, "Mickey"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 60
         abilityslot 0
         level 32
         pokemon SPECIES_NIDOQUEEN
@@ -24322,7 +24322,7 @@ trainerdata 520, "Gina"
 
     party 520
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_JUMPLUFF
@@ -24333,7 +24333,7 @@ trainerdata 520, "Gina"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_SUNFLORA
@@ -24344,7 +24344,7 @@ trainerdata 520, "Gina"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_DONPHAN
@@ -24369,7 +24369,7 @@ trainerdata 521, "Mickey"
 
     party 521
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 33
         pokemon SPECIES_JUMPLUFF
@@ -24380,7 +24380,7 @@ trainerdata 521, "Mickey"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 33
         pokemon SPECIES_JUMPLUFF
@@ -24391,7 +24391,7 @@ trainerdata 521, "Mickey"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 60
         abilityslot 0
         level 38
         pokemon SPECIES_VENUSAUR
@@ -24416,7 +24416,7 @@ trainerdata 522, "Tiffany"
 
     party 522
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_CLEFABLE
@@ -24427,7 +24427,7 @@ trainerdata 522, "Tiffany"
         ballseal 0
         
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_SYLVEON
@@ -24438,7 +24438,7 @@ trainerdata 522, "Tiffany"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_AZUMARILL
@@ -24463,7 +24463,7 @@ trainerdata 523, "Anthony"
 
     party 523
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_BASTIODON
@@ -24474,7 +24474,7 @@ trainerdata 523, "Anthony"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 32
         level 80
         pokemon SPECIES_CONKELDURR
@@ -24499,7 +24499,7 @@ trainerdata 524, "Mickey"
 
     party 524
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 34
         pokemon SPECIES_GRAVELER
@@ -24510,7 +24510,7 @@ trainerdata 524, "Mickey"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 36
         pokemon SPECIES_GOLEM
@@ -24521,7 +24521,7 @@ trainerdata 524, "Mickey"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 60
         abilityslot 0
         level 34
         pokemon SPECIES_MACHOKE
@@ -24546,7 +24546,7 @@ trainerdata 525, "Todd"
 
     party 525
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_EMPOLEON
@@ -24557,7 +24557,7 @@ trainerdata 525, "Todd"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_KRICKETUNE
@@ -24582,7 +24582,7 @@ trainerdata 526, "Mickey"
 
     party 526
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 33
         pokemon SPECIES_GRAVELER
@@ -24593,7 +24593,7 @@ trainerdata 526, "Mickey"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 33
         pokemon SPECIES_GRAVELER
@@ -24604,7 +24604,7 @@ trainerdata 526, "Mickey"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 60
         abilityslot 0
         level 36
         pokemon SPECIES_MAGCARGO
@@ -24615,7 +24615,7 @@ trainerdata 526, "Mickey"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 60
         abilityslot 0
         level 34
         pokemon SPECIES_GOLDUCK
@@ -24640,7 +24640,7 @@ trainerdata 527, "Irwin"
 
     party 527
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_BRONZONG
@@ -24651,7 +24651,7 @@ trainerdata 527, "Irwin"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_FORRETRESS
@@ -24662,7 +24662,7 @@ trainerdata 527, "Irwin"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_HATTERENE
@@ -24673,7 +24673,7 @@ trainerdata 527, "Irwin"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_WOBBUFFET
@@ -24698,7 +24698,7 @@ trainerdata 528, "Dana"
 
     party 528
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_AMPHAROS
@@ -24709,7 +24709,7 @@ trainerdata 528, "Dana"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_SHUCKLE
@@ -24734,7 +24734,7 @@ trainerdata 529, "Mickey"
 
     party 529
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 36
         pokemon SPECIES_AMPHAROS
@@ -24745,7 +24745,7 @@ trainerdata 529, "Mickey"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 36
         pokemon SPECIES_GOLDUCK
@@ -24770,7 +24770,7 @@ trainerdata 530, "Brent"
 
     party 530
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_KLEFKI
@@ -24781,7 +24781,7 @@ trainerdata 530, "Brent"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_ARIADOS
@@ -24806,7 +24806,7 @@ trainerdata 531, "Mickey"
 
     party 531
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 38
         pokemon SPECIES_DRATINI
@@ -24817,7 +24817,7 @@ trainerdata 531, "Mickey"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 38
         pokemon SPECIES_DRATINI
@@ -24864,7 +24864,7 @@ trainerdata 532, "Mickey"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 60
         abilityslot 0
         level 32
         pokemon SPECIES_BEEDRILL
@@ -24875,7 +24875,7 @@ trainerdata 532, "Mickey"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 60
         abilityslot 0
         level 34
         pokemon SPECIES_BUTTERFREE
@@ -25019,7 +25019,7 @@ trainerdata 537, "Harrison"
 
     party 537
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 32
         level 32
         pokemon SPECIES_SANDACONDA
@@ -25030,7 +25030,7 @@ trainerdata 537, "Harrison"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 32
         pokemon SPECIES_EISCUE
@@ -25055,7 +25055,7 @@ trainerdata 538, "Hugh"
 
     party 538
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 39
         pokemon SPECIES_KINGDRA
@@ -25066,7 +25066,7 @@ trainerdata 538, "Hugh"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 39
         pokemon SPECIES_CENTISKORCH
@@ -25091,7 +25091,7 @@ trainerdata 539, "Markus"
 
     party 539
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 32
         level 32
         pokemon SPECIES_MAGNETON
@@ -25102,7 +25102,7 @@ trainerdata 539, "Markus"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 32
         level 32
         monwithform SPECIES_SLIGGOO, 1
@@ -25127,14 +25127,14 @@ trainerdata 540, "Rex"
 
     party 540
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 45
         pokemon SPECIES_PHANPY
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 45
         pokemon SPECIES_PHANPY
@@ -25155,14 +25155,14 @@ trainerdata 541, "Andy"
 
     party 541
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 32
         level 44
         pokemon SPECIES_TEDDIURSA
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 32
         level 44
         pokemon SPECIES_TEDDIURSA
@@ -25183,7 +25183,7 @@ trainerdata 542, "Mickey"
 
     party 542
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 32
         pokemon SPECIES_NOCTOWL
@@ -25194,7 +25194,7 @@ trainerdata 542, "Mickey"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 32
         pokemon SPECIES_FLAREON
@@ -25219,7 +25219,7 @@ trainerdata 543, "Mickey"
 
     party 543
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 32
         pokemon SPECIES_NOCTOWL
@@ -25230,7 +25230,7 @@ trainerdata 543, "Mickey"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 32
         pokemon SPECIES_JOLTEON
@@ -25255,7 +25255,7 @@ trainerdata 544, "Mickey"
 
     party 544
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 32
         pokemon SPECIES_NOCTOWL
@@ -25266,7 +25266,7 @@ trainerdata 544, "Mickey"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 32
         pokemon SPECIES_VAPOREON
@@ -25353,7 +25353,7 @@ trainerdata 546, "Sherman"
 
     party 546
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 73
         pokemon SPECIES_FURRET
@@ -25364,7 +25364,7 @@ trainerdata 546, "Sherman"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 74
         pokemon SPECIES_PYUKUMUKU
@@ -25375,7 +25375,7 @@ trainerdata 546, "Sherman"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 73
         pokemon SPECIES_BRAMBLEGHAST
@@ -25400,7 +25400,7 @@ trainerdata 547, "Bruce"
 
     party 547
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 74
         pokemon SPECIES_GLIMMORA
@@ -25411,7 +25411,7 @@ trainerdata 547, "Bruce"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 74
         monwithform SPECIES_LYCANROC, 1
@@ -25422,7 +25422,7 @@ trainerdata 547, "Bruce"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 74
         monwithform SPECIES_DECIDUEYE, 1
@@ -25621,7 +25621,7 @@ trainerdata 551, "Dwight"
 
     party 551
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 74
         pokemon SPECIES_SEISMITOAD
@@ -25632,7 +25632,7 @@ trainerdata 551, "Dwight"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 74
         pokemon SPECIES_STEELIX
@@ -25643,7 +25643,7 @@ trainerdata 551, "Dwight"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 74
         pokemon SPECIES_ARCHEOPS
@@ -25668,7 +25668,7 @@ trainerdata 552, "Regis"
 
     party 552
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 73
         pokemon SPECIES_JOLTEON
@@ -25679,7 +25679,7 @@ trainerdata 552, "Regis"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 73
         pokemon SPECIES_SAWK
@@ -25690,7 +25690,7 @@ trainerdata 552, "Regis"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 73
         pokemon SPECIES_GOTHITELLE
@@ -25715,7 +25715,7 @@ trainerdata 553, "Moe & Lulu"
 
     party 553
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 65
         pokemon SPECIES_CASTFORM
@@ -25727,7 +25727,7 @@ trainerdata 553, "Moe & Lulu"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 65
         pokemon SPECIES_GIGALITH
@@ -25739,7 +25739,7 @@ trainerdata 553, "Moe & Lulu"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 65
         pokemon SPECIES_DUGTRIO
@@ -25751,7 +25751,7 @@ trainerdata 553, "Moe & Lulu"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 0
         level 65
         pokemon SPECIES_EXCADRILL
@@ -25777,7 +25777,7 @@ trainerdata 554, "Milton"
 
     party 554
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 65
         pokemon SPECIES_ARCANINE
@@ -25788,7 +25788,7 @@ trainerdata 554, "Milton"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 65
         pokemon SPECIES_FARFETCHD
@@ -25799,7 +25799,7 @@ trainerdata 554, "Milton"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 65
         pokemon SPECIES_RAPIDASH
@@ -25810,7 +25810,7 @@ trainerdata 554, "Milton"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 0
         level 65
         pokemon SPECIES_LIEPARD
@@ -25929,7 +25929,7 @@ trainerdata 557, "Vic & Tara"
 
     party 557
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 32
         level 69
         pokemon SPECIES_VILEPLUME
@@ -25941,7 +25941,7 @@ trainerdata 557, "Vic & Tara"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 32
         level 69
         pokemon SPECIES_NINETALES
@@ -25953,7 +25953,7 @@ trainerdata 557, "Vic & Tara"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 32
         level 69
         pokemon SPECIES_SCOVILLAIN
@@ -25965,7 +25965,7 @@ trainerdata 557, "Vic & Tara"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 0
         level 69
         pokemon SPECIES_ARMAROUGE
@@ -25991,7 +25991,7 @@ trainerdata 558, "Kyler"
 
     party 558
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 69
         pokemon SPECIES_SWANNA
@@ -26002,7 +26002,7 @@ trainerdata 558, "Kyler"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 68
         pokemon SPECIES_SEISMITOAD
@@ -26013,7 +26013,7 @@ trainerdata 558, "Kyler"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 69
         pokemon SPECIES_SIMIPOUR
@@ -26038,7 +26038,7 @@ trainerdata 559, "Tim & Sue"
 
     party 559
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 70
         pokemon SPECIES_GIGALITH
@@ -26050,7 +26050,7 @@ trainerdata 559, "Tim & Sue"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 70
         pokemon SPECIES_EXCADRILL
@@ -26062,7 +26062,7 @@ trainerdata 559, "Tim & Sue"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 71
         pokemon SPECIES_FLYGON
@@ -26074,7 +26074,7 @@ trainerdata 559, "Tim & Sue"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 0
         level 70
         pokemon SPECIES_CARRACOSTA
@@ -26100,7 +26100,7 @@ trainerdata 560, "Clark"
 
     party 560
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 70
         pokemon SPECIES_ALOMOMOLA
@@ -26111,7 +26111,7 @@ trainerdata 560, "Clark"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 70
         pokemon SPECIES_EELEKTROSS
@@ -26122,7 +26122,7 @@ trainerdata 560, "Clark"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 70
         pokemon SPECIES_FERROTHORN
@@ -26133,7 +26133,7 @@ trainerdata 560, "Clark"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 0
         level 70
         pokemon SPECIES_JYNX
@@ -26158,7 +26158,7 @@ trainerdata 561, "Tanner"
 
     party 561
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 70
         pokemon SPECIES_PALOSSAND
@@ -26169,7 +26169,7 @@ trainerdata 561, "Tanner"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 70
         pokemon SPECIES_TSAREENA
@@ -26180,7 +26180,7 @@ trainerdata 561, "Tanner"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 70
         pokemon SPECIES_ORANGURU
@@ -26205,7 +26205,7 @@ trainerdata 562, "Piper"
 
     party 562
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 71
         pokemon SPECIES_STARMIE
@@ -26216,7 +26216,7 @@ trainerdata 562, "Piper"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 70
         pokemon SPECIES_AGGRON
@@ -26227,7 +26227,7 @@ trainerdata 562, "Piper"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 70
         pokemon SPECIES_REUNICLUS
@@ -26238,7 +26238,7 @@ trainerdata 562, "Piper"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 0
         level 71
         pokemon SPECIES_SINISTCHA
@@ -26263,7 +26263,7 @@ trainerdata 563, "Ginger"
 
     party 563
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 70
         pokemon SPECIES_ARAQUANID
@@ -26274,7 +26274,7 @@ trainerdata 563, "Ginger"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 70
         pokemon SPECIES_ESCAVALIER
@@ -26285,7 +26285,7 @@ trainerdata 563, "Ginger"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 70
         pokemon SPECIES_SAWSBUCK
@@ -26310,7 +26310,7 @@ trainerdata 564, "Clarice"
 
     party 564
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 32
         level 71
         pokemon SPECIES_MIGHTYENA
@@ -26322,7 +26322,7 @@ trainerdata 564, "Clarice"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 32
         level 71
         pokemon SPECIES_AERODACTYL
@@ -26334,7 +26334,7 @@ trainerdata 564, "Clarice"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 32
         level 71
         pokemon SPECIES_WIGGLYTUFF
@@ -26418,7 +26418,7 @@ trainerdata 566, "Connor"
 
     party 566
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 32
         level 71
         pokemon SPECIES_LINOONE
@@ -26430,7 +26430,7 @@ trainerdata 566, "Connor"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 32
         level 71
         pokemon SPECIES_NIDOQUEEN
@@ -26442,7 +26442,7 @@ trainerdata 566, "Connor"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 32
         level 71
         pokemon SPECIES_EXEGGUTOR
@@ -26454,7 +26454,7 @@ trainerdata 566, "Connor"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 32
         level 71
         pokemon SPECIES_SNORLAX
@@ -26480,7 +26480,7 @@ trainerdata 567, "Torin"
 
     party 567
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 71
         pokemon SPECIES_ARCHALUDON
@@ -26492,7 +26492,7 @@ trainerdata 567, "Torin"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 71
         pokemon SPECIES_CROBAT
@@ -26504,7 +26504,7 @@ trainerdata 567, "Torin"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 71
         pokemon SPECIES_ZOROARK
@@ -26530,7 +26530,7 @@ trainerdata 568, "Travis"
 
     party 568
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 32
         level 71
         pokemon SPECIES_HITMONCHAN
@@ -26541,7 +26541,7 @@ trainerdata 568, "Travis"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 32
         level 71
         pokemon SPECIES_SABLEYE
@@ -26552,7 +26552,7 @@ trainerdata 568, "Travis"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 32
         level 71
         pokemon SPECIES_LUVDISC
@@ -26563,7 +26563,7 @@ trainerdata 568, "Travis"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 32
         level 71
         pokemon SPECIES_VELUZA
@@ -26588,7 +26588,7 @@ trainerdata 569, "Kay & Tia"
 
     party 569
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 71
         pokemon SPECIES_KOMMO_O
@@ -26599,7 +26599,7 @@ trainerdata 569, "Kay & Tia"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 72
         pokemon SPECIES_CLODSIRE
@@ -26610,7 +26610,7 @@ trainerdata 569, "Kay & Tia"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 71
         pokemon SPECIES_METAGROSS
@@ -26621,7 +26621,7 @@ trainerdata 569, "Kay & Tia"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 0
         level 72
         pokemon SPECIES_QUAGSIRE
@@ -26646,7 +26646,7 @@ trainerdata 570, "Boone"
 
     party 570
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 72
         pokemon SPECIES_KILOWATTREL
@@ -26657,7 +26657,7 @@ trainerdata 570, "Boone"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 32
         level 71
         pokemon SPECIES_WHISCASH
@@ -26668,7 +26668,7 @@ trainerdata 570, "Boone"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 32
         level 71
         pokemon SPECIES_LAPRAS
@@ -26679,7 +26679,7 @@ trainerdata 570, "Boone"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 32
         level 71
         pokemon SPECIES_FLAREON
@@ -26704,7 +26704,7 @@ trainerdata 571, "Eleanor"
 
     party 571
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 72
         pokemon SPECIES_SERPERIOR
@@ -26715,7 +26715,7 @@ trainerdata 571, "Eleanor"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 71
         pokemon SPECIES_ZEBSTRIKA
@@ -26726,7 +26726,7 @@ trainerdata 571, "Eleanor"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 71
         pokemon SPECIES_SWOOBAT
@@ -26737,7 +26737,7 @@ trainerdata 571, "Eleanor"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 0
         level 71
         pokemon SPECIES_AUDINO
@@ -26762,7 +26762,7 @@ trainerdata 572, "Dale"
 
     party 572
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 32
         level 66
         pokemon SPECIES_GENGAR
@@ -26773,7 +26773,7 @@ trainerdata 572, "Dale"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 32
         level 67
         pokemon SPECIES_SABLEYE
@@ -26784,7 +26784,7 @@ trainerdata 572, "Dale"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 32
         level 67
         pokemon SPECIES_GOLISOPOD
@@ -26795,7 +26795,7 @@ trainerdata 572, "Dale"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 32
         level 66
         pokemon SPECIES_STOUTLAND
@@ -26820,7 +26820,7 @@ trainerdata 573, "Jacob"
 
     party 573
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 68
         pokemon SPECIES_AERODACTYL
@@ -26831,7 +26831,7 @@ trainerdata 573, "Jacob"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 32
         level 69
         pokemon SPECIES_LINOONE
@@ -26842,7 +26842,7 @@ trainerdata 573, "Jacob"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 32
         level 66
         pokemon SPECIES_CRABOMINABLE
@@ -26853,7 +26853,7 @@ trainerdata 573, "Jacob"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 32
         level 71
         pokemon SPECIES_MANDIBUZZ
@@ -26878,7 +26878,7 @@ trainerdata 574, "Aiden"
 
     party 574
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 32
         level 71
         pokemon SPECIES_DRUDDIGON
@@ -26889,7 +26889,7 @@ trainerdata 574, "Aiden"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 32
         level 71
         pokemon SPECIES_SPIDOPS
@@ -26900,7 +26900,7 @@ trainerdata 574, "Aiden"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 32
         level 71
         pokemon SPECIES_BOMBIRDIER
@@ -26911,7 +26911,7 @@ trainerdata 574, "Aiden"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 32
         level 70
         pokemon SPECIES_LAPRAS
@@ -26936,7 +26936,7 @@ trainerdata 575, "Dan"
 
     party 575
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 69
         pokemon SPECIES_LOKIX
@@ -26947,7 +26947,7 @@ trainerdata 575, "Dan"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 70
         pokemon SPECIES_TOUCANNON
@@ -26958,7 +26958,7 @@ trainerdata 575, "Dan"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 67
         pokemon SPECIES_RIBOMBEE
@@ -26983,7 +26983,7 @@ trainerdata 576, "Theron"
 
     party 576
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 2
         level 70
         pokemon SPECIES_ILLUMISE
@@ -26994,7 +26994,7 @@ trainerdata 576, "Theron"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 2
         level 70
         pokemon SPECIES_BANETTE
@@ -27005,7 +27005,7 @@ trainerdata 576, "Theron"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 2
         level 70
         pokemon SPECIES_ORICORIO
@@ -27030,7 +27030,7 @@ trainerdata 577, "Markey"
 
     party 577
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 32
         level 72
         pokemon SPECIES_KLINKLANG
@@ -27041,7 +27041,7 @@ trainerdata 577, "Markey"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 71
         pokemon SPECIES_BAXCALIBUR
@@ -27066,7 +27066,7 @@ trainerdata 578, "Teddy"
 
     party 578
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 71
         pokemon SPECIES_DACHSBUN
@@ -27077,7 +27077,7 @@ trainerdata 578, "Teddy"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 72
         pokemon SPECIES_MAUSHOLD
@@ -27102,7 +27102,7 @@ trainerdata 579, "Ernest"
 
     party 579
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 32
         level 68
         monwithform SPECIES_STUNFISK, 1
@@ -27113,7 +27113,7 @@ trainerdata 579, "Ernest"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 32
         level 67
         pokemon SPECIES_COFAGRIGUS
@@ -27124,7 +27124,7 @@ trainerdata 579, "Ernest"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 32
         level 66
         pokemon SPECIES_WIGGLYTUFF
@@ -27135,7 +27135,7 @@ trainerdata 579, "Ernest"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 32
         level 67
         pokemon SPECIES_DURANT
@@ -27160,7 +27160,7 @@ trainerdata 580, "Pedro"
 
     party 580
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 32
         level 75
         pokemon SPECIES_LINOONE
@@ -27172,7 +27172,7 @@ trainerdata 580, "Pedro"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 32
         level 75
         pokemon SPECIES_GHOLDENGO
@@ -27198,7 +27198,7 @@ trainerdata 581, "Adrian"
 
     party 581
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 75
         pokemon SPECIES_EMBOAR
@@ -27209,7 +27209,7 @@ trainerdata 581, "Adrian"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 75
         pokemon SPECIES_VANILLUXE
@@ -27234,7 +27234,7 @@ trainerdata 582, "Cheyenne"
 
     party 582
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 32
         level 75
         pokemon SPECIES_SALAMENCE
@@ -27245,7 +27245,7 @@ trainerdata 582, "Cheyenne"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 32
         level 75
         pokemon SPECIES_SAWK
@@ -27342,7 +27342,7 @@ trainerdata 585, "Elmo"
 
     party 585
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 75
         pokemon SPECIES_GYARADOS
@@ -27353,7 +27353,7 @@ trainerdata 585, "Elmo"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 75
         pokemon SPECIES_TENTACRUEL
@@ -27378,7 +27378,7 @@ trainerdata 586, "Luis"
 
     party 586
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 32
         level 75
         pokemon SPECIES_PYUKUMUKU
@@ -27389,7 +27389,7 @@ trainerdata 586, "Luis"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 32
         level 75
         pokemon SPECIES_WUGTRIO        
@@ -27414,7 +27414,7 @@ trainerdata 587, "Leona"
 
     party 587
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 75
         pokemon SPECIES_OMASTAR
@@ -27425,7 +27425,7 @@ trainerdata 587, "Leona"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 75
         pokemon SPECIES_LUDICOLO
@@ -27450,7 +27450,7 @@ trainerdata 588, "Mina"
 
     party 588
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 75
         pokemon SPECIES_LUVDISC
@@ -27461,7 +27461,7 @@ trainerdata 588, "Mina"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 75
         pokemon SPECIES_SAMUROTT
@@ -27486,7 +27486,7 @@ trainerdata 589, "Murphy"
 
     party 589
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 74
         pokemon SPECIES_LAPRAS
@@ -27497,7 +27497,7 @@ trainerdata 589, "Murphy"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 75
         pokemon SPECIES_VAPOREON
@@ -27508,7 +27508,7 @@ trainerdata 589, "Murphy"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 74
         pokemon SPECIES_GOLISOPOD
@@ -27533,7 +27533,7 @@ trainerdata 590, "Liam"
 
     party 590
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 75
         pokemon SPECIES_KINGDRA
@@ -27545,7 +27545,7 @@ trainerdata 590, "Liam"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 75
         pokemon SPECIES_PELIPPER
@@ -27557,7 +27557,7 @@ trainerdata 590, "Liam"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 75
         monwithform SPECIES_ORICORIO, 1
@@ -27583,7 +27583,7 @@ trainerdata 591, "Gideon"
 
     party 591
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 75
         pokemon SPECIES_PALAFIN
@@ -27594,7 +27594,7 @@ trainerdata 591, "Gideon"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 75
         pokemon SPECIES_TOXAPEX
@@ -27605,7 +27605,7 @@ trainerdata 591, "Gideon"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 75
         pokemon SPECIES_JELLICENT
@@ -27630,7 +27630,7 @@ trainerdata 592, "Chelan"
 
     party 592
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 32
         level 75
         pokemon SPECIES_AZUMARILL
@@ -27641,7 +27641,7 @@ trainerdata 592, "Chelan"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 32
         level 75
         pokemon SPECIES_PRIMARINA
@@ -27652,7 +27652,7 @@ trainerdata 592, "Chelan"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 32
         level 75
         pokemon SPECIES_ARAQUANID
@@ -27677,7 +27677,7 @@ trainerdata 593, "Kendra"
 
     party 593
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 75
         pokemon SPECIES_VELUZA
@@ -27688,7 +27688,7 @@ trainerdata 593, "Kendra"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 75
         pokemon SPECIES_CLODSIRE
@@ -27713,7 +27713,7 @@ trainerdata 594, "Esteban"
 
     party 594
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 75
         pokemon SPECIES_GOLDUCK
@@ -27724,7 +27724,7 @@ trainerdata 594, "Esteban"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 75
         pokemon SPECIES_POLIWRATH
@@ -27749,7 +27749,7 @@ trainerdata 595, "Duane"
 
     party 595
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 75
         pokemon SPECIES_SEAKING
@@ -27760,7 +27760,7 @@ trainerdata 595, "Duane"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 75
         pokemon SPECIES_KABUTOPS
@@ -27879,7 +27879,7 @@ trainerdata 598, "Day & Dani"
 
     party 598
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 63
         pokemon SPECIES_PLUSLE
@@ -27890,7 +27890,7 @@ trainerdata 598, "Day & Dani"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 63
         pokemon SPECIES_MINUN
@@ -27915,7 +27915,7 @@ trainerdata 599, "Virgil"
 
     party 599
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 63
         pokemon SPECIES_GUMSHOOS
@@ -27926,7 +27926,7 @@ trainerdata 599, "Virgil"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 63
         pokemon SPECIES_GLALIE
@@ -27951,7 +27951,7 @@ trainerdata 600, "Selina"
 
     party 600
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 63
         pokemon SPECIES_CLEFABLE
@@ -27962,7 +27962,7 @@ trainerdata 600, "Selina"
         ballseal 0
 
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 63
         pokemon SPECIES_HYDRAPPLE
@@ -28051,7 +28051,7 @@ trainerdata 603, "Erin"
 
     party 603
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 32
         level 80
         pokemon SPECIES_UMBREON
@@ -28062,7 +28062,7 @@ trainerdata 603, "Erin"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 32
         level 80
         pokemon SPECIES_ESPEON
@@ -28192,7 +28192,7 @@ trainerdata 606, "Parry"
 
     party 606
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_DIGGERSBY
@@ -28203,7 +28203,7 @@ trainerdata 606, "Parry"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_CARBINK
@@ -28314,7 +28314,7 @@ trainerdata 608, "Wilton"
 
     party 608
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 49
         pokemon SPECIES_QWILFISH
@@ -28325,7 +28325,7 @@ trainerdata 608, "Wilton"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 51
         pokemon SPECIES_EMPOLEON
@@ -28336,7 +28336,7 @@ trainerdata 608, "Wilton"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 60
         abilityslot 0
         level 52
         pokemon SPECIES_GASTRODON
@@ -28419,7 +28419,7 @@ trainerdata 610, "Derek"
 
     party 610
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_MORPEKO
@@ -28430,7 +28430,7 @@ trainerdata 610, "Derek"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_MORPEKO
@@ -28455,7 +28455,7 @@ trainerdata 611, "Beverly"
 
     party 611
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_GRANBULL
@@ -28466,7 +28466,7 @@ trainerdata 611, "Beverly"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_AZUMARILL
@@ -28526,7 +28526,7 @@ trainerdata 613, "Krise"
 
     party 613
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 40
         pokemon SPECIES_FLORGES
@@ -28537,7 +28537,7 @@ trainerdata 613, "Krise"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 40
         pokemon SPECIES_ABOMASNOW
@@ -28562,7 +28562,7 @@ trainerdata 614, "Krise"
 
     party 614
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 60
         pokemon SPECIES_FLORGES
@@ -28573,7 +28573,7 @@ trainerdata 614, "Krise"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 60
         pokemon SPECIES_ABOMASNOW
@@ -28598,7 +28598,7 @@ trainerdata 615, "Krise"
 
     party 615
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_FLORGES
@@ -28609,7 +28609,7 @@ trainerdata 615, "Krise"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_ABOMASNOW
@@ -28634,7 +28634,7 @@ trainerdata 616, "Ian"
 
     party 616
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 40
         pokemon SPECIES_LOPUNNY
@@ -28645,7 +28645,7 @@ trainerdata 616, "Ian"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 40
         pokemon SPECIES_QUAGSIRE
@@ -28670,7 +28670,7 @@ trainerdata 617, "Ian"
 
     party 617
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 60
         pokemon SPECIES_LOPUNNY
@@ -28681,7 +28681,7 @@ trainerdata 617, "Ian"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 60
         pokemon SPECIES_QUAGSIRE
@@ -28706,7 +28706,7 @@ trainerdata 618, "Ian"
 
     party 618
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_LOPUNNY
@@ -28717,7 +28717,7 @@ trainerdata 618, "Ian"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_QUAGSIRE
@@ -28742,7 +28742,7 @@ trainerdata 619, "Walt"
 
     party 619
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 40
         pokemon SPECIES_INFERNAPE
@@ -28753,7 +28753,7 @@ trainerdata 619, "Walt"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 40
         pokemon SPECIES_PYROAR
@@ -28778,7 +28778,7 @@ trainerdata 620, "Walt"
 
     party 620
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 60
         pokemon SPECIES_INFERNAPE
@@ -28789,7 +28789,7 @@ trainerdata 620, "Walt"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 60
         pokemon SPECIES_PYROAR
@@ -28814,7 +28814,7 @@ trainerdata 621, "Walt"
 
     party 621
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_INFERNAPE
@@ -28825,7 +28825,7 @@ trainerdata 621, "Walt"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_PYROAR
@@ -28850,7 +28850,7 @@ trainerdata 622, "Doug"
 
     party 622
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 73
         pokemon SPECIES_BUTTERFREE
@@ -28861,7 +28861,7 @@ trainerdata 622, "Doug"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 73
         pokemon SPECIES_ARIADOS
@@ -28872,7 +28872,7 @@ trainerdata 622, "Doug"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 73
         pokemon SPECIES_RABSCA
@@ -28883,7 +28883,7 @@ trainerdata 622, "Doug"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 0
         level 73
         pokemon SPECIES_BEAUTIFLY
@@ -28908,7 +28908,7 @@ trainerdata 623, "Doug"
 
     party 623
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 76
         pokemon SPECIES_BUTTERFREE
@@ -28919,7 +28919,7 @@ trainerdata 623, "Doug"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 76
         pokemon SPECIES_ARIADOS
@@ -28930,7 +28930,7 @@ trainerdata 623, "Doug"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 76
         pokemon SPECIES_RABSCA
@@ -28941,7 +28941,7 @@ trainerdata 623, "Doug"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 0
         level 76
         pokemon SPECIES_BEAUTIFLY
@@ -28966,7 +28966,7 @@ trainerdata 624, "Doug"
 
     party 624
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_BUTTERFREE
@@ -28977,7 +28977,7 @@ trainerdata 624, "Doug"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_ARIADOS
@@ -28988,7 +28988,7 @@ trainerdata 624, "Doug"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_RABSCA
@@ -28999,7 +28999,7 @@ trainerdata 624, "Doug"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_BEAUTIFLY
@@ -29024,7 +29024,7 @@ trainerdata 625, "Rob"
 
     party 625
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 73
         pokemon SPECIES_BEEDRILL
@@ -29035,7 +29035,7 @@ trainerdata 625, "Rob"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 73
         pokemon SPECIES_PINSIR
@@ -29046,7 +29046,7 @@ trainerdata 625, "Rob"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 73
         pokemon SPECIES_DUSTOX
@@ -29071,7 +29071,7 @@ trainerdata 626, "Rob"
 
     party 626
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 76
         pokemon SPECIES_BEEDRILL
@@ -29082,7 +29082,7 @@ trainerdata 626, "Rob"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 76
         pokemon SPECIES_PINSIR
@@ -29093,7 +29093,7 @@ trainerdata 626, "Rob"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 76
         pokemon SPECIES_DUSTOX
@@ -29118,7 +29118,7 @@ trainerdata 627, "Rob"
 
     party 627
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_BEEDRILL
@@ -29129,7 +29129,7 @@ trainerdata 627, "Rob"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_PINSIR
@@ -29140,7 +29140,7 @@ trainerdata 627, "Rob"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_DUSTOX
@@ -29165,7 +29165,7 @@ trainerdata 628, "Reese"
 
     party 628
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 70
         pokemon SPECIES_VOLBEAT
@@ -29176,7 +29176,7 @@ trainerdata 628, "Reese"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 70
         pokemon SPECIES_KROOKODILE
@@ -29187,7 +29187,7 @@ trainerdata 628, "Reese"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 70
         pokemon SPECIES_OINKOLOGNE
@@ -29198,7 +29198,7 @@ trainerdata 628, "Reese"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 0
         level 70
         pokemon SPECIES_HOUNDSTONE
@@ -29209,7 +29209,7 @@ trainerdata 628, "Reese"
         ballseal 0
 
         // mon 4
-        ivs 0
+        ivs 120
         abilityslot 0
         level 70
         pokemon SPECIES_GOLURK
@@ -29220,7 +29220,7 @@ trainerdata 628, "Reese"
         ballseal 0
 
         // mon 5
-        ivs 0
+        ivs 120
         abilityslot 0
         level 70
         pokemon SPECIES_CHIMECHO
@@ -29245,7 +29245,7 @@ trainerdata 629, "Reese"
 
     party 629
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 72
         pokemon SPECIES_VOLBEAT
@@ -29256,7 +29256,7 @@ trainerdata 629, "Reese"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 72
         pokemon SPECIES_KROOKODILE
@@ -29267,7 +29267,7 @@ trainerdata 629, "Reese"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 72
         pokemon SPECIES_OINKOLOGNE
@@ -29278,7 +29278,7 @@ trainerdata 629, "Reese"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 0
         level 72
         pokemon SPECIES_HOUNDSTONE
@@ -29289,7 +29289,7 @@ trainerdata 629, "Reese"
         ballseal 0
 
         // mon 4
-        ivs 0
+        ivs 120
         abilityslot 0
         level 72
         pokemon SPECIES_GOLURK
@@ -29300,7 +29300,7 @@ trainerdata 629, "Reese"
         ballseal 0
 
         // mon 5
-        ivs 0
+        ivs 120
         abilityslot 0
         level 72
         pokemon SPECIES_CHIMECHO
@@ -29325,7 +29325,7 @@ trainerdata 630, "Reese"
 
     party 630
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_VOLBEAT
@@ -29336,7 +29336,7 @@ trainerdata 630, "Reese"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_KROOKODILE
@@ -29347,7 +29347,7 @@ trainerdata 630, "Reese"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_OINKOLOGNE
@@ -29358,7 +29358,7 @@ trainerdata 630, "Reese"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_HOUNDSTONE
@@ -29369,7 +29369,7 @@ trainerdata 630, "Reese"
         ballseal 0
 
         // mon 4
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_GOLURK
@@ -29380,7 +29380,7 @@ trainerdata 630, "Reese"
         ballseal 0
 
         // mon 5
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_CHIMECHO
@@ -29405,7 +29405,7 @@ trainerdata 631, "Aiden"
 
     party 631
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 32
         level 69
         pokemon SPECIES_DRUDDIGON
@@ -29416,7 +29416,7 @@ trainerdata 631, "Aiden"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 32
         level 68
         pokemon SPECIES_SPIDOPS
@@ -29427,7 +29427,7 @@ trainerdata 631, "Aiden"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 32
         level 66
         pokemon SPECIES_BOMBIRDIER
@@ -29438,7 +29438,7 @@ trainerdata 631, "Aiden"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 32
         level 67
         pokemon SPECIES_LAPRAS
@@ -29463,7 +29463,7 @@ trainerdata 632, "Aiden"
 
     party 632
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 32
         level 75
         pokemon SPECIES_DRUDDIGON
@@ -29474,7 +29474,7 @@ trainerdata 632, "Aiden"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 32
         level 75
         pokemon SPECIES_SPIDOPS
@@ -29485,7 +29485,7 @@ trainerdata 632, "Aiden"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 32
         level 75
         pokemon SPECIES_BOMBIRDIER
@@ -29496,7 +29496,7 @@ trainerdata 632, "Aiden"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 32
         level 75
         pokemon SPECIES_LAPRAS
@@ -29521,7 +29521,7 @@ trainerdata 633, "Aiden"
 
     party 633
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 32
         level 80
         pokemon SPECIES_DRUDDIGON
@@ -29532,7 +29532,7 @@ trainerdata 633, "Aiden"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 32
         level 80
         pokemon SPECIES_SPIDOPS
@@ -29543,7 +29543,7 @@ trainerdata 633, "Aiden"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 32
         level 80
         pokemon SPECIES_BOMBIRDIER
@@ -29554,7 +29554,7 @@ trainerdata 633, "Aiden"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 32
         level 80
         pokemon SPECIES_LAPRAS
@@ -29579,7 +29579,7 @@ trainerdata 634, "Ernest"
 
     party 634
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 32
         level 72
         monwithform SPECIES_STUNFISK, 1
@@ -29590,7 +29590,7 @@ trainerdata 634, "Ernest"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 32
         level 72
         pokemon SPECIES_COFAGRIGUS
@@ -29601,7 +29601,7 @@ trainerdata 634, "Ernest"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 32
         level 72
         pokemon SPECIES_WIGGLYTUFF
@@ -29612,7 +29612,7 @@ trainerdata 634, "Ernest"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 32
         level 72
         pokemon SPECIES_DURANT
@@ -29637,7 +29637,7 @@ trainerdata 635, "Ernest"
 
     party 635
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 32
         level 74
         monwithform SPECIES_STUNFISK, 1
@@ -29648,7 +29648,7 @@ trainerdata 635, "Ernest"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 32
         level 74
         pokemon SPECIES_COFAGRIGUS
@@ -29659,7 +29659,7 @@ trainerdata 635, "Ernest"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 32
         level 74
         pokemon SPECIES_WIGGLYTUFF
@@ -29670,7 +29670,7 @@ trainerdata 635, "Ernest"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 32
         level 74
         pokemon SPECIES_DURANT
@@ -29695,7 +29695,7 @@ trainerdata 636, "Ernest"
 
     party 636
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 32
         level 80
         monwithform SPECIES_STUNFISK, 1
@@ -29706,7 +29706,7 @@ trainerdata 636, "Ernest"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 32
         level 80
         pokemon SPECIES_COFAGRIGUS
@@ -29717,7 +29717,7 @@ trainerdata 636, "Ernest"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 32
         level 80
         pokemon SPECIES_WIGGLYTUFF
@@ -29728,7 +29728,7 @@ trainerdata 636, "Ernest"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 32
         level 80
         pokemon SPECIES_DURANT
@@ -29753,7 +29753,7 @@ trainerdata 637, "Hillary"
 
     party 637
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 32
         level 73
         pokemon SPECIES_PRIMARINA
@@ -29764,7 +29764,7 @@ trainerdata 637, "Hillary"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 73
         pokemon SPECIES_KOMALA
@@ -29775,7 +29775,7 @@ trainerdata 637, "Hillary"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 73
         pokemon SPECIES_GOURGEIST
@@ -29786,7 +29786,7 @@ trainerdata 637, "Hillary"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 0
         level 73
         pokemon SPECIES_SWAMPERT
@@ -29811,7 +29811,7 @@ trainerdata 638, "Hillary"
 
     party 638
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 32
         level 76
         pokemon SPECIES_PRIMARINA
@@ -29822,7 +29822,7 @@ trainerdata 638, "Hillary"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 76
         pokemon SPECIES_KOMALA
@@ -29833,7 +29833,7 @@ trainerdata 638, "Hillary"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 76
         pokemon SPECIES_GOURGEIST
@@ -29844,7 +29844,7 @@ trainerdata 638, "Hillary"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 0
         level 76
         pokemon SPECIES_SWAMPERT
@@ -29869,7 +29869,7 @@ trainerdata 639, "Hillary"
 
     party 639
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 32
         level 80
         pokemon SPECIES_PRIMARINA
@@ -29880,7 +29880,7 @@ trainerdata 639, "Hillary"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_KOMALA
@@ -29891,7 +29891,7 @@ trainerdata 639, "Hillary"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_GOURGEIST
@@ -29902,7 +29902,7 @@ trainerdata 639, "Hillary"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_SWAMPERT
@@ -29927,7 +29927,7 @@ trainerdata 640, "Billy"
 
     party 640
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 32
         level 76
         pokemon SPECIES_PARASECT
@@ -29938,7 +29938,7 @@ trainerdata 640, "Billy"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 76
         pokemon SPECIES_POLIWRATH        
@@ -29949,7 +29949,7 @@ trainerdata 640, "Billy"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 76
         pokemon SPECIES_DITTO
@@ -29960,7 +29960,7 @@ trainerdata 640, "Billy"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 0
         level 76
         pokemon SPECIES_DITTO
@@ -29985,7 +29985,7 @@ trainerdata 641, "Billy"
 
     party 641
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 32
         level 78
         pokemon SPECIES_PARASECT
@@ -29996,7 +29996,7 @@ trainerdata 641, "Billy"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 78
         pokemon SPECIES_POLIWRATH        
@@ -30007,7 +30007,7 @@ trainerdata 641, "Billy"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 78
         pokemon SPECIES_DITTO
@@ -30018,7 +30018,7 @@ trainerdata 641, "Billy"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 0
         level 78
         pokemon SPECIES_DITTO
@@ -30043,7 +30043,7 @@ trainerdata 642, "Billy"
 
     party 642
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 32
         level 80
         pokemon SPECIES_PARASECT
@@ -30054,7 +30054,7 @@ trainerdata 642, "Billy"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_POLIWRATH        
@@ -30065,7 +30065,7 @@ trainerdata 642, "Billy"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_DITTO
@@ -30076,7 +30076,7 @@ trainerdata 642, "Billy"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_DITTO
@@ -30087,7 +30087,7 @@ trainerdata 642, "Billy"
         ballseal 0
 
         // mon 4
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_PARASECT
@@ -30098,7 +30098,7 @@ trainerdata 642, "Billy"
         ballseal 0
 
         // mon 5
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_POLIWRATH
@@ -30123,7 +30123,7 @@ trainerdata 643, "Kay & Tia"
 
     party 643
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 73
         pokemon SPECIES_KOMMO_O
@@ -30134,7 +30134,7 @@ trainerdata 643, "Kay & Tia"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 73
         pokemon SPECIES_CLODSIRE
@@ -30145,7 +30145,7 @@ trainerdata 643, "Kay & Tia"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 73
         pokemon SPECIES_METAGROSS
@@ -30156,7 +30156,7 @@ trainerdata 643, "Kay & Tia"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 0
         level 73
         pokemon SPECIES_QUAGSIRE
@@ -30181,7 +30181,7 @@ trainerdata 644, "Kay & Tia"
 
     party 644
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 76
         pokemon SPECIES_KOMMO_O
@@ -30192,7 +30192,7 @@ trainerdata 644, "Kay & Tia"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 76
         pokemon SPECIES_CLODSIRE
@@ -30203,7 +30203,7 @@ trainerdata 644, "Kay & Tia"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 76
         pokemon SPECIES_METAGROSS
@@ -30214,7 +30214,7 @@ trainerdata 644, "Kay & Tia"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 0
         level 76
         pokemon SPECIES_QUAGSIRE
@@ -30239,7 +30239,7 @@ trainerdata 645, "Kay & Tia"
 
     party 645
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_KOMMO_O
@@ -30250,7 +30250,7 @@ trainerdata 645, "Kay & Tia"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_CLODSIRE
@@ -30261,7 +30261,7 @@ trainerdata 645, "Kay & Tia"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_METAGROSS
@@ -30272,7 +30272,7 @@ trainerdata 645, "Kay & Tia"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_QUAGSIRE
@@ -30471,21 +30471,21 @@ trainerdata 649, "Torin"
 
     party 649
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 46
         pokemon SPECIES_SANDSLASH
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 45
         pokemon SPECIES_GOLBAT
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 60
         abilityslot 0
         level 41
         pokemon SPECIES_VULPIX
@@ -30506,21 +30506,21 @@ trainerdata 650, "Torin"
 
     party 650
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 48
         pokemon SPECIES_SANDSLASH
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 51
         pokemon SPECIES_GOLBAT
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 60
         abilityslot 0
         level 48
         pokemon SPECIES_VULPIX
@@ -30541,21 +30541,21 @@ trainerdata 651, "Torin"
 
     party 651
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 52
         pokemon SPECIES_SANDSLASH
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 53
         pokemon SPECIES_GOLBAT
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 60
         abilityslot 0
         level 52
         pokemon SPECIES_VULPIX
@@ -30576,7 +30576,7 @@ trainerdata 652, "Tim & Sue"
 
     party 652
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 73
         pokemon SPECIES_GIGALITH
@@ -30588,7 +30588,7 @@ trainerdata 652, "Tim & Sue"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 73
         pokemon SPECIES_EXCADRILL
@@ -30600,7 +30600,7 @@ trainerdata 652, "Tim & Sue"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 73
         pokemon SPECIES_FLYGON
@@ -30612,7 +30612,7 @@ trainerdata 652, "Tim & Sue"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 0
         level 73
         pokemon SPECIES_CARRACOSTA
@@ -30638,7 +30638,7 @@ trainerdata 653, "Tim & Sue"
 
     party 653
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 76
         pokemon SPECIES_GIGALITH
@@ -30650,7 +30650,7 @@ trainerdata 653, "Tim & Sue"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 76
         pokemon SPECIES_EXCADRILL
@@ -30662,7 +30662,7 @@ trainerdata 653, "Tim & Sue"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 76
         pokemon SPECIES_FLYGON
@@ -30674,7 +30674,7 @@ trainerdata 653, "Tim & Sue"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 0
         level 76
         pokemon SPECIES_CARRACOSTA
@@ -30686,7 +30686,7 @@ trainerdata 653, "Tim & Sue"
         ballseal 0
 
         // mon 4
-        ivs 0
+        ivs 120
         abilityslot 0
         level 76
         pokemon SPECIES_ALAKAZAM
@@ -30698,7 +30698,7 @@ trainerdata 653, "Tim & Sue"
         ballseal 0
 
         // mon 5
-        ivs 0
+        ivs 120
         abilityslot 0
         level 76
         pokemon SPECIES_GOLDUCK
@@ -30724,7 +30724,7 @@ trainerdata 654, "Tim & Sue"
 
     party 654
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_GIGALITH
@@ -30736,7 +30736,7 @@ trainerdata 654, "Tim & Sue"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_EXCADRILL
@@ -30748,7 +30748,7 @@ trainerdata 654, "Tim & Sue"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_FLYGON
@@ -30760,7 +30760,7 @@ trainerdata 654, "Tim & Sue"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_CARRACOSTA
@@ -30772,7 +30772,7 @@ trainerdata 654, "Tim & Sue"
         ballseal 0
 
         // mon 4
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_ALAKAZAM
@@ -30784,7 +30784,7 @@ trainerdata 654, "Tim & Sue"
         ballseal 0
 
         // mon 5
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_GOLDUCK
@@ -30810,7 +30810,7 @@ trainerdata 655, "Kenny"
 
     party 655
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 72
         pokemon SPECIES_GALVANTULA
@@ -30821,7 +30821,7 @@ trainerdata 655, "Kenny"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 72
         pokemon SPECIES_GOLEM
@@ -30832,7 +30832,7 @@ trainerdata 655, "Kenny"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 72
         pokemon SPECIES_MIENSHAO
@@ -30843,7 +30843,7 @@ trainerdata 655, "Kenny"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 0
         level 73
         pokemon SPECIES_SANDSLASH
@@ -30868,7 +30868,7 @@ trainerdata 656, "Kenny"
 
     party 656
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 76
         pokemon SPECIES_GALVANTULA
@@ -30879,7 +30879,7 @@ trainerdata 656, "Kenny"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 76
         pokemon SPECIES_GOLEM
@@ -30890,7 +30890,7 @@ trainerdata 656, "Kenny"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 76
         pokemon SPECIES_MIENSHAO
@@ -30901,7 +30901,7 @@ trainerdata 656, "Kenny"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 0
         level 76
         pokemon SPECIES_SANDSLASH
@@ -30926,7 +30926,7 @@ trainerdata 657, "Kenny"
 
     party 657
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_GALVANTULA
@@ -30937,7 +30937,7 @@ trainerdata 657, "Kenny"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_GOLEM
@@ -30948,7 +30948,7 @@ trainerdata 657, "Kenny"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_MIENSHAO
@@ -30959,7 +30959,7 @@ trainerdata 657, "Kenny"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_SANDSLASH
@@ -30984,7 +30984,7 @@ trainerdata 658, "Tanner"
 
     party 658
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 72
         pokemon SPECIES_PALOSSAND
@@ -30995,7 +30995,7 @@ trainerdata 658, "Tanner"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 72
         pokemon SPECIES_TSAREENA
@@ -31006,7 +31006,7 @@ trainerdata 658, "Tanner"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 72
         pokemon SPECIES_ORANGURU
@@ -31031,7 +31031,7 @@ trainerdata 659, "Tanner"
 
     party 659
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 76
         pokemon SPECIES_PALOSSAND
@@ -31042,7 +31042,7 @@ trainerdata 659, "Tanner"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 76
         pokemon SPECIES_TSAREENA
@@ -31053,7 +31053,7 @@ trainerdata 659, "Tanner"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 76
         pokemon SPECIES_ORANGURU
@@ -31078,7 +31078,7 @@ trainerdata 660, "Tanner"
 
     party 660
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_PALOSSAND
@@ -31089,7 +31089,7 @@ trainerdata 660, "Tanner"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_TSAREENA
@@ -31100,7 +31100,7 @@ trainerdata 660, "Tanner"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_ORANGURU
@@ -31125,7 +31125,7 @@ trainerdata 661, "Kyle"
 
     party 661
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 73
         pokemon SPECIES_DONDOZO
@@ -31136,7 +31136,7 @@ trainerdata 661, "Kyle"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 73
         pokemon SPECIES_TATSUGIRI
@@ -31147,7 +31147,7 @@ trainerdata 661, "Kyle"
         ballseal 0
 
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 73
         pokemon SPECIES_SEAKING
@@ -31172,7 +31172,7 @@ trainerdata 662, "Kyle"
 
     party 662
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 76
         pokemon SPECIES_DONDOZO
@@ -31183,7 +31183,7 @@ trainerdata 662, "Kyle"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 76
         pokemon SPECIES_TATSUGIRI
@@ -31194,7 +31194,7 @@ trainerdata 662, "Kyle"
         ballseal 0
 
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 76
         pokemon SPECIES_SEAKING
@@ -31219,7 +31219,7 @@ trainerdata 663, "Kyle"
 
     party 663
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_DONDOZO
@@ -31230,7 +31230,7 @@ trainerdata 663, "Kyle"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_TATSUGIRI
@@ -31241,7 +31241,7 @@ trainerdata 663, "Kyle"
         ballseal 0
 
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_SEAKING
@@ -31266,7 +31266,7 @@ trainerdata 664, "Kyler"
 
     party 664
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 73
         pokemon SPECIES_SWANNA
@@ -31277,7 +31277,7 @@ trainerdata 664, "Kyler"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 73
         pokemon SPECIES_SEISMITOAD
@@ -31288,7 +31288,7 @@ trainerdata 664, "Kyler"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 73
         pokemon SPECIES_SIMIPOUR
@@ -31313,7 +31313,7 @@ trainerdata 665, "Kyler"
 
     party 665
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 76
         pokemon SPECIES_SWANNA
@@ -31324,7 +31324,7 @@ trainerdata 665, "Kyler"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 76
         pokemon SPECIES_SEISMITOAD
@@ -31335,7 +31335,7 @@ trainerdata 665, "Kyler"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 76
         pokemon SPECIES_SIMIPOUR
@@ -31360,7 +31360,7 @@ trainerdata 666, "Kyler"
 
     party 666
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_SWANNA
@@ -31371,7 +31371,7 @@ trainerdata 666, "Kyler"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_SEISMITOAD
@@ -31382,7 +31382,7 @@ trainerdata 666, "Kyler"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_SIMIPOUR
@@ -31777,7 +31777,7 @@ trainerdata 672, "Alfred"
 
     party 672
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 40
         pokemon SPECIES_NOCTOWL
@@ -31788,7 +31788,7 @@ trainerdata 672, "Alfred"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 40
         pokemon SPECIES_PANGORO
@@ -31813,7 +31813,7 @@ trainerdata 673, "Alfred"
 
     party 673
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 60
         pokemon SPECIES_NOCTOWL
@@ -31824,7 +31824,7 @@ trainerdata 673, "Alfred"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 60
         pokemon SPECIES_PANGORO
@@ -31849,7 +31849,7 @@ trainerdata 674, "Alfred"
 
     party 674
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_NOCTOWL
@@ -31860,7 +31860,7 @@ trainerdata 674, "Alfred"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 80
         pokemon SPECIES_PANGORO
@@ -31910,7 +31910,7 @@ trainerdata 676, "Parker"
 
     party 676
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 32
         level 43
         pokemon SPECIES_HORSEA
@@ -31921,7 +31921,7 @@ trainerdata 676, "Parker"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 32
         level 43
         pokemon SPECIES_SEADRA
@@ -32638,7 +32638,7 @@ trainerdata 686, "Bryce"
 
     party 686
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 75
         monwithform SPECIES_SANDSLASH, 1
@@ -32649,7 +32649,7 @@ trainerdata 686, "Bryce"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 75
         pokemon SPECIES_LAPRAS
@@ -32660,7 +32660,7 @@ trainerdata 686, "Bryce"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 75
         pokemon SPECIES_CLOYSTER
@@ -32671,7 +32671,7 @@ trainerdata 686, "Bryce"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 0
         level 75
         pokemon SPECIES_GLALIE
@@ -32696,7 +32696,7 @@ trainerdata 687, "Shaun"
 
     party 687
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 75
         pokemon SPECIES_DEWGONG
@@ -32707,7 +32707,7 @@ trainerdata 687, "Shaun"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 75
         pokemon SPECIES_CETITAN
@@ -32718,7 +32718,7 @@ trainerdata 687, "Shaun"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 75
         pokemon SPECIES_BAXCALIBUR
@@ -32729,7 +32729,7 @@ trainerdata 687, "Shaun"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 120
         abilityslot 0
         level 76
         pokemon SPECIES_JYNX
@@ -32754,7 +32754,7 @@ trainerdata 688, "Cady"
 
     party 688
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 75
         monwithform SPECIES_NINETALES, 1
@@ -32766,7 +32766,7 @@ trainerdata 688, "Cady"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 76
         pokemon SPECIES_CASTFORM
@@ -32778,7 +32778,7 @@ trainerdata 688, "Cady"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 75
         pokemon SPECIES_CRABOMINABLE
@@ -32804,7 +32804,7 @@ trainerdata 689, "Cary"
 
     party 689
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 76
         pokemon SPECIES_BLAZIKEN
@@ -32815,7 +32815,7 @@ trainerdata 689, "Cary"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 75
         pokemon SPECIES_SIMISEAR
@@ -32826,7 +32826,7 @@ trainerdata 689, "Cary"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 75
         monwithform SPECIES_TAUROS, 2
@@ -32851,7 +32851,7 @@ trainerdata 690, "Waldo"
 
     party 690
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 32
         level 75
         pokemon SPECIES_EMBOAR
@@ -32862,7 +32862,7 @@ trainerdata 690, "Waldo"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 32
         level 76
         pokemon SPECIES_DARMANITAN
@@ -32873,7 +32873,7 @@ trainerdata 690, "Waldo"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 32
         level 75
         pokemon SPECIES_VOLCARONA
@@ -32898,7 +32898,7 @@ trainerdata 691, "Merle"
 
     party 691
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 32
         level 76
         pokemon SPECIES_HEATMOR
@@ -32909,7 +32909,7 @@ trainerdata 691, "Merle"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 32
         level 75
         pokemon SPECIES_INCINEROAR
@@ -32920,7 +32920,7 @@ trainerdata 691, "Merle"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 32
         level 76
         pokemon SPECIES_CERULEDGE
@@ -32945,7 +32945,7 @@ trainerdata 692, "Lowell"
 
     party 692
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 75
         pokemon SPECIES_CAMERUPT
@@ -32957,7 +32957,7 @@ trainerdata 692, "Lowell"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 75
         pokemon SPECIES_CHARIZARD
@@ -32969,7 +32969,7 @@ trainerdata 692, "Lowell"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 75
         pokemon SPECIES_ARCANINE
@@ -32995,7 +32995,7 @@ trainerdata 693, "Linden"
 
     party 693
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 75
         pokemon SPECIES_CHANDELURE
@@ -33006,7 +33006,7 @@ trainerdata 693, "Linden"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 75
         monwithform SPECIES_ARCANINE, 1
@@ -33017,7 +33017,7 @@ trainerdata 693, "Linden"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 76
         pokemon SPECIES_TURTONATOR
@@ -33042,7 +33042,7 @@ trainerdata 694, "Daniel"
 
     party 694
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 75
         pokemon SPECIES_NINETALES
@@ -33053,7 +33053,7 @@ trainerdata 694, "Daniel"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 75
         monwithform SPECIES_MAROWAK, 1
@@ -33064,7 +33064,7 @@ trainerdata 694, "Daniel"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 75
         pokemon SPECIES_FLAREON
@@ -33089,7 +33089,7 @@ trainerdata 695, "Dane"
 
     party 695
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 72
         pokemon SPECIES_AMOONGUSS
@@ -33100,7 +33100,7 @@ trainerdata 695, "Dane"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 73
         pokemon SPECIES_ESCAVALIER
@@ -33111,7 +33111,7 @@ trainerdata 695, "Dane"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 72
         pokemon SPECIES_MIMIKYU
@@ -33136,7 +33136,7 @@ trainerdata 696, "Dion"
 
     party 696
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 72
         pokemon SPECIES_ARIADOS
@@ -33147,7 +33147,7 @@ trainerdata 696, "Dion"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 72
         pokemon SPECIES_GALVANTULA
@@ -33158,7 +33158,7 @@ trainerdata 696, "Dion"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 72
         pokemon SPECIES_FERROTHORN
@@ -33183,7 +33183,7 @@ trainerdata 697, "Stacey"
 
     party 697
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 72
         pokemon SPECIES_ARAQUANID
@@ -33194,7 +33194,7 @@ trainerdata 697, "Stacey"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 72
         pokemon SPECIES_LEAVANNY
@@ -33205,7 +33205,7 @@ trainerdata 697, "Stacey"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 70
         pokemon SPECIES_EELEKTROSS
@@ -33230,7 +33230,7 @@ trainerdata 698, "Ellis"
 
     party 698
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 72
         pokemon SPECIES_GARBODOR
@@ -33241,7 +33241,7 @@ trainerdata 698, "Ellis"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 72
         pokemon SPECIES_SCOLIPEDE
@@ -33252,7 +33252,7 @@ trainerdata 698, "Ellis"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 72
         pokemon SPECIES_CRUSTLE
@@ -33277,7 +33277,7 @@ trainerdata 699, "Abner"
 
     party 699
         // mon 0
-        ivs 0
+        ivs 120
         abilityslot 0
         level 72
         pokemon SPECIES_PARASECT
@@ -33288,7 +33288,7 @@ trainerdata 699, "Abner"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 120
         abilityslot 0
         level 72
         pokemon SPECIES_BEEDRILL
@@ -33299,7 +33299,7 @@ trainerdata 699, "Abner"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 120
         abilityslot 0
         level 72
         pokemon SPECIES_RAICHU
@@ -36156,7 +36156,7 @@ trainerdata 728, "Charlotte"
 
     party 728
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 31
         pokemon SPECIES_BELLOSSOM
@@ -36192,7 +36192,7 @@ trainerdata 729, "Duff & Eda"
 
     party 729
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 32
         level 50
         pokemon SPECIES_CHESNAUGHT
@@ -36203,7 +36203,7 @@ trainerdata 729, "Duff & Eda"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 32
         level 50
         pokemon SPECIES_GRENINJA
@@ -36214,7 +36214,7 @@ trainerdata 729, "Duff & Eda"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 60
         abilityslot 32
         level 50
         pokemon SPECIES_DELPHOX
@@ -36225,7 +36225,7 @@ trainerdata 729, "Duff & Eda"
         ballseal 0
 
         // mon 3
-        ivs 0
+        ivs 60
         abilityslot 32
         level 50
         pokemon SPECIES_DIGGERSBY
@@ -36308,7 +36308,7 @@ trainerdata 731, "Devin"
 
     party 731
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 48
         pokemon SPECIES_CARBINK
@@ -36319,7 +36319,7 @@ trainerdata 731, "Devin"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 0
         level 48
         monwithform SPECIES_URSALUNA, 1
@@ -36330,7 +36330,7 @@ trainerdata 731, "Devin"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 60
         abilityslot 0
         level 50
         pokemon SPECIES_SUDOWOODO
@@ -36355,7 +36355,7 @@ trainerdata 732, "Grant"
 
     party 732
         // mon 0
-        ivs 0
+        ivs 60
         abilityslot 0
         level 48
         pokemon SPECIES_QUAGSIRE
@@ -36366,7 +36366,7 @@ trainerdata 732, "Grant"
         ballseal 0
 
         // mon 1
-        ivs 0
+        ivs 60
         abilityslot 32
         level 48
         pokemon SPECIES_HERACROSS
@@ -36377,7 +36377,7 @@ trainerdata 732, "Grant"
         ballseal 0
 
         // mon 2
-        ivs 0
+        ivs 60
         abilityslot 32
         level 48
         pokemon SPECIES_PURUGLY
