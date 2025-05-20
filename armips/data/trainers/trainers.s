@@ -30027,6 +30027,7 @@ trainerdata 641, "Billy"
         move MOVE_NONE
         move MOVE_NONE
         ballseal 0
+    endparty
 
 trainerdata 642, "Billy"
     trainermontype TRAINER_DATA_TYPE_MOVES
