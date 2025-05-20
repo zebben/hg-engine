@@ -3153,7 +3153,7 @@ mondata SPECIES_DRAGONITE, "Dragonite"
     genderratio 127
     eggcycles 3
     basefriendship 35
-    growthrate GROWTH_MEDIUM_FAST
+    growthrate GROWTH_SLOW
     egggroups EGG_GROUP_WATER_1, EGG_GROUP_DRAGON
     abilities ABILITY_MULTISCALE, ABILITY_THICK_FAT
     runchance 0
@@ -5232,7 +5232,7 @@ mondata SPECIES_TYRANITAR, "Tyranitar"
     genderratio 127
     eggcycles 3
     basefriendship 35
-    growthrate GROWTH_MEDIUM_FAST
+    growthrate GROWTH_SLOW
     egggroups EGG_GROUP_MONSTER, EGG_GROUP_MONSTER
     abilities ABILITY_SAND_STREAM, ABILITY_SAND_STREAM
     runchance 0
@@ -7857,7 +7857,7 @@ mondata SPECIES_SALAMENCE, "Salamence"
     genderratio 127
     eggcycles 3
     basefriendship 35
-    growthrate GROWTH_MEDIUM_FAST
+    growthrate GROWTH_SLOW
     egggroups EGG_GROUP_DRAGON, EGG_GROUP_DRAGON
     abilities ABILITY_INTIMIDATE, ABILITY_MOXIE
     runchance 0
@@ -7920,7 +7920,7 @@ mondata SPECIES_METAGROSS, "Metagross"
     genderratio 255
     eggcycles 3
     basefriendship 35
-    growthrate GROWTH_MEDIUM_FAST
+    growthrate GROWTH_SLOW
     egggroups EGG_GROUP_MINERAL, EGG_GROUP_MINERAL
     abilities ABILITY_CLEAR_BODY, ABILITY_TOUGH_CLAWS
     runchance 0
@@ -9369,7 +9369,7 @@ mondata SPECIES_GARCHOMP, "Garchomp"
     genderratio 127
     eggcycles 3
     basefriendship 50
-    growthrate GROWTH_MEDIUM_FAST
+    growthrate GROWTH_SLOW
     egggroups EGG_GROUP_MONSTER, EGG_GROUP_DRAGON
     abilities ABILITY_SAND_FORCE, ABILITY_ROUGH_SKIN
     runchance 0
@@ -14409,7 +14409,7 @@ mondata SPECIES_HYDREIGON, "Hydreigon"
     genderratio 127
     eggcycles 3
     basefriendship 35
-    growthrate GROWTH_MEDIUM_FAST
+    growthrate GROWTH_SLOW
     egggroups EGG_GROUP_DRAGON, EGG_GROUP_DRAGON
     abilities ABILITY_LEVITATE, ABILITY_LEVITATE
     runchance 0
@@ -15900,7 +15900,7 @@ mondata SPECIES_GOODRA, "Goodra"
     genderratio 127
     eggcycles 3
     basefriendship 35
-    growthrate GROWTH_MEDIUM_FAST
+    growthrate GROWTH_SLOW
     egggroups EGG_GROUP_DRAGON, EGG_GROUP_DRAGON
     abilities ABILITY_POISON_HEAL, ABILITY_HYDRATION
     runchance 0
@@ -17538,9 +17538,9 @@ mondata SPECIES_KOMMO_O, "Kommo-o"
     genderratio 127
     eggcycles 3
     basefriendship 50
-    growthrate GROWTH_MEDIUM_FAST
+    growthrate GROWTH_SLOW
     egggroups EGG_GROUP_DRAGON, EGG_GROUP_DRAGON
-    abilities ABILITY_BULLETPROOF, ABILITY_SOUNDPROOF
+    abilities ABILITY_BULLETPROOF, ABILITY_FILTER
     runchance 0
     colorflip BODY_COLOR_GRAY, 0
     mondexentry SPECIES_KOMMO_O, "It battles valiantly with its fists,\nwhich are armored in steel scales.\nKommo-o specializes in uppercuts."
@@ -19701,7 +19701,7 @@ mondata SPECIES_DRAGAPULT, "Dragapult"
     genderratio 127
     eggcycles 3
     basefriendship 50
-    growthrate GROWTH_MEDIUM_FAST
+    growthrate GROWTH_SLOW
     egggroups EGG_GROUP_AMORPHOUS, EGG_GROUP_DRAGON
     abilities ABILITY_CLEAR_BODY, ABILITY_INFILTRATOR
     runchance 0
@@ -26828,7 +26828,7 @@ mondata SPECIES_GOODRA_HISUIAN, "-----"
     genderratio 127
     eggcycles 3
     basefriendship 35
-    growthrate GROWTH_MEDIUM_FAST
+    growthrate GROWTH_SLOW
     egggroups EGG_GROUP_DRAGON, EGG_GROUP_DRAGON
     abilities ABILITY_SAP_SIPPER, ABILITY_SHELL_ARMOR
     runchance 0
