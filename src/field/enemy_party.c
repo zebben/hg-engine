@@ -61,10 +61,10 @@ void MakeTrainerPokemonParty(struct BATTLE_PARAM *bp, int num, int heapID)
     seed_tmp = gf_get_seed();
 
     // level scaling options, only used if scaling based on player level
-    int scaleOptions[6] = {-1, 0, 0, 1, 2, 3};
-    u8 highestPlayerPokeLvl = 1; // level floor
+    int scaleOptions[6] = {5, 5, 6, 7, 8, 8};
+    u8 highestPlayerPokeLvl = 1;
 
-    #ifdef SCALE_TRAINER_POKEMON_LEVEL
+    #ifdef TRAINER_LEVEL_FLOOR
         // shuffle the order of the scale options
         randomize(scaleOptions, 6);
         struct Party *party = bp->poke_party[0];
@@ -161,28 +161,25 @@ void MakeTrainerPokemonParty(struct BATTLE_PARAM *bp, int num, int heapID)
 
         // level field
         level = buf[offset] | (buf[offset+1] << 8);
-        #ifdef SCALE_TRAINER_POKEMON_LEVEL
-            if (highestPlayerPokeLvl < 10) 
+        #ifdef TRAINER_LEVEL_FLOOR
+            if (highestPlayerPokeLvl - level >= 10)
             {
-                // reduced variance for low level fights. particularly for first Silver battle
-                level = highestPlayerPokeLvl + scaleOptions[i]%(1) + 1;
-            } 
-            else 
-            {
-                // scale level of trainer mons
-                level = highestPlayerPokeLvl + scaleOptions[i];
-            }
+                // scale level of trainer mons if it's more than 10 levels lower
+                level = highestPlayerPokeLvl - scaleOptions[i];
 
-            // ensure the trainer's mons don't get above level 100
-            if (level > 100) 
-            {
-                level = 100;
-            }
+                // ensure the trainer's mons don't get above level 100
+                // won't happen with current config but leaving for safety
+                if (level > 100)
+                {
+                    level = 100;
+                }
 
-            // ensure the trainer's mons don't get below level 1
-            if (level < 1) 
-            {
-                level = 1;
+                // ensure the trainer's mons don't get below level 1
+                // won't happen with current config but leaving for safety
+                if (level < 3)
+                {
+                    level = 3;
+                }
             }
         #endif
         gLastPokemonLevelForMoneyCalc = level; // ends up being the last level at the end of the loop that we use for the money calc loop default case
@@ -528,7 +525,7 @@ BOOL LONG_CALL AddWildPartyPokemon(int inTarget, EncounterInfo *encounterInfo, s
     u8 form_no;
     u16 species;
 
-    #ifdef SCALE_WILD_POKEMON_LEVEL
+    #ifdef WILD_LEVEL_FLOOR
         u8 highestPlayerPokeLvl = 1;
         struct Party *party = encounterBattleParam->poke_party[0];
         s32 player_poke_count = party->count;
@@ -541,24 +538,28 @@ BOOL LONG_CALL AddWildPartyPokemon(int inTarget, EncounterInfo *encounterInfo, s
             }
         }
 
-        // subtract a random number of levels between 3 and 5
-        // adds some variety to wild encounters vs just setting to player level
-        int scaleOptions[3] = {3, 4, 5};
-        randomize(scaleOptions, 3);
-        highestPlayerPokeLvl -= scaleOptions[0];
-        
-        // make sure wild pokemon are at least level 2
-        if (highestPlayerPokeLvl < 2) {
-            highestPlayerPokeLvl = 2;
-        }
+        if (highestPlayerPokeLvl - encounterInfo->level > 10)
+        {
+            // subtract a random number of levels between 3 and 5
+            // adds some variety to wild encounters vs just setting to player level
+            int scaleOptions[3] = {7, 8, 9};
+            randomize(scaleOptions, 3);
+            highestPlayerPokeLvl -= scaleOptions[0];
 
-        // set exp and level then recalc stats and moveset
-        u32 exp = PokeLevelExpGet(species, highestPlayerPokeLvl);
-        SetMonData(encounterPartyPokemon, MON_DATA_LEVEL, &highestPlayerPokeLvl);
-        SetMonData(encounterPartyPokemon, MON_DATA_EXPERIENCE, &exp);
-        encounterInfo->level = highestPlayerPokeLvl;
-        RecalcPartyPokemonStats(encounterPartyPokemon);
-        InitBoxMonMoveset(&encounterPartyPokemon->box);
+            // make sure wild pokemon are at least level 2
+            // won't happen with current config but leaving for safety
+            if (highestPlayerPokeLvl < 2) {
+                highestPlayerPokeLvl = 2;
+            }
+
+            // set exp and level then recalc stats and moveset
+            u32 exp = PokeLevelExpGet(species, highestPlayerPokeLvl);
+            SetMonData(encounterPartyPokemon, MON_DATA_LEVEL, &highestPlayerPokeLvl);
+            SetMonData(encounterPartyPokemon, MON_DATA_EXPERIENCE, &exp);
+            encounterInfo->level = highestPlayerPokeLvl;
+            RecalcPartyPokemonStats(encounterPartyPokemon);
+            InitBoxMonMoveset(&encounterPartyPokemon->box);
+        }
     #endif
 
     if (encounterInfo->isEgg == 0 && encounterInfo->ability == ABILITY_COMPOUND_EYES)

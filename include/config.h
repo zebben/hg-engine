@@ -152,12 +152,10 @@
 // towards 30
 #define EASY_MODE_IVS
 
-// SCALE_TRAINER_POKEMON_LEVEL scales enemy trainer party levels based on the player's party
-// scale between -1 and +3 levels of the player's highest level party member
-// #define SCALE_TRAINER_POKEMON_LEVEL
+// TRAINER_LEVEL_FLOOR scales enemy trainer party levels based on the player's party if diff >=10
+ #define TRAINER_LEVEL_FLOOR
 
-// SCALE_WILD_POKEMON_LEVEL scales wild encounter levels based on the player's party
-// scale between 3 and 5 levels below the player's highest level party member
-// #define SCALE_WILD_POKEMON_LEVEL
+// WILD_LEVEL_FLOOR scales wild encounter levels based on the player's party if diff >=10 levels
+ #define WILD_LEVEL_FLOOR
 
 #endif

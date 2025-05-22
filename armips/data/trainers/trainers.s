@@ -18002,13 +18002,13 @@ trainerdata 377, "Parker"
         ivs 200
         abilityslot 0
         level 69
-        pokemon SPECIES_OMASTAR
-        item ITEM_ROCKY_HELMET
+        pokemon SPECIES_OCTILLERY
+        item ITEM_CHOICE_SPECS
+        move MOVE_DARK_PULSE
         move MOVE_HYDRO_PUMP
-        move MOVE_BODY_PRESS
-        move MOVE_FLASH_CANNON
-        move MOVE_POWER_GEM
-        ability ABILITY_IRON_BARBS
+        move MOVE_ICE_BEAM
+        move MOVE_FIRE_BLAST
+        ability ABILITY_MEGA_LAUNCHER
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
         setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_MODEST
@@ -31967,13 +31967,13 @@ trainerdata 676, "Parker"
         ivs 200
         abilityslot 0
         level 69
-        pokemon SPECIES_OMASTAR
-        item ITEM_ROCKY_HELMET
+        pokemon SPECIES_OCTILLERY
+        item ITEM_CHOICE_SPECS
+        move MOVE_DARK_PULSE
         move MOVE_HYDRO_PUMP
-        move MOVE_BODY_PRESS
-        move MOVE_FLASH_CANNON
-        move MOVE_POWER_GEM
-        ability ABILITY_IRON_BARBS
+        move MOVE_ICE_BEAM
+        move MOVE_FIRE_BLAST
+        ability ABILITY_MEGA_LAUNCHER
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
         setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_MODEST
