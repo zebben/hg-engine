@@ -1942,9 +1942,9 @@ pokemon SPECIES_CHINGLING
 
 // surf encounters
 encounter SPECIES_SLOWPOKE, 20, 25
+encounter SPECIES_FEEBAS, 20, 25
 encounter SPECIES_SLOWPOKE, 20, 25
-encounter SPECIES_SLOWPOKE, 20, 25
-encounterwithform SPECIES_SLOWPOKE, 1, 20, 25
+encounter SPECIES_FEEBAS, 20, 25
 encounterwithform SPECIES_SLOWPOKE, 1, 20, 25
 
 // rock smash encounters
@@ -1952,25 +1952,25 @@ encounter SPECIES_NONE, 0, 0
 encounter SPECIES_NONE, 0, 0
 
 // old rod encounters
+encounter SPECIES_WIMPOD, 10, 14
+encounter SPECIES_WIMPOD, 10, 14
 encounter SPECIES_SLOWPOKE, 10, 14
-encounter SPECIES_SLOWPOKE, 10, 14
-encounter SPECIES_SLOWPOKE, 10, 14
-encounterwithform SPECIES_SLOWPOKE, 1, 10, 14
+encounter SPECIES_LILEEP, 10, 14
 encounterwithform SPECIES_SLOWPOKE, 1, 10, 14
 
 // good rod encounters
-encounter SPECIES_SLOWKING, 30, 34
+encounter SPECIES_WIMPOD, 30, 34
 encounter SPECIES_SLOWBRO, 30, 34
-encounterwithform SPECIES_SLOWBRO, 1, 30, 34
-encounterwithform SPECIES_SLOWKING, 1, 30, 34
+encounter SPECIES_LILEEP, 30, 34
+encounter SPECIES_CRADILY, 30, 34
 encounterwithform SPECIES_SLOWKING, 1, 30, 34
 
 // super rod encounters
-encounter SPECIES_SLOWKING, 55, 65
+encounter SPECIES_GOLISOPOD, 55, 65
+encounter SPECIES_GOLISOPOD, 55, 65
 encounter SPECIES_SLOWBRO, 55, 65
-encounter SPECIES_SLOWBRO, 55, 65
-encounterwithform SPECIES_SLOWBRO, 1, 55, 65
-encounterwithform SPECIES_SLOWKING, 1, 55, 65
+encounter SPECIES_CRADILY, 55, 65
+encounterwithform SPECIES_SLOWPOKE, 1, 55, 65
 
 // swarm grass
 pokemon SPECIES_SLOWPOKE
@@ -2046,9 +2046,9 @@ pokemon SPECIES_CHINGLING
 
 // surf encounters
 encounter SPECIES_SLOWPOKE, 20, 25
+encounter SPECIES_FEEBAS, 20, 25
 encounter SPECIES_SLOWPOKE, 20, 25
-encounter SPECIES_SLOWPOKE, 20, 25
-encounterwithform SPECIES_SLOWPOKE, 1, 20, 25
+encounter SPECIES_FEEBAS, 20, 25
 encounterwithform SPECIES_SLOWPOKE, 1, 20, 25
 
 // rock smash encounters
@@ -2056,25 +2056,25 @@ encounter SPECIES_NONE, 0, 0
 encounter SPECIES_NONE, 0, 0
 
 // old rod encounters
+encounter SPECIES_WIMPOD, 10, 14
+encounter SPECIES_WIMPOD, 10, 14
 encounter SPECIES_SLOWPOKE, 10, 14
-encounter SPECIES_SLOWPOKE, 10, 14
-encounter SPECIES_SLOWPOKE, 10, 14
-encounterwithform SPECIES_SLOWPOKE, 1, 10, 14
+encounter SPECIES_LILEEP, 10, 14
 encounterwithform SPECIES_SLOWPOKE, 1, 10, 14
 
 // good rod encounters
-encounter SPECIES_SLOWKING, 30, 34
+encounter SPECIES_WIMPOD, 30, 34
 encounter SPECIES_SLOWBRO, 30, 34
-encounterwithform SPECIES_SLOWBRO, 1, 30, 34
-encounterwithform SPECIES_SLOWKING, 1, 30, 34
+encounter SPECIES_LILEEP, 30, 34
+encounter SPECIES_CRADILY, 30, 34
 encounterwithform SPECIES_SLOWKING, 1, 30, 34
 
 // super rod encounters
-encounter SPECIES_SLOWKING, 55, 65
+encounter SPECIES_GOLISOPOD, 55, 65
+encounter SPECIES_GOLISOPOD, 55, 65
 encounter SPECIES_SLOWBRO, 55, 65
-encounter SPECIES_SLOWBRO, 55, 65
-encounterwithform SPECIES_SLOWBRO, 1, 55, 65
-encounterwithform SPECIES_SLOWKING, 1, 55, 65
+encounter SPECIES_CRADILY, 55, 65
+encounterwithform SPECIES_SLOWPOKE, 1, 55, 65
 
 // swarm grass
 pokemon SPECIES_SLOWPOKE
@@ -2370,13 +2370,13 @@ encounter SPECIES_NONE, 0, 0
 // old rod encounters
 encounter SPECIES_WAILMER, 10, 14
 encounter SPECIES_CARVANHA, 10, 14
-encounter SPECIES_CARVANHA, 10, 14
+encounter SPECIES_STARYU, 10, 14
 encounter SPECIES_CARVANHA, 10, 14
 encounter SPECIES_WAILMER, 10, 14
 
 // good rod encounters
 encounter SPECIES_WAILMER, 30, 34
-encounter SPECIES_WAILMER, 30, 34
+encounter SPECIES_STARYU, 30, 34
 encounter SPECIES_CARVANHA, 30, 34
 encounter SPECIES_CARVANHA, 30, 34
 encounter SPECIES_WAILMER, 30, 34
@@ -2384,7 +2384,7 @@ encounter SPECIES_WAILMER, 30, 34
 // super rod encounters
 encounter SPECIES_WAILORD, 55, 65
 encounter SPECIES_WAILORD, 55, 65
-encounter SPECIES_SHARPEDO, 55, 65
+encounter SPECIES_STARMIE, 55, 65
 encounter SPECIES_SHARPEDO, 55, 65
 encounter SPECIES_SHARPEDO, 55, 65
 

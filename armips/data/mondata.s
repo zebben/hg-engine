@@ -26691,7 +26691,7 @@ mondata SPECIES_TYPHLOSION_HISUIAN, "-----"
     colorflip BODY_COLOR_YELLOW, 0
 
 mondata SPECIES_QWILFISH_HISUIAN, "-----"
-    basestats 65, 95, 85, 85, 55, 55
+    basestats 80, 95, 85, 65, 55, 60
     types TYPE_DARK, TYPE_POISON
     catchrate 235
     baseexp 100

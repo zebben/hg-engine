@@ -138,12 +138,12 @@
 
 /* Celadon City Department Store - Vitamins */
 .org 0x020FBB08
-.halfword ITEM_PROTEIN
-.halfword ITEM_IRON
-.halfword ITEM_CALCIUM
-.halfword ITEM_ZINC
-.halfword ITEM_CARBOS
-.halfword ITEM_HP_UP
+.halfword ITEM_GENTLE_MINT
+.halfword ITEM_CAREFUL_MINT
+.halfword ITEM_SASSY_MINT
+.halfword ITEM_TIMID_MINT
+.halfword ITEM_HASTY_MINT
+.halfword ITEM_JOLLY_MINT
 .halfword 0xFFFF
 
 /* Mt. Moon Square */
@@ -170,14 +170,14 @@
 
 /* Celadon City Department Store - X Items */
 .org 0x020FBBC6
-.halfword ITEM_X_SPEED
-.halfword ITEM_X_ATTACK
-.halfword ITEM_X_DEFENSE
-.halfword ITEM_GUARD_SPEC
-.halfword ITEM_DIRE_HIT
-.halfword ITEM_X_ACCURACY
-.halfword ITEM_X_SPECIAL
-.halfword ITEM_X_SP_DEF
+.halfword ITEM_IMPISH_MINT
+.halfword ITEM_LAX_MINT
+.halfword ITEM_RELAXED_MINT
+.halfword ITEM_MODEST_MINT
+.halfword ITEM_MILD_MINT
+.halfword ITEM_RASH_MINT
+.halfword ITEM_QUIET_MINT
+.halfword ITEM_CALM_MINT
 .halfword 0xFFFF
 
 /* Mahogany Town (Post Rocked Hideout) */
@@ -209,17 +209,17 @@
 
 /* Celadon City Department Store - Healing Items */
 .org 0x020FBC02
-.halfword ITEM_POTION
-.halfword ITEM_SUPER_POTION
-.halfword ITEM_HYPER_POTION
-.halfword ITEM_MAX_POTION
-.halfword ITEM_REVIVE
-.halfword ITEM_ANTIDOTE
-.halfword ITEM_PARALYZE_HEAL
-.halfword ITEM_BURN_HEAL
-.halfword ITEM_ICE_HEAL
-.halfword ITEM_AWAKENING
-.halfword ITEM_FULL_HEAL
+.halfword ITEM_PP_MAX
+.halfword ITEM_PP_UP
+.halfword ITEM_MAX_ELIXIR
+.halfword ITEM_MAX_REVIVE
+.halfword ITEM_FULL_RESTORE
+.halfword ITEM_CHOICE_BAND
+.halfword ITEM_CHOICE_SCARF
+.halfword ITEM_CHOICE_SPECS
+.halfword ITEM_NAUGHTY_MINT
+.halfword ITEM_BRAVE_MINT
+.halfword ITEM_BOLD_MINT
 .halfword 0xFFFF
 
 /* Goldenrod City Department Store - Trainer's Market */
