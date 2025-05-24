@@ -2283,7 +2283,7 @@ mondata SPECIES_HITMONCHAN, "Hitmonchan"
 
 
 mondata SPECIES_LICKITUNG, "Lickitung"
-    basestats 90, 55, 75, 30, 60, 75
+    basestats 100, 40, 80, 30, 75, 80
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 45
     baseexp 0 // defined in baseexp.s
@@ -2409,7 +2409,7 @@ mondata SPECIES_CHANSEY, "Chansey"
 
 
 mondata SPECIES_TANGELA, "Tangela"
-    basestats 65, 55, 115, 60, 100, 40
+    basestats 80, 85, 115, 60, 55, 45
     types TYPE_GRASS, TYPE_GRASS
     catchrate 45
     baseexp 0 // defined in baseexp.s
@@ -4341,7 +4341,7 @@ mondata SPECIES_FORRETRESS, "Forretress"
 
 
 mondata SPECIES_DUNSPARCE, "Dunsparce"
-    basestats 100, 70, 70, 45, 65, 65
+    basestats 100, 45, 85, 45, 65, 80
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 190
     baseexp 0 // defined in baseexp.s
@@ -4929,7 +4929,7 @@ mondata SPECIES_PORYGON2, "Porygon2"
 
 
 mondata SPECIES_STANTLER, "Stantler"
-    basestats 73, 95, 62, 85, 85, 65
+    basestats 90, 85, 62, 85, 85, 70
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 45
     baseexp 0 // defined in baseexp.s
