@@ -1954,7 +1954,7 @@ trainerdata 42, "Nathan"
         // mon 0
         ivs 0
         abilityslot 0
-        level 28
+        level 20
         pokemon SPECIES_GIRAFARIG
         move MOVE_PSYCHIC
         move MOVE_DAZZLING_GLEAM
@@ -1965,7 +1965,7 @@ trainerdata 42, "Nathan"
         // mon 1
         ivs 0
         abilityslot 0
-        level 28
+        level 20
         pokemon SPECIES_UNOWN
         move MOVE_HIDDEN_POWER
         move MOVE_NONE
