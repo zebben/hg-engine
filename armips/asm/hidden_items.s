@@ -20,13 +20,13 @@
 .halfword ITEM_POTION
 
 .org 0x02000000 + 0xFA578 //Dark Cave
-.halfword ITEM_POKE_BALL
+.halfword ITEM_ULTRA_BALL
 
 .org 0x02000000 + 0xFA580 //Dark Cave
 .halfword ITEM_MAX_ETHER
 
 .org 0x02000000 + 0xFA588 //Dark Cave
-.halfword ITEM_MAX_REVIVE
+.halfword ITEM_CHARIZARDITE_Y
 
 .org 0x02000000 + 0xFA590 //Dark Cave
 .halfword ITEM_HYPER_POTION
@@ -38,10 +38,10 @@
 .halfword ITEM_HYPER_POTION
 
 .org 0x02000000 + 0xFA5A8 //Violet
-.halfword ITEM_POKE_BALL
+.halfword ITEM_ULTRA_BALL
 
 .org 0x02000000 + 0xFA5B0 //Ruins of Alph E
-.halfword ITEM_GREAT_BALL
+.halfword ITEM_PP_UP
 
 .org 0x02000000 + 0xFA5B8 //Ruins of Alph SW
 .halfword ITEM_BIG_MUSHROOM
@@ -56,16 +56,16 @@
 .halfword ITEM_NUGGET
 
 .org 0x02000000 + 0xFA5D8 //Union Cave 1F E
-.halfword ITEM_GREAT_BALL
+.halfword ITEM_PP_UP
 
 .org 0x02000000 + 0xFA5E0 //Union Cave 1F S
-.halfword ITEM_PARALYZE_HEAL
+.halfword ITEM_FULL_HEAL
 
 .org 0x02000000 + 0xFA5E8 //Union Cave 1F W
 .halfword ITEM_BIG_PEARL
 
 .org 0x02000000 + 0xFA5F0 //Union Cave B1F S
-.halfword ITEM_X_SPEED
+.halfword ITEM_MAX_REVIVE
 
 .org 0x02000000 + 0xFA5F8 //Union Cave B1F E
 .halfword ITEM_REVIVE
@@ -80,7 +80,7 @@
 .halfword ITEM_HEART_SCALE
 
 .org 0x02000000 + 0xFA618 //R32 SW
-.halfword ITEM_GREAT_BALL
+.halfword ITEM_PP_UP
 
 .org 0x02000000 + 0xFA620 //R32 N
 .halfword ITEM_SUPER_POTION
@@ -89,7 +89,7 @@
 .halfword ITEM_FULL_HEAL 
 
 .org 0x02000000 + 0xFA630 //Slowpoke Well Entrance
-.halfword ITEM_GREAT_BALL
+.halfword ITEM_PP_UP
 
 .org 0x02000000 + 0xFA638 //Slowpoke Well B1F Rock
 .halfword ITEM_SUPER_POTION
@@ -98,7 +98,7 @@
 .halfword ITEM_FULL_HEAL
 
 .org 0x02000000 + 0xFA648 //Ilex Forest W
-.halfword ITEM_ANTIDOTE
+.halfword ITEM_FULL_HEAL
 
 .org 0x02000000 + 0xFA650 //Ilex Forest
 .halfword ITEM_SUPER_POTION
@@ -134,13 +134,13 @@
 .halfword ITEM_SUPER_POTION
 
 .org 0x02000000 + 0xFA6A8 //Goldenrod Dept Store Basement W
-.halfword ITEM_PARALYZE_HEAL
+.halfword ITEM_FULL_HEAL
 
 .org 0x02000000 + 0xFA6B0 //Goldenrod Dept Store Basement Centre
 .halfword ITEM_SUPER_POTION
 
 .org 0x02000000 + 0xFA6B8 //Goldenrod Dept Store Basement SE
-.halfword ITEM_ANTIDOTE
+.halfword ITEM_FULL_HEAL
 
 .org 0x02000000 + 0xFA6C0 //Goldenrod Tunnel Basement
 .halfword ITEM_MAX_POTION
@@ -185,7 +185,7 @@
 .halfword ITEM_ULTRA_BALL
 
 .org 0x02000000 + 0xFA730 //Burned Tower Basement NW
-.halfword ITEM_ANTIDOTE
+.halfword ITEM_FULL_HEAL
 
 .org 0x02000000 + 0xFA738 //Burned Tower Basement S
 .halfword ITEM_REVIVE
@@ -224,7 +224,7 @@
 .halfword ITEM_PP_UP
 
 .org 0x02000000 + 0xFA798 //R39 Centre NE
-.halfword ITEM_X_ATTACK
+.halfword ITEM_MAX_REVIVE
 
 .org 0x02000000 + 0xFA7A0 //Olivine Rock Climb
 .halfword ITEM_RARE_CANDY
@@ -275,7 +275,7 @@
 .halfword ITEM_PEARL
 
 .org 0x02000000 + 0xFA820 //Whirl Islands
-.halfword ITEM_REVIVE
+.halfword ITEM_CHOICE_BAND
 
 .org 0x02000000 + 0xFA828 //Whirl Islands
 .halfword ITEM_FULL_RESTORE
@@ -311,7 +311,7 @@
 .halfword ITEM_MAX_POTION
 
 .org 0x02000000 + 0xFA880 //Mt Mortar Entrance W
-.halfword ITEM_HYPER_POTION
+.halfword ITEM_CHOICE_SCARF
 
 .org 0x02000000 + 0xFA888 //Mt Mortar Entrance E
 .halfword ITEM_REVIVE
@@ -356,7 +356,7 @@
 .halfword ITEM_FULL_HEAL
 
 .org 0x02000000 + 0xFA8F8 //Rocket HQ B2F E
-.halfword ITEM_X_SP_DEF
+.halfword ITEM_MAX_REVIVE
 
 .org 0x02000000 + 0xFA900 //Lake of Rage SW
 .halfword ITEM_FULL_RESTORE
@@ -368,13 +368,13 @@
 .halfword ITEM_MAX_POTION
 
 .org 0x02000000 + 0xFA918 //R44
-.halfword ITEM_ELIXIR
+.halfword ITEM_CHARIZARDITE_X
 
 .org 0x02000000 + 0xFA920 //Ice Path 1F W
 .halfword ITEM_MAX_POTION
 
 .org 0x02000000 + 0xFA928 //Ice Path 1F N
-.halfword ITEM_ICE_HEAL
+.halfword ITEM_FULL_HEAL
 
 .org 0x02000000 + 0xFA930 //Ice Path B1F
 .halfword ITEM_REVIVE
@@ -386,7 +386,7 @@
 .halfword ITEM_REVIVE
 
 .org 0x02000000 + 0xFA948 //Dragons Den S
-.halfword ITEM_MAX_POTION
+.halfword ITEM_CHOICE_SPECS
 
 .org 0x02000000 + 0xFA950 //Dragons Den W
 .halfword ITEM_MAX_ELIXIR
@@ -458,16 +458,16 @@
 .halfword ITEM_FULL_RESTORE
 
 .org 0x02000000 + 0xFAA08 //Underground Path
-.halfword ITEM_X_SPECIAL
+.halfword ITEM_FULL_RESTORE
 
 .org 0x02000000 + 0xFAA10 //R11
 .halfword ITEM_REVIVE
 
 .org 0x02000000 + 0xFAA18 //Rock Tunnel
-.halfword ITEM_X_ACCURACY
+.halfword ITEM_FULL_RESTORE
 
 .org 0x02000000 + 0xFAA20 //Rock Tunnel
-.halfword ITEM_X_DEFENSE
+.halfword ITEM_FULL_RESTORE
 
 .org 0x02000000 + 0xFAA28 //Rock Tunnel
 .halfword ITEM_MAX_POTION
@@ -584,7 +584,7 @@
 .halfword ITEM_ESCAPE_ROPE
 
 .org 0x02000000 + 0xFAB58 //Seafoam Islands
-.halfword ITEM_ICE_HEAL
+.halfword ITEM_FULL_HEAL
 
 .org 0x02000000 + 0xFAB60 //Seafoam Islands
 .halfword ITEM_PEARL
@@ -623,7 +623,7 @@
 .halfword ITEM_FULL_RESTORE
 
 .org 0x02000000 + 0xFABC0 //Mt Silver
-.halfword ITEM_DIRE_HIT
+.halfword ITEM_ABILITY_CAPSULE
 
 .org 0x02000000 + 0xFABC8 //Mt Silver
 .halfword ITEM_ULTRA_BALL

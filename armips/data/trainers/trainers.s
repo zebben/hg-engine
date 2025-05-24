@@ -32520,15 +32520,15 @@ trainerdata 684, "Elan & Ida"
         abilityslot 0
         level 76
         pokemon SPECIES_DRAGONITE
-        item ITEM_CHOICE_BAND
-        move MOVE_OUTRAGE
-        move MOVE_IRON_HEAD
-        move MOVE_AERIAL_ACE
-        move MOVE_EXTREME_SPEED
+        item ITEM_CHOICE_SPECS
+        move MOVE_HEAT_WAVE
+        move MOVE_ICE_BEAM
+        move MOVE_THUNDERBOLT
+        move MOVE_RAZOR_WIND
         ability ABILITY_MULTISCALE
-        setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
+        setivs 20, 20, 20, 20, 20, 20 // hp, atk, def, spd, spatk, spdef
         setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
-        nature NATURE_ADAMANT
+        nature NATURE_MODEST
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
         ballseal 0
@@ -33438,7 +33438,7 @@ trainerdata 701, "Lance"
         // mon 0
         ivs 255
         abilityslot 0
-        level 80
+        level 83
         pokemon SPECIES_CHARIZARD
         item ITEM_CHARIZARDITE_Y
         move MOVE_HEAT_WAVE
@@ -33456,7 +33456,7 @@ trainerdata 701, "Lance"
         // mon 1
         ivs 255
         abilityslot 0
-        level 80
+        level 82
         pokemon SPECIES_HELIOLISK
         item ITEM_AIR_BALLOON
         move MOVE_THUNDERBOLT
@@ -33492,7 +33492,7 @@ trainerdata 701, "Lance"
         // mon 3
         ivs 255
         abilityslot 0
-        level 80
+        level 82
         monwithform SPECIES_EXEGGUTOR, 1
         item ITEM_SITRUS_BERRY
         move MOVE_PROTECT
@@ -33510,7 +33510,7 @@ trainerdata 701, "Lance"
         // mon 4
         ivs 255
         abilityslot 0
-        level 81
+        level 82
         pokemon SPECIES_GYARADOS
         item ITEM_FOCUS_SASH
         move MOVE_WATERFALL
@@ -33528,7 +33528,7 @@ trainerdata 701, "Lance"
         // mon 5
         ivs 255
         abilityslot 0
-        level 83
+        level 85
         pokemon SPECIES_DRAGONITE
         item ITEM_CHOICE_SPECS
         move MOVE_HEAT_WAVE

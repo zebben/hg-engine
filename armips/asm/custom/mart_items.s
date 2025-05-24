@@ -47,9 +47,9 @@
 
 /* Blackthorn City */
 .org 0x020FBA80
-.halfword ITEM_CHOICE_BAND
-.halfword ITEM_CHOICE_SPECS
-.halfword ITEM_CHOICE_SCARF
+.halfword ITEM_EJECT_BUTTON
+.halfword ITEM_CELL_BATTERY
+.halfword ITEM_SNOWBALL
 .halfword 0xFFFF
 
 /* Olivine City */
@@ -328,7 +328,7 @@ EIGHT_BADGES equ 6
 .halfword ONE_BADGE
 
 .halfword ITEM_MAX_REVIVE
-.halfword THREE_BADGES
+.halfword FIVE_BADGES
 
 .halfword ITEM_ORAN_BERRY
 .halfword ONE_BADGE
