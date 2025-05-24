@@ -21180,6 +21180,7 @@ levelup SPECIES_SPIDOPS
     learnset MOVE_HEADBUTT, 28
     learnset MOVE_U_TURN, 30
     learnset MOVE_TAILWIND, 33
+    learnset MOVE_RECOVER, 35
     learnset MOVE_GASTRO_ACID, 37
     learnset MOVE_BRUTAL_SWING, 45
     learnset MOVE_SKITTER_SMACK, 49

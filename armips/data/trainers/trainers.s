@@ -7538,7 +7538,7 @@ trainerdata 182, "Beverly"
         ivs 0
         abilityslot 0
         level 22
-        pokemon SPECIES_SNUBBULL
+        pokemon SPECIES_IGGLYBUFF
         item ITEM_SITRUS_BERRY
         ballseal 0
 
@@ -8409,7 +8409,7 @@ trainerdata 206, "Gwen"
         pokemon SPECIES_PRINPLUP
         move MOVE_SURF
         move MOVE_FLASH_CANNON
-        move MOVE_PROTECT
+        move MOVE_ICE_BEAM
         move MOVE_ROOST
         ballseal 0
 
@@ -8432,7 +8432,7 @@ trainerdata 206, "Gwen"
         move MOVE_SLEEP_POWDER
         move MOVE_HELPING_HAND
         move MOVE_TAILWIND
-        move MOVE_PROTECT
+        move MOVE_ROOST
         ballseal 0
 
         // mon 3
@@ -8442,7 +8442,7 @@ trainerdata 206, "Gwen"
         pokemon SPECIES_KLEFKI
         move MOVE_PLAY_ROUGH
         move MOVE_IRON_HEAD
-        move MOVE_PROTECT
+        move MOVE_TAUNT
         move MOVE_THUNDER_WAVE
         ballseal 0
     endparty
@@ -14794,7 +14794,7 @@ trainerdata 314, "Joel"
         item ITEM_THICK_CLUB
         move MOVE_BONE_RUSH
         move MOVE_ROCK_SLIDE
-        move MOVE_PROTECT
+        move MOVE_SHADOW_BONE
         move MOVE_SWORDS_DANCE
         ballseal 0
 
@@ -14805,7 +14805,7 @@ trainerdata 314, "Joel"
         pokemon SPECIES_BEHEEYEM
         item ITEM_LEFTOVERS
         move MOVE_TRICK_ROOM
-        move MOVE_PROTECT
+        move MOVE_RECOVER
         move MOVE_ICE_BEAM
         move MOVE_THUNDERBOLT
         ballseal 0
@@ -18083,7 +18083,7 @@ trainerdata 379, "Jimmy"
         level 73
         pokemon SPECIES_GHOLDENGO
         move MOVE_SHADOW_BALL
-        move MOVE_PROTECT
+        move MOVE_FOCUS_BLAST
         move MOVE_RECOVER
         move MOVE_FLASH_CANNON
         ballseal 0
@@ -18095,7 +18095,7 @@ trainerdata 379, "Jimmy"
         pokemon SPECIES_GRUMPIG
         move MOVE_TRICK_ROOM
         move MOVE_PSYCHIC
-        move MOVE_PROTECT
+        move MOVE_RECOVER
         move MOVE_EARTH_POWER
         ballseal 0
 
@@ -18106,7 +18106,7 @@ trainerdata 379, "Jimmy"
         pokemon SPECIES_BANETTE
         move MOVE_ICE_PUNCH
         move MOVE_SHADOW_CLAW
-        move MOVE_PROTECT
+        move MOVE_FIRE_PUNCH
         move MOVE_SWORDS_DANCE
         ballseal 0
     endparty
@@ -19273,7 +19273,7 @@ trainerdata 408, "Cybil"
         abilityslot 0
         level 46
         pokemon SPECIES_KINGDRA
-        move MOVE_PROTECT
+        move MOVE_FLIP_TURN
         move MOVE_DRAGON_PULSE
         move MOVE_ICE_BEAM
         move MOVE_SURF
@@ -19970,7 +19970,7 @@ trainerdata 421, "Bret"
         move MOVE_DRILL_RUN
         move MOVE_DRILL_PECK
         move MOVE_SWORDS_DANCE
-        move MOVE_PROTECT
+        move MOVE_U_TURN
         ability ABILITY_TOUGH_CLAWS
         ballseal 0
 
@@ -19983,7 +19983,7 @@ trainerdata 421, "Bret"
         move MOVE_QUIVER_DANCE
         move MOVE_BUG_BUZZ
         move MOVE_PSYCHIC
-        move MOVE_PROTECT
+        move MOVE_DAZZLING_GLEAM
         ability ABILITY_TINTED_LENS
         ballseal 0
     endparty
@@ -26081,7 +26081,7 @@ trainerdata 559, "Tim & Sue"
         move MOVE_AQUA_JET
         move MOVE_AQUA_TAIL
         move MOVE_ROCK_SLIDE
-        move MOVE_PROTECT
+        move MOVE_CRUNCH
         ability ABILITY_SOLID_ROCK
         ballseal 0
     endparty
@@ -26860,7 +26860,7 @@ trainerdata 573, "Jacob"
         move MOVE_KNOCK_OFF
         move MOVE_TOXIC
         move MOVE_WHIRLWIND
-        move MOVE_PROTECT
+        move MOVE_ROOST
         ballseal 0
     endparty
 
@@ -26990,7 +26990,7 @@ trainerdata 576, "Theron"
         move MOVE_PLAY_ROUGH
         move MOVE_LEECH_LIFE
         move MOVE_HELPING_HAND
-        move MOVE_PROTECT
+        move MOVE_MOONLIGHT
         ballseal 0
 
         // mon 1
@@ -27000,7 +27000,7 @@ trainerdata 576, "Theron"
         pokemon SPECIES_BANETTE
         move MOVE_PHANTOM_FORCE
         move MOVE_ICE_PUNCH
-        move MOVE_PROTECT
+        move MOVE_SWORDS_DANCE
         move MOVE_SHADOW_SNEAK
         ballseal 0
 
@@ -27011,7 +27011,7 @@ trainerdata 576, "Theron"
         pokemon SPECIES_ORICORIO
         move MOVE_AURA_SPHERE
         move MOVE_RAZOR_WIND
-        move MOVE_PROTECT
+        move MOVE_CALM_MIND
         move MOVE_FIRE_BLAST
         ballseal 0
     endparty
@@ -29421,7 +29421,7 @@ trainerdata 631, "Aiden"
         level 68
         pokemon SPECIES_SPIDOPS
         move MOVE_TAILWIND
-        move MOVE_PROTECT
+        move MOVE_RECOVER
         move MOVE_U_TURN
         move MOVE_COUNTER
         ballseal 0
@@ -29443,7 +29443,7 @@ trainerdata 631, "Aiden"
         level 67
         pokemon SPECIES_LAPRAS
         move MOVE_SURF
-        move MOVE_PROTECT
+        move MOVE_THUNDER_WAVE
         move MOVE_RECOVER
         move MOVE_ICE_BEAM
         ballseal 0
@@ -30619,7 +30619,7 @@ trainerdata 652, "Tim & Sue"
         move MOVE_AQUA_JET
         move MOVE_AQUA_TAIL
         move MOVE_ROCK_SLIDE
-        move MOVE_PROTECT
+        move MOVE_CRUNCH
         ability ABILITY_SOLID_ROCK
         ballseal 0
     endparty
@@ -30681,7 +30681,7 @@ trainerdata 653, "Tim & Sue"
         move MOVE_AQUA_JET
         move MOVE_AQUA_TAIL
         move MOVE_ROCK_SLIDE
-        move MOVE_PROTECT
+        move MOVE_CRUNCH
         ability ABILITY_SOLID_ROCK
         ballseal 0
 
@@ -30767,7 +30767,7 @@ trainerdata 654, "Tim & Sue"
         move MOVE_AQUA_JET
         move MOVE_AQUA_TAIL
         move MOVE_ROCK_SLIDE
-        move MOVE_PROTECT
+        move MOVE_CRUNCH
         ability ABILITY_SOLID_ROCK
         ballseal 0
 
@@ -31139,22 +31139,22 @@ trainerdata 661, "Kyle"
         ivs 120
         abilityslot 0
         level 73
+        pokemon SPECIES_SEAKING
+        move MOVE_MEGAHORN
+        move MOVE_DOUBLE_EDGE
+        move MOVE_WAVE_CRASH
+        move MOVE_FLIP_TURN
+        ballseal 0
+
+        // mon 2
+        ivs 120
+        abilityslot 0
+        level 73
         pokemon SPECIES_TATSUGIRI
         move MOVE_MUDDY_WATER
         move MOVE_PROTECT
         move MOVE_DRAGON_PULSE
         move MOVE_HYDRO_PUMP
-        ballseal 0
-
-        // mon 0
-        ivs 120
-        abilityslot 0
-        level 73
-        pokemon SPECIES_SEAKING
-        move MOVE_MEGAHORN
-        move MOVE_DOUBLE_EDGE
-        move MOVE_WAVE_CRASH
-        move MOVE_PROTECT
         ballseal 0
     endparty
 
