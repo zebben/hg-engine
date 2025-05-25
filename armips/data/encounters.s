@@ -332,13 +332,13 @@ walklevels 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4
 
 // morning encounter slots
 pokemon SPECIES_LEDYBA
-pokemon SPECIES_KRICKETOT
+pokemon SPECIES_GOSSIFLEUR
 pokemon SPECIES_BURMY
 pokemon SPECIES_STARLY
 pokemon SPECIES_BUNEARY
 pokemon SPECIES_BURMY
 pokemon SPECIES_LEDYBA
-pokemon SPECIES_KRICKETOT
+pokemon SPECIES_GOSSIFLEUR
 pokemon SPECIES_LEDYBA
 pokemon SPECIES_BUNEARY
 pokemon SPECIES_SPINARAK
@@ -346,13 +346,13 @@ pokemon SPECIES_STARLY
 
 // day encounter slots
 pokemon SPECIES_LEDYBA
-pokemon SPECIES_KRICKETOT
+pokemon SPECIES_GOSSIFLEUR
 pokemon SPECIES_BURMY
 pokemon SPECIES_STARLY
 pokemon SPECIES_BUNEARY
 pokemon SPECIES_BURMY
 pokemon SPECIES_LEDYBA
-pokemon SPECIES_KRICKETOT
+pokemon SPECIES_GOSSIFLEUR
 pokemon SPECIES_LEDYBA
 pokemon SPECIES_BUNEARY
 pokemon SPECIES_SPINARAK
@@ -650,8 +650,8 @@ pokemon SPECIES_KRICKETOT
 pokemon SPECIES_SMOLIV
 pokemon SPECIES_ODDISH
 pokemon SPECIES_CHESPIN
-pokemon SPECIES_GOSSIFLEUR
-pokemon SPECIES_GOSSIFLEUR
+pokemon SPECIES_MUNNA
+pokemon SPECIES_MUNNA
 pokemon SPECIES_CHESPIN
 pokemon SPECIES_ODDISH
 pokemon SPECIES_SMOLIV
@@ -664,8 +664,8 @@ pokemon SPECIES_KRICKETOT
 pokemon SPECIES_SMOLIV
 pokemon SPECIES_ODDISH
 pokemon SPECIES_CHESPIN
-pokemon SPECIES_GOSSIFLEUR
-pokemon SPECIES_GOSSIFLEUR
+pokemon SPECIES_MUNNA
+pokemon SPECIES_MUNNA
 pokemon SPECIES_CHESPIN
 pokemon SPECIES_ODDISH
 pokemon SPECIES_SMOLIV
@@ -681,7 +681,7 @@ pokemon SPECIES_ROWLET
 pokemon SPECIES_PHANTUMP
 pokemon SPECIES_SMOLIV
 pokemon SPECIES_CHESPIN
-pokemon SPECIES_ODDISH
+pokemon SPECIES_MUNNA
 pokemon SPECIES_ODDISH
 
 // hoenn encounter slots
@@ -5636,7 +5636,7 @@ walklevels 24, 24, 24, 25, 25, 25, 25, 25, 25, 25, 26, 26
 
 // morning encounter slots
 pokemon SPECIES_DIGLETT
-monwithform SPECIES_GEODUDE, 1
+pokemon SPECIES_GEODUDE
 pokemon SPECIES_MACHOP
 pokemon SPECIES_DRATINI
 pokemon SPECIES_WOOPER
@@ -5645,12 +5645,12 @@ pokemon SPECIES_MAKUHITA
 pokemon SPECIES_WOOPER
 pokemon SPECIES_NOIBAT
 pokemon SPECIES_MACHOP
-monwithform SPECIES_GEODUDE, 1
+pokemon SPECIES_GEODUDE
 pokemon SPECIES_DIGLETT
 
 // day encounter slots
 pokemon SPECIES_DIGLETT
-monwithform SPECIES_GEODUDE, 1
+pokemon SPECIES_GEODUDE
 pokemon SPECIES_MACHOP
 pokemon SPECIES_DRATINI
 pokemon SPECIES_WOOPER
@@ -5659,7 +5659,7 @@ pokemon SPECIES_MAKUHITA
 pokemon SPECIES_WOOPER
 pokemon SPECIES_NOIBAT
 pokemon SPECIES_MACHOP
-monwithform SPECIES_GEODUDE, 1
+pokemon SPECIES_GEODUDE
 pokemon SPECIES_DIGLETT
 
 // night encounter slots
@@ -5668,7 +5668,7 @@ pokemon SPECIES_ELGYEM
 pokemon SPECIES_SILICOBRA
 monwithform SPECIES_MEOWTH, 2
 monwithform SPECIES_MEOWTH, 2
-monwithform SPECIES_MEOWTH, 2
+pokemon SPECIES_GEODUDE
 pokemon SPECIES_SILICOBRA
 pokemon SPECIES_ELGYEM
 pokemon SPECIES_NOIBAT
@@ -7193,32 +7193,32 @@ superrodrate 75
 walklevels 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5
 
 // morning encounter slots
-pokemon SPECIES_GEODUDE
+monwithform SPECIES_GEODUDE, 1
 pokemon SPECIES_PETILIL
 pokemon SPECIES_ZUBAT
-pokemon SPECIES_GOSSIFLEUR
+pokemon SPECIES_KRICKETOT
 pokemon SPECIES_NACLI
 pokemon SPECIES_COTTONEE
 pokemon SPECIES_COTTONEE
 pokemon SPECIES_NACLI
-pokemon SPECIES_GOSSIFLEUR
+pokemon SPECIES_KRICKETOT
 pokemon SPECIES_PETILIL
 pokemon SPECIES_ZUBAT
-pokemon SPECIES_GEODUDE
+monwithform SPECIES_GEODUDE, 1
 
 // day encounter slots
-pokemon SPECIES_GEODUDE
+monwithform SPECIES_GEODUDE, 1
 pokemon SPECIES_PETILIL
 pokemon SPECIES_ZUBAT
-pokemon SPECIES_GOSSIFLEUR
+pokemon SPECIES_KRICKETOT
 pokemon SPECIES_NACLI
 pokemon SPECIES_COTTONEE
 pokemon SPECIES_COTTONEE
 pokemon SPECIES_NACLI
-pokemon SPECIES_GOSSIFLEUR
+pokemon SPECIES_KRICKETOT
 pokemon SPECIES_PETILIL
 pokemon SPECIES_ZUBAT
-pokemon SPECIES_GEODUDE
+monwithform SPECIES_GEODUDE, 1
 
 // night encounter slots
 pokemon SPECIES_NOIBAT
@@ -7228,9 +7228,9 @@ pokemon SPECIES_COTTONEE
 pokemon SPECIES_NACLI
 pokemon SPECIES_PETILIL
 pokemon SPECIES_SHROODLE
-pokemon SPECIES_GOSSIFLEUR
+pokemon SPECIES_KRICKETOT
 pokemon SPECIES_SHROODLE
-pokemon SPECIES_GEODUDE
+monwithform SPECIES_GEODUDE, 1
 pokemon SPECIES_ZUBAT
 pokemon SPECIES_ZUBAT
 
@@ -7250,8 +7250,8 @@ encounter SPECIES_SPHEAL, 20, 25
 encounter SPECIES_SEALEO, 20, 25
 
 // rock smash encounters
-encounter SPECIES_DUNSPARCE, 4, 8
-encounter SPECIES_GEODUDE, 8, 14
+encounter SPECIES_BELDUM, 8, 14
+encounter SPECIES_TIMBURR, 8, 14
 
 // old rod encounters
 encounter SPECIES_CLAUNCHER, 10, 14
@@ -8707,7 +8707,7 @@ encounter SPECIES_NONE, 0, 0
 
 // rock smash encounters
 encounter SPECIES_KRABBY, 42, 45
-encounter SPECIES_KINGLER, 42, 45
+encounter SPECIES_CRABRAWLER, 42, 45
 
 // old rod encounters
 encounter SPECIES_NONE, 0, 0
@@ -9746,8 +9746,8 @@ encounter SPECIES_CROCONAW, 72, 74
 encounter SPECIES_FERALIGATR, 72, 74
 
 // rock smash encounters
-encounter SPECIES_KINGLER, 72, 74
-encounter SPECIES_KRABBY, 72, 74
+encounter SPECIES_HAKAMO_O, 72, 74
+encounter SPECIES_MANKEY, 72, 74
 
 // old rod encounters
 encounterwithform SPECIES_QWILFISH, 1, 55, 60
@@ -11410,8 +11410,8 @@ encounter SPECIES_NONE, 0, 0
 encounter SPECIES_NONE, 0, 0
 
 // rock smash encounters
-encounter SPECIES_GEODUDE, 12, 16
-encounter SPECIES_GEODUDE, 17, 21
+encounter SPECIES_ONIX, 12, 16
+encounter SPECIES_DRILBUR, 17, 21
 
 // old rod encounters
 encounter SPECIES_NONE, 0, 0
@@ -14114,8 +14114,8 @@ encounter SPECIES_NONE, 0, 0
 encounter SPECIES_NONE, 0, 0
 
 // rock smash encounters
-encounter SPECIES_GEODUDE, 24, 32
-encounter SPECIES_GRAVELER, 30, 33
+encounter SPECIES_TIRTOUGA, 47, 50
+encounter SPECIES_POLIWHIRL, 47, 50
 
 // old rod encounters
 encounter SPECIES_NONE, 0, 0
@@ -14530,8 +14530,8 @@ encounter SPECIES_FLOATZEL, 78, 80
 encounter SPECIES_FLOATZEL, 78, 80
 
 // rock smash encounters
-encounter SPECIES_GEODUDE, 22, 24
-encounter SPECIES_GRAVELER, 26, 30
+encounter SPECIES_ORTHWORM, 77, 80
+encounter SPECIES_SHIELDON, 77, 80
 
 // old rod encounters
 encounter SPECIES_ARCTOZOLT, 10, 14
@@ -14738,8 +14738,8 @@ encounter SPECIES_GOLDUCK, 78, 80
 encounter SPECIES_GOLDUCK, 78, 80
 
 // rock smash encounters
-encounter SPECIES_GEODUDE, 22, 24
-encounter SPECIES_GRAVELER, 26, 30
+encounter SPECIES_ANORITH, 78, 80
+encounterwithform SPECIES_SNEASEL, 1, 78, 80
 
 // old rod encounters
 encounter SPECIES_MAGIKARP, 10, 14
