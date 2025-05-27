@@ -148,48 +148,63 @@ def parse_mondata(filepath):
     return monstats
 
 
-def parse_species(filepath):
-    species = []
-    form_slots = defaultdict(list)  # Maps base species to all its forms in order
-    species_form_map = {}          # Maps (base_macro, form_index) -> display name
+def parse_species_header(filepath):
+    species_order = []
+    with open(filepath) as f:
+        for line in f:
+            match = re.match(r'#define\s+(SPECIES_[A-Z][A-Z0-9_]+)\s+', line)
+            if match and match.group(1) != 'SPECIES_NONE':
+                species_order.append(match.group(1))
+    return species_order
 
-    known_prefixes = {"MEGA"}
-    known_suffixes = {"ALOLAN", "GALARIAN", "HISUIAN", "PALDEAN", "X", "Y", "COMBAT",  "BLAZE", "AQUA", "POM", "PAU", "SENSU", "FROST", "WASH", "MOW", "HEAT", "SANDY", "TRASHY"}
+
+def parse_form_mapping(filepath):
+    pattern = re.compile(
+        r'\[\s*(SPECIES_[A-Z0-9_]+)\s*-\s*(SPECIES_[A-Z0-9_]+)\s*\]\s*=\s*(SPECIES_[A-Z0-9_]+)\s*,?'
+    )
+    form_to_base = {}
 
     with open(filepath, "r") as f:
-        for line in f:
-            match = re.match(r"#define\s+(SPECIES_[A-Z0-9_]+)\s+.*", line)
-            if match:
-                macro = match.group(1)  # e.g., SPECIES_MEGA_SLOWBRO
-                name = macro[len("SPECIES_"):]  # e.g., MEGA_SLOWBRO
-                if name != "NONE":
-                    species.append(macro)
+        content = f.read()
 
-    for macro in species:
-        parts = macro[len("SPECIES_"):].split("_")
+    for match in pattern.finditer(content):
+        form_species = match.group(1)     # e.g. SPECIES_MEGA_VENUSAUR
+        form_group_start = match.group(2) # e.g. SPECIES_MEGA_START (currently unused)
+        base_species = match.group(3)     # e.g. SPECIES_VENUSAUR
+        form_to_base[form_species] = base_species
 
-        # Extract prefix and suffix
-        prefix = parts[0] if parts[0] in known_prefixes else None
-        suffix = parts[-1] if parts[-1] in known_suffixes else None
+    form_to_base["SPECIES_ROTOM_HEAT"] = "SPECIES_ROTOM"
+    form_to_base["SPECIES_ROTOM_WASH"] = "SPECIES_ROTOM"
+    form_to_base["SPECIES_ROTOM_FROST"] = "SPECIES_ROTOM"
+    form_to_base["SPECIES_ROTOM_FAN"] = "SPECIES_ROTOM"
+    form_to_base["SPECIES_ROTOM_MOW"] = "SPECIES_ROTOM"
 
-        # Derive base name:
-        if prefix:
-            base_parts = parts[1:]  # Remove prefix
-        elif suffix:
-            base_parts = parts[:-1]  # Remove suffix
+    form_to_base["SPECIES_WORMADAM_SANDY"] = "SPECIES_WORMADAM"
+    form_to_base["SPECIES_WORMADAM_TRASHY"] = "SPECIES_WORMADAM"
+
+    form_to_base["SPECIES_SHAYMIN_SKY"] = "SPECIES_SHAYMIN"
+
+    return form_to_base
+
+
+def assign_form_indexes(species_list, form_species):
+    # Group by base species prefix
+    form_groups = defaultdict(list)
+
+    for species in species_list:
+        if species in form_species:
+            base = form_species[species]
+            form_groups[base].append(species)
         else:
-            base_parts = parts
-
-        base_key = "SPECIES_" + "_".join(base_parts)
-        form_slots[base_key].append((macro, parts))
-
-    # Assign form index
-    for base_key, forms in form_slots.items():
-        for index, (macro, _) in enumerate(forms):
-            species_form_map[(base_key, index)] = macro.replace("SPECIES_", "")
+            form_groups[species].append(species)
 
 
-    return species, species_form_map
+    # Assign form indexes and return the final dict
+    form_dict = {}
+    for base, forms in form_groups.items():
+        for idx, form in enumerate(forms, start=0):
+            form_dict[(base, idx)] = form.replace("SPECIES_", "")
+    return form_dict
 
 
 def parse_levelup_data(filepath):
@@ -272,7 +287,7 @@ def parse_encounter_data(filepath, species_form_map):
                     species, form_index = match.groups()
                     parsed = species_form_map.get((species, int(form_index)))
                     if parsed is None:
-                        print(f"wth {species} {form_index}")
+                        print(f"[DEBUG] missing form mapping? {species} {form_index}")
                         continue
                     if current_section:
                         desc = f"{location_comment} ({current_section})"
@@ -287,7 +302,7 @@ def parse_encounter_data(filepath, species_form_map):
                     species, form_index = match.groups()
                     parsed = species_form_map.get((species, int(form_index)))
                     if parsed is None:
-                        print(f"wth {species} {form_index}")
+                        print(f"[DEBUG] missing form mapping? {species} {form_index}")
                         continue
                     if current_section:
                         desc = f"{location_comment} ({current_section})"
@@ -311,16 +326,18 @@ def parse_encounter_data(filepath, species_form_map):
     return species_locations
 
 
-def generate_pokemon_pages(evodata_path, output_dir, mondata_path, species_path, sprite_root, levelup_path, encounter_path):
+def generate_pokemon_pages(evodata_path, output_dir, mondata_path, species_path, form_table_path, sprite_root, levelup_path, encounter_path):
     os.makedirs(output_dir, exist_ok=True)
 
-    species_arr, species_form_map = parse_species(species_path)
+    species_list = parse_species_header(species_path)
+    form_species = parse_form_mapping(form_table_path)
+    species_form_map = assign_form_indexes(species_list, form_species)
 
     # evolution_data = parse_evodata(evodata_path)
     fwd, rev = parse_evodata(evodata_path, species_form_map)
 
     monstats = parse_mondata(mondata_path)
-    species_list = set(species_arr)
+    species_list = set(species_list)
     species_list.update(fwd.keys())
     species_list.update(monstats.keys())
     levelup_moves = parse_levelup_data(levelup_path)
@@ -496,13 +513,14 @@ generate_pokemon_pages(
     output_dir="../../wiki/pokedex",
     mondata_path="../../armips/data/mondata.s",
     species_path="../../include/constants/species.h",
+    form_table_path="../../data/FormToSpeciesMapping.c",
     sprite_root="../../data/graphics/sprites",
     levelup_path="../../armips/data/levelupdata.s",
     encounter_path="../../armips/data/encounters.s"
 )
 
 def generate_index(species_path, output_path="../../wiki/pokedex/index.html"):
-    species, _ = parse_species(species_path)
+    species = parse_species_header(species_path)
 
     with open(output_path, "w") as f:
         f.write("<!DOCTYPE html>\n<html lang='en'>\n<head>\n")

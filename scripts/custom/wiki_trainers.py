@@ -8,49 +8,65 @@ TRAINER_OUTPUT_DIR = "../../wiki/trainers"
 TRAINER_INDEX_PATH = "../../wiki/trainers/index.html"
 POKEMON_SPRITE_PATH = "../pokedex/sprites"
 SPECIES_PATH = "../../include/constants/species.h"
+FORM_TABLE_PATH = "../../data/FormToSpeciesMapping.c"
 
-def parse_species(filepath):
-    species = []
-    form_slots = defaultdict(list)  # Maps base species to all its forms in order
-    species_form_map = {}          # Maps (base_macro, form_index) -> display name
+def parse_species_header(filepath):
+    species_order = []
+    with open(filepath) as f:
+        for line in f:
+            match = re.match(r'#define\s+(SPECIES_[A-Z][A-Z0-9_]+)\s+', line)
+            if match and match.group(1) != 'SPECIES_NONE':
+                species_order.append(match.group(1))
+    return species_order
 
-    known_prefixes = {"MEGA"}
-    known_suffixes = {"ALOLAN", "GALARIAN", "HISUIAN", "PALDEAN", "X", "Y", "COMBAT",  "BLAZE", "AQUA", "POM", "PAU", "SENSU", "FROST", "WASH", "MOW", "HEAT", "SANDY", "TRASHY"}
+
+def parse_form_mapping(filepath):
+    pattern = re.compile(
+        r'\[\s*(SPECIES_[A-Z0-9_]+)\s*-\s*(SPECIES_[A-Z0-9_]+)\s*\]\s*=\s*(SPECIES_[A-Z0-9_]+)\s*,?'
+    )
+    form_to_base = {}
 
     with open(filepath, "r") as f:
-        for line in f:
-            match = re.match(r"#define\s+(SPECIES_[A-Z0-9_]+)\s+.*", line)
-            if match:
-                macro = match.group(1)  # e.g., SPECIES_MEGA_SLOWBRO
-                name = macro[len("SPECIES_"):]  # e.g., MEGA_SLOWBRO
-                if name != "NONE":
-                    species.append(macro)
+        content = f.read()
 
-    for macro in species:
-        parts = macro[len("SPECIES_"):].split("_")
+    for match in pattern.finditer(content):
+        form_species = match.group(1)     # e.g. SPECIES_MEGA_VENUSAUR
+        form_group_start = match.group(2) # e.g. SPECIES_MEGA_START (currently unused)
+        base_species = match.group(3)     # e.g. SPECIES_VENUSAUR
+        form_to_base[form_species] = base_species
 
-        # Extract prefix and suffix
-        prefix = parts[0] if parts[0] in known_prefixes else None
-        suffix = parts[-1] if parts[-1] in known_suffixes else None
+    form_to_base["SPECIES_ROTOM_HEAT"] = "SPECIES_ROTOM"
+    form_to_base["SPECIES_ROTOM_WASH"] = "SPECIES_ROTOM"
+    form_to_base["SPECIES_ROTOM_FROST"] = "SPECIES_ROTOM"
+    form_to_base["SPECIES_ROTOM_FAN"] = "SPECIES_ROTOM"
+    form_to_base["SPECIES_ROTOM_MOW"] = "SPECIES_ROTOM"
 
-        # Derive base name:
-        if prefix:
-            base_parts = parts[1:]  # Remove prefix
-        elif suffix:
-            base_parts = parts[:-1]  # Remove suffix
+    form_to_base["SPECIES_WORMADAM_SANDY"] = "SPECIES_WORMADAM"
+    form_to_base["SPECIES_WORMADAM_TRASHY"] = "SPECIES_WORMADAM"
+
+    form_to_base["SPECIES_SHAYMIN_SKY"] = "SPECIES_SHAYMIN"
+
+    return form_to_base
+
+
+def assign_form_indexes(species_list, form_species):
+    # Group by base species prefix
+    form_groups = defaultdict(list)
+
+    for species in species_list:
+        if species in form_species:
+            base = form_species[species]
+            form_groups[base].append(species)
         else:
-            base_parts = parts
-
-        base_key = "SPECIES_" + "_".join(base_parts)
-        form_slots[base_key].append((macro, parts))
-
-    # Assign form index
-    for base_key, forms in form_slots.items():
-        for index, (macro, _) in enumerate(forms):
-            species_form_map[(base_key, index)] = macro.replace("SPECIES_", "")
+            form_groups[species].append(species)
 
 
-    return species, species_form_map
+    # Assign form indexes and return the final dict
+    form_dict = {}
+    for base, forms in form_groups.items():
+        for idx, form in enumerate(forms, start=0):
+            form_dict[(base, idx)] = form.replace("SPECIES_", "")
+    return form_dict
 
 
 def parse_trainers(filepath, species_form_map):
@@ -237,7 +253,9 @@ def generate_index(trainers, output_path):
     print(f"Index written to {output_path}")
 
 if __name__ == "__main__":
-    species, species_form_map = parse_species(SPECIES_PATH)
+    species_list = parse_species_header(SPECIES_PATH)
+    form_species = parse_form_mapping(FORM_TABLE_PATH)
+    species_form_map = assign_form_indexes(species_list, form_species)
     trainers = parse_trainers(TRAINER_INPUT, species_form_map)
     generate_trainer_pages(trainers, TRAINER_OUTPUT_DIR)
     generate_index(trainers, TRAINER_INDEX_PATH)

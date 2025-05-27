@@ -1118,7 +1118,7 @@ const ITEMDATA __data[] =
 
 [ITEM_POTION] =
 {
-    .price = 300,
+    .price = 200,
     .holdEffect = 0,
     .holdEffectParam = 20,
     .pluckEffect = 0,
