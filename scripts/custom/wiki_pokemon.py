@@ -1,6 +1,6 @@
 import os
 import re
-from collections import defaultdict
+from collections import defaultdict, deque
 import shutil
 
 # Evolution method descriptions
@@ -17,45 +17,88 @@ method_map = {
     "EVO_NONE": "No evolution"
 }
 
-def parse_evodata(filepath):
-    evolution_data = defaultdict(list)
-    current_species = None
+def parse_evodata(evodata_path, species_form_map):
+    forward_evolutions = defaultdict(list)   # SPECIES_* -> list of SPECIES_*
+    backward_evolutions = defaultdict(list)                 # SPECIES_* -> SPECIES_*
 
-    with open(filepath, "r") as f:
+    current_species = None
+    in_block = False
+
+    with open(evodata_path, "r", encoding="utf-8") as f:
         for line in f:
             line = line.strip()
-            if not line or line.startswith("//"):
-                continue
 
             if line.startswith("evodata"):
-                match = re.match(r'evodata\s+SPECIES_(\w+)', line)
+                match = re.match(r'evodata\s+SPECIES_([A-Z0-9_]+)', line)
                 if match:
-                    current_species = match.group(1).upper()
+                    current_species = match.group(1)
+                    in_block = True
+                continue
 
-            elif line.startswith("evolution") and current_species:
-                evo_match = re.match(r'evolution\s+(\w+),\s*(\w+),\s*SPECIES_(\w+)', line)
-                if evo_match:
-                    method, param, target = evo_match.groups()
-                    if method != "EVO_NONE":
-                        evolution_data[current_species].append({
-                            "method": method,
-                            "parameter": param,
-                            "evolves_to": target
-                        })
-
-            elif line.startswith("terminateevodata"):
+            if line.startswith("terminateevodata"):
                 current_species = None
+                in_block = False
+                continue
 
-    return dict(evolution_data)
+            if not in_block or current_species is None:
+                continue
+
+            # Match evolutionwithform: evolutionwithform EVO_TYPE, item, SPECIES_NAME, form
+            if line.startswith("evolutionwithform"):
+                match = re.match(r"evolutionwithform\s+(\w+),\s*(\w+),\s*(SPECIES_[A-Z0-9_]+),\s*(\d)+", line)
+                if match:
+                    evo_method, evo_param, target_species, target_species_index = match.groups()
+                    if target_species == 'SPECIES_NONE':
+                        continue
+                    resolved_target = species_form_map.get((target_species, int(target_species_index)))
+
+                    forward_evolutions[current_species].append({
+                        "evolves_to": resolved_target,
+                        "method": evo_method,
+                        "parameter": evo_param,
+                    })
+
+                    backward_evolutions[resolved_target].append({
+                        "evolves_from": current_species,
+                        "method": evo_method,
+                        "parameter": evo_param,
+                    })
+
+            elif line.startswith("evolution"):
+                # evolution EVO_LEVEL, 28, SPECIES_PERRSERKER
+                match = re.match(r"evolution\s+(\w+),\s*(\w+),\s*SPECIES_([A-Z0-9_]+).*", line)
+                if match and match.group(1) != "SPECIES_NONE":
+                    evo_method, evo_param, target_species = match.groups()
+                    if target_species == 'NONE':
+                        continue
+                    forward_evolutions[current_species].append({
+                        "evolves_to": target_species,
+                        "method": evo_method,
+                        "parameter": evo_param,
+                    })
+
+                    backward_evolutions[target_species].append({
+                        "evolves_from": current_species,
+                        "method": evo_method,
+                        "parameter": evo_param,
+                    })
+
+    return forward_evolutions, backward_evolutions
+
 
 def is_form_of(base, form):
     if form.startswith("MEGA_") and form[5:] == base:
         return True
+    if base.startswith("MEGA_") and base[5:] == form:
+        return True
     if any(form == f"{base}_{suffix}" for suffix in ["GALARIAN", "ALOLAN", "HISUIAN", "PALDEAN"]):
         return True
-    if base in form and form != base:
+    if any(base == f"{form}_{suffix}" for suffix in ["GALARIAN", "ALOLAN", "HISUIAN", "PALDEAN"]):
+        return True
+    if base + "_" in form and form != base:
         return True
     return False
+
 
 def parse_mondata(filepath):
     monstats = {}
@@ -104,16 +147,50 @@ def parse_mondata(filepath):
 
     return monstats
 
+
 def parse_species(filepath):
     species = []
+    form_slots = defaultdict(list)  # Maps base species to all its forms in order
+    species_form_map = {}          # Maps (base_macro, form_index) -> display name
+
+    known_prefixes = {"MEGA"}
+    known_suffixes = {"ALOLAN", "GALARIAN", "HISUIAN", "PALDEAN", "X", "Y", "COMBAT",  "BLAZE", "AQUA", "POM", "PAU", "SENSU", "FROST", "WASH", "MOW", "HEAT", "SANDY", "TRASHY"}
+
     with open(filepath, "r") as f:
         for line in f:
-            match = re.match(r"#define\s+SPECIES_(\w+)\s+\d+", line)
+            match = re.match(r"#define\s+(SPECIES_[A-Z0-9_]+)\s+.*", line)
             if match:
-                name = match.group(1).upper()
+                macro = match.group(1)  # e.g., SPECIES_MEGA_SLOWBRO
+                name = macro[len("SPECIES_"):]  # e.g., MEGA_SLOWBRO
                 if name != "NONE":
-                    species.append(name)
-    return species
+                    species.append(macro)
+
+    for macro in species:
+        parts = macro[len("SPECIES_"):].split("_")
+
+        # Extract prefix and suffix
+        prefix = parts[0] if parts[0] in known_prefixes else None
+        suffix = parts[-1] if parts[-1] in known_suffixes else None
+
+        # Derive base name:
+        if prefix:
+            base_parts = parts[1:]  # Remove prefix
+        elif suffix:
+            base_parts = parts[:-1]  # Remove suffix
+        else:
+            base_parts = parts
+
+        base_key = "SPECIES_" + "_".join(base_parts)
+        form_slots[base_key].append((macro, parts))
+
+    # Assign form index
+    for base_key, forms in form_slots.items():
+        for index, (macro, _) in enumerate(forms):
+            species_form_map[(base_key, index)] = macro.replace("SPECIES_", "")
+
+
+    return species, species_form_map
+
 
 def parse_levelup_data(filepath):
     levelup_data = defaultdict(list)
@@ -142,13 +219,11 @@ def parse_levelup_data(filepath):
 
     return levelup_data
 
-def parse_encounter_data(filepath):
+
+def parse_encounter_data(filepath, species_form_map):
     species_locations = defaultdict(list)
-    current_location = None
     location_comment = ""
     current_section = None
-    time_of_day_labels = ["morning", "day", "night"]
-    section_counter = 0
 
     with open(filepath, "r") as f:
         for line in f:
@@ -157,22 +232,17 @@ def parse_encounter_data(filepath):
             if line.startswith("encounterdata"):
                 match = re.match(r"encounterdata\s+(\d+)\s*//\s*(.+)", line)
                 if match:
-                    current_location = match.group(1)
                     location_comment = match.group(2).strip()
-                    section_counter = 0
                     current_section = None
 
             elif line.startswith("//"):
                 lower_line = line.lower()
                 if "morning" in lower_line:
                     current_section = "Morning"
-                    section_counter = 0
                 elif "day" in lower_line:
                     current_section = "Day"
-                    section_counter = 0
                 elif "night" in lower_line:
                     current_section = "Night"
-                    section_counter = 0
                 elif "hoenn" in lower_line:
                     current_section = "Hoenn"
                 elif "sinnoh" in lower_line:
@@ -196,8 +266,37 @@ def parse_encounter_data(filepath):
                 elif "swarm super rod" in lower_line:
                     current_section = "Swarm Super Rod"
 
+            if line.startswith("encounterwithform"):
+                match = re.search(r"encounterwithform\s+(SPECIES_[A-Z0-9_]+),\s*(\d+),\s*\d+,\s*\d+", line)
+                if match:
+                    species, form_index = match.groups()
+                    parsed = species_form_map.get((species, int(form_index)))
+                    if parsed is None:
+                        print(f"wth {species} {form_index}")
+                        continue
+                    if current_section:
+                        desc = f"{location_comment} ({current_section})"
+                    else:
+                        desc = location_comment
+                    species_locations[parsed.upper()].append(desc)
+
+
+            elif line.startswith("monwithform"):
+                match = re.search(r"monwithform\s+(SPECIES_[A-Z0-9_]+),\s*(\d+)", line)
+                if match:
+                    species, form_index = match.groups()
+                    parsed = species_form_map.get((species, int(form_index)))
+                    if parsed is None:
+                        print(f"wth {species} {form_index}")
+                        continue
+                    if current_section:
+                        desc = f"{location_comment} ({current_section})"
+                    else:
+                        desc = location_comment
+                    species_locations[parsed.upper()].append(desc)
+
             elif line.startswith("pokemon") or line.startswith("encounter"):
-                match = re.search(r"SPECIES_(\w+)", line)
+                match = re.search(r"SPECIES_([A-Z0-9_]+)", line)
                 if match:
                     species = match.group(1).upper()
                     if current_section:
@@ -207,33 +306,38 @@ def parse_encounter_data(filepath):
                     species_locations[species].append(desc)
 
             elif line.startswith(".close"):
-                current_location = None
                 current_section = None
-                section_counter = 0
 
     return species_locations
+
 
 def generate_pokemon_pages(evodata_path, output_dir, mondata_path, species_path, sprite_root, levelup_path, encounter_path):
     os.makedirs(output_dir, exist_ok=True)
 
-    evolution_data = parse_evodata(evodata_path)
+    species_arr, species_form_map = parse_species(species_path)
+
+    # evolution_data = parse_evodata(evodata_path)
+    fwd, rev = parse_evodata(evodata_path, species_form_map)
 
     monstats = parse_mondata(mondata_path)
-    species_list = set(parse_species(species_path))
-    species_list.update(evolution_data.keys())
+    species_list = set(species_arr)
+    species_list.update(fwd.keys())
     species_list.update(monstats.keys())
     levelup_moves = parse_levelup_data(levelup_path)
-    encounter_locations = parse_encounter_data(encounter_path)
+    encounter_locations = parse_encounter_data(encounter_path, species_form_map)
+    sprite_out = "sprites/"
+    os.makedirs(f"{output_dir}/{sprite_out}", exist_ok=True)
 
     for species in sorted(species_list):
-        evolutions = evolution_data.get(species, [])
+        evolutions = fwd.get(species, [])
+        pre_evolutions = rev.get(species, [])
         stats = monstats.get(species, {})
         sprite_path = os.path.join(sprite_root, species.lower(), "male", "front.png")
         img_tag = ""
         if os.path.exists(sprite_path):
-            sprite_dst = os.path.join(output_dir, f"{species}.png")
+            sprite_dst = os.path.join(f"{output_dir}/{sprite_out}", f"{species}.png")
             shutil.copy(sprite_path, sprite_dst)
-            img_tag = f"<div class='sprite-frame'><img src='{species}.png' alt='{species}' class='sprite crop'/></div>"
+            img_tag = f"<div class='sprite-frame'><img src='{sprite_out}/{species}.png' alt='{species}' class='sprite crop'/></div>"
         else:
             img_tag = "<p><em>No image available</em></p>"
 
@@ -305,8 +409,33 @@ def generate_pokemon_pages(evodata_path, output_dir, mondata_path, species_path,
             {stats_html}
         """.format(species=species, img_tag=img_tag, types_html=types_html, abilities_html=abilities_html, stats_html=stats_html))
 
+            if pre_evolutions:
+                f.write("    <h3 class='center'>Evolves From</h3>\n    <ul class='center'>\n")
+                for evo in pre_evolutions:
+                    method_desc = method_map.get(evo["method"], evo["method"])
+                    param = evo["parameter"]
+
+                    # Clean up parameter
+                    if param.startswith("ITEM_"):
+                        param_readable = param.replace("ITEM_", "").replace("_", " ").title()
+                    elif param.startswith("MOVE_"):
+                        param_readable = param.replace("MOVE_", "").replace("_", " ").title()
+                    elif param.startswith("ABILITY_"):
+                        param_readable = param.replace("ABILITY_", "").replace("_", " ").title()
+                    elif param.upper() == "NONE":
+                        param_readable = ""
+                    else:
+                        param_readable = param
+
+                    evo_line = f"      <li>Evolves from <a href='{evo['evolves_from']}.html'>{evo['evolves_from']}</a> via {method_desc}"
+                    if param_readable:
+                        evo_line += f" <strong>{param_readable}</strong>"
+                    evo_line += "</li>\n"
+                    f.write(evo_line)
+                f.write("    </ul>\n")
+
             if evolutions:
-                f.write("    <h3 class='center'>Evolution</h3>\n    <ul class='center'>\n")
+                f.write("    <h3 class='center'>Evolves To</h3>\n    <ul class='center'>\n")
                 for evo in evolutions:
                     method_desc = method_map.get(evo["method"], evo["method"])
                     param = evo["parameter"]
@@ -373,7 +502,7 @@ generate_pokemon_pages(
 )
 
 def generate_index(species_path, output_path="../../wiki/pokedex/index.html"):
-    species = parse_species(species_path)
+    species, _ = parse_species(species_path)
 
     with open(output_path, "w") as f:
         f.write("<!DOCTYPE html>\n<html lang='en'>\n<head>\n")
@@ -394,13 +523,14 @@ def generate_index(species_path, output_path="../../wiki/pokedex/index.html"):
   </script>
         """)
         f.write("</head>\n<body>\n")
-        f.write("  <h1 class='center''>Mirror Gold Pokédex</h1>\n")
+        f.write("  <h1 class='center'>Mirror Gold Pokédex</h1>\n")
         f.write("  <h3 class='center'><a href='../index.html'>Back to Wiki Index</a></h3>\n")
         f.write("  <div class='center'><input type='text' id='searchBox' class='center' placeholder='Search Pokémon...' onkeyup='filterPokemon()' /></div>\n")
         f.write("  <ul id='pokemonList' class='center'>\n")
 
         for name in species:
-            f.write(f"    <li><a href='./{name}.html'>{name}</a></li>\n")
+            n = name.replace("SPECIES_", "")
+            f.write(f"    <li><a href='./{n}.html'>{n}</a></li>\n")
 
         f.write("  </ul>\n</body>\n</html>\n")
 

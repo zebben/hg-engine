@@ -305,7 +305,7 @@ def parse_species(filepath):
 
     with open(filepath, "r") as f:
         for line in f:
-            match = re.match(r"#define\s+(SPECIES_[A-Z_]+)\s+\d+", line)
+            match = re.match(r"#define\s+(SPECIES_[A-Z0-9_]+)\s+\d+", line)
             if match:
                 name = match.group(1)
                 if name not in excluded:

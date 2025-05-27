@@ -6051,7 +6051,7 @@ mondata SPECIES_SLAKOTH, "Slakoth"
     genderratio 127
     eggcycles 3
     basefriendship 70
-    growthrate GROWTH_SLOW
+    growthrate GROWTH_FAST
     egggroups EGG_GROUP_FIELD, EGG_GROUP_FIELD
     abilities ABILITY_TRUANT, ABILITY_NONE
     runchance 0
