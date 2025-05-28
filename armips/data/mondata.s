@@ -5454,7 +5454,7 @@ mondata SPECIES_MUDKIP, "Mudkip"
 
 
 mondata SPECIES_MARSHTOMP, "Marshtomp"
-    basestats 70, 85, 70, 50, 60, 70
+    basestats 80, 80, 70, 45, 60, 70
     types TYPE_WATER, TYPE_GROUND
     catchrate 45
     baseexp 0 // defined in baseexp.s
@@ -7491,7 +7491,7 @@ mondata SPECIES_DUSKULL, "Duskull"
 
 
 mondata SPECIES_DUSCLOPS, "Dusclops"
-    basestats 40, 70, 130, 25, 60, 130
+    basestats 55, 70, 125, 25, 60, 125
     types TYPE_GHOST, TYPE_GHOST
     catchrate 90
     baseexp 0 // defined in baseexp.s
