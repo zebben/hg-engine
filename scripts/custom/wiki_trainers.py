@@ -4,8 +4,8 @@ from html import escape
 from collections import defaultdict, deque
 
 TRAINER_INPUT = "../../armips/data/trainers/trainers.s"
-TRAINER_OUTPUT_DIR = "../../wiki/trainers"
-TRAINER_INDEX_PATH = "../../wiki/trainers/index.html"
+TRAINER_OUTPUT_DIR = "../../docs/trainers"
+TRAINER_INDEX_PATH = "../../docs/trainers/index.html"
 POKEMON_SPRITE_PATH = "../pokedex/sprites"
 SPECIES_PATH = "../../include/constants/species.h"
 FORM_TABLE_PATH = "../../data/FormToSpeciesMapping.c"

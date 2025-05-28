@@ -342,7 +342,7 @@ def generate_pokemon_pages(evodata_path, output_dir, mondata_path, species_path,
     sorted_species_list = sorted(s.removeprefix("SPECIES_") for s in set(species_list))
     levelup_moves = parse_levelup_data(levelup_path)
     encounter_locations = parse_encounter_data(encounter_path, species_form_map)
-    sprite_out = "sprites/"
+    sprite_out = "sprites"
     os.makedirs(f"{output_dir}/{sprite_out}", exist_ok=True)
 
     for species in sorted_species_list:
@@ -512,7 +512,7 @@ def generate_pokemon_pages(evodata_path, output_dir, mondata_path, species_path,
 
 generate_pokemon_pages(
     evodata_path="../../armips/data/evodata.s",
-    output_dir="../../wiki/pokedex",
+    output_dir="../../docs/pokedex",
     mondata_path="../../armips/data/mondata.s",
     species_path="../../include/constants/species.h",
     form_table_path="../../data/FormToSpeciesMapping.c",
@@ -521,7 +521,7 @@ generate_pokemon_pages(
     encounter_path="../../armips/data/encounters.s"
 )
 
-def generate_index(species_path, output_path="../../wiki/pokedex/index.html"):
+def generate_index(species_path, output_path="../../docs/pokedex/index.html"):
     species = parse_species_header(species_path)
 
     with open(output_path, "w") as f:
