@@ -145,7 +145,6 @@ encounter_map = {
     141: "DEX_CERULEAN_CAVE"
 }
 
-
 def add_mon_encounter(mon_encounters, mon, route_or_city, encounter_type, encounter_name):
     mon_entry = {
         "specialareas": {
@@ -235,7 +234,6 @@ def parse_encounters(file_path):
 
         if in_encounterdata:
             if stripped == ".close":
-                mon = ""
                 in_encounterdata = False
                 continue
 
@@ -259,7 +257,7 @@ def parse_encounters(file_path):
                 encounter_line_index += 1
                 continue
             
-            # todo mimejr
+            # TODO mimejr is messed up
             route_or_city = re.match(r'^DEX_(ROUTE_\d+(?:_\d+)?|[A-Z_]+_(CITY|TOWN))$', encounter_name)
 
             if encounter_line_index < 12:
@@ -344,6 +342,7 @@ if __name__ == "__main__":
             for area_type, encounters in mon_entry.items():
                 for encounter_time, encounter_areas in encounters.items():
                     f.write(f"{area_type} {species}, DEX_{encounter_time}\n")
-                    for encounter_area in encounter_areas:
-                        f.write(f"    .word {encounter_area}\n")
+                    for encounter_area in sorted(encounter_areas):
+                        if encounter_area != 'DEX_UNKNOWN':
+                            f.write(f"    .word {encounter_area}\n")
                     f.write("    dexendareadata\n\n\n")
