@@ -180,7 +180,7 @@ def generate_trainer_pages(trainers, output_dir):
 
             for mon in trainer["party"]:
                 species = mon["species"].upper()
-                sprite_path = f"{POKEMON_SPRITE_PATH}/{species}.png"
+                sprite_path = f"{POKEMON_SPRITE_PATH}/{species.lower()}.png"
 
                 f.write(f"""    <div class="trainer-mon">
         <div class='sprite info-line'>

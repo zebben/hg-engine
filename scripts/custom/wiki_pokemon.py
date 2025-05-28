@@ -149,13 +149,16 @@ def parse_mondata(filepath):
 
 
 def parse_species_header(filepath):
-    species_order = []
+    species_list = []
     with open(filepath) as f:
         for line in f:
-            match = re.match(r'#define\s+(SPECIES_[A-Z][A-Z0-9_]+)\s+', line)
-            if match and match.group(1) != 'SPECIES_NONE':
-                species_order.append(match.group(1))
-    return species_order
+            match = re.match(r'#define\s+(SPECIES_[A-Z0-9_]+)\s+', line)
+            if match:
+                species = match.group(1)
+                if match.group(1) == 'SPECIES_NONE' or species.replace('SPECIES_', '').isdigit():
+                    continue
+                species_list.append(species)
+    return species_list
 
 
 def parse_form_mapping(filepath):
@@ -333,28 +336,27 @@ def generate_pokemon_pages(evodata_path, output_dir, mondata_path, species_path,
     form_species = parse_form_mapping(form_table_path)
     species_form_map = assign_form_indexes(species_list, form_species)
 
-    # evolution_data = parse_evodata(evodata_path)
     fwd, rev = parse_evodata(evodata_path, species_form_map)
 
     monstats = parse_mondata(mondata_path)
-    species_list = set(species_list)
-    species_list.update(fwd.keys())
-    species_list.update(monstats.keys())
+    sorted_species_list = sorted(s.removeprefix("SPECIES_") for s in set(species_list))
     levelup_moves = parse_levelup_data(levelup_path)
     encounter_locations = parse_encounter_data(encounter_path, species_form_map)
     sprite_out = "sprites/"
     os.makedirs(f"{output_dir}/{sprite_out}", exist_ok=True)
 
-    for species in sorted(species_list):
+    for species in sorted_species_list:
+        if species.isdigit():
+            continue
         evolutions = fwd.get(species, [])
         pre_evolutions = rev.get(species, [])
         stats = monstats.get(species, {})
         sprite_path = os.path.join(sprite_root, species.lower(), "male", "front.png")
         img_tag = ""
         if os.path.exists(sprite_path):
-            sprite_dst = os.path.join(f"{output_dir}/{sprite_out}", f"{species}.png")
+            sprite_dst = os.path.join(f"{output_dir}/{sprite_out}", f"{species.lower()}.png")
             shutil.copy(sprite_path, sprite_dst)
-            img_tag = f"<div class='sprite-frame'><img src='{sprite_out}/{species}.png' alt='{species}' class='sprite crop'/></div>"
+            img_tag = f"<div class='sprite-frame'><img src='{sprite_out}/{species.lower()}.png' alt='{species.lower()}' class='sprite crop'/></div>"
         else:
             img_tag = "<p><em>No image available</em></p>"
 
@@ -397,7 +399,7 @@ def generate_pokemon_pages(evodata_path, output_dir, mondata_path, species_path,
             if is_form_of(species, other)
         ]
 
-        html_path = os.path.join(output_dir, f"{species}.html")
+        html_path = os.path.join(output_dir, f"{species.lower()}.html")
         with open(html_path, "w") as f:
             f.write("""<!DOCTYPE html>
         <html lang='en'>
@@ -444,7 +446,7 @@ def generate_pokemon_pages(evodata_path, output_dir, mondata_path, species_path,
                     else:
                         param_readable = param
 
-                    evo_line = f"      <li>Evolves from <a href='{evo['evolves_from']}.html'>{evo['evolves_from']}</a> via {method_desc}"
+                    evo_line = f"      <li>Evolves from <a href='{evo['evolves_from'].lower()}.html'>{evo['evolves_from']}</a> via {method_desc}"
                     if param_readable:
                         evo_line += f" <strong>{param_readable}</strong>"
                     evo_line += "</li>\n"
@@ -469,7 +471,7 @@ def generate_pokemon_pages(evodata_path, output_dir, mondata_path, species_path,
                     else:
                         param_readable = param
 
-                    evo_line = f"      <li>Evolves into <a href='{evo['evolves_to']}.html'>{evo['evolves_to']}</a> via {method_desc}"
+                    evo_line = f"      <li>Evolves into <a href='{evo['evolves_to'].lower()}.html'>{evo['evolves_to']}</a> via {method_desc}"
                     if param_readable:
                         evo_line += f" <strong>{param_readable}</strong>"
                     evo_line += "</li>\n"
@@ -479,7 +481,7 @@ def generate_pokemon_pages(evodata_path, output_dir, mondata_path, species_path,
             if related_forms:
                 f.write("    <h3 class='center'>Other Forms</h3>\n    <ul class='center'>\n")
                 for form in sorted(related_forms):
-                    f.write(f"      <li><a href='{form}.html'>{form.replace('_', ' ').title()}</a></li>\n")
+                    f.write(f"      <li><a href='{form.lower()}.html'>{form.replace('_', ' ').title()}</a></li>\n")
                 f.write("    </ul>\n")
 
             moves = levelup_moves.get(species, [])
@@ -548,7 +550,7 @@ def generate_index(species_path, output_path="../../wiki/pokedex/index.html"):
 
         for name in species:
             n = name.replace("SPECIES_", "")
-            f.write(f"    <li><a href='./{n}.html'>{n}</a></li>\n")
+            f.write(f"    <li><a href='./{n.lower()}.html'>{n}</a></li>\n")
 
         f.write("  </ul>\n</body>\n</html>\n")
 
