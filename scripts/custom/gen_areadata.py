@@ -25,7 +25,7 @@ encounter_map = {
     21: "DEX_ROUTE_34",
     22: "DEX_ROUTE_35",
     23: "DEX_NATIONAL_PARK",
-    24: "DEX_NATIONAL_PARK",
+    24: "DEX_UNKNOWN", # DEX_NATIONAL_PARK
     25: "DEX_ROUTE_36",
     26: "DEX_ROUTE_37",
     27: "DEX_ECRUTEAK_CITY",
@@ -92,7 +92,7 @@ encounter_map = {
     88: "DEX_MT_SILVER",
     89: "DEX_MT_SILVER",
     90: "DEX_UNKNOWN",
-    91: "DEX_SAFARI_ZONE",
+    91: "DEX_UNKNOWN", # SAFARI ZONE
     92: "DEX_ROUTE_12",
     93: "DEX_ROUTE_19",
     94: "DEX_ROUTE_20",
@@ -137,7 +137,7 @@ encounter_map = {
     133: "DEX_DIGLETTS_CAVE",
     134: "DEX_VICTORY_ROAD",
     135: "DEX_VICTORY_ROAD",
-    136: "DEX_ROUTE_2",
+    136: "DEX_ROUTE_2_2",
     137: "DEX_VIRIDIAN_FOREST",
     138: "DEX_UNKNOWN",
     139: "DEX_CERULEAN_CAVE",
@@ -163,7 +163,7 @@ def add_mon_encounter(mon_encounters, mon, route_or_city, encounter_type, encoun
 
     if mon in mon_encounters:
         mon_entry = mon_encounters[mon]
-    
+
     is_water = encounter_type in [ "old_rod", "good_rod", "super_rod", "surf" ]
     is_special = not is_water and encounter_type not in [ "MORNING", "DAY", "NIGHT" ]
 
@@ -214,7 +214,7 @@ def parse_encounters(file_path):
 
         if "/*" in stripped:
             in_comment = True
-        
+
         if in_comment:
             if "*/" in stripped:
                 in_comment = False
@@ -248,15 +248,15 @@ def parse_encounters(file_path):
                 mon = stripped.split("encounterwithform")[1].strip()
             else:
                 print(f"[ERROR] parse mon on line: {stripped} in encounter {encounter_id}")
-            
+
             comma = mon.find(",")
             if comma > 0:
                 mon = mon[0:comma].strip()
-            
+
             if mon == "SPECIES_NONE":
                 encounter_line_index += 1
                 continue
-            
+
             # TODO mimejr is messed up
             route_or_city = re.match(r'^DEX_(ROUTE_\d+(?:_\d+)?|[A-Z_]+_(CITY|TOWN))$', encounter_name)
 
@@ -289,7 +289,7 @@ def parse_encounters(file_path):
             elif encounter_line_index < 66:
                 add_mon_encounter(mon_encounters, mon, route_or_city, "swarm_super_rod", encounter_name)
             else:
-                 print(f"[ERROR] expected index line: {stripped} in encounter {encounter_id}")
+                print(f"[ERROR] expected index line: {stripped} in encounter {encounter_id}")
 
             encounter_line_index += 1
             continue
@@ -338,11 +338,19 @@ if __name__ == "__main__":
 
             if species in parsed_encounters:
                 mon_entry = parsed_encounters[species]
-            
+
             for area_type, encounters in mon_entry.items():
                 for encounter_time, encounter_areas in encounters.items():
-                    f.write(f"{area_type} {species}, DEX_{encounter_time}\n")
-                    for encounter_area in sorted(encounter_areas):
-                        if encounter_area != 'DEX_UNKNOWN':
-                            f.write(f"    .word {encounter_area}\n")
-                    f.write("    dexendareadata\n\n\n")
+                    if encounter_time != "SPECIAL":
+                        f.write(f"{area_type} {species}, DEX_{encounter_time}\n")
+                        for encounter_area in sorted(encounter_areas):
+                            if encounter_area != 'DEX_UNKNOWN':
+                                f.write(f"    .word {encounter_area}\n")
+                        f.write("    dexendareadata\n\n\n")
+            for area_type, encounters in mon_entry.items():
+                encounter_areas = encounters.get("SPECIAL")
+                f.write(f"{area_type} {species}, DEX_SPECIAL\n")
+                for encounter_area in sorted(encounter_areas):
+                    if encounter_area != 'DEX_UNKNOWN':
+                        f.write(f"    .word {encounter_area}\n")
+                f.write("    dexendareadata\n\n\n")
