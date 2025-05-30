@@ -17,6 +17,10 @@ ifneq ($(shell git rev-parse --is-inside-work-tree 2>/dev/null), true)
 $(error Current directory is not a git repository. Please follow the instructions in the README: https://github.com/BluRosie/hg-engine)
 endif
 
+ifneq ($(shell pwd | grep -i 'onedrive'),)
+$(error "Do not put files into OneDrive.  Please clone the repository in a different folder." )
+endif
+
 ifneq ($(VALID_GAMECODE), 0)
 # invalid rom detected based on gamecode.  this primarily catches other-language roms
 $(error ROM Code read from $(ROMNAME) ($(GAMECODE)) does not match valid ROM Code ($(DESIRED_GAMECODE)).$(n)Please use a valid US HeartGold ROM.$(n)hg-engine does not work with non-USA ROM files)
