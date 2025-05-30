@@ -86,6 +86,11 @@ BOOL btl_scr_cmd_FC_trystickyweb(void *bw, struct BattleStruct *sp);
 BOOL btl_scr_cmd_FD_trymegaorultraburstduringpursuit(void *bw, struct BattleStruct *sp);
 BOOL btl_scr_cmd_FE_calcconfusiondamage(void *bw, struct BattleStruct *sp);
 BOOL btl_scr_cmd_FF_checkcanactivatedefiantorcompetitive(void *bsys, struct BattleStruct *ctx);
+BOOL btl_scr_cmd_100_jumptocurrententryhazard(void *bsys, struct BattleStruct *ctx);
+void BattleContext_AddEntryHazardToQueue(struct BattleStruct *ctx, u32 side, u32 hazard);
+BOOL btl_scr_cmd_101_addentryhazardtoqueue(void *bsys UNUSED, struct BattleStruct *ctx);
+void BattleContext_RemoveEntryHazardFromQueue(struct BattleStruct *ctx, u32 side, u32 hazard);
+BOOL btl_scr_cmd_102_removeentryhazardfromqueue(void *bsys UNUSED, struct BattleStruct *ctx);
 BOOL BtlCmd_GoToMoveScript(struct BattleSystem *bsys, struct BattleStruct *ctx);
 BOOL BtlCmd_WeatherHPRecovery(void *bw, struct BattleStruct *sp);
 BOOL BtlCmd_CalcWeatherBallParams(void *bw, struct BattleStruct *sp);
@@ -107,263 +112,266 @@ u32 LoadCaptureSuccessSPANumEmitters(u32 id);
 #ifdef DEBUG_BATTLE_SCRIPT_COMMANDS
 const u8 *BattleScrCmdNames[] =
 {
-    "startencounter",
-    "pokemonencounter",
-    "pokemonslidein",
-    "pokemonappear",
-    "returnpokemon",
-    "deletepokemon",
-    "starttrainerencounter",
-    "throwpokeball",
-    "preparetrainerslide",
-    "trainerslidein",
-    "backgroundslidein",
-    "hpgaugeslidein",
-    "hpgaugeslidewait",
-    "preparehpgaugeslide",
-    "waitmessage",
-    "damagecalc",
-    "damagecalc2",
-    "printattackmessage",
-    "printmessage",
-    "printmessage2",
-    "printpreparedmessage",
-    "preparemessage",
-    "printmessagepassbattler",
-    "playanimation",
-    "playanimation2",
-    "monflicker",
-    "datahpupdate",
-    "healthbarupdate",
-    "tryfaintmon",
-    "dofaintanimation",
-    "wait",
-    "playse",
-    "if",
-    "ifmonstat",
-    "fadeout",
-    "jumptosubseq",
-    "jumptocurmoveeffectscript",
-    "jumptoeffectscript",
-    "critcalc",
-    "shouldgetexp",
-    "initexpget",
-    "getexp",
-    "getexploop",
-    "showmonlist",
-    "waitformonselection",
-    "switchindataupdate",
-    "jumpifcantswitch",
-    "initcapture",
-    "capturemon",
-    "setmultihit",
-    "changevar",
-    "statbuffchange",
-    "changemondatabyvalue",
-    "clearstatus2",
-    "togglevanish",
-    "abilitycheck",
-    "random",
-    "changevar2",
-    "changemondatabyvar",
-    "goto",
-    "gotosubscript",
-    "gotosubscript2",
-    "setmovetomirrormove",
-    "sethaze",
-    "setsomeflag",
-    "clearsomeflag",
-    "setstatusicon",
-    "trainermessage",
-    "calcmoney",
-    "setstatus2effect",
-    "setstatus2effect2",
-    "setstatus2effect3",
-    "returnmessage",
-    "sentoutmessage",
-    "encountermessage",
-    "encountermessage2",
-    "trainermessage2",
-    "tryconversion",
-    "if2",
-    "ifmonstat2",
-    "dopayday",
-    "setlightscreen",
-    "setreflect",
-    "setmist",
-    "tryonehitko",
-    "damagediv",
-    "damagediv2",
-    "trymimic",
-    "metronome",
-    "trydisable",
-    "counter",
-    "mirrorcoat",
-    "tryencore",
-    "tryconversion2",
-    "trysketch",
-    "trysleeptalk",
-    "flaildamagecalc",
-    "tryspite",
-    "healbell",
-    "trythief",
-    "tryprotect",
-    "trysubstitute",
-    "trywhirlwind",
-    "transform",
-    "tryspikes",
-    "checkspikes",
-    "tryperishsong",
-    "orderbattlersbyspeed",
-    "jumpifvarisvalidbattler",
-    "weatherdamagecalc",
-    "rolloutdamagecalc",
-    "furycutterdamagecalc",
-    "tryattract",
-    "trysafeguard",
-    "trypresent",
-    "magnitudedamagecalc",
-    "tryswitchinmon",
-    "rapidspin",
-    "changehprecoverybasedonweather",
-    "hiddenpowerdamagecalc",
-    "psychup",
-    "tryfuturesight",
-    "checkhitrate",
-    "tryteleport",
-    "beatupdamagecalc",
-    "followme",
-    "tryhelpinghand",
-    "trytrick",
-    "trywish",
-    "tryassist",
-    "trysetmagiccoat",
-    "magiccoat",
-    "revengedamagecalc",
-    "trybreakscreens",
-    "tryyawn",
-    "tryknockoff",
-    "eruptiondamagecalc",
-    "tryimprison",
-    "trygrudge",
-    "trysnatch",
-    "lowkickdamagecalc",
-    "weatherballdamagecalc",
-    "trypursuit",
-    "typecheck",
-    "checkoneturnflag",
-    "setoneturnflag",
-    "gyroballdamagecalc",
-    "metalburstdamagecalc",
-    "paybackdamagecalc",
-    "trumpcarddamagecalc",
-    "wringoutdamagecalc",
-    "trymefirst",
-    "trycopycat",
-    "punishmentdamagecalc",
-    "trysuckerpunch",
-    "checksidecondition",
-    "tryfeint",
-    "trypsychoshift",
-    "trylastresort",
-    "trytoxicspikes",
-    "checktoxicspikes",
-    "moldbreakerabilitycheck",
-    "checkonsameteam",
-    "pickup",
-    "trickroom",
-    "checkmovefinished",
-    "checkitemeffect",
-    "getitemeffect",
-    "getitempower",
-    "trycamouflage",
-    "naturepower",
-    "dosecretpower",
-    "trynaturalgift",
-    "trypluck",
-    "tryfling",
-    "yesnobox",
-    "yesnowait",
-    "monlist",
-    "monlistwait",
-    "setbattleresult",
-    "checkstealthrock",
-    "checkeffectactivation",
-    "checkchatteractivation",
-    "getmoveparameter",
-    "mosaic",
-    "changeform",
-    "changebackground",
-    "recoverstatus",
-    "tryescape",
-    "initstartballgauge",
-    "deletestartballgauge",
-    "initballgauge",
-    "deleteballgauge",
-    "loadballgfx",
-    "deleteballgfx",
-    "incrementgamestat",
-    "cmd_C4",
-    "abilityeffectcheckonhit",
-    "cmd_C6",
-    "cmd_C7",
-    "checkwipeout",
-    "tryacupressure",
-    "removeitem",
-    "tryrecycle",
-    "itemeffectcheckonhit",
-    "battleresultmessage",
-    "runawaymessage",
-    "giveupmessage",
-    "checkshouldleavewith1hp",
-    "trynaturalcure",
-    "checksubstitute",
-    "checkcloudnine",
-    "cmd_D4",
-    "checkuturnitemeffect",
-    "swaptosubstitutesprite",
-    "playmovesoundeffect",
-    "playsong",
-    "checkifsafariencounterdone",
-    "waitwithoutbuttonpress",
-    "checkifcurrentmoveistype",
-    "getdatafrompersonalnarc",
-    "refreshmondata",
-    "cmd_DE",
-    "cmd_DF",
-    "endscript",
-    "reduceweight",
-    "heavyslamdamagecalc",
-    "isuserlowerlevel",
-    "settailwind",
-    "iftailwindactive",
-    "ifcurrentfieldistype",
-    "ifmovepowergreaterthanzero",
-    "ifgrounded",
-    "checkifcurrentadjustedmoveistype",
-    "ifcontactmove",
-    "ifsoundmove",
-    "updateterrainoverlay",
-    "ifterrainoverlayistype",
-    "setpsychicterrainmoveusedflag",
-    "iffirsthitofparentalbond",
-    "ifsecondhitofparentalbond",
-    "setparentalbondflag",
-    "ifcurrentmoveisvalidparentalbondmove",
-    "canapplyknockoffdamageboost",
-    "isparentalbondactive",
-    "changepermanentbg",
-    "changeexecutionorderpriority",
-    "setbindingcounter",
-    "clearbindcounter",
-    "canclearprimalweather",
-    "setabilityactivatedflag",
-    "switchinabilitycheck",
-    "trystickyweb",
-    "trymegaorultraburstduringpursuit",
-    "calcconfusiondamage",
-    "checkcanactivatedefiantorcompetitive",
-    // "your_custom_command",
+    "PlayEncounterAnimation",
+    "SetPokemonEncounter",
+    "PokemonSlideIn",
+    "PokemonSendOut",
+    "RecallPokemon",
+    "DeletePokemon",
+    "SetTrainerEncounter",
+    "ThrowPokeball",
+    "TrainerSlideOut",
+    "TrainerSlideIn",
+    "BackgroundSlideI",
+    "HealthbarSlideIn",
+    "HealthbarSlideInDelay",
+    "HealthbarSlideOut",
+    "Wait",
+    "CalcDamage",
+    "CalcMaxDamage",
+    "PrintAttackMessage",
+    "PrintMessage",
+    "PrintGlobalMessage",
+    "PrintBufferedMessage",
+    "BufferMessage",
+    "BufferLocalMessage",
+    "PlayMoveAnimation",
+    "PlayMoveAnimationOnMons",
+    "FlickerMon",
+    "UpdateHealthBarValue",
+    "UpdateHealthBar",
+    "TryFaintMon",
+    "PlayFaintAnimation",
+    "WaitButtonABTime",
+    "PlaySound",
+    "CompareVarToValue",
+    "CompareMonDataToValue",
+    "FadeOutBattle",
+    "GoToSubscript",
+    "GoToEffectScript",
+    "GoToMoveScript",
+    "CalcCrit",
+    "CalcExpGain",
+    "StartGetExpTask",
+    "WaitGetExpTask",
+    "Dummy2A",
+    "ShowParty",
+    "WaitMonSelection",
+    "SwitchAndUpdateMon",
+    "GoToIfAnySwitches",
+    "StartCatchMonTask",
+    "WaitCatchMonTask",
+    "SetMultiHit",
+    "UpdateVar",
+    "ChangeStatStage",
+    "UpdateMonData",
+    "ClearVolatileStatus",
+    "ToggleVanish",
+    "CheckAbility",
+    "Random",
+    "UpdateVarFromVar",
+    "UpdateMonDataFromVar",
+    "GoTo",
+    "Call",
+    "CallFromVar",
+    "SetMirrorMove",
+    "ResetAllStatChanges",
+    "LockMoveChoice",
+    "UnlockMoveChoice",
+    "SetHealthbarStatus",
+    "PrintTrainerMessage",
+    "PayPrizeMoney",
+    "PlayBattleAnimation",
+    "PlayBattleAnimationOnMons",
+    "PlayBattleAnimationFromVar",
+    "PrintRecallMessage",
+    "PrintSendOutMessage",
+    "PrintEncounterMessage",
+    "PrintFirstSendOutMessage",
+    "PrintBufferedTrainerMessage",
+    "TryConversion",
+    "CompareVarToVar",
+    "CompareMonDataToVar",
+    "AddPayDayMoney",
+    "TryLightScreen",
+    "TryReflect",
+    "TryMist",
+    "TryOHKOMove",
+    "DivideVarByValue",
+    "DivideVarByVar",
+    "TryMimic",
+    "Metronome",
+    "TryDisable",
+    "Counter",
+    "MirrorCoat",
+    "TryEncore",
+    "TryConversion2",
+    "TrySketch",
+    "TrySleepTalk",
+    "CalcFlailPower",
+    "TrySpite",
+    "TryPartyStatusRefresh",
+    "TryStealItem",
+    "TryProtection",
+    "TrySubstitute",
+    "TryWhirlwind",
+    "Transform",
+    "TrySpikes",
+    "CheckSpikes",
+    "TryPerishSong",
+    "GetMonBySpeedOrder",
+    "GoToIfValidMon",
+    "EndOfTurnWeatherEffect",
+    "CalcRolloutPower",
+    "CalcFuryCutterPower",
+    "TryAttract",
+    "TrySafeguard",
+    "Present",
+    "CalcMagnitudePower",
+    "TryReplaceFaintedMon",
+    "RapidSpin",
+    "WeatherHPRecovery",
+    "CalcHiddenPowerParams",
+    "CopyStatStages",
+    "TryFutureSight",
+    "CheckMoveHit",
+    "TryTeleport",
+    "BeatUp",
+    "FollowMe",
+    "TryHelpingHand",
+    "TrySwapItems",
+    "TryWish",
+    "TryAssist",
+    "TrySetMagicCoat",
+    "MagicCoat",
+    "CalcRevengePowerMul",
+    "TryBreakScreens",
+    "TryYawn",
+    "TryKnockOff",
+    "CalcHPFalloffPower",
+    "TryImprison",
+    "TryGrudge",
+    "TrySnatch",
+    "CalcWeightBasedPower",
+    "CalcWeatherBallParams",
+    "TryPursuit",
+    "ApplyTypeEffectiveness",
+    "IfTurnFlag",
+    "SetTurnFlag",
+    "CalcGyroBallPower",
+    "TryMetalBurst",
+    "CalcPaybackPower",
+    "CalcTrumpCardPower",
+    "CalcWringOutPower",
+    "TryMeFirst",
+    "TryCopycat",
+    "CalcPunishmentPower",
+    "TrySuckerPunch",
+    "CheckSideCondition",
+    "TryFeint",
+    "CheckCanShareStatus",
+    "TryLastResort",
+    "TryToxicSpikes",
+    "CheckToxicSpikes",
+    "CheckIgnorableAbility",
+    "IfSameSide",
+    "GenerateEndOfBattleItem",
+    "TrickRoom",
+    "IfMovedThisTurn",
+    "CheckItemHoldEffect",
+    "GetItemHoldEffect",
+    "GetItemEffectParam",
+    "TryCamouflage",
+    "GetTerrainMove",
+    "GetTerrainSecondaryEffect",
+    "CalcNaturalGiftParams",
+    "TryPluck",
+    "TryFling",
+    "YesNoMenu",
+    "WaitYesNoResult",
+    "ChoosePokemonMenu",
+    "WaitPokemonMenuResult",
+    "SetLinkBattleResult",
+    "CheckStealthRock",
+    "CheckEffectActivation",
+    "CheckChatterActivation",
+    "GetCurrentMoveData",
+    "SetMosaic",
+    "ChangeForm",
+    "SetBattleBackground",
+    "UseBagItem",
+    "TryEscape",
+    "ShowBattleStartPartyGauge",
+    "HideBattleStartPartyGauge",
+    "ShowPartyGauge",
+    "HidePartyGauge",
+    "LoadPartyGaugeGraphics",
+    "FreePartyGaugeGraphics",
+    "IncrementGameStat",
+    "RestoreSprite",
+    "TriggerAbilityOnHit",
+    "SpriteToOAM",
+    "OAMToSprite",
+    "CheckBlackOut",
+    "BoostRandomStatBy2",
+    "RemoveItem",
+    "TryRecycle",
+    "TriggerHeldItemOnHit",
+    "PrintBattleResultMessage",
+    "PrintEscapeMessage",
+    "PrintForfeitMessage",
+    "CheckHoldOnWith1HP",
+    "TryRestoreStatusOnSwitch",
+    "CheckSubstitute",
+    "CheckIgnoreWeather",
+    "SetRandomTarget",
+    "TriggerHeldItemOnPivotMove",
+    "RefreshSprite",
+    "PlayMoveHitSound",
+    "PlayBGM",
+    "CheckSafariGameDone",
+    "WaitTime",
+    "CheckCurMoveIsType",
+    "LoadArchivedMonData",
+    "RefreshMonData",
+    "COMMAND_DE",
+    "COMMAND_DF",
+    "End",
+    "ReduceWeight",
+    "CalcHeavySlamPower",
+    "IsAttackerLevelLowerThanDefender",
+    "SetTailwindCounter",
+    "GotoIfTailwindActive",
+    "GotoIfCurrentFieldIsType",
+    "GotoIfMovePowerNotZero",
+    "GotoIfGrounded",
+    "GotoIfCurrentAdjustedMoveIsType",
+    "GotoIfContactMove",
+    "GotoIfSoundMove",
+    "UpdateTerrainOverlay",
+    "GotoIfTerrainOverlayIsType",
+    "SetPsychicTerrainMoveUsedFlag",
+    "GotoIfFirstHitOfParentalBond",
+    "GotoIfSecondHitOfParentalBond",
+    "SetParentalBondFlag",
+    "GotoIfCurrentMoveIsValidForParentalBond",
+    "GotoIfCanApplyKnockOffBoost",
+    "GotoIfParentalBondIsActive",
+    "ChangePermanentBackground",
+    "ChangeExecutionOrderPriority",
+    "SetBindingTurns",
+    "ClearBindingTurns",
+    "CanClearPrimalWeather",
+    "SetAbilityActivatedFlag",
+    "SwitchInAbilityCheck",
+    "TryStickyWeb",
+    "TryMegaOrUltraBurstDuringPursuit",
+    "CalcConfusionDamage",
+    "CheckCanActivateDefiantOrCompetitive",
+    "JumpToCurrentEntryHazard",
+    "AddEntryHazardToQueue",
+    "RemoveEntryHazardFromQueue",
+    // "YourCustomCommand",
 };
 
 u32 cmdAddress = 0;
@@ -404,6 +412,9 @@ const btl_scr_cmd_func NewBattleScriptCmdTable[] =
     [0xFD - START_OF_NEW_BTL_SCR_CMDS] = btl_scr_cmd_FD_trymegaorultraburstduringpursuit,
     [0xFE - START_OF_NEW_BTL_SCR_CMDS] = btl_scr_cmd_FE_calcconfusiondamage,
     [0xFF - START_OF_NEW_BTL_SCR_CMDS] = btl_scr_cmd_FF_checkcanactivatedefiantorcompetitive,
+    [0x100 - START_OF_NEW_BTL_SCR_CMDS] = btl_scr_cmd_100_jumptocurrententryhazard,
+    [0x101 - START_OF_NEW_BTL_SCR_CMDS] = btl_scr_cmd_101_addentryhazardtoqueue,
+    [0x102 - START_OF_NEW_BTL_SCR_CMDS] = btl_scr_cmd_102_removeentryhazardfromqueue,
     // [BASE_ENGINE_BTL_SCR_CMDS_MAX - START_OF_NEW_BTL_SCR_CMDS + 1] = btl_scr_cmd_custom_01_your_custom_command,
 };
 
@@ -626,12 +637,17 @@ BOOL BattleScriptCommandHandler(void *bw, struct BattleStruct *sp)
         if (cmdAddress != (u32)&sp->SkillSeqWork[sp->skill_seq_no])
         {
             cmdAddress = (u32)&sp->SkillSeqWork[sp->skill_seq_no];
-            debug_printf("[BattleScriptCommandHandler] %s - 0x%02X\n", BattleScrCmdNames[command], command);
+            debug_printf("[BattleScriptCommandHandler] %s - 0x%02X", BattleScrCmdNames[command], command);
             if (command == 0xE0 || command == 0x24)
             {
                 debug_printf("\n");
                 cmdAddress = 0;
             }
+            else if (command == 35) // GoToSubscript
+            {
+                debug_printf(" %d\n", sp->SkillSeqWork[sp->skill_seq_no+1]);
+            }
+            debug_printf("\n");
         }
 #endif //DEBUG_BATTLE_SCRIPT_COMMANDS
 
@@ -679,6 +695,9 @@ void LONG_CALL LoadBattleSubSeqScript(struct BattleStruct *sp, int kind, int ind
     sp->skill_arc_index = index;
     sp->skill_seq_no = 0;
     ArchiveDataLoad(&sp->SkillSeqWork, kind, index);
+#ifdef DEBUG_BATTLE_SCRIPT_COMMANDS
+    debug_printf("\n=================\nLoading %sscript index %d...\n\n", kind==ARC_BATTLE_SUB_SEQ?"sub":kind==ARC_BATTLE_MOVE_SEQ?"move ":"effect ", index);
+#endif
 }
 
 /**
@@ -698,6 +717,9 @@ void LONG_CALL PushAndLoadBattleScript(struct BattleStruct *sp, int kind, int in
     sp->skill_arc_index = index;
     sp->skill_seq_no = 0;
     ArchiveDataLoad(&sp->SkillSeqWork, kind, index);
+#ifdef DEBUG_BATTLE_SCRIPT_COMMANDS
+    debug_printf("\n=================\nLoading %sscript index %d...\n\n", kind==ARC_BATTLE_SUB_SEQ?"sub":kind==ARC_BATTLE_MOVE_SEQ?"move ":"effect ", index);
+#endif
 }
 
 /**
@@ -2032,6 +2054,7 @@ const u16 sLowKickWeightToPower[][2] =
 s32 LONG_CALL GetPokemonWeight(void *bw UNUSED, struct BattleStruct *sp, u32 client)
 {
     s32 weight;
+    u32 weightModifier = 1;
 
     weight = sp->battlemon[client].weight;
 
@@ -2041,10 +2064,14 @@ s32 LONG_CALL GetPokemonWeight(void *bw UNUSED, struct BattleStruct *sp, u32 cli
     }
     else if (GetBattlerAbility(sp, client) == ABILITY_LIGHT_METAL)
     {
-        weight /= 2;
+        weightModifier *= 2;
     }
 
-    return weight;
+    if (GetBattleMonItem(sp, client) == ITEM_FLOAT_STONE) {
+        weightModifier *= 2;
+    }
+
+    return weight / weightModifier;
 }
 
 /**
@@ -2481,8 +2508,6 @@ BOOL btl_scr_cmd_EC_updateterrainoverlay(void *bw UNUSED, struct BattleStruct *s
 
     u8 endTerrainFlag = read_battle_script_param(sp);
     int address = read_battle_script_param(sp);
-    int client_set_max;
-    int client_no;
     int item, itemPower;
 
     enum TerrainOverlayType oldTerrainOverlay = sp->terrainOverlay.type;
@@ -2523,17 +2548,6 @@ BOOL btl_scr_cmd_EC_updateterrainoverlay(void *bw UNUSED, struct BattleStruct *s
             }
         } else {
             sp->terrainOverlay.numberOfTurnsLeft = 0;
-        }
-    }
-
-    client_set_max = BattleWorkClientSetMaxGet(bw);
-
-    if (sp->terrainOverlay.type == ELECTRIC_TERRAIN) {
-        for (int i = 0; i < client_set_max; i++) {
-            client_no = sp->turnOrder[i];
-            if (IsClientGrounded(sp, client_no)) {
-                sp->battlemon[client_no].effect_of_moves &= ~(MOVE_EFFECT_YAWN_COUNTER);
-            }
         }
     }
 
@@ -2745,15 +2759,15 @@ BOOL btl_scr_cmd_F6_changeexecutionorderpriority(void *bw, struct BattleStruct *
 
     switch (forceExecutionOrder) {
         case EXECUTION_ORDER_AFTER_YOU:
-            sp->oneTurnFlag[client_no].force_execution_order_flag = EXECUTION_ORDER_AFTER_YOU;
+            sp->oneTurnFlag[client_no].forceExecutionOrderFlag = EXECUTION_ORDER_AFTER_YOU;
             break;
         case EXECUTION_ORDER_QUASH:
 
-            sp->oneTurnFlag[client_no].force_execution_order_flag = EXECUTION_ORDER_QUASH;
+            sp->oneTurnFlag[client_no].forceExecutionOrderFlag = EXECUTION_ORDER_QUASH;
             break;
         // user should not use this under normal circumstances
         case EXECUTION_ORDER_NORMAL:
-            sp->oneTurnFlag[client_no].force_execution_order_flag = EXECUTION_ORDER_NORMAL;
+            sp->oneTurnFlag[client_no].forceExecutionOrderFlag = EXECUTION_ORDER_NORMAL;
             break;
         default:
             // idk crash the game I guess
@@ -3079,6 +3093,165 @@ BOOL btl_scr_cmd_FF_checkcanactivatedefiantorcompetitive(void *bsys UNUSED, stru
     return FALSE;
 }
 
+#ifdef DEBUG_ENTRY_HAZARD_PRINTS
+
+const u8 *gHazardNames[] = {
+    [HAZARD_IDX_NONE] = "no hazard",
+    [HAZARD_IDX_SHARP_STEEL] = "sharp steel",
+    [HAZARD_IDX_SPIKES] = "spikes",
+    [HAZARD_IDX_TOXIC_SPIKES] = "toxic spikes",
+    [HAZARD_IDX_STEALTH_ROCK] = "stealth rock",
+    [HAZARD_IDX_STICKY_WEB] = "sticky web",
+};
+
+#endif
+
+/**
+ *  @brief script command to control the flow of the entry hazards script
+ *
+ *  @param bsys battle work structure
+ *  @param ctx global battle structure
+ *  @return FALSE
+ */
+BOOL btl_scr_cmd_100_jumptocurrententryhazard(void *bsys UNUSED, struct BattleStruct *ctx) {
+    IncrementBattleScriptPtr(ctx, 1);
+
+    s32 hazardAddresses[NUM_HAZARD_IDX];
+    u32 side = (1 & GrabClientFromBattleScriptParam(bsys, ctx, read_battle_script_param(ctx)));
+
+    hazardAddresses[HAZARD_IDX_SPIKES-1] = read_battle_script_param(ctx);
+    hazardAddresses[HAZARD_IDX_TOXIC_SPIKES-1] = read_battle_script_param(ctx);
+    hazardAddresses[HAZARD_IDX_STEALTH_ROCK-1] = read_battle_script_param(ctx);
+    hazardAddresses[HAZARD_IDX_STICKY_WEB-1] = read_battle_script_param(ctx);
+    hazardAddresses[HAZARD_IDX_SHARP_STEEL-1] = read_battle_script_param(ctx);
+
+    // queue system -- read from the current queue step and then jump to that offset
+    if (ctx->entryHazardQueue[side][ctx->hazardQueueTracker] != HAZARD_IDX_NONE)
+    {
+#ifdef DEBUG_ENTRY_HAZARD_PRINTS
+        debug_printf("[JumpToCurrentEntryHazard] Jumping to side %d queue pos %d hazard %d (%s)\n", side, ctx->hazardQueueTracker,
+            ctx->entryHazardQueue[side][ctx->hazardQueueTracker],
+            gHazardNames[ctx->entryHazardQueue[side][ctx->hazardQueueTracker]]);
+#endif
+        IncrementBattleScriptPtr(ctx, hazardAddresses[ctx->entryHazardQueue[side][ctx->hazardQueueTracker]-1]);
+        ctx->hazardQueueTracker++;
+    }
+    else // no more hazards to be processed
+    {
+        ctx->hazardQueueTracker = 0;
+    }
+
+    return FALSE;
+}
+
+void BattleContext_AddEntryHazardToQueue(struct BattleStruct *ctx, u32 side, u32 hazard)
+{
+    if (hazard != HAZARD_IDX_NONE) // idk man people might misuse the system or something
+    {
+        for (int i = 0; i < NUM_HAZARD_IDX; i++)
+        {
+            if (ctx->entryHazardQueue[side][i] == hazard)
+            {
+#ifdef DEBUG_ENTRY_HAZARD_PRINTS
+                debug_printf("[BattleContext_AddEntryHazardToQueue] Hazard %s already in side %d queue (slot %d).  Skipping.\n",
+                    gHazardNames[hazard], side, i);
+#endif
+                break;
+            }
+            if (ctx->entryHazardQueue[side][i] == HAZARD_IDX_NONE)
+            {
+#ifdef DEBUG_ENTRY_HAZARD_PRINTS
+                debug_printf("[BattleContext_AddEntryHazardToQueue] Adding hazard %s to side %d queue position %d.\n",
+                    gHazardNames[hazard], side, i);
+#endif
+                ctx->entryHazardQueue[side][i] = hazard;
+                break;
+            }
+        }
+    }
+}
+
+/**
+ *  @brief script command to add to the queue of the entry hazard system
+ *
+ *  @param bsys battle work structure
+ *  @param ctx global battle structure
+ *  @return FALSE
+ */
+BOOL btl_scr_cmd_101_addentryhazardtoqueue(void *bsys UNUSED, struct BattleStruct *ctx)
+{
+    IncrementBattleScriptPtr(ctx, 1);
+
+    u32 side = (1 & GrabClientFromBattleScriptParam(bsys, ctx, read_battle_script_param(ctx)));
+    u32 hazard = read_battle_script_param(ctx);
+    BattleContext_AddEntryHazardToQueue(ctx, side, hazard);
+
+    return FALSE;
+}
+
+/**
+ *  @brief script command to remove from the queue a specific hazard
+ *
+ *  @param ctx global battle structure
+ *  @param hazard HAZARD_IDX_* to remove
+ */
+void BattleContext_RemoveEntryHazardFromQueue(struct BattleStruct *ctx, u32 side, u32 hazard)
+{
+    int i = 0;
+    if (hazard != HAZARD_IDX_NONE) // idk man people might misuse the system or something
+    {
+        BOOL hasMetZero = FALSE;
+        for (i = 0; i < NUM_HAZARD_IDX; i++)
+        {
+            // remove the current element
+            if (hazard == ctx->entryHazardQueue[side][i])
+            {
+                ctx->entryHazardQueue[side][i] = HAZARD_IDX_NONE;
+                if (ctx->hazardQueueTracker) ctx->hazardQueueTracker--; // set everything back
+                break;
+            }
+        }
+        for (i = 0; i < (NUM_HAZARD_IDX-1); i++)
+        {
+            // if the current element is NONE, we want to move every subsequent element back one
+            if (HAZARD_IDX_NONE == ctx->entryHazardQueue[side][i] || hasMetZero)
+            {
+                u32 nextHazard = ctx->entryHazardQueue[side][i+1];
+                ctx->entryHazardQueue[side][i] = nextHazard;
+                hasMetZero = TRUE;
+            }
+        }
+    }
+#ifdef DEBUG_ENTRY_HAZARD_PRINTS
+    debug_printf("[BattleContext_RemoveEntryHazardFromQueue] Removed hazard %s from side %d queue.\nRemaining queue:\n",
+        gHazardNames[hazard],
+        side)
+    for (i = 0; i < NUM_HAZARD_IDX; i++)
+    {
+        if (ctx->entryHazardQueue[side][i] != HAZARD_IDX_NONE)
+            debug_printf("    [%d] = %s\n", i, gHazardNames[ctx->entryHazardQueue[side][i]]);
+    }
+#endif
+}
+
+/**
+ *  @brief script command to remove from the queue a specific hazard
+ *
+ *  @param bsys battle work structure
+ *  @param ctx global battle structure
+ *  @return FALSE
+ */
+BOOL btl_scr_cmd_102_removeentryhazardfromqueue(void *bsys UNUSED, struct BattleStruct *ctx)
+{
+    IncrementBattleScriptPtr(ctx, 1);
+
+    u32 side = (1 & GrabClientFromBattleScriptParam(bsys, ctx, read_battle_script_param(ctx)));
+    u32 hazard = read_battle_script_param(ctx);
+    BattleContext_RemoveEntryHazardFromQueue(ctx, side, hazard);
+
+    return FALSE;
+}
+
 /**
  *  @brief script command to calculate the amount of HP should a client recover by using Moonlight, Morning Sun, or Synthesis
  *
@@ -3301,15 +3474,18 @@ BOOL BtlCmd_SetMultiHit(struct BattleSystem *bsys, struct BattleStruct *ctx) {
         if (cnt == 0) {
             if (GetBattlerAbility(ctx, ctx->attack_client) == ABILITY_SKILL_LINK) {
                 cnt = 5;
+            } else if ((ctx->battlemon[ctx->attack_client].species == SPECIES_GRENINJA && ctx->battlemon[ctx->attack_client].form_no == 1)
+            && ctx->current_move_index == MOVE_WATER_SHURIKEN) {
+                cnt = 3;
             } else {
-                cnt = (BattleRand(bsys) % 100); // 0 - 99, 100 numbers
+                cnt = (BattleRand(bsys) % 100);  // 0 - 99, 100 numbers
                 if (cnt < 35) {
                     cnt = 2;
                 } else if (cnt < 70) {
                     cnt = 3;
                 } else if (cnt < 85) {
                     cnt = 4;
-                } else { // >= 85
+                } else {  // >= 85
                     cnt = 5;
                 }
 
@@ -3367,6 +3543,12 @@ BOOL BtlCmd_TrySubstitute(void *bw UNUSED, struct BattleStruct *sp)
 BOOL BtlCmd_RapidSpin(void *bw, struct BattleStruct *sp)
 {
     int side = IsClientEnemy(bw, sp->attack_client);
+
+    // clear all of these now since they will be cleared
+    for (int i = 0; i < NUM_HAZARD_IDX; i++)
+        sp->entryHazardQueue[0][i] = HAZARD_IDX_NONE;
+    for (int i = 0; i < NUM_HAZARD_IDX; i++)
+        sp->entryHazardQueue[1][i] = HAZARD_IDX_NONE;
 
     //Binding Moves
     if (sp->binding_turns[sp->attack_client] != 0) {
@@ -3522,7 +3704,7 @@ BOOL CanKnockOffApply(struct BattleSystem *bw, struct BattleStruct *sp)
  *
  *  @param bw battle work structure
  *  @param sp global battle structure
- *  @return the amount of shakes a ball undergoes.  or'd with 0x80 for critical captures
+ *  @return the amount of shakes a ball undergoes.  or'd with CRITICAL_CAPTURE_MASK for critical captures
  */
 u32 CalculateBallShakes(void *bw, struct BattleStruct *sp)
 {
@@ -3545,17 +3727,17 @@ u32 sSuccessfulCriticalCapture = 0;
  *  @brief reroute the capture shake task if a critical capture activates
  *
  *  @param expcalc exp calculator structure
- *  @param shakes number of shakes or'd with 0x80 for critical captures
+ *  @param shakes number of shakes or'd with CRITICAL_CAPTURE_MASK for critical captures
  *  @return amouont of actual shakes
  */
 u32 DealWithCriticalCaptureShakes(struct EXP_CALCULATOR *expcalc, u32 shakes)
 {
 #ifdef IMPLEMENT_CRITICAL_CAPTURE
-    sSuccessfulCriticalCapture = 0;
-    if (shakes & 0x80) // critical capture
+    sSuccessfulCriticalCapture = FALSE;
+    if (shakes & CRITICAL_CAPTURE_MASK) // critical capture
     {
-        expcalc->work[3] = shakes&0x7F;
-        if ((shakes&0x7F) == 1)
+        expcalc->work[3] = shakes & ~CRITICAL_CAPTURE_MASK;
+        if ((shakes & ~CRITICAL_CAPTURE_MASK) == 1)
         {
             expcalc->work[2] = 4; // successful capture
             sSuccessfulCriticalCapture = TRUE;
@@ -3563,10 +3745,9 @@ u32 DealWithCriticalCaptureShakes(struct EXP_CALCULATOR *expcalc, u32 shakes)
         else
         {
             expcalc->work[2] = 1;
-            // TODO: as of SV, this is now false.
             // https://xcancel.com/Sibuna_Switch/status/1605588207898218496#m
             // https://xcancel.com/Sibuna_Switch/status/1847665451809075315#m
-            expcalc->work[3] = 1; // a failed critical capture still shakes once
+            expcalc->work[3] = 0; // a failed critical capture no longer shakes once and just breaks free
         }
     }
     else

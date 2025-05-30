@@ -106,6 +106,7 @@ BOOL BattleController_CheckSemiInvulnerability(struct BattleSystem *bsys UNUSED,
 BOOL BattleController_CheckProtect(struct BattleSystem *bsys UNUSED, struct BattleStruct *ctx, int defender);
 BOOL BattleController_CheckPsychicTerrain(struct BattleSystem *bsys UNUSED, struct BattleStruct *ctx, int defender);
 BOOL BattleController_CheckTelekinesis(struct BattleSystem *bsys UNUSED, struct BattleStruct *ctx, int defender);
+BOOL BattleController_CheckAbilityFailures2(struct BattleSystem *bsys UNUSED, struct BattleStruct *ctx, int defender);
 BOOL CalcDamageAndSetMoveStatusFlags(struct BattleSystem *bsys, struct BattleStruct *ctx, int defender);
 BOOL BattleController_CheckTypeImmunity(struct BattleSystem *bsys, struct BattleStruct *ctx, int defender);
 BOOL BattleController_CheckLevitate(struct BattleSystem *bsys UNUSED, struct BattleStruct *ctx, int defender);
@@ -216,6 +217,14 @@ void __attribute__((section (".init"))) BattleController_BeforeMove(struct Battl
     }
 
     switch (ctx->wb_seq_no) {
+        // in order to get concrete data on how this overlay should unload, we introduce a brand new case that is only run at the start and flagged at the end
+        case BEFORE_MOVE_START_FLAG_UNLOAD: {
+#ifdef DEBUG_BEFORE_MOVE_LOGIC
+            debug_printf("In BEFORE_MOVE_START_FLAG_UNLOAD\n");
+#endif
+            ctx->wb_seq_no++;
+        }
+        FALLTHROUGH;
         case BEFORE_MOVE_START: {
 #ifdef DEBUG_BEFORE_MOVE_LOGIC
             debug_printf("In BEFORE_MOVE_START\n");
@@ -678,6 +687,8 @@ void __attribute__((section (".init"))) BattleController_BeforeMove(struct Battl
                 ctx->server_status_flag |= (No2Bit(attacker) << BATTLE_STATUS_SELFDESTRUCTED_SHIFT);
                 ctx->fainting_client = attacker;
                 ctx->battlemon[attacker].hp = 0;
+                // apparently need to do this now
+                CopyBattleMonToPartyMon(bsys, ctx, attacker);
             }
             ctx->wb_seq_no++;
             FALLTHROUGH;
@@ -801,14 +812,14 @@ void __attribute__((section (".init"))) BattleController_BeforeMove(struct Battl
             ctx->wb_seq_no++;
             FALLTHROUGH;
         }
-        // TODO: check correctness, handle Wonder Guard here, rewrite it ourselves
+        // TODO: check correctness, handle Wonder Guard here
+        // ov12_0224BC2C calls MoveCheckDamageNegatingAbilities, but we rewrote it ourselves
         case BEFORE_MOVE_STATE_ABILITY_FAILURES_2: {
 #ifdef DEBUG_BEFORE_MOVE_LOGIC
             debug_printf("In BEFORE_MOVE_STATE_ABILITY_FAILURES_2\n");
 #endif
-            if (!(ctx->waza_out_check_on_off & 0x10) && ctx->defence_client != 0xFF && ov12_0224BC2C(bsys, ctx) == TRUE) {
-                return;
-            }
+
+            LoopCheckFunctionForSpreadMove(bsys, ctx, BattleController_CheckAbilityFailures2);
             ctx->wb_seq_no++;
             FALLTHROUGH;
         }
@@ -1112,10 +1123,10 @@ void __attribute__((section (".init"))) BattleController_BeforeMove(struct Battl
                 ctx->oneTurnFlag[ctx->battlerIdTemp].parental_bond_is_active = TRUE;
             } else {
                 ctx->oneTurnFlag[ctx->battlerIdTemp].parental_bond_is_active = FALSE;
-                ctx->wb_seq_no = 0;
+                //ctx->wb_seq_no = BEFORE_MOVE_START_FLAG_UNLOAD;
             }
 
-            ctx->wb_seq_no = BEFORE_MOVE_START;
+            ctx->wb_seq_no = BEFORE_MOVE_START_FLAG_UNLOAD;
             break;
         }
     }
@@ -2224,6 +2235,23 @@ BOOL BattleController_CheckTelekinesis(struct BattleSystem *bsys UNUSED, struct 
     return FALSE;
 }
 
+BOOL BattleController_CheckAbilityFailures2(struct BattleSystem *bsys UNUSED, struct BattleStruct *ctx, int defender) {
+    if (!(ctx->waza_out_check_on_off & 0x10) && defender != 0xFF) {
+        int scriptNum = MoveCheckDamageNegatingAbilities(ctx, ctx->attack_client, defender);
+        if (scriptNum) {
+            ctx->oneTurnFlag[ctx->attack_client].parental_bond_flag = 0;
+            ctx->oneTurnFlag[ctx->attack_client].parental_bond_is_active = FALSE;
+            ctx->moveStatusFlagForSpreadMoves[defender] = MOVE_STATUS_FLAG_FAILED;
+            ctx->battlerIdTemp = defender;
+            LoadBattleSubSeqScript(ctx, ARC_BATTLE_SUB_SEQ, scriptNum);
+            ctx->next_server_seq_no = ctx->server_seq_no;
+            ctx->server_seq_no = CONTROLLER_COMMAND_RUN_SCRIPT;
+            return TRUE;
+        }
+    }
+    return FALSE;
+}
+
 BOOL CalcDamageAndSetMoveStatusFlags(struct BattleSystem *bsys, struct BattleStruct *ctx, int defender) {
     if ((ctx->moveTbl[ctx->current_move_index].target != RANGE_USER && ctx->moveTbl[ctx->current_move_index].target != RANGE_USER_SIDE && ctx->moveTbl[ctx->current_move_index].power != 0 && !(ctx->server_status_flag & BATTLE_STATUS_IGNORE_TYPE_IMMUNITY) /* && !(ctx->server_status_flag & BATTLE_STATUS_CHARGE_TURN) */) || ctx->current_move_index == MOVE_THUNDER_WAVE) {
         // TODO: Probably wrong?
@@ -2896,12 +2924,18 @@ BOOL BattleController_CheckAbilityFailures4_OtherAromaVeilSturdy(struct BattleSy
 }
 
 BOOL BattleController_CheckMoveAccuracy(struct BattleSystem *bsys, struct BattleStruct *ctx, int defender) {
-    if (!(ctx->waza_out_check_on_off & 0x20) && defender != BATTLER_NONE && BattleSystem_CheckMoveHit(bsys, ctx, ctx->attack_client, defender, ctx->current_move_index) == TRUE) {
-        return FALSE;
-    }
+    // https://www.smogon.com/forums/threads/sword-shield-battle-mechanics-research.3655528/page-58#post-8684263
+
+    // Check if the move will hit with certainty
     if (!(ctx->waza_out_check_on_off & 0x40) && defender != BATTLER_NONE && BattleSystem_CheckMoveEffect(bsys, ctx, ctx->attack_client, defender, ctx->current_move_index) == TRUE) {
         return FALSE;
     }
+
+    // Apply accuracy / evasion modifiers
+    if (!(ctx->waza_out_check_on_off & 0x20) && defender != BATTLER_NONE && BattleSystem_CheckMoveHit(bsys, ctx, ctx->attack_client, defender, ctx->current_move_index) == TRUE) {
+        return FALSE;
+    }
+
 
     // a multi-hit move is always single target
     if (ctx->loop_flag && (ctx->waza_status_flag & MOVE_STATUS_FLAG_MISS)) {
@@ -2982,12 +3016,12 @@ BOOL BattleController_CheckMoveFailures4_SingleTarget(struct BattleSystem *bsys 
     BOOL butItFailedFlag = FALSE;
     BOOL jungleHealingSelfSuccess = FALSE;
     BOOL jungleHealingAllySuccess = FALSE;
-    int clientPosition = 0;
-    int maxBattlers = BattleWorkClientSetMaxGet(bsys);
-    int attackerSpecies = ctx->battlemon[ctx->attack_client].species;
-    int defenderSpecies = ctx->battlemon[ctx->defence_client].species;
-    int attackerItem = ctx->battlemon[ctx->attack_client].item;
-    int defenderItem = ctx->battlemon[ctx->defence_client].item;
+    u32 clientPosition = 0;
+    u32 maxBattlers = BattleWorkClientSetMaxGet(bsys);
+    u32 attackerSpecies = ctx->battlemon[ctx->attack_client].species;
+    u32 defenderSpecies = ctx->battlemon[ctx->defence_client].species;
+    u32 attackerItem = ctx->battlemon[ctx->attack_client].item;
+    u32 defenderItem = ctx->battlemon[ctx->defence_client].item;
 
     BOOL flowerShieldSuccessCount = 0;
 
@@ -3232,25 +3266,25 @@ BOOL BattleController_CheckMoveFailures4_SingleTarget(struct BattleSystem *bsys 
             break;
         }
         case MOVE_SPIKES: {
-            if (ctx->scw[IsClientEnemy(bsys, ctx->attack_client)].spikesLayers >= 3) {
+            if (ctx->scw[IsClientEnemy(bsys, ctx->defence_client)].spikesLayers >= 3) {
                 butItFailedFlag = TRUE;
             }
             break;
         }
         case MOVE_STEALTH_ROCK: {
-            if (ctx->side_condition[IsClientEnemy(bsys, ctx->attack_client)] & SIDE_STATUS_STEALTH_ROCK) {
+            if (ctx->side_condition[IsClientEnemy(bsys, ctx->defence_client)] & SIDE_STATUS_STEALTH_ROCK) {
                 butItFailedFlag = TRUE;
             }
             break;
         }
         case MOVE_TOXIC_SPIKES: {
-            if (ctx->scw[IsClientEnemy(bsys, ctx->attack_client)].toxicSpikesLayers >= 2) {
+            if (ctx->scw[IsClientEnemy(bsys, ctx->defence_client)].toxicSpikesLayers >= 2) {
                 butItFailedFlag = TRUE;
             }
             break;
         }
         case MOVE_STICKY_WEB: {
-            if (ctx->side_condition[IsClientEnemy(bsys, ctx->attack_client)] & SIDE_STATUS_STICKY_WEB) {
+            if (ctx->side_condition[IsClientEnemy(bsys, ctx->defence_client)] & SIDE_STATUS_STICKY_WEB) {
                 butItFailedFlag = TRUE;
             }
             break;
@@ -3310,7 +3344,7 @@ BOOL BattleController_CheckMoveFailures4_SingleTarget(struct BattleSystem *bsys 
                 }
             }
             // If target has already performed action
-            if (ctx->executionIndex > clientPosition) {
+            if (ctx->executionIndex > (s32)clientPosition) {
                 butItFailedFlag = TRUE;
             }
             break;
@@ -3342,7 +3376,7 @@ BOOL BattleController_CheckMoveFailures4_SingleTarget(struct BattleSystem *bsys 
                 }
             }
             // If target has already performed action
-            if (ctx->executionIndex > clientPosition) {
+            if (ctx->executionIndex > (s32)clientPosition) {
                 butItFailedFlag = TRUE;
             }
 
