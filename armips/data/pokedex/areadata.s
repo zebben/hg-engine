@@ -16671,35 +16671,35 @@ routesandcities SPECIES_BONSLY, DEX_SPECIAL
     dexendareadata
 
 
-specialareas SPECIES_MIME_JR, DEX_MORNING
+specialareas SPECIES_MIMEJR, DEX_MORNING
     dexendareadata
 
 
-specialareas SPECIES_MIME_JR, DEX_DAY
+specialareas SPECIES_MIMEJR, DEX_DAY
     dexendareadata
 
 
-specialareas SPECIES_MIME_JR, DEX_NIGHT
+specialareas SPECIES_MIMEJR, DEX_NIGHT
     dexendareadata
 
 
-routesandcities SPECIES_MIME_JR, DEX_MORNING
+routesandcities SPECIES_MIMEJR, DEX_MORNING
     dexendareadata
 
 
-routesandcities SPECIES_MIME_JR, DEX_DAY
+routesandcities SPECIES_MIMEJR, DEX_DAY
     dexendareadata
 
 
-routesandcities SPECIES_MIME_JR, DEX_NIGHT
+routesandcities SPECIES_MIMEJR, DEX_NIGHT
     dexendareadata
 
 
-specialareas SPECIES_MIME_JR, DEX_SPECIAL
+specialareas SPECIES_MIMEJR, DEX_SPECIAL
     dexendareadata
 
 
-routesandcities SPECIES_MIME_JR, DEX_SPECIAL
+routesandcities SPECIES_MIMEJR, DEX_SPECIAL
     dexendareadata
 
 
