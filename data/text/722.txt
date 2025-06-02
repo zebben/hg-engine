@@ -73,8 +73,8 @@ Prevents the foe from\nfleeing.
 Prevents the Pokémon\nfrom falling asleep.
 Prevents its stats from\nbeing lowered.
 Boosts the power of\nphysical attacks.
-The Pokémon is protected\nagainst critical hits.
-Eliminates the effects of\nweather.
+Powers up\nslicing moves.
+Powers up\nRock-type moves.
 Raises evasion if the\nPokémon is confused.
 Raises Speed if hit by an\nElectric-type move.
 Raises Attack if the foe\nis of the same gender.
@@ -114,7 +114,7 @@ Temporarily halves\nAttack and Speed.
 Enables moves to hit\nGhost-type foes.
 The Pokémon draws in all\nWater-type moves.
 The Pokémon regains HP in\na hailstorm.
-Reduces damage from\nsupereffective attacks
+Raises Defense if hit\nby a Fire-type move.
 The Pokémon summons a\nhailstorm in battle.
 The Pokémon may gather\nHoney from somewhere.
 The Pokémon can check\nthe foe’s held item.
@@ -191,7 +191,7 @@ Changes the weather\nto nullify Fire-type moves.
 Changes the weather\nto nullify Water-type moves.
 Alters weather to\nremove Flying-type’s weaknesses.
 Boosts Defense when\nhit by an attack.
-Wimpily switches out if its\nHP becomes half or less.
+Prevents status problems.\nWeakens Ghost moves.
 Switches out if its HP\nbecomes half or less.
 Sharply ups Defense when\nhit by a Water-type move.
 Its attacks are critical hits\nwhen it is poisoned.
@@ -212,7 +212,7 @@ Defeating a foe\nlets it become Ash-Greninja.
 Changes with other Cells\nif HP becomes half or less.
 It can poison Steel- and\nPoison-type targets.
 It’s always drowsing, and\nattacks without waking.
-Makes foes unable to\nuse priority attacks.
+Ups Attack if hit\nby Fire moves. Prevents burns.
 Damages an attacker that\nlands the finishing hit.
 Repeats another Pokémon’s\ndance move immediately.
 Powers up ally\nPokémon’s special moves.
@@ -234,7 +234,7 @@ Reduces damage from\nsuper-effective attacks.
 Powers up moves that\nare super-effective.
 Boosts Attack when\nentering a battle.
 Boosts Defense when\nentering a battle.
-It changes type to that\nof the move it’s about to use.
+Nullifies the effects of\nall other Abilities.
 Retrieves the first thrown\nPoké Ball if it failed.
 Scatters Speed-lowering\ncotton fluff when hit.
 This Pokémon’s\nmoves cannot be redirected.
@@ -254,7 +254,7 @@ Powers up ally Pokémon’s\nSteel-type moves.
 Both Pokémon faint 3 turns\nafter taking a contact hit.
 Swaps Abilities with\ncontact-making Pokémon.
 Boosts Attack, but allows\nonly one move to be used.
-Nullifies the effects of\nall other Abilities.
+It changes type to that\nof the move it’s about to use.
 Protects the Pokémon and\nits allies from poisoning.
 Changes between Full Belly\nand Hangry Mode each turn.
 Enables the Pokémon to\nmove first occasionally.
@@ -268,13 +268,13 @@ Combines Unnerve\nand Chilling Neigh.
 Combines Unnerve\nand Grim Neigh.
 Contact with this Pokémon\nspreads this Ability.
 Turns the ground into\nGrassy Terrain if attacked.
-Ups Attack if hit\nby Fire moves. Prevents burns.
+Makes foes unable to\nuse priority attacks.
 Ups stats if a hit\nmakes its HP half or less.
-Prevents status problems.\nWeakens Ghost moves.
-Raises Defense if hit\nby a Fire-type move.
+Wimpily switches out if its\nHP becomes half or less.
+Reduces damage from\nsupereffective attacks.
 Raises Attack if hit\nby a wind-based move.
 Ups Attack if intimidated.\nStops forced switching.
-Powers up\nRock-type moves.
+Eliminates the effects of\nweather.
 Becomes charged if hit\nby a wind-based move.
 Becomes Hero Form upon\nswitching out.
 Enters the mouth of\nan ally Dondozo.
@@ -290,7 +290,7 @@ Makes the weather sunny.\nUps Attack in sun.
 Makes Electric Terrain.\nUps Sp. Atk on Electric Terrain.
 If foe raises a stat,\nboosts the stat itself.
 After eating a Berry,\nit’s eaten again next turn.
-Powers up\nslicing moves.
+The Pokémon is protected\nagainst critical hits.
 Ups Attack and Sp. Atk\nif allies were defeated.
 Copies an ally’s stat\nchanges when sent out.
 Scatters poison spikes\nif hit by physical moves.
