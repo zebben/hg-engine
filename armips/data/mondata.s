@@ -2010,7 +2010,7 @@ mondata SPECIES_GENGAR, "Gengar"
 
 
 mondata SPECIES_ONIX, "Onix"
-    basestats 35, 45, 160, 70, 30, 45
+    basestats 90, 45, 140, 30, 30, 65
     types TYPE_ROCK, TYPE_GROUND
     catchrate 45
     baseexp 0 // defined in baseexp.s
@@ -14736,7 +14736,7 @@ mondata SPECIES_CHESPIN, "Chespin"
 
 
 mondata SPECIES_QUILLADIN, "Quilladin"
-    basestats 61, 78, 95, 57, 56, 58
+    basestats 80, 65, 90, 50, 56, 65
     types TYPE_GRASS, TYPE_GRASS
     catchrate 45
     baseexp 0 // defined in baseexp.s

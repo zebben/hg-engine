@@ -48,6 +48,7 @@ u16 GetMonEvolutionInternal(struct Party *party, struct PartyPokemon *pokemon, u
     int method_local;
     u32 form = GetMonData(pokemon, MON_DATA_FORM, NULL);
     u32 lowkey = 0;
+    BOOL canItemEvolve = TRUE;
 
     species = GetMonData(pokemon, MON_DATA_SPECIES, NULL);
     heldItem = GetMonData(pokemon, MON_DATA_HELD_ITEM, NULL);
@@ -162,13 +163,23 @@ u16 GetMonEvolutionInternal(struct Party *party, struct PartyPokemon *pokemon, u
             case EVO_STONE_FEMALE:
                 break;
             case EVO_ITEM_DAY:
-                if (IsNighttime() == 0 && evoTable[i].param == heldItem) {
+                // restrict held item evolutions until level 25
+                // except up grade because it's not a final stage evo
+                if (level < 25 && heldItem != ITEM_UP_GRADE) {
+                    canItemEvolve = FALSE;
+                }
+                if (canItemEvolve && IsNighttime() == 0 && evoTable[i].param == heldItem) {
                     target = evoTable[i].target & 0x7FF;
                     *method_ret = EVO_ITEM_DAY;
                 }
                 break;
             case EVO_ITEM_NIGHT:
-                if (IsNighttime() == 1 && evoTable[i].param == heldItem) {
+                // restrict held item evolutions until level 25
+                // except up grade because it's not a final stage evo
+                if (level < 25 && heldItem != ITEM_UP_GRADE) {
+                    canItemEvolve = FALSE;
+                }
+                if (canItemEvolve && IsNighttime() == 1 && evoTable[i].param == heldItem) {
                     target = evoTable[i].target & 0x7FF;
                     *method_ret = EVO_ITEM_NIGHT;
                 }
@@ -389,23 +400,28 @@ u16 GetMonEvolutionInternal(struct Party *party, struct PartyPokemon *pokemon, u
         break;
     case EVOCTX_ITEM_CHECK:
     case EVOCTX_ITEM_USE:
+        // restrict stone evolutions until level 25
+        // except syrupy apple and up grade because these are not final stage
+        if (level < 25 && usedItem != ITEM_SYRUPY_APPLE) {
+            canItemEvolve = FALSE;
+        }
         for (i = 0; i < MAX_EVOS_PER_POKE; i++) {
-            if (evoTable[i].method == EVO_STONE && usedItem == evoTable[i].param) {
+            if (canItemEvolve && evoTable[i].method == EVO_STONE && usedItem == evoTable[i].param) {
                 target = evoTable[i].target & 0x7FF;
                 *method_ret = 0;
                 break;
             }
-            if (evoTable[i].method == EVO_STONE_MALE && GetMonData(pokemon, MON_DATA_GENDER, NULL) == POKEMON_GENDER_MALE && usedItem == evoTable[i].param) {
+            if (canItemEvolve && evoTable[i].method == EVO_STONE_MALE && GetMonData(pokemon, MON_DATA_GENDER, NULL) == POKEMON_GENDER_MALE && usedItem == evoTable[i].param) {
                 target = evoTable[i].target & 0x7FF;
                 *method_ret = 0;
                 break;
             }
-            if (evoTable[i].method == EVO_STONE_FEMALE && GetMonData(pokemon, MON_DATA_GENDER, NULL) == POKEMON_GENDER_FEMALE && usedItem == evoTable[i].param) {
+            if (canItemEvolve && evoTable[i].method == EVO_STONE_FEMALE && GetMonData(pokemon, MON_DATA_GENDER, NULL) == POKEMON_GENDER_FEMALE && usedItem == evoTable[i].param) {
                 target = evoTable[i].target & 0x7FF;
                 *method_ret = 0;
                 break;
             }
-            if (evoTable[i].method == EVO_TRADE_ITEM && heldItem == evoTable[i].param && usedItem == ITEM_LINKING_CORD) {
+            if (canItemEvolve && evoTable[i].method == EVO_TRADE_ITEM && heldItem == evoTable[i].param && usedItem == ITEM_LINKING_CORD) {
                 target = evoTable[i].target & 0x7FF;
                 *method_ret = 0;
                 break;
