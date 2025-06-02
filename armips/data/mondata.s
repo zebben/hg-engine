@@ -12028,7 +12028,7 @@ mondata SPECIES_UNFEZANT, "Unfezant"
 
 mondata SPECIES_BLITZLE, "Blitzle"
     basestats 45, 60, 32, 76, 50, 32
-    types TYPE_ELECTRIC, TYPE_ELECTRIC
+    types TYPE_ELECTRIC, TYPE_NORMAL
     catchrate 190
     baseexp 0 // defined in baseexp.s
     evyields 2, 2, 2, 2, 2, 2

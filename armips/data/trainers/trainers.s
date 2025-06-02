@@ -730,7 +730,7 @@ trainerdata 19, "Mickey"
 trainerdata 20, "Falkner"
     trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES | TRAINER_DATA_TYPE_ABILITY | TRAINER_DATA_TYPE_IV_EV_SET | TRAINER_DATA_TYPE_NATURE_SET | TRAINER_DATA_TYPE_SHINY_LOCK | TRAINER_DATA_TYPE_ADDITIONAL_FLAGS
     trainerclass TRAINERCLASS_LEADER_FALKNER
-    nummons 2
+    nummons 3
     item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
@@ -762,6 +762,24 @@ trainerdata 20, "Falkner"
         ivs 200
         abilityslot 0
         level 13
+        pokemon SPECIES_FLITTLE
+        item ITEM_NONE
+        move MOVE_PECK
+        move MOVE_DISARMING_VOICE
+        move MOVE_QUICK_ATTACK
+        move MOVE_GROWL
+        ability ABILITY_INSOMNIA
+        setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
+        nature NATURE_SERIOUS
+        shinylock 0
+        additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
+        ballseal 0
+
+        // mon 2
+        ivs 200
+        abilityslot 0
+        level 13
         pokemon SPECIES_MURKROW
         item ITEM_ORAN_BERRY
         move MOVE_PECK
@@ -775,12 +793,11 @@ trainerdata 20, "Falkner"
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
         ballseal 0
-    endparty
 
 trainerdata 21, "Bugsy"
     trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES | TRAINER_DATA_TYPE_ABILITY | TRAINER_DATA_TYPE_IV_EV_SET | TRAINER_DATA_TYPE_NATURE_SET | TRAINER_DATA_TYPE_SHINY_LOCK | TRAINER_DATA_TYPE_ADDITIONAL_FLAGS
     trainerclass TRAINERCLASS_LEADER_BUGSY
-    nummons 3
+    nummons 4
     item ITEM_SUPER_POTION
     item ITEM_NONE
     item ITEM_NONE
@@ -811,7 +828,7 @@ trainerdata 21, "Bugsy"
         // mon 1
         ivs 200
         abilityslot 32
-        level 15
+        level 14
         pokemon SPECIES_CHARJABUG
         item ITEM_NONE
         move MOVE_U_TURN
@@ -827,6 +844,24 @@ trainerdata 21, "Bugsy"
         ballseal 0
 
         // mon 2
+        ivs 200
+        abilityslot 32
+        level 14
+        pokemon SPECIES_LARVESTA
+        item ITEM_NONE
+        move MOVE_EMBER
+        move MOVE_MEGA_DRAIN
+        move MOVE_STRUGGLE_BUG
+        move MOVE_STRING_SHOT
+        ability ABILITY_FLAME_BODY
+        setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
+        nature NATURE_BOLD
+        shinylock 0
+        additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
+        ballseal 0
+
+        // mon 3
         ivs 200
         abilityslot 32
         level 16
@@ -1130,7 +1165,7 @@ trainerdata 29, "Rod"
 trainerdata 30, "Whitney"
     trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES | TRAINER_DATA_TYPE_ABILITY | TRAINER_DATA_TYPE_IV_EV_SET | TRAINER_DATA_TYPE_NATURE_SET | TRAINER_DATA_TYPE_SHINY_LOCK | TRAINER_DATA_TYPE_ADDITIONAL_FLAGS
     trainerclass TRAINERCLASS_LEADER_WHITNEY
-    nummons 3
+    nummons 4
     item ITEM_SUPER_POTION
     item ITEM_NONE
     item ITEM_NONE
@@ -1177,6 +1212,24 @@ trainerdata 30, "Whitney"
         ballseal 0
 
         // mon 2
+        ivs 255
+        abilityslot 32
+        level 20
+        pokemon SPECIES_BLITZLE
+        item ITEM_MAGNET
+        move MOVE_PURSUIT
+        move MOVE_QUICK_ATTACK
+        move MOVE_THUNDER_SHOCK
+        move MOVE_THUNDER_WAVE
+        ability ABILITY_LIGHTNING_ROD
+        setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
+        nature NATURE_SERIOUS
+        shinylock 0
+        additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
+        ballseal 0
+
+        // mon 3
         ivs 255
         abilityslot 32
         level 20

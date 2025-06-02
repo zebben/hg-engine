@@ -12453,6 +12453,7 @@ levelup SPECIES_BLITZLE
     learnset MOVE_CHARGE, 8
     learnset MOVE_SHOCK_WAVE, 11
     learnset MOVE_THUNDER_WAVE, 15
+    learnset MOVE_THUNDER_SHOCK, 18
     learnset MOVE_PURSUIT, 22
     learnset MOVE_SPARK, 25
     learnset MOVE_STOMP, 29
