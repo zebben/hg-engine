@@ -7,13 +7,13 @@ import shutil
 method_map = {
     "EVO_LEVEL": "level up to",
     "EVO_ITEM": "using",
-    "EVO_ITEM_DAY": "held item (day)",
-    "EVO_ITEM_NIGHT": "held item (night)",
+    "EVO_ITEM_DAY": "held item (day level 25+)",
+    "EVO_ITEM_NIGHT": "held item (day level 25+)",
     "EVO_HAPPINESS": "high friendship",
     "EVO_TRADE": "trade",
     "EVO_TRADE_ITEM": "trade while holding",
     "EVO_MOVE": "level up knowing",
-    "EVO_STONE": "stone",
+    "EVO_STONE": "stone (level 25+)",
     "EVO_NONE": "No evolution"
 }
 
