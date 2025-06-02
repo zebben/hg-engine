@@ -2315,7 +2315,7 @@ mondata SPECIES_KOFFING, "Koffing"
     basefriendship 50
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_AMORPHOUS, EGG_GROUP_AMORPHOUS
-    abilities ABILITY_LEVITATE, ABILITY_NEUTRALIZING_GAS
+    abilities ABILITY_LEVITATE, ABILITY_LEVITATE
     runchance 0
     colorflip BODY_COLOR_PURPLE, 0
     mondexentry SPECIES_KOFFING, "Its thin, filmy body is filled\nwith gases that cause constant\nsniffles, coughs and teary eyes."
