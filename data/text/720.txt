@@ -73,8 +73,8 @@ Arena Trap
 Vital Spirit
 White Smoke
 Pure Power
-Shell Armor
-Air Lock
+Sharpness
+Rocky Payload
 Tangled Feet
 Motor Drive
 Rivalry
@@ -114,7 +114,7 @@ Slow Start
 Scrappy
 Storm Drain
 Ice Body
-Solid Rock
+Well-Baked Body
 Snow Warning
 Honey Gather
 Frisk
@@ -191,7 +191,7 @@ Primordial Sea
 Desolate Land
 Delta Stream
 Stamina
-Wimp Out
+Purfying Salt
 EmergencyExit
 WaterCompaction
 Merciless
@@ -234,7 +234,7 @@ Prism Armor
 Neuroforce
 IntrepidSword
 Dauntless Shield
-Libero
+Neutralizing Gas
 Ball Fetch
 Cotton Down
 Propeller Tail
@@ -254,7 +254,7 @@ Steely Spirit
 Perish Body
 Wandering Spirit
 Gorilla Tactics
-Neutralizing Gas
+Libero
 Pastel Veil
 Hunger Switch
 Quick Draw
@@ -270,11 +270,11 @@ Lingering Aroma
 Seed Sower
 Thermal Exchange
 Anger Shell
-Purifying Salt
-Well-Baked Body
+Wimp Out
+Solid Rock
 Wind Rider
 Guard Dog
-Rocky Payload
+Air Lock
 Wind Power
 Zero to Hero
 Commander
@@ -290,7 +290,7 @@ Orichalcum Pulse
 Hadron Engine
 Opportunist
 Cud Chew
-Sharpness
+Shell Armor
 Supreme Overlord
 Costar
 Toxic Debris
