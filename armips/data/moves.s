@@ -3363,7 +3363,7 @@ movedata MOVE_SPARK, "Spark"
     pp 30
     effectchance 00
     target RANGE_SINGLE_TARGET
-    priority 0
+    priority 1
     flags FLAG_KEEP_HP_BAR | FLAG_KINGS_ROCK | FLAG_MIRROR_MOVE | FLAG_PROTECT | FLAG_CONTACT
     appeal 0x05
     contesttype CONTEST_COOL
