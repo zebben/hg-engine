@@ -22701,7 +22701,7 @@ trainerdata 485, "Archer"
 trainerdata 486, "Proton"
     trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES | TRAINER_DATA_TYPE_ABILITY | TRAINER_DATA_TYPE_IV_EV_SET | TRAINER_DATA_TYPE_NATURE_SET | TRAINER_DATA_TYPE_SHINY_LOCK | TRAINER_DATA_TYPE_ADDITIONAL_FLAGS
     trainerclass TRAINERCLASS_EXECUTIVE_PROTON
-    nummons 2
+    nummons 3
     item ITEM_POTION
     item ITEM_NONE
     item ITEM_NONE
@@ -22712,6 +22712,42 @@ trainerdata 486, "Proton"
 
     party 486
         // mon 0
+        ivs 200
+        abilityslot 0
+        level 13
+        pokemon SPECIES_SHROODLE
+        item ITEM_SITRUS_BERRY
+        move MOVE_POISON_GAS
+        move MOVE_FURY_SWIPES
+        move MOVE_SMOKESCREEN
+        move MOVE_FLATTER
+        ability ABILITY_PICKPOCKET
+        setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
+        nature NATURE_JOLLY
+        shinylock 0
+        additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
+        ballseal 0
+
+        // mon 1
+        ivs 200
+        abilityslot 0
+        level 14
+        pokemon SPECIES_IMPIDIMP
+        item ITEM_LEFTOVERS
+        move MOVE_ASSURANCE
+        move MOVE_SWAGGER
+        move MOVE_FAKE_OUT
+        move MOVE_TAUNT
+        ability ABILITY_PRANKSTER
+        setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
+        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
+        nature NATURE_ADAMANT
+        shinylock 0
+        additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
+        ballseal 0
+
+        // mon 2
         ivs 200
         abilityslot 0
         level 14
@@ -22725,24 +22761,6 @@ trainerdata 486, "Proton"
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
         setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_JOLLY
-        shinylock 0
-        additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
-        ballseal 0
-
-        // mon 1
-        ivs 200
-        abilityslot 0
-        level 15
-        pokemon SPECIES_IMPIDIMP
-        item ITEM_LEFTOVERS
-        move MOVE_ASSURANCE
-        move MOVE_SWAGGER
-        move MOVE_FAKE_OUT
-        move MOVE_TAUNT
-        ability ABILITY_PRANKSTER
-        setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
-        setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
-        nature NATURE_ADAMANT
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
         ballseal 0

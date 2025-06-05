@@ -9995,8 +9995,8 @@ levelup SPECIES_STUNKY
 
 
 levelup SPECIES_SKUNTANK
-    learnset MOVE_FLAMETHROWER, 0
-    learnset MOVE_FLAMETHROWER, 1
+    learnset MOVE_FLAME_WHEEL, 0
+    learnset MOVE_FLAME_WHEEL, 1
     learnset MOVE_POISON_GAS, 1
     learnset MOVE_SCRATCH, 1
     learnset MOVE_FEINT, 1
@@ -10004,15 +10004,14 @@ levelup SPECIES_SKUNTANK
     learnset MOVE_FOCUS_ENERGY, 1
     learnset MOVE_SCREECH, 1
     learnset MOVE_POISON_GAS, 3
-    learnset MOVE_FURY_SWIPES, 10
-    learnset MOVE_SMOKESCREEN, 13
-    learnset MOVE_FOCUS_ENERGY, 15
+    learnset MOVE_SMOKESCREEN, 8
     learnset MOVE_FEINT, 15
     learnset MOVE_SCREECH, 16
     learnset MOVE_BITE, 19
     learnset MOVE_VENOSHOCK, 21
     learnset MOVE_SLASH, 25
     learnset MOVE_TOXIC, 27
+    learnset MOVE_CRUNCH, 30
     learnset MOVE_MEMENTO, 33
     learnset MOVE_SUCKER_PUNCH, 34
     learnset MOVE_NIGHT_SLASH, 34
@@ -10020,6 +10019,8 @@ levelup SPECIES_SKUNTANK
     learnset MOVE_EXPLOSION, 49
     learnset MOVE_HIGH_HORSEPOWER, 52
     learnset MOVE_GUNK_SHOT, 55
+    learnset MOVE_BULK_UP, 58
+    learnset MOVE_SWORDS_DANCE, 60
     terminatelearnset
 
 
@@ -21643,7 +21644,8 @@ levelup SPECIES_SHROODLE
     learnset MOVE_SWITCHEROO, 11
     learnset MOVE_POISON_FANG, 14
     learnset MOVE_FLATTER, 18
-    learnset MOVE_SLASH, 21
+    learnset MOVE_POISON_GAS, 20
+    learnset MOVE_SLASH, 22
     learnset MOVE_U_TURN, 25
     learnset MOVE_POISON_JAB, 29
     learnset MOVE_TAUNT, 33
@@ -21653,16 +21655,23 @@ levelup SPECIES_SHROODLE
     terminatelearnset
 
 levelup SPECIES_GRAFAIAI
+    learnset MOVE_TOXIC, 1
     learnset MOVE_LEER, 1
     learnset MOVE_SCRATCH, 1
     learnset MOVE_FURY_SWIPES, 8
     learnset MOVE_SWITCHEROO, 11
     learnset MOVE_POISON_FANG, 14
     learnset MOVE_FLATTER, 18
-    learnset MOVE_SLASH, 21
+    learnset MOVE_POISON_GAS, 20
+    learnset MOVE_SLASH, 22
     learnset MOVE_U_TURN, 25
+    learnset MOVE_CRUSH_CLAW, 28
+    learnset MOVE_BRUTAL_SWING, 30
+    learnset MOVE_WILD_CHARGE, 31
     learnset MOVE_POISON_JAB, 33
+    learnset MOVE_SUCKER_PUNCH, 35
     learnset MOVE_TAUNT, 37
+    learnset MOVE_BLAZE_KICK, 39
     learnset MOVE_SUBSTITUTE, 40
     learnset MOVE_KNOCK_OFF, 45
     learnset MOVE_GUNK_SHOT, 51

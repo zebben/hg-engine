@@ -9424,7 +9424,7 @@ evodata SPECIES_TOUCANNON
 terminateevodata
 
 evodata SPECIES_YUNGOOS
-    evolution EVO_LEVEL_DAY, 20, SPECIES_GUMSHOOS
+    evolution EVO_LEVEL, 28, SPECIES_GUMSHOOS
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
