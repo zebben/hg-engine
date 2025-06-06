@@ -9417,7 +9417,7 @@ movedata MOVE_FAIRY_WIND, "Fairy Wind"
     appeal 0x00
     contesttype CONTEST_COOL
     terminatedata
-    movedescription MOVE_FAIRY_WIND, "The user attacks by\nstirring up a\nwind to strike the target.\nRestores HP by\nhalf the damage dealt."
+    movedescription MOVE_FAIRY_WIND, "The user attacks by\nstirring up a wind to\nstrike the target.\nRestores HP by\nhalf the damage dealt."
 
 movedata MOVE_MOONBLAST, "Moonblast"
     battleeffect MOVE_EFFECT_LOWER_SP_ATK_HIT
