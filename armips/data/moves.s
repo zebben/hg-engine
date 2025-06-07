@@ -77,9 +77,9 @@ movedata MOVE_DOUBLE_SLAP, "Double Slap"
 movedata MOVE_COMET_PUNCH, "Comet Punch"
     battleeffect MOVE_EFFECT_MULTI_HIT
     pss SPLIT_PHYSICAL
-    basepower 18
+    basepower 25
     type TYPE_NORMAL
-    accuracy 85
+    accuracy 100
     pp 15
     effectchance 0
     target RANGE_SINGLE_TARGET

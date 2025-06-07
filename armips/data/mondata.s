@@ -3480,7 +3480,7 @@ mondata SPECIES_NOCTOWL, "Noctowl"
 
 
 mondata SPECIES_LEDYBA, "Ledyba"
-    basestats 40, 40, 50, 55, 40, 80
+    basestats 40, 45, 50, 55, 35, 80
     types TYPE_BUG, TYPE_FLYING
     catchrate 255
     baseexp 0 // defined in baseexp.s
@@ -3512,7 +3512,7 @@ mondata SPECIES_LEDIAN, "Ledian"
     basefriendship 70
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_BUG, EGG_GROUP_BUG
-    abilities ABILITY_IRON_FIST, ABILITY_COMPOUND_EYES
+    abilities ABILITY_IRON_FIST, ABILITY_AERILATE
     runchance 0
     colorflip BODY_COLOR_RED, 0
     mondexentry SPECIES_LEDIAN, "When the stars flicker in the\nnight sky, it flutters about,\nscattering a glowing powder."

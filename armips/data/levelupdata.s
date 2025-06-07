@@ -3834,44 +3834,47 @@ levelup SPECIES_NOCTOWL
 levelup SPECIES_LEDYBA
     learnset MOVE_TACKLE, 1
     learnset MOVE_SUPERSONIC, 5
-    learnset MOVE_SWIFT, 8
+    learnset MOVE_LEECH_LIFE, 8
     learnset MOVE_LIGHT_SCREEN, 12
     learnset MOVE_REFLECT, 12
     learnset MOVE_SAFEGUARD, 12
     learnset MOVE_MACH_PUNCH, 15
-    learnset MOVE_SILVER_WIND, 19
+    learnset MOVE_WING_ATTACK, 19
     learnset MOVE_COMET_PUNCH, 22
     learnset MOVE_BATON_PASS, 26
     learnset MOVE_AGILITY, 29
-    learnset MOVE_BUG_BUZZ, 33
-    learnset MOVE_RAZOR_WIND, 35
-    learnset MOVE_AIR_SLASH, 36
+    learnset MOVE_X_SCISSOR, 33
+    learnset MOVE_THUNDER_PUNCH, 35
+    learnset MOVE_ICE_PUNCH, 36
     learnset MOVE_DOUBLE_EDGE, 40
+    learnset MOVE_ZEN_HEADBUTT, 42
+    learnset MOVE_METEOR_MASH, 55
     terminatelearnset
 
 
 levelup SPECIES_LEDIAN
-    learnset MOVE_AIR_SLASH, 0
-    learnset MOVE_AIR_SLASH, 1
+    learnset MOVE_ICE_PUNCH, 0
+    learnset MOVE_THUNDER_PUNCH, 0
+    learnset MOVE_ICE_PUNCH, 1
+    learnset MOVE_THUNDER_PUNCH, 1
     learnset MOVE_TACKLE, 1
     learnset MOVE_SUPERSONIC, 1
-    learnset MOVE_SWIFT, 1
+    learnset MOVE_LEECH_LIFE, 1
     learnset MOVE_SUPERSONIC, 5
-    learnset MOVE_SWIFT, 8
+    learnset MOVE_LEECH_LIFE, 8
     learnset MOVE_LIGHT_SCREEN, 12
     learnset MOVE_REFLECT, 12
     learnset MOVE_SAFEGUARD, 12
     learnset MOVE_MACH_PUNCH, 15
-    learnset MOVE_SILVER_WIND, 20
+    learnset MOVE_WING_ATTACK, 20
     learnset MOVE_COMET_PUNCH, 24
     learnset MOVE_BATON_PASS, 29
     learnset MOVE_AGILITY, 33
     learnset MOVE_X_SCISSOR, 38
-    learnset MOVE_WING_ATTACK, 42
+    learnset MOVE_POWER_UP_PUNCH, 42
     learnset MOVE_ZEN_HEADBUTT, 45
-    learnset MOVE_ICE_PUNCH, 47
-    learnset MOVE_FIRE_PUNCH, 47
-    learnset MOVE_THUNDER_PUNCH, 47
+    learnset MOVE_SHADOW_PUNCH, 47
+    learnset MOVE_METEOR_MASH, 65
     terminatelearnset
 
 
