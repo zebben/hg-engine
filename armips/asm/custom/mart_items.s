@@ -312,6 +312,9 @@ EIGHT_BADGES equ 6
 .halfword ITEM_ULTRA_BALL
 .halfword FIVE_BADGES
 
+.halfword ITEM_MASTER_BALL
+.halfword SEVEN_BADGES
+
 .halfword ITEM_POTION
 .halfword ZERO_BADGES
 
@@ -323,12 +326,6 @@ EIGHT_BADGES equ 6
 
 .halfword ITEM_FULL_HEAL
 .halfword ZERO_BADGES
-
-.halfword ITEM_REVIVE
-.halfword THREE_BADGES
-
-.halfword ITEM_MAX_REVIVE
-.halfword SEVEN_BADGES
 
 .halfword ITEM_ORAN_BERRY
 .halfword ONE_BADGE
@@ -351,7 +348,10 @@ EIGHT_BADGES equ 6
 .halfword ITEM_REPEL
 .halfword ONE_BADGE
 
-.halfword ITEM_MAX_REPEL
+.halfword ITEM_SUPER_REPEL
 .halfword THREE_BADGES
+
+.halfword ITEM_MAX_REPEL
+.halfword FIVE_BADGES
 
 .close
