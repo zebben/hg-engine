@@ -90,6 +90,12 @@ scrdef scr_seq_0003_072_repels
 scrdef_end
 
 scr_seq_0003_002:
+    takeitem_no_check ITEM_SACRED_ASH, 1
+    giveitem_no_check ITEM_SACRED_ASH, 1
+    takeitem_no_check ITEM_FULL_RESTORE, 1
+    takeitem_no_check ITEM_FULL_RESTORE, 1
+    takeitem_no_check ITEM_FULL_RESTORE, 1
+    giveitem_no_check ITEM_FULL_RESTORE, 3
     play_se SEQ_SE_DP_SELECT
     lockall
     faceplayer
@@ -764,9 +770,11 @@ scr_seq_0003_010:
     goto _0A2E
 
 _0A18:
+    goto_if_set 0x18F, _skipPCOnOff
     scrcmd_500 90
     scrcmd_501 90
     scrcmd_308 90
+_skipPCOnOff:
     return
 
 _0A23:
@@ -1000,7 +1008,10 @@ _0DE7:
 _0DF0:
     closemsg
     play_se SEQ_SE_DP_PC_LOGOFF
+    goto_if_set 0x18F, _skipPCOff
     call _0A23
+_skipPCOff:
+    clearflag 0x18F
     touchscreen_menu_show
     releaseall
     end
@@ -1014,7 +1025,9 @@ _0E02:
 _0E16:
     fade_screen 6, 1, 0, RGB_BLACK
     wait_fade
+    goto_if_set 0x18F, _skipPCTransition
     scrcmd_309 90
+_skipPCTransition:
     return
 
 scr_seq_0003_014:

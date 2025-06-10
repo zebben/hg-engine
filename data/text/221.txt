@@ -21,7 +21,7 @@ A spray-type medicine.\nIt heals a single Pokémon that is\nsuffering from a bur
 A spray-type medicine.\nIt defrosts a Pokémon that has been\nfrozen solid.
 A spray-type medicine.\nIt awakens a Pokémon from the\nclutches of sleep.
 A spray-type medicine.\nIt eliminates paralysis from a single\nPokémon.
-A medicine that fully restores the HP\nand heals any status problems of a\nsingle Pokémon.
+A medicine that fully restores the HP,\nPP, and status problems of a\nsingle Pokémon.
 A spray-type medicine for wounds.\nIt completely restores the HP of a\nsingle Pokémon.
 A spray-type medicine for wounds.\nIt restores the HP of one Pokémon by\n200 points.
 A spray-type medicine for wounds.\nIt restores the HP of one Pokémon by\n50 points.
@@ -42,13 +42,13 @@ It restores the PP of all the\nmoves learned by the targeted Pokémon\nby 10 poi
 It fully restores the PP of all the\nmoves learned by the targeted\nPokémon.
 Lavaridge Town’s local specialty.\nIt heals all the status problems of\none Pokémon.
 A 100% pure juice made of Berries.\nIt restores the HP of one Pokémon by\njust 20 points.
-It revives all fainted Pokémon.\nIn doing so, it also fully restores\ntheir HP.
+It revives all fainted Pokémon.\nIn doing so, it also fully restores\ntheir HP and PP.
 A nutritious drink for Pokémon.\nIt raises the base HP of a single\nPokémon.
 A nutritious drink for Pokémon.\nIt raises the base Attack stat of a\nsingle Pokémon.
 A nutritious drink for Pokémon.\nIt raises the base Defense stat of a\nsingle Pokémon.
 A nutritious drink for Pokémon.\nIt raises the base Speed stat of a\nsingle Pokémon.
 A nutritious drink for Pokémon.\nIt raises the base Sp. Atk (Special\nAttack) stat of a single Pokémon.
-A candy that is packed with energy.\nIt raises the level of a single Pokémon\nby one.
+A candy that is packed with energy.\nIt raises the level of a single Pokémon\nby one.z
 It slightly raises the maximum PP of\na selected move that has been learned\nby the target Pokémon.
 A nutritious drink for Pokémon.\nIt raises the base Sp. Def (Special\nDefense) stat of a single Pokémon.
 It maximally raises the top PP of a\nselected move that has been learned\nby the target Pokémon.
