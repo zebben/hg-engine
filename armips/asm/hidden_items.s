@@ -65,10 +65,10 @@
 .halfword ITEM_BIG_PEARL
 
 .org 0x02000000 + 0xFA5F0 //Union Cave B1F S
-.halfword ITEM_MAX_REVIVE
+.halfword ITEM_FULL_RESTORE
 
 .org 0x02000000 + 0xFA5F8 //Union Cave B1F E
-.halfword ITEM_REVIVE
+.halfword ITEM_MAX_POTION
 
 .org 0x02000000 + 0xFA600 //Union Cave B2F SW
 .halfword ITEM_ULTRA_BALL
@@ -146,7 +146,7 @@
 .halfword ITEM_MAX_POTION
 
 .org 0x02000000 + 0xFA6C8 //Goldenrod Tunnel Basement
-.halfword ITEM_REVIVE
+.halfword ITEM_MAX_POTION
 
 .org 0x02000000 + 0xFA6D0 //R35 NW
 .halfword ITEM_NUGGET
@@ -188,7 +188,7 @@
 .halfword ITEM_FULL_HEAL
 
 .org 0x02000000 + 0xFA738 //Burned Tower Basement S
-.halfword ITEM_REVIVE
+.halfword ITEM_MAX_POTION
 
 .org 0x02000000 + 0xFA740 //Bellchime Trail
 .halfword ITEM_TINY_MUSHROOM
@@ -224,7 +224,7 @@
 .halfword ITEM_PP_UP
 
 .org 0x02000000 + 0xFA798 //R39 Centre NE
-.halfword ITEM_MAX_REVIVE
+.halfword ITEM_FULL_RESTORE
 
 .org 0x02000000 + 0xFA7A0 //Olivine Rock Climb
 .halfword ITEM_RARE_CANDY
@@ -281,7 +281,7 @@
 .halfword ITEM_FULL_RESTORE
 
 .org 0x02000000 + 0xFA830 //Cianwood E
-.halfword ITEM_REVIVE
+.halfword ITEM_MAX_POTION
 
 .org 0x02000000 + 0xFA838 //Cianwood NW
 .halfword ITEM_STARDUST
@@ -314,7 +314,7 @@
 .halfword ITEM_CHOICE_SCARF
 
 .org 0x02000000 + 0xFA888 //Mt Mortar Entrance E
-.halfword ITEM_REVIVE
+.halfword ITEM_MAX_POTION
 
 .org 0x02000000 + 0xFA890 //Mt Mortar Back
 .halfword ITEM_MAX_REPEL
@@ -344,19 +344,19 @@
 .halfword ITEM_FULL_HEAL
 
 .org 0x02000000 + 0xFA8D8 //Mt Mortar B1F
-.halfword ITEM_MAX_REVIVE
+.halfword ITEM_FULL_RESTORE
 
 .org 0x02000000 + 0xFA8E0 //Mt Mortar B1F
 .halfword ITEM_ULTRA_BALL
 
 .org 0x02000000 + 0xFA8E8 //Rocket HQ B1F E
-.halfword ITEM_REVIVE
+.halfword ITEM_MAX_POTION
 
 .org 0x02000000 + 0xFA8F0 //Rocket HQ B2F S
 .halfword ITEM_FULL_HEAL
 
 .org 0x02000000 + 0xFA8F8 //Rocket HQ B2F E
-.halfword ITEM_MAX_REVIVE
+.halfword ITEM_FULL_RESTORE
 
 .org 0x02000000 + 0xFA900 //Lake of Rage SW
 .halfword ITEM_FULL_RESTORE
@@ -377,13 +377,13 @@
 .halfword ITEM_FULL_HEAL
 
 .org 0x02000000 + 0xFA930 //Ice Path B1F
-.halfword ITEM_REVIVE
+.halfword ITEM_MAX_POTION
 
 .org 0x02000000 + 0xFA938 //Ice Path B2F
 .halfword ITEM_CARBOS
 
 .org 0x02000000 + 0xFA940 //Dragons Den NW 
-.halfword ITEM_REVIVE
+.halfword ITEM_MAX_POTION
 
 .org 0x02000000 + 0xFA948 //Dragons Den S
 .halfword ITEM_CHOICE_SPECS
@@ -395,7 +395,7 @@
 .halfword ITEM_PP_UP
 
 .org 0x02000000 + 0xFA960 //R27
-.halfword ITEM_REVIVE
+.halfword ITEM_MAX_POTION
 
 .org 0x02000000 + 0xFA968 //R27
 .halfword ITEM_BIG_MUSHROOM
@@ -413,7 +413,7 @@
 .halfword ITEM_FULL_HEAL
 
 .org 0x02000000 + 0xFA990 //Victory Road
-.halfword ITEM_MAX_REVIVE
+.halfword ITEM_FULL_RESTORE
 
 .org 0x02000000 + 0xFA998 //Victory Road
 .halfword ITEM_PP_UP
@@ -449,7 +449,7 @@
 .halfword ITEM_BIG_PEARL
 
 .org 0x02000000 + 0xFA9F0 //Digglets Cave Centre
-.halfword ITEM_MAX_REVIVE
+.halfword ITEM_FULL_RESTORE
 
 .org 0x02000000 + 0xFA9F8 //Digglets Cave NW
 .halfword ITEM_CALCIUM
@@ -461,7 +461,7 @@
 .halfword ITEM_FULL_RESTORE
 
 .org 0x02000000 + 0xFAA10 //R11
-.halfword ITEM_REVIVE
+.halfword ITEM_MAX_POTION
 
 .org 0x02000000 + 0xFAA18 //Rock Tunnel
 .halfword ITEM_FULL_RESTORE
@@ -485,7 +485,7 @@
 .halfword ITEM_NUGGET
 
 .org 0x02000000 + 0xFAA50 //R25
-.halfword ITEM_REVIVE
+.halfword ITEM_MAX_POTION
 
 .org 0x02000000 + 0xFAA58 //Celadon
 .halfword ITEM_PP_UP
@@ -533,7 +533,7 @@
 .halfword ITEM_GUARD_SPEC
 
 .org 0x02000000 + 0xFAAD0 //Pewter S
-.halfword ITEM_MAX_REVIVE
+.halfword ITEM_FULL_RESTORE
 
 .org 0x02000000 + 0xFAAD8 //R3
 .halfword ITEM_STAR_PIECE
@@ -545,10 +545,10 @@
 .halfword ITEM_HYPER_POTION
 
 .org 0x02000000 + 0xFAAF0 //Mt Moon
-.halfword ITEM_REVIVE
+.halfword ITEM_MAX_POTION
 
 .org 0x02000000 + 0xFAAF8 //Mt Moon Outside
-.halfword ITEM_MAX_REVIVE
+.halfword ITEM_FULL_RESTORE
 
 .org 0x02000000 + 0xFAB00 //R4 N
 .halfword ITEM_ULTRA_BALL
@@ -593,7 +593,7 @@
 .halfword ITEM_PEARL
 
 .org 0x02000000 + 0xFAB70 //Seafoam Islands
-.halfword ITEM_MAX_REVIVE
+.halfword ITEM_FULL_RESTORE
 
 .org 0x02000000 + 0xFAB78 //Seafoam Islands
 .halfword ITEM_RARE_CANDY
@@ -611,7 +611,7 @@
 .halfword ITEM_PEARL
 
 .org 0x02000000 + 0xFABA0 //R19
-.halfword ITEM_REVIVE
+.halfword ITEM_MAX_POTION
 
 .org 0x02000000 + 0xFABA8 //R19
 .halfword ITEM_MAX_ELIXIR
@@ -629,7 +629,7 @@
 .halfword ITEM_ULTRA_BALL
 
 .org 0x02000000 + 0xFABD0 //Mt Silver
-.halfword ITEM_REVIVE
+.halfword ITEM_MAX_POTION
 
 .org 0x02000000 + 0xFABD8 //Mt Silver
 .halfword ITEM_RARE_CANDY
@@ -653,7 +653,7 @@
 .halfword ITEM_IRON
 
 .org 0x02000000 + 0xFAC10 //Mt Silver
-.halfword ITEM_MAX_REVIVE
+.halfword ITEM_FULL_RESTORE
 
 .org 0x02000000 + 0xFAC18 //Cerulean Cave
 .halfword ITEM_HYPER_POTION
@@ -662,7 +662,7 @@
 .halfword ITEM_RARE_CANDY
 
 .org 0x02000000 + 0xFAC28 //Cerulean Cave
-.halfword ITEM_REVIVE
+.halfword ITEM_MAX_POTION
 
 .org 0x02000000 + 0xFAC30 //Cerulean Cave
 .halfword ITEM_ULTRA_BALL
@@ -683,7 +683,7 @@
 .halfword ITEM_PROTEIN
 
 .org 0x02000000 + 0xFAC60 //Cerulean Cave
-.halfword ITEM_MAX_REVIVE
+.halfword ITEM_FULL_RESTORE
 
 .org 0x02000000 + 0xFAC68 //Cerulean Cave
 .halfword ITEM_ULTRA_BALL

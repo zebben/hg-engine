@@ -170,6 +170,6 @@
 #define SCALE_ENEMY_TRAINER_LEVELS
 
 // PERMA_DEATH_MODE enables permadeath on mon faint
-//#define PERMA_DEATH_MODE
+#define PERMA_DEATH_MODE
 
 #endif
