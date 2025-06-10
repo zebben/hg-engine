@@ -325,7 +325,7 @@ EIGHT_BADGES equ 6
 .halfword ZERO_BADGES
 
 .halfword ITEM_REVIVE
-.halfword THREE_BADGE
+.halfword THREE_BADGES
 
 .halfword ITEM_MAX_REVIVE
 .halfword SEVEN_BADGES
