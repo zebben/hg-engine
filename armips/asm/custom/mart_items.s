@@ -318,17 +318,17 @@ EIGHT_BADGES equ 6
 .halfword ITEM_HYPER_POTION
 .halfword THREE_BADGES
 
-.halfword ITEM_FULL_RESTORE
+.halfword ITEM_MAX_POTION
 .halfword FIVE_BADGES
 
 .halfword ITEM_FULL_HEAL
 .halfword ZERO_BADGES
 
 .halfword ITEM_REVIVE
-.halfword ONE_BADGE
+.halfword THREE_BADGE
 
 .halfword ITEM_MAX_REVIVE
-.halfword FIVE_BADGES
+.halfword SEVEN_BADGES
 
 .halfword ITEM_ORAN_BERRY
 .halfword ONE_BADGE
