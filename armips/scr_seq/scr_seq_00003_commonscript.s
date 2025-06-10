@@ -90,8 +90,6 @@ scrdef scr_seq_0003_072_repels
 scrdef_end
 
 scr_seq_0003_002:
-    takeitem_no_check ITEM_SACRED_ASH, 1
-    giveitem_no_check ITEM_SACRED_ASH, 1
     takeitem_no_check ITEM_FULL_RESTORE, 1
     takeitem_no_check ITEM_FULL_RESTORE, 1
     takeitem_no_check ITEM_FULL_RESTORE, 1
