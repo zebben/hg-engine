@@ -360,7 +360,7 @@ evodata SPECIES_SANDSLASH
     terminateevodata
 
 evodata SPECIES_NIDORAN_F
-    evolution EVO_LEVEL, 20, SPECIES_NIDORINA
+    evolution EVO_LEVEL, 16, SPECIES_NIDORINA
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
@@ -396,7 +396,7 @@ evodata SPECIES_NIDOQUEEN
     terminateevodata
 
 evodata SPECIES_NIDORAN_M
-    evolution EVO_LEVEL, 20, SPECIES_NIDORINO
+    evolution EVO_LEVEL, 16, SPECIES_NIDORINO
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
@@ -528,7 +528,7 @@ evodata SPECIES_GOLBAT
     terminateevodata
 
 evodata SPECIES_ODDISH
-    evolution EVO_LEVEL, 20, SPECIES_GLOOM
+    evolution EVO_LEVEL, 16, SPECIES_GLOOM
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
@@ -732,7 +732,7 @@ evodata SPECIES_ARCANINE
     terminateevodata
 
 evodata SPECIES_POLIWAG
-    evolution EVO_LEVEL, 20, SPECIES_POLIWHIRL
+    evolution EVO_LEVEL, 16, SPECIES_POLIWHIRL
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
@@ -840,7 +840,7 @@ evodata SPECIES_MACHAMP
     terminateevodata
 
 evodata SPECIES_BELLSPROUT
-    evolution EVO_LEVEL, 20, SPECIES_WEEPINBELL
+    evolution EVO_LEVEL, 16, SPECIES_WEEPINBELL
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
@@ -2604,7 +2604,7 @@ evodata SPECIES_SNEASEL
     terminateevodata
 
 evodata SPECIES_TEDDIURSA
-    evolution EVO_LEVEL, 20, SPECIES_URSARING
+    evolution EVO_LEVEL, 16, SPECIES_URSARING
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
@@ -4272,7 +4272,7 @@ evodata SPECIES_BANETTE
     terminateevodata
 
 evodata SPECIES_DUSKULL
-    evolution EVO_LEVEL, 20, SPECIES_DUSCLOPS
+    evolution EVO_LEVEL, 16, SPECIES_DUSCLOPS
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
@@ -7096,7 +7096,7 @@ evodata SPECIES_SAWK
     terminateevodata
 
 evodata SPECIES_SEWADDLE
-    evolution EVO_LEVEL, 20, SPECIES_SWADLOON
+    evolution EVO_LEVEL, 16, SPECIES_SWADLOON
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
@@ -7840,7 +7840,7 @@ evodata SPECIES_KLINKLANG
     terminateevodata
 
 evodata SPECIES_TYNAMO
-    evolution EVO_LEVEL, 20, SPECIES_EELEKTRIK
+    evolution EVO_LEVEL, 16, SPECIES_EELEKTRIK
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
@@ -7900,7 +7900,7 @@ evodata SPECIES_BEHEEYEM
     terminateevodata
 
 evodata SPECIES_LITWICK
-    evolution EVO_LEVEL, 20, SPECIES_LAMPENT
+    evolution EVO_LEVEL, 16, SPECIES_LAMPENT
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
@@ -8644,7 +8644,7 @@ evodata SPECIES_PYROAR
 terminateevodata
 
 evodata SPECIES_FLABEBE
-    evolution EVO_LEVEL, 20, SPECIES_FLOETTE
+    evolution EVO_LEVEL, 16, SPECIES_FLOETTE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
@@ -8764,7 +8764,7 @@ evodata SPECIES_MEOWSTIC
 terminateevodata
 
 evodata SPECIES_HONEDGE
-    evolution EVO_LEVEL, 20, SPECIES_DOUBLADE
+    evolution EVO_LEVEL, 16, SPECIES_DOUBLADE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
@@ -9748,7 +9748,7 @@ evodata SPECIES_BEWEAR
 terminateevodata
 
 evodata SPECIES_BOUNSWEET
-    evolution EVO_LEVEL, 20, SPECIES_STEENEE
+    evolution EVO_LEVEL, 16, SPECIES_STEENEE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
@@ -14888,7 +14888,7 @@ evodata SPECIES_VIVILLON_POKE_BALL
 terminateevodata
 
 evodata SPECIES_FLABEBE_YELLOW_FLOWER
-    evolution EVO_LEVEL, 20, SPECIES_FLOETTE
+    evolution EVO_LEVEL, 16, SPECIES_FLOETTE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
@@ -14900,7 +14900,7 @@ evodata SPECIES_FLABEBE_YELLOW_FLOWER
 terminateevodata
 
 evodata SPECIES_FLABEBE_ORANGE_FLOWER
-    evolution EVO_LEVEL, 20, SPECIES_FLOETTE
+    evolution EVO_LEVEL, 16, SPECIES_FLOETTE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
@@ -14912,7 +14912,7 @@ evodata SPECIES_FLABEBE_ORANGE_FLOWER
 terminateevodata
 
 evodata SPECIES_FLABEBE_BLUE_FLOWER
-    evolution EVO_LEVEL, 20, SPECIES_FLOETTE
+    evolution EVO_LEVEL, 16, SPECIES_FLOETTE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
@@ -14924,7 +14924,7 @@ evodata SPECIES_FLABEBE_BLUE_FLOWER
 terminateevodata
 
 evodata SPECIES_FLABEBE_WHITE_FLOWER
-    evolution EVO_LEVEL, 20, SPECIES_FLOETTE
+    evolution EVO_LEVEL, 16, SPECIES_FLOETTE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
