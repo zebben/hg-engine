@@ -1,5 +1,8 @@
 import re
 
+TRAINERS_S_FILEPATH = '../../armips/data/trainers/trainers.s'
+PRINT_TEAM_ON_ERROR = False
+
 def parse_trainers(file_path):
     with open(file_path, 'r') as f:
         lines = f.readlines()
@@ -13,7 +16,7 @@ def parse_trainers(file_path):
     mon_list = []
 
     for line in lines:
-        stripped = line.strip()
+        stripped = line.split("//")[0].strip()
 
         if not stripped:
             continue
@@ -40,11 +43,13 @@ def parse_trainers(file_path):
             elif stripped == "endentry":
                 trainers[trainer_id] = trainer
                 trainer = {}
-                trainer_id = None
                 in_trainerdata = False
             continue
 
         if stripped.startswith("party"):
+            if in_party:
+                print(f"encountered unexpected 'party' tag before closure with 'endparty'. inspect your trainers.s file before trainer {trainer_id}")
+
             match = re.match(r'party\s+(\d+)', stripped)
             if match:
                 party_trainer_id = int(match.group(1))
@@ -55,10 +60,10 @@ def parse_trainers(file_path):
             continue
 
         if in_party:
-            if stripped.startswith("// mon"):
+            if stripped.startswith("ivs"):
                 if current_mon:
                     mon_list.append(current_mon)
-                    current_mon = []
+                current_mon = [stripped]
                 continue
             elif stripped == "endparty":
                 if current_mon:
@@ -80,11 +85,14 @@ def parse_trainers(file_path):
                     parsed_mons.append(mon_dict)
 
                 trainers[party_trainer_id]["party"] = parsed_mons
+                trainer_id = None
                 in_party = False
                 mon_list = []
                 current_mon = []
                 continue
             else:
+                if not current_mon:
+                    print(f"encountered unexpected line {stripped}. inspect your trainers.s file at trainer {trainer_id}. 'ivs' should be the first attribute listed for each pokémon")
                 current_mon.append(stripped)
 
     return list(trainers.values())
@@ -118,6 +126,9 @@ def validate_mon_field_order(mon, trainer_id, mon_index):
 
 def validate_trainers(trainers, print_team):
     for trainer in trainers:
+        if trainer["id"] == 0:
+            continue
+
         any_error = False
         party = trainer["party"]
 
@@ -127,23 +138,27 @@ def validate_trainers(trainers, print_team):
         any_have_items = any("item" in mon for mon in party)
 
         if has_items_flag and not all_have_items:
-            print(f"{trainer['name']} (id: {trainer['id']}, flags: {trainer['trainermontype']}) has TRAINER_DATA_TYPE_ITEMS flag but not all party pokemon have an item defined")
+            print(f"{trainer['name']} (id: {trainer['id']}, flags: {trainer['trainermontype']}) has TRAINER_DATA_TYPE_ITEMS flag but not all party pokémon have an item defined")
             any_error = True
         elif not has_items_flag and any_have_items:
-            print(f"{trainer['name']} (id: {trainer['id']}, flags: {trainer['trainermontype']}) does not have the TRAINER_DATA_TYPE_ITEMS flag but some party pokemon have an item defined")
+            print(f"{trainer['name']} (id: {trainer['id']}, flags: {trainer['trainermontype']}) does not have the TRAINER_DATA_TYPE_ITEMS flag but some party pokémon have an item defined")
             any_error = True
 
         # Move validation
         has_moves_flag = 'TRAINER_DATA_TYPE_MOVES' in trainer["trainermontype"]
         all_have_moves = all("move4" in mon for mon in party)
         any_have_moves = any("move1" in mon for mon in party)
+        any_have_extra_moves = any("move5" in mon for mon in party)
 
         if has_moves_flag and not all_have_moves:
-            print(f"{trainer['name']} (id: {trainer['id']}, flags: {trainer['trainermontype']}) has TRAINER_DATA_TYPE_MOVES flag but not all party pokemon have four moves defined")
+            print(f"{trainer['name']} (id: {trainer['id']}, flags: {trainer['trainermontype']}) has TRAINER_DATA_TYPE_MOVES flag but not all party pokémon have four moves defined")
             any_error = True
         elif not has_moves_flag and any_have_moves:
-            print(f"{trainer['name']} (id: {trainer['id']}, flags: {trainer['trainermontype']}) does not have the TRAINER_DATA_TYPE_MOVES flag but some party pokemon have move(s) defined")
+            print(f"{trainer['name']} (id: {trainer['id']}, flags: {trainer['trainermontype']}) does not have the TRAINER_DATA_TYPE_MOVES flag but some party pokémon have move(s) defined")
             any_error = True
+
+        if has_moves_flag and any_have_extra_moves:
+            print(f"{trainer['name']} (id: {trainer['id']}, flags: {trainer['trainermontype']}) mon {i} has {len(move_keys)} moves but should have 4")
 
         # Ability validation
         has_ability_flag = 'TRAINER_DATA_TYPE_ABILITY' in trainer["trainermontype"]
@@ -151,10 +166,10 @@ def validate_trainers(trainers, print_team):
         any_have_ability = any("ability" in mon for mon in party)
 
         if has_ability_flag and not all_have_ability:
-            print(f"{trainer['name']} (id: {trainer['id']}, flags: {trainer['trainermontype']}) has TRAINER_DATA_TYPE_ABILITY flag but not all party pokemon have an ability defined")
+            print(f"{trainer['name']} (id: {trainer['id']}, flags: {trainer['trainermontype']}) has TRAINER_DATA_TYPE_ABILITY flag but not all party pokémon have an ability defined")
             any_error = True
         elif not has_ability_flag and any_have_ability:
-            print(f"{trainer['name']} (id: {trainer['id']}, flags: {trainer['trainermontype']}) does not have the TRAINER_DATA_TYPE_ABILITY flag but some party pokemon have an ability defined")
+            print(f"{trainer['name']} (id: {trainer['id']}, flags: {trainer['trainermontype']}) does not have the TRAINER_DATA_TYPE_ABILITY flag but some party pokémon have an ability defined")
             any_error = True
 
         # Nature validation
@@ -163,10 +178,10 @@ def validate_trainers(trainers, print_team):
         any_have_nature = any("nature" in mon for mon in party)
 
         if has_nature_flag and not all_have_nature:
-            print(f"{trainer['name']} (id: {trainer['id']}, flags: {trainer['trainermontype']}) has TRAINER_DATA_TYPE_NATURE_SET flag but not all party pokemon have a nature defined")
+            print(f"{trainer['name']} (id: {trainer['id']}, flags: {trainer['trainermontype']}) has TRAINER_DATA_TYPE_NATURE_SET flag but not all party pokémon have a nature defined")
             any_error = True
         elif not has_nature_flag and any_have_nature:
-            print(f"{trainer['name']} (id: {trainer['id']}, flags: {trainer['trainermontype']}) does not have the TRAINER_DATA_TYPE_NATURE_SET flag but some party pokemon have a nature defined")
+            print(f"{trainer['name']} (id: {trainer['id']}, flags: {trainer['trainermontype']}) does not have the TRAINER_DATA_TYPE_NATURE_SET flag but some party pokémon have a nature defined")
             any_error = True
 
         # EV/IV validation
@@ -177,16 +192,21 @@ def validate_trainers(trainers, print_team):
         any_have_iv = any("setivs" in mon for mon in party)
 
         if has_ev_iv_flag and not all_have_ev:
-            print(f"{trainer['name']} (id: {trainer['id']}, flags: {trainer['trainermontype']}) has TRAINER_DATA_TYPE_IV_EV_SET flag but not all party pokemon have EVs defined")
+            print(f"{trainer['name']} (id: {trainer['id']}, flags: {trainer['trainermontype']}) has TRAINER_DATA_TYPE_IV_EV_SET flag but not all party pokémon have EVs defined")
             any_error = True
         if not has_ev_iv_flag and any_have_ev:
-            print(f"{trainer['name']} (id: {trainer['id']}, flags: {trainer['trainermontype']}) does not have the TRAINER_DATA_TYPE_IV_EV_SET flag but some party pokemon have EVs defined")
+            print(f"{trainer['name']} (id: {trainer['id']}, flags: {trainer['trainermontype']}) does not have the TRAINER_DATA_TYPE_IV_EV_SET flag but some party pokémon have EVs defined")
             any_error = True
         if has_ev_iv_flag and not all_have_iv:
-            print(f"{trainer['name']} (id: {trainer['id']}, flags: {trainer['trainermontype']}) has TRAINER_DATA_TYPE_IV_EV_SET flag but not all party pokemon have IVs defined")
+            print(f"{trainer['name']} (id: {trainer['id']}, flags: {trainer['trainermontype']}) has TRAINER_DATA_TYPE_IV_EV_SET flag but not all party pokémon have IVs defined")
             any_error = True
         if not has_ev_iv_flag and any_have_iv:
-            print(f"{trainer['name']} (id: {trainer['id']}, flags: {trainer['trainermontype']}) does not have the TRAINER_DATA_TYPE_IV_EV_SET flag but some party pokemon have IVs defined")
+            print(f"{trainer['name']} (id: {trainer['id']}, flags: {trainer['trainermontype']}) does not have the TRAINER_DATA_TYPE_IV_EV_SET flag but some party pokémon have IVs defined")
+            any_error = True
+
+        # Party size validation
+        if len(party) != trainer["nummons"]:
+            print(f"{trainer['name']} (id: {trainer['id']}, nummons: {trainer['nummons']}) has {len(party)} pokémon defined")
             any_error = True
 
         # Field order validation
@@ -204,6 +224,5 @@ def validate_trainers(trainers, print_team):
 
 
 if __name__ == "__main__":
-    file_path = '../../armips/data/trainers/trainers.s'
-    parsed_trainers = parse_trainers(file_path)
-    validate_trainers(parsed_trainers, print_team=False)
+    parsed_trainers = parse_trainers(TRAINERS_S_FILEPATH)
+    validate_trainers(parsed_trainers, PRINT_TEAM_ON_ERROR)
