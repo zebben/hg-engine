@@ -162,7 +162,7 @@ void MakeTrainerPokemonParty(struct BATTLE_PARAM *bp, int num, int heapID)
         // level field
         level = buf[offset] | (buf[offset+1] << 8);
         #ifdef TRAINER_LEVEL_FLOOR
-            if (highestPlayerPokeLvl - level >= 10)
+            if (highestPlayerPokeLvl > level && highestPlayerPokeLvl - level >= 10)
             {
                 // scale level of trainer mons if it's more than 10 levels lower
                 level = highestPlayerPokeLvl - scaleOptions[i];
@@ -538,7 +538,8 @@ BOOL LONG_CALL AddWildPartyPokemon(int inTarget, EncounterInfo *encounterInfo, s
             }
         }
 
-        if (highestPlayerPokeLvl - encounterInfo->level > 10)
+        u8 wildMonLevel = (u8)GetMonData(encounterPartyPokemon, MON_DATA_LEVEL, NULL);
+        if (highestPlayerPokeLvl > wildMonLevel && highestPlayerPokeLvl - wildMonLevel > 10)
         {
             // subtract a random number of levels between 3 and 5
             // adds some variety to wild encounters vs just setting to player level
