@@ -39,7 +39,11 @@ def parse_trainers(file_path):
             if stripped.startswith("trainermontype"):
                 trainer["trainermontype"] = stripped.split("trainermontype")[1].strip()
             elif stripped.startswith("nummons"):
-                trainer["nummons"] = int(stripped.split("nummons")[1].strip())
+                match = re.search(r'nummons\s+.*?(\b[0-6]\b)', stripped)
+                if match:
+                    trainer["nummons"] = int(match.group(1))
+                else:
+                    print(f"encountered unexpected 'nummons' value for trainer {trainer_id}")
             elif stripped == "endentry":
                 trainers[trainer_id] = trainer
                 trainer = {}
