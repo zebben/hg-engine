@@ -9760,7 +9760,7 @@ evodata SPECIES_BOUNSWEET
 terminateevodata
 
 evodata SPECIES_STEENEE
-    evolution EVO_LEVLE, 30, SPECIES_TSAREENA
+    evolution EVO_LEVEL, 30, SPECIES_TSAREENA
     evolution EVO_HAS_MOVE, MOVE_STOMP, SPECIES_TSAREENA
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
