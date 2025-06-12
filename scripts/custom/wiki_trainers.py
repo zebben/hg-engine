@@ -300,6 +300,7 @@ def generate_trainer_pages(trainers, mondata, output_dir):
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
+    <h1 class='center'>Mirror Gold Trainerdex</h1>
     <div class="center"><h3><a href="./index.html">Back to Trainer Index</a></h3></div>
     <h1 class="center">{escape(trainer['name']).replace('_', ' ')} <small>(ID: {trainer['id']})</small></h1>
 """)

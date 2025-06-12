@@ -120,12 +120,12 @@ def parse_mondata(filepath):
                 if stat_match:
                     hp, atk, defn, spd, spatk, spdef = map(int, stat_match.groups())
                     monstats[current_species] = {
-                        "hp": hp,
-                        "attack": atk,
-                        "defense": defn,
-                        "speed": spd,
-                        "sp_atk": spatk,
-                        "sp_def": spdef,
+                        "HP": hp,
+                        "Attack": atk,
+                        "Defense": defn,
+                        "Sp. Atk": spatk,
+                        "Sp. Def": spdef,
+                        "Speed": spd,
                         "abilities": [],
                         "types": []
                     }
@@ -329,6 +329,40 @@ def parse_encounter_data(filepath, species_form_map):
     return species_locations
 
 
+def stat_color(value):
+    if value <= 50:
+        return 'red'
+    elif value <= 80:
+        return 'orange'
+    elif value <= 100:
+        return 'yellow'
+    elif value <= 120:
+        return 'limegreen'
+    elif value <= 150:
+        return 'green'
+    else:
+        return 'blue'
+
+
+MAX_STAT = 255
+
+def render_stat_bar(label, value):
+    if label not in ['HP', "Attack", 'Defense', 'Speed', 'Sp. Atk', 'Sp. Def']:
+        return ""
+
+    color = stat_color(value)
+    width_pct = min(int((value / MAX_STAT) * 100), 100)
+    return f"""
+    <div class="stat-bar">
+        <span class="label">{label}</span>
+        <div class="bar-bg">
+            <div class="bar-fill" style="width: {width_pct}%; background-color: {color};">{value}</div>
+        </div>
+    </div>
+    """
+
+
+
 def generate_pokemon_pages(evodata_path, output_dir, mondata_path, species_path, form_table_path, sprite_root, levelup_path, encounter_path):
     os.makedirs(output_dir, exist_ok=True)
 
@@ -372,15 +406,7 @@ def generate_pokemon_pages(evodata_path, output_dir, mondata_path, species_path,
             locations_html = "<p><em>Not found in the wild.</em></p>"
 
         if stats:
-            stats_html = f"""
-            <table>
-              <tr><th>HP</th><th>Atk</th><th>Def</th><th>Sp. Atk</th><th>Sp. Def</th><th>Speed</th></tr>
-              <tr>
-                <td>{stats['hp']}</td><td>{stats['attack']}</td><td>{stats['defense']}</td>
-                <td>{stats['sp_atk']}</td><td>{stats['sp_def']}</td><td>{stats['speed']}</td>
-              </tr>
-            </table>
-            """
+            stats_html = "".join(render_stat_bar(stat, value) for stat, value in stats.items())
             if stats.get("abilities"):
                 abilities_html = " / ".join(
                     f"<a href='https://bulbapedia.bulbagarden.net/wiki/{ability.replace('_', ' ').title()}_(Ability)' target='_blank'>{ability.replace('_', ' ').title()}</a>"
@@ -410,6 +436,7 @@ def generate_pokemon_pages(evodata_path, output_dir, mondata_path, species_path,
           </head>
           <body>
             <h1 class='center'>Mirror Gold Pokédex</h1>
+            <h3 class='center'><a href='./index.html'>Back to Pokédex Index</a></h3>
             <h2 class='center'>{species}</h2>
             <div class='sprite info-line'>{img_tag}</div>
             <div class='center info-line'>
@@ -425,7 +452,9 @@ def generate_pokemon_pages(evodata_path, output_dir, mondata_path, species_path,
               {abilities_html}
             </div>
             <h3 class='center'>Base Stats</h3>
-            {stats_html}
+            <div class='center info-line'>
+                {stats_html}
+            </div>
         """.format(species=species, img_tag=img_tag, types_html=types_html, abilities_html=abilities_html, stats_html=stats_html))
 
             if pre_evolutions:
@@ -555,6 +584,7 @@ def generate_index(species_path, output_path="../../docs/pokedex/index.html"):
         f.write("  </ul>\n</body>\n</html>\n")
 
     print(f"Index generated at {output_path} with {len(species)} entries.")
+
 
 if __name__ == "__main__":
     generate_index("../../include/constants/species.h")
