@@ -302,7 +302,7 @@ def generate_trainer_pages(trainers, mondata, output_dir):
 <body>
     <h1 class='center'>Mirror Gold Trainerdex</h1>
     <div class="center"><h3><a href="./index.html">Back to Trainer Index</a></h3></div>
-    <h1 class="center">{escape(trainer['name']).replace('_', ' ')} <small>(ID: {trainer['id']})</small></h1>
+    <h1 class="center">{escape(trainer['name']).replace('_', ' ').upper()} <small>(ID: {trainer['id']})</small></h1>
 """)
 
             for mon in trainer["party"]:
@@ -353,7 +353,12 @@ def generate_trainer_pages(trainers, mondata, output_dir):
                 if mon.get("ability"):
                     f.write(f"""                <strong>Ability:</strong> {escape(mon['ability']).replace('ABILITY_', '').replace('_', ' ')}<br>\n""")
 
-                f.write("".join(render_stat_bar(stat, value) for stat, value in actual_stats.items()))
+                f.write(render_stat_bar('HP', actual_stats['HP'], base_stats['HP']))
+                f.write(render_stat_bar('Attack', actual_stats['Attack'], base_stats['Attack']))
+                f.write(render_stat_bar('Defense', actual_stats['Defense'], base_stats['Defense']))
+                f.write(render_stat_bar('Sp. Atk', actual_stats['Sp. Atk'], base_stats['Sp. Atk']))
+                f.write(render_stat_bar('Sp. Def', actual_stats['Sp. Def'], base_stats['Sp. Def']))
+                f.write(render_stat_bar('Speed', actual_stats['Speed'], base_stats['Speed']))
 
                 if mon.get("item"):
                     f.write(f"""                <strong>Item:</strong> {escape(mon['item']).replace('ITEM_', '').replace('_', ' ').replace('CHARIZARDITE', 'MEGA STONE')}<br>\n""")
@@ -377,26 +382,27 @@ def generate_trainer_pages(trainers, mondata, output_dir):
     print(f"Generated {len(trainers)} trainer pages in '{output_dir}/'")
 
 
-def stat_color(stat):
-    if stat < 50:
-        return "darkred"
-    elif stat < 100:
-        return "orangered"
-    elif stat < 200:
-        return "gold"
-    elif stat < 300:
-        return "limegreen"
-    elif stat < 400:
-        return "dodgerblue"
+def stat_color(value):
+    if value <= 50:
+        return 'red'
+    elif value <= 80:
+        return 'orange'
+    elif value <= 100:
+        return 'yellow'
+    elif value <= 120:
+        return 'limegreen'
+    elif value <= 150:
+        return 'green'
     else:
-        return "mediumorchid"
+        return 'blue'
 
 
-MAX_STAT = 600
+def render_stat_bar(label, value, base):
+    if label not in ['HP', "Attack", 'Defense', 'Speed', 'Sp. Atk', 'Sp. Def']:
+        return ""
 
-def render_stat_bar(label, value):
-    color = stat_color(value)
-    width_pct = min(int((value / MAX_STAT) * 100), 100)
+    color = stat_color(base)
+    width_pct = min(int((base / 180) * 100), 100)
     return f"""
     <div class="stat-bar">
         <span class="label">{label}</span>

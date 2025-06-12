@@ -344,14 +344,12 @@ def stat_color(value):
         return 'blue'
 
 
-MAX_STAT = 255
-
 def render_stat_bar(label, value):
     if label not in ['HP', "Attack", 'Defense', 'Speed', 'Sp. Atk', 'Sp. Def']:
         return ""
 
     color = stat_color(value)
-    width_pct = min(int((value / MAX_STAT) * 100), 100)
+    width_pct = min(int((value / 180) * 100), 100)
     return f"""
     <div class="stat-bar">
         <span class="label">{label}</span>
