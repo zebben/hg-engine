@@ -221,3 +221,31 @@ a:hover {
 .type.poison { background-color: #AA5599; }
 .type.fighting { background-color: #82211B; }
 .type.normal { background-color: #AAAA99; }
+
+.stat-bar {
+  margin: 4px 0;
+}
+
+.label {
+  display: inline-block;
+  width: 60px;
+}
+
+.bar-bg {
+  display: inline-block;
+  background-color: #eee;
+  width: 200px;
+  height: 18px;
+  border-radius: 4px;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+.bar-fill {
+  height: 100%;
+  text-align: right;
+  padding-right: 4px;
+  color: #000;
+  font-weight: bold;
+  line-height: 18px;
+}
