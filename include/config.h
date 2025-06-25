@@ -160,10 +160,10 @@
 #define EASY_MODE_IVS
 
 // TRAINER_LEVEL_FLOOR scales enemy trainer party levels based on the player's party if diff >=10
-#define TRAINER_LEVEL_FLOOR
+//#define TRAINER_LEVEL_FLOOR
 
 // WILD_LEVEL_FLOOR scales wild encounter levels based on the player's party if diff >=10 levels
-#define WILD_LEVEL_FLOOR
+//#define WILD_LEVEL_FLOOR
 
 // PERMA_DEATH_MODE enables permadeath on mon faint
 //#define PERMA_DEATH_MODE
