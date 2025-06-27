@@ -2431,8 +2431,11 @@ BOOL GetMonTMHMCompat(struct PartyPokemon *pp, u8 tmhm) {
 
     debug_printf("[GetMonTMHMCompat] species = %d, tmhm = %d\n", species, tmhm);
 
-    // TODO
-    if (species > MAX_SPECIES_INCLUDING_FORMS || tmhm > 100) {
+    if (species > MAX_SPECIES_INCLUDING_FORMS) {
+        return FALSE;
+    }
+
+    if (tmhm > NUM_TMS + NUM_HMS) {
         return FALSE;
     }
 
