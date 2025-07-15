@@ -371,6 +371,9 @@ move_narc: $(NARC_FILES)
 	@echo "battle sub effects:"
 	cp $(BATTLE_SUB_NARC) $(BATTLE_SUB_TARGET)
 
+	@echo "bag gfx:"
+	cp $(BAGGFX_NARC) $(BAGGFX_TARGET)
+
 	@echo "item gfx:"
 	cp $(ITEMGFX_NARC) $(ITEMGFX_TARGET)
 

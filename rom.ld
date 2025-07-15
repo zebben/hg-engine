@@ -744,6 +744,7 @@ NNS_FndAllocFromExpHeapEx = 0x020B53A0;
 OS_RestoreInterrupts = 0x020D3A4C;
 sHeapInfo = 0x021D1584;
 
+/* tm expansion */
 sub_0200CE7C = 0x0200CE7C | 1;
 ov15_021FE8C4 = 0x021FE8C4 | 1;
 sub_0200CDF0 = 0x0200CDF0 | 1;
