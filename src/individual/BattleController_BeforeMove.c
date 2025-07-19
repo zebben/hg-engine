@@ -2202,6 +2202,7 @@ BOOL BattleController_CheckProtect(struct BattleSystem *bsys, struct BattleStruc
     if (ctx->oneTurnFlag[defender].protectFlag
      && ctx->moveTbl[ctx->current_move_index].flag & FLAG_PROTECT
      && (!(GetBattlerAbility(ctx, ctx->attack_client) == ABILITY_UNSEEN_FIST && IsContactBeingMade(bsys, ctx)))
+     && (!(GetBattlerAbility(ctx, ctx->attack_client) == ABILITY_TRUANT)
      && (ctx->current_move_index != MOVE_CURSE || CurseUserIsGhost(ctx, ctx->current_move_index, ctx->attack_client) == TRUE)
    /*&& (!CheckMoveIsChargeMove(ctx, ctx->current_move_index) || ctx->server_status_flag & BATTLE_STATUS_CHARGE_MOVE_HIT)*/) {
         BOOL runProtectedSubseq = FALSE;
