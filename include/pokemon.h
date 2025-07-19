@@ -605,6 +605,16 @@ struct PLIST_WORK
     u8 pos;
 };
 
+struct IconFormChangeData {
+    int state;
+    int effectTimer;
+    int duration;
+    int species;
+    int fileId;
+    int partyMonIndex;
+    void *particleSystem; // SPLEmitter from pokeheartgold
+};
+
 
 struct SAVE_MISC_DATA;
 
@@ -789,9 +799,8 @@ enum
 #define TRAINER_DATA_EXTRA_TYPE_SPEED 0x10
 #define TRAINER_DATA_EXTRA_TYPE_SP_ATK 0x20
 #define TRAINER_DATA_EXTRA_TYPE_SP_DEF 0x40
-#define TRAINER_DATA_EXTRA_TYPE_TYPES 0x80
-#define TRAINER_DATA_EXTRA_TYPE_PP_COUNTS 0x100
-#define TRAINER_DATA_EXTRA_TYPE_NICKNAME 0x200
+#define TRAINER_DATA_EXTRA_TYPE_PP_COUNTS 0x80
+#define TRAINER_DATA_EXTRA_TYPE_NICKNAME 0x100
 
 // kinda weird, specifically tracked in the RAM
 typedef struct WildEncounterWork
@@ -1068,14 +1077,6 @@ void LONG_CALL BoxMonInit(struct BoxPokemon *boxmon);
  *  @param bp BoxPokemon to check for a form change
  */
 void LONG_CALL GiratinaBoxPokemonFormChange(struct BoxPokemon *bp);
-
-/**
- *  @brief check if the gracidea flower can be used on a PartyPokemon
- *
- *  @param pp PartyPokemon to check for gracidea validity
- *  @return TRUE if the gracidea can be used on the PartyPokemon
- */
-BOOL LONG_CALL GrashideaFeasibleCheck(struct PartyPokemon *pp);
 
 /**
  *  @brief load in the party overlay

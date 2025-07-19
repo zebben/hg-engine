@@ -1073,6 +1073,7 @@ void LONG_CALL ClearBattleMonFlags(struct BattleStruct *sp, int client)
 
     sp->log_hail_for_ice_face &= ~(1 << client); // unset log_hail_for_ice_face for client
     sp->binding_turns[client] = 0;
+    sp->protectSuccessTurns[client] = 0;
 
     if (gBattleSystem != NULL)
     {
@@ -1097,6 +1098,7 @@ void LONG_CALL ClearBattleMonFlags(struct BattleStruct *sp, int client)
  *  @brief moves that soundproof blocks
  */
 u16 SoundProofMovesList[] = {
+    MOVE_ALLURING_VOICE,
     MOVE_BOOMBURST,
     MOVE_BUG_BUZZ,
     MOVE_CHATTER,
@@ -1117,6 +1119,7 @@ u16 SoundProofMovesList[] = {
     MOVE_OVERDRIVE,
     MOVE_PARTING_SHOT,
     MOVE_PERISH_SONG,
+    MOVE_PSYCHIC_NOISE,
     MOVE_RELIC_SONG,
     MOVE_ROAR,
     MOVE_ROUND,
@@ -1198,7 +1201,7 @@ u32 LONG_CALL GetAdjustedMoveTypeBasics(struct BattleStruct *sp, u32 move, u32 a
  */
 u32 LONG_CALL GetAdjustedMoveType(struct BattleStruct *sp, u32 client, u32 move)
 {
-    return GetAdjustedMoveTypeBasics(sp, move, GetBattlerAbility(sp, client), sp->move_type);
+    return GetAdjustedMoveTypeBasics(sp, move, GetBattlerAbility(sp, client), GetDynamicMoveType(gBattleSystem, sp, client, move));
 }
 
 /**
@@ -1261,4 +1264,8 @@ BOOL LONG_CALL DoesSideHave2Battlers(void *bw, u32 client)
         return TRUE;
     }
     return FALSE;
+}
+
+BOOL LONG_CALL ClientBelongsToPlayer(struct BattleSystem *bsys, int client) {
+    return BattleWork_GetTrainerIndex(bsys, client) == 0;
 }

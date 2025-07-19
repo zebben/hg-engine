@@ -1374,7 +1374,7 @@ heightentry SPECIES_JELLICENT_FEMALE, 0, 0, 0, 0
 heightentry SPECIES_PYROAR_FEMALE, 0, 0, 0, 0
 heightentry SPECIES_MEOWSTIC_FEMALE, 0, "null", 0, "null"
 heightentry SPECIES_INDEEDEE_FEMALE, 0, "null", 0, "null"
-heightentry SPECIES_BASCULEGION_FEMALE, 10, "null", 0, "null"
+heightentry SPECIES_BASCULEGION_FEMALE, 10, 10, 0, 0
 
 heightentry SPECIES_MAUSHOLD_FAMILY_OF_THREE, 5, 5, 0, 0
 heightentry SPECIES_SQUAWKABILLY_BLUE_PLUMAGE, 0, 0, 0, 0
@@ -1412,6 +1412,6 @@ heightentry SPECIES_OGERPON_TEAL_MASK_TERASTAL, 0, "null", 0, "null"
 heightentry SPECIES_OGERPON_WELLSPRING_MASK_TERASTAL, 0, "null", 0, "null"
 heightentry SPECIES_OGERPON_HEARTHFLAME_MASK_TERASTAL, 0, "null", 0, "null"
 heightentry SPECIES_OGERPON_CORNERSTONE_MASK_TERASTAL, 0, "null", 0, "null"
+heightentry SPECIES_URSALUNA_BLOODMOON, 0, 0, 0, 0
 heightentry SPECIES_TERAPAGOS_TERASTAL, 16, 16, 0, 0
 heightentry SPECIES_TERAPAGOS_STELLAR, 0, 0, 0, 0
-heightentry SPECIES_URSALUNA_BLOODMOON, 0, 0, 0, 0
