@@ -1394,6 +1394,7 @@ levelup SPECIES_POLIWRATH
 
 levelup SPECIES_ABRA
     learnset MOVE_TELEPORT, 1
+    learnset MOVE_CONFUSION, 12
     terminatelearnset
 
 

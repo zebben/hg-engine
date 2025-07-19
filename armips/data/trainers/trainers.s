@@ -46,7 +46,7 @@ trainerdata 1, "Silver"
         // mon 0
         ivs 200
         abilityslot 32
-        level 18
+        level 17
         pokemon SPECIES_DUSKULL
         item ITEM_NONE
         move MOVE_SHADOW_SNEAK
@@ -64,7 +64,7 @@ trainerdata 1, "Silver"
         // mon 1
         ivs 200
         abilityslot 32
-        level 18
+        level 17
         pokemon SPECIES_CORVISQUIRE
         item ITEM_NONE
         move MOVE_PLUCK
@@ -82,7 +82,7 @@ trainerdata 1, "Silver"
         // mon 2
         ivs 200
         abilityslot 32
-        level 20
+        level 19
         pokemon SPECIES_BAYLEEF
         item ITEM_SITRUS_BERRY
         move MOVE_REFLECT
@@ -1179,7 +1179,7 @@ trainerdata 30, "Whitney"
         // mon 0
         ivs 255
         abilityslot 0
-        level 20
+        level 19
         monwithform SPECIES_ZORUA, 1
         item ITEM_SITRUS_BERRY
         move MOVE_SHADOW_SNEAK
@@ -1197,7 +1197,7 @@ trainerdata 30, "Whitney"
         // mon 1
         ivs 255
         abilityslot 32
-        level 22
+        level 21
         pokemon SPECIES_MILTANK
         item ITEM_LUM_BERRY
         move MOVE_ROLLOUT
@@ -1215,7 +1215,7 @@ trainerdata 30, "Whitney"
         // mon 2
         ivs 255
         abilityslot 32
-        level 20
+        level 18
         pokemon SPECIES_BLITZLE
         item ITEM_MAGNET
         move MOVE_PURSUIT
@@ -1233,7 +1233,7 @@ trainerdata 30, "Whitney"
         // mon 3
         ivs 255
         abilityslot 32
-        level 20
+        level 18
         pokemon SPECIES_LICKITUNG
         item ITEM_CHESTO_BERRY
         move MOVE_REST
@@ -11910,7 +11910,7 @@ trainerdata 266, "Silver"
         // mon 0
         ivs 200
         abilityslot 32
-        level 18
+        level 17
         pokemon SPECIES_DUSKULL
         item ITEM_NONE
         move MOVE_SHADOW_SNEAK
@@ -11928,7 +11928,7 @@ trainerdata 266, "Silver"
         // mon 1
         ivs 200
         abilityslot 32
-        level 18
+        level 17
         pokemon SPECIES_CORVISQUIRE
         item ITEM_NONE
         move MOVE_PLUCK
@@ -11946,7 +11946,7 @@ trainerdata 266, "Silver"
         // mon 2
         ivs 200
         abilityslot 32
-        level 20
+        level 19
         pokemon SPECIES_QUILAVA
         item ITEM_SITRUS_BERRY
         move MOVE_QUICK_ATTACK
@@ -12186,7 +12186,7 @@ trainerdata 269, "Silver"
         // mon 0
         ivs 200
         abilityslot 32
-        level 18
+        level 17
         pokemon SPECIES_DUSKULL
         item ITEM_NONE
         move MOVE_SHADOW_SNEAK
@@ -12204,7 +12204,7 @@ trainerdata 269, "Silver"
         // mon 1
         ivs 200
         abilityslot 32
-        level 18
+        level 17
         pokemon SPECIES_CORVISQUIRE
         item ITEM_NONE
         move MOVE_PLUCK
@@ -12222,7 +12222,7 @@ trainerdata 269, "Silver"
         // mon 2
         ivs 200
         abilityslot 32
-        level 20
+        level 19
         pokemon SPECIES_CROCONAW
         item ITEM_SITRUS_BERRY
         move MOVE_AQUA_JET

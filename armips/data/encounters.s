@@ -1056,7 +1056,7 @@ rocksmashrate 0
 oldrodrate 0
 goodrodrate 0
 superrodrate 0
-walklevels 15, 15, 15, 15, 16, 16, 16, 16, 18, 18, 18, 18
+walklevels 13, 13, 13, 14, 14, 14, 15, 15, 16, 16, 16, 16
 
 // morning encounter slots
 pokemon SPECIES_ABRA
@@ -1160,7 +1160,7 @@ rocksmashrate 0
 oldrodrate 0
 goodrodrate 0
 superrodrate 0
-walklevels 15, 15, 15, 15, 16, 16, 16, 16, 18, 18, 18, 19
+walklevels 13, 13, 13, 14, 14, 14, 15, 15, 16, 16, 16, 16
 
 // morning encounter slots
 pokemon SPECIES_ABRA
@@ -1264,7 +1264,7 @@ rocksmashrate 0
 oldrodrate 0
 goodrodrate 0
 superrodrate 0
-walklevels 15, 15, 15, 15, 16, 16, 16, 16, 18, 18, 18, 19
+walklevels 13, 13, 13, 14, 14, 14, 15, 15, 16, 16, 16, 16
 
 // morning encounter slots
 pokemon SPECIES_ABRA
@@ -1368,7 +1368,7 @@ rocksmashrate 0
 oldrodrate 0
 goodrodrate 0
 superrodrate 0
-walklevels 15, 15, 15, 15, 16, 16, 16, 16, 18, 18, 18, 18
+walklevels 13, 13, 13, 14, 14, 14, 15, 15, 16, 16, 16, 16
 
 // morning encounter slots
 pokemon SPECIES_UNOWN
@@ -1472,7 +1472,7 @@ rocksmashrate 0
 oldrodrate 25
 goodrodrate 50
 superrodrate 75
-walklevels 7, 7, 7, 7, 7, 7, 7, 7, 8, 8, 8, 8
+walklevels 7, 7, 7, 7, 8, 8, 8, 8, 8, 9, 9, 9
 
 // morning encounter slots
 pokemon SPECIES_FROAKIE
@@ -1576,7 +1576,7 @@ rocksmashrate 0
 oldrodrate 25
 goodrodrate 50
 superrodrate 75
-walklevels 23, 23, 23, 23, 24, 24, 24, 24, 25, 25, 25, 25
+walklevels 15, 15, 15, 17, 17, 17, 17, 19, 19, 19, 19, 19
 
 // morning encounter slots
 pokemon SPECIES_CUBONE
@@ -1784,7 +1784,7 @@ rocksmashrate 0
 oldrodrate 0
 goodrodrate 0
 superrodrate 0
-walklevels 6, 6, 7, 7, 7, 7, 7, 7, 8, 8, 8, 8
+walklevels 8, 8, 8, 8, 9, 9, 9, 9, 9, 9, 10, 10
 
 // morning encounter slots
 pokemon SPECIES_RALTS
@@ -1888,7 +1888,7 @@ rocksmashrate 0
 oldrodrate 25
 goodrodrate 50
 superrodrate 75
-walklevels 7, 7, 7, 8, 8, 8, 8, 8, 8, 9, 9, 10
+walklevels 8, 8, 8, 9, 9, 9, 9, 9, 10, 10, 10, 10
 
 // morning encounter slots
 monwithform SPECIES_SLOWPOKE, 1
@@ -2096,7 +2096,7 @@ rocksmashrate 0
 oldrodrate 25
 goodrodrate 50
 superrodrate 75
-walklevels 10, 10, 10, 10, 10, 11, 11, 11, 11, 12, 12, 12
+walklevels 11, 11, 11, 11, 11, 12, 12, 12, 12, 13, 13, 13
 
 // morning encounter slots
 pokemon SPECIES_SKIDDO
@@ -2200,7 +2200,7 @@ rocksmashrate 0
 oldrodrate 25
 goodrodrate 50
 superrodrate 75
-walklevels 10, 10, 11, 11, 12, 12, 12, 12, 13, 13, 13, 13
+walklevels 11, 11, 11, 11, 12, 12, 13, 13, 13, 13, 14, 14
 
 // morning encounter slots
 pokemon SPECIES_PICHU
