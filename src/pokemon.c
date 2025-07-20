@@ -1321,7 +1321,18 @@ u32 LONG_CALL CheckIfMonsAreEqual(struct PartyPokemon *pokemon1, struct PartyPok
  */
 BOOL CanUseItemOnMonInParty(struct Party *party, u16 itemID, s32 partyIdx, s32 moveIdx, u32 heapID) {
     struct PartyPokemon *mon = Party_GetMonByIndex(party, partyIdx);
-
+    if (itemID == ITEM_INFINITE_RARE_CANDY) {
+        u8 highestPlayerPokeLvl = 1;
+        for (int i = 0; i < party->count; i++) {
+            u8 monLvl = (u8)GetMonData(Party_GetMonByIndex(party, i), MON_DATA_LEVEL, NULL);
+            if (monLvl > highestPlayerPokeLvl) {
+                highestPlayerPokeLvl = monLvl;
+            }
+        }
+        if (GetMonData(mon, MON_DATA_LEVEL, NULL) >= highestPlayerPokeLvl) {
+            return FALSE;
+        }
+    }
     if (GetItemData(itemID, ITEM_PARAM_LEVEL_UP, heapID) && GetMonData(mon, MON_DATA_LEVEL, NULL) == 100 && GetMonEvolution(party, mon, EVOCTX_LEVELUP, itemID, NULL))
     {
         return TRUE;

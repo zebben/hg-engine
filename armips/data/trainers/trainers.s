@@ -1437,7 +1437,6 @@ trainerdata 32, "Pryce"
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
         ballseal 0
-        ballseal 0
         
         // mon 5
         ivs 255
@@ -13568,7 +13567,7 @@ trainerdata 290, "Li"
         // mon 0
         ivs 200
         abilityslot 0
-        level 9
+        level 1
         pokemon SPECIES_BELLSPROUT
         move MOVE_VINE_WHIP
         move MOVE_SLEEP_POWDER
@@ -13579,7 +13578,7 @@ trainerdata 290, "Li"
         // mon 1
         ivs 200
         abilityslot 0
-        level 9
+        level 1
         pokemon SPECIES_HOOTHOOT
         move MOVE_PECK
         move MOVE_ROOST
@@ -13590,7 +13589,7 @@ trainerdata 290, "Li"
         // mon 2
         ivs 200
         abilityslot 0
-        level 8
+        level 1
         pokemon SPECIES_WEEPINBELL
         move MOVE_VINE_WHIP
         move MOVE_SLEEP_POWDER
@@ -23564,7 +23563,6 @@ trainerdata 499, "Grunt"
         nature NATURE_MODEST
         shinylock 0
         additionalflags 0 // no further entries data will be read, but needs to be here as the trainer data structure specifies additionalflags
-        ballseal 0
         ballseal 0
     endparty
 
