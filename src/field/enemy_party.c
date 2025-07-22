@@ -16,6 +16,49 @@
 #include "../../include/constants/species.h"
 #include "../../include/constants/weather_numbers.h"
 
+#ifdef SCALE_ENEMY_TRAINER_LEVELS
+const int bossTrainerIDs[] = {
+    // Rival
+    1, 264, 266, 267, 268, 269, 270, 271, 272,
+    285, 286, 287, 288, 289, 735, 736, 737, 489, 490,
+    // Rocket Executives
+    478, 487, 488, 706, 700,
+    // Elite Four
+    245, 246, 247, 418,
+    702, 703, 704, 705,
+    // Lance
+    244, 701, 733, 675,
+    // Johto Gym Leaders
+    20, 21, 30, 31, 32, 33, 34, 35,
+    712, 713, 714, 715, 716, 717, 718, 719,
+    734,
+    // Kanto Gym Leaders
+    253, 254, 255, 256, 257, 258, 259, 261,
+    720, 721, 722, 723, 724, 725, 726, 727,
+};
+
+const int subBossTrainerIDs[] = {
+    // Elder Li
+    290,
+    // Eusine
+    498,
+    // Proton
+    486,
+    // Kimono Girls
+    160, 161, 162, 163, 164,
+    // Johto Gym Trainers
+    50, 29, 67, 68, 69, 387, 493, 494, 89, 46,
+    156, 157, 159, 251, 297, 481, 482, 483, 484,
+    110, 111, 112, 117, 119,
+    // Kanto Gym Trainers
+    232, 396, 337, 368, 369, 230, 415,
+    326, 336, 346, 356, 377, 676, 677, 297, 678, 298,
+    83, 84, 136, 183, 308,
+    685, 689, 690, 691, 692, 693, 694,
+    681, 682, 683, 684
+};
+#endif
+
 /**
  *  @brief swap two integer values with each other given pointers
  *
@@ -57,27 +100,46 @@ void MakeTrainerPokemonParty(struct BATTLE_PARAM *bp, int num, int heapID)
     int i, j;
     u32 rnd_tmp, rnd, seed_tmp;
     u8 pow;
+    BOOL alwaysScale = FALSE;
+    BOOL subBoss = FALSE;
 
     seed_tmp = gf_get_seed();
 
     // level scaling options, only used if scaling based on player level
-    int scaleOptions[6] = {5, 5, 6, 7, 8, 8};
+    int scaleOptions[6] = {-1, 0, 1, 1, 2, 2};
     u8 highestPlayerPokeLvl = 1;
 
-    #ifdef TRAINER_LEVEL_FLOOR
-        // shuffle the order of the scale options
-        randomize(scaleOptions, 6);
-        struct Party *party = bp->poke_party[0];
-        s32 player_poke_count = party->count;
-
-        for(int i = 0; i < player_poke_count; i++) {
-            u8 monLvl = (u8)GetMonData(Party_GetMonByIndex(party, i), MON_DATA_LEVEL, NULL);
-            if (monLvl > highestPlayerPokeLvl)
-            {
-                highestPlayerPokeLvl = monLvl;
+#ifdef SCALE_ENEMY_TRAINER_LEVELS
+    // always scale boss trainers
+    for (int i = 0; i < sizeof(bossTrainerIDs) / sizeof(bossTrainerIDs[0]); i++) {
+        if (bossTrainerIDs[i] == bp->trainer_id[num]) {
+            alwaysScale = TRUE;
+            break;
+        }
+    }
+    // always scale sub-boss trainers as well
+    if (!alwaysScale) {
+        for (int i = 0; i < sizeof(subBossTrainerIDs) / sizeof(subBossTrainerIDs[0]); i++) {
+            if (subBossTrainerIDs[i] == bp->trainer_id[num]) {
+                alwaysScale = TRUE;
+                subBoss = TRUE;
+                break;
             }
         }
-    #endif
+    }
+
+    // shuffle the order of the scale options
+    randomize(scaleOptions, 6);
+    struct Party *party = bp->poke_party[0];
+    s32 player_poke_count = party->count;
+
+    for(int i = 0; i < player_poke_count; i++) {
+        u8 monLvl = (u8)GetMonData(Party_GetMonByIndex(party, i), MON_DATA_LEVEL, NULL);
+        if (monLvl > highestPlayerPokeLvl) {
+            highestPlayerPokeLvl = monLvl;
+        }
+    }
+#endif
 
     PokeParty_Init(bp->poke_party[num], 6);
 
@@ -160,23 +222,21 @@ void MakeTrainerPokemonParty(struct BATTLE_PARAM *bp, int num, int heapID)
 
         // level field
         level = buf[offset] | (buf[offset+1] << 8);
-        #ifdef TRAINER_LEVEL_FLOOR
-            if (highestPlayerPokeLvl > level && highestPlayerPokeLvl - level >= 10)
-            {
-                // scale level of trainer mons if it's more than 10 levels lower
-                level = highestPlayerPokeLvl - scaleOptions[i];
+        #ifdef SCALE_ENEMY_TRAINER_LEVELS
+            int diff = (int)level - (int)highestPlayerPokeLvl;
+            if (alwaysScale || diff > 10 || diff < -5) {
+                level = highestPlayerPokeLvl + scaleOptions[i];
+                if (subBoss) {
+                    level -= 1;
+                }
 
                 // ensure the trainer's mons don't get above level 100
-                // won't happen with current config but leaving for safety
-                if (level > 100)
-                {
+                if (level > 100) {
                     level = 100;
                 }
 
                 // ensure the trainer's mons don't get below level 1
-                // won't happen with current config but leaving for safety
-                if (level < 3)
-                {
+                if (level < 3) {
                     level = 3;
                 }
             }
@@ -506,44 +566,6 @@ BOOL LONG_CALL AddWildPartyPokemon(int inTarget, EncounterInfo *encounterInfo, s
     u8 change_form = 0;
     u8 form_no;
     u16 species;
-
-    #ifdef WILD_LEVEL_FLOOR
-        u8 highestPlayerPokeLvl = 1;
-        struct Party *party = encounterBattleParam->poke_party[0];
-        s32 player_poke_count = party->count;
-
-        for (int i = 0; i < player_poke_count; i++) {
-            u8 monLvl = (u8)GetMonData(Party_GetMonByIndex(party, i), MON_DATA_LEVEL, NULL);
-            if (monLvl > highestPlayerPokeLvl)
-            {
-                highestPlayerPokeLvl = monLvl;
-            }
-        }
-
-        u8 wildMonLevel = (u8)GetMonData(encounterPartyPokemon, MON_DATA_LEVEL, NULL);
-        if (highestPlayerPokeLvl > wildMonLevel && highestPlayerPokeLvl - wildMonLevel > 10)
-        {
-            // subtract a random number of levels between 3 and 5
-            // adds some variety to wild encounters vs just setting to player level
-            int scaleOptions[3] = {7, 8, 9};
-            randomize(scaleOptions, 3);
-            highestPlayerPokeLvl -= scaleOptions[0];
-
-            // make sure wild pokemon are at least level 2
-            // won't happen with current config but leaving for safety
-            if (highestPlayerPokeLvl < 2) {
-                highestPlayerPokeLvl = 2;
-            }
-
-            // set exp and level then recalc stats and moveset
-            u32 exp = PokeLevelExpGet(species, highestPlayerPokeLvl);
-            SetMonData(encounterPartyPokemon, MON_DATA_LEVEL, &highestPlayerPokeLvl);
-            SetMonData(encounterPartyPokemon, MON_DATA_EXPERIENCE, &exp);
-            encounterInfo->level = highestPlayerPokeLvl;
-            RecalcPartyPokemonStats(encounterPartyPokemon);
-            InitBoxMonMoveset(&encounterPartyPokemon->box);
-        }
-    #endif
 
     if (encounterInfo->isEgg == 0 && encounterInfo->ability == ABILITY_COMPOUND_EYES)
     {
