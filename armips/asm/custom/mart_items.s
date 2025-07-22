@@ -128,7 +128,7 @@
 
 /* Goldenrod City Department Store - Vitamins */
 .org 0x020FBAFA
-.halfword ITEM_LUCKY_EGG
+.halfword ITEM_INFINITE_RARE_CANDY // TODO eventually remove this
 .halfword ITEM_EXP_SHARE
 .halfword ITEM_AIR_BALLOON
 .halfword ITEM_LIGHT_CLAY
