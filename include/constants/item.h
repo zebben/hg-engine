@@ -874,6 +874,7 @@
 // #define ITEM_CUSTOM_1 (MAX_BASE_ITEM_NUM + 1)
 
 #define ITEM_INFINITE_RARE_CANDY (MAX_BASE_ITEM_NUM + 1)
+#define ITEM_HARDCORE_TOGGLE     (MAX_BASE_ITEM_NUM + 2)
 
 #define NUM_MEGA_STONES 48 // includes the pixie plate
 

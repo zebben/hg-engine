@@ -799,3 +799,4 @@ Wellspring Mask
 Hearthflame Mask
 Metal Alloy
 Inf. Rare Candy
+Hardcore Toggle

@@ -955,6 +955,25 @@ u32 LONG_CALL UseItemMonAttrChangeCheck(struct PLIST_WORK *wk, void *dat)
         return TRUE;
     }
 
+    // handle hardcore toggle
+
+    if (wk->dat->item == ITEM_HARDCORE_TOGGLE) {
+        void *bag = Sav2_Bag_get(SaveBlock2_get());
+        wk->dat->after_mons = wk->dat->item - ITEM_HARDCORE_TOGGLE;
+        sys_FreeMemoryEz(dat);
+        PokeList_FormDemoOverlayLoad(wk);
+        partyMenuSignal = 220; // signal to change the message to this index
+        u16 hardcoreMode = GetScriptVar(HARDCORE_MODE_VARIABLE);
+        debug_printf("Hardcore mode was %d\n", hardcoreMode);
+        hardcoreMode = hardcoreMode == 1 ? 0 : 1;
+        partyMenuSignal += hardcoreMode;
+        debug_printf("partyMenuSignal %d\n", partyMenuSignal);
+        SetScriptVar(HARDCORE_MODE_VARIABLE, hardcoreMode);
+        debug_printf("Hardcore mode now %d\n", hardcoreMode);
+        Bag_TakeItem(bag, ITEM_HARDCORE_TOGGLE, 1, 11);
+        return TRUE;
+    }
+
     return FALSE;
 }
 
@@ -1320,6 +1339,9 @@ u32 LONG_CALL CheckIfMonsAreEqual(struct PartyPokemon *pokemon1, struct PartyPok
  *  @return TRUE if can use item, FALSE otherwise
  */
 BOOL CanUseItemOnMonInParty(struct Party *party, u16 itemID, s32 partyIdx, s32 moveIdx, u32 heapID) {
+    if (itemID == ITEM_HARDCORE_TOGGLE) {
+        return FALSE;
+    }
     struct PartyPokemon *mon = Party_GetMonByIndex(party, partyIdx);
     if (itemID == ITEM_INFINITE_RARE_CANDY) {
         u8 highestPlayerPokeLvl = 1;

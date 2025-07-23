@@ -535,3 +535,5 @@ Lock Capsules
 Red Orbs
 Blue Orbs
 Enigma Stones
+Inf. Rare Candies
+Hardcore Togglers

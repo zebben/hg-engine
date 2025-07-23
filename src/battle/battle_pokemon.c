@@ -1003,44 +1003,44 @@ void BattleEndRevertFormChange(struct BattleSystem *bw)
     }
 #endif // RESTORE_ITEMS_AT_BATTLE_END
 
-#ifdef PERMA_DEATH_MODE
-    struct Party *party = bw->trainerParty[0];
-    j = 0;
-    for (i = party->count - 1; i >= 0; i--)
-    {
-        struct PartyPokemon *mon = Party_GetMonByIndex(party, i);
-        if (GetMonData(mon, MON_DATA_HP, NULL) == 0) {
-            PokeParty_Delete(party, i);
-            j++;
+    if (GetScriptVar(HARDCORE_MODE_VARIABLE) == 1) {
+        struct Party *party = bw->trainerParty[0];
+        j = 0;
+        for (i = party->count - 1; i >= 0; i--)
+        {
+            struct PartyPokemon *mon = Party_GetMonByIndex(party, i);
+            if (GetMonData(mon, MON_DATA_HP, NULL) == 0) {
+                PokeParty_Delete(party, i);
+                j++;
+            }
+        }
+        if (party->count == 0)
+        {
+            u16 one = 1;
+            u32 anotherone = 1;
+            u32 magikarp = SPECIES_MAGIKARP;
+            SetMonData(pp, MON_DATA_SPECIES, &magikarp);
+            SetMonData(pp, MON_DATA_LEVEL, &one);
+            SetMonData(pp, MON_DATA_EXPERIENCE, &anotherone);
+            SetMonData(pp, MON_DATA_HP_IV, &one);
+            SetMonData(pp, MON_DATA_ATK_IV, &one);
+            SetMonData(pp, MON_DATA_DEF_IV, &one);
+            SetMonData(pp, MON_DATA_SPEED_IV, &one);
+            SetMonData(pp, MON_DATA_SPATK_IV, &one);
+            SetMonData(pp, MON_DATA_SPDEF_IV, &one);
+            u16 splash = MOVE_SPLASH;
+            SetMonData(pp, MON_DATA_MOVE1, &splash);
+            u16 ss = ABILITY_SWIFT_SWIM;
+            SetMonData(pp, MON_DATA_ABILITY, &ss);
+            u16 nickname[12];
+            u8 hasNickname = FALSE;
+            GetSpeciesNameIntoArray(GetMonData(pp, MON_DATA_SPECIES, NULL), 0, nickname);
+            SetMonData(pp, MON_DATA_NICKNAME, nickname);
+            SetMonData(pp, MON_DATA_HAS_NICKNAME, &hasNickname);
+            RecalcPartyPokemonStats(pp);
+            PokeParty_Add(party, pp);
         }
     }
-    if (party->count == 0)
-    {
-        u16 one = 1;
-        u32 anotherone = 1;
-        u32 magikarp = SPECIES_MAGIKARP;
-        SetMonData(pp, MON_DATA_SPECIES, &magikarp);
-        SetMonData(pp, MON_DATA_LEVEL, &one);
-        SetMonData(pp, MON_DATA_EXPERIENCE, &anotherone);
-        SetMonData(pp, MON_DATA_HP_IV, &one);
-        SetMonData(pp, MON_DATA_ATK_IV, &one);
-        SetMonData(pp, MON_DATA_DEF_IV, &one);
-        SetMonData(pp, MON_DATA_SPEED_IV, &one);
-        SetMonData(pp, MON_DATA_SPATK_IV, &one);
-        SetMonData(pp, MON_DATA_SPDEF_IV, &one);
-        u16 splash = MOVE_SPLASH;
-        SetMonData(pp, MON_DATA_MOVE1, &splash);
-        u16 ss = ABILITY_SWIFT_SWIM;
-        SetMonData(pp, MON_DATA_ABILITY, &ss);
-        u16 nickname[12];
-        u8 hasNickname = FALSE;
-        GetSpeciesNameIntoArray(GetMonData(pp, MON_DATA_SPECIES, NULL), 0, nickname);
-        SetMonData(pp, MON_DATA_NICKNAME, nickname);
-        SetMonData(pp, MON_DATA_HAS_NICKNAME, &hasNickname);
-        RecalcPartyPokemonStats(pp);
-        PokeParty_Add(party, pp);
-    }
-#endif // PERMA_DEATH_MODE
 }
 
 /**
