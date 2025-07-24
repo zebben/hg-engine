@@ -128,7 +128,7 @@
 
 /* Goldenrod City Department Store - Vitamins */
 .org 0x020FBAFA
-.halfword ITEM_INFINITE_RARE_CANDY // TODO eventually remove this
+.halfword ITEM_LUCKY_EGG
 .halfword ITEM_EXP_SHARE
 .halfword ITEM_AIR_BALLOON
 .halfword ITEM_LIGHT_CLAY
@@ -301,7 +301,7 @@ EIGHT_BADGES equ 6
 .halfword FIVE_BADGES
 
 .halfword ITEM_RARE_CANDY
-.halfword EIGHT_BADGES
+.halfword SEVEN_BADGES
 
 .halfword ITEM_POKE_BALL
 .halfword ZERO_BADGES
@@ -312,8 +312,8 @@ EIGHT_BADGES equ 6
 .halfword ITEM_ULTRA_BALL
 .halfword FIVE_BADGES
 
-.halfword ITEM_RARE_CANDY
-.halfword SEVEN_BADGES
+.halfword ITEM_MASTER_BALL
+.halfword EIGHT_BADGES
 
 .halfword ITEM_POTION
 .halfword ZERO_BADGES
