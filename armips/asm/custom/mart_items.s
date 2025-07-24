@@ -312,7 +312,7 @@ EIGHT_BADGES equ 6
 .halfword ITEM_ULTRA_BALL
 .halfword FIVE_BADGES
 
-.halfword ITEM_MASTER_BALL
+.halfword ITEM_RARE_CANDY
 .halfword SEVEN_BADGES
 
 .halfword ITEM_POTION
@@ -331,10 +331,10 @@ EIGHT_BADGES equ 6
 .halfword ONE_BADGE
 
 .halfword ITEM_SITRUS_BERRY
-.halfword FIVE_BADGES
+.halfword THREE_BADGES
 
 .halfword ITEM_LUM_BERRY
-.halfword SEVEN_BADGES
+.halfword FIVE_BADGES
 
 .halfword ITEM_ETHER
 .halfword ONE_BADGE

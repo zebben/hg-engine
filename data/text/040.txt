@@ -1,13 +1,13 @@
 Would you like to rest your\nPokémon?{YESNO 0}
-OK, I’ll take your Pokémon for a few\nseconds.
+OK, I’ll take your Pokémon for a few\nseconds and restock your supplies.
 
 Please, come back again any time!
 Would you like to...\r
 Th-that Trainer Card!\rThat wonderful shade!\nAnd all those stars!\rI’ve seen several Trainers with\nViolet Trainer Cards up to now...\rBut you’re the first to top them\nwith that impressive Trainer Card.\rPlease, {STRVAR_1 3, 0, 0}, may I please\nheal your Pokémon? {YESNO 0}
 Great to see you, {STRVAR_1 3, 0, 0}!\nYou want the usual, right? {YESNO 0}
-
+I will be pleased to take your\nPokémon for a few seconds.
 Thank you for waiting.
-
+We hope to see you again!
 Your Pokémon may be infected with\nthe Pokérus.\rLittle is known about the Pokérus\nexcept that they are microscopic\flife-forms that attach to Pokémon.\rWhile infected, Pokémon are said to\ngrow exceptionally well.
 {STRVAR_1 3, 0, 0} is out of battle-ready\nPokémon!\r{STRVAR_1 3, 0, 0}’s vision dimmed!
              

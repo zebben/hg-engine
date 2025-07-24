@@ -78,7 +78,7 @@ const ITEMDATA __data[] =
 
 [ITEM_MASTER_BALL] =
 {
-    .price = 5000,
+    .price = 0,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -3263,7 +3263,7 @@ const ITEMDATA __data[] =
 
 [ITEM_RARE_CANDY] =
 {
-    .price = 5000,
+    .price = 9999,
     .holdEffect = 0,
     .holdEffectParam = 0,
     .pluckEffect = 0,
@@ -3271,7 +3271,7 @@ const ITEMDATA __data[] =
     .flingPower = 30,
     .naturalGiftPower = 0,
     .naturalGiftType = 31,
-    .prevent_toss = FALSE,
+    .prevent_toss = TRUE,
     .selectable = FALSE,
     .fieldPocket = POCKET_MEDICINE,
     .battlePocket = BATTLE_POCKET_NONE,
