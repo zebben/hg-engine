@@ -799,4 +799,4 @@ An item to be held by Ogerpon.\nThis carved wooden mask allows Ogerpon\nto wield
 An item to be held by Ogerpon.\nThis carved wooden mask allows Ogerpon\nto wield the Fire type during battle.
 A peculiar metal that can make certain\nspecies of Pokémon evolve.\nIt is composed of many layers.
 Raises the level of a single Pokémon\nby one. Cannot exceed max party level.
-Toggles hardcore mode. There is\ncurrently no visual indicator...
+Toggles hardcore mode when used on a\nPokémon. When active, Pokémon that\nfaint will be permanently lost.
