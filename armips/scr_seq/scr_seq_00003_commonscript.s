@@ -90,7 +90,7 @@ scrdef scr_seq_0003_072_repels
 scrdef_end
 
 scr_seq_0003_002:
-    hasitem ITEM_SACRED_ASH, 1, VAR_SPECIAL_RESULT
+    takeitem ITEM_SACRED_ASH, 1, VAR_SPECIAL_RESULT
     giveitem ITEM_SACRED_ASH, 1, VAR_SPECIAL_RESULT
     takeitem ITEM_FULL_RESTORE, 3, VAR_SPECIAL_RESULT
     giveitem ITEM_FULL_RESTORE, 3, VAR_SPECIAL_RESULT
