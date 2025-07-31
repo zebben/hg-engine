@@ -90,9 +90,9 @@ scrdef scr_seq_0003_072_repels
 scrdef_end
 
 scr_seq_0003_002:
-    takeitem ITEM_SACRED_ASH, 1, VAR_SPECIAL_RESULT
+    takeitem_no_check ITEM_SACRED_ASH, 1
     giveitem ITEM_SACRED_ASH, 1, VAR_SPECIAL_RESULT
-    takeitem ITEM_FULL_RESTORE, 3, VAR_SPECIAL_RESULT
+    takeitem_no_check ITEM_FULL_RESTORE, 3
     giveitem ITEM_FULL_RESTORE, 3, VAR_SPECIAL_RESULT
     hasitem ITEM_HARDCORE_TOGGLE, 1, VAR_SPECIAL_RESULT
     giveitem ITEM_HARDCORE_TOGGLE, 1, VAR_SPECIAL_RESULT
