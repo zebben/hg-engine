@@ -1163,6 +1163,7 @@ int UNUSED CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 sid
 
     // Step 3.3. Critical hit
     if (critical > 1) {
+        // critical hits ignore attacker attack drops
         AttackingMon.atkstate = AttackingMon.atkstate < 0 ? 0 : AttackingMon.atkstate;
         AttackingMon.spatkstate = AttackingMon.spatkstate < 0 ? 0 : AttackingMon.spatkstate;
     }
@@ -1478,7 +1479,7 @@ int UNUSED CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 sid
 #endif
 
     // Step 4.2. Chip Away / Sacred Sword
-    if ((moveno == MOVE_CHIP_AWAY) && (moveno == MOVE_SACRED_SWORD)) {
+    if ((moveno == MOVE_CHIP_AWAY) || (moveno == MOVE_SACRED_SWORD)) {
         DefendingMon.defstate = 0;
         DefendingMon.spdefstate = 0;
     }
@@ -1491,7 +1492,7 @@ int UNUSED CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 sid
 #endif
 
     // Step 4.3. Psyshock / Psystrike / Secret Sword
-    if ((moveno == MOVE_PSYSHOCK) && (moveno == MOVE_PSYSTRIKE) && (moveno == MOVE_SECRET_SWORD)) {
+    if ((moveno == MOVE_PSYSHOCK) || (moveno == MOVE_PSYSTRIKE) || (moveno == MOVE_SECRET_SWORD)) {
         DefendingMon.sp_defense = DefendingMon.defense;
     }
 
@@ -1506,8 +1507,9 @@ int UNUSED CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 sid
 
     // Step 4.5. Critical hit
     if (critical > 1) {
-        DefendingMon.defstate = AttackingMon.defstate < 0 ? 0 : AttackingMon.defstate;
-        DefendingMon.spdefstate = AttackingMon.spdefstate < 0 ? 0 : AttackingMon.spdefstate;
+        // critical hits ignore defender's stat boosts
+        DefendingMon.defstate = DefendingMon.defstate > 0 ? 0 : DefendingMon.defstate;
+        DefendingMon.spdefstate = DefendingMon.spdefstate > 0 ? 0 : DefendingMon.spdefstate;
     }
 
 #ifdef DEBUG_DAMAGE_CALC
@@ -1585,7 +1587,7 @@ int UNUSED CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 sid
 
             // handle Marvel Scale
             if ((MoldBreakerAbilityCheck(sp, attacker, defender, ABILITY_MARVEL_SCALE) == TRUE)
-            && (AttackingMon.condition)
+            && (DefendingMon.condition)
             && (movesplit == SPLIT_PHYSICAL)) {
                 defenseModifier = QMul_RoundUp(defenseModifier, UQ412__1_5);
             }
