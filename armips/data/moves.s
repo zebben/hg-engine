@@ -2242,7 +2242,7 @@ movedata MOVE_POISON_GAS, "Poison Gas"
     accuracy 90
     pp 40
     effectchance 0
-    target DEBUG_NEEDS_TESTING ? RANGE_ADJACENT_OPPONENTS : RANGE_SINGLE_TARGET
+    target RANGE_ADJACENT_OPPONENTS
     priority 0
     flags FLAG_MIRROR_MOVE | FLAG_MAGIC_COAT | FLAG_PROTECT
     appeal 0x05

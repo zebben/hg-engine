@@ -100,29 +100,25 @@ void MakeTrainerPokemonParty(struct BATTLE_PARAM *bp, int num, int heapID)
     int i, j;
     u32 rnd_tmp, rnd, seed_tmp;
     u8 pow;
-    BOOL alwaysScale = FALSE;
-    BOOL subBoss = FALSE;
+    u8 levelMod = 0;
 
     seed_tmp = gf_get_seed();
 
     // level scaling options, only used if scaling based on player level
-    int scaleOptions[6] = {-1, 0, 1, 1, 2, 2};
+    int scaleOptions[6] = {-1, 0, 0, 1, 1, 1};
     u8 highestPlayerPokeLvl = 1;
 
 #ifdef SCALE_ENEMY_TRAINER_LEVELS
-    // always scale boss trainers
     for (int i = 0; i < sizeof(bossTrainerIDs) / sizeof(bossTrainerIDs[0]); i++) {
         if (bossTrainerIDs[i] == bp->trainer_id[num]) {
-            alwaysScale = TRUE;
+            levelMod = 4;
             break;
         }
     }
-    // always scale sub-boss trainers as well
-    if (!alwaysScale) {
+    if (levelMod > 0) {
         for (int i = 0; i < sizeof(subBossTrainerIDs) / sizeof(subBossTrainerIDs[0]); i++) {
             if (subBossTrainerIDs[i] == bp->trainer_id[num]) {
-                alwaysScale = TRUE;
-                subBoss = TRUE;
+                levelMod = 2;
                 break;
             }
         }
@@ -223,22 +219,15 @@ void MakeTrainerPokemonParty(struct BATTLE_PARAM *bp, int num, int heapID)
         // level field
         level = buf[offset] | (buf[offset+1] << 8);
         #ifdef SCALE_ENEMY_TRAINER_LEVELS
-            int diff = (int)level - (int)highestPlayerPokeLvl;
-            if (alwaysScale || diff > 10 || diff < -5) {
-                level = highestPlayerPokeLvl + scaleOptions[i];
-                if (subBoss) {
-                    level -= 1;
-                }
+            level = highestPlayerPokeLvl + scaleOptions[i] + levelMod;
+            // ensure the trainer's mons don't get above level 100
+            if (level > 100) {
+                level = 100;
+            }
 
-                // ensure the trainer's mons don't get above level 100
-                if (level > 100) {
-                    level = 100;
-                }
-
-                // ensure the trainer's mons don't get below level 1
-                if (level < 3) {
-                    level = 3;
-                }
+            // ensure the trainer's mons don't get below level 1
+            if (level < 3) {
+                level = 3;
             }
         #endif
         gLastPokemonLevelForMoneyCalc = level; // ends up being the last level at the end of the loop that we use for the money calc loop default case
