@@ -4,6 +4,7 @@
 #include "types.h"
 #include "item.h"
 #include "sprite.h"
+#include "message_format.h"
 #include "pokemon.h"
 #include "task.h"
 #include "save.h"
@@ -3820,5 +3821,7 @@ Trainer LONG_CALL *BattleSystem_GetTrainer(struct BattleSystem *bsys, int battle
 BOOL LONG_CALL IsAnyBattleMonHit(struct BattleStruct* ctx);
 
 int GetSanitisedType(int type);
+
+void LONG_CALL BattleSystem_BufferItemNameWithIndefArticle(MessageFormat *msgFmt, u32 fieldno, u32 itemId);
 
 #endif // BATTLE_H

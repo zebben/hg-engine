@@ -573,6 +573,7 @@ RestoreBoxMonPP = 0x020728C4 | 1;
 //PCStorage_SetBoxModified = 0x020740D8 | 1;
 CopyU16ArrayToString = 0x020269A0 | 1;
 CopyStringToU16Array = 0x02026A68 | 1;
+SetStringAsPlaceholder = 0x0200BDF8 | 1;
 CheckMoveCallsOtherMove = 0x02252698 | 1;
 //StruggleCheck = 0x022517EC | 1;
 
