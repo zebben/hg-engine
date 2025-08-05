@@ -11,6 +11,7 @@ import re
 import json
 import os
 import argparse
+import glob
 
 
 def load_species_header(file_path):
@@ -59,6 +60,78 @@ def load_machine_move_list(file_path):
     return move_list
 
 
+def load_form_to_species_mapping(form_map_path):
+    form_map = {}
+
+    define_pattern = re.compile(r"\[(SPECIES_\w+)\s*-\s*SPECIES_MEGA_START\]\s*=\s*(SPECIES_\w+),")
+
+    with open(form_map_path) as f:
+        for line in f:
+            match = define_pattern.search(line)
+            if match:
+                form_species, base_species = match.groups()
+                form_map[form_species] = base_species
+
+    return form_map
+
+
+def load_config_header(config_path):
+    config = {}
+    define_pattern = re.compile(r"#define\s+(\w+)(\s+\"?.*?\"?)?$")
+
+    with open(config_path, "r") as f:
+        for line in f:
+            match = define_pattern.match(line.strip())
+            if match:
+                key = match.group(1)
+                val = match.group(2).strip() if match.group(2) else True
+
+                if isinstance(val, str) and val.startswith('"') and val.endswith('"'):
+                    val = val[1:-1]
+
+                config[key] = val
+
+    return config
+
+
+def merge_learnsets(ordered_data, cutoff_gen, inherit_level, inherit_egg, inherit_machine, inherit_tutor):
+    merged = {}
+
+    for gen_file, gen_data in ordered_data:
+        gen_key = os.path.basename(gen_file)[:-5]  # remove .json extension
+        if gen_key != "custom":
+            gen_key = gen_key[3:]  # remove XX_ prefix
+
+        for species, fields in gen_data.items():
+            merged.setdefault(species, {
+                "LevelMoves": [],
+                "MachineMoves": set(),
+                "EggMoves": [],
+                "TutorMoves": set()
+            })
+
+            if fields.get("LevelMoves") and (gen_key == cutoff_gen or inherit_level):
+                merged[species]["LevelMoves"] = fields.get("LevelMoves", [])
+
+            if fields.get("EggMoves") and (gen_key == cutoff_gen or inherit_level):
+                merged[species]["EggMoves"] = fields.get("EggMoves", [])
+
+            if gen_key == cutoff_gen or inherit_machine:
+                merged[species]["MachineMoves"].update(fields.get("MachineMoves", []))
+
+            if gen_key == cutoff_gen or inherit_tutor:
+                merged[species]["TutorMoves"].update(fields.get("TutorMoves", []))
+
+        if gen_key == cutoff_gen:
+            break
+
+    for data in merged.values():
+        data["MachineMoves"] = sorted(data["MachineMoves"])
+        data["TutorMoves"] = sorted(data["TutorMoves"])
+
+    return merged
+
+
 def write_learnset_constants_inc(max_num_levelup_moves, output_path):
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
 
@@ -81,13 +154,7 @@ def write_learnset_constants_header(num_machine_moves, max_num_levelup_moves, ma
         f.write("#endif // GENERATED_LEARNSET_CONSTANTS_H\n")
 
 
-def write_machine_data(species_dict, moves_dict, species_learnsets, machine_moves, output_path):
-    move_to_index = {
-        move_name: idx
-        for idx, move_name in enumerate(machine_moves)
-        if move_name in moves_dict
-    }
-
+def write_machine_data(species_dict, species_learnsets, machine_moves, output_path):
     max_species_index = max(species_dict.values())
     species_id_to_name = {v: k for k, v in species_dict.items()}
 
@@ -101,17 +168,26 @@ def write_machine_data(species_dict, moves_dict, species_learnsets, machine_move
         for species_id in range(max_species_index + 1):
             species_name = species_id_to_name.get(species_id)
             learnset = []
+            levelup_moves = {}
             if species_name:
                 learnset = species_learnsets.get(species_name, {}).get("MachineMoves", [])
                 learnset = list(set(m.strip() for m in learnset))
 
+                levelup_moves = {
+                    m["Move"] for m in species_learnsets.get(species_name, {}).get("LevelMoves", [])
+                    if "Move" in m
+                }
+
             parts = [0] * ((len(machine_moves) + 31) // 32)
-            for move in learnset:
-                move_index = move_to_index.get(move)
-                if move_index is not None and move_index < len(machine_moves):
-                    word = move_index // 32
-                    bit = move_index % 32
-                    parts[word] |= (1 << bit)
+            for i, move in enumerate(machine_moves):
+                if move in learnset or move in levelup_moves:
+                    move_index = i
+                else:
+                    continue
+
+                word = move_index // 32
+                bit = move_index % 32
+                parts[word] |= (1 << bit)
 
             formatted = ", ".join(f"0x{val:08X}" for val in parts)
             out.write(f"    [{species_name}] = {{ {formatted} }},\n")
@@ -205,19 +281,36 @@ def write_eggmove_data(species_dict, moves_dict, species_learnsets, max_num_egg_
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--learnsets", default="data/mon/learnsets.json")
     parser.add_argument("--machineout")
     parser.add_argument("--levelupout")
     parser.add_argument("--eggout")
     parser.add_argument("--constsout", action='store_true')
+    parser.add_argument("--dump", help="path to dump merged learnsets as JSON")
     args = parser.parse_args()
 
+    config = load_config_header("include/config.h")
     machine_moves = load_machine_move_list("src/item.c")
     species_dict = load_species_header("include/constants/species.h")
     moves_dict = load_moves_header("include/constants/moves.h")
+    form_to_base = load_form_to_species_mapping("data/FormToSpeciesMapping.c")
 
-    with open(args.learnsets, encoding="utf-8") as f:
-        species_learnsets = json.load(f)
+    ordered_learnsets = [
+        (file, json.load(open(file, encoding="utf-8")))
+        for file in sorted(glob.glob(os.path.join("data/mon/learnsets", "*.json")))
+    ]
+
+    species_learnsets = merge_learnsets(
+        ordered_learnsets,
+        config.get("LEARNSET_FILE", "sv"),
+        "LEVELUP_MOVE_INHERITANCE" in config,
+        "EGG_MOVE_INHERITANCE" in config,
+        "MACHINE_MOVE_INHERITANCE" in config,
+        "TUTOR_MOVE_INHERITANCE" in config,
+    )
+
+    for form_species, base_species in form_to_base.items():
+        if form_species not in species_learnsets and base_species in species_learnsets:
+            species_learnsets[form_species] = dict(species_learnsets[base_species])
 
     max_num_levelup_moves = max(
         (len(data.get("LevelMoves", [])) + 1)  # +1 for terminator
@@ -239,10 +332,15 @@ if __name__ == "__main__":
         write_learnset_constants_inc(max_num_levelup_moves, "armips/include/generated/levelup.s")
 
     if args.machineout:
-        write_machine_data(species_dict, moves_dict, species_learnsets, machine_moves, args.machineout)
+        write_machine_data(species_dict, species_learnsets, machine_moves, args.machineout)
 
     if args.levelupout:
         write_levelup_data(species_dict, moves_dict, species_learnsets, max_num_levelup_moves, args.levelupout)
 
     if args.eggout:
         write_eggmove_data(species_dict, moves_dict, species_learnsets, max_num_egg_moves, args.eggout)
+
+    if args.dump:
+        os.makedirs(os.path.dirname(args.dump), exist_ok=True)
+        with open(args.dump, "w", encoding="utf-8") as f:
+            json.dump(species_learnsets, f, indent=2)
