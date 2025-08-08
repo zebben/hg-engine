@@ -89,15 +89,15 @@ static const TutorMove sTutorMoves[] = {
 };
 
 static u16 GetLearnableTutorMoves(struct PartyPokemon *mon, u32 moveTutorNpc, u16 dest[]);
-// TODO long calls?
-static void **ov01_021F6B20(FieldSystem *fieldSystem);
-static BOOL ov01_0220305C(SCRIPTCONTEXT *ctx);
-static void *ov01_021EDF78(FieldSystem *fieldSystem, u8 x, u8 y, u8 initCursorPos, u8 cancellable, u16 *ret_p, u32 *msgFmt, struct Window *window, MsgData *msgData);
-static void MoveTutorMenu_SetListItem(void *menu, int a1, int a2, int a3);
-static void ov01_021F6ABC(FieldSystem *fieldSystem, int a1, int a2, void *a3);
-static void SetupNativeScript(SCRIPTCONTEXT *ctx, ScrCmdFunc ptr);
-static void BufferString(u32 *messageFormat, u32 fieldno, const String *string, s32 a3, s32 a4, s32 a5);
-static void BufferIntegerAsString(u32 *messageFormat, u32 idx, s32 num, u32 numDigits, u8 strconvmode, BOOL whichCharset);
+
+void LONG_CALL **ov01_021F6B20(FieldSystem *fieldSystem);
+BOOL LONG_CALL ov01_0220305C(SCRIPTCONTEXT *ctx);
+void LONG_CALL *ov01_021EDF78(FieldSystem *fieldSystem, u8 x, u8 y, u8 initCursorPos, u8 cancellable, u16 *ret_p, u32 *msgFmt, struct Window *window, MsgData *msgData);
+void LONG_CALL MoveTutorMenu_SetListItem(void *menu, int a1, int a2, int a3);
+void LONG_CALL ov01_021F6ABC(FieldSystem *fieldSystem, int a1, int a2, void *a3);
+void LONG_CALL SetupNativeScript(SCRIPTCONTEXT *ctx, ScrCmdFunc ptr);
+void LONG_CALL BufferString(u32 *messageFormat, u32 fieldno, const String *string, s32 a3, s32 a4, s32 a5);
+void LONG_CALL BufferIntegerAsString(u32 *messageFormat, u32 idx, s32 num, u32 numDigits, u8 strconvmode, BOOL whichCharset);
 
 BOOL ScrCmd_TutorMoveGetPrice(SCRIPTCONTEXT *ctx) {
     u16 move = ScriptGetVar(ctx);
@@ -186,7 +186,7 @@ BOOL ScrCmd_MoveTutorChooseMove(SCRIPTCONTEXT *ctx) {
     }
 
     u16 *result = GetVarPointer(fieldSystem, resultVarId);
-    struct Window *window = FieldSysGetAttrAddr(fieldSystem, SCRIPTENV_WINDOW); // was ctx->fsys
+    struct Window *window = FieldSysGetAttrAddr(fieldSystem, SCRIPTENV_WINDOW);
     *unk = ov01_021EDF78(fieldSystem, 1, 1, 0, 1, result, *messageFormat, window, ctx->msg_data);
     messageData = NewMsgDataFromNarc(MSGDATA_LOAD_DIRECT, 27, 750, 32);
     String *string = String_New(0x10, 32);
@@ -207,7 +207,6 @@ BOOL ScrCmd_MoveTutorChooseMove(SCRIPTCONTEXT *ctx) {
     MoveTutorMenu_SetListItem(*unk, 3, 0xff, 0xFFFE);
     ov01_021F6ABC(fieldSystem, 3, 7, GetVarPointer(fieldSystem, ctx->data[0]));
     SetupNativeScript(ctx, ov01_0220305C);
-    //u16 *unused = GetVarPointer(fieldSystem, ctx->data[0]);
 
     sys_FreeMemoryEz(learnableMoves);
 
