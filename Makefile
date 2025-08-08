@@ -435,9 +435,9 @@ move_narc: $(NARC_FILES)
 	@echo "baby mons:"
 	$(ARMIPS) armips/data/babymons.s
 
-	@echo "tutor moves:"
-	$(PYTHON) scripts/tutor_learnset.py --writemovecostlist $(TUTORMOVES_DATA)
-	$(PYTHON) scripts/tutor_learnset.py --writetutorlearnsets $(TUTORMOVES_DATA) $(LEARNSETS_DATA)
+# 	@echo "tutor moves:"
+# 	$(PYTHON) scripts/tutor_learnset.py --writemovecostlist $(TUTORMOVES_DATA)
+# 	$(PYTHON) scripts/tutor_learnset.py --writetutorlearnsets $(TUTORMOVES_DATA) $(LEARNSETS_DATA)
 
 	@if test -s build/a028/8_00; then \
 		rm -rf build/a028/8_0 build/a028/8_1 build/a028/8_2 build/a028/8_3 build/a028/8_4 build/a028/8_5 build/a028/8_6 build/a028/8_7 build/a028/8_8 build/a028/8_9; \
@@ -468,8 +468,11 @@ move_narc: $(NARC_FILES)
 	@echo "form reversion mapping table:"
 	cp $(FORMREVERSION_BIN) $(FORMREVERSION_TARGET)
 
-	@echo "tm moves:"
+	@echo "machine moves:"
 	cp $(MACHINELEARNSET_BIN) $(MACHINELEARNSET_TARGET)
+
+	@echo "tutor moves:"
+	cp $(TUTORLEARNSET_BIN) $(TUTORLEARNSET_TARGET)
 
 # needed to keep the $(SDAT_OBJ_DIR)/WAVE_ARC_PV%/00.swav from being detected as an intermediate file
 .SECONDARY:

@@ -84,6 +84,20 @@ $(MACHINELEARNSET_BIN): $(LEARNSETS_DATA)
 NARC_FILES += $(MACHINELEARNSET_BIN)
 
 
+TUTORLEARNSET_TARGET := $(BUILD)/a028/9_14
+TUTORLEARNSET_DEPENDENCIES := data/generated/TutorMoveLearnsets.c
+TUTORLEARNSET_OBJS := $(patsubst data/generated/%.c,build/%.o,$(TUTORLEARNSET_DEPENDENCIES))
+TUTORLEARNSET_BIN := $(patsubst data/generated/%.c,build/%.bin,$(TUTORLEARNSET_DEPENDENCIES))
+
+$(TUTORLEARNSET_BIN): $(LEARNSETS_DATA)
+	@echo "generating tm learnsets..."
+	$(PYTHON) scripts/build_learnsets.py --learnsets $(LEARNSETS_DATA) --tutorout ${TUTORLEARNSET_DEPENDENCIES} --constsout
+	$(CC) $(CFLAGS) -c $(TUTORLEARNSET_DEPENDENCIES) -o $(TUTORLEARNSET_OBJS)
+	$(OBJCOPY) -O binary $(TUTORLEARNSET_OBJS) $@
+
+NARC_FILES += $(TUTORLEARNSET_BIN)
+
+
 LEVELUPLEARNSET_TARGET := $(BUILD)/a033/0_0
 LEVELUPLEARNSET_DEPENDENCIES := data/generated/LevelupLearnsets.c
 LEVELUPLEARNSET_OBJS := $(patsubst data/generated/%.c,build/%.o,$(LEVELUPLEARNSET_DEPENDENCIES))
