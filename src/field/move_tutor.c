@@ -89,7 +89,9 @@ static const TutorMove sTutorMoves[] = {
 };
 
 static u16 GetLearnableTutorMoves(struct PartyPokemon *mon, u32 moveTutorNpc, u16 dest[]);
+static BOOL MoveTutor_WaitAndClose(SCRIPTCONTEXT *ctx);
 
+void LONG_CALL ov01_021EDF00(void *menu);
 void LONG_CALL **ov01_021F6B20(FieldSystem *fieldSystem);
 BOOL LONG_CALL ov01_0220305C(SCRIPTCONTEXT *ctx);
 void LONG_CALL *ov01_021EDF78(FieldSystem *fieldSystem, u8 x, u8 y, u8 initCursorPos, u8 cancellable, u16 *ret_p, u32 *msgFmt, struct Window *window, MsgData *msgData);
@@ -148,6 +150,16 @@ static u16 GetLearnableTutorMoves(struct PartyPokemon *mon, u32 moveTutorNpc, u1
     return numLearnableMoves;
 }
 
+static BOOL MoveTutor_WaitAndClose(SCRIPTCONTEXT *ctx) {
+    FieldSystem *fs = ctx->fsys;
+    void **menu = ov01_021F6B20(fs);
+    u16 *res = GetVarPointer(fs, ctx->data[0]);
+    if (*res == 0xEEEE) return FALSE;
+    debug_printf("Tutor result=0x%04X\n", *res);  // <-- watch for FFFD here
+    ov01_021EDF00(*menu);
+    return TRUE;
+}
+
 BOOL ScrCmd_MoveTutorChooseMove(SCRIPTCONTEXT *ctx) {
     s32 i;
     BOOL showNextButton;
@@ -160,20 +172,29 @@ BOOL ScrCmd_MoveTutorChooseMove(SCRIPTCONTEXT *ctx) {
     u32 **messageFormat = FieldSysGetAttrAddr(fieldSystem, 16);
     u16 slot = ScriptGetVar(ctx);
     u16 moveTutorNpc = ScriptGetVar(ctx);
-    u16 pageNum = ScriptGetVar(ctx);
+    ScriptGetVar(ctx);
     resultVarId = ScriptReadHalfword(ctx);
     ctx->data[0] = resultVarId;
     u16 *learnableMoves = sys_AllocMemory(32, NUM_TUTOR_MOVES * sizeof(u16));
 
     struct PartyPokemon *mon = Party_GetMonByIndex(SaveData_GetPlayerPartyPtr(fieldSystem->savedata), slot);
-    u16 numLearnableMoves = GetLearnableTutorMoves(mon, moveTutorNpc, learnableMoves); // paging math issue with underflow? could make u16 then convert to s32
+    s32 numLearnableMoves = GetLearnableTutorMoves(mon, moveTutorNpc, learnableMoves);
+
+    // handle pagination because for some reason hooking this function breaks vanilla pagination
+    u16 *pageNumPtr = GetVarPointer(fieldSystem, 0x8002);
+    if (*GetVarPointer(fieldSystem, 0x8003) == 0xFFFD) {
+        s32 pageCount = (numLearnableMoves + 5) / 6;
+        *pageNumPtr = (*pageNumPtr + 1) % pageCount;
+    } else {
+        *pageNumPtr = 0;
+    }
 
     s32 numMovesToSkip;
     if (numLearnableMoves <= 7) {
         numMovesToSkip = 0;
         showNextButton = FALSE;
-    } else if (numLearnableMoves > pageNum * 6) {
-        numMovesToSkip = pageNum * MAX_TUTOR_MOVES_PER_PAGE;
+    } else if (numLearnableMoves > *pageNumPtr * 6) {
+        numMovesToSkip = *pageNumPtr * MAX_TUTOR_MOVES_PER_PAGE;
         numLearnableMoves -= numMovesToSkip;
         if (numLearnableMoves > 6) {
             numLearnableMoves = MAX_TUTOR_MOVES_PER_PAGE;
@@ -204,10 +225,11 @@ BOOL ScrCmd_MoveTutorChooseMove(SCRIPTCONTEXT *ctx) {
         MoveTutorMenu_SetListItem(*unk, 2, 0xFF, 0xFFFD);
     }
 
-    MoveTutorMenu_SetListItem(*unk, 3, 0xff, 0xFFFE);
+    MoveTutorMenu_SetListItem(*unk, 3, 0xFF, 0xFFFE);
     ov01_021F6ABC(fieldSystem, 3, 7, GetVarPointer(fieldSystem, ctx->data[0]));
     SetupNativeScript(ctx, ov01_0220305C);
 
+    u16 *unused = GetVarPointer(fieldSystem, ctx->data[0]); // yes, this is needed here to match
     sys_FreeMemoryEz(learnableMoves);
 
     return TRUE;
