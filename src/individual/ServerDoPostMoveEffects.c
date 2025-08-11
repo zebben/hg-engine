@@ -106,13 +106,11 @@ void ServerDoPostMoveEffectsInternal(void *bsys, struct BattleStruct *ctx)
             int seq_no;
 
             ctx->swoak_seq_no++;
-            // TODO zebben undo
-            if (!ctx->defenderHeldItemTriggered && CheckDefenderItemEffectOnHit(bsys, ctx, &seq_no) == TRUE)
+            if (CheckDefenderItemEffectOnHit(bsys, ctx, &seq_no) == TRUE)
             {
                 LoadBattleSubSeqScript(ctx, ARC_BATTLE_SUB_SEQ, seq_no);
                 ctx->next_server_seq_no = ctx->server_seq_no;
                 ctx->server_seq_no = CONTROLLER_COMMAND_RUN_SCRIPT;
-                ctx->defenderHeldItemTriggered = TRUE; // TODO zebben remove me
                 return;
             }
         }
