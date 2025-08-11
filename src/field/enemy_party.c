@@ -219,15 +219,17 @@ void MakeTrainerPokemonParty(struct BATTLE_PARAM *bp, int num, int heapID)
         // level field
         level = buf[offset] | (buf[offset+1] << 8);
         #ifdef SCALE_ENEMY_TRAINER_LEVELS
-            level = highestPlayerPokeLvl + scaleOptions[i] + levelMod;
-            // ensure the trainer's mons don't get above level 100
-            if (level > 100) {
-                level = 100;
-            }
+            if (level > 5 {
+                level = highestPlayerPokeLvl + scaleOptions[i] + levelMod;
+                // ensure the trainer's mons don't get above level 100
+                if (level > 100) {
+                    level = 100;
+                }
 
-            // ensure the trainer's mons don't get below level 1
-            if (level < 3) {
-                level = 3;
+                // ensure the trainer's mons don't get below level 1
+                if (level < 3) {
+                    level = 3;
+                }
             }
         #endif
         gLastPokemonLevelForMoneyCalc = level; // ends up being the last level at the end of the loop that we use for the money calc loop default case
