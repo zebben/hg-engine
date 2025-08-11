@@ -633,6 +633,12 @@ int UNUSED CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 sid
 
     // Move effects:
 
+    // handle Helping Hand (+5 priority)
+    // TODO: Handle multiple Helping Hand boosts
+    if (sp->oneTurnFlag[attacker].helping_hand_flag) {
+        basePowerModifier = QMul_RoundUp(basePowerModifier, UQ412__1_5);
+    }
+
     switch (moveno) {
         case MOVE_FACADE:
             if ((AttackingMon.condition & STATUS_FACADE_BOOST)) {
@@ -695,12 +701,6 @@ int UNUSED CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 sid
     }
 
     // Effects relative to a particular slot of the field (Wish, Lunar Dance, Future Sight, etc.):
-
-    // handle Helping Hand
-    // TODO: Handle multiple Helping Hand boosts
-    if (sp->oneTurnFlag[attacker].helping_hand_flag) {
-        basePowerModifier = QMul_RoundUp(basePowerModifier, UQ412__1_5);
-    }
 
     // handle Charge
     if ((sp->battlemon[attacker].effect_of_moves & MOVE_EFFECT_FLAG_CHARGE)
@@ -1094,7 +1094,10 @@ int UNUSED CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 sid
             }
 
             // handle Gems
-            // TODO
+            if (sp->gemBoostingMove) {
+                basePowerModifier = QMul_RoundUp(basePowerModifier, UQ412__1_3);
+                continue;
+            }
 
             // handle Punching Glove
             if ((AttackingMon.item_held_effect == HOLD_EFFECT_INCREASE_PUNCHING_MOVE_DMG) && IsElementInArray(PunchingMovesTable, (u16 *)&moveno, NELEMS(PunchingMovesTable), sizeof(PunchingMovesTable[0]))) {
