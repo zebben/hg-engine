@@ -752,7 +752,7 @@ particleEmitCallback = 0x021E5C28 | 1;
 BattleSystem_GetTrainer = 0x0223A9F4 | 1;
 PartyMenu_PrintMessageOnWindow32 = 0x0207DAC4 | 1;
 
-/* tm expansion */
+/* machine move expansion */
 sub_0200CE7C = 0x0200CE7C | 1;
 ov15_021FE8C4 = 0x021FE8C4 | 1;
 sub_0200CDF0 = 0x0200CDF0 | 1;
