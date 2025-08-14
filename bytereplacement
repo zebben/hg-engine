@@ -523,6 +523,7 @@ arm9 080550D4 2C
 #arm9 0201AA38 60 B4 C0 46
 #endif
 
+# sacred ash works on whole party regardless of HP
 arm9 020903D6 C0 46
 arm9 02081802 C0 46
 arm9 020819CA 3C D8

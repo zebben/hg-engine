@@ -1508,7 +1508,7 @@ const ITEMDATA __data[] =
 
 [ITEM_FULL_RESTORE] =
 {
-    .price = 0,
+    .price = 1000,
     .holdEffect = 0,
     .holdEffectParam = 255,
     .pluckEffect = 0,

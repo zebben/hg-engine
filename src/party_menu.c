@@ -41,8 +41,7 @@ u8 LONG_CALL sub_0207B0B0(struct PLIST_WORK *wk, u8 *buf)
             buf[count] = PARTY_MON_CONTEXT_MENU_QUIT;
             ++count;
 
-            // here is where a custom check would go.  replace the below for loop with your own checks
-
+            BOOL foundFly = FALSE;
             for (i = 0; i < MAX_MON_MOVES; ++i)
             {
                 move = GetMonData(pp, MON_DATA_MOVE1 + i, NULL);
@@ -54,6 +53,19 @@ u8 LONG_CALL sub_0207B0B0(struct PLIST_WORK *wk, u8 *buf)
                 fieldEffect = MoveId_GetFieldEffectId(move);
                 if (fieldEffect != 0xFF)
                 {
+                    if (move == MOVE_FLY) {
+                        foundFly = TRUE;
+                    }
+                    buf[count] = fieldEffect;
+                    ++count;
+                    PartyMenu_ContextMenuAddFieldMove(wk, move, fieldMoveIndex);
+                    ++fieldMoveIndex;
+                }
+            }
+            if (!foundFly) {
+                if (GetMonMachineMoveCompat(pp, ITEM_HM02 - ITEM_TM01)) {
+                    move = MOVE_FLY;
+                    fieldEffect = MoveId_GetFieldEffectId(move);
                     buf[count] = fieldEffect;
                     ++count;
                     PartyMenu_ContextMenuAddFieldMove(wk, move, fieldMoveIndex);
