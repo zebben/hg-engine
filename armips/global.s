@@ -30,7 +30,6 @@
 
 // custom stuff
 .include "armips/asm/custom/mart_items.s" // customize poke mart items
-.include "armips/asm/custom/hm_qol.s"     // custom HM QoL patches
 .if FAIRY_TYPE_IMPLEMENTED == 1
 
 .include "armips/asm/fairy.s" // repoints all the move table defines within the structure
