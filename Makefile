@@ -1,6 +1,6 @@
 # Makefile
 
-ROMNAME = rom.nds
+ROMNAME = rom-hack.nds
 BUILDROM = test.nds
 
 define n
