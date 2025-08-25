@@ -92,9 +92,7 @@ scrdef_end
 scr_seq_0003_002:
     takeitem_no_check ITEM_SACRED_ASH, 2
     giveitem ITEM_SACRED_ASH, 2, VAR_SPECIAL_RESULT
-    hasitem ITEM_HARDCORE_TOGGLE, 1, VAR_SPECIAL_RESULT
     giveitem ITEM_HARDCORE_TOGGLE, 1, VAR_SPECIAL_RESULT
-    hasitem ITEM_INFINITE_RARE_CANDY, 1, VAR_SPECIAL_RESULT
     giveitem ITEM_INFINITE_RARE_CANDY, 1, VAR_SPECIAL_RESULT
     play_se SEQ_SE_DP_SELECT
     lockall
@@ -121,7 +119,6 @@ _0175:
     compare VAR_SPECIAL_RESULT, 1
     goto_if_eq _019B
     end
-
 
 _019B:
     npc_msg 3
@@ -198,7 +195,7 @@ _0273:
     wait_fade
     closemsg
     scrcmd_436
-    scrcmd_150
+    restore_overworld
     fade_screen 6, 1, 1, RGB_BLACK
     wait_fade
     bufferpartymonnick 0, VAR_SPECIAL_x8009
@@ -236,7 +233,7 @@ _02F7:
     wait_fade
     closemsg
     scrcmd_436
-    scrcmd_150
+    restore_overworld
     fade_screen 6, 1, 1, RGB_BLACK
     wait_fade
     bufferpartymonnick 0, VAR_SPECIAL_x8009
@@ -280,7 +277,7 @@ _0395:
     wait_fade
     closemsg
     scrcmd_436
-    scrcmd_150
+    restore_overworld
     fade_screen 6, 1, 1, RGB_BLACK
     wait_fade
     bufferpartymonnick 0, VAR_SPECIAL_x8009
@@ -354,7 +351,7 @@ scr_seq_0003_069:
     play_fanfare SEQ_ME_ASA
     wait_fanfare
     heal_party
-    scrcmd_150
+    restore_overworld
     fade_screen 6, 1, 1, RGB_BLACK
     wait_fade
     endstd
@@ -771,11 +768,9 @@ scr_seq_0003_010:
     goto _0A2E
 
 _0A18:
-    goto_if_set 0x18F, _skipPCOnOff
     scrcmd_500 90
     scrcmd_501 90
     scrcmd_308 90
-_skipPCOnOff:
     return
 
 _0A23:
@@ -852,35 +847,35 @@ _0BA2:
     closemsg
     call _0E16
     scrcmd_158 0
-    scrcmd_150
+    restore_overworld
     goto _0C01
 
 _0BB5:
     closemsg
     call _0E16
     scrcmd_158 1
-    scrcmd_150
+    restore_overworld
     goto _0C01
 
 _0BC8:
     closemsg
     call _0E16
     scrcmd_158 2
-    scrcmd_150
+    restore_overworld
     goto _0C01
 
 _0BDB:
     closemsg
     call _0E16
     scrcmd_158 3
-    scrcmd_150
+    restore_overworld
     goto _0C01
 
 _0BEE:
     closemsg
     call _0E16
     scrcmd_158 4
-    scrcmd_150
+    restore_overworld
     goto _0C01
 
 _0C01:
@@ -900,7 +895,7 @@ _0C23:
 _0C33:
     call _0CA7
 _0C39:
-    scrcmd_616 VAR_TEMP_x4000
+    count_saved_photos VAR_TEMP_x4000
     compare VAR_TEMP_x4000, 0
     goto_if_ne _0C72
     menu_exec
@@ -921,7 +916,7 @@ _0CA7:
     menu_init_std_gmm 1, 1, 0, 1, VAR_SPECIAL_RESULT
     menu_item_add 73, 82, 0
     menu_item_add 74, 83, 1
-    scrcmd_616 VAR_TEMP_x4000
+    count_saved_photos VAR_TEMP_x4000
     compare VAR_TEMP_x4000, 0
     goto_if_ne _0CDA
     menu_item_add 75, 84, 2
@@ -939,7 +934,7 @@ _0CEC:
     goto_if_eq _0D0F
     call _0E16
     scrcmd_376
-    scrcmd_150
+    restore_overworld
     goto _0D18
 
 _0D0F:
@@ -955,7 +950,7 @@ _0D18:
     goto _0C39
 
 _0D3A:
-    scrcmd_572 VAR_SPECIAL_RESULT
+    get_unique_seals_quantity VAR_SPECIAL_RESULT
     compare VAR_SPECIAL_RESULT, 0
     goto_if_eq _0D5B
     closemsg
@@ -978,8 +973,8 @@ _0D64:
 _0D86:
     closemsg
     call _0E16
-    scrcmd_617
-    scrcmd_150
+    open_photo_album
+    restore_overworld
     goto _0D98
 
 _0D98:
@@ -998,7 +993,7 @@ _0DBA:
     goto_if_eq _0DE7
     call _0E16
     scrcmd_164
-    scrcmd_150
+    restore_overworld
     call _0E02
     goto _0A2E
 
@@ -1009,10 +1004,7 @@ _0DE7:
 _0DF0:
     closemsg
     play_se SEQ_SE_DP_PC_LOGOFF
-    goto_if_set 0x18F, _skipPCOff
     call _0A23
-_skipPCOff:
-    clearflag 0x18F
     touchscreen_menu_show
     releaseall
     end
@@ -1026,9 +1018,7 @@ _0E02:
 _0E16:
     fade_screen 6, 1, 0, RGB_BLACK
     wait_fade
-    goto_if_set 0x18F, _skipPCTransition
     scrcmd_309 90
-_skipPCTransition:
     return
 
 scr_seq_0003_014:
@@ -1220,7 +1210,7 @@ scr_seq_0003_015:
     fade_screen 6, 1, 0, RGB_BLACK
     wait_fade
     scrcmd_450
-    scrcmd_150
+    restore_overworld
     fade_screen 6, 1, 1, RGB_BLACK
     wait_fade
     releaseall
@@ -1351,7 +1341,7 @@ _11AE:
     setvar VAR_SPECIAL_x8000, 2
     addvar VAR_SPECIAL_x8000, VAR_SPECIAL_RESULT
     scrcmd_492 VAR_SPECIAL_x8000, VAR_SPECIAL_RESULT, VAR_SPECIAL_x8001
-    scrcmd_150
+    restore_overworld
     fade_screen 6, 1, 1, RGB_BLACK
     wait_fade
     compare VAR_SPECIAL_RESULT, 0
@@ -1491,7 +1481,7 @@ _136C:
     fade_screen 6, 1, 0, RGB_BLACK
     wait_fade
     run_phone_call
-    scrcmd_150
+    restore_overworld
     fade_screen 6, 1, 1, RGB_BLACK
     wait_fade
     return
@@ -1532,14 +1522,14 @@ scr_seq_0003_046:
     scrcmd_662 VAR_SPECIAL_x8005, VAR_SPECIAL_x8004, VAR_SPECIAL_RESULT
     compare VAR_SPECIAL_RESULT, 0
     goto_if_eq _1444
-    scrcmd_150
+    restore_overworld
     fade_screen 6, 1, 1, RGB_BLACK
     wait_fade
     endstd
     end
 
 _1444:
-    scrcmd_150
+    restore_overworld
     fade_screen 6, 1, 1, RGB_BLACK
     wait_fade
     endstd
@@ -1732,12 +1722,12 @@ scr_seq_0003_063:
 scr_seq_0003_064:
     play_se SEQ_SE_DP_SELECT
     lockall
-    scrcmd_727 VAR_SPECIAL_x8005
+    get_follow_poke_party_index VAR_SPECIAL_x8005
     bufferpartymonnick 0, VAR_SPECIAL_x8005
     npc_msg 99
     closemsg
     scrcmd_806
-    scrcmd_727 VAR_SPECIAL_x8005
+    get_follow_poke_party_index VAR_SPECIAL_x8005
     bufferpartymonnick 0, VAR_SPECIAL_x8005
     npc_msg 100
     wait_button

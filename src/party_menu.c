@@ -1,6 +1,7 @@
 #include "../include/types.h"
 #include "../include/config.h"
 #include "../include/pokemon.h"
+#include "../include/item.h"
 #include "../include/bag.h"
 #include "../include/battle.h"
 #include "../include/constants/item.h"
@@ -62,8 +63,8 @@ u8 LONG_CALL sub_0207B0B0(struct PLIST_WORK *wk, u8 *buf)
                     ++fieldMoveIndex;
                 }
             }
-            if (!foundFly) {
-                if (GetMonMachineMoveCompat(pp, ITEM_HM02 - ITEM_TM001)) {
+            if (move == MOVE_FLY && !foundFly) {
+                if (GetMonMachineMoveCompat(pp, ItemToMachineMoveIndex(ITEM_HM02))) {
                     move = MOVE_FLY;
                     fieldEffect = MoveId_GetFieldEffectId(move);
                     buf[count] = fieldEffect;

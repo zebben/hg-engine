@@ -377,10 +377,11 @@
 .equ MOVE_SUBSCRIPT_PTR_DEFENSE_UP_6_STAGES, 0xC2 // To add more +6 effects, copy the order & proximity of other stat stage change constants.
 .equ MOVE_SUBSCRIPT_PTR_SPEED_UP_6_STAGES, 0xC3 // Used for Steam Engine.
 
-.equ MAX_BASE_SUBSCRIPT_NUM, 0xC3
+.equ MAX_MOVE_SUBSCRIPT_NUM, 0xC3
 
 // define your custom subscripts below like this
-//.equ MOVE_SUBSCRIPT_PTR_CUSTOM_1, (MAX_BASE_SUBSCRIPT_PTR_NUM + 1)
+//.equ MOVE_SUBSCRIPT_PTR_CUSTOM_1, (MAX_MOVE_SUBSCRIPT_NUM + 1)
+
 
 
 .equ FIELD_CONDITION_RAIN, 0x1
@@ -1423,12 +1424,10 @@
 .equ BATTLE_SUBSCRIPT_HANDLE_GEM_ACTIVATION_MESSAGE, 452
 .equ BATTLE_SUBSCRIPT_INCINERATE, 453
 
-
-
-.equ MAX_BASE_SUBSCRIPT_PTR_NUM, 453
+.equ MAX_BASE_SUBSCRIPT_NUM, 453
 
 // define your custom subscripts below like this
-// .equ MOVE_SUBSCRIPT_PTR_CUSTOM_1, (MAX_BASE_SUBSCRIPT_PTR_NUM + 1)
+// .equ MOVE_SUBSCRIPT_PTR_CUSTOM_1, (MAX_BATTLE_SUBSCRIPT_NUM + 1)
 
 
 .equ TERRAIN_PLAIN, 0x0

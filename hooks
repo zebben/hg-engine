@@ -524,6 +524,8 @@ arm9 PartyMenu_ItemUseFunc_ReuseItem_hook 0208138C 3
 # expand metronome move pool
 0012 load_max_move_num_metronome 022408AC 0
 
+arm9 GetIdxOfFirstPartyMonWithMove 020542E8 2
+
 arm9 PartyMenu_ItemUseFunc_LevelUpLearnMovesLoop_Case6_hook 02081E54 0
 arm9 PartyMenu_ItemUseFunc_ReuseItem_hook 0208138C 3
 

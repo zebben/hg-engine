@@ -2551,3 +2551,35 @@ BOOL GetMonMachineMoveCompat(struct PartyPokemon *pp, u16 machineMoveIndex) {
 void LONG_CALL LoadLevelUpLearnset_HandleAlternateForm(int species, int form, u32 *levelUpLearnset) {
     ArchiveDataLoadOfs(levelUpLearnset, ARC_LEVELUP_LEARNSETS, 0, PokeOtherFormMonsNoGet(species, form) * MAX_LEVELUP_MOVES * sizeof(u32), MAX_LEVELUP_MOVES * sizeof(u32));
 }
+
+int LONG_CALL GetIdxOfFirstPartyMonWithMove(struct Party *party, u16 move) {
+    struct PartyPokemon *mon;
+    if (party) {
+        int n = party->count;
+        for (int i = 0; i < n; i++) {
+            mon = Party_GetMonByIndex(party, i);
+            if (GetMonData(mon, MON_DATA_IS_EGG, NULL)) {
+                continue;
+            }
+            if (GetMonData(mon, MON_DATA_MOVE1, NULL) == move
+                || GetMonData(mon, MON_DATA_MOVE2, NULL) == move
+                || GetMonData(mon, MON_DATA_MOVE3, NULL) == move
+                || GetMonData(mon, MON_DATA_MOVE4, NULL) == move) {
+                return i;
+            }
+        }
+        if (move == MOVE_SURF || move == MOVE_WATERFALL) {
+            u16 moveIndex = ItemToMachineMoveIndex(move == MOVE_SURF ? ITEM_HM03 : ITEM_HM07);
+            for (int i = 0; i < n; i++) {
+                mon = Party_GetMonByIndex(party, i);
+                if (mon && GetMonData(mon, MON_DATA_IS_EGG, NULL)) {
+                    continue;
+                }
+                if (GetMonMachineMoveCompat(mon, moveIndex)) {
+                    return i;
+                }
+            }
+        }
+    }
+    return 0xFF;
+}
