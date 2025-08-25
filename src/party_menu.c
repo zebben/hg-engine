@@ -63,7 +63,7 @@ u8 LONG_CALL sub_0207B0B0(struct PLIST_WORK *wk, u8 *buf)
                 }
             }
             if (!foundFly) {
-                if (GetMonMachineMoveCompat(pp, ITEM_HM02 - ITEM_TM01)) {
+                if (GetMonMachineMoveCompat(pp, ITEM_HM02 - ITEM_TM001)) {
                     move = MOVE_FLY;
                     fieldEffect = MoveId_GetFieldEffectId(move);
                     buf[count] = fieldEffect;

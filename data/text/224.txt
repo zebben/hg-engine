@@ -1,0 +1,2 @@
+{COLOR 255}Inf. Rare Candies{COLOR 0}
+{COLOR 255}Hardcore Toggles{COLOR 0}

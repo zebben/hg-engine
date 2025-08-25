@@ -7,7 +7,7 @@
 
 /* Cherrygrove City */
 .org 0x020FBA54
-.halfword ITEM_TM17
+.halfword ITEM_TM017
 .halfword ITEM_SERIOUS_MINT
 .halfword 0xFFFF
 
@@ -240,18 +240,18 @@
 
 /* Goldenrod City Department Store - TM Corner */
 .org 0x020FBC34
-.halfword ITEM_TM16
-.halfword ITEM_TM33
-.halfword ITEM_TM22
-.halfword ITEM_TM52
-.halfword ITEM_TM15
-.halfword ITEM_TM14
-.halfword ITEM_TM25
-.halfword ITEM_TM38
-.halfword ITEM_TM53
-.halfword ITEM_TM31
-.halfword ITEM_TM61
-.halfword ITEM_TM73
+.halfword ITEM_TM016
+.halfword ITEM_TM033
+.halfword ITEM_TM022
+.halfword ITEM_TM052
+.halfword ITEM_TM015
+.halfword ITEM_TM014
+.halfword ITEM_TM025
+.halfword ITEM_TM038
+.halfword ITEM_TM053
+.halfword ITEM_TM031
+.halfword ITEM_TM061
+.halfword ITEM_TM073
 .halfword 0xFFFF
 
 /* Celadon City Department Store - Trainer's Market */
@@ -272,18 +272,18 @@
 
 /* Celadon City Department Store - TM Corner */
 .org 0x020FBC68
-.halfword ITEM_TM70
-.halfword ITEM_TM17
-.halfword ITEM_TM54
-.halfword ITEM_TM83
-.halfword ITEM_TM16
-.halfword ITEM_TM33
-.halfword ITEM_TM22
-.halfword ITEM_TM52
-.halfword ITEM_TM38
-.halfword ITEM_TM25
-.halfword ITEM_TM14
-.halfword ITEM_TM15
+.halfword ITEM_TM070
+.halfword ITEM_TM017
+.halfword ITEM_TM054
+.halfword ITEM_TM083
+.halfword ITEM_TM016
+.halfword ITEM_TM033
+.halfword ITEM_TM022
+.halfword ITEM_TM052
+.halfword ITEM_TM038
+.halfword ITEM_TM025
+.halfword ITEM_TM014
+.halfword ITEM_TM015
 .halfword 0xFFFF
 
 /* Badge Breakpoints */

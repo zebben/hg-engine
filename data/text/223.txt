@@ -1,0 +1,2 @@
+an {COLOR 255}Inf. Rare Candy{COLOR 0}
+a {COLOR 255}Hardcore Toggle{COLOR 0}

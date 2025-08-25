@@ -42,7 +42,7 @@ A medicine that can be used to\nrestore 10 PP to all four moves that\na Pokémon
 A medicine that can be used to fully\nrestore the max PP of all four moves\nthat a Pokémon knows.
 Lavaridge Town’s local specialty. It\ncan be used to cure any status\ncondition a Pokémon may have.
 A 100 percent pure juice made from\nBerries. It can be used to restore\n20 HP to a Pokémon.
-Ash that can be used to revive all\nparty Pokémon that have fainted. It\nalso fully restores the Pokémon’s\rmax HP.
+It fully restores your team.\nRestock at Pokémon Centers.
 A nutritious drink for Pokémon. This\ndrink increases base points for a\nPokémon’s HP stat.
 A nutritious drink for Pokémon. This\ndrink increases base points for a\nPokémon’s Attack stat.
 A nutritious drink for Pokémon. This\ndrink increases base points for a\nPokémon’s Defense stat.
