@@ -100,3 +100,6 @@ changelog
 .idea/modules.xml
 .idea/vcs.xml
 .vscode/*
+/data/generated/
+/armips/include/generated/
+/include/constants/generated/

@@ -848,7 +848,8 @@ u32 LONG_CALL UseItemMonAttrChangeCheck(struct PLIST_WORK *wk, void *dat)
     u32 reshiramBool = splicer_pos & RESHIRAM_MASK;
     splicer_pos &= JUST_SPLICER_POS_MASK;
 
-    if (wk->dat->item == ITEM_DNA_SPLICERS
+    // TODO: handle correct item
+    if (wk->dat->item == ITEM_DNA_SPLICERS_FUSE
      && (splicer_pos < 6))
     {
         void *saveData = SaveBlock2_get();
@@ -1544,7 +1545,7 @@ extern u32 space_for_setmondata;
  *
  *  @param pow random iv value
  */
-int LONG_CALL easyModeIVs(int iv) 
+int LONG_CALL easyModeIVs(int iv)
 {
     if (iv == MAX_IVS)
     {
@@ -1671,7 +1672,7 @@ void LONG_CALL CreateBoxMonData(struct BoxPokemon *boxmon, int species, int leve
         j = (i&(0x001f<< 0)) >> 0;
         j = easyModeIVs(j);
         SetBoxMonData(boxmon, MON_DATA_SPEED_IV, (u8 *)&j);
-        
+
         // Special Attack
         j = (i&(0x001f<< 5)) >> 5;
         j = easyModeIVs(j);
