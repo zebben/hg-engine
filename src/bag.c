@@ -232,6 +232,9 @@ ITEM_SLOT *Bag_GetItemSlotForRemove(BAG_DATA *bag, u16 itemId, u16 quantity, int
 }
 
 BOOL Bag_TakeItem(BAG_DATA *bag, u16 itemId, u16 quantity, int heap_id) {
+    if (Bag_HasItem(bag, ITEM_INFINITY_POUCH, 1, heap_id)) {
+        return FALSE;
+    }
     ITEM_SLOT *slot = Bag_GetItemSlotForRemove(bag, itemId, quantity, heap_id);
     if (slot == NULL ||  itemId == ITEM_INFINITE_RARE_CANDY || itemId == ITEM_HARDCORE_TOGGLE) {
         return FALSE;

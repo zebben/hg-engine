@@ -529,9 +529,12 @@ arm9 02081802 C0 46
 arm9 020819CA 3C D8
 
 # remove HM cut-in anim - thanks to Kalaay for this
-0002 022495AE C0 46 C0 46 38 BD 84 35 25 02
-0002 022499E2 C0 46 C0 46 38 BD 1C 35 25 02
-0002 022499AE C0 46 C0 46 38 BD E0 35 25 02
+#0002 022495AE C0 46 C0 46 38 BD 84 35 25 02
+#0002 022499E2 C0 46 C0 46 38 BD 1C 35 25 02
+#0002 022499AE C0 46 C0 46 38 BD E0 35 25 02
+
+# remove badge check for field moves
+arm9 02080872 0A 00
 
 # change the string displayed when a mon learns a tm without having to overwrite a move
 arm9 020821B0 DB

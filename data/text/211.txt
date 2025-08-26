@@ -14,14 +14,14 @@ Strength made it possible to move\nboulders around!
 The boulder fell down!
 Would you like to surf on it? {YESNO 0}
 Used Surf!\r
-Surf can’t be used if you have\nsomeone with you.
+Surf can’t be used now.
 A deep fog drapes the area...\nWould you like to use Defog? {YESNO 0}
 Used Defog!\r
 A deep fog drapes the area...\nWill a Pokémon’s move lift it?
 The wall is very rocky...\nWould you like to use Rock Climb? {YESNO 0}
 Used Rock Climb!\r
 The wall is very rocky...\nWill a Pokémon’s move scale it?
-Rock Climb can’t be used if you have\nsomeone with you.
+Rock Climb can’t be used now.
 It’s a large waterfall.\nWould you like to use Waterfall? {YESNO 0}
 Used Waterfall.\r
 A wall of water is crashing down with\na mighty roar.

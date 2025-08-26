@@ -43,6 +43,9 @@ scr_seq_0146_000:
 	play_se SEQ_SE_DP_SELECT
 	lockall
 	faceplayer
+	hasitem ITEM_HM01, 1, VAR_SPECIAL_RESULT
+    compare VAR_SPECIAL_RESULT, 0
+	goto_if_eq _009E
 	check_badge BADGE_HIVE, VAR_SPECIAL_RESULT
 	compare VAR_SPECIAL_RESULT, 0
 	goto_if_eq _009E
@@ -183,6 +186,9 @@ scr_seq_0146_001:
 	play_se SEQ_SE_DP_SELECT
 	lockall
 	faceplayer
+	hasitem ITEM_HM06, 1, VAR_SPECIAL_RESULT
+    compare VAR_SPECIAL_RESULT, 0
+	goto_if_eq _02D7
 	check_badge BADGE_ZEPHYR, VAR_SPECIAL_RESULT
 	compare VAR_SPECIAL_RESULT, 0
 	goto_if_eq _02D7
@@ -340,6 +346,9 @@ scr_seq_0146_002:
 
 _051C:
 	// MOVE_STRENGTH
+	hasitem ITEM_HM04, 1, VAR_SPECIAL_RESULT
+    compare VAR_SPECIAL_RESULT, 0
+	goto_if_eq _0564
 	check_badge BADGE_PLAIN, VAR_SPECIAL_RESULT
 	compare VAR_SPECIAL_RESULT, 0
 	goto_if_eq _0564
@@ -484,7 +493,10 @@ scr_seq_0146_003:
 	// MOVE_ROCK_CLIMB
 	play_se SEQ_SE_DP_SELECT
 	lockall
-	check_badge BADGE_EARTH, VAR_SPECIAL_RESULT
+	hasitem ITEM_HM08, 1, VAR_SPECIAL_RESULT
+    compare VAR_SPECIAL_RESULT, 0
+	goto_if_eq _0797
+	check_badge BADGE_STORM, VAR_SPECIAL_RESULT
 	compare VAR_SPECIAL_RESULT, 0
 	goto_if_eq _0797
 	check_escort_mode VAR_SPECIAL_RESULT
@@ -525,8 +537,15 @@ scr_seq_0146_010:
 	end
 
 scr_seq_0146_004:
+	// MOVE_SURF
 	play_se SEQ_SE_DP_SELECT
 	lockall
+	hasitem ITEM_HM03, 1, VAR_SPECIAL_RESULT
+    compare VAR_SPECIAL_RESULT, 0
+	goto_if_eq _0826
+	check_badge BADGE_FOG, VAR_SPECIAL_RESULT
+	compare VAR_SPECIAL_RESULT, 0
+	goto_if_eq _0826
 	check_escort_mode VAR_SPECIAL_RESULT
 	compare VAR_SPECIAL_RESULT, 1
 	goto_if_eq _0826
@@ -630,6 +649,9 @@ scr_seq_0146_005:
 	// MOVE_WATERFALL
 	play_se SEQ_SE_DP_SELECT
 	lockall
+	hasitem ITEM_HM07, 1, VAR_SPECIAL_RESULT
+    compare VAR_SPECIAL_RESULT, 0
+	goto_if_eq _0997
 	check_badge BADGE_RISING, VAR_SPECIAL_RESULT
 	compare VAR_SPECIAL_RESULT, 0
 	goto_if_eq _0997
@@ -666,6 +688,9 @@ scr_seq_0146_016:
 	// MOVE_WHIRLPOOL
 	play_se SEQ_SE_DP_SELECT
 	lockall
+	hasitem ITEM_HM05, 1, VAR_SPECIAL_RESULT
+    compare VAR_SPECIAL_RESULT, 0
+	goto_if_eq _0A34
 	check_badge BADGE_GLACIER, VAR_SPECIAL_RESULT
 	compare VAR_SPECIAL_RESULT, 0
 	goto_if_eq _0A34

@@ -711,6 +711,9 @@ _0904:
 	goto_if_eq _0A59
 	closemsg
 	npc_msg 28
+	setvar VAR_SPECIAL_x8004, ITEM_HM02
+	setvar VAR_SPECIAL_x8005, 1
+	callstd std_obtain_item_verbose
 	closemsg
 	apply_movement obj_T20R0101_var_1, _0AEC
 	apply_movement obj_T20R0101_policeman, _0ABC
