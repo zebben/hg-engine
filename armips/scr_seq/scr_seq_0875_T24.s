@@ -53,6 +53,9 @@ scr_seq_T24_006:
 	npc_msg 2
 	goto_if_no_item_space ITEM_HM08, 1, _00B8
 	callstd std_give_item_verbose
+	setvar VAR_SPECIAL_x8004, ITEM_HM02
+	setvar VAR_SPECIAL_x8005, 1
+	callstd std_obtain_item_verbose
 	setflag FLAG_GOT_HM02
 	setvar VAR_UNK_4116, 2
 	npc_msg 4

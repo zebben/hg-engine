@@ -26,7 +26,7 @@ Lyra: Hold on a second!\nHe has nothing to do with it!\rI saw it.\nThere was a r
 Ethan: Hold on a second!\nShe has nothing to do with it!\rI saw it.\nThere was a red-haired boy\flooking into the building!\r
 What?\nYou battled a boy like that?\rHe must be the one who did it...\nDid you happen to get his name?\r
 I see! So {STRVAR_1 3, 1, 0} was\nhis name. {YESNO 0}
-Take this as thanks for helping\nmy investigation!\rJust having this HM allows flying\nPokémon to help you travel quickly.\rMy next assignment is to search for\nthis red-haired individual.\r
+Thanks for helping my investigation!\rMy next assignment is to search for\nthis red-haired individual.\r
 That’s not it?\rThen can you tell me\nwhat the name was?\r
 Lyra: {STRVAR_1 3, 0, 0}!\nI’m glad they understand you are\finnocent.\rSee you later!\r
 Ethan: {STRVAR_1 3, 0, 0}!\nI’m glad they understand you are\finnocent.\rSee you later!\r

@@ -2221,7 +2221,7 @@ movedata MOVE_GLARE, "Glare"
 movedata MOVE_DREAM_EATER, "Dream Eater"
     battleeffect MOVE_EFFECT_RECOVER_DAMAGE_SLEEP
     pss SPLIT_SPECIAL
-    basepower 100
+    basepower 140
     type TYPE_PSYCHIC
     accuracy 100
     pp 15
@@ -2379,20 +2379,20 @@ movedata MOVE_SPORE, "Spore"
     movedescription MOVE_SPORE, "The user scatters\nbursts of spores\nthat induce sleep.\n\n"
 
 movedata MOVE_FLASH, "Flash"
-    battleeffect MOVE_EFFECT_ACC_DOWN
-    pss SPLIT_STATUS
-    basepower 0
-    type TYPE_NORMAL
+    battleeffect MOVE_EFFECT_PRIORITY_1
+    pss SPLIT_SPECIAL
+    basepower 40
+    type TYPE_STEEL
     accuracy 100
-    pp 20
+    pp 30
     effectchance 0
     target RANGE_SINGLE_TARGET
-    priority 0
-    flags FLAG_HIDE_SHADOW | FLAG_MIRROR_MOVE | FLAG_MAGIC_COAT | FLAG_PROTECT
+    priority 1
+    flags FLAG_KEEP_HP_BAR | FLAG_MIRROR_MOVE | FLAG_PROTECT | FLAG_CONTACT
     appeal 0x0A
     contesttype CONTEST_BEAUTY
     terminatedata
-    movedescription MOVE_FLASH, "The user flashes a\nlight that cuts the\nfoe’s accuracy.\nIt can also be used\nto illuminate caves."
+    movedescription MOVE_FLASH, "The user flashes a\nlight at a foe at a high\nspeed. It is sure\nto strike first."
 
 movedata MOVE_PSYWAVE, "Psywave"
     battleeffect MOVE_EFFECT_RANDOM_DAMAGE_1_TO_150_LEVEL
@@ -5101,7 +5101,7 @@ movedata MOVE_ROCK_TOMB, "Rock Tomb"
 movedata MOVE_SILVER_WIND, "Silver Wind"
     battleeffect MOVE_EFFECT_RAISE_ALL_STATS_HIT
     pss SPLIT_SPECIAL
-    basepower 60
+    basepower 90
     type TYPE_BUG
     accuracy 100
     pp 5

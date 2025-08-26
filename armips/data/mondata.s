@@ -6946,7 +6946,7 @@ mondata SPECIES_VIBRAVA, "Vibrava"
 
 mondata SPECIES_FLYGON, "Flygon"
     basestats 80, 65, 75, 110, 110, 90
-    types TYPE_BUG, TYPE_DRAGON
+    types TYPE_GROUND, TYPE_BUG
     catchrate 120
     baseexp 0 // defined in baseexp.s
     evyields 2, 2, 2, 2, 2, 2
@@ -6956,7 +6956,7 @@ mondata SPECIES_FLYGON, "Flygon"
     basefriendship 50
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_BUG, EGG_GROUP_DRAGON
-    abilities ABILITY_SAND_FORCE, ABILITY_SHED_SKIN
+    abilities ABILITY_LEVITATE, ABILITY_NONE
     runchance 0
     colorflip BODY_COLOR_GREEN, 0
     mondexentry SPECIES_FLYGON, "It is nicknamed “The Desert\nSpirit” because the flapping of its\nwings sounds like a woman singing."

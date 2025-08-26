@@ -1688,7 +1688,7 @@ trainerdata 35, "Clair"
         move MOVE_QUIVER_DANCE
         move MOVE_DRAGON_PULSE
         move MOVE_BUG_BUZZ
-        ability ABILITY_SHED_SKIN
+        ability ABILITY_LEVITATE
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
         setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_MODEST
@@ -26140,7 +26140,7 @@ trainerdata 559, "Tim & Sue"
         move MOVE_QUIVER_DANCE
         move MOVE_DRAGON_PULSE
         move MOVE_BUG_BUZZ
-        ability ABILITY_SAND_FORCE
+        ability ABILITY_LEVITATE
         ballseal 0
 
         // mon 3
@@ -30678,7 +30678,7 @@ trainerdata 652, "Tim & Sue"
         move MOVE_QUIVER_DANCE
         move MOVE_DRAGON_PULSE
         move MOVE_BUG_BUZZ
-        ability ABILITY_SAND_FORCE
+        ability ABILITY_LEVITATE
         ballseal 0
 
         // mon 3
@@ -30740,7 +30740,7 @@ trainerdata 653, "Tim & Sue"
         move MOVE_QUIVER_DANCE
         move MOVE_DRAGON_PULSE
         move MOVE_BUG_BUZZ
-        ability ABILITY_SAND_FORCE
+        ability ABILITY_LEVITATE
         ballseal 0
 
         // mon 3
@@ -30826,7 +30826,7 @@ trainerdata 654, "Tim & Sue"
         move MOVE_QUIVER_DANCE
         move MOVE_DRAGON_PULSE
         move MOVE_BUG_BUZZ
-        ability ABILITY_SAND_FORCE
+        ability ABILITY_LEVITATE
         ballseal 0
 
         // mon 3
@@ -35205,7 +35205,7 @@ trainerdata 719, "Clair"
         move MOVE_QUIVER_DANCE
         move MOVE_DRAGON_PULSE
         move MOVE_BUG_BUZZ
-        ability ABILITY_SHED_SKIN
+        ability ABILITY_LEVITATE
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
         setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_MODEST

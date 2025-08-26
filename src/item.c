@@ -45,7 +45,7 @@ static const u16 sMachineMoves[] = {
     MOVE_PSYCHIC,          // TM029
     MOVE_SHADOW_BALL,      // TM030
     MOVE_BRICK_BREAK,      // TM031
-    MOVE_DOUBLE_TEAM,      // TM032
+    MOVE_EXTREME_SPEED,    // TM032
     MOVE_REFLECT,          // TM033
     MOVE_SHOCK_WAVE,       // TM034
     MOVE_FLAMETHROWER,     // TM035

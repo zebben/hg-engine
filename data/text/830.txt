@@ -357,7 +357,7 @@ The user burrows, then attacks on the\nsecond turn. It can also be used to\nexit
 The foe is hit by a strong telekinetic\nforce. It may also reduce the foe’s\nSp. Def stat.
 The user hurls a shadowy blob at the\nfoe. It may also lower the foe’s\nSp. Def stat.
 The user attacks with tough fists,\netc. It can also break any barrier\nsuch as Light Screen and Reflect.
-The user begins moving so quickly\nthat it creates illusory copies to\nraise its evasiveness.
+The user charges the target at\nblinding speed. This move always\ngoes first.
 A wondrous wall of light is put up to\nsuppress damage from physical attacks\nfor five turns.
 The user strikes the foe with a quick\njolt of electricity. This attack cannot\nbe evaded.
 The foe is scorched with an intense\nblast of fire. The target may also be\nleft with a burn.
@@ -395,7 +395,7 @@ The user stores power, then attacks.\nIf the user can use this attack after\nthe
 The user recycles a single-use item\nthat has been used in battle so it can\nbe used again.
 The user charges the foe using every\nbit of its power. It must rest on the\nnext turn to recover.
 The user polishes its body to reduce\ndrag. It sharply raises the Speed\nstat.
-The user flashes a light that cuts the\nfoe’s accuracy. It can also be used to\nilluminate caves.
+The user flashes a light at a foe at\na high speed. It is sure to\nstrike first.
 The user stabs the foe with a\nsharpened stone from below. It has\na high critical-hit ratio.
 An attack move that inflicts double\nthe damage if the user has been hurt\nby the foe in the same turn.
 A weak electric charge is launched\nat the foe. It causes paralysis if it\nhits.

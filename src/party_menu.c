@@ -64,8 +64,7 @@ u8 LONG_CALL sub_0207B0B0(struct PLIST_WORK *wk, u8 *buf)
                 }
             }
             if (!foundFly) {
-                BOOL hasFlyHM = Bag_HasItem(wk->dat->myitem, ITEM_HM02, 1, HEAP_ID_PARTY_MENU);
-                if (hasFlyHM && GetMonMachineMoveCompat(pp, ItemToMachineMoveIndex(ITEM_HM02))) {
+                if (GetMonMachineMoveCompat(pp, ItemToMachineMoveIndex(ITEM_HM02))) {
                     move = MOVE_FLY;
                     fieldEffect = MoveId_GetFieldEffectId(move);
                     buf[count] = fieldEffect;
