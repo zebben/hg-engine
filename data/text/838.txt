@@ -19,7 +19,7 @@ One of a variety of mysterious Mega\nStones. Have Gengar hold it, and\nthis ston
 One of a variety of mysterious Mega\nStones. Have Gardevoir hold it, and\nthis stone will enable it to Mega\rEvolve during battle.
 One of a variety of mysterious Mega\nStones. Have Ampharos hold it, and\nthis stone will enable it to Mega\rEvolve during battle.
 One of a variety of mysterious Mega\nStones. Have Venusaur hold it, and\nthis stone will enable it to Mega\rEvolve during battle.
-One of a variety of mysterious Mega\nStones. Have Charizard hold it, and\nthis stone will enable it to Mega\rEvolve during battle.
+This stone will enable standard\nMega Evolution during battle.
 One of a variety of mysterious Mega\nStones. Have Blastoise hold it, and\nthis stone will enable it to Mega\rEvolve during battle.
 One of a variety of mysterious Mega\nStones. Have Mewtwo hold it, and\nthis stone will enable it to Mega\rEvolve during battle.
 One of a variety of mysterious Mega\nStones. Have Mewtwo hold it, and\nthis stone will enable it to Mega\rEvolve during battle.
@@ -37,7 +37,7 @@ One of a variety of mysterious Mega\nStones. Have Abomasnow hold it, and\nthis s
 One of a variety of mysterious Mega\nStones. Have Kangaskhan hold it, and\nthis stone will enable it to Mega\rEvolve during battle.
 One of a variety of mysterious Mega\nStones. Have Gyarados hold it, and\nthis stone will enable it to Mega\rEvolve during battle.
 One of a variety of mysterious Mega\nStones. Have Absol hold it, and this\nstone will enable it to Mega Evolve\rduring battle.
-One of a variety of mysterious Mega\nStones. Have Charizard hold it, and\nthis stone will enable it to Mega\rEvolve during battle.
+This stone will enable alternate\nMega Evolution during battle.
 One of a variety of mysterious Mega\nStones. Have Alakazam hold it, and\nthis stone will enable it to Mega\rEvolve during battle.
 One of a variety of mysterious Mega\nStones. Have Heracross hold it, and\nthis stone will enable it to Mega\rEvolve during battle.
 One of a variety of mysterious Mega\nStones. Have Mawile hold it, and\nthis stone will enable it to Mega\rEvolve during battle.

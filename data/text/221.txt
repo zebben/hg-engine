@@ -1,2 +1,2 @@
 Raises the level of a single Pokémon\nby one. Cannot exceed max party level.
-Toggles hardcore mode when used on a\nPokémon. When active, Pokémon that\nfaint will be permanently lost.
+Toggles hardcore mode when used on a\nPokémon. When active, Pokémon that\nfaint will be lost forever.
