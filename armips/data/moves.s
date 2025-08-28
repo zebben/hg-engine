@@ -93,10 +93,10 @@ movedata MOVE_COMET_PUNCH, "Comet Punch"
 movedata MOVE_MEGA_PUNCH, "Mega Punch"
     battleeffect MOVE_EFFECT_HIT
     pss SPLIT_PHYSICAL
-    basepower 80
+    basepower 85
     type TYPE_NORMAL
-    accuracy 85
-    pp 20
+    accuracy 100
+    pp 15
     effectchance 0
     target RANGE_SINGLE_TARGET
     priority 0
@@ -5104,7 +5104,7 @@ movedata MOVE_SILVER_WIND, "Silver Wind"
     basepower 90
     type TYPE_BUG
     accuracy 100
-    pp 5
+    pp 10
     effectchance 10
     target RANGE_SINGLE_TARGET
     priority 0
@@ -5629,10 +5629,10 @@ movedata MOVE_ROCK_BLAST, "Rock Blast"
 movedata MOVE_SHOCK_WAVE, "Shock Wave"
     battleeffect MOVE_EFFECT_BYPASS_ACCURACY
     pss SPLIT_SPECIAL
-    basepower 60
+    basepower 80
     type TYPE_ELECTRIC
     accuracy 0
-    pp 20
+    pp 15
     effectchance 0
     target RANGE_SINGLE_TARGET
     priority 0

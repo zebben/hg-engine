@@ -331,14 +331,14 @@ int UNUSED CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 sid
         break;
     case MOVE_ELECTRO_BALL:
         if (DefendingMon.speed == 0) {
-            movepower = 40;
+            movepower = 60;
         } else {
             switch (AttackingMon.speed / DefendingMon.speed) {
                 case 0:
-                    movepower = 40;
+                    movepower = 60;
                     break;
                 case 1:
-                    movepower = 60;
+                    movepower = 70;
                     break;
                 case 2:
                     movepower = 80;

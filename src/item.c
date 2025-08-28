@@ -19,7 +19,7 @@ static const u16 sMachineMoves[] = {
     MOVE_WATER_PULSE,      // TM003
     MOVE_CALM_MIND,        // TM004
     MOVE_ROAR,             // TM005
-    MOVE_TOXIC,            // TM006
+    MOVE_SCALD,            // TM006
     MOVE_HAIL,             // TM007
     MOVE_BULK_UP,          // TM008
     MOVE_BULLET_SEED,      // TM009
@@ -27,31 +27,31 @@ static const u16 sMachineMoves[] = {
     MOVE_SUNNY_DAY,        // TM011
     MOVE_TAUNT,            // TM012
     MOVE_ICE_BEAM,         // TM013
-    MOVE_BLIZZARD,         // TM014
-    MOVE_HYPER_BEAM,       // TM015
+    MOVE_PLAY_ROUGH,       // TM014
+    MOVE_LOW_KICK,         // TM015
     MOVE_LIGHT_SCREEN,     // TM016
     MOVE_PROTECT,          // TM017
     MOVE_RAIN_DANCE,       // TM018
     MOVE_GIGA_DRAIN,       // TM019
     MOVE_SAFEGUARD,        // TM020
     MOVE_FRUSTRATION,      // TM021
-    MOVE_SOLAR_BEAM,       // TM022
+    MOVE_LEECH_LIFE,       // TM022
     MOVE_IRON_TAIL,        // TM023
     MOVE_THUNDERBOLT,      // TM024
-    MOVE_THUNDER,          // TM025
-    MOVE_EARTHQUAKE,       // TM026
+    MOVE_TRI_ATTACK,       // TM025
+    MOVE_PSYSHOCK,         // TM026
     MOVE_RETURN,           // TM027
     MOVE_DIG,              // TM028
     MOVE_PSYCHIC,          // TM029
     MOVE_SHADOW_BALL,      // TM030
     MOVE_BRICK_BREAK,      // TM031
-    MOVE_EXTREME_SPEED,    // TM032
+    MOVE_BODY_SLAM,        // TM032
     MOVE_REFLECT,          // TM033
     MOVE_SHOCK_WAVE,       // TM034
     MOVE_FLAMETHROWER,     // TM035
     MOVE_SLUDGE_BOMB,      // TM036
     MOVE_SANDSTORM,        // TM037
-    MOVE_FIRE_BLAST,       // TM038
+    MOVE_HELPING_HAND,     // TM038
     MOVE_ROCK_TOMB,        // TM039
     MOVE_AERIAL_ACE,       // TM040
     MOVE_TORMENT,          // TM041
@@ -65,7 +65,7 @@ static const u16 sMachineMoves[] = {
     MOVE_SNATCH,           // TM049
     MOVE_OVERHEAT,         // TM050
     MOVE_ROOST,            // TM051
-    MOVE_FOCUS_BLAST,      // TM052
+    MOVE_CRUNCH,           // TM052
     MOVE_ENERGY_BALL,      // TM053
     MOVE_FALSE_SWIPE,      // TM054
     MOVE_BRINE,            // TM055
@@ -81,10 +81,10 @@ static const u16 sMachineMoves[] = {
     MOVE_SHADOW_CLAW,      // TM065
     MOVE_PAYBACK,          // TM066
     MOVE_RECYCLE,          // TM067
-    MOVE_GIGA_IMPACT,      // TM068
+    MOVE_FUTURE_SIGHT,     // TM068
     MOVE_ROCK_POLISH,      // TM069
     MOVE_FLASH,            // TM070
-    MOVE_STONE_EDGE,       // TM071
+    MOVE_FAIRY_WIND,       // TM071
     MOVE_AVALANCHE,        // TM072
     MOVE_THUNDER_WAVE,     // TM073
     MOVE_GYRO_BALL,        // TM074
@@ -122,246 +122,248 @@ static const u16 sMachineMoves[] = {
 
     // expansion TMs
     MOVE_MEGA_PUNCH,       // TM00
-    MOVE_FLASH_CANNON,     // TM093
-    MOVE_DARK_PULSE,       // TM094
-    MOVE_LEECH_LIFE,       // TM095
+    MOVE_LEAF_BLADE,       // TM093
+    MOVE_SEED_BOMB,        // TM094
+    MOVE_DARKEST_LARIAT,   // TM095 TODO distribute more
     MOVE_EERIE_IMPULSE,    // TM096
-    MOVE_FLY,              // TM097
+    MOVE_PSYCHIC_FANGS,    // TM097
     MOVE_SKILL_SWAP,       // TM098
     MOVE_IRON_HEAD,        // TM099
-    MOVE_CONFIDE,          // TM100
-    MOVE_DRAGON_DANCE,     // TM100_SV
+    MOVE_DRAGON_DANCE,     // TM100
+
+    MOVE_TACKLE,             // TM100_SV
+
     MOVE_POWER_GEM,        // TM101
-    MOVE_GUNK_SHOT,        // TM102
+    MOVE_BUG_BUZZ,         // TM102
     MOVE_SUBSTITUTE,       // TM103
     MOVE_IRON_DEFENSE,     // TM104
-    MOVE_X_SCISSOR,        // TM105
+    MOVE_EARTH_POWER,      // TM105
     MOVE_DRILL_RUN,        // TM106
-    MOVE_WILL_O_WISP,      // TM107
-    MOVE_CRUNCH,           // TM108
+    MOVE_HEAVY_SLAM,       // TM107
+    MOVE_HEAT_WAVE,        // TM108
     MOVE_TRICK,            // TM109
     MOVE_LIQUIDATION,      // TM110
     MOVE_GIGA_DRAIN,       // TM111
     MOVE_AURA_SPHERE,      // TM112
     MOVE_TAILWIND,         // TM113
     MOVE_SHADOW_BALL,      // TM114
-    MOVE_DRAGON_PULSE,     // TM115
-    MOVE_STEALTH_ROCK,     // TM116
-    MOVE_HYPER_VOICE,      // TM117
-    MOVE_HEAT_WAVE,        // TM118
-    MOVE_ENERGY_BALL,      // TM119
-    MOVE_PSYCHIC,          // TM120
-    MOVE_HEAVY_SLAM,       // TM121
-    MOVE_ENCORE,           // TM122
-    MOVE_SURF,             // TM123
-    MOVE_ICE_SPINNER,      // TM124
-    MOVE_FLAMETHROWER,     // TM125
-    MOVE_THUNDERBOLT,      // TM126
-    MOVE_PLAY_ROUGH,       // TM127
-    MOVE_AMNESIA,          // TM128
-    MOVE_CALM_MIND,        // TM129
-    MOVE_HELPING_HAND,     // TM130
-    MOVE_POLLEN_PUFF,      // TM131
-    MOVE_BATON_PASS,       // TM132
-    MOVE_EARTH_POWER,      // TM133
-    MOVE_REVERSAL,         // TM134
-    MOVE_ICE_BEAM,         // TM135
-    MOVE_ELECTRIC_TERRAIN, // TM136
-    MOVE_GRASSY_TERRAIN,   // TM137
-    MOVE_PSYCHIC_TERRAIN,  // TM138
-    MOVE_MISTY_TERRAIN,    // TM139
-    MOVE_NASTY_PLOT,       // TM140
-    MOVE_FIRE_BLAST,       // TM141
-    MOVE_HYDRO_PUMP,       // TM142
-    MOVE_BLIZZARD,         // TM143
-    MOVE_FIRE_PLEDGE,      // TM144
-    MOVE_WATER_PLEDGE,     // TM145
-    MOVE_GRASS_PLEDGE,     // TM146
-    MOVE_WILD_CHARGE,      // TM147
-    MOVE_SLUDGE_BOMB,      // TM148
-    MOVE_EARTHQUAKE,       // TM149
-    MOVE_STONE_EDGE,       // TM150
-    MOVE_PHANTOM_FORCE,    // TM151
-    MOVE_GIGA_IMPACT,      // TM152
-    MOVE_BLAST_BURN,       // TM153
-    MOVE_HYDRO_CANNON,     // TM154
-    MOVE_FRENZY_PLANT,     // TM155
-    MOVE_OUTRAGE,          // TM156
-    MOVE_OVERHEAT,         // TM157
-    MOVE_FOCUS_BLAST,      // TM158
-    MOVE_LEAF_STORM,       // TM159
-    MOVE_HURRICANE,        // TM160
-    MOVE_TRICK_ROOM,       // TM161
-    MOVE_BUG_BUZZ,         // TM162
-    MOVE_HYPER_BEAM,       // TM163
-    MOVE_BRAVE_BIRD,       // TM164
-    MOVE_FLARE_BLITZ,      // TM165
-    MOVE_THUNDER,          // TM166
-    MOVE_CLOSE_COMBAT,     // TM167
-    MOVE_SOLAR_BEAM,       // TM168
-    MOVE_DRACO_METEOR,     // TM169
-    MOVE_STEEL_BEAM,       // TM170
-    MOVE_TERA_BLAST,       // TM171
-    MOVE_ROAR,             // TM172
-    MOVE_CHARGE,           // TM173
-    MOVE_HAZE,             // TM174
-    MOVE_TOXIC,            // TM175
-    MOVE_SAND_TOMB,        // TM176
-    MOVE_SPITE,            // TM177
-    MOVE_GRAVITY,          // TM178
-    MOVE_SMACK_DOWN,       // TM179
-    MOVE_GYRO_BALL,        // TM180
-    MOVE_KNOCK_OFF,        // TM181
-    MOVE_BUG_BITE,         // TM182
-    MOVE_SUPER_FANG,       // TM183
-    MOVE_VACUUM_WAVE,      // TM184
-    MOVE_LUNGE,            // TM185
-    MOVE_HIGH_HORSEPOWER,  // TM186
-    MOVE_ICICLE_SPEAR,     // TM187
-    MOVE_SCALD,            // TM188
-    MOVE_HEAT_CRASH,       // TM189
-    MOVE_SOLAR_BLADE,      // TM190
-    MOVE_UPROAR,           // TM191
-    MOVE_FOCUS_PUNCH,      // TM192
-    MOVE_WEATHER_BALL,     // TM193
-    MOVE_GRASSY_GLIDE,     // TM194
-    MOVE_BURNING_JEALOUSY, // TM195
-    MOVE_FLIP_TURN,        // TM196
-    MOVE_DUAL_WINGBEAT,    // TM197
-    MOVE_POLTERGEIST,      // TM198
-    MOVE_LASH_OUT,         // TM199
-    MOVE_SCALE_SHOT,       // TM200
-    MOVE_MISTY_EXPLOSION,  // TM201
-    MOVE_PAIN_SPLIT,       // TM202
-    MOVE_PSYCH_UP,         // TM203
-    MOVE_DOUBLE_EDGE,      // TM204
-    MOVE_ENDEAVOR,         // TM205
-    MOVE_PETAL_BLIZZARD,   // TM206
-    MOVE_TEMPER_FLARE,     // TM207
-    MOVE_WHIRLPOOL,        // TM208
-    MOVE_MUDDY_WATER,      // TM209
-    MOVE_SUPERCELL_SLAM,   // TM210
-    MOVE_ELECTROWEB,       // TM211
-    MOVE_TRIPLE_AXEL,      // TM212
-    MOVE_COACHING,         // TM213
-    MOVE_SLUDGE_WAVE,      // TM214
-    MOVE_SCORCHING_SANDS,  // TM215
-    MOVE_FEATHER_DANCE,    // TM216
-    MOVE_FUTURE_SIGHT,     // TM217
-    MOVE_EXPANDING_FORCE,  // TM218
-    MOVE_SKITTER_SMACK,    // TM219
-    MOVE_METEOR_BEAM,      // TM220
-    MOVE_THROAT_CHOP,      // TM221
-    MOVE_BREAKING_SWIPE,   // TM222
-    MOVE_METAL_SOUND,      // TM223
-    MOVE_CURSE,            // TM224
-    MOVE_HARD_PRESS,       // TM225
-    MOVE_DRAGON_CHEER,     // TM226
-    MOVE_ALLURING_VOICE,   // TM227
-    MOVE_PSYCHIC_NOISE,    // TM228
-    MOVE_UPPER_HAND,       // TM229
+    MOVE_ZEN_HEADBUTT,     // TM115
+    MOVE_DAZZLING_GLEAM,   // TM116
+    MOVE_ELECTRO_BALL,     // TM117
+    MOVE_ENCORE,           // TM118
+    MOVE_HELPING_HAND,     // TM119
+    MOVE_BLAZE_KICK,       // TM120
+    MOVE_BATON_PASS,       // TM121
+    MOVE_ELECTRIC_TERRAIN, // TM122
+    MOVE_GRASSY_TERRAIN,   // TM123
+    MOVE_PSYCHIC_TERRAIN,  // TM124
+    MOVE_MISTY_TERRAIN,    // TM125
+    MOVE_WILD_CHARGE,      // TM126
+    MOVE_PHANTOM_FORCE,    // TM127
+    MOVE_BLAST_BURN,       // TM128
+    MOVE_HYDRO_CANNON,     // TM129
+    MOVE_FRENZY_PLANT,     // TM130
+    MOVE_CHARGE,           // TM131
+    MOVE_HAZE,             // TM132
+    MOVE_TOXIC,            // TM133
+    MOVE_SAND_TOMB,        // TM134
+    MOVE_SPITE,            // TM135
+    MOVE_GRAVITY,          // TM136
+    MOVE_SMACK_DOWN,       // TM137
+    MOVE_GYRO_BALL,        // TM138
+    MOVE_KNOCK_OFF,        // TM139
+    MOVE_BUG_BITE,         // TM140
+    MOVE_SUPER_FANG,       // TM141
+    MOVE_VACUUM_WAVE,      // TM142
+    MOVE_LUNGE,            // TM143
+    MOVE_HIGH_HORSEPOWER,  // TM144
+    MOVE_ICICLE_SPEAR,     // TM145
+    MOVE_HEAT_CRASH,       // TM146
+    MOVE_SOLAR_BLADE,      // TM147
+    MOVE_WEATHER_BALL,     // TM148
+    MOVE_GRASSY_GLIDE,     // TM149
+    MOVE_BURNING_JEALOUSY, // TM150
+    MOVE_FLIP_TURN,        // TM151
+    MOVE_DUAL_WINGBEAT,    // TM152
+    MOVE_MISTY_EXPLOSION,  // TM153
+    MOVE_PAIN_SPLIT,       // TM154
+    MOVE_PSYCH_UP,         // TM155
+    MOVE_DOUBLE_EDGE,      // TM156
+    MOVE_ENDEAVOR,         // TM157
+    MOVE_PETAL_BLIZZARD,   // TM158
+    MOVE_SUPERCELL_SLAM,   // TM159
+    MOVE_TRIPLE_AXEL,      // TM160
+    MOVE_SLUDGE_WAVE,      // TM161
+    MOVE_SCORCHING_SANDS,  // TM162
+    MOVE_FEATHER_DANCE,    // TM163
+    MOVE_EXPANDING_FORCE,  // TM164
+    MOVE_BREAKING_SWIPE,   // TM165
+    MOVE_METAL_SOUND,      // TM166
+    MOVE_CURSE,            // TM167
+    MOVE_TACKLE,       // TM168
+    MOVE_TACKLE,     // TM169
+    MOVE_TACKLE,       // TM170
+    MOVE_TACKLE,       // TM171
+    MOVE_TACKLE,             // TM172
+    MOVE_TACKLE,           // TM173
+    MOVE_TACKLE,             // TM174
+    MOVE_TACKLE,            // TM175
+    MOVE_TACKLE,        // TM176
+    MOVE_TACKLE,            // TM177
+    MOVE_TACKLE,          // TM178
+    MOVE_TACKLE,       // TM179
+    MOVE_TACKLE,        // TM180
+    MOVE_TACKLE,        // TM181
+    MOVE_TACKLE,         // TM182
+    MOVE_TACKLE,       // TM183
+    MOVE_TACKLE,      // TM184
+    MOVE_TACKLE,            // TM185
+    MOVE_TACKLE,  // TM186
+    MOVE_TACKLE,     // TM187
+    MOVE_TACKLE,            // TM188
+    MOVE_TACKLE,       // TM189
+    MOVE_TACKLE,      // TM190
+    MOVE_TACKLE,           // TM191
+    MOVE_TACKLE,      // TM192
+    MOVE_TACKLE,     // TM193
+    MOVE_TACKLE,     // TM194
+    MOVE_TACKLE, // TM195
+    MOVE_TACKLE,        // TM196
+    MOVE_TACKLE,    // TM197
+    MOVE_TACKLE,      // TM198
+    MOVE_TACKLE,         // TM199
+    MOVE_TACKLE,       // TM200
+    MOVE_TACKLE,  // TM201
+    MOVE_TACKLE,       // TM202
+    MOVE_TACKLE,         // TM203
+    MOVE_TACKLE,      // TM204
+    MOVE_TACKLE,         // TM205
+    MOVE_TACKLE,   // TM206
+    MOVE_TACKLE,     // TM207
+    MOVE_TACKLE,        // TM208
+    MOVE_TACKLE,      // TM209
+    MOVE_TACKLE,   // TM210
+    MOVE_TACKLE,       // TM211
+    MOVE_TACKLE,      // TM212
+    MOVE_TACKLE,         // TM213
+    MOVE_TACKLE,      // TM214
+    MOVE_TACKLE,  // TM215
+    MOVE_TACKLE,    // TM216
+    MOVE_TACKLE,     // TM217
+    MOVE_TACKLE,  // TM218
+    MOVE_TACKLE,    // TM219
+    MOVE_TACKLE,      // TM220
+    MOVE_TACKLE,      // TM221
+    MOVE_TACKLE,   // TM222
+    MOVE_TACKLE,      // TM223
+    MOVE_TACKLE,            // TM224
+    MOVE_TACKLE,       // TM225
+    MOVE_TACKLE,     // TM226
+    MOVE_TACKLE,   // TM227
+    MOVE_TACKLE,    // TM228
+    MOVE_TACKLE,       // TM229
 
     // TRs
     MOVE_SWORDS_DANCE,     // TR00
-    MOVE_BODY_SLAM,        // TR01
-    MOVE_FLAMETHROWER,     // TR02
+    MOVE_EXTREME_SPEED,    // TR01
+    MOVE_TOXIC,            // TR02
     MOVE_HYDRO_PUMP,       // TR03
-    MOVE_SURF,             // TR04
-    MOVE_ICE_BEAM,         // TR05
+    MOVE_SOLAR_BEAM,       // TR04
+    MOVE_HYPER_BEAM,       // TR05
     MOVE_BLIZZARD,         // TR06
-    MOVE_LOW_KICK,         // TR07
-    MOVE_THUNDERBOLT,      // TR08
+    MOVE_THUNDER,          // TR07
+    MOVE_GIGA_IMPACT,      // TR08 
     MOVE_THUNDER,          // TR09
     MOVE_EARTHQUAKE,       // TR10
-    MOVE_PSYCHIC,          // TR11
+    MOVE_ROCK_SLIDE,       // TR11
     MOVE_AGILITY,          // TR12
-    MOVE_FOCUS_ENERGY,     // TR13
-    MOVE_METRONOME,        // TR14
+    MOVE_THUNDER_WAVE,     // TR13 
+    MOVE_WATER_PULSE,      // TR14 
     MOVE_FIRE_BLAST,       // TR15
-    MOVE_WATERFALL,        // TR16
+    MOVE_GIGA_DRAIN,       // TR16 
     MOVE_AMNESIA,          // TR17
-    MOVE_LEECH_LIFE,       // TR18
-    MOVE_TRI_ATTACK,       // TR19
+    MOVE_SHOCK_WAVE,       // TR18
+    MOVE_SKILL_SWAP,       // TR19
     MOVE_SUBSTITUTE,       // TR20
     MOVE_REVERSAL,         // TR21
-    MOVE_SLUDGE_BOMB,      // TR22
+    MOVE_OVERHEAT,         // TR22
     MOVE_SPIKES,           // TR23
     MOVE_OUTRAGE,          // TR24
-    MOVE_PSYSHOCK,         // TR25
+    MOVE_RAZOR_WIND,       // TR25
     MOVE_ENDURE,           // TR26
-    MOVE_SLEEP_TALK,       // TR27
+    MOVE_ELECTRO_BALL,     // TR27
     MOVE_MEGAHORN,         // TR28
-    MOVE_BATON_PASS,       // TR29
-    MOVE_ENCORE,           // TR30
+    MOVE_GUNK_SHOT,        // TR29
+    MOVE_STONE_EDGE,       // TR30
     MOVE_IRON_TAIL,        // TR31
-    MOVE_CRUNCH,           // TR32
-    MOVE_SHADOW_BALL,      // TR33
-    MOVE_FUTURE_SIGHT,     // TR34
-    MOVE_UPROAR,           // TR35
-    MOVE_HEAT_WAVE,        // TR36
+    MOVE_UPROAR,           // TR32 
+    MOVE_HYPER_VOICE,      // TR33
+    MOVE_COSMIC_POWER,     // TR34
+    MOVE_MUDDY_WATER,      // TR35
+    MOVE_IRON_DEFENSE,     // TR36
     MOVE_TAUNT,            // TR37
-    MOVE_TRICK,            // TR38
+    MOVE_FOUL_PLAY,        // TR38
     MOVE_SUPERPOWER,       // TR39
     MOVE_SKILL_SWAP,       // TR40
-    MOVE_BLAZE_KICK,       // TR41
-    MOVE_HYPER_VOICE,      // TR42
-    MOVE_OVERHEAT,         // TR43
-    MOVE_COSMIC_POWER,     // TR44
-    MOVE_MUDDY_WATER,      // TR45
-    MOVE_IRON_DEFENSE,     // TR46
-    MOVE_DRAGON_CLAW,      // TR47
-    MOVE_BULK_UP,          // TR48
-    MOVE_CALM_MIND,        // TR49
-    MOVE_LEAF_BLADE,       // TR50
-    MOVE_DRAGON_DANCE,     // TR51
-    MOVE_GYRO_BALL,        // TR52
-    MOVE_CLOSE_COMBAT,     // TR53
-    MOVE_TOXIC_SPIKES,     // TR54
-    MOVE_FLARE_BLITZ,      // TR55
-    MOVE_AURA_SPHERE,      // TR56
-    MOVE_POISON_JAB,       // TR57
-    MOVE_DARK_PULSE,       // TR58
-    MOVE_SEED_BOMB,        // TR59
-    MOVE_X_SCISSOR,        // TR60
-    MOVE_BUG_BUZZ,         // TR61
-    MOVE_DRAGON_PULSE,     // TR62
-    MOVE_POWER_GEM,        // TR63
-    MOVE_FOCUS_BLAST,      // TR64
-    MOVE_ENERGY_BALL,      // TR65
-    MOVE_BRAVE_BIRD,       // TR66
-    MOVE_EARTH_POWER,      // TR67
-    MOVE_NASTY_PLOT,       // TR68
-    MOVE_ZEN_HEADBUTT,     // TR69
-    MOVE_FLASH_CANNON,     // TR70
-    MOVE_LEAF_STORM,       // TR71
-    MOVE_POWER_WHIP,       // TR72
-    MOVE_GUNK_SHOT,        // TR73
-    MOVE_IRON_HEAD,        // TR74
-    MOVE_STONE_EDGE,       // TR75
-    MOVE_STEALTH_ROCK,     // TR76
-    MOVE_GRASS_KNOT,       // TR77
-    MOVE_SLUDGE_WAVE,      // TR78
-    MOVE_HEAVY_SLAM,       // TR79
-    MOVE_ELECTRO_BALL,     // TR80
-    MOVE_FOUL_PLAY,        // TR81
-    MOVE_STORED_POWER,     // TR82
-    MOVE_ALLY_SWITCH,      // TR83
-    MOVE_SCALD,            // TR84
-    MOVE_WORK_UP,          // TR85
-    MOVE_WILD_CHARGE,      // TR86
-    MOVE_DRILL_RUN,        // TR87
-    MOVE_HEAT_CRASH,       // TR88
-    MOVE_HURRICANE,        // TR89
-    MOVE_PLAY_ROUGH,       // TR90
-    MOVE_VENOM_DRENCH,     // TR91
-    MOVE_DAZZLING_GLEAM,   // TR92
-    MOVE_DARKEST_LARIAT,   // TR93
-    MOVE_HIGH_HORSEPOWER,  // TR94
-    MOVE_THROAT_CHOP,      // TR95
-    MOVE_POLLEN_PUFF,      // TR96
-    MOVE_PSYCHIC_FANGS,    // TR97
-    MOVE_LIQUIDATION,      // TR98
-    MOVE_BODY_PRESS,       // TR99
+    MOVE_WORK_UP,          // TR41
+    MOVE_CLOSE_COMBAT,     // TR42
+    MOVE_TOXIC_SPIKES,     // TR43
+    MOVE_FLARE_BLITZ,      // TR44
+    MOVE_FOCUS_BLAST,      // TR45
+    MOVE_BRAVE_BIRD,       // TR46
+    MOVE_NASTY_PLOT,       // TR47
+    MOVE_LEAF_STORM,       // TR48
+    MOVE_POWER_WHIP,       // TR49
+    MOVE_TRICK_ROOM,       // TR50 
+    MOVE_TACKLE,       // TR51
+    MOVE_TACKLE,     // TR52
+    MOVE_TACKLE,        // TR53
+    MOVE_TACKLE,          // TR54
+    MOVE_TACKLE,     // TR55
+    MOVE_TACKLE,      // TR56
+    MOVE_TACKLE,       // TR57
+    MOVE_TACKLE,       // TR58
+    MOVE_TACKLE,        // TR59
+    MOVE_TACKLE,        // TR60
+    MOVE_TACKLE,         // TR61
+    MOVE_TACKLE,     // TR62
+    MOVE_TACKLE,        // TR63
+    MOVE_TACKLE,      // TR64
+    MOVE_TACKLE,      // TR65
+    MOVE_TACKLE,       // TR66
+    MOVE_TACKLE,      // TR67
+    MOVE_TACKLE,       // TR68
+    MOVE_TACKLE,     // TR69
+    MOVE_TACKLE,     // TR70
+    MOVE_TACKLE,       // TR71
+    MOVE_TACKLE,       // TR72
+    MOVE_TACKLE,        // TR73
+    MOVE_TACKLE,        // TR74
+    MOVE_TACKLE,       // TR75
+    MOVE_TACKLE,     // TR76
+    MOVE_TACKLE,       // TR77
+    MOVE_TACKLE,      // TR78
+    MOVE_TACKLE,       // TR79
+    MOVE_TACKLE,     // TR80
+    MOVE_TACKLE,        // TR81
+    MOVE_TACKLE,     // TR82
+    MOVE_TACKLE,      // TR83
+    MOVE_TACKLE,            // TR84
+    MOVE_TACKLE,          // TR85
+    MOVE_TACKLE,      // TR86
+    MOVE_TACKLE,        // TR87
+    MOVE_TACKLE,       // TR88
+    MOVE_TACKLE,        // TR89
+    MOVE_TACKLE,       // TR90
+    MOVE_TACKLE,     // TR91
+    MOVE_TACKLE,   // TR92
+    MOVE_TACKLE,   // TR93
+    MOVE_TACKLE,  // TR94
+    MOVE_TACKLE,      // TR95
+    MOVE_TACKLE,      // TR96
+    MOVE_TACKLE,    // TR97
+    MOVE_TACKLE,      // TR98
+    MOVE_TACKLE,       // TR99
 };
 
 u16 GetItemIndex(u16 item, u16 type);
