@@ -33495,7 +33495,7 @@
       },
       {
         "Level": 8,
-        "Move": "MOVE_LEECH_LIFE"
+        "Move": "MOVE_PIN_MISSILE"
       },
       {
         "Level": 12,
@@ -33524,6 +33524,10 @@
       {
         "Level": 26,
         "Move": "MOVE_BATON_PASS"
+      },
+      {
+        "Level": 28,
+        "Move": "MOVE_LEECH_LIFE"
       },
       {
         "Level": 29,

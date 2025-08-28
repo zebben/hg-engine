@@ -127,7 +127,7 @@ static const u16 sMachineMoves[] = {
     MOVE_DARKEST_LARIAT,   // TM095 TODO distribute more
     MOVE_EERIE_IMPULSE,    // TM096
     MOVE_PSYCHIC_FANGS,    // TM097
-    MOVE_SKILL_SWAP,       // TM098
+    MOVE_BREAKING_SWIPE,   // TM098
     MOVE_IRON_HEAD,        // TM099
     MOVE_DRAGON_DANCE,     // TM100
 
@@ -135,7 +135,7 @@ static const u16 sMachineMoves[] = {
 
     MOVE_POWER_GEM,        // TM101
     MOVE_BUG_BUZZ,         // TM102
-    MOVE_SUBSTITUTE,       // TM103
+    MOVE_TRIPLE_AXEL,      // TM103
     MOVE_IRON_DEFENSE,     // TM104
     MOVE_EARTH_POWER,      // TM105
     MOVE_DRILL_RUN,        // TM106
@@ -146,12 +146,12 @@ static const u16 sMachineMoves[] = {
     MOVE_GIGA_DRAIN,       // TM111
     MOVE_AURA_SPHERE,      // TM112
     MOVE_TAILWIND,         // TM113
-    MOVE_SHADOW_BALL,      // TM114
+    MOVE_CURSE,            // TM114
     MOVE_ZEN_HEADBUTT,     // TM115
     MOVE_DAZZLING_GLEAM,   // TM116
     MOVE_ELECTRO_BALL,     // TM117
     MOVE_ENCORE,           // TM118
-    MOVE_HELPING_HAND,     // TM119
+    MOVE_METAL_SOUND,      // TM119
     MOVE_BLAZE_KICK,       // TM120
     MOVE_BATON_PASS,       // TM121
     MOVE_ELECTRIC_TERRAIN, // TM122
@@ -170,7 +170,7 @@ static const u16 sMachineMoves[] = {
     MOVE_SPITE,            // TM135
     MOVE_GRAVITY,          // TM136
     MOVE_SMACK_DOWN,       // TM137
-    MOVE_GYRO_BALL,        // TM138
+    MOVE_SCORCHING_SANDS,  // TM138
     MOVE_KNOCK_OFF,        // TM139
     MOVE_BUG_BITE,         // TM140
     MOVE_SUPER_FANG,       // TM141
@@ -187,19 +187,19 @@ static const u16 sMachineMoves[] = {
     MOVE_DUAL_WINGBEAT,    // TM152
     MOVE_MISTY_EXPLOSION,  // TM153
     MOVE_PAIN_SPLIT,       // TM154
-    MOVE_PSYCH_UP,         // TM155
+    MOVE_SLUDGE_WAVE,      // TM155
     MOVE_DOUBLE_EDGE,      // TM156
-    MOVE_ENDEAVOR,         // TM157
-    MOVE_PETAL_BLIZZARD,   // TM158
-    MOVE_SUPERCELL_SLAM,   // TM159
-    MOVE_TRIPLE_AXEL,      // TM160
-    MOVE_SLUDGE_WAVE,      // TM161
-    MOVE_SCORCHING_SANDS,  // TM162
-    MOVE_FEATHER_DANCE,    // TM163
-    MOVE_EXPANDING_FORCE,  // TM164
-    MOVE_BREAKING_SWIPE,   // TM165
-    MOVE_METAL_SOUND,      // TM166
-    MOVE_CURSE,            // TM167
+    MOVE_SUPERCELL_SLAM,   // TM157
+    MOVE_TACKLE,   // TM158
+    MOVE_TACKLE,   // TM159
+    MOVE_TACKLE,      // TM160
+    MOVE_TACKLE,      // TM161
+    MOVE_TACKLE,  // TM162
+    MOVE_TACKLE,    // TM163
+    MOVE_TACKLE,  // TM164
+    MOVE_TACKLE,   // TM165
+    MOVE_TACKLE,      // TM166
+    MOVE_TACKLE,           // TM167
     MOVE_TACKLE,       // TM168
     MOVE_TACKLE,     // TM169
     MOVE_TACKLE,       // TM170
@@ -273,7 +273,7 @@ static const u16 sMachineMoves[] = {
     MOVE_BLIZZARD,         // TR06
     MOVE_THUNDER,          // TR07
     MOVE_GIGA_IMPACT,      // TR08 
-    MOVE_THUNDER,          // TR09
+    MOVE_PETAL_BLIZZARD,   // TR09
     MOVE_EARTHQUAKE,       // TR10
     MOVE_ROCK_SLIDE,       // TR11
     MOVE_AGILITY,          // TR12
@@ -283,8 +283,8 @@ static const u16 sMachineMoves[] = {
     MOVE_GIGA_DRAIN,       // TR16 
     MOVE_AMNESIA,          // TR17
     MOVE_SHOCK_WAVE,       // TR18
-    MOVE_SKILL_SWAP,       // TR19
-    MOVE_SUBSTITUTE,       // TR20
+    MOVE_FEATHER_DANCE,    // TR19
+    MOVE_ENDEAVOR,         // TR20
     MOVE_REVERSAL,         // TR21
     MOVE_OVERHEAT,         // TR22
     MOVE_SPIKES,           // TR23
@@ -304,7 +304,7 @@ static const u16 sMachineMoves[] = {
     MOVE_TAUNT,            // TR37
     MOVE_FOUL_PLAY,        // TR38
     MOVE_SUPERPOWER,       // TR39
-    MOVE_SKILL_SWAP,       // TR40
+    MOVE_EXPANDING_FORCE,  // TR40
     MOVE_WORK_UP,          // TR41
     MOVE_CLOSE_COMBAT,     // TR42
     MOVE_TOXIC_SPIKES,     // TR43
