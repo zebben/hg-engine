@@ -124,14 +124,14 @@ static const u16 sMachineMoves[] = {
     MOVE_MEGA_PUNCH,       // TM00
     MOVE_LEAF_BLADE,       // TM093
     MOVE_SEED_BOMB,        // TM094
-    MOVE_DARKEST_LARIAT,   // TM095 TODO distribute more
+    MOVE_DARKEST_LARIAT,   // TM095
     MOVE_EERIE_IMPULSE,    // TM096
     MOVE_PSYCHIC_FANGS,    // TM097
     MOVE_BREAKING_SWIPE,   // TM098
     MOVE_IRON_HEAD,        // TM099
     MOVE_DRAGON_DANCE,     // TM100
 
-    MOVE_TACKLE,             // TM100_SV
+    MOVE_TACKLE,    // TM100_SV
 
     MOVE_POWER_GEM,        // TM101
     MOVE_BUG_BUZZ,         // TM102

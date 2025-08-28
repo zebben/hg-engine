@@ -44,10 +44,10 @@
 .halfword ITEM_PP_UP
 
 .org 0x02000000 + 0xFA5B8 //Ruins of Alph SW
-.halfword ITEM_BIG_MUSHROOM
+.halfword ITEM_TR01
 
 .org 0x02000000 + 0xFA5C0 //Ruins of Alph W
-.halfword ITEM_TINY_MUSHROOM
+.halfword ITEM_TR03
 
 .org 0x02000000 + 0xFA5C8 //Ruins of Alph NW
 .halfword ITEM_RARE_CANDY
@@ -59,13 +59,13 @@
 .halfword ITEM_PP_UP
 
 .org 0x02000000 + 0xFA5E0 //Union Cave 1F S
-.halfword ITEM_FULL_HEAL
+.halfword ITEM_TR50
 
 .org 0x02000000 + 0xFA5E8 //Union Cave 1F W
 .halfword ITEM_BIG_PEARL
 
 .org 0x02000000 + 0xFA5F0 //Union Cave B1F S
-.halfword ITEM_FULL_RESTORE
+.halfword ITEM_TR47
 
 .org 0x02000000 + 0xFA5F8 //Union Cave B1F E
 .halfword ITEM_MAX_POTION
@@ -140,7 +140,7 @@
 .halfword ITEM_SUPER_POTION
 
 .org 0x02000000 + 0xFA6B8 //Goldenrod Dept Store Basement SE
-.halfword ITEM_FULL_HEAL
+.halfword ITEM_TR44
 
 .org 0x02000000 + 0xFA6C0 //Goldenrod Tunnel Basement
 .halfword ITEM_MAX_POTION
@@ -152,10 +152,10 @@
 .halfword ITEM_NUGGET
 
 .org 0x02000000 + 0xFA6D8 //R36 W
-.halfword ITEM_AWAKENING
+.halfword ITEM_TR35
 
 .org 0x02000000 + 0xFA6E0 //National Park
-.halfword ITEM_FULL_HEAL
+.halfword ITEM_TR23
 
 .org 0x02000000 + 0xFA6E8 //National Park
 .halfword ITEM_FULL_HEAL
@@ -206,7 +206,7 @@
 .halfword ITEM_TINY_MUSHROOM
 
 .org 0x02000000 + 0xFA768 //Bell Tower 3F
-.halfword ITEM_MAX_POTION
+.halfword ITEM_TR16
 
 .org 0x02000000 + 0xFA770 //Bell Tower 5F
 .halfword ITEM_FULL_RESTORE
@@ -236,7 +236,7 @@
 .halfword ITEM_HYPER_POTION
 
 .org 0x02000000 + 0xFA7B8 //Olivine
-.halfword ITEM_PROTEIN
+.halfword ITEM_TR28
 
 .org 0x02000000 + 0xFA7C0 //Olivine Dock
 .halfword ITEM_PEARL
@@ -257,7 +257,7 @@
 .halfword ITEM_STARDUST
 
 .org 0x02000000 + 0xFA7F0 //Whirl Islands
-.halfword ITEM_STARDUST
+.halfword ITEM_TR46
 
 .org 0x02000000 + 0xFA7F8 //Whirl Islands
 .halfword ITEM_STARDUST
@@ -326,13 +326,13 @@
 .halfword ITEM_RARE_CANDY
 
 .org 0x02000000 + 0xFA8A8 //Mt Mortar Back
-.halfword ITEM_ULTRA_BALL
+.halfword ITEM_TR10
 
 .org 0x02000000 + 0xFA8B0 //Mt Mortar Back
 .halfword ITEM_NUGGET
 
 .org 0x02000000 + 0xFA8B8 //Mt Mortar 2F
-.halfword ITEM_FULL_RESTORE
+.halfword ITEM_TR11
 
 .org 0x02000000 + 0xFA8C0 //Mt Mortar 2F
 .halfword ITEM_HP_UP
