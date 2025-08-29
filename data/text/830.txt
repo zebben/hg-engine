@@ -339,7 +339,7 @@ A unique attack that varies in type\ndepending on the Pokémon using it.
 The user intensifies the sun for\nfive turns, powering up Fire-type\nmoves.
 The foe is taunted into a rage that\nallows it to use only attack moves\nfor two to four turns.
 The foe is struck with an icy-cold\nbeam of energy. It may also freeze\nthe target solid.
-The user attacks by playing rough\nwith the target. This may also lower\nthe target's Attack stat.
+The user attacks by playing rough\nwith the target. This may also lower\nthe target’s Attack stat.
 A powerful low kick that makes the\nfoe fall over. It inflicts greater\ndamage on heavier foes.
 A wondrous wall of light is put up\nto suppress damage from special\nattacks for five turns.
 It enables the user to evade all\nattacks. Its chance of failing rises\nif it is used in succession.

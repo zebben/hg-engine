@@ -372,7 +372,7 @@ The user slaps down the foe’s held\nitem, preventing the item from being\nused
 The user bites the foe. If the foe\nis holding a Berry, the user eats it\nand gains its effect.
 The user chomps hard on the foe with\nits sharp front fangs. It cuts the\ntarget’s HP to half.
 The user whirls its fists to send a\nwave of pure vacuum at the foe. This\nmove always goes first.
-The user makes a lunge at the\ntarget, attacking with full force.\nThis also lowers the target's Attack\rstat.
+The user makes a lunge at the\ntarget, attacking with full force.\nThis also lowers the target’s Attack\rstat.
 The user fiercely attacks the target\nusing its entire body.
 The user launches sharp icicles at\nthe foe. It strikes two to five\ntimes in a row.
 The user slams down with fire. The\nmore the user outweighs the foe, the\ngreater the damage.
