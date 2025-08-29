@@ -10,6 +10,8 @@ def parse_moves_file(filepath: Path):
     current_move = None
     current_type = None
 
+    TYPE_TOKEN_RE = re.compile(r'\bTYPE_[A-Za-z0-9_]+')
+
     with filepath.open(encoding="utf-8") as f:
         for raw in f:
             line = raw.strip()
@@ -17,17 +19,20 @@ def parse_moves_file(filepath: Path):
                 continue
 
             if line.startswith("movedata"):
-                # movedata MOVE_POUND, "Pound"
+                # e.g. movedata MOVE_POUND, "Pound"
                 m = re.match(r'movedata\s+(\w+),', line)
                 if m:
                     current_move = m.group(1)
                     current_type = None
 
             elif line.startswith("type") and current_move:
-                # type TYPE_NORMAL
-                m = re.match(r'type\s+(\w+)', line)
-                if m:
-                    current_type = m.group(1)
+                # Handle both:
+                #   type TYPE_NORMAL
+                #   type (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL
+                type_tokens = TYPE_TOKEN_RE.findall(line)
+                if type_tokens:
+                    # Prefer TYPE_FAIRY if present on the line, otherwise take the first token
+                    current_type = "TYPE_FAIRY" if "TYPE_FAIRY" in type_tokens else type_tokens[0]
 
             elif line.startswith("terminatedata") and current_move:
                 if current_move and current_type:
