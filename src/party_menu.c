@@ -42,36 +42,31 @@ u8 LONG_CALL sub_0207B0B0(struct PLIST_WORK *wk, u8 *buf)
             buf[count] = PARTY_MON_CONTEXT_MENU_QUIT;
             ++count;
 
-            BOOL foundFly = FALSE;
-            for (i = 0; i < MAX_MON_MOVES; ++i)
-            {
-                move = GetMonData(pp, MON_DATA_MOVE1 + i, NULL);
-                if (move == MOVE_NONE)
-                {
-                    break;
-                }
-
+            if (GetMonData(pp, MON_DATA_TYPE_1, NULL) == TYPE_FLYING || GetMonData(pp, MON_DATA_TYPE_2, NULL) == TYPE_FLYING || GetMonMachineMoveCompat(pp, ItemToMachineMoveIndex(ITEM_HM02))) {
+                move = MOVE_FLY;
                 fieldEffect = MoveId_GetFieldEffectId(move);
-                if (fieldEffect != 0xFF)
-                {
-                    if (move == MOVE_FLY) {
-                        foundFly = TRUE;
-                    }
-                    buf[count] = fieldEffect;
-                    ++count;
-                    PartyMenu_ContextMenuAddFieldMove(wk, move, fieldMoveIndex);
-                    ++fieldMoveIndex;
-                }
+                buf[count] = fieldEffect;
+                ++count;
+                PartyMenu_ContextMenuAddFieldMove(wk, move, fieldMoveIndex);
+                ++fieldMoveIndex;
             }
-            if (!foundFly) {
-                if (GetMonMachineMoveCompat(pp, ItemToMachineMoveIndex(ITEM_HM02))) {
-                    move = MOVE_FLY;
-                    fieldEffect = MoveId_GetFieldEffectId(move);
-                    buf[count] = fieldEffect;
-                    ++count;
-                    PartyMenu_ContextMenuAddFieldMove(wk, move, fieldMoveIndex);
-                    ++fieldMoveIndex;
-                }
+            
+            if (GetMonData(pp, MON_DATA_TYPE_1, NULL) == TYPE_STEEL || GetMonData(pp, MON_DATA_TYPE_2, NULL) == TYPE_STEEL) {
+                move = MOVE_FLASH;
+                fieldEffect = MoveId_GetFieldEffectId(move);
+                buf[count] = fieldEffect;
+                ++count;
+                PartyMenu_ContextMenuAddFieldMove(wk, move, fieldMoveIndex);
+                ++fieldMoveIndex;
+            }
+            
+            if (GetMonData(pp, MON_DATA_TYPE_1, NULL) == TYPE_GROUND || GetMonData(pp, MON_DATA_TYPE_2, NULL) == TYPE_GROUND) {
+                move = MOVE_DIG;
+                fieldEffect = MoveId_GetFieldEffectId(move);
+                buf[count] = fieldEffect;
+                ++count;
+                PartyMenu_ContextMenuAddFieldMove(wk, move, fieldMoveIndex);
+                ++fieldMoveIndex;
             }
         }
         else

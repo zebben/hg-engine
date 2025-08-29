@@ -75,10 +75,9 @@
 // uncommenting UNCAP_CANDIES_FROM_LEVEL_CAP will allow for rare candies to not be capped by the level cap even with the level cap in place, like run & bun
 // uncommenting ALLOW_LEVEL_CAP_EVOLVE will allow for rare candies to evolve pokemon already at the level cap that can evolve at that level already
 //#define IMPLEMENT_LEVEL_CAP
-//#define LEVEL_CAP_VARIABLE 0x416F
+// #define LEVEL_CAP_VARIABLE 0x416F
 //#define UNCAP_CANDIES_FROM_LEVEL_CAP
 //#define ALLOW_LEVEL_CAP_EVOLVE
-#define HARDCORE_MODE_VARIABLE 0x416F
 
 // System flags that need to be enabled for the player to use the gimmick. If you want to change them, remember to change them in flags.s as well for consistency
 #define FLAG_MEGA_EVOLUTION_ENABLED 2518
@@ -176,10 +175,16 @@
 // towards 30
 #define EASY_MODE_IVS
 
-// SCALE_ENEMY_TRAINER_LEVELS scales enemy trainer party levels based on the player's party if they are a "boss"
+// SCALE_ENEMY_TRAINER_LEVELS scales enemy trainer party levels based on the player's party
 #define SCALE_ENEMY_TRAINER_LEVELS
+
+// SCALE_WILD_LEVELS scales wild mon levels based on the player's party
+#define SCALE_WILD_LEVELS
 
 // PERMA_DEATH_MODE enables permadeath on mon faint
 #define PERMA_DEATH_MODE
+
+// HARDCORE_MODE_VARIABLE tracks hardcore mode enablement
+#define HARDCORE_MODE_VARIABLE 0x416E
 
 #endif

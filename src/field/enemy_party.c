@@ -558,6 +558,45 @@ BOOL LONG_CALL AddWildPartyPokemon(int inTarget, EncounterInfo *encounterInfo, s
     u8 form_no;
     u16 species;
 
+#ifdef SCALE_WILD_LEVELS
+    int scaleOptions[6] = {4, 3, 3, 2, 2, 1};
+    randomize(scaleOptions, 6);
+
+    struct Party *party = encounterBattleParam->poke_party[0];
+    int player_poke_count = party->count;
+    struct PartyPokemon *mon;
+
+    int sum = 0;
+    int n = 0;
+    for (int i = 0; i < player_poke_count; i++) {
+        mon = Party_GetMonByIndex(party, i);
+        if (!GetMonData(mon, MON_DATA_IS_EGG, NULL)) {
+            int lvl = (int)GetMonData(mon, MON_DATA_LEVEL, NULL);
+            sum += lvl;
+            n++;
+        }
+    }
+
+    int avg = (n > 0) ? (sum + n/2) / n : 3;
+    if (avg > 10) {
+        int targetLevel = avg - scaleOptions[0];
+        if (targetLevel < 3) {
+            targetLevel = 3;
+        }
+        if (targetLevel > 100) {
+            targetLevel = 100;
+        }
+
+        u8 lvl_u8 = (u8)targetLevel;
+        u32 exp = PokeLevelExpGet(species, targetLevel);
+        SetMonData(encounterPartyPokemon, MON_DATA_LEVEL, &lvl_u8);
+        SetMonData(encounterPartyPokemon, MON_DATA_EXPERIENCE, &exp);
+        encounterInfo->level = lvl_u8;
+        RecalcPartyPokemonStats(encounterPartyPokemon);
+        InitBoxMonMoveset(&encounterPartyPokemon->box);
+    }
+#endif
+
     if (encounterInfo->isEgg == 0 && encounterInfo->ability == ABILITY_COMPOUND_EYES)
     {
         range = 1;
