@@ -92,8 +92,6 @@ scrdef_end
 scr_seq_0003_002:
     takeitem_no_check ITEM_SACRED_ASH, 2
     giveitem ITEM_SACRED_ASH, 2, VAR_SPECIAL_RESULT
-    giveitem ITEM_HARDCORE_TOGGLE, 1, VAR_SPECIAL_RESULT
-    giveitem ITEM_INFINITE_RARE_CANDY, 1, VAR_SPECIAL_RESULT
     play_se SEQ_SE_DP_SELECT
     lockall
     faceplayer

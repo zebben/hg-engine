@@ -19,7 +19,7 @@ a {COLOR 255}Gengarite{COLOR 0}
 a {COLOR 255}Gardevoirite{COLOR 0}
 an {COLOR 255}Ampharosite{COLOR 0}
 a {COLOR 255}Venusaurite{COLOR 0}
-a {COLOR 255}Charizardite X{COLOR 0}
+a {COLOR 255}Std. Mega Stone{COLOR 0}
 a {COLOR 255}Blastoisinite{COLOR 0}
 a {COLOR 255}Mewtwonite X{COLOR 0}
 a {COLOR 255}Mewtwonite Y{COLOR 0}
@@ -37,7 +37,7 @@ an {COLOR 255}Abomasite{COLOR 0}
 a {COLOR 255}Kangaskhanite{COLOR 0}
 a {COLOR 255}Gyaradosite{COLOR 0}
 an {COLOR 255}Absolite{COLOR 0}
-a {COLOR 255}Charizardite Y{COLOR 0}
+a {COLOR 255}Alt. Mega Stone{COLOR 0}
 an {COLOR 255}Alakazite{COLOR 0}
 a {COLOR 255}Heracronite{COLOR 0}
 a {COLOR 255}Mawilite{COLOR 0}
