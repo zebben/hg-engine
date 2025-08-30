@@ -1333,7 +1333,7 @@ BOOL CanUseItemOnMonInParty(struct Party *party, u16 itemID, s32 partyIdx, s32 m
                 highestPlayerPokeLvl = monLvl;
             }
         }
-        if (GetMonData(mon, MON_DATA_LEVEL, NULL) >= highestPlayerPokeLvl) {
+        if (GetMonData(mon, MON_DATA_LEVEL, NULL) + 2 >= highestPlayerPokeLvl) {
             return FALSE;
         }
     }

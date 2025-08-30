@@ -761,12 +761,12 @@ trainerdata 20, "Falkner"
         // mon 1
         ivs 200
         abilityslot 0
-        level 13
-        pokemon SPECIES_FLITTLE
+        level 12
+        pokemon SPECIES_WATTREL
         item ITEM_NONE
-        move MOVE_PECK
-        move MOVE_DISARMING_VOICE
-        move MOVE_QUICK_ATTACK
+        move MOVE_THUNDER_SHOCK
+        move MOVE_PLUCK
+        move MOVE_SPARK
         move MOVE_GROWL
         ability ABILITY_INSOMNIA
         setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
