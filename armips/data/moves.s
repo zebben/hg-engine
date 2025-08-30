@@ -324,7 +324,7 @@ movedata MOVE_FLY, "Fly"
     effectchance 0
     target RANGE_SINGLE_TARGET
     priority 0
-    flags FLAG_HIDE_SHADOW | FLAG_KINGS_ROCK | FLAG_MIRROR_MOVE | FLAG_CONTACT
+    flags FLAG_HIDE_SHADOW | FLAG_MIRROR_MOVE | FLAG_CONTACT
     appeal 0x06
     contesttype CONTEST_SMART
     terminatedata
@@ -3364,7 +3364,7 @@ movedata MOVE_SPARK, "Spark"
     effectchance 00
     target RANGE_SINGLE_TARGET
     priority 1
-    flags FLAG_KEEP_HP_BAR | FLAG_KINGS_ROCK | FLAG_MIRROR_MOVE | FLAG_PROTECT | FLAG_CONTACT
+    flags FLAG_KEEP_HP_BAR | FLAG_MIRROR_MOVE | FLAG_PROTECT | FLAG_CONTACT
     appeal 0x05
     contesttype CONTEST_COOL
     terminatedata
@@ -6596,7 +6596,7 @@ movedata MOVE_FOCUS_BLAST, "Focus Blast"
     effectchance 10
     target RANGE_SINGLE_TARGET
     priority 0
-    flags FLAG_HIDE_SHADOW | FLAG_KINGS_ROCK | FLAG_MIRROR_MOVE | FLAG_PROTECT
+    flags FLAG_HIDE_SHADOW | FLAG_MIRROR_MOVE | FLAG_PROTECT
     appeal 0x11
     contesttype CONTEST_COOL
     terminatedata
