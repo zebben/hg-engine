@@ -275,6 +275,7 @@ BOOL LONG_CALL THUMB_FUNC ItemFieldUseFunc_VSRecorder(struct ItemFieldUseData *d
 void *LONG_CALL sub_0203FAE8(FieldSystem *fsys, u32 heapId, u32 itemId);
 void LONG_CALL sub_0203C8F0(struct BagViewAppWork *env, u32 task); // task is a func ptr
 void LONG_CALL RegisteredItem_CreateGoToAppTask(struct ItemFieldUseData *data, FieldApplicationWorkCtor ctorTask, BOOL something);
+u16 ItemToMachineMoveIndex(u16 itemId);
 
 
 // defined in item.c

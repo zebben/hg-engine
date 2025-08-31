@@ -37,7 +37,7 @@ const int bossTrainerIDs[] = {
     720, 721, 722, 723, 724, 725, 726, 727,
 };
 
-const int subBossTrainerIDs[] = {
+const int miniBossTrainerIDs[] = {
     // Elder Li
     290,
     // Eusine
@@ -57,6 +57,14 @@ const int subBossTrainerIDs[] = {
     685, 689, 690, 691, 692, 693, 694,
     681, 682, 683, 684
 };
+
+const int trainerExcludeIDs[] = {
+    495, 496, 497
+};
+
+#define SCALE_ENEMY_BOSS_MOD      3
+#define SCALE_ENEMY_MINI_BOSS_MOD 2
+
 #endif
 
 /**
@@ -105,20 +113,22 @@ void MakeTrainerPokemonParty(struct BATTLE_PARAM *bp, int num, int heapID)
     seed_tmp = gf_get_seed();
 
     // level scaling options, only used if scaling based on player level
-    int scaleOptions[6] = {-1, 0, 0, 1, 1, 1};
+    int scaleOptions[6] = {-1, 0, 0, 0, 0, 1};
     u8 highestPlayerPokeLvl = 1;
+    int scaleOpt = 0;
+    int enemyTrainer = bp->trainer_id[num];
 
 #ifdef SCALE_ENEMY_TRAINER_LEVELS
     for (int i = 0; i < sizeof(bossTrainerIDs) / sizeof(bossTrainerIDs[0]); i++) {
-        if (bossTrainerIDs[i] == bp->trainer_id[num]) {
-            levelMod = 4;
+        if (enemyTrainer == bossTrainerIDs[i]) {
+            levelMod = SCALE_ENEMY_BOSS_MOD;
             break;
         }
     }
     if (levelMod > 0) {
-        for (int i = 0; i < sizeof(subBossTrainerIDs) / sizeof(subBossTrainerIDs[0]); i++) {
-            if (subBossTrainerIDs[i] == bp->trainer_id[num]) {
-                levelMod = 2;
+        for (int i = 0; i < sizeof(miniBossTrainerIDs) / sizeof(miniBossTrainerIDs[0]); i++) {
+            if (enemyTrainer == miniBossTrainerIDs[i]) {
+                levelMod = SCALE_ENEMY_MINI_BOSS_MOD;
                 break;
             }
         }
@@ -219,8 +229,16 @@ void MakeTrainerPokemonParty(struct BATTLE_PARAM *bp, int num, int heapID)
         // level field
         level = buf[offset] | (buf[offset+1] << 8);
         #ifdef SCALE_ENEMY_TRAINER_LEVELS
-            if (level > 5) {
-                level = highestPlayerPokeLvl + scaleOptions[i] + levelMod;
+            // don't scale initial silver fight
+            if (enemyTrainer != 495 && enemyTrainer != 496 && enemyTrainer != 497) {
+                if (levelMod == SCALE_ENEMY_BOSS_MOD && i == pokecount - 1) {
+                    // assume ace in the last slot for bosses
+                    // override the scaleOpt to 2 to ensure max level
+                    scaleOpt = 2;
+                } else {
+                    scaleOpt = scaleOptions[i];
+                }
+                level = highestPlayerPokeLvl + scaleOpt + levelMod;
                 // ensure the trainer's mons don't get above level 100
                 if (level > 100) {
                     level = 100;

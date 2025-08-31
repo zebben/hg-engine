@@ -1891,4 +1891,6 @@ u8 LONG_CALL GetMoveMaxPP(u16 moveId, u8 ppUps);
 
 void LONG_CALL ApplyMonMoodModifier(struct PartyPokemon *mon, int modifierId);
 
+BOOL GetMonMachineMoveCompat(struct PartyPokemon *pp, u16 machineMoveIndex);
+
 #endif
