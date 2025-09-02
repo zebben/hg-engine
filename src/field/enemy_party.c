@@ -139,7 +139,7 @@ void MakeTrainerPokemonParty(struct BATTLE_PARAM *bp, int num, int heapID)
             break;
         }
     }
-    if (levelMod > 0) {
+    if (levelMod == 0) {
         for (int i = 0; i < sizeof(miniBossTrainerIDs) / sizeof(miniBossTrainerIDs[0]); i++) {
             if (enemyTrainer == miniBossTrainerIDs[i]) {
                 levelMod = late ? LATE_SCALE_ENEMY_MINI_BOSS_MOD : EARLY_SCALE_ENEMY_MINI_BOSS_MOD;
@@ -237,7 +237,8 @@ void MakeTrainerPokemonParty(struct BATTLE_PARAM *bp, int num, int heapID)
                     // assume ace in the last slot for bosses
                     // override the scaleOpt to 2 to ensure max level
                     scaleOpt = 2;
-                } else {
+                } else if (i < 6) {
+                    // avoid index out of bounds that shouldn't happen
                     scaleOpt = scaleOptions[i];
                 }
                 level = highestPlayerPokeLvl + scaleOpt + levelMod;
@@ -246,7 +247,7 @@ void MakeTrainerPokemonParty(struct BATTLE_PARAM *bp, int num, int heapID)
                     level = 100;
                 }
 
-                // ensure the trainer's mons don't get below level 1
+                // ensure the trainer's mons don't get below level 3
                 if (level < 3) {
                     level = 3;
                 }
