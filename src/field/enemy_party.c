@@ -28,6 +28,8 @@ const int bossTrainerIDs[] = {
     702, 703, 704, 705,
     // Lance
     244, 701, 733, 675,
+    // Elder Li
+    290,
     // Johto Gym Leaders
     20, 21, 30, 31, 32, 33, 34, 35,
     712, 713, 714, 715, 716, 717, 718, 719,
@@ -38,8 +40,6 @@ const int bossTrainerIDs[] = {
 };
 
 const int miniBossTrainerIDs[] = {
-    // Elder Li
-    290,
     // Eusine
     498,
     // Proton
@@ -62,8 +62,10 @@ const int trainerExcludeIDs[] = {
     495, 496, 497
 };
 
-#define SCALE_ENEMY_BOSS_MOD      3
-#define SCALE_ENEMY_MINI_BOSS_MOD 2
+#define EARLY_SCALE_ENEMY_BOSS_MOD       3
+#define LATE_SCALE_ENEMY_BOSS_MOD        4
+#define EARLY_SCALE_ENEMY_MINI_BOSS_MOD  2
+#define LATE_SCALE_ENEMY_MINI_BOSS_MOD   3
 
 #endif
 
@@ -113,27 +115,12 @@ void MakeTrainerPokemonParty(struct BATTLE_PARAM *bp, int num, int heapID)
     seed_tmp = gf_get_seed();
 
     // level scaling options, only used if scaling based on player level
-    int scaleOptions[6] = {-1, 0, 0, 0, 0, 1};
+    int scaleOptions[6] = {-1, 0, 0, 0, 1, 1};
     u8 highestPlayerPokeLvl = 1;
     int scaleOpt = 0;
     int enemyTrainer = bp->trainer_id[num];
 
 #ifdef SCALE_ENEMY_TRAINER_LEVELS
-    for (int i = 0; i < sizeof(bossTrainerIDs) / sizeof(bossTrainerIDs[0]); i++) {
-        if (enemyTrainer == bossTrainerIDs[i]) {
-            levelMod = SCALE_ENEMY_BOSS_MOD;
-            break;
-        }
-    }
-    if (levelMod > 0) {
-        for (int i = 0; i < sizeof(miniBossTrainerIDs) / sizeof(miniBossTrainerIDs[0]); i++) {
-            if (enemyTrainer == miniBossTrainerIDs[i]) {
-                levelMod = SCALE_ENEMY_MINI_BOSS_MOD;
-                break;
-            }
-        }
-    }
-
     // shuffle the order of the scale options
     randomize(scaleOptions, 6);
     struct Party *party = bp->poke_party[0];
@@ -143,6 +130,21 @@ void MakeTrainerPokemonParty(struct BATTLE_PARAM *bp, int num, int heapID)
         u8 monLvl = (u8)GetMonData(Party_GetMonByIndex(party, i), MON_DATA_LEVEL, NULL);
         if (monLvl > highestPlayerPokeLvl) {
             highestPlayerPokeLvl = monLvl;
+        }
+    }
+    BOOL late = highestPlayerPokeLvl > 30;
+    for (int i = 0; i < sizeof(bossTrainerIDs) / sizeof(bossTrainerIDs[0]); i++) {
+        if (enemyTrainer == bossTrainerIDs[i]) {
+            levelMod = late ? LATE_SCALE_ENEMY_BOSS_MOD : EARLY_SCALE_ENEMY_BOSS_MOD;
+            break;
+        }
+    }
+    if (levelMod > 0) {
+        for (int i = 0; i < sizeof(miniBossTrainerIDs) / sizeof(miniBossTrainerIDs[0]); i++) {
+            if (enemyTrainer == miniBossTrainerIDs[i]) {
+                levelMod = late ? LATE_SCALE_ENEMY_MINI_BOSS_MOD : EARLY_SCALE_ENEMY_MINI_BOSS_MOD;
+                break;
+            }
         }
     }
 #endif
@@ -231,7 +233,7 @@ void MakeTrainerPokemonParty(struct BATTLE_PARAM *bp, int num, int heapID)
         #ifdef SCALE_ENEMY_TRAINER_LEVELS
             // don't scale initial silver fight
             if (enemyTrainer != 495 && enemyTrainer != 496 && enemyTrainer != 497) {
-                if (levelMod == SCALE_ENEMY_BOSS_MOD && i == pokecount - 1) {
+                if (levelMod >= EARLY_SCALE_ENEMY_BOSS_MOD && i == pokecount - 1) {
                     // assume ace in the last slot for bosses
                     // override the scaleOpt to 2 to ensure max level
                     scaleOpt = 2;
@@ -577,7 +579,7 @@ BOOL LONG_CALL AddWildPartyPokemon(int inTarget, EncounterInfo *encounterInfo, s
     u16 species;
 
 #ifdef SCALE_WILD_LEVELS
-    int scaleOptions[6] = {4, 3, 3, 2, 2, 1};
+    int scaleOptions[6] = {4, 3, 3, 3, 2, 2};
     randomize(scaleOptions, 6);
 
     struct Party *party = encounterBattleParam->poke_party[0];
