@@ -214,7 +214,7 @@ If a Pokémon holding this Berry is\nhit with a special move, the\nattacker will
 An item to be held by a Pokémon.\nThis glittery powder casts a tricky\nglare that lowers the accuracy of\ropposing Pokémon’s moves.
 An item to be held by a Pokémon. It\nwill restore any lowered stat in\nbattle-but only once.
 An item to be held by a Pokémon.\nHolding this stiff, heavy brace\nreduces a Pokémon’s Speed in battle\rbut allows its stats to grow more\nquickly.
-Turning on this special device will\nallow all the Pokémon on your team\nto share in Exp. Points gained.
+An item to be held by a Pokémon.\nThe holder gets a share of a battle’s\nExp. Points without battling.
 An item to be held by a Pokémon.\nThis light, sharp claw lets the\nholder move first occasionally.
 An item to be held by a Pokémon. The\ncomforting chime of this bell calms\nthe holder, making it friendly.
 An item to be held by a Pokémon. The\nholder will be able to shake off\nmove-binding effects to move freely-\rbut only once.
