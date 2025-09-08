@@ -659,5 +659,6 @@ void ItemMenuUseFunc_HardcoreToggle(struct ItemMenuUseData *data, const struct I
     FieldSystem *fieldSystem = data->taskManager->fieldSystem; //TaskManager_GetFieldSystem(data->taskManager);
     struct BagViewAppWork *env = data->taskManager->env; //TaskManager_GetEnvironment(data->taskManager);
     env->atexit_TaskEnv = sub_0203FAE8(fieldSystem, HEAPID_WORLD, ITEM_HARDCORE_TOGGLE);
+    // EventSet_Script(fieldSystem, 0, NULL);
     sub_0203C8F0(env, 0x0203CA9C | 1);
 }

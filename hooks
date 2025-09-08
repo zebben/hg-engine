@@ -546,3 +546,5 @@ arm9 PartyMenu_LearnMoveToSlot 0208254C 3
 #ifdef MART_EXPANSION
 arm9 ScrCmd_MartBuy 02048060 1
 #endif
+
+0015 BagApp_TryUseItemInPlace 021FB9D8 3

@@ -5,9 +5,10 @@
 #include "../include/message.h"
 #include "../include/item.h"
 #include "../include/map_events_internal.h"
+#include "../include/roamer.h"
 #include "../include/save.h"
+#include "../include/types.h"
 #include "../include/script.h"
-
 
 // file is directly from pokeheartgold but without the bag_cursor stuff + sPocketCounts right here
 
@@ -556,6 +557,48 @@ void LONG_CALL Bag_PrintMachineMoveLabel(BagContext *context, void *window, ITEM
         ov15_021FE8C4(context, ((u32)slot->quantity << 16) | (baseY & 0xFFFF)); // honestly idk what this is even doing
     }
 #endif // UPDATE_MACHINE_MOVE_LABELS
+}
+
+BOOL BagApp_TryUseItemInPlace(void *param1, u16 itemId)
+{
+    MessageFormat *messageFormat = *(void **)((u8 *)param1 + 0x02F4);
+    struct PlayerProfile *playerProfile = *(void **)((u8 *)param1 + 0x023C);
+
+    BufferPlayersName(messageFormat, 0, playerProfile);
+    BufferItemName(messageFormat, 1, itemId);
+
+    String *srcStr = NULL;
+    if (itemId == ITEM_BLACK_FLUTE) {
+        MsgData *msgLoader = *(void **)((u8 *)param1 + 0x02F0);
+        srcStr = NewString_ReadMsgData(msgLoader, 65);
+        BagApp_SetFlute(param1, 1);
+        *(u16 *)((u8 *)param1 + 0x0680) = 0;
+    } else if (itemId == ITEM_WHITE_FLUTE) {
+        MsgData *msgLoader = *(void **)((u8 *)param1 + 0x02F0);
+        srcStr = NewString_ReadMsgData(msgLoader, 64);
+        BagApp_SetFlute(param1, 2);
+        *(u16 *)((u8 *)param1 + 0x0680) = 0;
+    } else if (itemId == ITEM_REPEL || itemId == ITEM_SUPER_REPEL || itemId == ITEM_MAX_REPEL) {
+        srcStr = BagApp_TryUseRepel(param1, itemId);
+    } else if (itemId == ITEM_GB_SOUNDS) {
+        srcStr = BagApp_ToggleGBSounds(param1, itemId);
+        *(u16 *)((u8 *)param1 + 0x0680) = 0;
+    } else if (itemId == ITEM_HARDCORE_TOGGLE) {
+        u16 hardcoreMode = GetScriptVar(HARDCORE_MODE_VARIABLE);
+        hardcoreMode = hardcoreMode == 1 ? 0 : 1;
+        SetScriptVar(HARDCORE_MODE_VARIABLE, hardcoreMode);
+        MsgData *msgLoader = *(void **)((u8 *)param1 + 0x02F0);
+        srcStr = NewString_ReadMsgData(msgLoader, hardcoreMode == 0 ? 129 : 130);
+        *(u16 *)((u8 *)param1 + 0x0680) = 0;
+    } else {
+        return FALSE;
+    }
+
+    String *fmtDest = *(void **)((u8 *)param1 + 0x05E4);
+    StringExpandPlaceholders(messageFormat, fmtDest, srcStr);
+    String_Delete(srcStr);
+
+    return TRUE;
 }
 
 

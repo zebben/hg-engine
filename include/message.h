@@ -1,6 +1,7 @@
 #ifndef POKEHEARTGOLD_MSGDATA_H
 #define POKEHEARTGOLD_MSGDATA_H
 
+#include "save.h"
 #include "types.h"
 
 typedef struct String {
@@ -65,5 +66,9 @@ void LONG_CALL BufferItemNameWithIndefArticle(MessageFormat *msgFmt, u32 fieldno
 void LONG_CALL BufferItemNamePlural(MessageFormat *msgFmt, u32 fieldno, u32 itemId);
 void LONG_CALL BufferItemNameGiveItem(MessageFormat *msgFmt, u32 fieldno, u32 itemId);
 u8 LONG_CALL AddTextPrinterParameterizedWithColor(void *window, u8 fontId, String *string, u32 x, u32 y, u32 textSpeed, u32 color, void *callback);
+void LONG_CALL BufferPlayersName(MessageFormat *messageFormat, u32 idx, struct PlayerProfile *playerProfile);
+void LONG_CALL BufferItemName(MessageFormat *messageFormat, u32 fieldno, u32 itemId);
+String *LONG_CALL NewString_ReadMsgData(MsgData *msgData, s32 strno);
+void LONG_CALL StringExpandPlaceholders(MessageFormat *messageFormat, String *dest, String *src);
 
 #endif //POKEHEARTGOLD_MSGDATA_H

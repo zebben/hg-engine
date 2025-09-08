@@ -4,6 +4,7 @@
 #include "constants/item.h"
 //#include "item.h"
 #include "save.h"
+#include "message.h"
 //#include "heap.h"
 //#include "bag_view.h"
 //#include "bag_cursor.h"
@@ -263,5 +264,9 @@ BAG_DATA *LONG_CALL Sav2_Bag_get(void *saveData);
 // fuck BAG_VIEW
 void *LONG_CALL BagView_New(u8 heap_id);
 void LONG_CALL BagView_SetItem(void *bagView, ITEM_SLOT *slots, u8 pocketId, u8 position);
+
+String *LONG_CALL BagApp_SetFlute(void *param_1, int param_2);
+String *LONG_CALL BagApp_TryUseRepel(int param_1, u16 itemId);
+String *LONG_CALL BagApp_ToggleGBSounds(void *param_1, int itemId);
 
 #endif //POKEHEARTGOLD_BAG_H

@@ -127,3 +127,5 @@ Mail Pocket\nFor sorting and storing vibrant\nstationery.
 Battle Items Pocket\nFor items that are useful during battle.
 Key Items Pocket\nFor items that are indispensable for\nyour adventure.
 STOP
+Hardcore mode is now OFF. Relax!\r
+Hardcore mode is now ON. Be careful!\r

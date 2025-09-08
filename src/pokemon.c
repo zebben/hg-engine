@@ -957,25 +957,6 @@ u32 LONG_CALL UseItemMonAttrChangeCheck(struct PLIST_WORK *wk, void *dat)
         return TRUE;
     }
 
-    // handle hardcore toggle
-
-    if (wk->dat->item == ITEM_HARDCORE_TOGGLE) {
-        void *bag = Sav2_Bag_get(SaveBlock2_get());
-        wk->dat->after_mons = wk->dat->item - ITEM_HARDCORE_TOGGLE;
-        sys_FreeMemoryEz(dat);
-        PokeList_FormDemoOverlayLoad(wk);
-        partyMenuSignal = 220; // signal to change the message to this index
-        u16 hardcoreMode = GetScriptVar(HARDCORE_MODE_VARIABLE);
-        debug_printf("Hardcore mode was %d\n", hardcoreMode);
-        hardcoreMode = hardcoreMode == 1 ? 0 : 1;
-        partyMenuSignal += hardcoreMode;
-        debug_printf("partyMenuSignal %d\n", partyMenuSignal);
-        SetScriptVar(HARDCORE_MODE_VARIABLE, hardcoreMode);
-        debug_printf("Hardcore mode now %d\n", hardcoreMode);
-        Bag_TakeItem(bag, ITEM_HARDCORE_TOGGLE, 1, 11);
-        return TRUE;
-    }
-
     return FALSE;
 }
 
