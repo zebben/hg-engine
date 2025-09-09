@@ -975,6 +975,7 @@ u32 LONG_CALL UseItemMonAttrChangeCheck(struct PLIST_WORK *wk, void *dat)
         partyMenuSignal = 188; // signal to change the message to this index
         Mon_UpdateRotomForm(pp, form, 0);
         wk->dat->after_mons = form;
+        SetPokemonGet(SaveData_GetDexPtr(SaveBlock2_get()), pp);
         sys_FreeMemoryEz(dat);
         PokeList_FormDemoOverlayLoad(wk);
         return TRUE;

@@ -661,7 +661,5 @@ void ItemMenuUseFunc_RotomCatalog(struct ItemMenuUseData *data, const struct Ite
     FieldSystem *fieldSystem = data->taskManager->fieldSystem; //TaskManager_GetFieldSystem(data->taskManager);
     struct BagViewAppWork *env = data->taskManager->env; //TaskManager_GetEnvironment(data->taskManager);
     env->atexit_TaskEnv = sub_0203FAE8(fieldSystem, HEAPID_WORLD, ITEM_ROTOM_CATALOG);
-    // debug_printf("HAHAGAGA\n");
-    // EventSet_Script(fieldSystem, 675, NULL);
     sub_0203C8F0(env, 0x0203CA9C | 1);
 }
