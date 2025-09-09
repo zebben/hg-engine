@@ -1893,4 +1893,6 @@ void LONG_CALL ApplyMonMoodModifier(struct PartyPokemon *mon, int modifierId);
 
 BOOL GetMonMachineMoveCompat(struct PartyPokemon *pp, u16 machineMoveIndex);
 
+BOOL Mon_UpdateRotomForm(struct PartyPokemon *mon, int form, int defaultSlot);
+
 #endif

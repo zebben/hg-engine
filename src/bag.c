@@ -5,7 +5,6 @@
 #include "../include/message.h"
 #include "../include/item.h"
 #include "../include/map_events_internal.h"
-#include "../include/roamer.h"
 #include "../include/save.h"
 #include "../include/types.h"
 #include "../include/script.h"

@@ -379,8 +379,9 @@ void *_CreateDNASplicersWork(FieldSystem *fieldSystem);
 void ItemMenuUseFunc_AbilityCapsule(struct ItemMenuUseData *data, const struct ItemCheckUseData *dat2);
 void ItemMenuUseFunc_Mint(struct ItemMenuUseData *data, const struct ItemCheckUseData *dat2 UNUSED);
 void ItemMenuUseFunc_Nectar(struct ItemMenuUseData *data, const struct ItemCheckUseData *dat2 UNUSED);
-void ItemMenuUseFunc_HardcoreToggle(struct ItemMenuUseData *data, const struct ItemCheckUseData *dat2 UNUSED);
+void ItemMenuUseFunc_RotomCatalog(struct ItemMenuUseData *data, const struct ItemCheckUseData *dat2 UNUSED);
 
+// menu / field / check
 const struct ItemUseFuncDat sItemFieldUseFuncs[] = {
     { NULL, ItemFieldUseFunc_Generic, NULL },
     { ItemMenuUseFunc_HealingItem, NULL, NULL },
@@ -418,7 +419,8 @@ const struct ItemUseFuncDat sItemFieldUseFuncs[] = {
     { ItemMenuUseFunc_AbilityCapsule, NULL, NULL },
     { ItemMenuUseFunc_Mint, NULL, NULL },
     { ItemMenuUseFunc_Nectar, NULL, NULL },
-    { ItemMenuUseFunc_HardcoreToggle, NULL, NULL },
+    { ItemMenuUseFunc_RotomCatalog, NULL, NULL },
+    { ItemFieldUseFunc_Generic, NULL, NULL },
 };
 
 u16 GetItemIndex(u16 item, u16 type)
@@ -654,11 +656,12 @@ void ItemMenuUseFunc_Nectar(struct ItemMenuUseData *data, const struct ItemCheck
     sub_0203C8F0(env, 0x0203CA9C | 1);
 }
 
-void ItemMenuUseFunc_HardcoreToggle(struct ItemMenuUseData *data, const struct ItemCheckUseData *dat2 UNUSED)
+void ItemMenuUseFunc_RotomCatalog(struct ItemMenuUseData *data, const struct ItemCheckUseData *dat2 UNUSED)
 {
     FieldSystem *fieldSystem = data->taskManager->fieldSystem; //TaskManager_GetFieldSystem(data->taskManager);
     struct BagViewAppWork *env = data->taskManager->env; //TaskManager_GetEnvironment(data->taskManager);
-    env->atexit_TaskEnv = sub_0203FAE8(fieldSystem, HEAPID_WORLD, ITEM_HARDCORE_TOGGLE);
-    // EventSet_Script(fieldSystem, 0, NULL);
+    env->atexit_TaskEnv = sub_0203FAE8(fieldSystem, HEAPID_WORLD, ITEM_ROTOM_CATALOG);
+    // debug_printf("HAHAGAGA\n");
+    // EventSet_Script(fieldSystem, 675, NULL);
     sub_0203C8F0(env, 0x0203CA9C | 1);
 }
