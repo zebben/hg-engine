@@ -81,7 +81,7 @@ Reshiram’s body was destroyed and\nchanged into this stone. It is said\nto be 
 Zekrom’s body was destroyed and\nchanged into this stone. It is said\nto be waiting for the emergence of a\rhero.
 The foe is slashed with a sharp\nleaf. It has a high critical-hit\nratio.
 The user slams a barrage of hard-\nshelled seeds down on the foe from\nabove.
----
+Swing both arms and hits the target.\nStat changes don’t affect the damage\ninflicted by this move.
 A high-tech transceiver with a\ncamera function. It allows up to\nfour-way calls.
 A rare stone.
 An important letter that Wingull\ndelivers.

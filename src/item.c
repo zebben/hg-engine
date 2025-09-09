@@ -125,7 +125,7 @@ static const u16 sMachineMoves[] = {
     MOVE_LEAF_BLADE,       // TM093
     MOVE_SEED_BOMB,        // TM094
     MOVE_DARKEST_LARIAT,   // TM095
-    MOVE_EERIE_IMPULSE,    // TM096
+    MOVE_SUPERCELL_SLAM,   // TM096
     MOVE_PSYCHIC_FANGS,    // TM097
     MOVE_BREAKING_SWIPE,   // TM098
     MOVE_IRON_HEAD,        // TM099
@@ -189,7 +189,7 @@ static const u16 sMachineMoves[] = {
     MOVE_PAIN_SPLIT,       // TM154
     MOVE_SLUDGE_WAVE,      // TM155
     MOVE_DOUBLE_EDGE,      // TM156
-    MOVE_SUPERCELL_SLAM,   // TM157
+    MOVE_TACKLE,   // TM157
     MOVE_TACKLE,   // TM158
     MOVE_TACKLE,   // TM159
     MOVE_TACKLE,      // TM160
