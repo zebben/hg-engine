@@ -11891,6 +11891,7 @@ trainerdata 265, "Silver"
         abilityslot 0
         level 5
         pokemon SPECIES_CHIKORITA
+        ballseal 0
     endparty
 
 trainerdata 266, "Silver"

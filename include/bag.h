@@ -266,7 +266,7 @@ void *LONG_CALL BagView_New(u8 heap_id);
 void LONG_CALL BagView_SetItem(void *bagView, ITEM_SLOT *slots, u8 pocketId, u8 position);
 
 String *LONG_CALL BagApp_SetFlute(void *param_1, int param_2);
-String *LONG_CALL BagApp_TryUseRepel(int param_1, u16 itemId);
+String *LONG_CALL BagApp_TryUseRepel(void *param_1, u16 itemId);
 String *LONG_CALL BagApp_ToggleGBSounds(void *param_1, int itemId);
 
 #endif //POKEHEARTGOLD_BAG_H
