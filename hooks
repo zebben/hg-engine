@@ -467,9 +467,6 @@ arm9 GF_AssertFail 0202551C 0
 0012 BattleController_LoopMultiHit 0224CF14 3
 0012 ov12_02252D14 02252D14 3
 
-# fix trainer ai being able to switch illegally when binded
-0010 ai_switch_ban_for_bind_hook 022203B4 2
-
 0012 GetDynamicMoveType 02258688 4
 
 0012 StruggleCheck 022517EC
@@ -512,6 +509,8 @@ arm9 DestroyHeap_hook 0201AA24 3
 
 #endif
 
+0012 TrainerAI_PickCommand_hook 0225E10C 0
+
 # pc anywhere
 0001 ClearOverworldRequestFlags 021E6880 1
 # hook from where y button is checked
@@ -521,7 +520,6 @@ arm9 DestroyHeap_hook 0201AA24 3
 
 arm9 PartyMenu_ItemUseFunc_LevelUpLearnMovesLoop_Case6_hook 02081E54 0
 arm9 PartyMenu_ItemUseFunc_ReuseItem_hook 0208138C 3
-
 # expand metronome move pool
 0012 load_max_move_num_metronome 022408AC 0
 
