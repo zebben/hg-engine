@@ -227,6 +227,8 @@
 #define MOVE_EFFECT_FLAG_SHADOW_FORCE       (0x20000000)
 #define MOVE_EFFECT_FLAG_TRIED_IMPRISON     (0x40000000) // for trainer ai
 
+#define MOVE_EFFECT_FLAG_SEMI_INVULNERABLE (MOVE_EFFECT_FLAG_FLYING_IN_AIR | MOVE_EFFECT_FLAG_DIGGING | MOVE_EFFECT_FLAG_IS_DIVING | MOVE_EFFECT_FLAG_SHADOW_FORCE)
+
 /**
  *  @brief non-volatile status condition flags
  *  not just valid for battles, also valid outside of battles
@@ -356,6 +358,7 @@
 #define SIDE_STATUS_TOXIC_SPIKES (0x400)
 #define SIDE_STATUS_STICKY_WEB (0x800)
 #define SIDE_STATUS_LUCKY_CHANT (0x7000)
+#define SIDE_STATUS_AURORA_VEIL (0x8000)
 
 /**
  *  @brief self status flags that apply to BattleStruct's oneSelfFlag[battler].status_flag
@@ -936,6 +939,7 @@ struct __attribute__((packed)) side_condition_work
     u32     reflectCount            : 3;
     u32     lightScreenBattler      : 2;
     u32     lightScreenCount        : 3;
+
     u32     mistBattler             : 2;
     u32     mistCount               : 3;
     u32     safeguardBattler        : 2;
@@ -948,7 +952,9 @@ struct __attribute__((packed)) side_condition_work
 
     u32     spikesLayers            : 2;
     u32     toxicSpikesLayers       : 2;
-    u32                             :28;
+    u32     auroraVeilBattler       : 2;
+    u32     auroraVeilCount         : 3;
+    u32                             :23;
 };
 
 struct __attribute__((packed)) BattleAIWorkTable
@@ -1958,6 +1964,87 @@ enum {
 
 //     TRY_MOVE_END,
 // };
+
+struct PACKED sDamageCalc
+{
+    u16 species;
+    s16 hp;
+    u16 maxhp;
+    u16 dummy;
+    u16 item;
+    u16 item_held_effect;
+    u8  item_power;
+
+    u32 condition;
+    u32 condition2;
+
+    u16 ability;
+    u8 sex;
+
+    u32 speed;
+
+    u32 weight;
+
+    u16 happiness;
+
+    u32 attack;
+    u32 defense;
+    u32 sp_attack;
+    u32 sp_defense;
+    s8 atkstate;
+    s8 defstate;
+    s8 spatkstate;
+    s8 spdefstate;
+    u8 positiveStatBoosts;
+    u8 level;
+    u32 form;
+
+    u32 furyCutterCount;
+    u32 rolloutCount;
+    u32 stockpileCount;
+    u32 parentalBondFlag;
+    u32 assuranceDamage;
+    u32 helpingHandFlag;
+    u32 effectOfMoves;
+    u32 sheerForceFlag;
+
+    BOOL isGrounded;
+};
+
+struct PACKED DamageCalcStruct {
+    u32 maxBattlers;
+    int attackerPartySize;
+    struct PartyPokemon *attackerParty[6];
+    u8 attacker;
+    u8 defender;
+    u8 critical;
+    int moveno;
+    u8 movetype;
+    u8 movesplit;
+    u16 movepower;
+    int damage_power;
+    int damage_value;
+    u8 magnitude;
+    BOOL gemBoostingMove;
+    u8 rawSpeedNonRNGClientOrder[4];
+    BOOL noCloudNineAndAirLock;
+    BOOL fieldHasFairyAura;
+    BOOL fieldHasDarkAura;
+    BOOL fieldHasAuraBreak;
+    BOOL fieldHasVesselOfRuin;
+    BOOL fieldHasSwordOfRuin;
+    BOOL fieldHasTabletsOfRuin;
+    BOOL fieldHasBeadsOfRuin;
+    u32 field_cond;
+    u8 terrainOverlayType;
+    u8 terrainOverlayNumberOfTurnsLeft;
+    u8 playerSideHasFaintedTeammateLastTurn;
+    u8 enemySideHasFaintedTeammateLastTurn;
+    u8 originalMoveType;
+    u16 moveEffect;
+    u8 moveFlag;
+    struct sDamageCalc clients[4];
+};
 
 extern u8 TypeEffectivenessTable[][3];
 
@@ -2974,7 +3061,7 @@ BOOL LONG_CALL Link_QueueIsEmpty(struct BattleStruct *sp);
  *  @param client battler whose weight to grab
  *  @return battler's weight
  */
-s32 LONG_CALL GetPokemonWeight(void *bw UNUSED, struct BattleStruct *sp, u32 client);
+s32 LONG_CALL GetPokemonWeight(void *bw UNUSED, struct BattleStruct *sp, int attack_client, u32 client);
 
 /**
  *  @brief check if a held item can be removed from the species it is attached to
@@ -2985,7 +3072,7 @@ s32 LONG_CALL GetPokemonWeight(void *bw UNUSED, struct BattleStruct *sp, u32 cli
  */
 BOOL LONG_CALL CanItemBeRemovedFromSpecies(u16 species, u16 item);
 
-BOOL LONG_CALL CanItemBeRemovedFromClient(struct BattleStruct *ctx, u32 client);
+BOOL LONG_CALL CanItemBeRemovedFromClient(u32 species, u32 item, u32 form);
 
 /**
  *  @brief check if a held item can be tricked or not depending on the items and species
@@ -3011,6 +3098,8 @@ int LONG_CALL SwitchInAbilityCheck(void *bw, struct BattleStruct *sp);
  *  @return TRUE if there is a stat stage not at the passed value; FALSE otherwise (yes accuracy and evasion count too)
  */
 BOOL LONG_CALL AreAnyStatsNotAtValue(struct BattleStruct *sp, int client, int value, BOOL excludeAccuracyEvasion);
+
+u32 LONG_CALL MoldBreakerAbilityCheckInternal(int attacker, int defender, int attackerAbility, int defenderAbility, int currentMoveIndex, int moveSplit, u32 ability);
 
 /**
  *  @brief check if an ability is present and account for mold breaker
@@ -3414,11 +3503,9 @@ BOOL LONG_CALL ov12_0224BC2C(struct BattleSystem *bsys, struct BattleStruct *ctx
 
 /**
  * @brief checks if contact is being made, checking abilities and items
- * @param bw battle work structure
- * @param sp global battle structure
  * @return TRUE/FALSE
 */
-BOOL LONG_CALL IsContactBeingMade(struct BattleSystem *bw, struct BattleStruct *sp);
+BOOL LONG_CALL IsContactBeingMade(int attackerAbility, int attackerItemHoldEffect, int defenderItemHoldEffect, int moveno, u8 moveFlag);
 
 /**
  * @brief checks if the move index is a punching move
@@ -3756,9 +3843,9 @@ void LONG_CALL ov12_02252D14(struct BattleSystem *bsys, struct BattleStruct *ctx
 
 void LONG_CALL SortRawSpeedNonRNGArray(struct BattleSystem *bsys, struct BattleStruct *ctx);
 
-BOOL LONG_CALL CanActivateDamageReductionBerry(struct BattleSystem *bsys, struct BattleStruct *ctx, int defender);
+BOOL LONG_CALL CanActivateDamageReductionBerry(struct BattleStruct *ctx, int defender);
 
-BOOL IsPureType(struct BattleStruct *ctx, int battlerId, int type);
+BOOL LONG_CALL IsPureType(struct BattleStruct *ctx, int battlerId, int type);
 
 /// @brief Check if ability can't be suppressed by Gastro Acid or affected by Mummy. See notes for DisabledByNeutralizingGas.
 /// @param ability
@@ -3788,7 +3875,7 @@ int LONG_CALL GetTypeEffectiveness(struct BattleSystem *bw, struct BattleStruct 
 
 BOOL LONG_CALL CanItemBeRemovedFromSpecies(u16 species, u16 item);
 
-BOOL LONG_CALL CanItemBeRemovedFromClient(struct BattleStruct *ctx, u32 client);
+BOOL LONG_CALL CanItemBeRemovedFromClient(u32 species, u32 item, u32 form);
 /**
  *  @brief check if knock off can remove the defender's held item
  *         does not count sticky hold and substitute because those still allow knock off's base power increase
@@ -3796,7 +3883,7 @@ BOOL LONG_CALL CanItemBeRemovedFromClient(struct BattleStruct *ctx, u32 client);
  *  @param sp global battle structure
  *  @return TRUE if knock off can remove the mon's item; FALSE otherwise
  */
-BOOL LONG_CALL CanKnockOffApply(struct BattleSystem *bw, struct BattleStruct *sp);
+BOOL LONG_CALL CanKnockOffApply(struct BattleStruct *sp, int attacker, int defender);
 
 /**
  * @brief checks if the move index is a move that will hit with double power if target is minimized
@@ -3846,6 +3933,8 @@ void LONG_CALL InitFaintedWork(struct BattleSystem* bsys, struct BattleStruct* c
 BOOL LONG_CALL IsAnyBattleMonHit(struct BattleStruct* ctx);
 
 int GetSanitisedType(int type);
+
+BOOL StrongWindsShouldWeaken(struct BattleSystem *bw, struct BattleStruct *sp, int typeTableEntryNo, int defender_type);
 
 
 #endif // BATTLE_H
