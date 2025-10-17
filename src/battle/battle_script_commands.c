@@ -4223,3 +4223,17 @@ BOOL BtlCmd_TryBreakScreens(struct BattleSystem *bsys, struct BattleStruct *ctx)
 
     return FALSE;
 }
+
+BOOL BtlCmd_TryAttract(struct BattleSystem *bsys, struct BattleStruct *ctx) {
+    IncrementBattleScriptPtr(ctx, 1);
+
+    int adrs = read_battle_script_param(ctx);
+
+    if (ctx->battlemon[ctx->defence_client].condition2 & STATUS2_ATTRACT) {
+        IncrementBattleScriptPtr(ctx, adrs);
+    } else {
+        ctx->battlemon[ctx->state_client].condition2 |= MaskOfFlagNo(ctx->battlerIdTemp) << 16;
+    }
+
+    return FALSE;
+}
