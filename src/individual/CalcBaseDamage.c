@@ -169,7 +169,7 @@ int UNUSED CalcBaseDamageInternal(struct BattleSystem *bw, struct BattleStruct *
     u16 movepower = damageCalc->movepower;
     int damage_power = damageCalc->damage_power;
     int damage_value = damageCalc->damage_value;
-    u8 magnitude = damageCalc->magnitude;
+    //u8 magnitude = damageCalc->magnitude;
     BOOL gemBoostingMove = damageCalc->gemBoostingMove;
     BOOL noCloudNineAndAirLock = damageCalc->noCloudNineAndAirLock;
     BOOL fieldHasFairyAura = damageCalc->fieldHasFairyAura;
@@ -915,7 +915,7 @@ int UNUSED CalcBaseDamageInternal(struct BattleSystem *bw, struct BattleStruct *
                 basePowerModifier = QMul_RoundUp(basePowerModifier, UQ412__1_5);
             }
         }
-        
+
         if (BATTLER_ALLY(attacker) == damageCalc->rawSpeedNonRNGClientOrder[i]) {
             // Handle Battery
             if ((AttackingMonAlly.ability == ABILITY_BATTERY)
