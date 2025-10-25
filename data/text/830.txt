@@ -370,7 +370,7 @@ The user torments and enrages the\nfoe, making it incapable of using\nthe same m
 An attack move that doubles its\npower if the user is poisoned,\nparalyzed, or has a burn.
 The user attacks with a secret\npower. Its added effects vary\ndepending on the user’s environment.
 The user goes to sleep for two\nturns. It fully restores the user’s\nHP and heals any status problem.
-If it is the opposite gender of the\nuser, the foe becomes infatuated and\nless likely to attack.
+The foe becomes infatuated and\nless likely to attack.
 The user attacks and steals the\nfoe’s held item simultaneously. It\ncan’t steal if the user holds an\ritem.
 The foe is hit with wings of steel.\nIt may also raise the user’s Defense\nstat.
 The user employs its psychic power\nto exchange abilities with the foe.

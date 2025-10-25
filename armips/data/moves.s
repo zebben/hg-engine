@@ -3432,7 +3432,7 @@ movedata MOVE_ATTRACT, "Attract"
     appeal 0x13
     contesttype CONTEST_CUTE
     terminatedata
-    movedescription MOVE_ATTRACT, "If it is the opposite\ngender of the user,\nthe foe becomes\ninfatuated and less\nlikely to attack."
+    movedescription MOVE_ATTRACT, "The foe becomes\ninfatuated and less\nlikely to attack."
 
 movedata MOVE_SLEEP_TALK, "Sleep Talk"
     battleeffect MOVE_EFFECT_USE_RANDOM_LEARNED_MOVE_SLEEP
