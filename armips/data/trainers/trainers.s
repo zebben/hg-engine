@@ -1291,7 +1291,7 @@ trainerdata 31, "Morty"
         move MOVE_POWER_GEM
         move MOVE_SHADOW_BALL
         ability ABILITY_MOLD_BREAKER
-        setivs 31, 31, 31, 0, 31, 31 // hp, atk, def, spd, spatk, spdef
+        setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
         setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_MODEST
         shinylock 0
@@ -1327,7 +1327,7 @@ trainerdata 31, "Morty"
         move MOVE_MAGICAL_LEAF
         move MOVE_MYSTICAL_FIRE
         ability ABILITY_LEVITATE
-        setivs 31, 31, 31, 0, 31, 31 // hp, atk, def, spd, spatk, spdef
+        setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
         setevs 84, 84, 84, 84, 84, 84 // hp, atk, def, spd, spatk, spdef
         nature NATURE_MODEST
         shinylock 0
@@ -11682,7 +11682,7 @@ trainerdata 263, "Silver"
         ivs 200
         abilityslot 32
         level 24
-        pokemon SPECIES_DUSCLOPS
+        pokemon SPECIES_DUSKNOIR
         item ITEM_LEFTOVERS
         move MOVE_SHADOW_PUNCH
         move MOVE_DRAIN_PUNCH
