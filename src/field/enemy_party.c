@@ -590,7 +590,7 @@ BOOL LONG_CALL AddWildPartyPokemon(int inTarget, EncounterInfo *encounterInfo, s
     u16 species;
 
 #ifdef SCALE_WILD_LEVELS
-    int scaleOptions[6] = {4, 3, 3, 3, 2, 2};
+    int scaleOptions[6] = {5, 4, 4, 3, 3, 2};
     randomize(scaleOptions, 6);
 
     struct Party *party = encounterBattleParam->poke_party[0];

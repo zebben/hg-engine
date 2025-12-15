@@ -110,6 +110,8 @@ _012F:
 	setvar VAR_SPECIAL_x8004, ITEM_CHARIZARDITE_Y
 	setvar VAR_SPECIAL_x8005, 1
 	callstd std_give_item_verbose
+    giveitem ITEM_KEY_STONE, 1, VAR_SPECIAL_RESULT
+	setflag FLAG_MEGA_EVOLUTION_ENABLED
 	setflag FLAG_GOT_TM07_FROM_PRYCE
 	npc_msg 4
 	wait_button_or_walk_away
@@ -124,6 +126,8 @@ _0172:
 
 _0178:
 	goto_if_set FLAG_GAME_CLEAR, _0198
+    giveitem ITEM_KEY_STONE, 1, VAR_SPECIAL_RESULT
+	setflag FLAG_MEGA_EVOLUTION_ENABLED
 	npc_msg 5
 	wait_button_or_walk_away
 	closemsg
@@ -137,6 +141,8 @@ _018E:
 	end
 
 _0198:
+    giveitem ITEM_KEY_STONE, 1, VAR_SPECIAL_RESULT
+	setflag FLAG_MEGA_EVOLUTION_ENABLED
 	npc_msg 6
 	touchscreen_menu_hide
 	getmenuchoice VAR_SPECIAL_RESULT
