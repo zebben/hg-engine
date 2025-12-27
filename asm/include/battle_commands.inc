@@ -1476,7 +1476,16 @@
     .long (((\arg_1 - .) / 4) - 1)
     .endm
 
-    .equ BASE_ENGINE_BTL_SCR_CMDS_MAX, 268
+    .macro HandleRoost arg_0
+    .long 269
+    .long \arg_0
+    .endm
+
+    .macro BatchUpdateHp
+    .long 270
+    .endm
+
+    .equ BASE_ENGINE_BTL_SCR_CMDS_MAX, 270
 
     // .macro YourCustomCommand
     // .long (BASE_ENGINE_BTL_SCR_CMDS_MAX + 1)

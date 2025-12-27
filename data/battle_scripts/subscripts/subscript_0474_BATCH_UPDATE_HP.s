@@ -1,0 +1,18 @@
+.include "asm/include/battle_commands.inc"
+
+.data
+
+_000:
+    PlayMoveHitSound BATTLER_CATEGORY_MSG_BATTLER_TEMP
+    FlickerMon BATTLER_CATEGORY_PLAYER_SLOT_1
+    FlickerMon BATTLER_CATEGORY_ENEMY_SLOT_1
+    FlickerMon BATTLER_CATEGORY_PLAYER_SLOT_2
+    FlickerMon BATTLER_CATEGORY_ENEMY_SLOT_2
+    Wait
+    BatchUpdateHp
+    Wait
+    TryFaintMon BATTLER_CATEGORY_PLAYER_SLOT_1
+    TryFaintMon BATTLER_CATEGORY_ENEMY_SLOT_1
+    TryFaintMon BATTLER_CATEGORY_PLAYER_SLOT_2
+    TryFaintMon BATTLER_CATEGORY_ENEMY_SLOT_2
+    End
