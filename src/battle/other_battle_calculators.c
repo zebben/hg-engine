@@ -2564,14 +2564,23 @@ void LONG_CALL ov12_0224D03C(struct BattleSystem *bsys, struct BattleStruct *ctx
         ctx->attack_client = ctx->magic_cort_client;
     }
 
+    // Check if this is a spread move
+    BOOL isSpreadMove = IS_SPREAD_MOVE(ctx);
+
     ov12_0224DD74(bsys, ctx);
 
-    if (ctx->moveTbl[ctx->current_move_index].target == RANGE_ADJACENT_OPPONENTS && !(ctx->server_status_flag & BATTLE_STATUS_CHECK_LOOP_ONLY_ONCE) && ctx->client_loop < BattleWorkClientSetMaxGet(bsys)) {
+    // Check for loop-only-once flag
+    if ((ctx->server_status_flag & BATTLE_STATUS_CHECK_LOOP_ONLY_ONCE)) {
+        ctx->server_seq_no = CONTROLLER_COMMAND_36;
+        return;
+    }
+
+    // Process targets for RANGE_ADJACENT_OPPONENTS
+    if (ctx->moveTbl[ctx->current_move_index].target == RANGE_ADJACENT_OPPONENTS && ctx->client_loop < BattleWorkClientSetMaxGet(bsys)) {
         ctx->waza_out_check_on_off = 13;
         int battlerId;
-        int maxBattlers UNUSED        = BattleWorkClientSetMaxGet(bsys);
         struct CLIENT_PARAM *opponent = BattleWorkClientParamGet(bsys, ctx->attack_client);
-        u8 flag                = ov12_02261258(opponent);
+        u8 flag = ov12_02261258(opponent);
 
         do {
             battlerId = ctx->turnOrder[ctx->client_loop++];
@@ -2583,18 +2592,17 @@ void LONG_CALL ov12_0224D03C(struct BattleSystem *bsys, struct BattleStruct *ctx
                 if (((flag & 1) && !(ov12_02261258(opponent) & 1)) || (!(flag & 1) && ov12_02261258(opponent) & 1)) {
                     ov12_02252D14(bsys, ctx);
                     ctx->defence_client = battlerId;
-                    ctx->server_seq_no         = CONTROLLER_COMMAND_24;
+                    ctx->server_seq_no = CONTROLLER_COMMAND_24;
                     break;
                 }
             }
         } while (ctx->client_loop < BattleWorkClientSetMaxGet(bsys));
-
         SCIO_BlankMessage(bsys);
-    } else if (ctx->moveTbl[ctx->current_move_index].target == RANGE_ALL_ADJACENT && !(ctx->server_status_flag & BATTLE_STATUS_CHECK_LOOP_ONLY_ONCE) && ctx->client_loop < BattleWorkClientSetMaxGet(bsys)) {
+    }
+    // Process targets for RANGE_ALL_ADJACENT
+    else if (ctx->moveTbl[ctx->current_move_index].target == RANGE_ALL_ADJACENT && ctx->client_loop < BattleWorkClientSetMaxGet(bsys)) {
         ctx->waza_out_check_on_off = 13;
-
         int battlerId;
-        int maxBattlers UNUSED = BattleWorkClientSetMaxGet(bsys);
 
         do {
             battlerId = ctx->turnOrder[ctx->client_loop++];
@@ -2605,14 +2613,29 @@ void LONG_CALL ov12_0224D03C(struct BattleSystem *bsys, struct BattleStruct *ctx
                 if (battlerId != ctx->attack_client) {
                     ov12_02252D14(bsys, ctx);
                     ctx->defence_client = battlerId;
-                    ctx->server_seq_no         = CONTROLLER_COMMAND_24;
+                    ctx->server_seq_no = CONTROLLER_COMMAND_24;
                     break;
                 }
             }
         } while (ctx->client_loop < BattleWorkClientSetMaxGet(bsys));
-
         SCIO_BlankMessage(bsys);
-    } else {
+    }
+    // All targets processed
+    else {
+        // Load batch animation subscript after all targets processed
+        if (isSpreadMove && (ctx->server_status_flag & SERVER_STATUS_FLAG_SIMULTANEOUS_DAMAGE)) {
+            if (ctx->simultaneousDamageTargetCount > 0) {
+                // Load custom subscript to batch animate all HP bars
+                LoadBattleSubSeqScript(ctx, ARC_BATTLE_SUB_SEQ, SUB_SEQ_BATCH_UPDATE_HP);
+                ctx->server_seq_no = 22;
+                ctx->next_server_seq_no = 36;  // Continue to aftermath
+
+                // Clear flag for next move
+                ctx->server_status_flag &= ~SERVER_STATUS_FLAG_SIMULTANEOUS_DAMAGE;
+                return;
+            }
+        }
+
         ctx->server_seq_no = CONTROLLER_COMMAND_36;
     }
 }

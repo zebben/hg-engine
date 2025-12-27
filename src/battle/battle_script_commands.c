@@ -101,6 +101,7 @@ BOOL btl_scr_cmd_10A_clearsmog(void *bsys UNUSED, struct BattleStruct *ctx);
 BOOL btl_scr_cmd_10B_gotoifthirdtype(void* bsys UNUSED, struct BattleStruct* ctx);
 BOOL btl_scr_cmd_10C_gotoifterastallized(void* bsys UNUSED, struct BattleStruct* ctx);
 BOOL btl_scr_cmd_10D_HandleRoost(void* bsys UNUSED, struct BattleStruct* ctx);
+BOOL btl_scr_cmd_10E_BatchUpdateHp(void *bw, struct BattleStruct *ctx);
 BOOL BtlCmd_GoToMoveScript(struct BattleSystem *bsys, struct BattleStruct *ctx);
 BOOL BtlCmd_WeatherHPRecovery(void *bw, struct BattleStruct *sp);
 BOOL BtlCmd_CalcWeatherBallParams(void *bw, struct BattleStruct *sp);
@@ -398,7 +399,8 @@ const u8 *BattleScrCmdNames[] =
     "ClearSmog",
     "GoToIfThirdType",
     "GoToIfTerastallized",
-    "HandleRoost"
+    "HandleRoost",
+    "BatchUpdateHp"
     // "YourCustomCommand",
 };
 
@@ -406,7 +408,7 @@ u32 cmdAddress = 0;
 #pragma GCC diagnostic pop
 #endif // DEBUG_BATTLE_SCRIPT_COMMANDS
 
-#define BASE_ENGINE_BTL_SCR_CMDS_MAX 0x107
+#define BASE_ENGINE_BTL_SCR_CMDS_MAX 0x10E
 
 const btl_scr_cmd_func NewBattleScriptCmdTable[] =
 {
@@ -455,6 +457,7 @@ const btl_scr_cmd_func NewBattleScriptCmdTable[] =
     [0x10B - START_OF_NEW_BTL_SCR_CMDS] = btl_scr_cmd_10B_gotoifthirdtype,
     [0x10C - START_OF_NEW_BTL_SCR_CMDS] = btl_scr_cmd_10C_gotoifterastallized,
     [0x10D - START_OF_NEW_BTL_SCR_CMDS] = btl_scr_cmd_10D_HandleRoost,
+    [0x10E - START_OF_NEW_BTL_SCR_CMDS] = btl_scr_cmd_10E_BatchUpdateHp,
     // [BASE_ENGINE_BTL_SCR_CMDS_MAX - START_OF_NEW_BTL_SCR_CMDS + 1] = btl_scr_cmd_custom_01_your_custom_command,
 };
 
@@ -4386,6 +4389,36 @@ BOOL btl_scr_cmd_10D_HandleRoost(void* bsys UNUSED, struct BattleStruct* ctx) {
         ctx->battlemon[battlerId].type1 = ctx->battlemon[battlerId].type2;
     } else {
         ctx->battlemon[battlerId].type2 = ctx->battlemon[battlerId].type1;
+    }
+
+    return FALSE;
+}
+
+/**
+ * @brief Command 0x10E: BatchUpdateHp
+ * Triggers HP bar animations for all targets hit by spread move simultaneously
+ */
+BOOL btl_scr_cmd_10E_BatchUpdateHp(void *bw, struct BattleStruct *ctx) {
+    IncrementBattleScriptPtr(ctx, 1);
+    read_battle_script_param(ctx);
+
+    struct BattleSystem *bsys = (struct BattleSystem *)bw;
+
+    // Function pointer from hg.xmap (+1 for Thumb mode)
+    typedef void (*EmitHpBarFunc)(struct BattleSystem*, struct BattleStruct*, int);
+    EmitHpBarFunc emitHpBar = (EmitHpBarFunc)0x02263489;  // BattleController_EmitHealthbarUpdate
+
+    // Send HP bar update messages to all damaged targets
+    // Since we send all messages before waiting, they should process together
+    for (int i = 0; i < CLIENT_MAX; i++) {
+        if (ctx->simultaneousDamageTargets[i]) {
+            // Set up context for this target
+            ctx->battlerIdTemp = i;
+            ctx->hp_calc_work = ctx->damageForSpreadMoves[i];
+
+            // Send HP bar update message
+            emitHpBar(bsys, ctx, i);
+        }
     }
 
     return FALSE;
