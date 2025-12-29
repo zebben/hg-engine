@@ -650,6 +650,16 @@ DestroyMsgData = 0x0200BB44 | 1;
 OS_ResetSystem = 0x020D3B84;
 AddWindow = 0x0201D4F8 | 1;
 
+BufferPlayersName = 0x0200BE48 | 1;
+BufferItemName = 0x0200C0CC | 1;
+NewString_ReadMsgData = 0x0200BBA0 | 1;
+RoamerSave_SetFlute = 0x021F994C | 1;
+BagApp_SetFlute	= 0x021F994C | 1;
+BagApp_TryUseRepel = 0x021FBA9C | 1;
+BagApp_ToggleGBSounds = 0x021FBAF8 | 1;
+StringExpandPlaceholders = 0x0200CBBC | 1;
+Mon_UpdateRotomForm	= 0x02071EC0 | 1;
+
 ov12_0224DD18 = 0x0224DD18 | 1;
 ov12_0224D7EC = 0x0224D7EC | 1;
 ov12_0224E130 = 0x0224E130 | 1;
