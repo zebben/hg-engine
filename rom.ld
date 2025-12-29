@@ -782,12 +782,4 @@ Encounter_New = 0x020506BC | 1;
 TaskManager_Call = 0x02050530 | 1;
 Task_TutorialBattle = 0x0205128C | 1;
 
-BufferPlayersName = 0x0200BE48 | 1;
-BufferItemName = 0x0200C0CC | 1;
-NewString_ReadMsgData = 0x0200BBA0 | 1;
-RoamerSave_SetFlute = 0x021F994C | 1;
-BagApp_SetFlute	= 0x021F994C | 1;
-BagApp_TryUseRepel = 0x021FBA9C | 1;
-BagApp_ToggleGBSounds = 0x021FBAF8 | 1;
-StringExpandPlaceholders = 0x0200CBBC | 1;
-Mon_UpdateRotomForm	= 0x02071EC0 | 1;
+GetItemAttrSub = 0x02077E48 | 1;

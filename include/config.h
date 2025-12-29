@@ -187,6 +187,9 @@
 // FOG_SETS_MISTY_TERRAIN makes the Fog map header weather set permanent Misty Terrain in battle
 //#define FOG_WEATHER_MISTY_TERRAIN
 
+// NATURAL_GIFT_POWER_GEN defines the power of Natural Gift based on generation. Gen 6 or higher are modernized values.
+#define NATURAL_GIFT_POWER_GEN GEN_LATEST
+
 // EASY_MODE_IVS only allows a pokemon's IVs to roll 0, 30, or 31. the result is heavily weighted
 // towards 30
 #define EASY_MODE_IVS
