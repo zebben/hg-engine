@@ -537,9 +537,9 @@ struct OVERWORLD_TAG gOWTagToFileNum[] = // skip down a bit to see the parts tha
     { .tag =  600, .gfx =  424, .callback_params = OVERWORLD_SIZE_SMALL}, // SPECIES_MAGMAR
     { .tag =  601, .gfx =  425, .callback_params = OVERWORLD_SIZE_SMALL}, // SPECIES_PINSIR
     { .tag =  602, .gfx =  426, .callback_params = OVERWORLD_SIZE_SMALL}, // SPECIES_TAUROS
-    { .tag =  603, .gfx =  297, .callback_params = OVERWORLD_SIZE_SMALL}, // combat
-    { .tag =  604, .gfx =  297, .callback_params = OVERWORLD_SIZE_SMALL}, // blaze
-    { .tag =  605, .gfx =  297, .callback_params = OVERWORLD_SIZE_SMALL}, // aqua
+    { .tag =  603, .gfx =  426, .callback_params = OVERWORLD_SIZE_SMALL}, // combat
+    { .tag =  604, .gfx =  426, .callback_params = OVERWORLD_SIZE_SMALL}, // blaze
+    { .tag =  605, .gfx =  426, .callback_params = OVERWORLD_SIZE_SMALL}, // aqua
     { .tag =  606, .gfx =  427, .callback_params = OVERWORLD_SIZE_SMALL}, // SPECIES_MAGIKARP
     { .tag =  607, .gfx =  428, .callback_params = OVERWORLD_SIZE_SMALL}, // SPECIES_GYARADOS
     { .tag =  608, .gfx =  429, .callback_params = OVERWORLD_SIZE_SMALL}, // SPECIES_LAPRAS
