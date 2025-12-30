@@ -529,6 +529,9 @@ _06D4:
 	setvar VAR_SPECIAL_x8004, ITEM_HARDCORE_TOGGLE
 	setvar VAR_SPECIAL_x8005, 1
 	callstd std_obtain_item_verbose
+	setvar VAR_SPECIAL_x8004, ITEM_SCALING_TOGGLE
+	setvar VAR_SPECIAL_x8005, 1
+	callstd std_obtain_item_verbose
 	closemsg
 	setvar VAR_SCENE_ELMS_LAB, 2
 	npc_msg 21
@@ -592,6 +595,7 @@ _07E4:
 _07FA:
 	npc_msg 55
 _07FD:
+    giveitem ITEM_SCALING_TOGGLE, 1, VAR_SPECIAL_RESULT
 	wait_button_or_walk_away
 	closemsg
 	releaseall

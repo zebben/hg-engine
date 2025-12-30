@@ -1495,7 +1495,7 @@ u32 LONG_CALL CheckIfMonsAreEqual(struct PartyPokemon *pokemon1, struct PartyPok
  *  @return TRUE if can use item, FALSE otherwise
  */
 BOOL CanUseItemOnMonInParty(struct Party *party, u16 itemID, s32 partyIdx, s32 moveIdx, u32 heapID) {
-    if (itemID == ITEM_HARDCORE_TOGGLE) {
+    if (itemID == ITEM_HARDCORE_TOGGLE || itemID == ITEM_SCALING_TOGGLE) {
         return FALSE;
     }
     struct PartyPokemon *mon = Party_GetMonByIndex(party, partyIdx);

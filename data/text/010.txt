@@ -129,3 +129,6 @@ Key Items Pocket\nFor items that are indispensable for\nyour adventure.
 STOP
 Hardcore mode is now OFF. Relax!\r
 Hardcore mode is now ON. Be careful!\r
+Standard level scaling has been\nactivated.\r
+Difficult level scaling has been\nactivated.\r
+Level scaling has been\nde-activated.\r

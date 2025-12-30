@@ -380,6 +380,7 @@ void ItemMenuUseFunc_Mint(struct ItemMenuUseData *data, const struct ItemCheckUs
 void ItemMenuUseFunc_Nectar(struct ItemMenuUseData *data, const struct ItemCheckUseData *dat2 UNUSED);
 void ItemMenuUseFunc_RotomCatalog(struct ItemMenuUseData *data, const struct ItemCheckUseData *dat2 UNUSED);
 void ItemMenuUseFunc_HardcoreToggle(struct ItemMenuUseData *data, const struct ItemCheckUseData *dat2 UNUSED);
+void ItemMenuUseFunc_DifficultyToggle(struct ItemMenuUseData *data, const struct ItemCheckUseData *dat2 UNUSED);
 
 // menu / field / check
 const struct ItemUseFuncDat sItemFieldUseFuncs[] = {
@@ -692,5 +693,13 @@ void ItemMenuUseFunc_HardcoreToggle(struct ItemMenuUseData *data, const struct I
     FieldSystem *fieldSystem = data->taskManager->fieldSystem; //TaskManager_GetFieldSystem(data->taskManager);
     struct BagViewAppWork *env = data->taskManager->env; //TaskManager_GetEnvironment(data->taskManager);
     env->atexit_TaskEnv = sub_0203FAE8(fieldSystem, HEAPID_WORLD, ITEM_HARDCORE_TOGGLE);
+    sub_0203C8F0(env, 0x0203CA9C | 1);
+}
+
+void ItemMenuUseFunc_DifficultyToggle(struct ItemMenuUseData *data, const struct ItemCheckUseData *dat2 UNUSED)
+{
+    FieldSystem *fieldSystem = data->taskManager->fieldSystem; //TaskManager_GetFieldSystem(data->taskManager);
+    struct BagViewAppWork *env = data->taskManager->env; //TaskManager_GetEnvironment(data->taskManager);
+    env->atexit_TaskEnv = sub_0203FAE8(fieldSystem, HEAPID_WORLD, ITEM_SCALING_TOGGLE);
     sub_0203C8F0(env, 0x0203CA9C | 1);
 }

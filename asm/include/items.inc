@@ -2564,5 +2564,6 @@
 .equ ITEM_INFINITE_RARE_CANDY,          2558
 .equ ITEM_HARDCORE_TOGGLE,              2559
 .equ ITEM_INFINITY_POUCH,               2560
+.equ ITEM_SCALING_TOGGLE,            2561
 
 .endif

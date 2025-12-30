@@ -13568,7 +13568,7 @@ trainerdata 290, "Li"
         // mon 0
         ivs 200
         abilityslot 0
-        level 1
+        level 8
         pokemon SPECIES_BELLSPROUT
         move MOVE_VINE_WHIP
         move MOVE_SLEEP_POWDER
@@ -13579,7 +13579,7 @@ trainerdata 290, "Li"
         // mon 1
         ivs 200
         abilityslot 0
-        level 1
+        level 9
         pokemon SPECIES_HOOTHOOT
         move MOVE_PECK
         move MOVE_ROOST
@@ -13590,7 +13590,7 @@ trainerdata 290, "Li"
         // mon 2
         ivs 200
         abilityslot 0
-        level 1
+        level 11
         pokemon SPECIES_WEEPINBELL
         move MOVE_VINE_WHIP
         move MOVE_SLEEP_POWDER

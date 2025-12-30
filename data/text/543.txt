@@ -19,8 +19,8 @@ There are no valuable Pokémon left...\rYou wonder who Professor Elm gave the\nl
 Huh? Me?\nI’m not the professor.\rHe’s at the back of the room.\n
 {STRVAR_1 3, 0, 0}, I want you to have these\nto help you with your task.\r
 {STRVAR_1 3, 0, 0}, I want you to have these\nto help you with your task.\r
-That candy can be used to power up\nyour weaker Pokémon. The other item\rtoggles between difficulty settings.\r
-That candy can be used to power up\nyour weaker Pokémon. The other item\rtoggles between difficulty settings.
+That candy can be used to power up\nyour weaker Pokémon. The other items\rtoggle between difficulty settings.\r
+That candy can be used to power up\nyour weaker Pokémon. The other items\rtoggle between difficulty settings.
 Who are you?\nWe are investigating the case of the\fmissing Pokémon here...\rRule number one!\n“Whoever did it will come\fback to the site.”\rOh my... So you must be...\nthe one who did it?\r
 Lyra: Hold on a second!\nHe has nothing to do with it!\rI saw it.\nThere was a red-haired boy\flooking into the building!\r
 Ethan: Hold on a second!\nShe has nothing to do with it!\rI saw it.\nThere was a red-haired boy\flooking into the building!\r

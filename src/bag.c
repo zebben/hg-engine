@@ -236,7 +236,7 @@ BOOL Bag_TakeItem(BAG_DATA *bag, u16 itemId, u16 quantity, int heap_id) {
         return FALSE;
     }
     ITEM_SLOT *slot = Bag_GetItemSlotForRemove(bag, itemId, quantity, heap_id);
-    if (slot == NULL ||  itemId == ITEM_INFINITE_RARE_CANDY || itemId == ITEM_HARDCORE_TOGGLE) {
+    if (slot == NULL ||  itemId == ITEM_INFINITE_RARE_CANDY || itemId == ITEM_HARDCORE_TOGGLE || itemId == ITEM_SCALING_TOGGLE) {
         return FALSE;
     }
     slot->quantity -= quantity;
@@ -588,6 +588,18 @@ BOOL BagApp_TryUseItemInPlace(void *param1, u16 itemId)
         SetScriptVar(HARDCORE_MODE_VARIABLE, hardcoreMode);
         MsgData *msgLoader = *(void **)((u8 *)param1 + 0x02F0);
         srcStr = NewString_ReadMsgData(msgLoader, hardcoreMode == 0 ? 129 : 130);
+        *(u16 *)((u8 *)param1 + 0x0680) = 0;
+    } else if (itemId == ITEM_SCALING_TOGGLE) {
+        u16 difficulty = GetScriptVar(DIFFICULTY_VARIABLE);
+        debug_printf("Start difficulty: %d\n", difficulty);
+        difficulty++;
+        if (difficulty > 2) {
+            difficulty = 0;
+        }
+        SetScriptVar(DIFFICULTY_VARIABLE, difficulty);
+        debug_printf("End difficulty: %d\n", difficulty);
+        MsgData *msgLoader = *(void **)((u8 *)param1 + 0x02F0);
+        srcStr = NewString_ReadMsgData(msgLoader, 131 + difficulty);
         *(u16 *)((u8 *)param1 + 0x0680) = 0;
     } else {
         return FALSE;

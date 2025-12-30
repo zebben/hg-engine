@@ -1,3 +1,4 @@
 an {COLOR 255}Inf. Rare Candy{COLOR 0}
 a {COLOR 255}Hardcore Toggle{COLOR 0}
 an {COLOR 255}Infinity Pouch{COLOR 0}
+a {COLOR 255}Difficulty Toggle{COLOR 0}

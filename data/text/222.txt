@@ -2559,3 +2559,4 @@ Briar’s Book
 Inf. Rare Candy
 Hardcore Toggle
 Infinity Pouch
+Scaling Toggle

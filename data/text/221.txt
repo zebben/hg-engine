@@ -1,3 +1,4 @@
 Raises the level of a single Pokémon\nby one. Cannot reach max party level.
 Toggles hardcore mode when used. While\nactive, Pokémon that faint will be lost\nforever.
 Holding this item allows for infinite\nconsumable item usage.
+Toggles between difficulty settings.

@@ -200,10 +200,10 @@
 // SCALE_WILD_LEVELS scales wild mon levels based on the player's party
 #define SCALE_WILD_LEVELS
 
-// PERMA_DEATH_MODE enables permadeath on mon faint
-#define PERMA_DEATH_MODE
-
 // HARDCORE_MODE_VARIABLE tracks hardcore mode enablement
 #define HARDCORE_MODE_VARIABLE 0x416E
+
+// DIFFICULTY_VARIABLE tracks difficulty settings for level scaling
+#define DIFFICULTY_VARIABLE 0x416D
 
 #endif

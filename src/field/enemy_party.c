@@ -137,18 +137,22 @@ void MakeTrainerPokemonParty(struct BATTLE_PARAM *bp, int num, int heapID)
             highestPlayerPokeLvl = monLvl;
         }
     }
-    BOOL late = highestPlayerPokeLvl > 30;
-    for (int i = 0; i < sizeof(bossTrainerIDs) / sizeof(bossTrainerIDs[0]); i++) {
-        if (enemyTrainer == bossTrainerIDs[i]) {
-            levelMod = late ? LATE_SCALE_ENEMY_BOSS_MOD : EARLY_SCALE_ENEMY_BOSS_MOD;
-            break;
-        }
-    }
-    if (levelMod == 0) {
-        for (int i = 0; i < sizeof(miniBossTrainerIDs) / sizeof(miniBossTrainerIDs[0]); i++) {
-            if (enemyTrainer == miniBossTrainerIDs[i]) {
-                levelMod = late ? LATE_SCALE_ENEMY_MINI_BOSS_MOD : EARLY_SCALE_ENEMY_MINI_BOSS_MOD;
+
+    u16 difficulty = GetScriptVar(DIFFICULTY_VARIABLE);
+    if (difficulty == MG_HARD_SCALING) {
+        BOOL late = highestPlayerPokeLvl > 30;
+        for (int i = 0; i < sizeof(bossTrainerIDs) / sizeof(bossTrainerIDs[0]); i++) {
+            if (enemyTrainer == bossTrainerIDs[i]) {
+                levelMod = late ? LATE_SCALE_ENEMY_BOSS_MOD : EARLY_SCALE_ENEMY_BOSS_MOD;
                 break;
+            }
+        }
+        if (levelMod == 0) {
+            for (int i = 0; i < sizeof(miniBossTrainerIDs) / sizeof(miniBossTrainerIDs[0]); i++) {
+                if (enemyTrainer == miniBossTrainerIDs[i]) {
+                    levelMod = late ? LATE_SCALE_ENEMY_MINI_BOSS_MOD : EARLY_SCALE_ENEMY_MINI_BOSS_MOD;
+                    break;
+                }
             }
         }
     }
@@ -236,25 +240,28 @@ void MakeTrainerPokemonParty(struct BATTLE_PARAM *bp, int num, int heapID)
         // level field
         level = buf[offset] | (buf[offset+1] << 8);
         #ifdef SCALE_ENEMY_TRAINER_LEVELS
-            // don't scale initial silver fight
-            if (enemyTrainer != 495 && enemyTrainer != 496 && enemyTrainer != 497) {
-                if (levelMod >= EARLY_SCALE_ENEMY_BOSS_MOD && i == pokecount - 1) {
-                    // assume ace in the last slot for bosses
-                    // override the scaleOpt to 2 to ensure max level
-                    scaleOpt = 2;
-                } else if (i < 6) {
-                    // avoid index out of bounds that shouldn't happen
-                    scaleOpt = scaleOptions[i];
-                }
-                level = highestPlayerPokeLvl + scaleOpt + levelMod;
-                // ensure the trainer's mons don't get above level 100
-                if (level > 100) {
-                    level = 100;
-                }
+            u16 difficulty = GetScriptVar(DIFFICULTY_VARIABLE);
+            if (difficulty != MG_NO_SCALING) {
+                // don't scale initial silver fight
+                if (enemyTrainer != 495 && enemyTrainer != 496 && enemyTrainer != 497) {
+                    if (levelMod >= EARLY_SCALE_ENEMY_BOSS_MOD && i == pokecount - 1) {
+                        // assume ace in the last slot for bosses
+                        // override the scaleOpt to 2 to ensure max level
+                        scaleOpt = 2;
+                    } else if (i < 6) {
+                        // avoid index out of bounds that shouldn't happen
+                        scaleOpt = scaleOptions[i];
+                    }
+                    level = highestPlayerPokeLvl + scaleOpt + levelMod;
+                    // ensure the trainer's mons don't get above level 100
+                    if (level > 100) {
+                        level = 100;
+                    }
 
-                // ensure the trainer's mons don't get below level 3
-                if (level < 3) {
-                    level = 3;
+                    // ensure the trainer's mons don't get below level 3
+                    if (level < 3) {
+                        level = 3;
+                    }
                 }
             }
         #endif
@@ -590,41 +597,47 @@ BOOL LONG_CALL AddWildPartyPokemon(int inTarget, EncounterInfo *encounterInfo, s
     u16 species;
 
 #ifdef SCALE_WILD_LEVELS
-    int scaleOptions[6] = {5, 4, 4, 3, 3, 2};
-    randomize(scaleOptions, 6);
+    u16 difficulty = GetScriptVar(DIFFICULTY_VARIABLE);
+    debug_printf("Wild encounter difficulty: %d\n", difficulty);
+    if (difficulty != MG_NO_SCALING) {
+        debug_printf("Wild encounter scaling yep: %d\n", difficulty);
+        int scaleOptions[6] = {5, 4, 4, 3, 3, 2};
+        randomize(scaleOptions, 6);
 
-    struct Party *party = encounterBattleParam->poke_party[0];
-    int player_poke_count = party->count;
-    struct PartyPokemon *mon;
+        struct Party *party = encounterBattleParam->poke_party[0];
+        int player_poke_count = party->count;
+        struct PartyPokemon *mon;
 
-    int sum = 0;
-    int n = 0;
-    for (int i = 0; i < player_poke_count; i++) {
-        mon = Party_GetMonByIndex(party, i);
-        if (!GetMonData(mon, MON_DATA_IS_EGG, NULL)) {
-            int lvl = (int)GetMonData(mon, MON_DATA_LEVEL, NULL);
-            sum += lvl;
-            n++;
-        }
-    }
-
-    int avg = (n > 0) ? (sum + n/2) / n : 3;
-    if (avg > 10) {
-        int targetLevel = avg - scaleOptions[0];
-        if (targetLevel < 3) {
-            targetLevel = 3;
-        }
-        if (targetLevel > 100) {
-            targetLevel = 100;
+        int sum = 0;
+        int n = 0;
+        for (int i = 0; i < player_poke_count; i++) {
+            mon = Party_GetMonByIndex(party, i);
+            if (!GetMonData(mon, MON_DATA_IS_EGG, NULL)) {
+                int lvl = (int)GetMonData(mon, MON_DATA_LEVEL, NULL);
+                sum += lvl;
+                n++;
+            }
         }
 
-        u8 lvl_u8 = (u8)targetLevel;
-        u32 exp = PokeLevelExpGet(species, targetLevel);
-        SetMonData(encounterPartyPokemon, MON_DATA_LEVEL, &lvl_u8);
-        SetMonData(encounterPartyPokemon, MON_DATA_EXPERIENCE, &exp);
-        encounterInfo->level = lvl_u8;
-        RecalcPartyPokemonStats(encounterPartyPokemon);
-        InitBoxMonMoveset(&encounterPartyPokemon->box);
+        int avg = (n > 0) ? (sum + n/2) / n : 3;
+        if (avg > 10) {
+            int targetLevel = avg - scaleOptions[0];
+            if (targetLevel < 3) {
+                targetLevel = 3;
+            }
+            if (targetLevel > 100) {
+                targetLevel = 100;
+            }
+
+            u8 lvl_u8 = (u8)targetLevel;
+            u32 exp = PokeLevelExpGet(species, targetLevel);
+            SetMonData(encounterPartyPokemon, MON_DATA_LEVEL, &lvl_u8);
+            SetMonData(encounterPartyPokemon, MON_DATA_EXPERIENCE, &exp);
+            encounterInfo->level = lvl_u8;
+            debug_printf("Scaled wild mon to level %d\n", targetLevel);
+            RecalcPartyPokemonStats(encounterPartyPokemon);
+            InitBoxMonMoveset(&encounterPartyPokemon->box);
+        }
     }
 #endif
 

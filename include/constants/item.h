@@ -2570,8 +2570,13 @@
 #define ITEM_INFINITE_RARE_CANDY      2558
 #define ITEM_HARDCORE_TOGGLE          2559
 #define ITEM_INFINITY_POUCH           2560
+#define ITEM_SCALING_TOGGLE        2561
 
-#define MAX_TOTAL_ITEM_NUM ITEM_INFINITY_POUCH
+#define MG_STANDARD_SCALING 0
+#define MG_HARD_SCALING     1
+#define MG_NO_SCALING       2
+
+#define MAX_TOTAL_ITEM_NUM ITEM_SCALING_TOGGLE
 
 #define NUM_MEGA_STONES 48 // includes the pixie plate
 #define NUM_HMS         (ITEM_HM08 - ITEM_HM01 + 1) // intentionally do not include HM07_ORAS (Dive)
