@@ -152,11 +152,41 @@ void ServerHPCalc(struct BattleSystem *bw, struct BattleStruct *sp)
             sp->battlerIdTemp = sp->defence_client;
             sp->hp_calc_work = sp->damage;
 
-            LoadBattleSubSeqScript(sp, ARC_BATTLE_SUB_SEQ, SUB_SEQ_HP_CHANGE);
-            sp->server_seq_no = 22;
-            sp->next_server_seq_no = 29;
+            // Initialize simultaneous damage mode on first hit of spread move
+            if (IS_SPREAD_MOVE(sp) && !(sp->server_status_flag & SERVER_STATUS_FLAG_SIMULTANEOUS_DAMAGE)) {
+                sp->server_status_flag |= SERVER_STATUS_FLAG_SIMULTANEOUS_DAMAGE;
+                sp->simultaneousDamageTargetCount = 0;
+                for (int i = 0; i < CLIENT_MAX; i++) {
+                    sp->simultaneousDamageTargets[i] = 0;
+                    sp->damageForSpreadMoves[i] = 0;
+                }
+            }
 
-            sp->server_status_flag |= SERVER_STATUS_FLAG_MOVE_HIT;
+            // If spread move, store damage info but suppress animation
+            if (sp->server_status_flag & SERVER_STATUS_FLAG_SIMULTANEOUS_DAMAGE) {
+                sp->damageForSpreadMoves[sp->defence_client] = sp->damage;
+                sp->simultaneousDamageTargets[sp->defence_client] = 1;
+                sp->simultaneousDamageTargetCount++;
+
+                // Apply HP change immediately (normally done by HP change subscript)
+                sp->battlemon[sp->defence_client].hp += sp->damage;
+                if (sp->battlemon[sp->defence_client].hp < 0) {
+                    sp->battlemon[sp->defence_client].hp = 0;
+                }
+                if (sp->battlemon[sp->defence_client].hp > sp->battlemon[sp->defence_client].maxhp) {
+                    sp->battlemon[sp->defence_client].hp = sp->battlemon[sp->defence_client].maxhp;
+                }
+
+                // Skip HP animation we batch these in the script
+                sp->server_seq_no = 29;
+                sp->server_status_flag |= SERVER_STATUS_FLAG_MOVE_HIT;
+            } else {
+                // Normal flow - load HP change animation subscript
+                LoadBattleSubSeqScript(sp, ARC_BATTLE_SUB_SEQ, SUB_SEQ_HP_CHANGE);
+                sp->server_seq_no = 22;
+                sp->next_server_seq_no = 29;
+                sp->server_status_flag |= SERVER_STATUS_FLAG_MOVE_HIT;
+            }
         }
     }
     else
