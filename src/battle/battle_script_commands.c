@@ -125,6 +125,7 @@ u32 LoadCaptureSuccessSPA(u32 id);
 u32 LoadCaptureSuccessSPAStarEmitter(u32 id);
 u32 LoadCaptureSuccessSPANumEmitters(u32 id);
 void LONG_CALL BattleController_EmitHealthbarUpdate(struct BattleSystem *battleSystem, struct BattleStruct *ctx, int side);
+void LONG_CALL BattleController_EmitMonFlicker(struct BattleSystem *battleSystem, int side, int a2);
 
 #ifdef DEBUG_BATTLE_SCRIPT_COMMANDS
 #pragma GCC diagnostic push
@@ -4402,12 +4403,16 @@ BOOL btl_scr_cmd_10E_BatchUpdateHp(struct BattleSystem *bsys, struct BattleStruc
     IncrementBattleScriptPtr(ctx, 1);
     read_battle_script_param(ctx);
 
+    BOOL shouldFlicker = !(ctx->server_status_flag & BATTLE_STATUS_NO_BLINK);
+
     for (int i = 0; i < CLIENT_MAX; i++) {
         if (ctx->simultaneousDamageTargets[i]) {
             ctx->battlerIdTemp = i;
             ctx->hp_calc_work = ctx->damageForSpreadMoves[i];
+            if (shouldFlicker) {
+                BattleController_EmitMonFlicker(bsys, i, 0);
+            }
             BattleController_EmitHealthbarUpdate(bsys, ctx, i);
-            //emitHpBar(bsys, ctx, i);
         }
     }
 
