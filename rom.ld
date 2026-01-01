@@ -683,6 +683,7 @@ sHoneyGatherChanceTable = 0x0226CA58;
 
 sPlayerBattleCommands = 0x0226CA90;
 BattleSystem_GetBattleOutcomeFlags = 0x0223BD14 | 1;
+BattleSystem_SetBattleOutcomeFlags = 0x0223BD20 | 1;
 ov12_022639B8 = 0x022639B8 | 1;
 
 FieldSystem_MapIsBattleTowerMultiPartnerSelectRoom = 0x02067584 | 1;
@@ -783,3 +784,5 @@ BattleSetup_GetWildBattleMusic = 0x020517FC | 1;
 Encounter_New = 0x020506BC | 1;
 TaskManager_Call = 0x02050530 | 1;
 Task_TutorialBattle = 0x0205128C | 1;
+
+GetItemAttrSub = 0x02077E48 | 1;
