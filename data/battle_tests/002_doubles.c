@@ -21,7 +21,7 @@ const struct TestBattleScenario BattleTests[] = {
         .playerParty = {
             {
                 .species = SPECIES_MEW,
-                .level = 50,
+                .level = 1,
                 .form = 0,
                 .ability = ABILITY_STURDY,
                 .item = ITEM_NONE,
@@ -32,8 +32,8 @@ const struct TestBattleScenario BattleTests[] = {
                 .moveEffectFlags = 0,
             },
             {
-                .species = SPECIES_MEWTWO,
-                .level = 50,
+                .species = SPECIES_EXCADRILL,
+                .level = 100,
                 .form = 0,
                 .ability = ABILITY_ROCK_HEAD,
                 .item = ITEM_NONE,
@@ -48,8 +48,8 @@ const struct TestBattleScenario BattleTests[] = {
             { .species = SPECIES_NONE },
             { .species = SPECIES_NONE } },
         .enemyParty = { {
-                            .species = SPECIES_KYOGRE,
-                            .level = 50,
+                            .species = SPECIES_DURANT,
+                            .level = 1,
                             .form = 0,
                             .ability = ABILITY_STURDY,
                             .item = ITEM_LEFTOVERS,
@@ -61,11 +61,11 @@ const struct TestBattleScenario BattleTests[] = {
                         },
             {
                 .species = SPECIES_GROUDON,
-                .level = 50,
+                .level = 1,
                 .form = 0,
                 .ability = ABILITY_GUTS,
-                .item = ITEM_NONE,
-                .moves = { MOVE_KARATE_CHOP, MOVE_SEISMIC_TOSS, MOVE_NONE, MOVE_NONE },
+                .item = ITEM_FOCUS_SASH,
+                .moves = { MOVE_KARATE_CHOP, MOVE_FAKE_TEARS, MOVE_NONE, MOVE_NONE },
                 .hp = FULL_HP,
                 .status = 0,
                 .condition2 = 0,
@@ -76,7 +76,7 @@ const struct TestBattleScenario BattleTests[] = {
             { .species = SPECIES_NONE },
             { .species = SPECIES_NONE } },
         .playerScript = { {
-                              { ACTION_MOVE_SLOT_2, BATTLER_ENEMY_FIRST },
+                              { ACTION_MOVE_SLOT_2, BATTLER_ENEMY_SECOND },
                               { ACTION_MOVE_SLOT_1, BATTLER_ENEMY_SECOND },
                               { ACTION_NONE, 0 },
                               { ACTION_NONE, 0 },

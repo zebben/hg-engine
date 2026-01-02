@@ -14,7 +14,7 @@
 #include "../include/constants/species.h"
 
 #define TEST_BATTLE_TOTAL_TESTS 3 // Adjust as needed
-#define TEST_START_INDEX        0
+#define TEST_START_INDEX        2
 
 // Store current scenario for battle state application and AI scripting
 const struct TestBattleScenario *g_CurrentScenario = NULL;

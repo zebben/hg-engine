@@ -167,17 +167,6 @@ void ServerHPCalc(struct BattleSystem *bw, struct BattleStruct *sp)
                 sp->damageForSpreadMoves[sp->defence_client] = sp->damage;
                 sp->simultaneousDamageTargets[sp->defence_client] = 1;
                 sp->simultaneousDamageTargetCount++;
-
-                // Apply HP change immediately (normally done by HP change subscript)
-                sp->battlemon[sp->defence_client].hp += sp->damage;
-                if (sp->battlemon[sp->defence_client].hp < 0) {
-                    sp->battlemon[sp->defence_client].hp = 0;
-                }
-                if (sp->battlemon[sp->defence_client].hp > sp->battlemon[sp->defence_client].maxhp) {
-                    sp->battlemon[sp->defence_client].hp = sp->battlemon[sp->defence_client].maxhp;
-                }
-
-                // Skip HP animation we batch these in the script
                 sp->server_seq_no = 29;
                 sp->server_status_flag |= SERVER_STATUS_FLAG_MOVE_HIT;
             } else {
