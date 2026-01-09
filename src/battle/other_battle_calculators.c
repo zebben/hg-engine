@@ -2624,16 +2624,14 @@ void LONG_CALL ov12_0224D03C(struct BattleSystem *bsys, struct BattleStruct *ctx
     else {
         // Load batch animation subscript after all targets processed
         if (isSpreadMove && (ctx->server_status_flag & SERVER_STATUS_FLAG_SIMULTANEOUS_DAMAGE)) {
-            if (ctx->simultaneousDamageTargetCount > 0) {
-                // Load custom subscript to batch animate all HP bars
-                LoadBattleSubSeqScript(ctx, ARC_BATTLE_SUB_SEQ, SUB_SEQ_BATCH_UPDATE_HP);
-                ctx->server_seq_no = 22;
-                ctx->next_server_seq_no = 36;  // Continue to aftermath
+            // Load custom subscript to batch animate all HP bars
+            LoadBattleSubSeqScript(ctx, ARC_BATTLE_SUB_SEQ, SUB_SEQ_BATCH_UPDATE_HP);
+            ctx->server_seq_no = 22;
+            ctx->next_server_seq_no = 36;  // Continue to aftermath
 
-                // Clear flag for next move
-                ctx->server_status_flag &= ~SERVER_STATUS_FLAG_SIMULTANEOUS_DAMAGE;
-                return;
-            }
+            // Clear flag for next move
+            ctx->server_status_flag &= ~SERVER_STATUS_FLAG_SIMULTANEOUS_DAMAGE;
+            return;
         }
 
         ctx->server_seq_no = CONTROLLER_COMMAND_36;

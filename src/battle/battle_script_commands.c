@@ -126,6 +126,8 @@ u32 LoadCaptureSuccessSPAStarEmitter(u32 id);
 u32 LoadCaptureSuccessSPANumEmitters(u32 id);
 void LONG_CALL BattleController_EmitHealthbarUpdate(struct BattleSystem *battleSystem, struct BattleStruct *ctx, int side);
 void LONG_CALL BattleController_EmitMonFlicker(struct BattleSystem *battleSystem, int side, int a2);
+void LONG_CALL BattleController_EmitPlayMoveSE(struct BattleSystem *battleSystem, struct BattleStruct *ctx, int battlerId);
+void LONG_CALL UpdateFrienshipFainted(struct BattleSystem *battleSystem, struct BattleStruct *ctx, int battlerId);
 
 #ifdef DEBUG_BATTLE_SCRIPT_COMMANDS
 #pragma GCC diagnostic push
@@ -4399,22 +4401,85 @@ BOOL btl_scr_cmd_10D_HandleRoost(void* bsys UNUSED, struct BattleStruct* ctx) {
 /**
  * @brief Triggers HP bar animations for all targets hit by spread move simultaneously
  */
-BOOL btl_scr_cmd_10E_BatchUpdateHp(struct BattleSystem *bsys, struct BattleStruct *ctx) {
+BOOL btl_scr_cmd_10E_BatchUpdateHp(struct BattleSystem *bsys, struct BattleStruct *ctx)
+{
     IncrementBattleScriptPtr(ctx, 1);
     read_battle_script_param(ctx);
 
     BOOL shouldFlicker = !(ctx->server_status_flag & BATTLE_STATUS_NO_BLINK);
+    BattleController_EmitPlayMoveSE(bsys, ctx, 0);
 
     for (int i = 0; i < CLIENT_MAX; i++) {
         if (ctx->simultaneousDamageTargets[i]) {
             ctx->battlerIdTemp = i;
-            ctx->hp_calc_work = ctx->damageForSpreadMoves[i];
+            ctx->hp_calc_work = 0; // damage was already applied so zero this out because they aren't taking MORE damage
             if (shouldFlicker) {
                 BattleController_EmitMonFlicker(bsys, i, 0);
             }
             BattleController_EmitHealthbarUpdate(bsys, ctx, i);
-			ctx->battlemon[i].hp += ctx->hp_calc_work;
+            // TODO common func for this faint logic?
+            if (ctx->battlemon[i].hp == 0) {
+                ctx->fainting_client = i;
+                ctx->server_status_flag |= MaskOfFlagNo(i) << BATTLE_STATUS_FAINTED_SHIFT;
+                ctx->total_hinshi[i]++;
+                UpdateFrienshipFainted(bsys, ctx, i);
+            }
         }
+    }
+
+    return FALSE;
+}
+
+BOOL BtlCmd_UpdateHealthbar(struct BattleSystem *battleSystem, struct BattleStruct *ctx)
+{
+    IncrementBattleScriptPtr(ctx, 1);
+    int side = read_battle_script_param(ctx);
+
+    if (!(ctx->server_status_flag & SERVER_STATUS_FLAG_SIMULTANEOUS_DAMAGE)) {
+        BattleController_EmitHealthbarUpdate(battleSystem, ctx, GrabClientFromBattleScriptParam(battleSystem, ctx, side));
+    }
+
+    return FALSE;
+}
+
+BOOL BtlCmd_FlickerMon(struct BattleSystem *battleSystem, struct BattleStruct *ctx)
+{
+    IncrementBattleScriptPtr(ctx, 1);
+    int side = read_battle_script_param(ctx);
+
+    if (!(ctx->server_status_flag & SERVER_STATUS_FLAG_SIMULTANEOUS_DAMAGE)) {
+        BattleController_EmitMonFlicker(battleSystem, GrabClientFromBattleScriptParam(battleSystem, ctx, side), ctx->waza_status_flag);
+    }
+
+    return FALSE;
+}
+
+BOOL BtlCmd_TryFaintMon(struct BattleSystem *battleSystem, struct BattleStruct *ctx)
+{
+    IncrementBattleScriptPtr(ctx, 1);
+    int side = read_battle_script_param(ctx);
+    int battlerId = GrabClientFromBattleScriptParam(battleSystem, ctx, side);
+
+    if (!(ctx->server_status_flag & SERVER_STATUS_FLAG_SIMULTANEOUS_DAMAGE)) {
+        if (ctx->battlemon[battlerId].hp == 0) {
+            ctx->fainting_client = battlerId;
+            ctx->server_status_flag |= MaskOfFlagNo(battlerId) << BATTLE_STATUS_FAINTED_SHIFT;
+            ctx->total_hinshi[battlerId]++;
+            UpdateFrienshipFainted(battleSystem, ctx, battlerId);
+        }
+    }
+
+    return FALSE;
+}
+
+BOOL BtlCmd_PlayMoveHitSound(struct BattleSystem *battleSystem, struct BattleStruct *ctx)
+{
+    IncrementBattleScriptPtr(ctx, 1);
+    int side = read_battle_script_param(ctx);
+    int battlerId = GrabClientFromBattleScriptParam(battleSystem, ctx, side);
+
+    if (!(ctx->server_status_flag & SERVER_STATUS_FLAG_SIMULTANEOUS_DAMAGE)) {
+        BattleController_EmitPlayMoveSE(battleSystem, ctx, battlerId);
     }
 
     return FALSE;
