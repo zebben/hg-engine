@@ -4413,6 +4413,7 @@ BOOL btl_scr_cmd_10E_BatchUpdateHp(struct BattleSystem *bsys, struct BattleStruc
                 BattleController_EmitMonFlicker(bsys, i, 0);
             }
             BattleController_EmitHealthbarUpdate(bsys, ctx, i);
+            // TODO use proper func
 			ctx->battlemon[i].hp += ctx->hp_calc_work;
         }
     }

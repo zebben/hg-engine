@@ -155,7 +155,6 @@ void ServerHPCalc(struct BattleSystem *bw, struct BattleStruct *sp)
             // Initialize simultaneous damage mode on first hit of spread move
             if (IS_SPREAD_MOVE(sp) && !(sp->server_status_flag & SERVER_STATUS_FLAG_SIMULTANEOUS_DAMAGE)) {
                 sp->server_status_flag |= SERVER_STATUS_FLAG_SIMULTANEOUS_DAMAGE;
-                sp->simultaneousDamageTargetCount = 0;
                 for (int i = 0; i < CLIENT_MAX; i++) {
                     sp->simultaneousDamageTargets[i] = 0;
                     sp->damageForSpreadMoves[i] = 0;
@@ -166,7 +165,6 @@ void ServerHPCalc(struct BattleSystem *bw, struct BattleStruct *sp)
             if (sp->server_status_flag & SERVER_STATUS_FLAG_SIMULTANEOUS_DAMAGE) {
                 sp->damageForSpreadMoves[sp->defence_client] = sp->damage;
                 sp->simultaneousDamageTargets[sp->defence_client] = 1;
-                sp->simultaneousDamageTargetCount++;
                 sp->server_seq_no = 29;
                 sp->server_status_flag |= SERVER_STATUS_FLAG_MOVE_HIT;
             } else {

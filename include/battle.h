@@ -1435,8 +1435,6 @@ struct BattleStruct {
                u32 damageForSpreadMoves[CLIENT_MAX]; // u32 or int?
                u8 clientLoopForSpreadMoves;
                u8 simultaneousDamageTargets[CLIENT_MAX];
-               u8 simultaneousDamagePhase;
-               u8 simultaneousDamageTargetCount;
                u8 clientLoopForAbility;
                BOOL boostedAccuracy;
                BOOL moveStolen;
