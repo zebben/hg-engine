@@ -4406,15 +4406,34 @@ BOOL btl_scr_cmd_10E_BatchUpdateHp(struct BattleSystem *bsys, struct BattleStruc
     BOOL shouldFlicker = !(ctx->server_status_flag & BATTLE_STATUS_NO_BLINK);
 
     for (int i = 0; i < CLIENT_MAX; i++) {
-        if (ctx->simultaneousDamageTargets[i]) {
+        if (ctx->damageForSpreadMoves[i]) {
             ctx->battlerIdTemp = i;
             ctx->hp_calc_work = ctx->damageForSpreadMoves[i];
             if (shouldFlicker) {
                 BattleController_EmitMonFlicker(bsys, i, 0);
             }
             BattleController_EmitHealthbarUpdate(bsys, ctx, i);
-            // TODO use proper func
-			ctx->battlemon[i].hp += ctx->hp_calc_work;
+
+            // this mirrors UpdateHealthbarValue
+            if ((ctx->battlemon[i].hp + ctx->hp_calc_work) <= 0) {
+                ctx->damage = ctx->battlemon[i].hp * -1;
+            } else {
+                ctx->damage = ctx->hp_calc_work;
+            }
+
+            if (ctx->damage < 0) {
+                ctx->total_damage[i] += (-1 * ctx->damage);
+            }
+
+            ctx->battlemon[i].hp += ctx->hp_calc_work;
+
+            if (ctx->battlemon[i].hp < 0) {
+                ctx->battlemon[i].hp = 0;
+            } else if (ctx->battlemon[i].hp > ctx->battlemon[i].maxhp) {
+                ctx->battlemon[i].hp = ctx->battlemon[i].maxhp;
+            }
+
+            CopyBattleMonToPartyMon(bsys, ctx, i);
         }
     }
 

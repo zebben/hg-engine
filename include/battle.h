@@ -1434,7 +1434,6 @@ struct BattleStruct {
                u32 moveStatusFlagForSpreadMoves[CLIENT_MAX];
                u32 damageForSpreadMoves[CLIENT_MAX]; // u32 or int?
                u8 clientLoopForSpreadMoves;
-               u8 simultaneousDamageTargets[CLIENT_MAX];
                u8 clientLoopForAbility;
                BOOL boostedAccuracy;
                BOOL moveStolen;
