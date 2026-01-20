@@ -5,6 +5,19 @@
 #include "../../include/constants/file.h"
 #include "../../include/constants/species.h"
 
+static u16 GetBSTToleranceForLevel(u16 level)
+{
+    if (level <= RANDOMIZER_TIER1_MAX_LEVEL) {
+        return RANDOMIZER_TIER1_BST_TOLERANCE;
+    } else if (level <= RANDOMIZER_TIER2_MAX_LEVEL) {
+        return RANDOMIZER_TIER2_BST_TOLERANCE;
+    } else if (level <= RANDOMIZER_TIER3_MAX_LEVEL) {
+        return RANDOMIZER_TIER3_BST_TOLERANCE;
+    } else {
+        return RANDOMIZER_TIER4_BST_TOLERANCE;
+    }
+}
+
 static BOOL ShouldBanRestrictedSpecies(u16 species, BOOL isWild)
 {
     if (species == SPECIES_NONE || species == SPECIES_EGG || species == SPECIES_BAD_EGG)
@@ -86,11 +99,11 @@ static u16 Randomizer_BuildSpeciesPool(u16 originalSpecies, u16 level, BOOL isWi
 
     originalBST = bstTable[originalSpecies];
 
-#ifdef RANDOMIZER_BST_TOLERANCE
     useBSTMatching = TRUE;
-    bstMin = (originalBST * (100 - RANDOMIZER_BST_TOLERANCE)) / 100;
-    bstMax = (originalBST * (100 + RANDOMIZER_BST_TOLERANCE)) / 100;
-#endif
+    // Floor always uses tier 1 tolerance to prevent overpowered Pokemon early
+    // Ceiling scales with level to allow more species variety as game progresses
+    bstMin = (originalBST * (100 - RANDOMIZER_TIER1_BST_TOLERANCE)) / 100;
+    bstMax = (originalBST * (100 + GetBSTToleranceForLevel(level))) / 100;
 
     for (species = 1; species <= MAX_SPECIES_INCLUDING_FORMS && poolCount < maxPoolSize; species++)
     {
