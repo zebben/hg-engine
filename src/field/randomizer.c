@@ -7,9 +7,15 @@
 
 static BOOL ShouldBanRestrictedSpecies(u16 species, BOOL isWild)
 {
+    if (species == SPECIES_NONE || species == SPECIES_EGG || species == SPECIES_BAD_EGG)
+    {
+        return TRUE;
+    }
+
     BOOL isLegendary = IS_SPECIES_LEGENDARY(species);
     BOOL isMythical = IS_SPECIES_MYTHICAL(species);
     BOOL isSublegend = IS_SPECIES_SUBLEGEND(species);
+    BOOL isMega = (species >= SPECIES_MEGA_START && species <= MAX_MEGA_NUM);
 
     if (isWild) {
 #ifdef RANDOMIZER_BLOCK_LEGENDARIES_IN_WILD
@@ -29,6 +35,11 @@ static BOOL ShouldBanRestrictedSpecies(u16 species, BOOL isWild)
             return TRUE;
         }
 #endif
+#ifdef RANDOMIZER_BLOCK_MEGAS_IN_WILD
+        if (isMega) {
+            return TRUE;
+        }
+#endif
     } else {
         // Trainer context
 #ifdef RANDOMIZER_BLOCK_LEGENDARIES_IN_TRAINERS
@@ -45,6 +56,11 @@ static BOOL ShouldBanRestrictedSpecies(u16 species, BOOL isWild)
 
 #ifdef RANDOMIZER_BLOCK_SUBLEGENDS_IN_TRAINERS
         if (isSublegend) {
+            return TRUE;
+        }
+#endif
+#ifdef RANDOMIZER_BLOCK_MEGAS_IN_TRAINERS
+        if (isMega) {
             return TRUE;
         }
 #endif
@@ -139,7 +155,7 @@ static u16 Randomizer_SelectFromPool(u16 *pool, u16 poolSize, u32 seed)
     return selectedSpecies;
 }
 
-u16 Randomizer_GetRandomTrainerSpecies(u16 originalSpecies, u16 level, u32 trainerID)
+u16 LONG_CALL Randomizer_GetRandomTrainerSpecies(u16 originalSpecies, u16 level, u32 trainerID)
 {
 #if !defined(RANDOMIZER_ENABLED) || !defined(RANDOMIZE_TRAINERS)
     return originalSpecies;
@@ -152,14 +168,16 @@ u16 Randomizer_GetRandomTrainerSpecies(u16 originalSpecies, u16 level, u32 train
 #endif
 }
 
-u16 Randomizer_GetRandomWildSpecies(u16 originalSpecies, u16 level, u32 encounterSeed)
+u16 LONG_CALL Randomizer_GetRandomWildSpecies(struct PartyPokemon *pp)
 {
+    u16 original = GetMonData(pp, MON_DATA_SPECIES, NULL);
 #if !defined(RANDOMIZER_ENABLED) || !defined(RANDOMIZE_WILD)
-    return originalSpecies;
+    return original;
 #else
+    u16 level = GetMonData(pp, MON_DATA_LEVEL, NULL);
     u16 pool[MAX_SPECIES_INCLUDING_FORMS];
-    u16 size = Randomizer_BuildSpeciesPool(originalSpecies, level, TRUE, pool, MAX_SPECIES_INCLUDING_FORMS);
-    u32 seed = (u32)originalSpecies + (u32)level + encounterSeed;
+    u16 size = Randomizer_BuildSpeciesPool(original, level, TRUE, pool, MAX_SPECIES_INCLUDING_FORMS);
+    u32 seed = (u32)original + (u32)level + GetMonData(pp, MON_DATA_PERSONALITY, NULL);
 
     return Randomizer_SelectFromPool(pool, size, seed);
 #endif
