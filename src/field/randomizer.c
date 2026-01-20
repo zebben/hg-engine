@@ -5,6 +5,17 @@
 #include "../../include/constants/file.h"
 #include "../../include/constants/species.h"
 
+static void SplitSpeciesToBaseAndForm(u16 species, u16 *baseSpeciesOut, u16 *formOut)
+{
+    if (species > MAX_MON_NUM) {
+        *baseSpeciesOut = GetBaseSpeciesFromAdjustedForm(species);
+        *formOut = GetFormFromAdjustedForm(species);
+    } else {
+        *baseSpeciesOut = species;
+        *formOut = 0;
+    }
+}
+
 static u16 GetBSTToleranceForLevel(u16 level)
 {
     if (level <= RANDOMIZER_TIER1_MAX_LEVEL) {
@@ -54,7 +65,7 @@ static BOOL ShouldBanRestrictedSpecies(u16 species, BOOL isWild)
         }
 #endif
     } else {
-        // Trainer context
+        // Trainer
 #ifdef RANDOMIZER_BLOCK_LEGENDARIES_IN_TRAINERS
         if (isLegendary) {
             return TRUE;
@@ -100,8 +111,6 @@ static u16 Randomizer_BuildSpeciesPool(u16 originalSpecies, u16 level, BOOL isWi
     originalBST = bstTable[originalSpecies];
 
     useBSTMatching = TRUE;
-    // Floor always uses tier 1 tolerance to prevent overpowered Pokemon early
-    // Ceiling scales with level to allow more species variety as game progresses
     bstMin = (originalBST * (100 - RANDOMIZER_TIER1_BST_TOLERANCE)) / 100;
     bstMax = (originalBST * (100 + GetBSTToleranceForLevel(level))) / 100;
 
@@ -113,8 +122,9 @@ static u16 Randomizer_BuildSpeciesPool(u16 originalSpecies, u16 level, BOOL isWi
 
         if (useBSTMatching) {
             speciesBST = bstTable[species];
-            if (speciesBST < bstMin || speciesBST > bstMax)
+            if (speciesBST < bstMin || speciesBST > bstMax) {
                 continue;
+            }
         }
 
         poolOut[poolCount++] = species;
@@ -168,7 +178,7 @@ static u16 Randomizer_SelectFromPool(u16 *pool, u16 poolSize, u32 seed)
     return selectedSpecies;
 }
 
-u16 LONG_CALL Randomizer_GetRandomTrainerSpecies(u16 originalSpecies, u16 level, u32 trainerID)
+u16 LONG_CALL Randomizer_GetRandomTrainerSpecies(u16 originalSpecies, u16 level, u32 trainerID, u8 *formOut)
 {
 #if !defined(RANDOMIZER_ENABLED) || !defined(RANDOMIZE_TRAINERS)
     return originalSpecies;
@@ -177,11 +187,16 @@ u16 LONG_CALL Randomizer_GetRandomTrainerSpecies(u16 originalSpecies, u16 level,
     u16 size = Randomizer_BuildSpeciesPool(originalSpecies, level, FALSE, pool, MAX_SPECIES_INCLUDING_FORMS);
     u32 seed = (u32)originalSpecies + (u32)level + trainerID;
 
-    return Randomizer_SelectFromPool(pool, size, seed);
+    u16 selectedSpecies = Randomizer_SelectFromPool(pool, size, seed);
+    u16 baseSpecies, form;
+    SplitSpeciesToBaseAndForm(selectedSpecies, &baseSpecies, &form);
+    *formOut = form;
+
+    return baseSpecies;
 #endif
 }
 
-u16 LONG_CALL Randomizer_GetRandomWildSpecies(struct PartyPokemon *pp)
+u16 LONG_CALL Randomizer_GetRandomWildSpecies(struct PartyPokemon *pp, u8 *formOut)
 {
     u16 original = GetMonData(pp, MON_DATA_SPECIES, NULL);
 #if !defined(RANDOMIZER_ENABLED) || !defined(RANDOMIZE_WILD)
@@ -192,6 +207,11 @@ u16 LONG_CALL Randomizer_GetRandomWildSpecies(struct PartyPokemon *pp)
     u16 size = Randomizer_BuildSpeciesPool(original, level, TRUE, pool, MAX_SPECIES_INCLUDING_FORMS);
     u32 seed = (u32)original + (u32)level + GetMonData(pp, MON_DATA_PERSONALITY, NULL);
 
-    return Randomizer_SelectFromPool(pool, size, seed);
+    u16 selectedSpecies = Randomizer_SelectFromPool(pool, size, seed);
+    u16 baseSpecies, form;
+    SplitSpeciesToBaseAndForm(selectedSpecies, &baseSpecies, &form);
+    *formOut = form;
+
+    return baseSpecies;
 #endif
 }

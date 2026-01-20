@@ -41,7 +41,7 @@
 // Upper bound level range for tier 3
 #define RANDOMIZER_TIER3_MAX_LEVEL 40
 
-// BST tolerance for randomization. Higher values offer more species variance.
+// BST tolerance percentages for randomization. Higher values offer more species variance.
 // The tier 1 tolerance value is as the BST floor value meaning more higher BST species later on
 // BST difference allowed for tier 1
 #define RANDOMIZER_TIER1_BST_TOLERANCE 15
@@ -60,7 +60,7 @@
 #define IMPLEMENT_DYNAMIC_WILD_SPECIES_FORMS
 #endif
 
-u16 LONG_CALL Randomizer_GetRandomTrainerSpecies(u16 originalSpecies, u16 level, u32 trainerID);
-u16 LONG_CALL Randomizer_GetRandomWildSpecies(struct PartyPokemon *pp);
+u16 LONG_CALL Randomizer_GetRandomTrainerSpecies(u16 originalSpecies, u16 level, u32 trainerID, u8 *formOut);
+u16 LONG_CALL Randomizer_GetRandomWildSpecies(struct PartyPokemon *pp, u8 *formOut);
 
 #endif // RANDOMIZER_H

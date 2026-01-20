@@ -157,7 +157,7 @@ void MakeTrainerPokemonParty(struct BATTLE_PARAM *bp, int num, int heapID)
         species &= 0x07FF;
 
 #ifdef RANDOMIZER_ENABLED
-        species = Randomizer_GetRandomTrainerSpecies(species, level, bp->trainer_id[num]);
+        species = Randomizer_GetRandomTrainerSpecies(species, level, bp->trainer_id[num], &form_no);
 #endif
 
         // item field - conditional
@@ -497,10 +497,12 @@ BOOL LONG_CALL AddWildPartyPokemon(int inTarget, EncounterInfo *encounterInfo, s
 #ifdef RANDOMIZER_ENABLED
     {
         u16 level = GetMonData(encounterPartyPokemon, MON_DATA_LEVEL, NULL);
-        species = Randomizer_GetRandomWildSpecies(encounterPartyPokemon);
+        species = Randomizer_GetRandomWildSpecies(encounterPartyPokemon, &form_no);
         // TODO not perfect IVs
-        //   use function to get base species and form #
         PokeParaSet(encounterPartyPokemon, species, level, 31, 1, GetMonData(encounterPartyPokemon, MON_DATA_PERSONALITY, NULL), 0, 0);
+        if (form_no != 0) {
+            change_form = 1;
+        }
         UpdatePassiveForms(encounterPartyPokemon);
         RecalcPartyPokemonStats(encounterPartyPokemon);
     }
