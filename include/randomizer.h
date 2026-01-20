@@ -19,9 +19,6 @@
 #define RANDOMIZER_BLOCK_MYTHICALS_IN_WILD
 // Comment out to enable wild sublegendary pokemon
 #define RANDOMIZER_BLOCK_SUBLEGENDS_IN_WILD
-// Comment out to enable wild mega pokemon
-// TODO not yet functional
-#define RANDOMIZER_BLOCK_MEGAS_IN_WILD
 
 // Comment out to enable legendary pokemon in trainer teams
 // #define RANDOMIZER_BLOCK_LEGENDARIES_IN_TRAINERS
@@ -30,7 +27,6 @@
 // Comment out to enable sublegendary pokemon in trainer teams
 // #define RANDOMIZER_BLOCK_SUBLEGENDS_IN_TRAINERS
 // Comment out to enable mega pokemon in trainer teams
-// TODO not yet functional
 #define RANDOMIZER_BLOCK_MEGAS_IN_TRAINERS
 
 // Level tiers for randomization. Tied to BST tolerance below. Tier 4 is for levels above tier 3
@@ -60,7 +56,7 @@
 #define IMPLEMENT_DYNAMIC_WILD_SPECIES_FORMS
 #endif
 
-u16 LONG_CALL Randomizer_GetRandomTrainerSpecies(u16 originalSpecies, u16 level, u32 trainerID, u8 *formOut);
+u16 LONG_CALL Randomizer_GetRandomTrainerSpecies(u16 originalSpecies, u16 level, u32 trainerID, u8 *formOut, u16 *itemOut);
 u16 LONG_CALL Randomizer_GetRandomWildSpecies(struct PartyPokemon *pp, u8 *formOut);
 
 #endif // RANDOMIZER_H

@@ -157,7 +157,8 @@ void MakeTrainerPokemonParty(struct BATTLE_PARAM *bp, int num, int heapID)
         species &= 0x07FF;
 
 #ifdef RANDOMIZER_ENABLED
-        species = Randomizer_GetRandomTrainerSpecies(species, level, bp->trainer_id[num], &form_no);
+        u16 randomizerItem = ITEM_NONE;
+        species = Randomizer_GetRandomTrainerSpecies(species, level, bp->trainer_id[num], &form_no, &randomizerItem);
 #endif
 
         // item field - conditional
@@ -166,6 +167,12 @@ void MakeTrainerPokemonParty(struct BATTLE_PARAM *bp, int num, int heapID)
             item = buf[offset] | (buf[offset+1] << 8);
             offset += 2;
         }
+
+#ifdef RANDOMIZER_ENABLED
+        if (randomizerItem != ITEM_NONE) {
+            item = randomizerItem;
+        }
+#endif
 
         // moves field - conditional
         if (bp->trainer_data[num].data_type & TRAINER_DATA_TYPE_MOVES)
@@ -343,7 +350,11 @@ void MakeTrainerPokemonParty(struct BATTLE_PARAM *bp, int num, int heapID)
             SetMonData(mons[i], MON_DATA_ABILITY, (u16 *)&hiddenability);
         }
 
+#ifdef RANDOMIZER_ENABLED
+        if (bp->trainer_data[num].data_type & TRAINER_DATA_TYPE_ITEMS || randomizerItem != ITEM_NONE)
+#else
         if (bp->trainer_data[num].data_type & TRAINER_DATA_TYPE_ITEMS)
+#endif
         {
             SetMonData(mons[i], MON_DATA_HELD_ITEM, &item);
         }

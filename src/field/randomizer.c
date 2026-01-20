@@ -1,9 +1,85 @@
 #include "../../include/randomizer.h"
 #include "../../include/pokemon.h"
 #include "../../include/battle.h"
+#include "../../include/config.h"
 #include "../../include/types.h"
 #include "../../include/constants/file.h"
+#include "../../include/constants/item.h"
 #include "../../include/constants/species.h"
+
+#ifdef MEGA_EVOLUTIONS
+struct RandomizerMegaEntry {
+    u16 species;
+    u16 item;
+    u8 form;
+};
+
+static const struct RandomizerMegaEntry sRandomizerMegaTable[] =
+{
+    { SPECIES_VENUSAUR, ITEM_VENUSAURITE, 1 },
+    { SPECIES_CHARIZARD, ITEM_CHARIZARDITE_X, 1 },
+    { SPECIES_CHARIZARD, ITEM_CHARIZARDITE_Y, 2 },
+    { SPECIES_BLASTOISE, ITEM_BLASTOISINITE, 1 },
+    { SPECIES_BEEDRILL, ITEM_BEEDRILLITE, 1 },
+    { SPECIES_PIDGEOT, ITEM_PIDGEOTITE, 1 },
+    { SPECIES_ALAKAZAM, ITEM_ALAKAZITE, 1 },
+    { SPECIES_SLOWBRO, ITEM_SLOWBRONITE, 1 },
+    { SPECIES_GENGAR, ITEM_GENGARITE, 1 },
+    { SPECIES_KANGASKHAN, ITEM_KANGASKHANITE, 1 },
+    { SPECIES_PINSIR, ITEM_PINSIRITE, 1 },
+    { SPECIES_GYARADOS, ITEM_GYARADOSITE, 1 },
+    { SPECIES_AERODACTYL, ITEM_AERODACTYLITE, 1 },
+    { SPECIES_MEWTWO, ITEM_MEWTWONITE_X, 1 },
+    { SPECIES_MEWTWO, ITEM_MEWTWONITE_Y, 2 },
+    { SPECIES_AMPHAROS, ITEM_AMPHAROSITE, 1 },
+    { SPECIES_STEELIX, ITEM_STEELIXITE, 1 },
+    { SPECIES_SCIZOR, ITEM_SCIZORITE, 1 },
+    { SPECIES_HERACROSS, ITEM_HERACRONITE, 1 },
+    { SPECIES_HOUNDOOM, ITEM_HOUNDOOMINITE, 1 },
+    { SPECIES_TYRANITAR, ITEM_TYRANITARITE, 1 },
+    { SPECIES_SCEPTILE, ITEM_SCEPTILITE, 1 },
+    { SPECIES_BLAZIKEN, ITEM_BLAZIKENITE, 1 },
+    { SPECIES_SWAMPERT, ITEM_SWAMPERTITE, 1 },
+    { SPECIES_GARDEVOIR, ITEM_GARDEVOIRITE, 1 },
+    { SPECIES_SABLEYE, ITEM_SABLENITE, 1 },
+    { SPECIES_MAWILE, ITEM_MAWILITE, 1 },
+    { SPECIES_AGGRON, ITEM_AGGRONITE, 1 },
+    { SPECIES_MEDICHAM, ITEM_MEDICHAMITE, 1 },
+    { SPECIES_MANECTRIC, ITEM_MANECTITE, 1 },
+    { SPECIES_SHARPEDO, ITEM_SHARPEDONITE, 1 },
+    { SPECIES_CAMERUPT, ITEM_CAMERUPTITE, 1 },
+    { SPECIES_ALTARIA, ITEM_ALTARIANITE, 1 },
+    { SPECIES_BANETTE, ITEM_BANETTITE, 1 },
+    { SPECIES_ABSOL, ITEM_ABSOLITE, 1 },
+    { SPECIES_GLALIE, ITEM_GLALITITE, 1 },
+    { SPECIES_SALAMENCE, ITEM_SALAMENCITE, 1 },
+    { SPECIES_METAGROSS, ITEM_METAGROSSITE, 1 },
+    { SPECIES_LATIAS, ITEM_LATIASITE, 1 },
+    { SPECIES_LATIOS, ITEM_LATIOSITE, 1 },
+    { SPECIES_LOPUNNY, ITEM_LOPUNNITE, 1 },
+    { SPECIES_GARCHOMP, ITEM_GARCHOMPITE, 1 },
+    { SPECIES_LUCARIO, ITEM_LUCARIONITE, 1 },
+    { SPECIES_ABOMASNOW, ITEM_ABOMASITE, 1 },
+    { SPECIES_GALLADE, ITEM_GALLADITE, 1 },
+    { SPECIES_AUDINO, ITEM_AUDINITE, 1 },
+    { SPECIES_DIANCIE, ITEM_DIANCITE, 1 },
+};
+#endif
+
+static u16 GetMegaStoneForSpeciesAndForm(u16 species, u8 form)
+{
+#ifdef MEGA_EVOLUTIONS
+    u32 i;
+    for (i = 0; i < NELEMS(sRandomizerMegaTable); i++)
+    {
+        if (sRandomizerMegaTable[i].species == species && sRandomizerMegaTable[i].form == form)
+        {
+            return sRandomizerMegaTable[i].item;
+        }
+    }
+#endif
+    return ITEM_NONE;
+}
 
 static void SplitSpeciesToBaseAndForm(u16 species, u16 *baseSpeciesOut, u16 *formOut)
 {
@@ -59,11 +135,9 @@ static BOOL ShouldBanRestrictedSpecies(u16 species, BOOL isWild)
             return TRUE;
         }
 #endif
-#ifdef RANDOMIZER_BLOCK_MEGAS_IN_WILD
         if (isMega) {
             return TRUE;
         }
-#endif
     } else {
         // Trainer
 #ifdef RANDOMIZER_BLOCK_LEGENDARIES_IN_TRAINERS
@@ -178,9 +252,10 @@ static u16 Randomizer_SelectFromPool(u16 *pool, u16 poolSize, u32 seed)
     return selectedSpecies;
 }
 
-u16 LONG_CALL Randomizer_GetRandomTrainerSpecies(u16 originalSpecies, u16 level, u32 trainerID, u8 *formOut)
+u16 LONG_CALL Randomizer_GetRandomTrainerSpecies(u16 originalSpecies, u16 level, u32 trainerID, u8 *formOut, u16 *itemOut)
 {
 #if !defined(RANDOMIZER_ENABLED) || !defined(RANDOMIZE_TRAINERS)
+    *itemOut = ITEM_NONE;
     return originalSpecies;
 #else
     u16 pool[MAX_SPECIES_INCLUDING_FORMS];
@@ -190,7 +265,15 @@ u16 LONG_CALL Randomizer_GetRandomTrainerSpecies(u16 originalSpecies, u16 level,
     u16 selectedSpecies = Randomizer_SelectFromPool(pool, size, seed);
     u16 baseSpecies, form;
     SplitSpeciesToBaseAndForm(selectedSpecies, &baseSpecies, &form);
-    *formOut = form;
+
+    u16 megaStone = GetMegaStoneForSpeciesAndForm(baseSpecies, (u8)form);
+    if (megaStone != ITEM_NONE) {
+        *itemOut = megaStone;
+        *formOut = 0;
+    } else {
+        *itemOut = ITEM_NONE;
+        *formOut = (u8)form;
+    }
 
     return baseSpecies;
 #endif
