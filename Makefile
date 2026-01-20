@@ -222,6 +222,7 @@ $(ENCODEPWIMG):
 TOOLS += $(ENCODEPWIMG)
 
 ####################### Build #######################
+
 rom_gen.ld:$(LINK) $(OUTPUT) rom.ld $(VENV_ACTIVATE)
 	cp rom.ld rom_gen.ld
 	$(PYTHON) scripts/generate_ld.py
@@ -473,6 +474,9 @@ move_narc: $(NARC_FILES)
 
 	@echo "tutor moves:"
 	cp $(TUTORLEARNSET_BIN) $(TUTORLEARNSET_TARGET)
+
+	@echo "species bst table:"
+	cp $(SPECIESBST_BIN) $(SPECIESBST_TARGET)
 
 
 DUMP_SCRIPT_LOCATION := tools/source/dumptools

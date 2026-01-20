@@ -4,6 +4,7 @@
 #include "../../include/config.h"
 #include "../../include/debug.h"
 #include "../../include/pokemon.h"
+#include "../../include/randomizer.h"
 #include "../../include/rtc.h"
 #include "../../include/save.h"
 #include "../../include/script.h"
@@ -154,6 +155,10 @@ void MakeTrainerPokemonParty(struct BATTLE_PARAM *bp, int num, int heapID)
         offset += 2;
         form_no = (species & 0xF800) >> 11;
         species &= 0x07FF;
+
+#ifdef RANDOMIZER_ENABLED
+        species = Randomizer_GetRandomTrainerSpecies(species, level, bp->trainer_id[num]);
+#endif
 
         // item field - conditional
         if (bp->trainer_data[num].data_type & TRAINER_DATA_TYPE_ITEMS)
@@ -488,6 +493,17 @@ BOOL LONG_CALL AddWildPartyPokemon(int inTarget, EncounterInfo *encounterInfo, s
     }
 
     species = GetMonData(encounterPartyPokemon, MON_DATA_SPECIES, NULL);
+
+#ifdef RANDOMIZER_ENABLED
+    {
+        u16 level = GetMonData(encounterPartyPokemon, MON_DATA_LEVEL, NULL);
+        u32 encSeed = (u32)encounterInfo->level + (u32)species;
+        species = Randomizer_GetRandomWildSpecies(species, level, encSeed);
+        PokeParaSet(encounterPartyPokemon, species, level, 31, 1, GetMonData(encounterPartyPokemon, MON_DATA_PERSONALITY, NULL), 0, 0);
+        UpdatePassiveForms(encounterPartyPokemon);
+        RecalcPartyPokemonStats(encounterPartyPokemon);
+    }
+#endif
 
     if (space_for_setmondata != 0)
     {

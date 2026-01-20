@@ -3,6 +3,7 @@
 #include "../include/battle.h"
 #include "../include/config.h"
 #include "../include/debug.h"
+#include "../include/randomizer.h"
 #include "../include/overlay.h"
 #include "../include/pokemon.h"
 #include "../include/rtc.h"
@@ -1297,6 +1298,10 @@ void LONG_CALL UpdatePassiveForms(struct PartyPokemon *pp)
         case SPECIES_INDEEDEE:
         case SPECIES_OINKOLOGNE:
         case SPECIES_BASCULEGION:
+#ifdef RANDOMIZER_ENABLED
+    case SPECIES_SHELLOS:
+    case SPECIES_GASTRODON:
+#endif
 #endif
             form = gf_rand() & 1; // 1/2 male
             break;
@@ -1322,6 +1327,9 @@ void LONG_CALL UpdatePassiveForms(struct PartyPokemon *pp)
             form = gf_rand() % 5; // allow any color to show up
             break;
         case SPECIES_PUMPKABOO:
+#ifdef RANDOMIZER_ENABLED
+    case SPECIES_SQUAWKABILLY:
+#endif
         case SPECIES_GOURGEIST:
             form = gf_rand() % 4; // allow any size to show up
             break;
@@ -1334,9 +1342,17 @@ void LONG_CALL UpdatePassiveForms(struct PartyPokemon *pp)
         case SPECIES_POLTCHAGEIST:
             form = (gf_rand() % 20 == 0); // 5% authentic / masterpiece
             break;
+#ifdef RANDOMIZER_ENABLED
+        case SPECIES_BASCULIN:
+#endif
         case SPECIES_TATSUGIRI:
             form = gf_rand() % 3; // equal chance for all forms
             break;
+#endif
+#ifdef RANDOMIZER_ENABLED
+    case SPECIES_VIVILLON:
+        form = gf_rand() % 20; // base + 19 patterns (equal odds)
+        break;
 #endif
         default:
             shouldUpdate = FALSE;
