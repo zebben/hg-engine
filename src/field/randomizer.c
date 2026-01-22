@@ -127,6 +127,57 @@ static u16 GetBSTToleranceForLevel(u16 level)
     }
 }
 
+#ifdef RANDOMIZER_TYPE_MATCHING
+static BOOL TypesHaveAffinity(u8 type1, u8 type2)
+{
+    // Fairy ↔ Normal, Fairy ↔ Psychic
+    if ((type1 == TYPE_FAIRY && (type2 == TYPE_NORMAL || type2 == TYPE_PSYCHIC)) ||
+        (type2 == TYPE_FAIRY && (type1 == TYPE_NORMAL || type1 == TYPE_PSYCHIC))) {
+        return TRUE;
+    }
+    // Fire ↔ Ground, Fire ↔ Rock
+    if ((type1 == TYPE_FIRE && (type2 == TYPE_GROUND || type2 == TYPE_ROCK)) ||
+        (type2 == TYPE_FIRE && (type1 == TYPE_GROUND || type1 == TYPE_ROCK))) {
+        return TRUE;
+    }
+    // Electric ↔ Flying
+    if ((type1 == TYPE_ELECTRIC && type2 == TYPE_FLYING) ||
+        (type2 == TYPE_ELECTRIC && type1 == TYPE_FLYING)) {
+        return TRUE;
+    }
+    // Ice ↔ Water
+    if ((type1 == TYPE_ICE && type2 == TYPE_WATER) ||
+        (type2 == TYPE_ICE && type1 == TYPE_WATER)) {
+        return TRUE;
+    }
+    return FALSE;
+}
+
+static BOOL IsTypeCompatible(u16 originalSpecies, u16 candidateSpecies, u16 *typesTable)
+{
+    // Types table is packed as (type2 << 8) | type1
+    u16 origPacked = typesTable[originalSpecies];
+    u16 candPacked = typesTable[candidateSpecies];
+
+    u8 origType1 = origPacked & 0xFF;
+    u8 origType2 = (origPacked >> 8) & 0xFF;
+    u8 candType1 = candPacked & 0xFF;
+    u8 candType2 = (candPacked >> 8) & 0xFF;
+
+    if (origType1 == candType1 || origType1 == candType2 ||
+        origType2 == candType1 || origType2 == candType2) {
+        return TRUE;
+    }
+
+    if (TypesHaveAffinity(origType1, candType1) || TypesHaveAffinity(origType1, candType2) ||
+        TypesHaveAffinity(origType2, candType1) || TypesHaveAffinity(origType2, candType2)) {
+        return TRUE;
+    }
+
+    return FALSE;
+}
+#endif
+
 static BOOL ShouldBanRestrictedSpecies(u16 species, BOOL isWild)
 {
     if (species == SPECIES_NONE || species == SPECIES_EGG || species == SPECIES_BAD_EGG)
@@ -211,6 +262,11 @@ static u16 Randomizer_BuildSpeciesPool(u16 originalSpecies, u16 level, BOOL isWi
     u16 bstTable[MAX_MON_NUM + 1];
     ArchiveDataLoadOfs(bstTable, ARC_CODE_ADDONS, CODE_ADDON_SPECIES_BST, 0, sizeof(u16) * (MAX_MON_NUM + 1));
 
+#ifdef RANDOMIZER_TYPE_MATCHING
+    u16 typesTable[MAX_MON_NUM + 1];
+    ArchiveDataLoadOfs(typesTable, ARC_CODE_ADDONS, CODE_ADDON_SPECIES_TYPES, 0, sizeof(u16) * (MAX_MON_NUM + 1));
+#endif
+
     originalBST = bstTable[baseOriginal];
 
     useBSTMatching = TRUE;
@@ -230,7 +286,32 @@ static u16 Randomizer_BuildSpeciesPool(u16 originalSpecies, u16 level, BOOL isWi
             }
         }
 
+#ifdef RANDOMIZER_TYPE_MATCHING
+        if (!IsTypeCompatible(baseOriginal, species, typesTable)) {
+            continue;
+        }
+#endif
+
         poolOut[poolCount++] = species;
+    }
+
+    if (poolCount < RANDOMIZER_MIN_POOL_SIZE)
+    {
+        poolCount = 0;
+        for (species = 1; species <= MAX_MON_NUM && poolCount < maxPoolSize; species++)
+        {
+            if (ShouldBanRestrictedSpecies(species, isWild)) {
+                continue;
+            }
+
+#ifdef RANDOMIZER_TYPE_MATCHING
+            if (!IsTypeCompatible(baseOriginal, species, typesTable)) {
+                continue;
+            }
+#endif
+
+            poolOut[poolCount++] = species;
+        }
     }
 
     if (poolCount < RANDOMIZER_MIN_POOL_SIZE)

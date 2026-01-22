@@ -478,6 +478,9 @@ move_narc: $(NARC_FILES)
 	@echo "species bst table:"
 	cp $(SPECIESBST_BIN) $(SPECIESBST_TARGET)
 
+	@echo "species type table:"
+	cp $(SPECIESTYPES_BIN) $(SPECIESTYPES_TARGET)
+
 
 DUMP_SCRIPT_LOCATION := tools/source/dumptools
 # the goal here is to extract the required narcs to the proper folders for the dump scripts to work.
