@@ -81,15 +81,37 @@ static u16 GetMegaStoneForSpeciesAndForm(u16 species, u8 form)
     return ITEM_NONE;
 }
 
-static void SplitSpeciesToBaseAndForm(u16 species, u16 *baseSpeciesOut, u16 *formOut)
+static u8 Randomizer_GetRandomFormForSpecies(u16 baseSpecies, u32 seed)
 {
-    if (species > MAX_MON_NUM) {
-        *baseSpeciesOut = GetBaseSpeciesFromAdjustedForm(species);
-        *formOut = GetFormFromAdjustedForm(species);
-    } else {
-        *baseSpeciesOut = species;
-        *formOut = 0;
+    u16 formTable[32];
+    u8 validForms[32];
+    u8 validFormCount = 0;
+    u8 i;
+
+    validForms[validFormCount++] = 0;
+
+    ArchiveDataLoadOfs(formTable, ARC_CODE_ADDONS, CODE_ADDON_FORM_DATA, sizeof(u16) * (baseSpecies * 32), sizeof(u16) * 32);
+
+    for (i = 0; i < 32; i++) {
+        if (formTable[i] == 0) {
+            break;
+        }
+        if (formTable[i] & NEEDS_REVERSION) {
+            continue;
+        }
+        validForms[validFormCount++] = i + 1;
     }
+
+    if (validFormCount <= 1) {
+        return 0;
+    }
+
+    u32 savedSeed = gf_get_seed();
+    gf_srand(seed);
+    u8 selectedIndex = gf_rand() % validFormCount;
+    gf_srand(savedSeed);
+
+    return validForms[selectedIndex];
 }
 
 static u16 GetBSTToleranceForLevel(u16 level)
@@ -173,22 +195,29 @@ static u16 Randomizer_BuildSpeciesPool(u16 originalSpecies, u16 level, BOOL isWi
     u16 species;
     u16 originalBST, speciesBST;
     u16 bstMin, bstMax;
+    u16 baseOriginal;
     BOOL useBSTMatching;
 
     if (originalSpecies == 0 || originalSpecies > MAX_SPECIES_INCLUDING_FORMS) {
         return 0;
     }
 
-    u16 bstTable[MAX_SPECIES_INCLUDING_FORMS];
-    ArchiveDataLoad(bstTable, ARC_CODE_ADDONS, CODE_ADDON_SPECIES_BST);
+    if (originalSpecies > MAX_MON_NUM) {
+        baseOriginal = GetBaseSpeciesFromAdjustedForm(originalSpecies);
+    } else {
+        baseOriginal = originalSpecies;
+    }
 
-    originalBST = bstTable[originalSpecies];
+    u16 bstTable[MAX_MON_NUM + 1];
+    ArchiveDataLoadOfs(bstTable, ARC_CODE_ADDONS, CODE_ADDON_SPECIES_BST, 0, sizeof(u16) * (MAX_MON_NUM + 1));
+
+    originalBST = bstTable[baseOriginal];
 
     useBSTMatching = TRUE;
     bstMin = (originalBST * (100 - RANDOMIZER_TIER1_BST_TOLERANCE)) / 100;
     bstMax = (originalBST * (100 + GetBSTToleranceForLevel(level))) / 100;
 
-    for (species = 1; species <= MAX_SPECIES_INCLUDING_FORMS && poolCount < maxPoolSize; species++)
+    for (species = 1; species <= MAX_MON_NUM && poolCount < maxPoolSize; species++)
     {
         if (ShouldBanRestrictedSpecies(species, isWild)) {
             continue;
@@ -207,7 +236,7 @@ static u16 Randomizer_BuildSpeciesPool(u16 originalSpecies, u16 level, BOOL isWi
     if (poolCount < RANDOMIZER_MIN_POOL_SIZE)
     {
         poolCount = 0;
-        for (species = 1; species <= MAX_SPECIES_INCLUDING_FORMS && poolCount < maxPoolSize; species++)
+        for (species = 1; species <= MAX_MON_NUM && poolCount < maxPoolSize; species++)
         {
             if (ShouldBanRestrictedSpecies(species, isWild)) {
                 continue;
@@ -219,7 +248,7 @@ static u16 Randomizer_BuildSpeciesPool(u16 originalSpecies, u16 level, BOOL isWi
 
     if (poolCount == 0)
     {
-        poolOut[0] = originalSpecies;
+        poolOut[0] = baseOriginal;
         poolCount = 1;
     }
 
@@ -258,21 +287,20 @@ u16 LONG_CALL Randomizer_GetRandomTrainerSpecies(u16 originalSpecies, u16 level,
     *itemOut = ITEM_NONE;
     return originalSpecies;
 #else
-    u16 pool[MAX_SPECIES_INCLUDING_FORMS];
-    u16 size = Randomizer_BuildSpeciesPool(originalSpecies, level, FALSE, pool, MAX_SPECIES_INCLUDING_FORMS);
+    u16 pool[MAX_MON_NUM];
+    u16 size = Randomizer_BuildSpeciesPool(originalSpecies, level, FALSE, pool, MAX_MON_NUM);
     u32 seed = (u32)originalSpecies + (u32)level + trainerID;
 
-    u16 selectedSpecies = Randomizer_SelectFromPool(pool, size, seed);
-    u16 baseSpecies, form;
-    SplitSpeciesToBaseAndForm(selectedSpecies, &baseSpecies, &form);
+    u16 baseSpecies = Randomizer_SelectFromPool(pool, size, seed);
+    u8 form = Randomizer_GetRandomFormForSpecies(baseSpecies, seed ^ 0xF0F0F0F0);
 
-    u16 megaStone = GetMegaStoneForSpeciesAndForm(baseSpecies, (u8)form);
+    u16 megaStone = GetMegaStoneForSpeciesAndForm(baseSpecies, form);
     if (megaStone != ITEM_NONE) {
         *itemOut = megaStone;
         *formOut = 0;
     } else {
         *itemOut = ITEM_NONE;
-        *formOut = (u8)form;
+        *formOut = form;
     }
 
     return baseSpecies;
@@ -286,14 +314,12 @@ u16 LONG_CALL Randomizer_GetRandomWildSpecies(struct PartyPokemon *pp, u8 *formO
     return original;
 #else
     u16 level = GetMonData(pp, MON_DATA_LEVEL, NULL);
-    u16 pool[MAX_SPECIES_INCLUDING_FORMS];
-    u16 size = Randomizer_BuildSpeciesPool(original, level, TRUE, pool, MAX_SPECIES_INCLUDING_FORMS);
+    u16 pool[MAX_MON_NUM];
+    u16 size = Randomizer_BuildSpeciesPool(original, level, TRUE, pool, MAX_MON_NUM);
     u32 seed = (u32)original + (u32)level + GetMonData(pp, MON_DATA_PERSONALITY, NULL);
 
-    u16 selectedSpecies = Randomizer_SelectFromPool(pool, size, seed);
-    u16 baseSpecies, form;
-    SplitSpeciesToBaseAndForm(selectedSpecies, &baseSpecies, &form);
-    *formOut = form;
+    u16 baseSpecies = Randomizer_SelectFromPool(pool, size, seed);
+    *formOut = Randomizer_GetRandomFormForSpecies(baseSpecies, seed ^ 0xF0F0F0F0);
 
     return baseSpecies;
 #endif

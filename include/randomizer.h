@@ -38,7 +38,7 @@
 #define RANDOMIZER_TIER3_MAX_LEVEL 40
 
 // BST tolerance percentages for randomization. Higher values offer more species variance.
-// The tier 1 tolerance value is as the BST floor value meaning more higher BST species later on
+// Tier 1 sets a strict lower bound BST floor to avoid swapping early encounters into too-weak alternatives
 // BST difference allowed for tier 1
 #define RANDOMIZER_TIER1_BST_TOLERANCE 15
 // BST difference allowed for tier 2
@@ -50,6 +50,10 @@
 
 // Minimum species in pool before relaxing restrictions. Lowering this makes the pool more strict
 #define RANDOMIZER_MIN_POOL_SIZE 5
+
+// Enable type matching for randomization. Pokemon will be replaced with same or similar types.
+// Comment out to allow any type replacement.
+#define RANDOMIZER_TYPE_MATCHING
 
 // Enable dynamic wild species forms if randomizer is enabled
 #ifdef RANDOMIZER_ENABLED

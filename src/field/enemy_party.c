@@ -514,7 +514,6 @@ BOOL LONG_CALL AddWildPartyPokemon(int inTarget, EncounterInfo *encounterInfo, s
         if (form_no != 0) {
             change_form = 1;
         }
-        UpdatePassiveForms(encounterPartyPokemon);
         RecalcPartyPokemonStats(encounterPartyPokemon);
     }
 #endif
