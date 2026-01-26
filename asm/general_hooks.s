@@ -138,3 +138,45 @@ ldr r2, =0x021FF662 | 1
 bx  r2
 
 .pool
+
+.global Randomizer_RandomizeStarters_hook
+Randomizer_RandomizeStarters_hook:
+push {r0-r7}
+mov r0, r2
+sub r0, #8
+bl Randomizer_RandomizeStarters
+pop {r0-r7}
+
+ldr r0, [r0, #0x20]
+ldr r0, [r0, #0x0]
+ldr r3, =MapHeader_GetMapSec
+bl bx_r3
+
+ldr r2, =0x0209609C | 1
+bx r2
+
+.pool
+
+.global SyncStarterCries_hook
+SyncStarterCries_hook:
+cmp r1, #0
+bne SyncStarterCries_hook_skip_update
+push {r0-r3, lr}
+mov r0, r4
+bl SyncStarterCries
+pop {r0-r3}
+pop {r2}
+mov lr, r2
+
+SyncStarterCries_hook_skip_update:
+cmp r1, #0xc
+bls SyncStarterCries_hook_case_valid
+ldr r2, =0x021E5E86 | 1
+bx r2
+
+SyncStarterCries_hook_case_valid:
+add r1, r1
+ldr r2, =0x021E5A50 | 1
+bx r2
+
+.pool

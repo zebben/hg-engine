@@ -758,6 +758,7 @@ MaskOfFlagNo = 0x020726C0 | 1;
 PartyMenu_PrintMessageOnWindow32 = 0x0207DAC4 | 1;
 
 SetStringAsPlaceholder = 0x0200BDF8 | 1;
+sStarterSpecies = 0x021E7398;
 
 PrintUIntOnWindowWithGlyph = 0x0200CE7C | 1;
 ov15_021FE8C4 = 0x021FE8C4 | 1;

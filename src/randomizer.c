@@ -1,11 +1,14 @@
-#include "../../include/randomizer.h"
-#include "../../include/pokemon.h"
-#include "../../include/battle.h"
-#include "../../include/config.h"
-#include "../../include/types.h"
-#include "../../include/constants/file.h"
-#include "../../include/constants/item.h"
-#include "../../include/constants/species.h"
+#include "../include/randomizer.h"
+
+#include "../include/battle.h"
+#include "../include/config.h"
+#include "../include/constants/file.h"
+#include "../include/constants/item.h"
+#include "../include/constants/species.h"
+#include "../include/pokemon.h"
+#include "../include/types.h"
+
+extern u32 sStarterSpecies;
 
 #ifdef MEGA_EVOLUTIONS
 struct RandomizerMegaEntry {
@@ -404,4 +407,27 @@ u16 LONG_CALL Randomizer_GetRandomWildSpecies(struct PartyPokemon *pp, u8 *formO
 
     return baseSpecies;
 #endif
+}
+
+void LONG_CALL Randomizer_RandomizeStarters(int *species)
+{
+    for (int i = 0; i < 3; i++) {
+        u16 pool[MAX_MON_NUM];
+        u16 size = Randomizer_BuildSpeciesPool(species[i], 5, FALSE, pool, 200);
+        species[i] = Randomizer_SelectFromPool(pool, size, gf_rand());
+        //forms[i] = Randomizer_GetRandomFormForSpecies(species[i], seed ^ 0xF0F0F0F0);
+    }
+}
+
+void LONG_CALL SyncStarterCries(u8 *work)
+{
+    int *sSpeciesCries = (int *)&sStarterSpecies;
+    struct PartyPokemon **choices = (struct PartyPokemon **)(work + 0x578);
+
+    for (int i = 0; i < 3; i++) {
+        struct PartyPokemon *pp = choices[i];
+        if ((u32)pp > 0x02000000 && (u32)pp < 0x02400000) {
+            sSpeciesCries[i] = GetMonData(pp, MON_DATA_SPECIES, NULL);
+        }
+    }
 }
