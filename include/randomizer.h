@@ -1,8 +1,8 @@
 #ifndef RANDOMIZER_H
 #define RANDOMIZER_H
 
-#include "types.h"
 #include "pokemon.h"
+#include "types.h"
 
 // Comment out to disable randomization
 #define RANDOMIZER_ENABLED
@@ -22,6 +22,9 @@
 
 // Comment out to disable loose encounter type matching
 #define RANDOMIZER_TYPE_MATCHING
+
+// Comment out to allow species with unfinished sprite sets to appear in randomization pools
+#define RANDOMIZER_BLOCK_INCOMPLETE_SPRITES
 
 // Comment out to enable legendary pokemon in trainer teams
 // #define RANDOMIZER_BLOCK_LEGENDARIES_IN_TRAINERS
