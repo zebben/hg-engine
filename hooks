@@ -591,6 +591,6 @@ arm9 PartyMenu_StartContextMenuButtonPressAnim_FromCursorObj 0207CB9C 3
 
 arm9 Randomizer_RandomizeStarters_hook 02096094 3
 
-# Randomizer - update sSpecies cry table in overlay 61 (ChooseStarter_Main)
-# Hooks at 0x021E5A48 (after r4=work, before switch) to update sSpecies with randomized species
+# Randomizer
 0061 SyncStarterCries_hook 021E5A48 2
+0061 StarterChoice_PrintMsgOnWinEx 021E6D78

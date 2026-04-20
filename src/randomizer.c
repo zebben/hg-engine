@@ -5,10 +5,21 @@
 #include "../include/constants/file.h"
 #include "../include/constants/item.h"
 #include "../include/constants/species.h"
+#include "../include/message.h"
 #include "../include/pokemon.h"
+#include "../include/sprite.h"
 #include "../include/types.h"
 
-extern u32 sStarterSpecies;
+extern u32 sStarterSpecies[3];
+
+#define STARTER_CHOICE_MSG_BANK          190
+#define STARTER_CHOICE_DYNAMIC_MSG_FIRST 1
+#define STARTER_CHOICE_DYNAMIC_MSG_LAST  6
+static u16 sStarterChoiceSpecies[3] = {
+    SPECIES_CHIKORITA,
+    SPECIES_CYNDAQUIL,
+    SPECIES_TOTODILE,
+};
 
 #ifdef MEGA_EVOLUTIONS
 struct RandomizerMegaEntry {
@@ -17,8 +28,7 @@ struct RandomizerMegaEntry {
     u8 form;
 };
 
-static const struct RandomizerMegaEntry sRandomizerMegaTable[] =
-{
+static const struct RandomizerMegaEntry sRandomizerMegaTable[] = {
     { SPECIES_VENUSAUR, ITEM_VENUSAURITE, 1 },
     { SPECIES_CHARIZARD, ITEM_CHARIZARDITE_X, 1 },
     { SPECIES_CHARIZARD, ITEM_CHARIZARDITE_Y, 2 },
@@ -73,10 +83,8 @@ static u16 GetMegaStoneForSpeciesAndForm(u16 species, u8 form)
 {
 #ifdef MEGA_EVOLUTIONS
     u32 i;
-    for (i = 0; i < NELEMS(sRandomizerMegaTable); i++)
-    {
-        if (sRandomizerMegaTable[i].species == species && sRandomizerMegaTable[i].form == form)
-        {
+    for (i = 0; i < NELEMS(sRandomizerMegaTable); i++) {
+        if (sRandomizerMegaTable[i].species == species && sRandomizerMegaTable[i].form == form) {
             return sRandomizerMegaTable[i].item;
         }
     }
@@ -134,23 +142,19 @@ static u16 GetBSTToleranceForLevel(u16 level)
 static BOOL TypesHaveAffinity(u8 type1, u8 type2)
 {
     // Fairy ↔ Normal, Fairy ↔ Psychic
-    if ((type1 == TYPE_FAIRY && (type2 == TYPE_NORMAL || type2 == TYPE_PSYCHIC)) ||
-        (type2 == TYPE_FAIRY && (type1 == TYPE_NORMAL || type1 == TYPE_PSYCHIC))) {
+    if ((type1 == TYPE_FAIRY && (type2 == TYPE_NORMAL || type2 == TYPE_PSYCHIC)) || (type2 == TYPE_FAIRY && (type1 == TYPE_NORMAL || type1 == TYPE_PSYCHIC))) {
         return TRUE;
     }
     // Fire ↔ Ground, Fire ↔ Rock
-    if ((type1 == TYPE_FIRE && (type2 == TYPE_GROUND || type2 == TYPE_ROCK)) ||
-        (type2 == TYPE_FIRE && (type1 == TYPE_GROUND || type1 == TYPE_ROCK))) {
+    if ((type1 == TYPE_FIRE && (type2 == TYPE_GROUND || type2 == TYPE_ROCK)) || (type2 == TYPE_FIRE && (type1 == TYPE_GROUND || type1 == TYPE_ROCK))) {
         return TRUE;
     }
     // Electric ↔ Flying
-    if ((type1 == TYPE_ELECTRIC && type2 == TYPE_FLYING) ||
-        (type2 == TYPE_ELECTRIC && type1 == TYPE_FLYING)) {
+    if ((type1 == TYPE_ELECTRIC && type2 == TYPE_FLYING) || (type2 == TYPE_ELECTRIC && type1 == TYPE_FLYING)) {
         return TRUE;
     }
     // Ice ↔ Water
-    if ((type1 == TYPE_ICE && type2 == TYPE_WATER) ||
-        (type2 == TYPE_ICE && type1 == TYPE_WATER)) {
+    if ((type1 == TYPE_ICE && type2 == TYPE_WATER) || (type2 == TYPE_ICE && type1 == TYPE_WATER)) {
         return TRUE;
     }
     return FALSE;
@@ -167,13 +171,11 @@ static BOOL IsTypeCompatible(u16 originalSpecies, u16 candidateSpecies, u16 *typ
     u8 candType1 = candPacked & 0xFF;
     u8 candType2 = (candPacked >> 8) & 0xFF;
 
-    if (origType1 == candType1 || origType1 == candType2 ||
-        origType2 == candType1 || origType2 == candType2) {
+    if (origType1 == candType1 || origType1 == candType2 || origType2 == candType1 || origType2 == candType2) {
         return TRUE;
     }
 
-    if (TypesHaveAffinity(origType1, candType1) || TypesHaveAffinity(origType1, candType2) ||
-        TypesHaveAffinity(origType2, candType1) || TypesHaveAffinity(origType2, candType2)) {
+    if (TypesHaveAffinity(origType1, candType1) || TypesHaveAffinity(origType1, candType2) || TypesHaveAffinity(origType2, candType1) || TypesHaveAffinity(origType2, candType2)) {
         return TRUE;
     }
 
@@ -183,8 +185,7 @@ static BOOL IsTypeCompatible(u16 originalSpecies, u16 candidateSpecies, u16 *typ
 
 static BOOL ShouldBanRestrictedSpecies(u16 species, BOOL isWild)
 {
-    if (species == SPECIES_NONE || species == SPECIES_EGG || species == SPECIES_BAD_EGG)
-    {
+    if (species == SPECIES_NONE || species == SPECIES_EGG || species == SPECIES_BAD_EGG) {
         return TRUE;
     }
 
@@ -276,8 +277,7 @@ static u16 Randomizer_BuildSpeciesPool(u16 originalSpecies, u16 level, BOOL isWi
     bstMin = (originalBST * (100 - RANDOMIZER_TIER1_BST_TOLERANCE)) / 100;
     bstMax = (originalBST * (100 + GetBSTToleranceForLevel(level))) / 100;
 
-    for (species = 1; species <= MAX_MON_NUM && poolCount < maxPoolSize; species++)
-    {
+    for (species = 1; species <= MAX_MON_NUM && poolCount < maxPoolSize; species++) {
         if (ShouldBanRestrictedSpecies(species, isWild)) {
             continue;
         }
@@ -298,11 +298,9 @@ static u16 Randomizer_BuildSpeciesPool(u16 originalSpecies, u16 level, BOOL isWi
         poolOut[poolCount++] = species;
     }
 
-    if (poolCount < RANDOMIZER_MIN_POOL_SIZE)
-    {
+    if (poolCount < RANDOMIZER_MIN_POOL_SIZE) {
         poolCount = 0;
-        for (species = 1; species <= MAX_MON_NUM && poolCount < maxPoolSize; species++)
-        {
+        for (species = 1; species <= MAX_MON_NUM && poolCount < maxPoolSize; species++) {
             if (ShouldBanRestrictedSpecies(species, isWild)) {
                 continue;
             }
@@ -317,11 +315,9 @@ static u16 Randomizer_BuildSpeciesPool(u16 originalSpecies, u16 level, BOOL isWi
         }
     }
 
-    if (poolCount < RANDOMIZER_MIN_POOL_SIZE)
-    {
+    if (poolCount < RANDOMIZER_MIN_POOL_SIZE) {
         poolCount = 0;
-        for (species = 1; species <= MAX_MON_NUM && poolCount < maxPoolSize; species++)
-        {
+        for (species = 1; species <= MAX_MON_NUM && poolCount < maxPoolSize; species++) {
             if (ShouldBanRestrictedSpecies(species, isWild)) {
                 continue;
             }
@@ -330,8 +326,7 @@ static u16 Randomizer_BuildSpeciesPool(u16 originalSpecies, u16 level, BOOL isWi
         }
     }
 
-    if (poolCount == 0)
-    {
+    if (poolCount == 0) {
         poolOut[0] = baseOriginal;
         poolCount = 1;
     }
@@ -415,19 +410,63 @@ void LONG_CALL Randomizer_RandomizeStarters(int *species)
         u16 pool[MAX_MON_NUM];
         u16 size = Randomizer_BuildSpeciesPool(species[i], 5, FALSE, pool, 200);
         species[i] = Randomizer_SelectFromPool(pool, size, gf_rand());
-        //forms[i] = Randomizer_GetRandomFormForSpecies(species[i], seed ^ 0xF0F0F0F0);
+        // forms[i] = Randomizer_GetRandomFormForSpecies(species[i], seed ^ 0xF0F0F0F0);
     }
 }
 
 void LONG_CALL SyncStarterCries(u8 *work)
 {
-    int *sSpeciesCries = (int *)&sStarterSpecies;
     struct PartyPokemon **choices = (struct PartyPokemon **)(work + 0x578);
+    u32 *sSpeciesCries = sStarterSpecies;
 
     for (int i = 0; i < 3; i++) {
-        struct PartyPokemon *pp = choices[i];
-        if ((u32)pp > 0x02000000 && (u32)pp < 0x02400000) {
-            sSpeciesCries[i] = GetMonData(pp, MON_DATA_SPECIES, NULL);
+        u16 species = GetMonData(choices[i], MON_DATA_SPECIES, NULL);
+
+        if (species != SPECIES_NONE) {
+            sSpeciesCries[i] = species;
+            sStarterChoiceSpecies[i] = species;
         }
     }
+}
+
+u8 LONG_CALL StarterChoice_PrintMsgOnWinEx(void *window, u32 heapID, BOOL makeFrame, s32 msgBank, int msgno, u32 color, u32 speed, String **out)
+{
+    MsgData *msgData;
+    MessageFormat *msgFmt = NULL;
+    u8 ret;
+
+    GF_ASSERT(*out == NULL);
+
+    msgData = NewMsgDataFromNarc(MSGDATA_LOAD_DIRECT, ARC_MSG_DATA, msgBank, heapID);
+    GF_ASSERT(msgData != NULL);
+
+    if (msgBank == STARTER_CHOICE_MSG_BANK && msgno >= STARTER_CHOICE_DYNAMIC_MSG_FIRST && msgno <= STARTER_CHOICE_DYNAMIC_MSG_LAST) {
+        u32 slot = (u32)(msgno - STARTER_CHOICE_DYNAMIC_MSG_FIRST) % 3;
+
+        if (sStarterChoiceSpecies[slot] != SPECIES_NONE) {
+            msgFmt = MessageFormat_New(heapID);
+
+            if (msgFmt != NULL) {
+                BufferSpeciesName(msgFmt, 0, sStarterChoiceSpecies[slot]);
+                *out = ReadMsgData_ExpandPlaceholders(msgFmt, msgData, msgno, heapID);
+                MessageFormat_Delete(msgFmt);
+            }
+        }
+    }
+
+    if (*out == NULL) {
+        *out = NewString_ReadMsgData(msgData, msgno);
+    }
+
+    FillWindowPixelBuffer(window, color);
+    ret = AddTextPrinterParameterizedWithColor(window, 1, *out, 0, 0, speed, color, NULL);
+
+    if (makeFrame) {
+        DrawFrameAndWindow2(window, FALSE, 0x200, 0);
+    } else {
+        CopyWindowToVram(window);
+    }
+
+    DestroyMsgData(msgData);
+    return ret;
 }

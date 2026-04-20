@@ -128,6 +128,9 @@ void MakeTrainerPokemonParty(struct BATTLE_PARAM *bp, int num, int heapID)
     struct PartyPokemon *mons[pokecount];
 
     for (i = 0; i < pokecount; i++) {
+        u16 originalSpecies;
+        u8 originalFormNo;
+
         mons[i] = AllocMonZeroed(heapID);
         // ivs field
         pow = buf[offset];
@@ -147,6 +150,8 @@ void MakeTrainerPokemonParty(struct BATTLE_PARAM *bp, int num, int heapID)
         offset += 2;
         form_no = (species & 0xF800) >> 11;
         species &= 0x07FF;
+        originalSpecies = species;
+        originalFormNo = form_no;
 
 #ifdef RANDOMIZER_ENABLED
         u16 randomizerItem = ITEM_NONE;
@@ -334,7 +339,7 @@ void MakeTrainerPokemonParty(struct BATTLE_PARAM *bp, int num, int heapID)
             }
         }
         TrainerCBSet(ballseal, mons[i], heapID);
-        if (bp->trainer_data[num].data_type & TRAINER_DATA_TYPE_ABILITY) {
+        if ((bp->trainer_data[num].data_type & TRAINER_DATA_TYPE_ABILITY) && species == originalSpecies && form_no == originalFormNo) {
             SetMonData(mons[i], MON_DATA_ABILITY, &ability);
         }
         if (bp->trainer_data[num].data_type & TRAINER_DATA_TYPE_BALL) {
@@ -448,8 +453,10 @@ extern u32 space_for_setmondata;
 BOOL LONG_CALL AddWildPartyPokemon(int inTarget, EncounterInfo *encounterInfo, struct PartyPokemon *encounterPartyPokemon, struct BATTLE_PARAM *encounterBattleParam)
 {
     int range = 0;
+    int i;
     u8 change_form = 0;
     u8 form_no;
+    u8 ivs[6];
     u16 species;
 
     if (encounterInfo->isEgg == 0 && encounterInfo->ability == ABILITY_COMPOUND_EYES) {
@@ -461,9 +468,19 @@ BOOL LONG_CALL AddWildPartyPokemon(int inTarget, EncounterInfo *encounterInfo, s
 #ifdef RANDOMIZER_ENABLED
     {
         u16 level = GetMonData(encounterPartyPokemon, MON_DATA_LEVEL, NULL);
+        u32 personality = GetMonData(encounterPartyPokemon, MON_DATA_PERSONALITY, NULL);
+
+        for (i = 0; i < 6; i++) {
+            ivs[i] = GetMonData(encounterPartyPokemon, MON_DATA_HP_IV + i, NULL);
+        }
+
         species = Randomizer_GetRandomWildSpecies(encounterPartyPokemon, &form_no);
-        // TODO not perfect IVs
-        PokeParaSet(encounterPartyPokemon, species, level, 31, 1, GetMonData(encounterPartyPokemon, MON_DATA_PERSONALITY, NULL), 0, 0);
+        PokeParaSet(encounterPartyPokemon, species, level, 32, 1, personality, 0, 0);
+
+        for (i = 0; i < 6; i++) {
+            SetMonData(encounterPartyPokemon, MON_DATA_HP_IV + i, &ivs[i]);
+        }
+
         if (form_no != 0) {
             change_form = 1;
         }
