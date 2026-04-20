@@ -92,7 +92,12 @@ static u16 GetMegaStoneForSpeciesAndForm(u16 species, u8 form)
     return ITEM_NONE;
 }
 
-static u8 Randomizer_GetRandomFormForSpecies(u16 baseSpecies, u32 seed)
+static BOOL Randomizer_IsMegaAdjustedSpecies(u16 adjustedSpecies)
+{
+    return adjustedSpecies >= SPECIES_MEGA_START && adjustedSpecies <= MAX_MEGA_NUM;
+}
+
+static u8 Randomizer_GetRandomFormForSpecies(u16 baseSpecies, u32 seed, BOOL allowTrainerMegas)
 {
     u16 formTable[32];
     u8 validForms[32];
@@ -104,11 +109,21 @@ static u8 Randomizer_GetRandomFormForSpecies(u16 baseSpecies, u32 seed)
     ArchiveDataLoadOfs(formTable, ARC_CODE_ADDONS, CODE_ADDON_FORM_DATA, sizeof(u16) * (baseSpecies * 32), sizeof(u16) * 32);
 
     for (i = 0; i < 32; i++) {
+        u16 adjustedSpecies;
+
         if (formTable[i] == 0) {
             break;
         }
+        adjustedSpecies = formTable[i] & ~NEEDS_REVERSION;
         if (formTable[i] & NEEDS_REVERSION) {
-            continue;
+#ifdef RANDOMIZER_BLOCK_MEGAS_IN_TRAINERS
+            if (allowTrainerMegas) {
+                continue;
+            }
+#endif
+            if (!allowTrainerMegas || !Randomizer_IsMegaAdjustedSpecies(adjustedSpecies) || GetMegaStoneForSpeciesAndForm(baseSpecies, i + 1) == ITEM_NONE) {
+                continue;
+            }
         }
         validForms[validFormCount++] = i + 1;
     }
@@ -371,7 +386,7 @@ u16 LONG_CALL Randomizer_GetRandomTrainerSpecies(u16 originalSpecies, u16 level,
     u32 seed = (u32)originalSpecies + (u32)level + trainerID;
 
     u16 baseSpecies = Randomizer_SelectFromPool(pool, size, seed);
-    u8 form = Randomizer_GetRandomFormForSpecies(baseSpecies, seed ^ 0xF0F0F0F0);
+    u8 form = Randomizer_GetRandomFormForSpecies(baseSpecies, seed ^ 0xF0F0F0F0, TRUE);
 
     u16 megaStone = GetMegaStoneForSpeciesAndForm(baseSpecies, form);
     if (megaStone != ITEM_NONE) {
@@ -398,7 +413,7 @@ u16 LONG_CALL Randomizer_GetRandomWildSpecies(struct PartyPokemon *pp, u8 *formO
     u32 seed = (u32)original + (u32)level + GetMonData(pp, MON_DATA_PERSONALITY, NULL);
 
     u16 baseSpecies = Randomizer_SelectFromPool(pool, size, seed);
-    *formOut = Randomizer_GetRandomFormForSpecies(baseSpecies, seed ^ 0xF0F0F0F0);
+    *formOut = Randomizer_GetRandomFormForSpecies(baseSpecies, seed ^ 0xF0F0F0F0, FALSE);
 
     return baseSpecies;
 #endif

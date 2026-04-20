@@ -297,6 +297,10 @@ void MakeTrainerPokemonParty(struct BATTLE_PARAM *bp, int num, int heapID)
         pow = pow * 31 / 255;
         PokeParaSet(mons[i], species, level, pow, 1, rnd, 2, 0);
         SetMonData(mons[i], MON_DATA_FORM, &form_no);
+        if (form_no != 0 && (species != originalSpecies || form_no != originalFormNo)) {
+            ClearMonMoves(mons[i]);
+            InitBoxMonMoveset(&mons[i]->box);
+        }
 
         // set default abilities
         adjustedSpecies = PokeOtherFormMonsNoGet(species, form_no);
@@ -328,7 +332,7 @@ void MakeTrainerPokemonParty(struct BATTLE_PARAM *bp, int num, int heapID)
         {
             SetMonData(mons[i], MON_DATA_HELD_ITEM, &item);
         }
-        if (bp->trainer_data[num].data_type & TRAINER_DATA_TYPE_MOVES) {
+        if ((bp->trainer_data[num].data_type & TRAINER_DATA_TYPE_MOVES) && species == originalSpecies && form_no == originalFormNo) {
             for (j = 0; j < 4; j++) {
 #ifdef BLOCK_LEARNING_UNIMPLEMENTED_MOVES
                 if (IsMoveUnimplemented(moves[j])) {
@@ -397,7 +401,7 @@ void MakeTrainerPokemonParty(struct BATTLE_PARAM *bp, int num, int heapID)
             if (additionalflags & TRAINER_DATA_EXTRA_TYPE_SP_DEF) {
                 SetMonData(mons[i], MON_DATA_SPECIAL_DEFENSE, &spdef);
             }
-            if (additionalflags & TRAINER_DATA_EXTRA_TYPE_PP_COUNTS) {
+            if ((additionalflags & TRAINER_DATA_EXTRA_TYPE_PP_COUNTS) && species == originalSpecies && form_no == originalFormNo) {
                 for (j = 0; j < 4; j++) {
                     SetMonData(mons[i], MON_DATA_MOVE1PP + j, &ppcounts[j]);
                 }
