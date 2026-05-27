@@ -62,7 +62,7 @@
 #define IMPLEMENT_DYNAMIC_WILD_SPECIES_FORMS
 #endif
 
-u16 LONG_CALL Randomizer_GetRandomTrainerSpecies(u16 originalSpecies, u16 level, u32 trainerID, u8 *formOut, u16 *itemOut);
-u16 LONG_CALL Randomizer_GetRandomWildSpecies(struct PartyPokemon *pp, u8 *formOut);
+u16 LONG_CALL Randomizer_GetRandomTrainerSpecies(u16 original_species, u16 level, u32 trainer, u8 *form_out, u16 *item_out);
+u16 LONG_CALL Randomizer_GetRandomWildSpecies(struct PartyPokemon *party_pokemon, u8 *form_out);
 
 #endif // RANDOMIZER_H

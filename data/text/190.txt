@@ -1,9 +1,9 @@
-Professor Elm: Touch a Poke Ball to\nsee what Pokemon is inside!
+Professor Elm: Touch a Poké Ball to\nsee what Pokémon is inside!
 Professor Elm: So, you like {COLOR 3}{STRVAR_1 1, 0, 0}{COLOR 0}?
 Professor Elm: You’ll take {COLOR 1}{STRVAR_1 1, 0, 0}{COLOR 0}?
 Professor Elm: Do you want {COLOR 2}{STRVAR_1 1, 0, 0}{COLOR 0}?
-{COLOR 3}{STRVAR_1 1, 0, 0}{COLOR 0} is in this Poke Ball!
-{COLOR 1}{STRVAR_1 1, 0, 0}{COLOR 0} is in this Poke Ball!
-{COLOR 2}{STRVAR_1 1, 0, 0}{COLOR 0} is in this Poke Ball!
-Once you’ve decided, touch a Poke Ball!
-Touch the Poke Ball button to select.\nTouch elsewhere to change your selection.
+{COLOR 3}{STRVAR_1 1, 0, 0}{COLOR 0} is in this Poké Ball!
+{COLOR 1}{STRVAR_1 1, 0, 0}{COLOR 0} is in this Poké Ball!
+{COLOR 2}{STRVAR_1 1, 0, 0}{COLOR 0} is in this Poké Ball!
+Once you’ve decided, touch a Poké Ball!
+Touch the Poké Ball button to select.\nTouch elsewhere to change your selection.

@@ -62,6 +62,13 @@ arm9 AddBoxMonData_EditedCases_hook 0206F67C 0
 # starter hidden ability stuff
 arm9 set_starter_hidden_ability_hook 02096158 5
 
+# Randomizer
+0061 StarterChoice_PrintMsgOnWinEx 021E6D78
+#ifdef RANDOMIZER
+arm9 Randomizer_RandomizeStarters_hook 02096094 3
+0061 Randomizer_SyncStarterCries_hook 021E5A48 2
+#endif
+
 #battle hooks
 0012 CalcBaseDamage 02256FF8
 0012 CalcDamageOverall 0223DCE0 2
@@ -588,9 +595,3 @@ arm9 PartyMenu_StartContextMenuButtonPressAnim_FromCursorObj 0207CB9C 3
 
 # determine rock smash table to use for items
 0001 DetermineRockSmashItem_hook 02204E28 1
-
-arm9 Randomizer_RandomizeStarters_hook 02096094 3
-
-# Randomizer
-0061 SyncStarterCries_hook 021E5A48 2
-0061 StarterChoice_PrintMsgOnWinEx 021E6D78

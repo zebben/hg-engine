@@ -157,24 +157,24 @@ bx r2
 
 .pool
 
-.global SyncStarterCries_hook
-SyncStarterCries_hook:
+.global Randomizer_SyncStarterCries_hook
+Randomizer_SyncStarterCries_hook:
 cmp r1, #0
-bne SyncStarterCries_hook_skip_update
+bne _returnTo021E5E86
 push {r0-r3, lr}
 mov r0, r4
-bl SyncStarterCries
+bl Randomizer_SyncStarterCries
 pop {r0-r3}
 pop {r2}
 mov lr, r2
 
-SyncStarterCries_hook_skip_update:
+_returnTo021E5E86:
 cmp r1, #0xc
-bls SyncStarterCries_hook_case_valid
+bls _returnTo021E5A50
 ldr r2, =0x021E5E86 | 1
 bx r2
 
-SyncStarterCries_hook_case_valid:
+_returnTo021E5A50:
 add r1, r1
 ldr r2, =0x021E5A50 | 1
 bx r2
