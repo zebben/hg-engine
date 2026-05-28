@@ -115,3 +115,4 @@ const struct TestBattleScenario BattleTests[] = {
 #ifndef GET_TEST_CASE_ONLY
 };
 #endif
+

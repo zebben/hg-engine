@@ -13,7 +13,8 @@ const struct TestBattleScenario BattleTests[] = {
 
 #endif
 
-    { .battleType = BATTLE_TYPE_SINGLE,
+    {
+        .battleType = BATTLE_TYPE_SINGLE,
         .weather = WEATHER_NONE,
         .fieldCondition = 0,
         .terrain = TERRAIN_NONE,
@@ -94,7 +95,8 @@ const struct TestBattleScenario BattleTests[] = {
             } },
         .expectations = {
             { .expectationType = EXPECTATION_TYPE_MESSAGE, .expectationValue.message = "The Pokemon was hit 5 time(s)!" },
-        } },
+        }
+    },
 #ifndef GET_TEST_CASE_ONLY
 };
 #endif

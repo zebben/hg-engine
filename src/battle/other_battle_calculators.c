@@ -4230,7 +4230,7 @@ BOOL LONG_CALL IsAttackerOnField(struct BattleStruct *ctx)
     return TRUE;
 }
 
-int LONG_CALL ov12_022506D4(struct BattleSystem *bw, struct BattleStruct *ctx, int battlerIdAttacker, u16 moveNo, int a4, int range)
+int LONG_CALL ov12_022506D4(struct BattleSystem* bw, struct BattleStruct *ctx, int battlerIdAttacker, u16 moveNo, int a4, int range)
 {
     int battlerIdTarget = BATTLER_NONE;
     int moveRange;
@@ -4317,7 +4317,7 @@ int LONG_CALL ov12_022506D4(struct BattleSystem *bw, struct BattleStruct *ctx, i
     } else if (moveRange == RANGE_RANDOM_OPPONENT || a4 == 1) {
         int battleType = BattleTypeGet(bw);
         int side = IsClientEnemy(bw, battlerIdAttacker) ^ 1;
-        // int side = BattleSystem_GetFieldSide(battleSystem, battlerIdAttacker) ^ 1;
+        //int side = BattleSystem_GetFieldSide(battleSystem, battlerIdAttacker) ^ 1;
         int battlerIdOpponents[2];
         battlerIdOpponents[0] = ov12_0223ABB8(bw, battlerIdAttacker, 0);
         battlerIdOpponents[1] = ov12_0223ABB8(bw, battlerIdAttacker, 2);
@@ -4343,9 +4343,9 @@ int LONG_CALL ov12_022506D4(struct BattleSystem *bw, struct BattleStruct *ctx, i
         }
     } else {
         int side = IsClientEnemy(bw, battlerIdAttacker) ^ 1;
-        // int side = BattleSystem_GetFieldSide(battleSystem, battlerIdAttacker) ^ 1;
+        //int side = BattleSystem_GetFieldSide(battleSystem, battlerIdAttacker) ^ 1;
         int battlerIdTargetTemp = ctx->playerActions[battlerIdAttacker][1]; //.unk4
-        // BattleSystem_GetMaxBattlers(battleSystem);
+        //BattleSystem_GetMaxBattlers(battleSystem);
 
         if (ctx->current_move_index != MOVE_SNIPE_SHOT
             && (GetBattlerAbility(ctx, battlerIdAttacker) != ABILITY_PROPELLER_TAIL)
@@ -4365,6 +4365,7 @@ int LONG_CALL ov12_022506D4(struct BattleSystem *bw, struct BattleStruct *ctx, i
 
     return battlerIdTarget;
 }
+
 
 void LONG_CALL HandleTransform(struct BattleStruct *sp)
 {

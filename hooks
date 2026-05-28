@@ -64,10 +64,8 @@ arm9 set_starter_hidden_ability_hook 02096158 5
 
 # Randomizer
 0061 StarterChoice_PrintMsgOnWinEx 021E6D78
-#ifdef RANDOMIZER
 arm9 Randomizer_RandomizeStarters_hook 02096094 3
 0061 Randomizer_SyncStarterCries_hook 021E5A48 2
-#endif
 
 #battle hooks
 0012 CalcBaseDamage 02256FF8

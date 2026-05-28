@@ -32,8 +32,8 @@ typedef struct MsgData {
     u16 narc_id;
     u16 file_id;
     union {
-        MAT *direct;
-        void *lazy;
+        MAT * direct;
+        void * lazy;
     };
 } MsgData;
 
@@ -55,14 +55,10 @@ typedef struct MessageFormat {
 
 MsgData *LONG_CALL NewMsgDataFromNarc(MsgDataLoadType type, u32 narc, s32 fileId, u32 heapId);
 void LONG_CALL ReadMsgDataIntoU16Array(MsgData *msgData, u32 msgno, u16 *dest);
-void LONG_CALL DestroyMsgData(MsgData *msgData);
-String *LONG_CALL ReadMsgData_ExpandPlaceholders(MessageFormat *messageFormat, MsgData *msgData, u32 msgno, u32 heapID);
+void LONG_CALL DestroyMsgData(MsgData * msgData);
 void LONG_CALL CopyU16ArrayToString(String *string, const u16 *src);
 void LONG_CALL CopyStringToU16Array(const String *string, u16 *dest, u32 n);
-MessageFormat *LONG_CALL MessageFormat_New(u32 heapId);
-void LONG_CALL MessageFormat_Delete(MessageFormat *messageFormat);
 void LONG_CALL SetStringAsPlaceholder(MessageFormat *msgFmt, u32 fieldno, const String *string, const MessageFormatAttrs *attrs);
-void LONG_CALL BufferSpeciesName(MessageFormat *msgFmt, u32 fieldno, u16 species);
 void BufferOffsetItemLineFromFile(MessageFormat *msgFmt, u32 fieldno, u32 itemId, u32 narc);
 void LONG_CALL BufferItemName(MessageFormat *msgFmt, u32 fieldno, u32 itemId);
 void LONG_CALL BufferItemNameWithIndefArticle(MessageFormat *msgFmt, u32 fieldno, u32 itemId);
@@ -71,4 +67,4 @@ void LONG_CALL BufferItemNameGiveItem(MessageFormat *msgFmt, u32 fieldno, u32 it
 u8 LONG_CALL AddTextPrinterParameterizedWithColor(void *window, u8 fontId, String *string, u32 x, u32 y, u32 textSpeed, u32 color, void *callback);
 String *LONG_CALL NewString_ReadMsgData(MsgData *msgData, s32 strno);
 
-#endif // POKEHEARTGOLD_MSGDATA_H
+#endif //POKEHEARTGOLD_MSGDATA_H

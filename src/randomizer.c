@@ -376,6 +376,11 @@ static const struct RandomizerSpeciesRange sRandomizerIncompleteSpriteRanges[] =
 };
 #endif
 
+MessageFormat LONG_CALL *MessageFormat_New(int heapID);
+void LONG_CALL BufferSpeciesName(MessageFormat *messageFormat, u32 idx, u16 species);
+String LONG_CALL *ReadMsgData_ExpandPlaceholders(MessageFormat *messageFormat, MsgData *msgData, u32 msgno, int heapID);
+void LONG_CALL MessageFormat_Delete(MessageFormat *messageFormat);
+
 static u16 Randomizer_GetMegaStone(u16 species, u8 form)
 {
 #ifdef MEGA_EVOLUTIONS
