@@ -232,7 +232,7 @@ BOOL LONG_CALL CheckDefenderItemEffectOnHit(void *bw, struct BattleStruct *sp, i
 {
     u32 ovyId, offset;
     BOOL ret;
-    BOOL (*internalFunc)
+    BOOL(*internalFunc)
     (void *bw, struct BattleStruct *sp, int *seq_no);
 
     ovyId = OVERLAY_CHECKDEFENDERITEMEFFECTONHIT;
@@ -333,6 +333,10 @@ BOOL LONG_CALL TryUseHeldItem(void *bw, struct BattleStruct *ctx, int battlerId)
     int script;
     int itemHeldEffect;
     int boost;
+
+    if (battlerId == BATTLER_NONE) {
+        return FALSE;
+    }
 
     itemHeldEffect = HeldItemHoldEffectGet(ctx, battlerId);
     boost = HeldItemAtkGet(ctx, battlerId, ATK_CHECK_NORMAL);
@@ -521,12 +525,12 @@ BOOL LONG_CALL TryUseHeldItem(void *bw, struct BattleStruct *ctx, int battlerId)
             }
             break;
         case HOLD_EFFECT_HEAL_MENTAL_CONDITIONS: // Mental Herb
-            if (ctx->battlemon[ctx->defence_client].condition2 & STATUS2_ATTRACT
-                || ctx->battlemon[ctx->defence_client].condition2 & STATUS2_TORMENT
-                || ctx->battlemon[ctx->defence_client].moveeffect.tauntTurns
-                || ctx->battlemon[ctx->defence_client].moveeffect.encoredTurns
-                || ctx->battlemon[ctx->defence_client].moveeffect.healBlockTurns
-                || ctx->battlemon[ctx->defence_client].moveeffect.disabledTurns) {
+            if (ctx->battlemon[battlerId].condition2 & STATUS2_ATTRACT
+                || ctx->battlemon[battlerId].condition2 & STATUS2_TORMENT
+                || ctx->battlemon[battlerId].moveeffect.tauntTurns
+                || ctx->battlemon[battlerId].moveeffect.encoredTurns
+                || ctx->battlemon[battlerId].moveeffect.healBlockTurns
+                || ctx->battlemon[battlerId].moveeffect.disabledTurns) {
                 script = SUB_SEQ_ITEM_HEAL_MENTAL_CONDITIONS;
                 ret = TRUE;
             }

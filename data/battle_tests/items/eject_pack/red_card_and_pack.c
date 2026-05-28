@@ -12,8 +12,7 @@ const struct TestBattleScenario BattleTests[] = {
 
 #endif
 
-    {
-        .battleType = BATTLE_TYPE_DOUBLE,
+    { .battleType = BATTLE_TYPE_DOUBLE,
         .weather = WEATHER_NONE,
         .fieldCondition = 0,
         .terrain = TERRAIN_NONE,
@@ -146,9 +145,10 @@ const struct TestBattleScenario BattleTests[] = {
             { .expectationType = EXPECTATION_TYPE_MESSAGE, .expectationValue.message = "The opposing Litten's Intimidate cuts Treecko's Attack!" },
             { .expectationType = EXPECTATION_TYPE_MESSAGE, .expectationValue.message = "The opposing Chikorita used Sleep Talk!" },
         },
-        .knownFailing = TRUE,
-    },
+}
+,
 #ifndef GET_TEST_CASE_ONLY
-};
+}
+;
 // each test file is a separate .c file in battle_tests/ for better organization
 #endif

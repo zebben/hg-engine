@@ -38,9 +38,9 @@ ALIGN4 struct ILLUSION_STRUCT gIllusionStruct = {
 
 /**
  *  @brief type effectiveness table
+ *         iterated through from top to bottom
  *         format is move type, defending type, and effectiveness
- *         0 is ineffective, 5 is not very effective, 20 is super effective
- *         every entry after the 0xFE entry is ignored by foresight
+ *         table stops early at TYPE_RING_TARGET or TYPE_FORESIGHT if conditions are met.
  */
 u8 TypeEffectivenessTable[][3] = {
     { TYPE_NORMAL, TYPE_ROCK, TYPE_MUL_NOT_EFFECTIVE },
@@ -186,7 +186,7 @@ u8 TypeEffectivenessTable[][3] = {
 #if TYPE_EFFECTIVENESS_GEN < 6
     { TYPE_DARK, TYPE_STEEL, TYPE_MUL_NOT_EFFECTIVE },
 #endif
-
+    { TYPE_RING_TARGET, TYPE_RING_TARGET, TYPE_MUL_NO_EFFECT },
     // AI bugfix: move all of the immune type interactions to the end of the table so that the
     // immunities properly unset the super effective move effect flag (and a lanturn with thunderbolt
     // isn't switched in on a gliscor over a raichu with ice beam)
@@ -901,7 +901,7 @@ void BattleEndRevertFormChange(struct BattleSystem *bw)
             // debug_printf("Checking form\n");
             struct Party *party = SaveData_GetPlayerPartyPtr(SaveBlock2_get());
             struct PartyPokemon partyPokemon = party->members[currentScenario->expectations[currentScenario->expectationPassCount].battlerIDOrPartySlot];
-            int expectedForm = currentScenario->expectations[currentScenario->expectationPassCount].expectationValue.formID;
+            u32 expectedForm = currentScenario->expectations[currentScenario->expectationPassCount].expectationValue.formID;
             // debug_printf("expected form %d\n", expectedForm);
             if (GetMonData(&partyPokemon, MON_DATA_FORM, NULL) == expectedForm) {
                 // debug_printf("Form matches expectation\n");
@@ -975,6 +975,7 @@ void LONG_CALL ClearBattleMonFlags(struct BattleStruct *sp, int client)
     sp->protectSuccessTurns[client] = 0;
     sp->paradoxBoostedStat[client] = 0;
     sp->boosterEnergyActivated[client] = FALSE;
+    sp->lastClientMoveType[client] = TYPE_TYPELESS;
 
     if (gBattleSystem != NULL) {
         int maxBattlers = BattleWorkClientSetMaxGet(gBattleSystem);
@@ -1056,6 +1057,9 @@ u32 LONG_CALL GetAdjustedMoveTypeBasics(struct BattleStruct *sp, u32 move, u32 a
             typeLocal = TYPE_FLYING;
         } else if (ability == ABILITY_GALVANIZE) {
             typeLocal = TYPE_ELECTRIC;
+        }
+        if (ability == ABILITY_DRAGONIZE) {
+            typeLocal = TYPE_DRAGON;
         } else // needs to be for sure initialized
         {
             typeLocal = TYPE_NORMAL;
@@ -1089,6 +1093,11 @@ u32 LONG_CALL GetAdjustedMoveTypeBasics(struct BattleStruct *sp, u32 move, u32 a
  */
 u32 LONG_CALL GetAdjustedMoveType(struct BattleStruct *sp, u32 client, u32 move)
 {
+    // Tera moves ignore type adjustments if the client is Terastallized.
+    if (sp->battlemon[client].is_currently_terastallized
+        && (move == MOVE_TERA_BLAST || move == MOVE_TERA_STARSTORM)) {
+        return GetDynamicMoveType(gBattleSystem, sp, client, move);
+    }
     return GetAdjustedMoveTypeBasics(sp, move, GetBattlerAbility(sp, client), GetDynamicMoveType(gBattleSystem, sp, client, move));
 }
 

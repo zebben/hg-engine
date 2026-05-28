@@ -44,7 +44,8 @@ int MoveCheckDamageNegatingAbilities(struct BattleStruct *sp, int attacker, int 
     int movetype;
 
     // trigger meloetta's relic song form transformation if possible
-    if ((sp->battlemon[attacker].species == SPECIES_MELOETTA)
+    if (IsAttackerOnField(sp)
+        && (sp->battlemon[attacker].species == SPECIES_MELOETTA)
         && (sp->battlemon[attacker].hp)
         && !(sp->waza_status_flag & MOVE_STATUS_FLAG_FAILED)
         && (sp->battlemon[attacker].form_no < 2)) {
@@ -63,7 +64,9 @@ int MoveCheckDamageNegatingAbilities(struct BattleStruct *sp, int attacker, int 
 
     // 02252F24
     if (MoldBreakerAbilityCheck(sp, attacker, defender, ABILITY_WATER_ABSORB) == TRUE) {
-        if ((movetype == TYPE_WATER) && ((sp->server_status_flag & SERVER_STATUS_FLAG_x20) == 0) && (sp->moveTbl[sp->current_move_index].power)) {
+        if ((movetype == TYPE_WATER) && ((sp->server_status_flag & SERVER_STATUS_FLAG_x20) == 0)
+            //    && (sp->moveTbl[sp->current_move_index].power) //as of Gen5
+        ) {
             sp->hp_calc_work = BattleDamageDivide(sp->battlemon[defender].maxhp, 4);
             scriptnum = SUB_SEQ_ABILITY_HP_RESTORE;
         }
@@ -432,7 +435,7 @@ void LONG_CALL UpdateTerrainOverlay(struct BattleStruct *ctx, u8 client, enum Te
  *  @param seq_no the subscript number to load and run
  *  @return TRUE if a script should be run and is in *seq_no; FALSE otherwise
  */
-BOOL LONG_CALL MoveHitAttackerAbilityCheck(void *bw, struct BattleStruct *sp, int *seq_no)
+BOOL LONG_CALL MoveHitAttackerAbilityCheck(void *bw UNUSED, struct BattleStruct *sp, int *seq_no)
 {
     BOOL ret = FALSE;
 
@@ -449,6 +452,7 @@ BOOL LONG_CALL MoveHitAttackerAbilityCheck(void *bw, struct BattleStruct *sp, in
             && ((sp->server_status_flag2 & SERVER_STATUS_FLAG2_U_TURN) == 0)
             && ((sp->oneSelfFlag[sp->defence_client].physical_damage) || (sp->oneSelfFlag[sp->defence_client].special_damage))
             && (IsContactBeingMade(GetBattlerAbility(sp, sp->attack_client), HeldItemHoldEffectGet(sp, sp->attack_client), HeldItemHoldEffectGet(sp, sp->defence_client), sp->current_move_index, sp->moveTbl[sp->current_move_index].flag))
+            && (HeldItemHoldEffectGet(sp, sp->defence_client) != HOLD_EFFECT_PREVENT_SECONDARY_EFFECTS)
             && (CheckSubstitute(sp, sp->defence_client) == FALSE)
 #ifndef DEBUG_BATTLE_SCENARIOS
             && (BattleRand(bw) % 10 < 3)
@@ -633,7 +637,7 @@ u32 LONG_CALL MoldBreakerAbilityCheckInternal(int attacker, int defender, int at
  */
 u32 LONG_CALL MoldBreakerAbilityCheck(struct BattleStruct *sp, int attacker, int defender, u32 ability)
 {
-    return MoldBreakerAbilityCheckInternal(attacker, defender, GetBattlerAbility(sp, attacker), GetBattlerAbility(sp, defender), sp->current_move_index, sp->moveTbl[sp->current_move_index].split, ability);
+    return MoldBreakerAbilityCheckInternal(attacker, defender, IsAttackerOnField(sp) ? GetBattlerAbility(sp, attacker) : ABILITY_NONE, GetBattlerAbility(sp, defender), sp->current_move_index, sp->moveTbl[sp->current_move_index].split, ability);
 }
 
 /**
@@ -771,6 +775,10 @@ BOOL ServerFlinchCheck(void *bw, struct BattleStruct *sp)
     int atk;
     u32 sereneGraceShift = 0; // it's less cycles this way okay probably
 
+    if (HeldItemHoldEffectGet(sp, sp->defence_client) == HOLD_EFFECT_PREVENT_SECONDARY_EFFECTS) {
+        return ret;
+    }
+
     heldeffect = HeldItemHoldEffectGet(sp, sp->attack_client);
     atk = HeldItemAtkGet(sp, sp->attack_client, 0);
 
@@ -886,6 +894,7 @@ void ServerWazaOutAfterMessage(void *bsys, struct BattleStruct *ctx)
 {
     SetupCurrentMoveContext(bsys, ctx);
     ctx->server_seq_no = CONTROLLER_COMMAND_31;
+    ctx->next_server_seq_no = CONTROLLER_COMMAND_31;
     ctx->swoam_seq_no = 0;
     return;
     /*
@@ -1149,6 +1158,7 @@ u32 LONG_CALL ServerWazaKoyuuCheck(void *bw, struct BattleStruct *sp)
         sp->magicBounceTracker = TRUE;
         sp->moveProtect[sp->attack_client] = 0;
         sp->waza_no_old[sp->attack_client] = sp->moveNoTemp;
+        sp->lastClientMoveType[sp->attack_client] = GetAdjustedMoveType(sp, sp->attack_client, sp->moveNoTemp);
         sp->waza_no_last = sp->moveNoTemp;
         sp->server_status_flag |= (BATTLE_STATUS_NO_MOVE_SET);
         LoadBattleSubSeqScript(sp, 1, SUB_SEQ_MAGIC_COAT);
@@ -1168,6 +1178,7 @@ u32 LONG_CALL ServerWazaKoyuuCheck(void *bw, struct BattleStruct *sp)
                 sp->moveProtect[sp->attack_client] = 0;
                 sp->waza_no_old[sp->attack_client] = sp->moveNoTemp;
                 sp->waza_no_last = sp->moveNoTemp;
+                sp->lastClientMoveType[sp->attack_client] = GetAdjustedMoveType(sp, sp->attack_client, sp->moveNoTemp);
                 sp->server_status_flag |= (BATTLE_STATUS_NO_MOVE_SET);
             }
             LoadBattleSubSeqScript(sp, 1, SUB_SEQ_SNATCH);

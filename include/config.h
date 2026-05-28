@@ -1,7 +1,13 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
+#define GEN_CHAMPIONS 99
+
+#ifdef DEBUG_BATTLE_SCENARIOS
+#define GEN_LATEST GEN_CHAMPIONS
+#else
 #define GEN_LATEST 9
+#endif
 
 // FAIRY_TYPE_IMPLEMENTED should be used if you want to implement the fairy type and overwrite type 9 in this project
 // set FAIRY_TYPE_IMPLEMENTED to 0 if you do not want this to happen
@@ -70,6 +76,8 @@
 // commenting this line out disables critical captures
 #define IMPLEMENT_CRITICAL_CAPTURE
 
+// if critical capture generation is 9 or above, then the critical capture animation will be triggered if the mon is going to be caught and has already been caught.
+// this will also make the critical capture species only count the regional dex species.
 #define CRITICAL_CAPTURE_GENERATION GEN_LATEST
 
 // IMPLEMENT_NEW_EV_IV_VIEWER defines whether or not pressing L, R, or Select in the pokémon summaries will display EV's, IV's, or the raw stat
@@ -217,5 +225,15 @@
 // if VANILLA_MYTHICALS is not defined, but you can change that in the EXTRA_MYTHICALS macro if you want to
 // add or remove mythicals as you see fit
 #define VANILLA_MYTHICALS
+
+// DISABLE_CRITICAL_HP_WARNING should be used if you want to disable the warning whenever your pokemon is at critical health
+// comment out this line if you do not want this to happen
+#define DISABLE_CRITICAL_HP_WARNING
+
+// UNSEEN_FIST_GENERATION defines the behavior that Unseen Fist should exhibit, where it either completely ignores Protect (<=8) or deals 0.25x Damage (>=9)
+#define UNSEEN_FIST_GENERATION GEN_CHAMPIONS
+
+// PREVENT_SELECTING_BERRY_PREREQUISITE_MOVES_GENERATION actiavtes the struggle check for Belch/Stuff Cheeks in Generations before Champions
+#define PREVENT_SELECTING_BERRY_PREREQUISITE_MOVES_GENERATION GEN_LATEST
 
 #endif
