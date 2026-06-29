@@ -166,11 +166,9 @@ void LONG_CALL BattleMessage_ExpandPlaceholders(struct BattleSystem *battleSyste
     BOOL messageMatch = FALSE;
     if (expectationType == EXPECTATION_TYPE_MESSAGE_CONTAINS) {
         messageMatch = MessageContains(actualMessage, expectedMessage);
-    }
-    else if (expectationType == EXPECTATION_TYPE_MESSAGE_DOES_NOT_CONTAIN){
+    } else if (expectationType == EXPECTATION_TYPE_MESSAGE_DOES_NOT_CONTAIN) {
         messageMatch = !MessageContains(actualMessage, expectedMessage);
-    }
-    else {
+    } else {
         messageMatch = TRUE;
         for (int i = 0; i < TEST_BATTLE_MESSAGE_LEN; i++) {
             if (actualMessage[i] != expectedMessage[i]) {
@@ -181,13 +179,13 @@ void LONG_CALL BattleMessage_ExpandPlaceholders(struct BattleSystem *battleSyste
                 break;
             }
         }
-        if (expectationType == EXPECTATION_TYPE_NOT_MESSAGE){
+        if (expectationType == EXPECTATION_TYPE_NOT_MESSAGE) {
             messageMatch = !messageMatch;
         }
     }
 
     if (messageMatch && !scenario->markAsFail) {
-        if (expectationType == EXPECTATION_TYPE_MESSAGE) {
+        if (expectationType == EXPECTATION_TYPE_MESSAGE || EXPECTATION_TYPE_MESSAGE_CONTAINS) {
             debug_printf(" ✅");
         } else {
             debug_printf(" ✔️");

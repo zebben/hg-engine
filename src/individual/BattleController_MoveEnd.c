@@ -1,29 +1,43 @@
 #include "../../include/battle.h"
 #include "../../include/config.h"
-#include "../../include/debug.h"
-#include "../../include/pokemon.h"
-#include "../../include/test_battle.h"
-#include "../../include/types.h"
 #include "../../include/constants/ability.h"
-#include "../../include/constants/hold_item_effects.h"
 #include "../../include/constants/battle_message_constants.h"
 #include "../../include/constants/battle_script_constants.h"
+#include "../../include/constants/file.h"
+#include "../../include/constants/hold_item_effects.h"
 #include "../../include/constants/item.h"
 #include "../../include/constants/move_effects.h"
 #include "../../include/constants/moves.h"
 #include "../../include/constants/species.h"
-#include "../../include/constants/file.h"
+#include "../../include/debug.h"
 #include "../../include/overlay.h"
+#include "../../include/pokemon.h"
+#include "../../include/test_battle.h"
+#include "../../include/types.h"
 
 /**
  * Platinum version as reference
  * BattleController_MoveEnd
  * https://github.com/pret/pokeplatinum/blob/447c17a0f12b4a7656dded8aaa6e41ae9694cd09/src/battle/battle_controller.c#L3965
  */
-void LONG_CALL BattleController_MoveEndInternal(struct BattleSystem *bsys, struct BattleStruct *ctx) {
+void LONG_CALL BattleController_MoveEndInternal(struct BattleSystem *bsys, struct BattleStruct *ctx)
+{
     // debug_printf("In BattleController_MoveEnd\n");
     int script;
     u32 battleType = BattleTypeGet(bsys);
+
+    if (ctx->pursuitContext.isActive == TRUE) {
+        ctx->pursuitContext.isActive = FALSE;
+        ctx->attack_client = ctx->pursuitContext.originalAttacker;
+        ctx->defence_client = ctx->pursuitContext.originalDefender;
+        if (ctx->current_move_index == MOVE_PURSUIT
+            && ctx->battlemon[ctx->reshuffle_client].hp) {
+            LoadBattleSubSeqScript(ctx, ARC_BATTLE_SUB_SEQ, SUB_SEQ_CLEAR_AFTER_PURSUIT);
+            ctx->next_server_seq_no = CONTROLLER_COMMAND_BEFORE_TURN;
+            ctx->server_seq_no = CONTROLLER_COMMAND_RUN_SCRIPT;
+            return;
+        }
+    }
 
     if (!(battleType & (BATTLE_TYPE_SAFARI | BATTLE_TYPE_PAL_PARK))) {
         if (ov12_0224DD18(ctx, ctx->server_seq_no, ctx->server_seq_no) == TRUE) {
@@ -48,9 +62,9 @@ void LONG_CALL BattleController_MoveEndInternal(struct BattleSystem *bsys, struc
         int move_type = GetAdjustedMoveType(ctx, ctx->attack_client, ctx->current_move_index);
         if (ctx->battlemon[ctx->attack_client].moveeffect.isCharged && move_type == TYPE_ELECTRIC && !ctx->oneTurnFlag[ctx->attack_client].chargeProcessedFlag) {
             if (--ctx->battlemon[ctx->attack_client].moveeffect.isCharged == 0) {
-                    ctx->battlemon[ctx->attack_client].effect_of_moves &= ~MOVE_EFFECT_FLAG_CHARGE;
-                }
-                ctx->oneTurnFlag[ctx->attack_client].chargeProcessedFlag = 1;
+                ctx->battlemon[ctx->attack_client].effect_of_moves &= ~MOVE_EFFECT_FLAG_CHARGE;
+            }
+            ctx->oneTurnFlag[ctx->attack_client].chargeProcessedFlag = 1;
         }
 
         // Reset Focus Punch flag
@@ -100,6 +114,8 @@ void LONG_CALL BattleController_MoveEndInternal(struct BattleSystem *bsys, struc
     ctx->moveContext.hitSubstituteCount = 0;
     ctx->moveContext.isAllyHit = FALSE;
     ctx->moveContext.currentMoveCalcDone = FALSE;
+
+    ctx->pursuitContext.isActive = FALSE;
 
     ctx->playerActions[ctx->executionOrder[ctx->executionIndex]][0] = CONTROLLER_COMMAND_40;
 
