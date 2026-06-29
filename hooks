@@ -70,8 +70,6 @@ arm9 CreateStarterMon_hook 020960E6 1
 
 # Randomizer
 0061 StarterChoice_PrintMsgOnWinEx 021E6D78
-arm9 Randomizer_RandomizeStarters_hook 02096094 3
-0061 Randomizer_SyncStarterCries_hook 021E5A48 2
 
 #battle hooks
 0012 CalcBaseDamage 02256FF8

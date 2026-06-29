@@ -16,12 +16,6 @@ extern u32 sStarterSpecies[3];
 #define STARTER_CHOICE_DYNAMIC_MSG_FIRST 1
 #define STARTER_CHOICE_DYNAMIC_MSG_LAST  6
 
-static u16 sStarterChoiceSpecies[3] = {
-    SPECIES_CHIKORITA,
-    SPECIES_CYNDAQUIL,
-    SPECIES_TOTODILE,
-};
-
 #ifdef MEGA_EVOLUTIONS
 // TODO include mega.c to access sMegaTable directly if we can later
 
@@ -393,9 +387,9 @@ static u16 Randomizer_GetMegaStone(u16 species, u8 form)
     return ITEM_NONE;
 }
 
-static BOOL Randomizer_IsMegaAdjustedSpecies(u16 adjusted_species)
+static BOOL Randomizer_IsMegaAdjustedSpecies(u16 adjustedSpecies)
 {
-    return adjusted_species >= SPECIES_MEGA_START && adjusted_species <= MAX_MEGA_NUM;
+    return adjustedSpecies >= SPECIES_MEGA_START && adjustedSpecies <= MAX_MEGA_NUM;
 }
 
 static BOOL Randomizer_HasIncompleteSprites(u16 species)
@@ -410,48 +404,51 @@ static BOOL Randomizer_HasIncompleteSprites(u16 species)
     return FALSE;
 }
 
-static u8 Randomizer_GetRandomForm(u16 base_species, u32 seed, BOOL allow_trainer_megas)
+u8 LONG_CALL Randomizer_GetRandomForm(u16 baseSpecies, u32 seed)
 {
-    u16 form_table[32];
-    u8 valid_forms[32];
-    u8 valid_form_count = 0;
+    u16 formTable[32];
+    u8 validForms[32];
+    u8 validFormCount = 0;
+    BOOL allowTrainerMegas = FALSE;
+#ifndef RANDOMIZER_BLOCK_MEGAS_IN_TRAINERS
+    allowTrainerMegas = TRUE;
+#endif
 
-    valid_forms[valid_form_count++] = 0;
+    validForms[validFormCount++] = 0;
 
-    ArchiveDataLoadOfs(form_table, ARC_CODE_ADDONS, CODE_ADDON_FORM_DATA, sizeof(u16) * (base_species * 32), sizeof(u16) * 32);
+    ArchiveDataLoadOfs(formTable, ARC_CODE_ADDONS, CODE_ADDON_FORM_DATA, sizeof(u16) * (baseSpecies * 32), sizeof(u16) * 32);
 
     for (u8 i = 0; i < 32; i++) {
-
-        if (form_table[i] == 0) {
+        if (formTable[i] == 0) {
             break;
         }
-        u16 adjusted_species = form_table[i] & ~NEEDS_REVERSION;
+        u16 adjusted_species = formTable[i] & ~NEEDS_REVERSION;
         if (Randomizer_HasIncompleteSprites(adjusted_species)) {
             continue;
         }
-        if (form_table[i] & NEEDS_REVERSION) {
+        if (formTable[i] & NEEDS_REVERSION) {
 #ifdef RANDOMIZER_BLOCK_MEGAS_IN_TRAINERS
-            if (allow_trainer_megas) {
+            if (allowTrainerMegas) {
                 continue;
             }
 #endif
-            if (!allow_trainer_megas || !Randomizer_IsMegaAdjustedSpecies(adjusted_species) || Randomizer_GetMegaStone(base_species, i + 1) == ITEM_NONE) {
+            if (!allowTrainerMegas || !Randomizer_IsMegaAdjustedSpecies(adjusted_species) || Randomizer_GetMegaStone(baseSpecies, i + 1) == ITEM_NONE) {
                 continue;
             }
         }
-        valid_forms[valid_form_count++] = i + 1;
+        validForms[validFormCount++] = i + 1;
     }
 
-    if (valid_form_count <= 1) {
+    if (validFormCount <= 1) {
         return 0;
     }
 
-    u32 saved_seed = gf_get_seed();
+    u32 savedSeed = gf_get_seed();
     gf_srand(seed);
-    u8 selectedIndex = gf_rand() % valid_form_count;
-    gf_srand(saved_seed);
+    u8 selectedIndex = gf_rand() % validFormCount;
+    gf_srand(savedSeed);
 
-    return valid_forms[selectedIndex];
+    return validForms[selectedIndex];
 }
 
 static u16 Randomizer_GetBSTToleranceForLevel(u16 level)
@@ -490,26 +487,27 @@ static BOOL Randomizer_TypesHaveAffinity(u8 type1, u8 type2)
     return FALSE;
 }
 
-static BOOL Randomizer_IsTypeCompatible(u16 original_species, u16 candidate_species, u16 *types_table)
+static BOOL Randomizer_IsTypeCompatible(u16 originalSpecies, u16 candidateSpecies, u16 *typesTable)
 {
     // Types table is packed as (type2 << 8) | type1
-    u16 orig_packed = types_table[original_species];
-    u16 cand_packed = types_table[candidate_species];
+    u16 originalPacked = typesTable[originalSpecies];
+    u16 candidatePacked = typesTable[candidateSpecies];
 
-    u8 orig_type1 = orig_packed & 0xFF;
-    u8 orig_type2 = (orig_packed >> 8) & 0xFF;
-    u8 cand_type1 = cand_packed & 0xFF;
-    u8 cand_type2 = (cand_packed >> 8) & 0xFF;
+    u8 originalType1 = originalPacked & 0xFF;
+    u8 originalType2 = (originalPacked >> 8) & 0xFF;
+    u8 candidateType1 = candidatePacked & 0xFF;
+    u8 candidateType2 = (candidatePacked >> 8) & 0xFF;
 
-    if (orig_type1 == cand_type1 || orig_type1 == cand_type2 || orig_type2 == cand_type1 || orig_type2 == cand_type2) {
+    if (originalType1 == candidateType1 || originalType1 == candidateType2 || originalType2 == candidateType1 || originalType2 == candidateType2) {
         return TRUE;
     }
 
-    return Randomizer_TypesHaveAffinity(orig_type1, cand_type1) || Randomizer_TypesHaveAffinity(orig_type1, cand_type2) || Randomizer_TypesHaveAffinity(orig_type2, cand_type1) || Randomizer_TypesHaveAffinity(orig_type2, cand_type2);
+    return Randomizer_TypesHaveAffinity(originalType1, candidateType1) || Randomizer_TypesHaveAffinity(originalType1, candidateType2)
+        || Randomizer_TypesHaveAffinity(originalType2, candidateType1) || Randomizer_TypesHaveAffinity(originalType2, candidateType2);
 }
 #endif
 
-static BOOL Randomizer_ShouldBanSpecies(u16 species, BOOL is_wild)
+static BOOL Randomizer_ShouldBanSpecies(u16 species, BOOL isWild)
 {
     if (species == SPECIES_NONE || species == SPECIES_EGG || species == SPECIES_BAD_EGG) {
         return TRUE;
@@ -518,53 +516,53 @@ static BOOL Randomizer_ShouldBanSpecies(u16 species, BOOL is_wild)
         return TRUE;
     }
 
-    BOOL is_legendary = IS_SPECIES_LEGENDARY(species);
-    BOOL is_mythical = IS_SPECIES_MYTHICAL(species);
-    BOOL is_sublegend = IS_SPECIES_SUBLEGEND(species);
-    BOOL is_mega = (species >= SPECIES_MEGA_START && species <= MAX_MEGA_NUM);
+    BOOL isLegendary = IS_SPECIES_LEGENDARY(species);
+    BOOL isMythical = IS_SPECIES_MYTHICAL(species);
+    BOOL isSublegend = IS_SPECIES_SUBLEGEND(species);
+    BOOL isMega = (species >= SPECIES_MEGA_START && species <= MAX_MEGA_NUM);
 
-    if (is_wild) {
+    if (isWild) {
 #ifdef RANDOMIZER_BLOCK_LEGENDARIES_IN_WILD
-        if (is_legendary) {
+        if (isLegendary) {
             return TRUE;
         }
 #endif
 
 #ifdef RANDOMIZER_BLOCK_MYTHICALS_IN_WILD
-        if (is_mythical) {
+        if (isMythical) {
             return TRUE;
         }
 #endif
 
 #ifdef RANDOMIZER_BLOCK_SUBLEGENDS_IN_WILD
-        if (is_sublegend) {
+        if (isSublegend) {
             return TRUE;
         }
 #endif
-        if (is_mega) {
+        if (isMega) {
             return TRUE;
         }
     } else {
         // Trainer
 #ifdef RANDOMIZER_BLOCK_LEGENDARIES_IN_TRAINERS
-        if (is_legendary) {
+        if (isLegendary) {
             return TRUE;
         }
 #endif
 
 #ifdef RANDOMIZER_BLOCK_MYTHICALS_IN_TRAINERS
-        if (is_mythical) {
+        if (isMythical) {
             return TRUE;
         }
 #endif
 
 #ifdef RANDOMIZER_BLOCK_SUBLEGENDS_IN_TRAINERS
-        if (is_sublegend) {
+        if (isSublegend) {
             return TRUE;
         }
 #endif
 #ifdef RANDOMIZER_BLOCK_MEGAS_IN_TRAINERS
-        if (is_mega) {
+        if (isMega) {
             return TRUE;
         }
 #endif
@@ -573,148 +571,148 @@ static BOOL Randomizer_ShouldBanSpecies(u16 species, BOOL is_wild)
     return FALSE;
 }
 
-static u16 Randomizer_BuildSpeciesPool(u16 original_species, u16 level, BOOL is_wild, u16 *pool_out, u16 max_pool_size)
+static u16 Randomizer_BuildSpeciesPool(u16 originalSpecies, u16 level, BOOL isWild, u16 *poolOut, u16 maxPoolSize)
 {
-    u16 pool_count = 0;
+    u16 poolCount = 0;
     u16 species;
-    u16 original_bst;
-    u16 species_bst;
-    u16 min_bst;
-    u16 max_bst;
-    u16 base_original;
-    BOOL use_bst_matching;
+    u16 originalBst;
+    u16 speciesBst;
+    u16 minBst;
+    u16 maxBst;
+    u16 baseOriginal;
+    BOOL useBstMatching;
 
-    if (original_species == SPECIES_NONE || original_species == SPECIES_BAD_EGG || original_species == SPECIES_EGG || original_species > MAX_SPECIES_INCLUDING_FORMS) {
+    if (originalSpecies == SPECIES_NONE || originalSpecies == SPECIES_BAD_EGG || originalSpecies == SPECIES_EGG || originalSpecies > MAX_SPECIES_INCLUDING_FORMS) {
         return 0;
     }
 
-    if (original_species > MAX_MON_NUM) {
-        base_original = GetBaseSpeciesFromAdjustedForm(original_species);
+    if (originalSpecies > MAX_MON_NUM) {
+        baseOriginal = GetBaseSpeciesFromAdjustedForm(originalSpecies);
     } else {
-        base_original = original_species;
+        baseOriginal = originalSpecies;
     }
 
-    u16 bst_table[MAX_MON_NUM + 1];
-    ArchiveDataLoadOfs(bst_table, ARC_CODE_ADDONS, CODE_ADDON_SPECIES_BST, 0, sizeof(u16) * (MAX_MON_NUM + 1));
+    u16 bstTable[MAX_MON_NUM + 1];
+    ArchiveDataLoadOfs(bstTable, ARC_CODE_ADDONS, CODE_ADDON_SPECIES_BST, 0, sizeof(u16) * (MAX_MON_NUM + 1));
 
 #ifdef RANDOMIZER_TYPE_MATCHING
-    u16 types_table[MAX_MON_NUM + 1];
-    ArchiveDataLoadOfs(types_table, ARC_CODE_ADDONS, CODE_ADDON_SPECIES_TYPES, 0, sizeof(u16) * (MAX_MON_NUM + 1));
+    u16 typesTable[MAX_MON_NUM + 1];
+    ArchiveDataLoadOfs(typesTable, ARC_CODE_ADDONS, CODE_ADDON_SPECIES_TYPES, 0, sizeof(u16) * (MAX_MON_NUM + 1));
 #endif
 
-    original_bst = bst_table[base_original];
+    originalBst = bstTable[baseOriginal];
 
-    use_bst_matching = TRUE;
-    min_bst = (original_bst * (100 - RANDOMIZER_TIER1_BST_TOLERANCE)) / 100;
-    max_bst = (original_bst * (100 + Randomizer_GetBSTToleranceForLevel(level))) / 100;
+    useBstMatching = TRUE;
+    minBst = (originalBst * (100 - RANDOMIZER_TIER1_BST_TOLERANCE)) / 100;
+    maxBst = (originalBst * (100 + Randomizer_GetBSTToleranceForLevel(level))) / 100;
 
-    for (species = 1; species <= MAX_MON_NUM && pool_count < max_pool_size; species++) {
-        if (Randomizer_ShouldBanSpecies(species, is_wild)) {
+    for (species = 1; species <= MAX_MON_NUM && poolCount < maxPoolSize; species++) {
+        if (Randomizer_ShouldBanSpecies(species, isWild)) {
             continue;
         }
 
-        if (use_bst_matching) {
-            species_bst = bst_table[species];
-            if (species_bst < min_bst || species_bst > max_bst) {
+        if (useBstMatching) {
+            speciesBst = bstTable[species];
+            if (speciesBst < minBst || speciesBst > maxBst) {
                 continue;
             }
         }
 
 #ifdef RANDOMIZER_TYPE_MATCHING
-        if (!Randomizer_IsTypeCompatible(base_original, species, types_table)) {
+        if (!Randomizer_IsTypeCompatible(baseOriginal, species, typesTable)) {
             continue;
         }
 #endif
 
-        pool_out[pool_count++] = species;
+        poolOut[poolCount++] = species;
     }
 
-    if (pool_count < RANDOMIZER_MIN_POOL_SIZE) {
-        pool_count = 0;
-        for (species = 1; species <= MAX_MON_NUM && pool_count < max_pool_size; species++) {
-            if (Randomizer_ShouldBanSpecies(species, is_wild)) {
+    if (poolCount < RANDOMIZER_MIN_POOL_SIZE) {
+        poolCount = 0;
+        for (species = 1; species <= MAX_MON_NUM && poolCount < maxPoolSize; species++) {
+            if (Randomizer_ShouldBanSpecies(species, isWild)) {
                 continue;
             }
 
 #ifdef RANDOMIZER_TYPE_MATCHING
-            if (!Randomizer_IsTypeCompatible(base_original, species, types_table)) {
+            if (!Randomizer_IsTypeCompatible(baseOriginal, species, typesTable)) {
                 continue;
             }
 #endif
 
-            pool_out[pool_count++] = species;
+            poolOut[poolCount++] = species;
         }
     }
 
-    if (pool_count < RANDOMIZER_MIN_POOL_SIZE) {
-        pool_count = 0;
-        for (species = 1; species <= MAX_MON_NUM && pool_count < max_pool_size; species++) {
-            if (Randomizer_ShouldBanSpecies(species, is_wild)) {
+    if (poolCount < RANDOMIZER_MIN_POOL_SIZE) {
+        poolCount = 0;
+        for (species = 1; species <= MAX_MON_NUM && poolCount < maxPoolSize; species++) {
+            if (Randomizer_ShouldBanSpecies(species, isWild)) {
                 continue;
             }
 
-            pool_out[pool_count++] = species;
+            poolOut[poolCount++] = species;
         }
     }
 
-    if (pool_count == 0) {
-        pool_out[0] = base_original;
-        pool_count = 1;
+    if (poolCount == 0) {
+        poolOut[0] = baseOriginal;
+        poolCount = 1;
     }
 
-    return pool_count;
+    return poolCount;
 }
 
-static u16 Randomizer_SelectFromPool(u16 *pool, u16 pool_size, u32 seed)
+static u16 Randomizer_SelectFromPool(u16 *pool, u16 poolSize, u32 seed)
 {
-    if (pool_size == 0) {
+    if (poolSize == 0) {
         return SPECIES_BULBASAUR;
     }
 
-    if (pool_size == 1) {
+    if (poolSize == 1) {
         return pool[0];
     }
 
     // save current random seed to avoid affecting other stuff
-    u32 saved_seed = gf_get_seed();
+    u32 savedSeed = gf_get_seed();
 
     gf_srand(seed);
-    u16 random_index = gf_rand() % pool_size;
-    u16 selected_species = pool[random_index];
+    u16 randomIndex = gf_rand() % poolSize;
+    u16 selectedSpecies = pool[randomIndex];
 
     // restore previous random seed
-    gf_srand(saved_seed);
+    gf_srand(savedSeed);
 
-    return selected_species;
+    return selectedSpecies;
 }
 
-u16 LONG_CALL Randomizer_GetRandomTrainerSpecies(u16 original_species, u16 level, u32 trainer, u8 *form_out, u16 *item_out)
+u16 LONG_CALL Randomizer_GetRandomTrainerSpecies(u16 originalSpecies, u16 level, u32 trainer, u8 *formOut, u16 *itemOut)
 {
 #if !defined(RANDOMIZER_ENABLED) || !defined(RANDOMIZE_TRAINERS)
-    *item_out = ITEM_NONE;
-    return original_species;
+    *itemOut = ITEM_NONE;
+    return originalSpecies;
 #else
     u16 pool[MAX_MON_NUM];
-    u16 size = Randomizer_BuildSpeciesPool(original_species, level, FALSE, pool, MAX_MON_NUM);
-    u32 seed = (u32)original_species + (u32)level + trainer;
+    u16 size = Randomizer_BuildSpeciesPool(originalSpecies, level, FALSE, pool, MAX_MON_NUM);
+    u32 seed = (u32)originalSpecies + (u32)level + trainer;
 
-    u16 base_species = Randomizer_SelectFromPool(pool, size, seed);
-    u8 form = Randomizer_GetRandomForm(base_species, seed ^ 0xF0F0F0F0, TRUE);
+    u16 baseSpecies = Randomizer_SelectFromPool(pool, size, seed);
+    u8 form = Randomizer_GetRandomForm(baseSpecies, seed ^ 0xF0F0F0F0);
 
-    u16 mega_stone = Randomizer_GetMegaStone(base_species, form);
-    if (mega_stone != ITEM_NONE) {
-        *item_out = mega_stone;
-        *form_out = 0;
+    u16 megaStone = Randomizer_GetMegaStone(baseSpecies, form);
+    if (megaStone != ITEM_NONE) {
+        *itemOut = megaStone;
+        *formOut = 0;
     } else {
-        *item_out = ITEM_NONE;
-        *form_out = form;
+        *itemOut = ITEM_NONE;
+        *formOut = form;
     }
 
-    return base_species;
+    return baseSpecies;
 #endif
 }
 
-u16 LONG_CALL Randomizer_GetRandomWildSpecies(struct PartyPokemon *party_pokemon, u8 *form_out)
+u16 LONG_CALL Randomizer_GetRandomWildSpecies(struct PartyPokemon *party_pokemon, u8 *formOut)
 {
     u16 original = GetMonData(party_pokemon, MON_DATA_SPECIES, NULL);
 #if !defined(RANDOMIZER_ENABLED) || !defined(RANDOMIZE_WILD)
@@ -725,10 +723,10 @@ u16 LONG_CALL Randomizer_GetRandomWildSpecies(struct PartyPokemon *party_pokemon
     u16 size = Randomizer_BuildSpeciesPool(original, level, TRUE, pool, MAX_MON_NUM);
     u32 seed = (u32)original + (u32)level + GetMonData(party_pokemon, MON_DATA_PERSONALITY, NULL);
 
-    u16 base_species = Randomizer_SelectFromPool(pool, size, seed);
-    *form_out = Randomizer_GetRandomForm(base_species, seed ^ 0xF0F0F0F0, FALSE);
+    u16 baseSpecies = Randomizer_SelectFromPool(pool, size, seed);
+    *formOut = Randomizer_GetRandomForm(baseSpecies, seed ^ 0xF0F0F0F0);
 
-    return base_species;
+    return baseSpecies;
 #endif
 }
 
@@ -738,22 +736,6 @@ void LONG_CALL Randomizer_RandomizeStarters(int *species)
         u16 pool[MAX_MON_NUM];
         u16 size = Randomizer_BuildSpeciesPool(species[i], 5, FALSE, pool, 200);
         species[i] = Randomizer_SelectFromPool(pool, size, gf_rand());
-        // forms[i] = Randomizer_GetRandomFormForSpecies(species[i], seed ^ 0xF0F0F0F0);
-    }
-}
-
-void LONG_CALL Randomizer_SyncStarterCries(u8 *work)
-{
-    struct PartyPokemon **choices = (struct PartyPokemon **)(work + 0x578);
-    u32 *sSpeciesCries = sStarterSpecies;
-
-    for (int i = 0; i < 3; i++) {
-        u16 species = GetMonData(choices[i], MON_DATA_SPECIES, NULL);
-
-        if (species != SPECIES_NONE) {
-            sSpeciesCries[i] = species;
-            sStarterChoiceSpecies[i] = species;
-        }
     }
 }
 
@@ -771,11 +753,11 @@ u8 LONG_CALL StarterChoice_PrintMsgOnWinEx(void *window, u32 heapID, BOOL makeFr
     if (msgBank == STARTER_CHOICE_MSG_BANK && msgno >= STARTER_CHOICE_DYNAMIC_MSG_FIRST && msgno <= STARTER_CHOICE_DYNAMIC_MSG_LAST) {
         u32 slot = (u32)(msgno - STARTER_CHOICE_DYNAMIC_MSG_FIRST) % 3;
 
-        if (sStarterChoiceSpecies[slot] != SPECIES_NONE) {
+        if (sStarterSpecies[slot] != SPECIES_NONE) {
             msgFmt = MessageFormat_New(heapID);
 
             if (msgFmt != NULL) {
-                BufferSpeciesName(msgFmt, 0, sStarterChoiceSpecies[slot]);
+                BufferSpeciesName(msgFmt, 0, sStarterSpecies[slot]);
                 *out = ReadMsgData_ExpandPlaceholders(msgFmt, msgData, msgno, heapID);
                 MessageFormat_Delete(msgFmt);
             }
