@@ -404,6 +404,12 @@ static BOOL Randomizer_HasIncompleteSprites(u16 species)
     return FALSE;
 }
 
+static BOOL Randomizer_IsValidBaseSpecies(u16 species)
+{
+    return species > SPECIES_NONE && species <= MAX_MON_NUM
+        && (species < SPECIES_EGG || species >= SPECIES_VICTINI);
+}
+
 u8 LONG_CALL Randomizer_GetRandomForm(u16 baseSpecies, u32 seed)
 {
     u16 formTable[32];
@@ -413,6 +419,10 @@ u8 LONG_CALL Randomizer_GetRandomForm(u16 baseSpecies, u32 seed)
 #ifndef RANDOMIZER_BLOCK_MEGAS_IN_TRAINERS
     allowTrainerMegas = TRUE;
 #endif
+
+    if (!Randomizer_IsValidBaseSpecies(baseSpecies)) {
+        return 0;
+    }
 
     validForms[validFormCount++] = 0;
 
@@ -509,7 +519,7 @@ static BOOL Randomizer_IsTypeCompatible(u16 originalSpecies, u16 candidateSpecie
 
 static BOOL Randomizer_ShouldBanSpecies(u16 species, BOOL isWild)
 {
-    if (species == SPECIES_NONE || species == SPECIES_EGG || species == SPECIES_BAD_EGG) {
+    if (!Randomizer_IsValidBaseSpecies(species)) {
         return TRUE;
     }
     if (Randomizer_HasIncompleteSprites(species)) {
@@ -590,6 +600,10 @@ static u16 Randomizer_BuildSpeciesPool(u16 originalSpecies, u16 level, BOOL isWi
         baseOriginal = GetBaseSpeciesFromAdjustedForm(originalSpecies);
     } else {
         baseOriginal = originalSpecies;
+    }
+
+    if (!Randomizer_IsValidBaseSpecies(baseOriginal)) {
+        return 0;
     }
 
     u16 bstTable[MAX_MON_NUM + 1];
@@ -716,6 +730,7 @@ u16 LONG_CALL Randomizer_GetRandomWildSpecies(struct PartyPokemon *party_pokemon
 {
     u16 original = GetMonData(party_pokemon, MON_DATA_SPECIES, NULL);
 #if !defined(RANDOMIZER_ENABLED) || !defined(RANDOMIZE_WILD)
+    *formOut = 0;
     return original;
 #else
     u16 level = GetMonData(party_pokemon, MON_DATA_LEVEL, NULL);
