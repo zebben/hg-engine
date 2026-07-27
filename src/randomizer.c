@@ -426,7 +426,7 @@ u8 LONG_CALL Randomizer_GetRandomForm(u16 baseSpecies, u32 seed)
 
     validForms[validFormCount++] = 0;
 
-    ArchiveDataLoadOfs(formTable, ARC_CODE_ADDONS, CODE_ADDON_FORM_DATA, sizeof(u16) * (baseSpecies * 32), sizeof(u16) * 32);
+    ReadFromNarcMemberByIdPair(formTable, ARC_CODE_ADDONS, CODE_ADDON_FORM_DATA, sizeof(u16) * (baseSpecies * 32), sizeof(u16) * 32);
 
     for (u8 i = 0; i < 32; i++) {
         if (formTable[i] == 0) {
@@ -607,11 +607,11 @@ static u16 Randomizer_BuildSpeciesPool(u16 originalSpecies, u16 level, BOOL isWi
     }
 
     u16 bstTable[MAX_MON_NUM + 1];
-    ArchiveDataLoadOfs(bstTable, ARC_CODE_ADDONS, CODE_ADDON_SPECIES_BST, 0, sizeof(u16) * (MAX_MON_NUM + 1));
+    ReadFromNarcMemberByIdPair(bstTable, ARC_CODE_ADDONS, CODE_ADDON_SPECIES_BST, 0, sizeof(u16) * (MAX_MON_NUM + 1));
 
 #ifdef RANDOMIZER_TYPE_MATCHING
     u16 typesTable[MAX_MON_NUM + 1];
-    ArchiveDataLoadOfs(typesTable, ARC_CODE_ADDONS, CODE_ADDON_SPECIES_TYPES, 0, sizeof(u16) * (MAX_MON_NUM + 1));
+    ReadFromNarcMemberByIdPair(typesTable, ARC_CODE_ADDONS, CODE_ADDON_SPECIES_TYPES, 0, sizeof(u16) * (MAX_MON_NUM + 1));
 #endif
 
     originalBst = bstTable[baseOriginal];
