@@ -43,7 +43,7 @@ int CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 side_cond 
     damageCalc.defender = defender;
     damageCalc.critical = critical;
     damageCalc.moveno = moveno;
-    damageCalc.movetype = GetAdjustedMoveType(sp, (isFutureSightWithoutAttacker ? BATTLER_NONE : attacker), moveno);
+    damageCalc.movetype = GetAdjustedMoveType(sp, isFutureSightWithoutAttacker ? BATTLER_NONE : attacker, moveno);
     damageCalc.movesplit = GetMoveSplit(sp, moveno);
     damageCalc.movepower = sp->moveTbl[moveno].power;
     damageCalc.damage_power = sp->damage_power;
@@ -73,6 +73,7 @@ int CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 side_cond 
     damageCalc.originalMoveType = sp->moveTbl[moveno].type;
     damageCalc.moveEffect = sp->moveTbl[moveno].effect;
     damageCalc.moveFlag = sp->moveTbl[moveno].flag;
+    damageCalc.multiHitCount = sp->multiHitCount;
 
     for (u32 i = 0; i < damageCalc.maxBattlers; i++) {
         struct sDamageCalc client = { 0 };

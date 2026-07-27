@@ -1,17 +1,17 @@
 #include "../../include/battle.h"
+#include "../../include/debug.h"
+#include "../../include/pokemon.h"
+#include "../../include/types.h"
 #include "../../include/constants/ability.h"
-#include "../../include/constants/battle_message_constants.h"
 #include "../../include/constants/battle_script_constants.h"
-#include "../../include/constants/file.h"
 #include "../../include/constants/hold_item_effects.h"
 #include "../../include/constants/item.h"
 #include "../../include/constants/move_effects.h"
 #include "../../include/constants/moves.h"
 #include "../../include/constants/species.h"
 #include "../../include/constants/weather_numbers.h"
-#include "../../include/debug.h"
-#include "../../include/pokemon.h"
-#include "../../include/types.h"
+#include "../../include/constants/battle_message_constants.h"
+#include "../../include/constants/file.h"
 
 /**
  *  @brief check if a move should activate the defender's ability and run a subscript
@@ -28,9 +28,9 @@ BOOL MoveHitDefenderAbilityCheckInternal(struct BattleSystem *bw, struct BattleS
     seq_no[0] = 0;
 
     if (sp->defence_client == BATTLER_NONE
-        || CheckSubstitute(sp, sp->defence_client) == TRUE
-        || ((sp->waza_status_flag & WAZA_STATUS_FLAG_NO_OUT) != 0)
-        || ((sp->server_status_flag & SERVER_STATUS_FLAG_x20) != 0)) {
+     || CheckSubstitute(sp, sp->defence_client) == TRUE
+     || ((sp->waza_status_flag & WAZA_STATUS_FLAG_NO_OUT) != 0)
+     || ((sp->server_status_flag & SERVER_STATUS_FLAG_x20) != 0)) {
         return ret;
     }
 
@@ -47,7 +47,7 @@ BOOL MoveHitDefenderAbilityCheckInternal(struct BattleSystem *bw, struct BattleS
             seq_no[0] = SUB_SEQ_APPLY_PARALYSIS;
             ret = TRUE;
         }
-    } else if (MoldBreakerAbilityCheck(sp, sp->attack_client, sp->defence_client, ABILITY_ROUGH_SKIN)
+    }  else if (MoldBreakerAbilityCheck(sp, sp->attack_client, sp->defence_client, ABILITY_ROUGH_SKIN)
         || MoldBreakerAbilityCheck(sp, sp->attack_client, sp->defence_client, ABILITY_IRON_BARBS)) {
         if ((sp->battlemon[sp->attack_client].hp)
             && (GetBattlerAbility(sp, sp->attack_client) != ABILITY_MAGIC_GUARD)
@@ -228,7 +228,7 @@ BOOL MoveHitDefenderAbilityCheckInternal(struct BattleSystem *bw, struct BattleS
                 && ((sp->oneSelfFlag[sp->defence_client].physical_damage) || (sp->oneSelfFlag[sp->defence_client].special_damage))) {
                 sp->addeffect_type = ADD_EFFECT_ABILITY;
                 sp->battlerIdTemp = sp->attack_client;
-                sp->battlemon[sp->attack_client].ability = GetBattlerAbility(sp, sp->defence_client); // spread defender ability to attacker
+                //sp->battlemon[sp->attack_client].ability = GetBattlerAbility(sp, sp->defence_client); // moved to subscript to handle popup
                 seq_no[0] = SUB_SEQ_HANDLE_MUMMY_MESSAGE;
                 ret = TRUE;
             }
@@ -310,7 +310,7 @@ BOOL MoveHitDefenderAbilityCheckInternal(struct BattleSystem *bw, struct BattleS
             seq_no[0] = SUB_SEQ_HANDLE_CURSED_BODY;
             ret = TRUE;
         }
-    } else if (MoldBreakerAbilityCheck(sp, sp->attack_client, sp->defence_client, ABILITY_THERMAL_EXCHANGE)) {
+    }  else if (MoldBreakerAbilityCheck(sp, sp->attack_client, sp->defence_client, ABILITY_THERMAL_EXCHANGE)) {
         if ((sp->battlemon[sp->defence_client].hp)
             && (sp->battlemon[sp->defence_client].states[STAT_ATTACK] < 12)
             && ((sp->battlemon[sp->defence_client].condition2 & STATUS2_SUBSTITUTE) == 0)
@@ -340,7 +340,9 @@ BOOL MoveHitDefenderAbilityCheckInternal(struct BattleSystem *bw, struct BattleS
         }
     } else if (MoldBreakerAbilityCheck(sp, sp->attack_client, sp->defence_client, ABILITY_SEED_SOWER)) {
         if ((sp->terrainOverlay.type != GRASSY_TERRAIN)
-            && ((sp->oneSelfFlag[sp->defence_client].physical_damage) || (sp->oneSelfFlag[sp->defence_client].special_damage))) {
+            && ((sp->oneSelfFlag[sp->defence_client].physical_damage) ||
+                (sp->oneSelfFlag[sp->defence_client].special_damage)))
+        {
             sp->addeffect_type = ADD_EFFECT_ABILITY;
             UpdateTerrainOverlay(sp, sp->defence_client, GRASSY_TERRAIN);
             sp->state_client = sp->defence_client;
@@ -350,7 +352,8 @@ BOOL MoveHitDefenderAbilityCheckInternal(struct BattleSystem *bw, struct BattleS
         }
     } else if (MoldBreakerAbilityCheck(sp, sp->attack_client, sp->defence_client, ABILITY_TOXIC_DEBRIS)) {
         if (((sp->battlemon[sp->defence_client].condition2 & STATUS2_SUBSTITUTE) == 0)
-            && (sp->oneSelfFlag[sp->defence_client].physical_damage)) {
+            && (sp->oneSelfFlag[sp->defence_client].physical_damage))
+        {
             int fieldSide = IsClientEnemy(bw, sp->attack_client);
             if (sp->scw[fieldSide].toxicSpikesLayers < 2) {
                 sp->addeffect_type = ADD_EFFECT_ABILITY;
@@ -373,16 +376,33 @@ BOOL MoveHitDefenderAbilityCheckInternal(struct BattleSystem *bw, struct BattleS
         }
 
     } else if (IS_CLIENT_IN_ILLUSION_NO_ABILITY(bw, sp->defence_client)
-        && ((sp->oneSelfFlag[sp->defence_client].physical_damage || sp->oneSelfFlag[sp->defence_client].special_damage)
-            || GetBattlerAbility(sp, sp->defence_client) != ABILITY_ILLUSION)) { // illusion has already activated, but it can be taken away without needing to have the ability
-        // handle illusion here so it takes priority over fainting.  notably
-        gIllusionStruct.isSideInIllusion &= ~No2Bit(SanitizeClientForTeamAccess(bw, sp->defence_client));
-        gIllusionStruct.illusionClient[SanitizeClientForTeamAccess(bw, sp->defence_client)] = CLIENT_MAX;
-        gIllusionStruct.illusionPos[SanitizeClientForTeamAccess(bw, sp->defence_client)] = 6;
-        BattleFormChange(sp->defence_client, sp->battlemon[sp->defence_client].form_no, bw, sp, 0);
-        sp->battlerIdTemp = sp->defence_client;
-        seq_no[0] = SUB_SEQ_HANDLE_ILLUSION_FADED;
-        ret = TRUE;
+            && gIllusionStruct.dontRemoveIllusion == FALSE
+            && ((sp->oneSelfFlag[sp->defence_client].physical_damage || sp->oneSelfFlag[sp->defence_client].special_damage)
+                || GetBattlerAbility(sp, sp->defence_client) != ABILITY_ILLUSION)) { // illusion has already activated, but it can be taken away without needing to have the ability
+            // handle illusion here so it takes priority over fainting.  notably
+            gIllusionStruct.isSideInIllusion &= ~No2Bit(SanitizeClientForTeamAccess(bw, sp->defence_client));
+            gIllusionStruct.illusionClient[SanitizeClientForTeamAccess(bw, sp->defence_client)] = CLIENT_MAX;
+            gIllusionStruct.illusionPos[SanitizeClientForTeamAccess(bw, sp->defence_client)] = 6;
+            BattleFormChange(sp->defence_client, sp->battlemon[sp->defence_client].form_no, bw, sp, 0);
+            sp->battlerIdTemp = sp->defence_client;
+            seq_no[0] = SUB_SEQ_HANDLE_ILLUSION_FADED;
+            ret = TRUE;
+    } else if (GetBattlerAbility(sp, sp->defence_client) == ABILITY_COTTON_DOWN) { //not breakable
+        if (sp->oneSelfFlag[sp->defence_client].physical_damage || sp->oneSelfFlag[sp->defence_client].special_damage) {
+            sp->addeffect_param = ADD_STATUS_EFF_BOOST_STATS_SPEED_DOWN;
+            sp->addeffect_type = ADD_EFFECT_PRINT_WORK_ABILITY;
+            sp->battlerIdTemp = sp->defence_client;
+            seq_no[0] = SUB_SEQ_COTTON_DOWN;
+            ret = TRUE;
+        }
+    } else if (GetBattlerAbility(sp, sp->defence_client) == ABILITY_PERISH_BODY) { // not breakable
+        //defender does not need to be alive
+        if ((sp->oneSelfFlag[sp->defence_client].physical_damage || sp->oneSelfFlag[sp->defence_client].special_damage)
+            && (IsContactBeingMade(GetBattlerAbility(sp, sp->attack_client), HeldItemHoldEffectGet(sp, sp->attack_client), HeldItemHoldEffectGet(sp, sp->defence_client), sp->current_move_index, sp->moveTbl[sp->current_move_index].flag))){
+            sp->addeffect_type = ADD_EFFECT_PRINT_WORK_ABILITY;
+            seq_no[0] = SUB_SEQ_PERISH_BODY;
+            ret = TRUE;
+        }
     }
 
     return ret;
