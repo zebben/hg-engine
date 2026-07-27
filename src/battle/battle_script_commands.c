@@ -5464,7 +5464,7 @@ BOOL BtlCmd_Transform(struct BattleSystem *bsys UNUSED, struct BattleStruct *ctx
 {
     IncrementBattleScriptPtr(ctx, 1);
 
-    HandleTransform(ctx);
+	HandleTransform(ctx);
 
     return FALSE;
 }
@@ -5532,7 +5532,8 @@ BOOL BtlCmd_TryPursuit(struct BattleSystem *bsys, struct BattleStruct *ctx)
                        ctx->battlemon[battlerId].movePPCur[moveIndex]--;
                    }
                    */
-                    if (ctx->pursuitContext.isActive == FALSE) {
+                    if (ctx->pursuitContext.isActive == FALSE)
+                    {
                         ctx->pursuitContext.originalAttacker = ctx->attack_client;
                         ctx->pursuitContext.originalDefender = ctx->defence_client;
                     }

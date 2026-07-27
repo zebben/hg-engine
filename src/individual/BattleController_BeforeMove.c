@@ -2860,8 +2860,8 @@ BOOL BattleController_CheckTypeBasedMoveConditionImmunities1(struct BattleSystem
 
     // Dark-type Prankster immunity
     if ((priority > 0 && GetMoveSplit(ctx, ctx->current_move_index) == SPLIT_STATUS && GetBattlerAbility(ctx, ctx->attack_client) == ABILITY_PRANKSTER && HasType(ctx, defender, TYPE_DARK) && (ctx->attack_client & 1) != (defender & 1)) // used on an enemy)
-                                                                                                                                                                                                                                           // Ghost-type immunity to trapping moves
-                                                                                                                                                                                                                                           // TODO: handle Octolock
+        // Ghost-type immunity to trapping moves
+        // TODO: handle Octolock
         || (moveEffect == MOVE_EFFECT_PREVENT_ESCAPE && HasType(ctx, defender, TYPE_GHOST))
         // Grass-type powder immunity
         || (IsPowderMove(ctx->current_move_index) && HasType(ctx, defender, TYPE_GRASS) && ctx->attack_client != defender)
@@ -3717,7 +3717,7 @@ BOOL BattleController_CheckSubstituteBlockingOtherEffects(struct BattleSystem *b
                 }
                 break;
             // TODO: Handle Sky Drop here
-            // case MOVE_EFFECT_TRANSFORM:
+            //case MOVE_EFFECT_TRANSFORM:
             case MOVE_EFFECT_SET_ABILITY_TO_INSOMNIA:
                 BattleController_ResetGeneralMoveFailureFlags(ctx, ctx->attack_client, TRUE);
                 LoadBattleSubSeqScript(ctx, ARC_BATTLE_SUB_SEQ, SUB_SEQ_BUT_IT_FAILED_SPREAD);
@@ -4339,15 +4339,15 @@ BOOL BattleController_CheckMoveFailures4_SingleTarget(struct BattleSystem *bsys 
         break;
     }
     case MOVE_TRANSFORM: {
-        // target ability is good as gold
+		    // target ability is good as gold
         if (GetBattlerAbility(ctx, ctx->defence_client) == ABILITY_GOOD_AS_GOLD
-            // target is behind a substitute or themselves transformed
+			// target is behind a substitute or themselves transformed
             || (ctx->battlemon[ctx->defence_client].condition2 & (STATUS2_TRANSFORMED | STATUS2_SUBSTITUTE)) != 0
-            // attacker is already transformed
-            || (ctx->battlemon[ctx->attack_client].condition2 & STATUS2_TRANSFORMED) != 0
-            // mew and ditto are the only folks who can transform as wild mons https://www.smogon.com/forums/threads/scarlet-violet-battle-mechanics-research.3709545/post-10403578
-            || ((!(BattleTypeGet(bsys) & BATTLE_TYPE_TRAINER)) ? (ctx->battlemon[ctx->attack_client].species != SPECIES_DITTO && ctx->battlemon[ctx->attack_client].species != SPECIES_MEW) : FALSE)
-            // target has an active illusion
+			// attacker is already transformed
+			|| (ctx->battlemon[ctx->attack_client].condition2 & STATUS2_TRANSFORMED) != 0
+			// mew and ditto are the only folks who can transform as wild mons https://www.smogon.com/forums/threads/scarlet-violet-battle-mechanics-research.3709545/post-10403578
+			|| ((!(BattleTypeGet(bsys) & BATTLE_TYPE_TRAINER)) ? (ctx->battlemon[ctx->attack_client].species != SPECIES_DITTO && ctx->battlemon[ctx->attack_client].species != SPECIES_MEW) : FALSE)
+			// target has an active illusion
             || IS_CLIENT_IN_ILLUSION(bsys, ctx->defence_client)) {
             butItFailedFlag = TRUE;
         }

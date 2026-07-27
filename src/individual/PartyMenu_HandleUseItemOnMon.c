@@ -1,3 +1,5 @@
+#include "../../include/types.h"
+#include "../../include/pokemon.h"
 #include "../../include/bag.h"
 #include "../../include/battle.h"
 #include "../../include/config.h"
@@ -14,14 +16,12 @@
 #include "../../include/debug.h"
 #include "../../include/overlay.h"
 #include "../../include/party_menu.h"
-#include "../../include/pokemon.h"
 #include "../../include/rtc.h"
 #include "../../include/save.h"
 #include "../../include/script.h"
 #include "../../include/sound.h"
-#include "../../include/types.h"
 
-int __attribute__((section(".init"))) PartyMenu_HandleUseItemOnMon_Internal(struct PartyMenu *partyMenu);
+int __attribute__((section (".init"))) PartyMenu_HandleUseItemOnMon_Internal(struct PartyMenu *partyMenu);
 u32 UseItemMonAttrChangeCheck(struct PartyMenu *wk, void *dat);
 BOOL CanUseRevealGlass(struct PartyPokemon *pp);
 BOOL CanUseNectar(struct PartyPokemon *pp, u16 nectar);
@@ -62,7 +62,7 @@ u16 NatureToMintItem[] = {
     [NATURE_SERIOUS] = ITEM_SERIOUS_MINT,
 };
 
-int __attribute__((section(".init"))) PartyMenu_HandleUseItemOnMon_Internal(struct PartyMenu *partyMenu)
+int __attribute__((section (".init"))) PartyMenu_HandleUseItemOnMon_Internal(struct PartyMenu *partyMenu)
 {
     struct ItemData *itemData = LoadItemDataOrGfx(partyMenu->args->itemId, 0, HEAP_ID_PARTY_MENU);
 
