@@ -65,6 +65,7 @@ arm9 AddBoxMonData_EditedCases_hook 0206F67C 0
 # starters
 arm9 set_starter_hidden_ability_hook 02096158 5
 arm9 CreateStarter_SetStarterSpecies_hook 02096094 3
+arm9 MoveRelearner_GetEligibleLevelUpMoves 0209176C 2
 arm9 CreateStarterMon_hook 020960E6 1
 0061 CreateMonSprites_hook 021E7098 3
 

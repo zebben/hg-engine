@@ -1,3 +1,4 @@
+#include "../include/constants/moves.h"
 #include "../include/constants/species.h"
 #include "../include/pokemon.h"
 #include "../include/randomizer.h"
@@ -52,8 +53,9 @@ void LONG_CALL CreateStarter_CreateMon(struct PartyPokemon *mon, int species, in
     u32 form = 0;
 
 #if defined(RANDOMIZER_ENABLED) && defined(RANDOMIZE_STARTERS)
-    u32 seed = (u32)species + (u32)5;
-    form = (u32)Randomizer_GetRandomForm(species, seed ^ 0xF0F0F0F0);
+    (void)slot;
+    form = species >> 11;
+    species &= 0x7FF;
 #else
     if (slot >= 0 && slot < 3) {
         form = sStarterChoices[slot] >> 11;
@@ -67,6 +69,13 @@ void LONG_CALL CreateStarter_CreateMon(struct PartyPokemon *mon, int species, in
     if (form != 0) {
         SetMonData(mon, MON_DATA_FORM, &form);
     }
+#if defined(RANDOMIZER_ENABLED) && defined(RANDOMIZE_LEARNSETS)
+    TryAppendMonMove(mon, MOVE_TACKLE);
+#endif
+#if defined(RANDOMIZER_ENABLED) && defined(RANDOMIZE_ABILITIES)
+    Randomizer_SetMonAbility(mon);
+#endif
+    RecalcPartyPokemonStats(mon);
 }
 
 /**
@@ -80,7 +89,12 @@ void LONG_CALL CreateMonSprites_HandleForm(MON_PIC *pic, u16 species, u8 gender,
     u32 form = 0;
 
     if (slot >= 0 && slot < 3) {
+#if defined(RANDOMIZER_ENABLED) && defined(RANDOMIZE_STARTERS)
+        form = species >> 11;
+        species &= 0x7FF;
+#else
         form = sStarterChoices[slot] >> 11;
+#endif
         sStarterChoiceCries[slot] = (form == 0) ? species : PokeOtherFormMonsNoGet(species, form);
     }
 

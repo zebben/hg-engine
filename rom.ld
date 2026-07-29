@@ -138,6 +138,7 @@ BmpTalkWinWrite = 0x0200E998 |1;
 MSG_PrintInit = 0x02020080 |1;
 SystemFontPaletteLoad = 0x02003030 |1;
 TalkFontPaletteLoad = 0x0200304C |1;
+PlayerProfile_GetNamePtr = 0x02028F54 | 1;
 
 /*Pal*/
 ArcUtil_PalSet = 0x02007938 |1;

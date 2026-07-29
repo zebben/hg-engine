@@ -2,11 +2,16 @@
 
 #include "../include/battle.h"
 #include "../include/config.h"
+#include "../include/constants/ability.h"
 #include "../include/constants/file.h"
+#include "../include/constants/generated/learnsets.h"
 #include "../include/constants/item.h"
+#include "../include/constants/moves.h"
 #include "../include/constants/species.h"
 #include "../include/message.h"
 #include "../include/pokemon.h"
+#include "../include/save.h"
+#include "../include/script.h"
 #include "../include/sprite.h"
 #include "../include/types.h"
 
@@ -17,15 +22,13 @@ extern u32 sStarterSpecies[3];
 #define STARTER_CHOICE_DYNAMIC_MSG_LAST  6
 
 #ifdef MEGA_EVOLUTIONS
-// TODO include mega.c to access sMegaTable directly if we can later
-
 struct MegaStruct {
     u16 monindex;
     u16 itemindex : 11;
     u16 form : 5;
 };
 
-const struct MegaStruct sMegaTable[] = {
+static const struct MegaStruct sRandomizerMegaTable[] = {
     {
         .monindex = SPECIES_VENUSAUR,
         .itemindex = ITEM_VENUSAURITE,
@@ -262,112 +265,6 @@ const struct MegaStruct sMegaTable[] = {
         .form = 1,
     },
 };
-
-#endif
-
-#ifdef RANDOMIZER_BLOCK_INCOMPLETE_SPRITES
-struct RandomizerSpeciesRange {
-    u16 start;
-    u16 end;
-};
-
-static const struct RandomizerSpeciesRange sRandomizerIncompleteSpriteRanges[] = {
-    { SPECIES_AEGISLASH, SPECIES_SPRITZEE },
-    { SPECIES_SWIRLIX, SPECIES_SWIRLIX },
-    { SPECIES_BINACLE, SPECIES_BARBARACLE },
-    { SPECIES_TYRUNT, SPECIES_TYRUNT },
-    { SPECIES_PUMPKABOO, SPECIES_PUMPKABOO },
-    { SPECIES_BERGMITE, SPECIES_AVALUGG },
-    { SPECIES_YVELTAL, SPECIES_YVELTAL },
-    { SPECIES_HOOPA, SPECIES_VOLCANION },
-    { SPECIES_LITTEN, SPECIES_CRABOMINABLE },
-    { SPECIES_CUTIEFLY, SPECIES_RIBOMBEE },
-    { SPECIES_TOXAPEX, SPECIES_ARAQUANID },
-    { SPECIES_MORELULL, SPECIES_SALANDIT },
-    { SPECIES_STUFFUL, SPECIES_BEWEAR },
-    { SPECIES_COMFEY, SPECIES_COMFEY },
-    { SPECIES_WIMPOD, SPECIES_WIMPOD },
-    { SPECIES_SANDYGAST, SPECIES_PYUKUMUKU },
-    { SPECIES_SILVALLY, SPECIES_SILVALLY },
-    { SPECIES_TOGEDEMARU, SPECIES_MIMIKYU },
-    { SPECIES_DHELMISE, SPECIES_KOMMO_O },
-    { SPECIES_COSMOG, SPECIES_COSMOEM },
-    { SPECIES_NIHILEGO, SPECIES_NIHILEGO },
-    { SPECIES_PHEROMOSA, SPECIES_CELESTEELA },
-    { SPECIES_GUZZLORD, SPECIES_NECROZMA },
-    { SPECIES_POIPOLE, SPECIES_BLACEPHALON },
-    { SPECIES_MELTAN, SPECIES_RABOOT },
-    { SPECIES_SOBBLE, SPECIES_CORVISQUIRE },
-    { SPECIES_BLIPBUG, SPECIES_ORBEETLE },
-    { SPECIES_GOSSIFLEUR, SPECIES_ELDEGOSS },
-    { SPECIES_DUBWOOL, SPECIES_DUBWOOL },
-    { SPECIES_DREDNAW, SPECIES_DREDNAW },
-    { SPECIES_ROLYCOLY, SPECIES_COALOSSAL },
-    { SPECIES_SILICOBRA, SPECIES_SANDACONDA },
-    { SPECIES_TOXTRICITY, SPECIES_CENTISKORCH },
-    { SPECIES_GRAPPLOCT, SPECIES_POLTEAGEIST },
-    { SPECIES_IMPIDIMP, SPECIES_GRIMMSNARL },
-    { SPECIES_CURSOLA, SPECIES_SIRFETCHD },
-    { SPECIES_FALINKS, SPECIES_FALINKS },
-    { SPECIES_FROSMOTH, SPECIES_STONJOURNER },
-    { SPECIES_COPPERAJAH, SPECIES_COPPERAJAH },
-    { SPECIES_ARCTOZOLT, SPECIES_ARCTOZOLT },
-    { SPECIES_ARCTOVISH, SPECIES_ARCTOVISH },
-    { SPECIES_DREEPY, SPECIES_URSHIFU },
-    { SPECIES_OVERQWIL, SPECIES_OVERQWIL },
-    { SPECIES_FLORAGATO, SPECIES_FLORAGATO },
-    { SPECIES_TAROUNTULA, SPECIES_SPIDOPS },
-    { SPECIES_PAWMI, SPECIES_PAWMOT },
-    { SPECIES_DOLLIV, SPECIES_DOLLIV },
-    { SPECIES_NACLSTACK, SPECIES_NACLSTACK },
-    { SPECIES_CHARCADET, SPECIES_CERULEDGE },
-    { SPECIES_BELLIBOLT, SPECIES_MABOSSTIFF },
-    { SPECIES_GRAFAIAI, SPECIES_BRAMBLEGHAST },
-    { SPECIES_SCOVILLAIN, SPECIES_SCOVILLAIN },
-    { SPECIES_WIGLETT, SPECIES_WUGTRIO },
-    { SPECIES_VAROOM, SPECIES_CYCLIZAR },
-    { SPECIES_GLIMMET, SPECIES_GLIMMET },
-    { SPECIES_CETODDLE, SPECIES_VELUZA },
-    { SPECIES_TATSUGIRI, SPECIES_TATSUGIRI },
-    { SPECIES_FARIGIRAF, SPECIES_DUDUNSPARCE },
-    { SPECIES_GREAT_TUSK, SPECIES_BRUTE_BONNET },
-    { SPECIES_SLITHER_WING, SPECIES_IRON_MOTH },
-    { SPECIES_FRIGIBAX, SPECIES_BAXCALIBUR },
-    { SPECIES_WO_CHIEN, SPECIES_CHI_YU },
-    { SPECIES_IRON_VALIANT, SPECIES_IRON_LEAVES },
-    { SPECIES_POLTCHAGEIST, SPECIES_ARCHALUDON },
-    { SPECIES_GOUGING_FIRE, SPECIES_TERAPAGOS },
-    { SPECIES_MEGA_VENUSAUR, SPECIES_MEGA_AMPHAROS },
-    { SPECIES_MEGA_SCIZOR, SPECIES_MEGA_SCIZOR },
-    { SPECIES_MEGA_HOUNDOOM, SPECIES_MEGA_MANECTRIC },
-    { SPECIES_MEGA_CAMERUPT, SPECIES_KYOGRE_PRIMAL },
-    { SPECIES_RATICATE_ALOLAN, SPECIES_VULPIX_ALOLAN },
-    { SPECIES_DIGLETT_ALOLAN, SPECIES_DIGLETT_ALOLAN },
-    { SPECIES_PERSIAN_ALOLAN, SPECIES_PERSIAN_ALOLAN },
-    { SPECIES_EXEGGUTOR_ALOLAN, SPECIES_MAROWAK_ALOLAN },
-    { SPECIES_MEOWTH_GALARIAN, SPECIES_MEOWTH_GALARIAN },
-    { SPECIES_SLOWBRO_GALARIAN, SPECIES_MOLTRES_GALARIAN },
-    { SPECIES_CORSOLA_GALARIAN, SPECIES_PIKACHU_COSPLAY },
-    { SPECIES_PIKACHU_ORIGINAL_CAP, SPECIES_CASTFORM_SNOWY },
-    { SPECIES_DIALGA_ORIGIN, SPECIES_PALKIA_ORIGIN },
-    { SPECIES_DARMANITAN_ZEN_MODE, SPECIES_DARMANITAN_ZEN_MODE_GALARIAN },
-    { SPECIES_LANDORUS_THERIAN, SPECIES_GENESECT_CHILL_DRIVE },
-    { SPECIES_GRENINJA_ASH, SPECIES_GRENINJA_ASH },
-    { SPECIES_ZYGARDE_10, SPECIES_ROCKRUFF_OWN_TEMPO },
-    { SPECIES_MINIOR_CORE_RED, SPECIES_MAGEARNA_ORIGINAL },
-    { SPECIES_CRAMORANT_GULPING, SPECIES_CRAMORANT_GORGING },
-    { SPECIES_SINISTEA_ANTIQUE, SPECIES_POLTEAGEIST_ANTIQUE },
-    { SPECIES_ALCREMIE_FILLER_1, SPECIES_ALCREMIE_FILLER_2 },
-    { SPECIES_ZACIAN_CROWNED, SPECIES_CALYREX_SHADOW_RIDER },
-    { SPECIES_GROWLITHE_HISUIAN, SPECIES_GROWLITHE_HISUIAN },
-    { SPECIES_TYPHLOSION_HISUIAN, SPECIES_QWILFISH_HISUIAN },
-    { SPECIES_SAMUROTT_HISUIAN, SPECIES_SAMUROTT_HISUIAN },
-    { SPECIES_AVALUGG_HISUIAN, SPECIES_DECIDUEYE_HISUIAN },
-    { SPECIES_UNFEZANT_FEMALE, SPECIES_JELLICENT_FEMALE },
-    { SPECIES_TATSUGIRI_DROOPY, SPECIES_REVAVROOM_CAPH },
-    { SPECIES_POLTCHAGEIST_MASTERPIECE, SPECIES_OGERPON_CORNERSTONE_MASK },
-    { SPECIES_URSALUNA_BLOODMOON, SPECIES_TERAPAGOS_STELLAR },
-};
 #endif
 
 MessageFormat LONG_CALL *MessageFormat_New(int heapID);
@@ -378,9 +275,9 @@ void LONG_CALL MessageFormat_Delete(MessageFormat *messageFormat);
 static u16 Randomizer_GetMegaStone(u16 species, u8 form)
 {
 #ifdef MEGA_EVOLUTIONS
-    for (u32 i = 0; i < NELEMS(sMegaTable); i++) {
-        if (sMegaTable[i].monindex == species && sMegaTable[i].form == form) {
-            return sMegaTable[i].itemindex;
+    for (u32 i = 0; i < NELEMS(sRandomizerMegaTable); i++) {
+        if (sRandomizerMegaTable[i].monindex == species && sRandomizerMegaTable[i].form == form) {
+            return sRandomizerMegaTable[i].itemindex;
         }
     }
 #endif
@@ -390,18 +287,6 @@ static u16 Randomizer_GetMegaStone(u16 species, u8 form)
 static BOOL Randomizer_IsMegaAdjustedSpecies(u16 adjustedSpecies)
 {
     return adjustedSpecies >= SPECIES_MEGA_START && adjustedSpecies <= MAX_MEGA_NUM;
-}
-
-static BOOL Randomizer_HasIncompleteSprites(u16 species)
-{
-#ifdef RANDOMIZER_BLOCK_INCOMPLETE_SPRITES
-    for (u32 i = 0; i < NELEMS(sRandomizerIncompleteSpriteRanges); i++) {
-        if (species >= sRandomizerIncompleteSpriteRanges[i].start && species <= sRandomizerIncompleteSpriteRanges[i].end) {
-            return TRUE;
-        }
-    }
-#endif
-    return FALSE;
 }
 
 static BOOL Randomizer_IsValidBaseSpecies(u16 species)
@@ -433,9 +318,7 @@ u8 LONG_CALL Randomizer_GetRandomForm(u16 baseSpecies, u32 seed)
             break;
         }
         u16 adjusted_species = formTable[i] & ~NEEDS_REVERSION;
-        if (Randomizer_HasIncompleteSprites(adjusted_species)) {
-            continue;
-        }
+
         if (formTable[i] & NEEDS_REVERSION) {
 #ifdef RANDOMIZER_BLOCK_MEGAS_IN_TRAINERS
             if (allowTrainerMegas) {
@@ -520,9 +403,6 @@ static BOOL Randomizer_IsTypeCompatible(u16 originalSpecies, u16 candidateSpecie
 static BOOL Randomizer_ShouldBanSpecies(u16 species, BOOL isWild)
 {
     if (!Randomizer_IsValidBaseSpecies(species)) {
-        return TRUE;
-    }
-    if (Randomizer_HasIncompleteSprites(species)) {
         return TRUE;
     }
 
@@ -700,7 +580,326 @@ static u16 Randomizer_SelectFromPool(u16 *pool, u16 poolSize, u32 seed)
     return selectedSpecies;
 }
 
-u16 LONG_CALL Randomizer_GetRandomTrainerSpecies(u16 originalSpecies, u16 level, u32 trainer, u8 *formOut, u16 *itemOut)
+static u32 HashPlayerName(const u16 *name)
+{
+    u32 hash = 2166136261u;
+
+    while (*name != 0xFFFF) {
+        u16 ch = *name++;
+
+        hash ^= ch & 0xFF;
+        hash *= 16777619u;
+        hash ^= ch >> 8;
+        hash *= 16777619u;
+    }
+
+    return hash;
+}
+
+static u32 Randomizer_MixSeed(u32 value)
+{
+    value ^= value >> 16;
+    value *= 0x7FEB352Du;
+    value ^= value >> 15;
+    value *= 0x846CA68Bu;
+    value ^= value >> 16;
+    return value;
+}
+
+static BOOL Randomizer_IsOrdinaryLearnableMove(u16 move)
+{
+    if (move == MOVE_NONE || move == MOVE_STRUGGLE || move >= NUM_OF_MOVES || IsMoveUnimplemented(move)) {
+        return FALSE;
+    }
+
+    if ((move >= MOVE_BREAKNECK_BLITZ_PHYSICAL && move <= MOVE_CATASTROPIKA)
+        || (move >= MOVE_SINISTER_ARROW_RAID && move <= MOVE_GENESIS_SUPERNOVA)
+        || move == MOVE_10_000_000_VOLT_THUNDERBOLT
+        || (move >= MOVE_LIGHT_THAT_BURNS_THE_SKY && move <= MOVE_CLANGOROUS_SOULBLAZE)
+        || move == MOVE_MAX_GUARD
+        || (move >= MOVE_MAX_FLARE && move <= MOVE_MAX_STEELSPIKE)) {
+        return FALSE;
+    }
+
+    return TRUE;
+}
+
+static BOOL Randomizer_IsDamagingMove(u16 move)
+{
+    return GetMoveData(move, MOVE_DATA_BASE_POWER) != 0;
+}
+
+static BOOL Randomizer_MoveAlreadySelected(const u16 *moves, u16 count, u16 move)
+{
+    for (u16 i = 0; i < count; i++) {
+        if (moves[i] == move) {
+            return TRUE;
+        }
+    }
+    return FALSE;
+}
+
+static u16 Randomizer_SelectMove(u32 seed, BOOL requireDamage, const u16 *selectedMoves, u16 selectedCount)
+{
+    for (u32 attempt = 0; attempt < NUM_OF_MOVES * 2; attempt++) {
+        u16 move = 1 + (Randomizer_MixSeed(seed + attempt * 0x9E3779B9u) % (NUM_OF_MOVES - 1));
+        if (!Randomizer_IsOrdinaryLearnableMove(move)
+            || Randomizer_MoveAlreadySelected(selectedMoves, selectedCount, move)
+            || (requireDamage && !Randomizer_IsDamagingMove(move))) {
+            continue;
+        }
+        return move;
+    }
+
+    return MOVE_TACKLE;
+}
+
+static u32 Randomizer_GetLearnsetSeed(u16 species, u8 form, u32 pid, u32 salt)
+{
+    const u16 *name = PlayerProfile_GetNamePtr(Sav2_PlayerData_GetProfileAddr(SaveBlock2_get()));
+    return HashPlayerName(name)
+        ^ Randomizer_MixSeed(species ^ 0x3C6EF372u)
+        ^ Randomizer_MixSeed(form ^ 0xDAA66D2Bu)
+        ^ Randomizer_MixSeed(pid ^ 0x78DDE6E4u)
+        ^ salt;
+}
+
+void LONG_CALL Randomizer_GenerateLevelUpLearnset(u16 species, u8 form, u32 pid, u32 *learnset)
+{
+    u16 selectedMoves[33];
+    u32 baseSeed = Randomizer_GetLearnsetSeed(species, form, pid, 0xBB67AE85u);
+
+    for (u16 i = 0; i < 33; i++) {
+        u16 level = (i + 1) * 3;
+        u32 moveSeed = baseSeed ^ Randomizer_MixSeed(level ^ 0x6A09E667u);
+        BOOL requireDamage = (i == 0) || (Randomizer_MixSeed(moveSeed ^ 0x510E527Fu) % 100 < 70);
+        u16 move = Randomizer_SelectMove(moveSeed, requireDamage, selectedMoves, i);
+        selectedMoves[i] = move;
+        learnset[i] = ((u32)level << LEVEL_UP_LEARNSET_LEVEL_SHIFT) | move;
+    }
+    learnset[33] = LEVEL_UP_LEARNSET_END;
+}
+
+void LONG_CALL Randomizer_GenerateRelearnerMoves(u16 species, u8 form, u32 pid, u16 *moves)
+{
+    u32 baseSeed = Randomizer_GetLearnsetSeed(species, form, pid, 0x1F83D9ABu);
+
+    for (u16 i = 0; i < 5; i++) {
+        u32 moveSeed = baseSeed ^ Randomizer_MixSeed(i ^ 0x5BE0CD19u);
+        BOOL requireDamage = Randomizer_MixSeed(moveSeed ^ 0xA54FF53Au) % 100 < 65;
+        moves[i] = Randomizer_SelectMove(moveSeed, requireDamage, moves, i);
+    }
+}
+
+void LONG_CALL Randomizer_InitBoxMonMoveset(struct BoxPokemon *boxMon)
+{
+#if defined(RANDOMIZER_ENABLED) && defined(RANDOMIZE_LEARNSETS)
+    u32 learnset[MAX_LEVELUP_MOVES];
+    u16 currentMoves[4] = { MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE };
+    u8 moveCount = 0;
+    u16 species = GetBoxMonData(boxMon, MON_DATA_SPECIES, NULL);
+    u8 form = GetBoxMonData(boxMon, MON_DATA_FORM, NULL);
+    u8 level = GetBoxMonData(boxMon, MON_DATA_LEVEL, NULL);
+    u32 pid = GetBoxMonData(boxMon, MON_DATA_PERSONALITY, NULL);
+
+    Randomizer_GenerateLevelUpLearnset(species, form, pid, learnset);
+    for (u16 i = 0; i < 33 && LEVEL_UP_LEARNSET_LEVEL(learnset[i]) <= level; i++) {
+        u16 move = LEVEL_UP_LEARNSET_MOVE(learnset[i]);
+        if (moveCount < 4) {
+            currentMoves[moveCount++] = move;
+        } else {
+            currentMoves[0] = currentMoves[1];
+            currentMoves[1] = currentMoves[2];
+            currentMoves[2] = currentMoves[3];
+            currentMoves[3] = move;
+        }
+    }
+
+    for (u16 i = 0; i < 4; i++) {
+        u16 move = currentMoves[i];
+        u8 ppUps = 0;
+        u8 pp = move == MOVE_NONE ? 0 : GetMoveMaxPP(move, 0);
+        SetBoxMonData(boxMon, MON_DATA_MOVE1 + i, &move);
+        SetBoxMonData(boxMon, MON_DATA_MOVE1PPUP + i, &ppUps);
+        SetBoxMonData(boxMon, MON_DATA_MOVE1PP + i, &pp);
+    }
+#else
+    InitBoxMonMoveset(boxMon);
+#endif
+}
+
+static BOOL Randomizer_IsAbilityAllowed(u16 ability)
+{
+    switch (ability) {
+    // invalid
+    case ABILITY_NONE:
+    case ABILITY_TEMP2:
+    case ABILITY_TEMP4:
+    // unimplemented
+    case ABILITY_AROMA_VEIL:
+    case ABILITY_SWEET_VEIL:
+    case ABILITY_SYMBIOSIS:
+    case ABILITY_SHIELDS_DOWN:
+    case ABILITY_RECEIVER:
+    case ABILITY_POWER_OF_ALCHEMY:
+    case ABILITY_RKS_SYSTEM:
+    case ABILITY_BALL_FETCH:
+    case ABILITY_MIRROR_ARMOR:
+    case ABILITY_GULP_MISSILE:
+    case ABILITY_RIPEN:
+    case ABILITY_MIMICRY:
+    case ABILITY_SCREEN_CLEANER:
+    case ABILITY_PERISH_BODY:
+    case ABILITY_WANDERING_SPIRIT:
+    case ABILITY_NEUTRALIZING_GAS:
+    case ABILITY_HUNGER_SWITCH:
+    case ABILITY_QUICK_DRAW:
+    case ABILITY_CURIOUS_MEDICINE:
+    case ABILITY_GUARD_DOG:
+    case ABILITY_ZERO_TO_HERO:
+    case ABILITY_COMMANDER:
+    case ABILITY_GOOD_AS_GOLD:
+    case ABILITY_OPPORTUNIST:
+    case ABILITY_CUD_CHEW:
+    case ABILITY_COSTAR:
+    case ABILITY_MYCELIUM_MIGHT:
+    case ABILITY_EMBODY_ASPECT:
+    case ABILITY_EMBODY_ASPECT_2:
+    case ABILITY_EMBODY_ASPECT_3:
+    case ABILITY_EMBODY_ASPECT_4:
+    case ABILITY_TOXIC_CHAIN:
+    case ABILITY_SUPERSWEET_SYRUP:
+    case ABILITY_TERA_SHIFT:
+    case ABILITY_TERAFORM_ZERO:
+    case ABILITY_POISON_PUPPETEER:
+    // banned
+    case ABILITY_WONDER_GUARD:
+        return FALSE;
+    default:
+        return TRUE;
+    }
+}
+
+static u16 Randomizer_SelectAbility(u32 seed)
+{
+    u16 allowedCount = 0;
+
+    for (u16 ability = 1; ability < NUM_ABILITIES; ability++) {
+        if (Randomizer_IsAbilityAllowed(ability)) {
+            allowedCount++;
+        }
+    }
+
+    if (allowedCount == 0) {
+        return ABILITY_NONE;
+    }
+
+    u16 selected = Randomizer_MixSeed(seed) % allowedCount;
+    for (u16 ability = 1; ability < NUM_ABILITIES; ability++) {
+        if (Randomizer_IsAbilityAllowed(ability) && selected-- == 0) {
+            return ability;
+        }
+    }
+
+    return ABILITY_NONE;
+}
+
+static u32 Randomizer_GetMonAbilitySeed(struct PartyPokemon *mon)
+{
+    if (gFieldSysPtr == NULL) {
+        return 0;
+    }
+    const u16 *name = PlayerProfile_GetNamePtr(Sav2_PlayerData_GetProfileAddr(SaveBlock2_get()));
+    if (name == NULL) {
+        return 0;
+    }
+    u32 species = GetMonData(mon, MON_DATA_SPECIES, NULL);
+    u32 form = GetMonData(mon, MON_DATA_FORM, NULL);
+    u32 pid = GetMonData(mon, MON_DATA_PERSONALITY, NULL);
+
+    return HashPlayerName(name)
+        ^ Randomizer_MixSeed(species ^ 0xA341316Cu)
+        ^ Randomizer_MixSeed(form ^ 0xC8013EA4u)
+        ^ Randomizer_MixSeed(pid ^ 0xAD90777Du)
+        ^ 0x7E95761Eu;
+}
+
+void LONG_CALL Randomizer_SetMonAbility(struct PartyPokemon *mon)
+{
+#if defined(RANDOMIZER_ENABLED) && defined(RANDOMIZE_ABILITIES)
+    u16 ability = Randomizer_SelectAbility(Randomizer_GetMonAbilitySeed(mon));
+    SetMonData(mon, MON_DATA_ABILITY, &ability);
+#else
+    ResetPartyPokemonAbility(mon);
+#endif
+}
+
+void LONG_CALL Randomizer_SetTrainerMonAbility(struct PartyPokemon *mon, u16 originalSpecies, u32 trainer, u8 partySlot)
+{
+#if defined(RANDOMIZER_ENABLED) && defined(RANDOMIZE_ABILITIES) && defined(RANDOMIZE_TRAINERS)
+    u32 seed = Randomizer_GetMonAbilitySeed(mon)
+        ^ Randomizer_MixSeed(originalSpecies ^ 0x9E3779B9u)
+        ^ Randomizer_MixSeed(trainer ^ 0x85EBCA6Bu)
+        ^ Randomizer_MixSeed(partySlot ^ 0xC2B2AE35u)
+        ^ 0xD1B54A35u;
+    u16 ability = Randomizer_SelectAbility(seed);
+    SetMonData(mon, MON_DATA_ABILITY, &ability);
+#else
+    (void)originalSpecies;
+    (void)trainer;
+    (void)partySlot;
+#endif
+}
+
+static const u16 sRandomizerTrainerHeldItems[] = {
+    ITEM_LUM_BERRY,
+    ITEM_SITRUS_BERRY,
+    ITEM_WHITE_HERB,
+    // ITEM_CHOICE_BAND,
+    ITEM_LEFTOVERS,
+    ITEM_WIDE_LENS,
+    ITEM_EXPERT_BELT,
+    ITEM_LIFE_ORB,
+    ITEM_FOCUS_SASH,
+    // ITEM_CHOICE_SCARF,
+    // ITEM_CHOICE_SPECS,
+    ITEM_EVIOLITE,
+    ITEM_ROCKY_HELMET,
+    ITEM_AIR_BALLOON,
+    ITEM_WEAKNESS_POLICY,
+    ITEM_ASSAULT_VEST,
+    ITEM_SAFETY_GOGGLES,
+    ITEM_FOCUS_BAND,
+    ITEM_BRIGHT_POWDER,
+    ITEM_QUICK_CLAW,
+    ITEM_AIR_BALLOON,
+};
+
+u16 LONG_CALL Randomizer_GetRandomTrainerHeldItem(struct PartyPokemon *mon, u16 originalSpecies, u16 originalItem, u32 trainer, u8 partySlot)
+{
+#if defined(RANDOMIZER_ENABLED) && defined(RANDOMIZE_TRAINERS) && defined(RANDOMIZE_TRAINER_HELD_ITEMS)
+    if (originalItem == ITEM_NONE) {
+        return ITEM_NONE;
+    }
+
+    u32 seed = Randomizer_GetMonAbilitySeed(mon)
+        ^ Randomizer_MixSeed(originalSpecies ^ 0x243F6A88u)
+        ^ Randomizer_MixSeed(originalItem ^ 0xB7E15162u)
+        ^ Randomizer_MixSeed(trainer ^ 0x8AED2A6Bu)
+        ^ Randomizer_MixSeed(partySlot ^ 0x9E3779B9u)
+        ^ 0xA4093822u;
+
+    return sRandomizerTrainerHeldItems[Randomizer_MixSeed(seed) % NELEMS(sRandomizerTrainerHeldItems)];
+#else
+    (void)mon;
+    (void)originalSpecies;
+    (void)trainer;
+    (void)partySlot;
+    return originalItem;
+#endif
+}
+
+u16 LONG_CALL Randomizer_GetRandomTrainerSpecies(u16 originalSpecies, u16 level, u32 trainer, u8 partySlot, u8 *formOut, u16 *itemOut)
 {
 #if !defined(RANDOMIZER_ENABLED) || !defined(RANDOMIZE_TRAINERS)
     *itemOut = ITEM_NONE;
@@ -708,19 +907,32 @@ u16 LONG_CALL Randomizer_GetRandomTrainerSpecies(u16 originalSpecies, u16 level,
 #else
     u16 pool[MAX_MON_NUM];
     u16 size = Randomizer_BuildSpeciesPool(originalSpecies, level, FALSE, pool, MAX_MON_NUM);
-    u32 seed = (u32)originalSpecies + (u32)level + trainer;
+    if (gFieldSysPtr == NULL) {
+        *itemOut = ITEM_NONE;
+        *formOut = 0;
+        return originalSpecies;
+    }
+    const u16 *name = PlayerProfile_GetNamePtr(Sav2_PlayerData_GetProfileAddr(gFieldSysPtr->savedata));
+    if (name == NULL) {
+        *itemOut = ITEM_NONE;
+        *formOut = 0;
+        return originalSpecies;
+    }
+    u32 seed = (u32)HashPlayerName(name) + (u32)originalSpecies + (u32)trainer + (u32)partySlot;
 
     u16 baseSpecies = Randomizer_SelectFromPool(pool, size, seed);
     u8 form = Randomizer_GetRandomForm(baseSpecies, seed ^ 0xF0F0F0F0);
 
+#ifdef MEGA_EVOLUTIONS
     u16 megaStone = Randomizer_GetMegaStone(baseSpecies, form);
     if (megaStone != ITEM_NONE) {
         *itemOut = megaStone;
         *formOut = 0;
-    } else {
-        *itemOut = ITEM_NONE;
-        *formOut = form;
+        return baseSpecies;
     }
+#endif
+    *itemOut = ITEM_NONE;
+    *formOut = form;
 
     return baseSpecies;
 #endif
@@ -750,7 +962,28 @@ void LONG_CALL Randomizer_RandomizeStarters(int *species)
     for (int i = 0; i < 3; i++) {
         u16 pool[MAX_MON_NUM];
         u16 size = Randomizer_BuildSpeciesPool(species[i], 5, FALSE, pool, 200);
-        species[i] = Randomizer_SelectFromPool(pool, size, gf_rand());
+        u16 uniqueSize = 0;
+
+        for (u16 j = 0; j < size; j++) {
+            BOOL duplicate = FALSE;
+            for (int previous = 0; previous < i; previous++) {
+                if (pool[j] == (species[previous] & 0x7FF)) {
+                    duplicate = TRUE;
+                    break;
+                }
+            }
+            if (!duplicate) {
+                pool[uniqueSize++] = pool[j];
+            }
+        }
+
+        if (uniqueSize != 0) {
+            size = uniqueSize;
+        }
+        u16 baseSpecies = Randomizer_SelectFromPool(pool, size, gf_rand());
+        u32 formSeed = (u32)baseSpecies + 5;
+        u8 form = Randomizer_GetRandomForm(baseSpecies, formSeed ^ 0xF0F0F0F0);
+        species[i] = MON_WITH_FORM(baseSpecies, form);
     }
 }
 
@@ -772,7 +1005,7 @@ u8 LONG_CALL StarterChoice_PrintMsgOnWinEx(void *window, u32 heapID, BOOL makeFr
             msgFmt = MessageFormat_New(heapID);
 
             if (msgFmt != NULL) {
-                BufferSpeciesName(msgFmt, 0, sStarterSpecies[slot]);
+                BufferSpeciesName(msgFmt, 0, sStarterSpecies[slot] & 0x7FF);
                 *out = ReadMsgData_ExpandPlaceholders(msgFmt, msgData, msgno, heapID);
                 MessageFormat_Delete(msgFmt);
             }

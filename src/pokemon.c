@@ -15,6 +15,7 @@
 #include "../include/constants/weather_numbers.h"
 #include "../include/debug.h"
 #include "../include/overlay.h"
+#include "../include/randomizer.h"
 #include "../include/rtc.h"
 #include "../include/save.h"
 #include "../include/script.h"
@@ -71,6 +72,11 @@ void SetPartyPokemonParamsForEvoCutscene(struct PartyPokemon *mon, u16 *targetSp
     if (form) {
         SetMonData(mon, MON_DATA_FORM, &form);
     }
+#if defined(RANDOMIZER_ENABLED) && defined(RANDOMIZE_ABILITIES)
+    Randomizer_SetMonAbility(mon);
+#else
+    ResetPartyPokemonAbility(mon);
+#endif
     if (clearEvoStructure) {
         memset(gEvolutionSceneOverride, 0, sizeof(gEvolutionSceneOverride));
     }
@@ -156,8 +162,7 @@ u16 LONG_CALL GetSpeciesBasedOnForm(int mons_no, int form_no)
  */
 u16 LONG_CALL GetBaseSpeciesFromAdjustedForm(u32 mons_no)
 {
-    if (mons_no > MAX_MON_NUM)
-    {
+    if (mons_no > MAX_MON_NUM) {
         ReadFromNarcMemberByIdPair(&mons_no, ARC_CODE_ADDONS, CODE_ADDON_FORM_SPECIES_MAPPING, sizeof(u16) * (mons_no - SPECIES_MEGA_START), sizeof(u16));
     }
     return mons_no;
@@ -176,8 +181,7 @@ u16 LONG_CALL GetFormFromAdjustedForm(u32 mons_no)
         u16 oldSpecies = GetBaseSpeciesFromAdjustedForm(mons_no);
         u16 formTable[32]; // right on stack so do not have to free this
         ReadFromNarcMemberByIdPair(formTable, ARC_CODE_ADDONS, CODE_ADDON_FORM_DATA, sizeof(u16) * (oldSpecies * 32), sizeof(u16) * 32);
-        for (ret = 0; ret < 32; ret++)
-        {
+        for (ret = 0; ret < 32; ret++) {
             if ((formTable[ret] & ~NEEDS_REVERSION) == mons_no || !formTable[ret]) {
                 break;
             }
@@ -846,7 +850,11 @@ void LONG_CALL ChangePartyPokemonToForm(struct PartyPokemon *pp, u32 form)
     if (form != GetMonData(pp, MON_DATA_FORM, NULL)) {
         SetMonData(pp, MON_DATA_FORM, &form);
         RecalcPartyPokemonStats(pp);
+#if defined(RANDOMIZER_ENABLED) && defined(RANDOMIZE_ABILITIES)
+        Randomizer_SetMonAbility(pp);
+#else
         ResetPartyPokemonAbility(pp);
+#endif
     }
 }
 
@@ -973,7 +981,11 @@ void LONG_CALL UpdatePassiveForms(struct PartyPokemon *pp)
     if (shouldUpdate) {
         SetMonData(pp, MON_DATA_FORM, &form);
         RecalcPartyPokemonStats(pp);
+#if defined(RANDOMIZER_ENABLED) && defined(RANDOMIZE_ABILITIES)
+        Randomizer_SetMonAbility(pp);
+#else
         ResetPartyPokemonAbility(pp);
+#endif
     }
 }
 
@@ -1377,7 +1389,7 @@ BOOL LONG_CALL GiveMon(int heapId, void *saveData, int species, int level, int f
 
     if (forme != 0) // reinitialize moves for different learnsets
     {
-        InitBoxMonMoveset(&pokemon->box);
+        Randomizer_InitBoxMonMoveset(&pokemon->box);
     }
 
     RecalcPartyPokemonStats(pokemon); // recalculate stats
@@ -1504,7 +1516,7 @@ void LONG_CALL CreateBoxMonData(struct BoxPokemon *boxmon, int species, int leve
 
     i = GetBoxMonGender(boxmon);
     SetBoxMonData(boxmon, MON_DATA_GENDER, (u8 *)&i);
-    InitBoxMonMoveset(boxmon);
+    Randomizer_InitBoxMonMoveset(boxmon);
     BoxMonSetFastModeOff(boxmon, flag);
 }
 
@@ -1545,7 +1557,11 @@ bool8 LONG_CALL RevertFormChange(struct PartyPokemon *pp, u16 species, u8 form_n
         SetMonData(pp, MON_DATA_FORM, &work);
         correct_zacian_zamazenta_kyurem_moves_for_form(pp, work, 0);
         RecalcPartyPokemonStats(pp);
+#if defined(RANDOMIZER_ENABLED) && defined(RANDOMIZE_ABILITIES)
+        Randomizer_SetMonAbility(pp);
+#else
         ResetPartyPokemonAbility(pp);
+#endif
         ret = TRUE;
     }
     return ret;
@@ -2052,7 +2068,11 @@ u32 MonTryLearnMoveOnLevelUp(struct PartyPokemon *mon, int *last_i, u16 *sp0)
     u32 form = GetMonData(mon, MON_DATA_FORM, NULL);
     u32 level = (u8)GetMonData(mon, MON_DATA_LEVEL, NULL);
 
+#if defined(RANDOMIZER_ENABLED) && defined(RANDOMIZE_LEARNSETS)
+    Randomizer_GenerateLevelUpLearnset(species, (u8)form, GetMonData(mon, MON_DATA_PERSONALITY, NULL), levelUpLearnset);
+#else
     LoadLevelUpLearnset_HandleAlternateForm(species, (int)form, levelUpLearnset);
+#endif
 
     if (isMonEvolving && LEVEL_UP_LEARNSET_LEVEL(levelUpLearnset[*last_i]) == 0) { // when evolving, try to learn moves at level 0
         level = 0;
@@ -2338,7 +2358,8 @@ BOOL GetMonMachineMoveCompat(struct PartyPokemon *pp, u16 machineMoveIndex)
 /**
  * @brief loads level up data for a mon. reads from data/generated/LevelupLearnsets.c
  */
-void LONG_CALL LoadLevelUpLearnset_HandleAlternateForm(int species, int form, u32 *levelUpLearnset) {
+void LONG_CALL LoadLevelUpLearnset_HandleAlternateForm(int species, int form, u32 *levelUpLearnset)
+{
     ReadFromNarcMemberByIdPair(levelUpLearnset, ARC_LEVELUP_LEARNSETS, 0, PokeOtherFormMonsNoGet(species, form) * MAX_LEVELUP_MOVES * sizeof(u32), MAX_LEVELUP_MOVES * sizeof(u32));
 
 #ifdef BLOCK_LEARNING_UNIMPLEMENTED_MOVES

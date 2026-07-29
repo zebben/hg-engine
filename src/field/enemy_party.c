@@ -92,7 +92,7 @@ void MakeTrainerPokemonParty(struct BATTLE_PARAM *bp, int num, int heapID)
 
     // goal:  get rid of massive switch statement with each individual byte.  make the trainer type a bitfield
     u32 id;
-    u16 species = 0, adjustedSpecies = 0, item = 0, ability = 0, level = 0, ball = 0, hp = 0, atk = 0, def = 0, speed = 0, spatk = 0, spdef = 0, ab1 = 0, ab2 = 0;
+    u16 species = 0, adjustedSpecies = 0, item = 0, originalItem = 0, ability = 0, level = 0, ball = 0, hp = 0, atk = 0, def = 0, speed = 0, spatk = 0, spdef = 0, ab1 = 0, ab2 = 0;
     u16 offset = 0;
     u16 moves[4];
     u8 ivnums[6];
@@ -101,6 +101,9 @@ void MakeTrainerPokemonParty(struct BATTLE_PARAM *bp, int num, int heapID)
     u16 *nickname = sys_AllocMemory(heapID, 11 * sizeof(u16));
     u8 form_no = 0, abilityslot = 0, nature = 0, ballseal = 0, shinylock = 0, status = 0;
     u32 additionalflags = 0;
+#ifdef RANDOMIZER_ENABLED
+    BOOL hasRandomizerMega = FALSE;
+#endif
 
     int partyOrder[pokecount];
     if (randomorder_flag) {
@@ -130,6 +133,7 @@ void MakeTrainerPokemonParty(struct BATTLE_PARAM *bp, int num, int heapID)
 
     for (i = 0; i < pokecount; i++) {
         mons[i] = AllocMonZeroed(heapID);
+        originalItem = ITEM_NONE;
         // ivs field
         pow = buf[offset];
         offset++;
@@ -148,15 +152,24 @@ void MakeTrainerPokemonParty(struct BATTLE_PARAM *bp, int num, int heapID)
         offset += 2;
         form_no = (species & 0xF800) >> 11;
         species &= 0x07FF;
+        u16 originalSpecies = species;
 
 #ifdef RANDOMIZER_ENABLED
         u16 randomizerItem = ITEM_NONE;
-        species = Randomizer_GetRandomTrainerSpecies(species, level, bp->trainer_id[num], &form_no, &randomizerItem);
+        species = Randomizer_GetRandomTrainerSpecies(species, level, bp->trainer_id[num], i, &form_no, &randomizerItem);
+        if (randomizerItem != ITEM_NONE) {
+            if (hasRandomizerMega) {
+                randomizerItem = ITEM_NONE;
+            } else {
+                hasRandomizerMega = TRUE;
+            }
+        }
 #endif
 
         // item field - conditional
         if (bp->trainer_data[num].data_type & TRAINER_DATA_TYPE_ITEMS) {
             item = buf[offset] | (buf[offset + 1] << 8);
+            originalItem = item;
             offset += 2;
         }
 
@@ -316,7 +329,7 @@ void MakeTrainerPokemonParty(struct BATTLE_PARAM *bp, int num, int heapID)
         }
 
 #ifdef RANDOMIZER_ENABLED
-        if (bp->trainer_data[num].data_type & TRAINER_DATA_TYPE_ITEMS || randomizerItem != ITEM_NONE)
+        if ((bp->trainer_data[num].data_type & TRAINER_DATA_TYPE_ITEMS) || randomizerItem != ITEM_NONE)
 #else
         if (bp->trainer_data[num].data_type & TRAINER_DATA_TYPE_ITEMS)
 #endif
@@ -365,9 +378,20 @@ void MakeTrainerPokemonParty(struct BATTLE_PARAM *bp, int num, int heapID)
             }
         }
 
+#if defined(RANDOMIZER_ENABLED) && defined(RANDOMIZE_TRAINER_HELD_ITEMS)
+        if (randomizerItem == ITEM_NONE && originalItem != ITEM_NONE) {
+            item = Randomizer_GetRandomTrainerHeldItem(mons[i], originalSpecies, originalItem, bp->trainer_id[num], i);
+            SetMonData(mons[i], MON_DATA_HELD_ITEM, &item);
+        }
+#endif
+
         ChangeToBattleForm(mons[i]);
 
         RecalcPartyPokemonStats(mons[i]); // recalculate stats here
+
+#if defined(RANDOMIZER_ENABLED) && defined(RANDOMIZE_ABILITIES)
+        Randomizer_SetTrainerMonAbility(mons[i], originalSpecies, bp->trainer_id[num], i);
+#endif
 
         if (bp->trainer_data[num].data_type & TRAINER_DATA_TYPE_ADDITIONAL_FLAGS) {
             if (additionalflags & TRAINER_DATA_EXTRA_TYPE_STATUS) {
@@ -404,6 +428,9 @@ void MakeTrainerPokemonParty(struct BATTLE_PARAM *bp, int num, int heapID)
                 SetMonData(mons[i], MON_DATA_NICKNAME, nickname);
             }
         }
+#if defined(RANDOMIZER_ENABLED) && defined(RANDOMIZE_LEARNSETS)
+        Randomizer_InitBoxMonMoveset(&mons[i]->box);
+#endif
         TrainerMonHandleFrustration(mons[i]);
     }
 
@@ -508,8 +535,12 @@ BOOL LONG_CALL AddWildPartyPokemon(int inTarget, EncounterInfo *encounterInfo, s
         SetMonData(encounterPartyPokemon, MON_DATA_FORM, (u8 *)&form_no);
         RecalcPartyPokemonStats(encounterPartyPokemon);
         ResetPartyPokemonAbility(encounterPartyPokemon);
-        InitBoxMonMoveset(&encounterPartyPokemon->box);
+        Randomizer_InitBoxMonMoveset(&encounterPartyPokemon->box);
     }
+
+#if defined(RANDOMIZER_ENABLED) && defined(RANDOMIZE_ABILITIES)
+    Randomizer_SetMonAbility(encounterPartyPokemon);
+#endif
 
     ChangeToBattleForm(encounterPartyPokemon);
 
