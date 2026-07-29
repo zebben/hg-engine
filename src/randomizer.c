@@ -470,7 +470,8 @@ static u16 Randomizer_BuildSpeciesPool(u16 originalSpecies, u16 level, BOOL isWi
     u16 minBst;
     u16 maxBst;
     u16 baseOriginal;
-    BOOL useBstMatching;
+    u16 lowerTolerance;
+    u16 upperTolerance;
 
     if (originalSpecies == SPECIES_NONE || originalSpecies == SPECIES_BAD_EGG || originalSpecies == SPECIES_EGG || originalSpecies > MAX_SPECIES_INCLUDING_FORMS) {
         return 0;
@@ -496,35 +497,21 @@ static u16 Randomizer_BuildSpeciesPool(u16 originalSpecies, u16 level, BOOL isWi
 
     originalBst = bstTable[baseOriginal];
 
-    useBstMatching = TRUE;
-    minBst = (originalBst * (100 - RANDOMIZER_TIER1_BST_TOLERANCE)) / 100;
-    maxBst = (originalBst * (100 + Randomizer_GetBSTToleranceForLevel(level))) / 100;
+    lowerTolerance = RANDOMIZER_TIER1_BST_TOLERANCE;
+    upperTolerance = Randomizer_GetBSTToleranceForLevel(level);
 
-    for (species = 1; species <= MAX_MON_NUM && poolCount < maxPoolSize; species++) {
-        if (Randomizer_ShouldBanSpecies(species, isWild)) {
-            continue;
-        }
-
-        if (useBstMatching) {
-            speciesBst = bstTable[species];
-            if (speciesBst < minBst || speciesBst > maxBst) {
-                continue;
-            }
-        }
-
-#ifdef RANDOMIZER_TYPE_MATCHING
-        if (!Randomizer_IsTypeCompatible(baseOriginal, species, typesTable)) {
-            continue;
-        }
-#endif
-
-        poolOut[poolCount++] = species;
-    }
-
-    if (poolCount < RANDOMIZER_MIN_POOL_SIZE) {
+    for (u8 attempt = 0; attempt < 2; attempt++) {
         poolCount = 0;
+        minBst = (originalBst * (100 - lowerTolerance)) / 100;
+        maxBst = (originalBst * (100 + upperTolerance)) / 100;
+
         for (species = 1; species <= MAX_MON_NUM && poolCount < maxPoolSize; species++) {
             if (Randomizer_ShouldBanSpecies(species, isWild)) {
+                continue;
+            }
+
+            speciesBst = bstTable[species];
+            if (speciesBst < minBst || speciesBst > maxBst) {
                 continue;
             }
 
@@ -536,17 +523,13 @@ static u16 Randomizer_BuildSpeciesPool(u16 originalSpecies, u16 level, BOOL isWi
 
             poolOut[poolCount++] = species;
         }
-    }
 
-    if (poolCount < RANDOMIZER_MIN_POOL_SIZE) {
-        poolCount = 0;
-        for (species = 1; species <= MAX_MON_NUM && poolCount < maxPoolSize; species++) {
-            if (Randomizer_ShouldBanSpecies(species, isWild)) {
-                continue;
-            }
-
-            poolOut[poolCount++] = species;
+        if (poolCount >= RANDOMIZER_MIN_POOL_SIZE) {
+            break;
         }
+
+        lowerTolerance += RANDOMIZER_FALLBACK_BST_TOLERANCE;
+        upperTolerance += RANDOMIZER_FALLBACK_BST_TOLERANCE;
     }
 
     if (poolCount == 0) {

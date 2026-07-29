@@ -65,6 +65,8 @@
 
 // Minimum species in pool before relaxing restrictions. Lowering this makes the pool more strict
 #define RANDOMIZER_MIN_POOL_SIZE 5
+// Additional BST tolerance used for one retry when the initial pool is too small
+#define RANDOMIZER_FALLBACK_BST_TOLERANCE 15
 
 // Enable dynamic wild species forms if randomizer is enabled
 #ifdef RANDOMIZER_ENABLED
