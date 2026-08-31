@@ -3,6 +3,7 @@
 
 #include "types.h"
 
+#include "constants/ability.h"
 #include "constants/battle_constants.h"
 #include "constants/moves.h"
 #include "constants/pokemon.h"
@@ -472,7 +473,7 @@ struct __attribute__((packed)) field_condition_count {
     /*0x08*/ u8 wish_count[CLIENT_MAX]; /**< wish turns left */
     /*0x0C*/ u16 future_prediction_wazano[CLIENT_MAX]; /**< move to use for future sight damage (future sight or doom desire?) */
     /*0x14*/ int future_prediction_client_no[CLIENT_MAX]; /**< target to use for future sight damage */
-    /*0x24*/ s32 future_prediction_damage[CLIENT_MAX]; /**< damage to use for future sight */
+    /*0x24*/ s32 wish_heal_amount[CLIENT_MAX]; /**< repurposed future sight damage for storing wish user's hp/2 */
     /*0x34*/ u8 wish_sel_mons[CLIENT_MAX]; /**< party position to use to restore wish */
 };
 
@@ -751,6 +752,7 @@ typedef struct OnceOnlyAbilityFlags {
     BOOL intrepidSwordFlag;
     BOOL dauntlessShieldFlag;
     BOOL superSweetSyrupFlag;
+    BOOL zeroToHeroFlag;
 } OnceOnlyAbilityFlags;
 
 typedef struct OnceOnlyMoveConditionFlags {
@@ -1009,7 +1011,7 @@ struct BattleStruct {
     /*0x3164*/ u8 entryHazardQueue[2][NUM_HAZARD_IDX];
     /*0x316E*/ u8 protectSuccessTurns[CLIENT_MAX]; // Only need to count up to 6
     /*0x3172*/ u8 hazardQueueTracker : 7;
-    u8 itemActivatedTracker : 1; // if an item that isn't lost on activation has been activated for this hit (think rocky helmet)
+    u8 itemActivatedTrackerUnused : 1;
     /*0x3173*/ u8 padding_3173[0x317E - 0x3173]; // padding to get moveTbl to 317E (for convenience of 3180 in asm)
     /*0x317E*/ struct BattleMove moveTbl[NUM_OF_MOVES + 1];
     /*0x    */ u32 gainedExperience[6]; // possible experience gained per party member in order to get level scaling done right
@@ -1792,6 +1794,19 @@ struct PACKED DamageCalcStruct {
     struct sDamageCalc clients[4];
 };
 
+typedef struct AbilityFlags {
+    u16 ignoredByMoldBreaker : 1;
+    u16 disabledWhenTransformed : 1;
+    u16 disabledByNeutralizingGas : 1;
+    u16 failsTrace : 1;
+    u16 failsSwap : 1;
+    u16 failsSuppress : 1;
+    u16 failsReceiver : 1;
+    u16 failsEntrainment : 1;
+    u16 failsRolePlay : 1;
+    u16 unused : 7;
+} AbilityFlags;
+
 extern u8 TypeEffectivenessTable[][3];
 
 extern u8 HeldItemPowerUpTable[36][2];
@@ -1845,6 +1860,10 @@ void LONG_CALL SCIO_LevelUpEffectSet(void *bw, int send_client);
 u32 LONG_CALL BattleWorkPlaceIDGet(void *bw);
 void LONG_CALL Task_DistributeExp(void *arg0, void *work);
 int LONG_CALL BattleWorkPokeCountGet(void *, int);
+BOOL LONG_CALL BattleBuffer_GetNext(struct BattleStruct *ctx, int battlerId);
+void LONG_CALL BattleController_EmitShowMonList(struct BattleSystem *bsys, struct BattleStruct *ctx, int battlerId, int forceSwitch, int selectedMon, int blockedMon);
+void LONG_CALL BattleController_EmitShowWaitMessage(struct BattleSystem *bsys, int battlerId);
+void LONG_CALL ov12_0223BDDC(struct BattleSystem *bsys, int battlerId, int selectedMon);
 
 BOOL LONG_CALL ServerCriticalMessage(void *, void *);
 BOOL LONG_CALL ServerWazaStatusMessage(void *, void *);
@@ -1908,17 +1927,6 @@ int LONG_CALL BattleWorkWeatherGet(void *bw);
  *  @return requested client on the enemy side
  */
 int LONG_CALL BattleWorkEnemyClientGet(void *bw, int client, int side);
-
-/**
- *  @brief choose which enemy should be traced
- *
- *  @param bw battle work structure; void * because we haven't defined the battle work structure
- *  @param sp global battle structure
- *  @param def1 one of the enemy clients
- *  @param def2 the other enemy client
- *  @return trace client to act on.  set BattleStruct's defence_client to this to properly act after
- */
-int LONG_CALL TraceClientGet(void *bw, struct BattleStruct *sp, int def1, int def2);
 
 /**
  *  @brief check if client is on enemy side or not.  equivalent to BATTLER_IS_ENEMY(client)
@@ -3601,6 +3609,21 @@ BOOL LONG_CALL IsPureType(struct BattleStruct *ctx, int battlerId, int type);
 /// @ref AbilityDisabledByNeutralizingGas
 /// @return `TRUE` or `FALSE`
 BOOL LONG_CALL AbilityCantSupress(int ability);
+
+/// @brief Read an ability's flags from the expanded ability flags table
+/// @param ability
+/// @return The ability's flags, or zeroed flags if the ability ID is invalid
+AbilityFlags LONG_CALL GetAbilityFlags(int ability);
+
+/// @brief Check if ability causes Trace to fail
+/// @param ability
+/// @return `TRUE` or `FALSE`
+BOOL LONG_CALL AbilityNoTrace(int ability);
+
+/// @brief Check if ability causes Skill Swap and Wandering Spirit to fail
+/// @param ability
+/// @return `TRUE` or `FALSE`
+BOOL LONG_CALL AbilityFailSkillSwap(int ability);
 
 void LONG_CALL BattleMessage_BufferNickname(struct BattleSystem *bsys, int bufferIndex, int param);
 void LONG_CALL BattleMessage_BufferMove(struct BattleSystem *bsys, int bufferIndex, int param);
