@@ -80,7 +80,7 @@ void MakeTrainerPokemonParty(struct BATTLE_PARAM *bp, int num, int heapID)
 
     TT_TrainerPokeDataGet(bp->trainer_id[num], buf);
 
-    if (TT_TrainerTypeSexGet(bp->trainer_data[num].tr_type) == 1) // if trainer is female
+    if (TrainerClass_GetGenderOrTrainerCount(bp->trainer_data[num].tr_type) == 1) // if trainer is female
     {
         rnd_tmp = 120;
     } else {

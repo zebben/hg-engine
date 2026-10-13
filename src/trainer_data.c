@@ -169,7 +169,7 @@ const u8 sTrainerGenders[] = {
 #define sTrainerGenders ((const TrainerGender *)0x020FFB90) // the vanilla address
 #endif // EXPAND_TRAINER_GENDER_TABLE
 
-TrainerGender LONG_CALL TT_TrainerTypeSexGet(int tr_type)
+TrainerGender LONG_CALL TrainerClass_GetGenderOrTrainerCount(int tr_type)
 {
     return (TrainerGender)sTrainerGenders[tr_type];
 }
