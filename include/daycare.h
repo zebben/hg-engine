@@ -3,6 +3,8 @@
 
 #include "types.h"
 
+#include "pokemon.h"
+
 /**
  *  @brief load egg moves to dest and return amount of egg moves. reads from data/generated/EggLearnsets.c
  *
