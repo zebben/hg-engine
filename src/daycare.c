@@ -2,6 +2,8 @@
 #include "debug.h"
 #include "types.h"
 
+#include "daycare.h"
+
 #include "constants/ability.h"
 #include "constants/file.h"
 #include "constants/game.h"
@@ -14,7 +16,6 @@
 
 #include "bag.h"
 #include "battle.h"
-#include "daycare.h"
 #include "message.h"
 #include "pokemon.h"
 #include "rtc.h"

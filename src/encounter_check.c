@@ -1,12 +1,15 @@
 #include "config.h"
+#include "debug.h"
+#include "types.h"
+
+#include "encounter_check.h"
+
 #include "constants/file.h"
 #include "constants/maps.h"
-#include "debug.h"
-#include "encounter_check.h"
+
 #include "map_events_internal.h"
-#include "save.h"
-#include "types.h"
 #include "pokemon.h"
+#include "save.h"
 
 extern u32 gTriggerDouble;
 

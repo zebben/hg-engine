@@ -2,8 +2,6 @@
 #include "debug.h"
 #include "types.h"
 
-#include "pokemon.h"
-
 #include "constants/ability.h"
 #include "constants/file.h"
 #include "constants/game.h"
@@ -18,6 +16,7 @@
 #include "bag.h"
 #include "battle.h"
 #include "overlay.h"
+#include "pokemon.h"
 #include "rtc.h"
 #include "save.h"
 #include "script.h"

@@ -30,7 +30,6 @@ BOOL CanUseNectar(struct PartyPokemon *pp, u16 nectar);
 u32 CanUseDNASplicersGrabSplicerPos(struct PartyPokemon *pp, struct Party *party);
 u32 CanUseAbilityCapsule(struct PartyPokemon *pp);
 u32 CanUseAbilityPatch(struct PartyPokemon *pp);
-BOOL CanUseRotomCatalog(struct PartyPokemon *pp);
 void PartyMenu_ShowRotomCatalogList(struct PartyMenu *partyMenu);
 
 extern const u16 sButtonFrameTileOffsets[];

@@ -2,7 +2,7 @@
 #include "debug.h"
 #include "types.h"
 
-#include "pokemon.h"
+#include "trainer_data.h"
 
 #include "constants/ability.h"
 #include "constants/file.h"
@@ -18,11 +18,11 @@
 #include "bag.h"
 #include "battle.h"
 #include "overlay.h"
+#include "pokemon.h"
 #include "rtc.h"
 #include "save.h"
 #include "script.h"
 #include "sound.h"
-#include "trainer_data.h"
 
 #ifdef EXPAND_TRAINER_GENDER_TABLE
 const u8 sTrainerGenders[] = {
@@ -166,7 +166,7 @@ const u8 sTrainerGenders[] = {
     [TRAINERCLASS_CHAMPION_CYNTHIA] = TRAINER_FEMALE,
 };
 #else
-#define sTrainerGenders ((const TrainerGender*)0x020FFB90) // the vanilla address
+#define sTrainerGenders ((const TrainerGender *)0x020FFB90) // the vanilla address
 #endif // EXPAND_TRAINER_GENDER_TABLE
 
 TrainerGender LONG_CALL TT_TrainerTypeSexGet(int tr_type)

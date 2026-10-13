@@ -3,6 +3,8 @@
 
 #include "types.h"
 
+#include "pokemon.h"
+
 /**
  *  @brief add a PartyPokemon to wild battler team
  *
