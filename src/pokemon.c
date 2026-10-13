@@ -5,6 +5,7 @@
 #include "pokemon.h"
 
 #include "constants/ability.h"
+#include "constants/cries.h"
 #include "constants/file.h"
 #include "constants/game.h"
 #include "constants/generated/learnsets.h"
@@ -668,29 +669,6 @@ BOOL LONG_CALL HandleBoxPokemonFormeChanges(struct BoxPokemon *bp)
     return FALSE;
 }
 
-/**
- *  @brief check if the Gracidea can be used on a PartyPokemon
- *
- *  @param pp PartyPokemon to check the nectar against
- *  @return TRUE if Gracidea can be used; FALSE otherwise
- */
-BOOL LONG_CALL Mon_CanUseGracidea(struct PartyPokemon *mon)
-{
-    struct RTCTime time;
-    int species = GetMonData(mon, MON_DATA_SPECIES, NULL);
-    int form = GetMonData(mon, MON_DATA_FORM, NULL);
-    int status = GetMonData(mon, MON_DATA_STATUS, NULL);
-    int hp = GetMonData(mon, MON_DATA_HP, NULL);
-    // BOOL fatefulEncounter = GetMonData(mon, MON_DATA_FATEFUL_ENCOUNTER, NULL);
-    GF_RTC_CopyTime(&time);
-
-    if (species == SPECIES_SHAYMIN && form == 0 && hp != 0 && !(status & STATUS_FREEZE) && (time.hour >= 4 && time.hour < 20)) {
-        return TRUE;
-    } else {
-        return FALSE;
-    }
-}
-
 u32 ALIGN4 partyMenuSignal = 0;
 
 void LoadIconChangeAnim(struct IconFormChangeData *work, struct PartyPokemon *mon)
@@ -960,26 +938,6 @@ BOOL LONG_CALL Party_TryResetShaymin(struct Party *party, int min_max, const str
     return ret;
 }
 
-/**
- *  @brief load egg moves to dest and return amount of egg moves. reads from data/generated/EggLearnsets.c
- *
- *  @param pokemon PartyPokemon to grab egg moves for
- *  @param dest destination for the array of egg moves
- *  @return number of egg moves in dest
- */
-u8 LONG_CALL LoadEggMoves(struct PartyPokemon *pokemon, u16 *dest)
-{
-    u16 species = PokeOtherFormMonsNoGet(GetMonData(pokemon, MON_DATA_SPECIES, NULL), GetMonData(pokemon, MON_DATA_FORM, NULL));
-    ReadFromNarcMemberByIdPair(dest, ARC_EGG_MOVES, 0, species * MAX_EGG_MOVES * sizeof(u16), MAX_EGG_MOVES * sizeof(u16));
-
-    u8 count = 0;
-    while (count < MAX_EGG_MOVES && dest[count] != 0xFFFF) {
-        count++;
-    }
-
-    return count;
-}
-
 void LONG_CALL InheritMoves(struct PartyPokemon *egg, struct BoxPokemon *father, struct BoxPokemon *mother)
 {
     u32 ovyId, offset;
@@ -1028,39 +986,6 @@ u32 LONG_CALL CheckIfMonsAreEqual(struct PartyPokemon *pokemon1, struct PartyPok
     }
 
     return FALSE;
-}
-
-/**
- *  @brief check if can use item on mon in party.  subfunction checks everything and is only used here, so we hook this to save space and add what we need.
- *
- *  @param party party structure
- *  @param itemID item index that is being used
- *  @param partyIdx position in party
- *  @param moveIdx move position to check if needed
- *  @param heapID heap to use for allocations
- *  @return TRUE if can use item, FALSE otherwise
- */
-BOOL LONG_CALL CanUseItemOnMonInParty(struct Party *party, u16 itemID, s32 partyIdx, s32 moveIdx, u32 heapID)
-{
-    struct PartyPokemon *mon = Party_GetMonByIndex(party, partyIdx);
-
-    if (GetItemData(itemID, ITEM_PARAM_LEVEL_UP, heapID) && GetMonData(mon, MON_DATA_LEVEL, NULL) == 100 && GetMonEvolution(party, mon, EVOCTX_LEVELUP, itemID, NULL)) {
-        return TRUE;
-    }
-
-    if (itemID == ITEM_ROTOM_CATALOG) {
-        return CanUseRotomCatalog(mon);
-    }
-
-#if defined(IMPLEMENT_LEVEL_CAP) && defined(UNCAP_CANDIES_FROM_LEVEL_CAP)
-    int currentLevel = GetMonData(mon, MON_DATA_LEVEL, NULL);
-    if (GetItemData(itemID, ITEM_PARAM_LEVEL_UP, heapID)) {
-        if (currentLevel < 100 && itemID == ITEM_RARE_CANDY) {
-            return TRUE;
-        }
-    }
-#endif
-    return CanUseItemOnPokemon(mon, itemID, moveIdx, heapID);
 }
 
 /**
@@ -1460,80 +1385,6 @@ void sub_0206D328(struct PartyPokemon *pokemon, u32 heapId)
     ResetPartyPokemonAbility(pokemon);
 }
 
-#define CRY_SPECIES_FORMS_BASE (SPECIES_MAX_MON_NUM + 1)
-
-// need to be in order of form so that python script can generate the makefile
-#define CRY_SPECIES_SHAYMIN 0x1EE
-
-// megas
-#define CRY_SPECIES_BASE_VENUSAUR    (CRY_SPECIES_FORMS_BASE)
-#define CRY_SPECIES_BASE_CHARIZARD_X (CRY_SPECIES_FORMS_BASE + 1)
-#define CRY_SPECIES_BASE_CHARIZARD_Y (CRY_SPECIES_FORMS_BASE + 2)
-#define CRY_SPECIES_BASE_BLASTOISE   (CRY_SPECIES_FORMS_BASE + 3)
-#define CRY_SPECIES_BASE_BEEDRILL    (CRY_SPECIES_FORMS_BASE + 4)
-#define CRY_SPECIES_BASE_PIDGEOT     (CRY_SPECIES_FORMS_BASE + 5)
-#define CRY_SPECIES_BASE_ALAKAZAM    (CRY_SPECIES_FORMS_BASE + 6)
-#define CRY_SPECIES_BASE_SLOWBRO     (CRY_SPECIES_FORMS_BASE + 7)
-#define CRY_SPECIES_BASE_GENGAR      (CRY_SPECIES_FORMS_BASE + 8)
-#define CRY_SPECIES_BASE_KANGASKHAN  (CRY_SPECIES_FORMS_BASE + 9)
-#define CRY_SPECIES_BASE_PINSIR      (CRY_SPECIES_FORMS_BASE + 10)
-#define CRY_SPECIES_BASE_GYARADOS    (CRY_SPECIES_FORMS_BASE + 11)
-#define CRY_SPECIES_BASE_AERODACTYL  (CRY_SPECIES_FORMS_BASE + 12)
-#define CRY_SPECIES_BASE_MEWTWO_X    (CRY_SPECIES_FORMS_BASE + 13)
-#define CRY_SPECIES_BASE_MEWTWO_Y    (CRY_SPECIES_FORMS_BASE + 14)
-#define CRY_SPECIES_BASE_AMPHAROS    (CRY_SPECIES_FORMS_BASE + 15)
-#define CRY_SPECIES_BASE_STEELIX     (CRY_SPECIES_FORMS_BASE + 16)
-#define CRY_SPECIES_BASE_SCIZOR      (CRY_SPECIES_FORMS_BASE + 17)
-#define CRY_SPECIES_BASE_HERACROSS   (CRY_SPECIES_FORMS_BASE + 18)
-#define CRY_SPECIES_BASE_HOUNDOOM    (CRY_SPECIES_FORMS_BASE + 19)
-#define CRY_SPECIES_BASE_TYRANITAR   (CRY_SPECIES_FORMS_BASE + 20)
-#define CRY_SPECIES_BASE_SCEPTILE    (CRY_SPECIES_FORMS_BASE + 21)
-#define CRY_SPECIES_BASE_BLAZIKEN    (CRY_SPECIES_FORMS_BASE + 22)
-#define CRY_SPECIES_BASE_SWAMPERT    (CRY_SPECIES_FORMS_BASE + 23)
-#define CRY_SPECIES_BASE_GARDEVOIR   (CRY_SPECIES_FORMS_BASE + 24)
-#define CRY_SPECIES_BASE_SABLEYE     (CRY_SPECIES_FORMS_BASE + 25)
-#define CRY_SPECIES_BASE_MAWILE      (CRY_SPECIES_FORMS_BASE + 26)
-#define CRY_SPECIES_BASE_AGGRON      (CRY_SPECIES_FORMS_BASE + 27)
-#define CRY_SPECIES_BASE_MEDICHAM    (CRY_SPECIES_FORMS_BASE + 28)
-#define CRY_SPECIES_BASE_MANECTRIC   (CRY_SPECIES_FORMS_BASE + 29)
-#define CRY_SPECIES_BASE_SHARPEDO    (CRY_SPECIES_FORMS_BASE + 30)
-#define CRY_SPECIES_BASE_CAMERUPT    (CRY_SPECIES_FORMS_BASE + 31)
-#define CRY_SPECIES_BASE_ALTARIA     (CRY_SPECIES_FORMS_BASE + 32)
-#define CRY_SPECIES_BASE_BANETTE     (CRY_SPECIES_FORMS_BASE + 33)
-#define CRY_SPECIES_BASE_ABSOL       (CRY_SPECIES_FORMS_BASE + 34)
-#define CRY_SPECIES_BASE_GLALIE      (CRY_SPECIES_FORMS_BASE + 35)
-#define CRY_SPECIES_BASE_SALAMENCE   (CRY_SPECIES_FORMS_BASE + 36)
-#define CRY_SPECIES_BASE_METAGROSS   (CRY_SPECIES_FORMS_BASE + 37)
-#define CRY_SPECIES_BASE_LATIAS      (CRY_SPECIES_FORMS_BASE + 38)
-#define CRY_SPECIES_BASE_LATIOS      (CRY_SPECIES_FORMS_BASE + 39)
-#define CRY_SPECIES_BASE_RAYQUAZA    (CRY_SPECIES_FORMS_BASE + 40)
-#define CRY_SPECIES_BASE_LOPUNNY     (CRY_SPECIES_FORMS_BASE + 41)
-#define CRY_SPECIES_BASE_GARCHOMP    (CRY_SPECIES_FORMS_BASE + 42)
-#define CRY_SPECIES_BASE_LUCARIO     (CRY_SPECIES_FORMS_BASE + 43)
-#define CRY_SPECIES_BASE_ABOMASNOW   (CRY_SPECIES_FORMS_BASE + 44)
-#define CRY_SPECIES_BASE_GALLADE     (CRY_SPECIES_FORMS_BASE + 45)
-#define CRY_SPECIES_BASE_AUDINO      (CRY_SPECIES_FORMS_BASE + 46)
-#define CRY_SPECIES_BASE_DIANCIE     (CRY_SPECIES_FORMS_BASE + 47)
-
-// everything else
-#define CRY_SPECIES_BASE_TORNADUS   (CRY_SPECIES_FORMS_BASE + 48)
-#define CRY_SPECIES_BASE_THUNDURUS  (CRY_SPECIES_FORMS_BASE + 1 + 48)
-#define CRY_SPECIES_BASE_LANDORUS   (CRY_SPECIES_FORMS_BASE + 2 + 48)
-#define CRY_SPECIES_BASE_KYUREM     (CRY_SPECIES_FORMS_BASE + 3 + 48)
-#define CRY_SPECIES_BASE_PUMPKABOO  (CRY_SPECIES_FORMS_BASE + 5 + 48)
-#define CRY_SPECIES_BASE_GOURGEIST  (CRY_SPECIES_FORMS_BASE + 6 + 48)
-#define CRY_SPECIES_BASE_HOOPA      (CRY_SPECIES_FORMS_BASE + 7 + 48)
-#define CRY_SPECIES_BASE_ORICORIO   (CRY_SPECIES_FORMS_BASE + 8 + 48)
-#define CRY_SPECIES_BASE_LYCANROC   (CRY_SPECIES_FORMS_BASE + 11 + 48)
-#define CRY_SPECIES_BASE_WISHIWASHI (CRY_SPECIES_FORMS_BASE + 13 + 48)
-#define CRY_SPECIES_BASE_NECROZMA   (CRY_SPECIES_FORMS_BASE + 14 + 48)
-#define CRY_SPECIES_BASE_ZACIAN     (CRY_SPECIES_FORMS_BASE + 18 + 48)
-#define CRY_SPECIES_BASE_ZAMAZENTA  (CRY_SPECIES_FORMS_BASE + 19 + 48)
-#define CRY_SPECIES_BASE_URSHIFU    (CRY_SPECIES_FORMS_BASE + 20 + 48)
-#define CRY_SPECIES_BASE_CALYREX    (CRY_SPECIES_FORMS_BASE + 21 + 48)
-#define CRY_SPECIES_BASE_ENAMORUS   (CRY_SPECIES_FORMS_BASE + 23 + 48)
-#define CRY_SPECIES_BASE_MAUSHOLD   (CRY_SPECIES_FORMS_BASE + 24 + 48)
-
 u32 storeShayminForm = 0;
 
 /**
@@ -1632,76 +1483,6 @@ u32 GrabCryNumSpeciesForm(u32 species, u32 form)
     return species;
 }
 
-// double battles triggerable
-
-extern u32 gTriggerDouble;
-
-/**
- *  @brief add the PartyPokemon to the wild "Party"
- *
- *  @param fsys field system structure
- *  @param pp PartyPokemon array to manipulate (is fully overwritten)
- *  @param bw battle work structure
- *  @param encData
- *  @param encArea
- *  @param encInfo
- *  @return TRUE if both were successful; FALSE otherwise
- */
-u32 WildEncSingle(FieldSystem *fsys UNUSED, struct PartyPokemon *pp, void *bw, void *encData UNUSED, void *encArea, void *encInfo)
-{
-    u32 ret;
-    ret = SetEncountData(pp, 255, encInfo, encArea, 0, 1, bw);
-
-#ifdef IMPLEMENT_WILD_DOUBLE_BATTLES
-
-    if (gTriggerDouble) {
-        ret = SetEncountData(pp, 255, encInfo, encArea, 0, 1, bw); // add another mon to the enemy party
-    }
-
-#endif
-
-    return ret;
-}
-
-/**
- *  @brief add PartyPokemon to the wild "Party" in surfing contexts
- *
- *  @param fsys field system structure
- *  @param pp PartyPokemon array to manipulate (is fully overwritten)
- *  @param bw battle work structure
- *  @param encArea
- *  @param encInfo
- *  @param smth
- *  @return TRUE if both were successful; FALSE otherwise
- */
-u32 WildWaterEncSingle(FieldSystem *fsys, struct PartyPokemon *pp, void *bw, void *encArea, void *encInfo, BOOL smth)
-{
-    u32 ret;
-    if (smth) {
-        ret = SetEncountDataSwarm_maybe(fsys, pp, 255, encInfo, 1, 1, bw);
-
-#ifdef IMPLEMENT_WILD_DOUBLE_BATTLES
-
-        if (gTriggerDouble) {
-            ret = SetEncountDataSwarm_maybe(fsys, pp, 255, encInfo, 1, 1, bw); // add another mon to the enemy party
-        }
-
-#endif
-    } else {
-        ret = SetEncountData(pp, 255, encInfo, encArea, 1, 1, bw);
-
-#ifdef IMPLEMENT_WILD_DOUBLE_BATTLES
-
-        if (gTriggerDouble) {
-            ret = SetEncountData(pp, 255, encInfo, encArea, 1, 1, bw); // add another mon to the enemy party
-        }
-
-#endif
-    }
-
-    return ret;
-}
-
 /**
  *  @brief check if a poké ball can be used from the bag in wild double battles
  *         checks if both wild mons are still alive
@@ -1716,70 +1497,6 @@ u32 CheckCanUseBallOnDoublesFromBag(struct BattleStruct *sp)
     }
     return TRUE;
 }
-
-/**
- *  @brief get level cap from the script variable defined by LEVEL_CAP_VARIABLE
- *
- *  @return level cap from LEVEL_CAP_VARIABLE script variable or 100 if it's not set at all
- */
-u32 LONG_CALL GetLevelCap(void)
-{
-#ifdef DEBUG_BATTLE_SCENARIOS
-    return 0;
-#else
-#ifdef IMPLEMENT_LEVEL_CAP
-    u32 levelCap = GetScriptVar(LEVEL_CAP_VARIABLE);
-    if (levelCap > 100 || levelCap == 0) {
-        levelCap = 100;
-    }
-    return levelCap;
-#else
-    return 100;
-#endif // IMPLEMENT_LEVEL_CAP
-#endif // DEBUG_BATTLE_SCENARIOS
-}
-
-/**
- *  @brief check if the level is at or above the level cap defined in LEVEL_CAP_VARIABLE
- *
- *  @param level level to check
- *  @return TRUE if level >= level cap; FALSE otherwise
- */
-u32 LONG_CALL IsLevelAtLevelCap(u32 level)
-{
-    return level >= GetLevelCap();
-}
-
-#ifdef IMPLEMENT_LEVEL_CAP
-
-/**
- *  @brief try leveling up a PartyPokemon
- *
- *  @param mon PartyPokemon to level up
- *  @return TRUE if PartyPokemon should level up and level has been augmented
- */
-BOOL Pokemon_TryLevelUp(struct PartyPokemon *mon)
-{
-    u16 species = (u16)GetMonData(mon, MON_DATA_SPECIES, NULL);
-    u8 level = (u8)(GetMonData(mon, MON_DATA_LEVEL, NULL) + 1);
-    u32 exp = GetMonData(mon, MON_DATA_EXPERIENCE, NULL);
-    u32 growthrate = (u32)PokePersonalParaGet(species, PERSONAL_EXP_GROUP);
-    u32 maxexp = GetExpByGrowthRateAndLevel((int)growthrate, GetLevelCap());
-    if (exp > maxexp) {
-        exp = maxexp;
-        SetMonData(mon, MON_DATA_EXPERIENCE, &exp);
-    }
-    if (level > GetLevelCap()) {
-        return FALSE;
-    }
-    if (exp >= GetExpByGrowthRateAndLevel((int)growthrate, level)) {
-        SetMonData(mon, MON_DATA_LEVEL, &level);
-        return TRUE;
-    }
-    return FALSE;
-}
-
-#endif
 
 /**
  *  @brief grab the nature of a BoxPokemon factoring in the nature mint override field
@@ -1942,156 +1659,6 @@ u32 MonTryLearnMoveOnLevelUp(struct PartyPokemon *mon, int *last_i, u16 *sp0)
     }
     sys_FreeMemoryEz(levelUpLearnset);
     return ret;
-}
-
-#ifdef EXPAND_TRAINER_GENDER_TABLE
-const u8 sTrainerGenders[] = {
-    [TRAINERCLASS_PKMN_TRAINER_ETHAN] = TRAINER_MALE,
-    [TRAINERCLASS_PKMN_TRAINER_LYRA] = TRAINER_FEMALE,
-    [TRAINERCLASS_YOUNGSTER] = TRAINER_MALE,
-    [TRAINERCLASS_LASS] = TRAINER_FEMALE,
-    [TRAINERCLASS_CAMPER] = TRAINER_MALE,
-    [TRAINERCLASS_PICNICKER] = TRAINER_FEMALE,
-    [TRAINERCLASS_BUG_CATCHER] = TRAINER_MALE,
-    [TRAINERCLASS_AROMA_LADY] = TRAINER_FEMALE,
-    [TRAINERCLASS_TWINS] = TRAINER_FEMALE,
-    [TRAINERCLASS_HIKER] = TRAINER_MALE,
-    [TRAINERCLASS_BATTLE_GIRL] = TRAINER_FEMALE,
-    [TRAINERCLASS_FISHERMAN] = TRAINER_MALE,
-    [TRAINERCLASS_CYCLIST_M] = TRAINER_MALE,
-    [TRAINERCLASS_CYCLIST_F] = TRAINER_FEMALE,
-    [TRAINERCLASS_BLACK_BELT] = TRAINER_MALE,
-    [TRAINERCLASS_ARTIST] = TRAINER_MALE,
-    [TRAINERCLASS_PKMN_BREEDER_M] = TRAINER_MALE,
-    [TRAINERCLASS_PKMN_BREEDER_F] = TRAINER_FEMALE,
-    [TRAINERCLASS_COWGIRL] = TRAINER_FEMALE,
-    [TRAINERCLASS_JOGGER] = TRAINER_MALE,
-    [TRAINERCLASS_POKEFAN_M] = TRAINER_MALE,
-    [TRAINERCLASS_POKEFAN] = TRAINER_FEMALE,
-    [TRAINERCLASS_POKE_KID] = TRAINER_FEMALE,
-    [TRAINERCLASS_RIVAL] = TRAINER_MALE,
-    [TRAINERCLASS_ACE_TRAINER_M] = TRAINER_MALE,
-    [TRAINERCLASS_ACE_TRAINER_F] = TRAINER_FEMALE,
-    [TRAINERCLASS_WAITRESS] = TRAINER_FEMALE,
-    [TRAINERCLASS_VETERAN] = TRAINER_MALE,
-    [TRAINERCLASS_NINJA_BOY] = TRAINER_MALE,
-    [TRAINERCLASS_DRAGON_TAMER] = TRAINER_MALE,
-    [TRAINERCLASS_BIRD_KEEPER] = TRAINER_FEMALE,
-    [TRAINERCLASS_JUGGLER] = TRAINER_MALE,
-    [TRAINERCLASS_RICH_BOY] = TRAINER_MALE,
-    [TRAINERCLASS_LADY] = TRAINER_FEMALE,
-    [TRAINERCLASS_GENTLEMAN] = TRAINER_MALE,
-    [TRAINERCLASS_SOCIALITE] = TRAINER_FEMALE,
-    [TRAINERCLASS_BEAUTY] = TRAINER_FEMALE,
-    [TRAINERCLASS_COLLECTOR] = TRAINER_MALE,
-    [TRAINERCLASS_POLICEMAN] = TRAINER_MALE,
-    [TRAINERCLASS_PKMN_RANGER_M] = TRAINER_MALE,
-    [TRAINERCLASS_PKMN_RANGER_F] = TRAINER_FEMALE,
-    [TRAINERCLASS_SCIENTIST] = TRAINER_MALE,
-    [TRAINERCLASS_SWIMMER_M] = TRAINER_MALE,
-    [TRAINERCLASS_SWIMMER_F] = TRAINER_FEMALE,
-    [TRAINERCLASS_TUBER_M] = TRAINER_MALE,
-    [TRAINERCLASS_TUBER_F] = TRAINER_FEMALE,
-    [TRAINERCLASS_SAILOR] = TRAINER_MALE,
-    [TRAINERCLASS_KIMONO_GIRL] = TRAINER_FEMALE,
-    [TRAINERCLASS_RUIN_MANIAC] = TRAINER_MALE,
-    [TRAINERCLASS_PSYCHIC_M] = TRAINER_MALE,
-    [TRAINERCLASS_PSYCHIC_F] = TRAINER_FEMALE,
-    [TRAINERCLASS_PI] = TRAINER_MALE,
-    [TRAINERCLASS_GUITARIST] = TRAINER_MALE,
-    [TRAINERCLASS_ACE_TRAINER_M_GS] = TRAINER_MALE,
-    [TRAINERCLASS_ACE_TRAINER_F_GS] = TRAINER_FEMALE,
-    [TRAINERCLASS_TEAM_ROCKET] = TRAINER_MALE,
-    [TRAINERCLASS_SKIER] = TRAINER_FEMALE,
-    [TRAINERCLASS_ROUGHNECK] = TRAINER_MALE,
-    [TRAINERCLASS_CLOWN] = TRAINER_MALE,
-    [TRAINERCLASS_WORKER] = TRAINER_MALE,
-    [TRAINERCLASS_SCHOOL_KID_M] = TRAINER_MALE,
-    [TRAINERCLASS_SCHOOL_KID_F] = TRAINER_FEMALE,
-    [TRAINERCLASS_TEAM_ROCKET_F] = TRAINER_FEMALE,
-    [TRAINERCLASS_BURGLAR] = TRAINER_MALE,
-    [TRAINERCLASS_FIREBREATHER] = TRAINER_MALE,
-    [TRAINERCLASS_BIKER] = TRAINER_MALE,
-    [TRAINERCLASS_LEADER_FALKNER] = TRAINER_MALE,
-    [TRAINERCLASS_LEADER_BUGSY] = TRAINER_FEMALE,
-    [TRAINERCLASS_POKE_MANIAC] = TRAINER_MALE,
-    [TRAINERCLASS_BIRD_KEEPER_GS] = TRAINER_MALE,
-    [TRAINERCLASS_LEADER_WHITNEY] = TRAINER_FEMALE,
-    [TRAINERCLASS_RANCHER] = TRAINER_MALE,
-    [TRAINERCLASS_LEADER_MORTY] = TRAINER_MALE,
-    [TRAINERCLASS_LEADER_PRYCE] = TRAINER_MALE,
-    [TRAINERCLASS_LEADER_JASMINE] = TRAINER_FEMALE,
-    [TRAINERCLASS_LEADER_CHUCK] = TRAINER_MALE,
-    [TRAINERCLASS_LEADER_CLAIR] = TRAINER_FEMALE,
-    [TRAINERCLASS_TEACHER] = TRAINER_FEMALE,
-    [TRAINERCLASS_SUPER_NERD] = TRAINER_MALE,
-    [TRAINERCLASS_SAGE] = TRAINER_MALE,
-    [TRAINERCLASS_PARASOL_LADY] = TRAINER_FEMALE,
-    [TRAINERCLASS_WAITER] = TRAINER_MALE,
-    [TRAINERCLASS_MEDIUM] = TRAINER_FEMALE,
-    [TRAINERCLASS_CAMERAMAN] = TRAINER_MALE,
-    [TRAINERCLASS_REPORTER] = TRAINER_FEMALE,
-    [TRAINERCLASS_IDOL] = TRAINER_FEMALE,
-    [TRAINERCLASS_CHAMPION] = TRAINER_MALE,
-    [TRAINERCLASS_ELITE_FOUR_WILL] = TRAINER_FEMALE,
-    [TRAINERCLASS_ELITE_FOUR_KAREN] = TRAINER_FEMALE,
-    [TRAINERCLASS_ELITE_FOUR_KOGA] = TRAINER_FEMALE,
-    [TRAINERCLASS_PKMN_TRAINER_CHERYL] = TRAINER_FEMALE,
-    [TRAINERCLASS_PKMN_TRAINER_RILEY] = TRAINER_MALE,
-    [TRAINERCLASS_PKMN_TRAINER_BUCK] = TRAINER_FEMALE,
-    [TRAINERCLASS_PKMN_TRAINER_MIRA] = TRAINER_MALE,
-    [TRAINERCLASS_PKMN_TRAINER_MARLEY] = TRAINER_FEMALE,
-    [TRAINERCLASS_PKMN_TRAINER_FTR_LUCAS] = TRAINER_MALE,
-    [TRAINERCLASS_PKMN_TRAINER_FTR_DAWN] = TRAINER_FEMALE,
-    [TRAINERCLASS_TOWER_TYCOON] = TRAINER_MALE,
-    [TRAINERCLASS_LEADER_BROCK] = TRAINER_MALE,
-    [TRAINERCLASS_HALL_MATRON] = TRAINER_FEMALE,
-    [TRAINERCLASS_FACTORY_HEAD] = TRAINER_MALE,
-    [TRAINERCLASS_ARCADE_STAR] = TRAINER_FEMALE,
-    [TRAINERCLASS_CASTLE_VALET] = TRAINER_MALE,
-    [TRAINERCLASS_LEADER_MISTY] = TRAINER_FEMALE,
-    [TRAINERCLASS_LEADER_LT_SURGE] = TRAINER_MALE,
-    [TRAINERCLASS_LEADER_ERIKA] = TRAINER_FEMALE,
-    [TRAINERCLASS_LEADER_JANINE] = TRAINER_FEMALE,
-    [TRAINERCLASS_LEADER_SABRINA] = TRAINER_FEMALE,
-    [TRAINERCLASS_LEADER_BLAINE] = TRAINER_MALE,
-    [TRAINERCLASS_PKMN_TRAINER_RED] = TRAINER_MALE,
-    [TRAINERCLASS_LEADER_BLUE] = TRAINER_MALE,
-    [TRAINERCLASS_ELDER] = TRAINER_MALE,
-    [TRAINERCLASS_ELITE_FOUR_BRUNO] = TRAINER_FEMALE,
-    [TRAINERCLASS_SCIENTIST_GS] = TRAINER_MALE,
-    [TRAINERCLASS_EXECUTIVE_ARIANA] = TRAINER_FEMALE,
-    [TRAINERCLASS_BOARDER] = TRAINER_MALE,
-    [TRAINERCLASS_EXECUTIVE_ARCHER] = TRAINER_MALE,
-    [TRAINERCLASS_EXECUTIVE_PROTON] = TRAINER_MALE,
-    [TRAINERCLASS_EXECUTIVE_PETREL] = TRAINER_MALE,
-    [TRAINERCLASS_PASSERBY] = TRAINER_MALE,
-    [TRAINERCLASS_MYSTERY_MAN] = TRAINER_MALE,
-    [TRAINERCLASS_DOUBLE_TEAM] = TRAINER_MALE,
-    [TRAINERCLASS_YOUNG_COUPLE] = TRAINER_MALE,
-    [TRAINERCLASS_PKMN_TRAINER_LANCE] = TRAINER_MALE,
-    [TRAINERCLASS_ROCKET_BOSS] = TRAINER_MALE,
-    [TRAINERCLASS_PKMN_TRAINER_LUCAS_DP] = TRAINER_MALE,
-    [TRAINERCLASS_PKMN_TRAINER_DAWN_DP] = TRAINER_FEMALE,
-    [TRAINERCLASS_PKMN_TRAINER_LUCAS_PT] = TRAINER_MALE,
-    [TRAINERCLASS_PKMN_TRAINER_DAWN_PT] = TRAINER_FEMALE,
-    [TRAINERCLASS_LEADER_ROARK] = TRAINER_MALE,
-    [TRAINERCLASS_LEADER_GARDENIA] = TRAINER_FEMALE,
-    [TRAINERCLASS_LEADER_MAYLENE] = TRAINER_FEMALE,
-    [TRAINERCLASS_LEADER_CRASHER_WAKE] = TRAINER_MALE,
-    [TRAINERCLASS_LEADER_FANTINA] = TRAINER_FEMALE,
-    [TRAINERCLASS_LEADER_BYRON] = TRAINER_MALE,
-    [TRAINERCLASS_LEADER_CANDICE] = TRAINER_FEMALE,
-    [TRAINERCLASS_LEADER_VOLKNER] = TRAINER_MALE,
-    [TRAINERCLASS_CHAMPION_CYNTHIA] = TRAINER_FEMALE,
-};
-#else
-#define sTrainerGenders ((const u8 *)0x020FFB90)
-#endif // EXPAND_TRAINER_GENDER_TABLE
-
-TrainerGender LONG_CALL TT_TrainerTypeSexGet(int tr_type)
-{
-    return (TrainerGender)sTrainerGenders[tr_type];
 }
 
 // https://www.smogon.com/forums/threads/scarlet-violet-battle-mechanics-research.3709545/post-9714380

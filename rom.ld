@@ -444,8 +444,8 @@ WeatherBGAlphaDef = 0x021EB818 | 1;
 WeatherMoveReq = 0x021EB830 | 1;
 WeatherMoveMain = 0x021EB840 | 1;
 
-SetEncountData = 0x02247B64 | 1;
-SetEncountDataSwarm_maybe = 0x02247DA0 | 1;
+FieldSystem_GenerateRegularEncounter = 0x02247B64 | 1;
+FieldSystem_GenerateSafariEncounter = 0x02247DA0 | 1;
 
 gSafariBallRateTable = 0x0226C3CE;
 BattleWorkGroundIDGet = 0x0223AB40 | 1;

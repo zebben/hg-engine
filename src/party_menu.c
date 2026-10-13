@@ -126,7 +126,7 @@ void LONG_CALL sub_0207AFC4(struct PartyMenu *wk)
 
 /*
  * @brief hooks rare candy usage in the bag to allow for repeated use without returning to the bag between each
- * thanks to yako for the for the format
+ * thanks to yako for the format
  */
 int PartyMenu_ItemUseFunc_LevelUpLearnMovesLoop_Case6(struct PartyMenu *wk)
 {
@@ -356,4 +356,44 @@ void LONG_CALL PartyMenu_StartContextMenuButtonPressAnim_FromCursorObj(struct Pa
 BOOL CanUseRotomCatalog(struct PartyPokemon *pp)
 {
     return GetMonData(pp, MON_DATA_SPECIES, NULL) == SPECIES_ROTOM;
+}
+
+BOOL LONG_CALL Mon_CanUseGracidea(struct PartyPokemon *mon)
+{
+    struct RTCTime time;
+    int species = GetMonData(mon, MON_DATA_SPECIES, NULL);
+    int form = GetMonData(mon, MON_DATA_FORM, NULL);
+    int status = GetMonData(mon, MON_DATA_STATUS, NULL);
+    int hp = GetMonData(mon, MON_DATA_HP, NULL);
+    // BOOL fatefulEncounter = GetMonData(mon, MON_DATA_FATEFUL_ENCOUNTER, NULL);
+    GF_RTC_CopyTime(&time);
+
+    if (species == SPECIES_SHAYMIN && form == 0 && hp != 0 && !(status & STATUS_FREEZE) && (time.hour >= 4 && time.hour < 20)) {
+        return TRUE;
+    } else {
+        return FALSE;
+    }
+}
+
+BOOL LONG_CALL CanUseItemOnMonInParty(struct Party *party, u16 itemID, s32 partyIdx, s32 moveIdx, u32 heapID)
+{
+    struct PartyPokemon *mon = Party_GetMonByIndex(party, partyIdx);
+
+    if (GetItemData(itemID, ITEM_PARAM_LEVEL_UP, heapID) && GetMonData(mon, MON_DATA_LEVEL, NULL) == 100 && GetMonEvolution(party, mon, EVOCTX_LEVELUP, itemID, NULL)) {
+        return TRUE;
+    }
+
+    if (itemID == ITEM_ROTOM_CATALOG) {
+        return CanUseRotomCatalog(mon);
+    }
+
+#if defined(IMPLEMENT_LEVEL_CAP) && defined(UNCAP_CANDIES_FROM_LEVEL_CAP)
+    int currentLevel = GetMonData(mon, MON_DATA_LEVEL, NULL);
+    if (GetItemData(itemID, ITEM_PARAM_LEVEL_UP, heapID)) {
+        if (currentLevel < 100 && itemID == ITEM_RARE_CANDY) {
+            return TRUE;
+        }
+    }
+#endif
+    return CanUseItemOnPokemon(mon, itemID, moveIdx, heapID);
 }

@@ -5,6 +5,7 @@
 
 #include "bag.h"
 #include "message.h"
+#include "pokemon.h"
 #include "window.h"
 
 #define MAX_MON_MOVES             4
@@ -449,5 +450,33 @@ struct PartyMenuContextMenuCursor *LONG_CALL PartyMenu_CreateContextMenuCursor(s
 void LONG_CALL PartyMenu_DisableMainScreenBlend_AfterYesNo(void);
 void LONG_CALL PartyMonContextMenuAction_RotomCatalog(struct PartyMenu *partyMenu, int *pState);
 void LONG_CALL PartyMonContextMenuAction_QuitToBag(struct PartyMenu *partyMenu, int *pState);
+
+/**
+ *  @brief check if a rotom catalog can be used on a PartyPokemon
+ *
+ *  @param pp PartyPokemon to check reveal glass against
+ *  @return TRUE if rotom catalog can be used, FALSE otherwise
+ */
+BOOL LONG_CALL CanUseRotomCatalog(struct PartyPokemon *pp);
+
+/**
+ *  @brief check if the Gracidea can be used on a PartyPokemon
+ *
+ *  @param pp PartyPokemon to check the nectar against
+ *  @return TRUE if Gracidea can be used; FALSE otherwise
+ */
+BOOL LONG_CALL Mon_CanUseGracidea(struct PartyPokemon *mon);
+
+/**
+ *  @brief check if can use item on mon in party. subfunction checks everything and is only used here, so we hook this to save space and add what we need.
+ *
+ *  @param party party structure
+ *  @param itemID item index that is being used
+ *  @param partyIdx position in party
+ *  @param moveIdx move position to check if needed
+ *  @param heapID heap to use for allocations
+ *  @return TRUE if can use item, FALSE otherwise
+ */
+BOOL LONG_CALL CanUseItemOnMonInParty(struct Party *party, u16 itemID, s32 partyIdx, s32 moveIdx, u32 heapID);
 
 #endif // POKEHEARTGOLD_PARTY_MENU_H

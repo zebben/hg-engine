@@ -1323,34 +1323,6 @@ void LONG_CALL sub_0206D038(struct PartyPokemon *pokemon, u32 heapId);
 void LONG_CALL GetSpeciesNameIntoArray(u16 species, u32 heap_id, u16 *dest);
 
 /**
- *  @brief add a PartyPokemon to wild battler team
- *
- *  @param pp uninitialized PartyPokemon to init and add to enemy team
- *  @param rodType rod type (255 if N/A)
- *  @param encInfo
- *  @param encArea
- *  @param encounterType
- *  @param battler battler whose team to add to
- *  @param bw battle work structure
- *  @return TRUE if PartyPokemon was successfully generated and added; FALSE otherwise
- */
-u32 LONG_CALL SetEncountData(struct PartyPokemon *pp, u32 rodType, void *encInfo, void *encArea, u32 encounterType, u32 battler, void *bw);
-
-/**
- *  @brief add a PartyPokemon to wild battler team for swarms potentially
- *
- *  @param fsys field system structure
- *  @param pp uninitialized PartyPokemon to init and add to enemy team
- *  @param rodType rod type (255 if N/A)
- *  @param encInfo
- *  @param encounterType
- *  @param battler battler whose team to add to
- *  @param bw battle work structure
- *  @return TRUE if PartyPokemon was successfully generated and added; FALSE otherwise
- */
-u32 LONG_CALL SetEncountDataSwarm_maybe(void *fsys, struct PartyPokemon *pp, u32 rodType, void *encInfo, u32 encounterType, u32 battler, void *bw);
-
-/**
  *  @brief initialize a PartyPokemon given a BoxPokemon
  *
  *  @param src BoxPokemon to fill out to a PartyPokemon
@@ -1562,22 +1534,6 @@ void LONG_CALL ArceusBoxPokemonFormeChange(struct BoxPokemon *bp);
  */
 BOOL LONG_CALL HandleBoxPokemonFormeChanges(struct BoxPokemon *bp);
 
-/**
- *  @brief check if the Gracidea can be used on a PartyPokemon
- *
- *  @param pp PartyPokemon to check the nectar against
- *  @return TRUE if Gracidea can be used; FALSE otherwise
- */
-BOOL LONG_CALL Mon_CanUseGracidea(struct PartyPokemon *mon);
-
-/**
- *  @brief check if a rotom catalog can be used on a PartyPokemon
- *
- *  @param pp PartyPokemon to check reveal glass against
- *  @return TRUE if rotom catalog can be used; FALSE otherwise
- */
-BOOL LONG_CALL CanUseRotomCatalog(struct PartyPokemon *pp);
-
 #define RESHIRAM_MASK         (0x80)
 #define JUST_SPLICER_POS_MASK (0x7F)
 
@@ -1636,15 +1592,6 @@ void LONG_CALL UpdatePassiveForms(struct PartyPokemon *pp);
 BOOL LONG_CALL Party_UpdateDeerlingSeasonForm(struct Party *party);
 
 // BOOL LONG_CALL Party_TryResetShaymin(struct Party *party, int min_max, const struct RTCTime *time);
-
-/**
- *  @brief load egg moves to dest and return amount of egg moves. reads from data/generated/EggLearnsets.c
- *
- *  @param pokemon PartyPokemon to grab egg moves for
- *  @param dest destination for the array of egg moves
- *  @return number of egg moves in dest
- */
-u8 LONG_CALL LoadEggMoves(struct PartyPokemon *pokemon, u16 *dest);
 
 /**
  *  @brief check if 2 PartyPokemon are essentially the same PartyPokemon beyond duplication/RNG manipulation
@@ -1755,21 +1702,6 @@ bool8 LONG_CALL RevertFormChange(struct PartyPokemon *pp, u16 species, u8 form_n
 void LONG_CALL ClearMonMoves(struct PartyPokemon *pokemon);
 
 /**
- *  @brief get level cap from the script variable defined by LEVEL_CAP_VARIABLE
- *
- *  @return level cap from LEVEL_CAP_VARIABLE script variable
- */
-u32 LONG_CALL GetLevelCap(void);
-
-/**
- *  @brief check if the level is at or above the level cap defined in LEVEL_CAP_VARIABLE
- *
- *  @param level level to check
- *  @return TRUE if level >= level cap; FALSE otherwise
- */
-u32 LONG_CALL IsLevelAtLevelCap(u32 level);
-
-/**
  *  @brief grab the nature of a BoxPokemon factoring in the nature mint override field
  *
  *  @param boxMon BoxPokemon whose nature to grab
@@ -1828,8 +1760,6 @@ void LONG_CALL ApplyMonMoodModifier(struct PartyPokemon *mon, int modifierId);
 s8 LONG_CALL GetFlavorPreferenceFromPID(u32 personality, int flavor);
 
 BOOL Mon_UpdateRotomForm(struct PartyPokemon *mon, int form, int defaultSlot);
-
-BOOL LONG_CALL CanUseItemOnMonInParty(struct Party *party, u16 itemID, s32 partyIdx, s32 moveIdx, u32 heapID);
 
 u16 LONG_CALL Species_LoadLearnsetTable(u16 species, u16 form, u16 *dest);
 

@@ -329,8 +329,8 @@ arm9 GrabCryNumSpeciesForm 02006A0C 2
 #ifdef IMPLEMENT_WILD_DOUBLE_BATTLES
 
 # r0 isn't used, can be burned
-0002 WildEncSingle 02247424 0
-0002 WildWaterEncSingle 022474E0
+0002 FieldSystem_GenerateLandRegularEncounter 02247424 0
+0002 FieldSystem_GenerateSurfingEncounter 022474E0
 # can't modify SetFieldBattleParam since it is used for sweet scent and fishing and such
 #0002 TryTriggerWildDoubleBattle 02248284 0
 0002 TryTriggerWildDoubleBattle 02246E0E 0
@@ -373,8 +373,8 @@ arm9 Summary_Entry_Hook 0208D2C4 1
 
 #endif
 
-
 arm9 CanUseItemOnMonInParty_hook 020902BC 5
+
 #ifdef IMPLEMENT_LEVEL_CAP
 
 0012 ImplementLevelCap_hook 02245A28 3

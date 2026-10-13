@@ -14,6 +14,7 @@
 
 #include "bag.h"
 #include "battle.h"
+#include "daycare.h"
 #include "message.h"
 #include "pokemon.h"
 #include "rtc.h"
